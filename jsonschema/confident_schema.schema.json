@@ -1,0 +1,1130 @@
+{
+   "$defs": {
+      "AcademicEvent": {
+         "additionalProperties": false,
+         "description": "An academic event is part of the established instruments of science communication as a format for conveying the latest scientific outputs. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these outputs. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function.",
+         "properties": {
+            "academic_fields": {
+               "description": "A property used to describe the scientific subject of the planned process according to some controlled vocabulary or thesaurus. Requires the as subproperties the name and if possible the URL of the identifiying scheme.",
+               "items": {
+                  "$ref": "#/$defs/AcademicField"
+               },
+               "type": "array"
+            },
+            "aliases": {
+               "description": "A property to be used to provide alternative names as strings.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "at_location": {
+               "$ref": "#/$defs/Location",
+               "description": "The location of the academic event."
+            },
+            "contact": {
+               "$ref": "#/$defs/ContactPerson",
+               "description": "The contact person of an academic event or event series."
+            },
+            "dates": {
+               "$ref": "#/$defs/Date",
+               "description": "A property refering to a date container that holds the start date, end date and status of a planned process."
+            },
+            "deadlines": {
+               "description": "A property to deadline_type is mandatory.",
+               "items": {
+                  "$ref": "#/$defs/Deadline"
+               },
+               "type": "array"
+            },
+            "doi": {
+               "description": "A digital object identifier (DOI) according to https://doi.org/.",
+               "type": "string"
+            },
+            "dpbl_id": {
+               "$ref": "#/$defs/DblpId"
+            },
+            "event_format": {
+               "$ref": "#/$defs/EventFormatSpecification",
+               "description": "The sociocultural event format which is specified by the organizers, e.g. conference. Possible values are defined in the EventFormat enum, which uses the named individuals defined in AEON."
+            },
+            "event_mode": {
+               "$ref": "#/$defs/EventMode",
+               "description": "The event mode describes whether the event is a physical, virtual or hybrid event."
+            },
+            "external_id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "items": {
+                  "$ref": "#/$defs/ExternalIdentifier"
+               },
+               "type": "array"
+            },
+            "gnd_id": {
+               "$ref": "#/$defs/GndId"
+            },
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "in_series": {
+               "description": "The relation used to provide the series of which an AcademicEvent is a part.",
+               "type": "string"
+            },
+            "landing_page": {
+               "description": "The website to which a persistent identifier is linking and which contains all the metadata about an academic event or series.",
+               "type": "string"
+            },
+            "metrics": {
+               "items": {
+                  "$ref": "#/$defs/Metric"
+               },
+               "type": "array"
+            },
+            "name": {
+               "$ref": "#/$defs/ProcessName",
+               "description": "This property is used to provide a name of the academic event or series, which itself has further properties to specify its type (e.g. official name, acronym, etc)."
+            },
+            "ordinal": {
+               "description": "The ordnial number of an academic event within its series.",
+               "type": "integer"
+            },
+            "organizers": {
+               "items": {
+                  "$ref": "#/$defs/Organizer"
+               },
+               "type": "array"
+            },
+            "outputs": {
+               "description": "The published works that are related to the academic event or event series, such as proceedings and video recordings of talks.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "related_to": {
+               "items": {
+                  "$ref": "#/$defs/ProcessRelation"
+               },
+               "type": "array"
+            },
+            "sponsors": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "summary": {
+               "type": "string"
+            },
+            "topics": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "website": {
+               "description": "the official website of an academic event",
+               "type": "string"
+            },
+            "wikicfp_id": {
+               "$ref": "#/$defs/WikiCfpId"
+            },
+            "wikidata_id": {
+               "$ref": "#/$defs/WikidataId"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "AcademicEvent",
+         "type": "object"
+      },
+      "AcademicEventSeries": {
+         "additionalProperties": false,
+         "description": "An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.",
+         "properties": {
+            "academic_fields": {
+               "description": "A property used to describe the scientific subject of the planned process according to some controlled vocabulary or thesaurus. Requires the as subproperties the name and if possible the URL of the identifiying scheme.",
+               "items": {
+                  "$ref": "#/$defs/AcademicField"
+               },
+               "type": "array"
+            },
+            "aliases": {
+               "description": "A property to be used to provide alternative names as strings.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "contact": {
+               "$ref": "#/$defs/ContactPerson",
+               "description": "The contact person of an academic event or event series."
+            },
+            "dates": {
+               "$ref": "#/$defs/Date",
+               "description": "A property refering to a date container that holds the start date, end date and status of a planned process."
+            },
+            "doi": {
+               "description": "A digital object identifier (DOI) according to https://doi.org/.",
+               "type": "string"
+            },
+            "dpbl_id": {
+               "$ref": "#/$defs/DblpId"
+            },
+            "external_id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "items": {
+                  "$ref": "#/$defs/ExternalIdentifier"
+               },
+               "type": "array"
+            },
+            "gnd_id": {
+               "$ref": "#/$defs/GndId"
+            },
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "landing_page": {
+               "description": "The website to which a persistent identifier is linking and which contains all the metadata about an academic event or series.",
+               "type": "string"
+            },
+            "metrics": {
+               "items": {
+                  "$ref": "#/$defs/Metric"
+               },
+               "type": "array"
+            },
+            "name": {
+               "$ref": "#/$defs/ProcessName",
+               "description": "This property is used to provide a name of the academic event or series, which itself has further properties to specify its type (e.g. official name, acronym, etc)."
+            },
+            "organizers": {
+               "items": {
+                  "$ref": "#/$defs/Organizer"
+               },
+               "type": "array"
+            },
+            "outputs": {
+               "description": "The published works that are related to the academic event or event series, such as proceedings and video recordings of talks.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "series_of": {
+               "description": "The relation used to provide the events belonging to an AcademicEventSeries.",
+               "items": {
+                  "$ref": "#/$defs/AcademicEvent"
+               },
+               "type": "array"
+            },
+            "sponsors": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "summary": {
+               "type": "string"
+            },
+            "topics": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "website": {
+               "type": "string"
+            },
+            "wikicfp_id": {
+               "$ref": "#/$defs/WikiCfpId"
+            },
+            "wikidata_id": {
+               "$ref": "#/$defs/WikidataId"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "AcademicEventSeries",
+         "type": "object"
+      },
+      "AcademicField": {
+         "additionalProperties": false,
+         "description": "An academic field is the scientific subject of the planned process according to some controlled vocabulary or thesaurus and as such requires the scheme URI.",
+         "properties": {
+            "schema_base_uri": {
+               "description": "The base URI of a schema.",
+               "type": "string"
+            },
+            "schema_name": {
+               "type": "string"
+            },
+            "value": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "AcademicField",
+         "type": "object"
+      },
+      "Attendee": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "aliases": {
+               "description": "A property to be used to provide alternative names as strings.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "external_id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "items": {
+                  "$ref": "#/$defs/ExternalIdentifier"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Attendee",
+         "type": "object"
+      },
+      "City": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "City",
+         "type": "object"
+      },
+      "CommitteeChair": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "aliases": {
+               "description": "A property to be used to provide alternative names as strings.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "external_id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "items": {
+                  "$ref": "#/$defs/ExternalIdentifier"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "CommitteeChair",
+         "type": "object"
+      },
+      "CommitteeMember": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "aliases": {
+               "description": "A property to be used to provide alternative names as strings.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "external_id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "items": {
+                  "$ref": "#/$defs/ExternalIdentifier"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "CommitteeMember",
+         "type": "object"
+      },
+      "ConfIDentRecords": {
+         "additionalProperties": false,
+         "description": "This is a container to be able to bundle academic event and series data in one data file (e.g. YAML or JSON).",
+         "properties": {
+            "events": {
+               "description": "An attribute that specifies a list of academic events within this container.",
+               "items": {
+                  "$ref": "#/$defs/AcademicEvent"
+               },
+               "type": "array"
+            },
+            "series": {
+               "description": "An attribute that specifies a list of academic event series within this container.",
+               "items": {
+                  "$ref": "#/$defs/AcademicEventSeries"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "ConfIDentRecords",
+         "type": "object"
+      },
+      "ContactPerson": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "aliases": {
+               "description": "A property to be used to provide alternative names as strings.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "email": {
+               "description": "The email address of the contact person.",
+               "pattern": "\\b[-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b",
+               "type": "string"
+            },
+            "external_id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "items": {
+                  "$ref": "#/$defs/ExternalIdentifier"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "telephone": {
+               "description": "The telephone number of the contact person.",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "ContactPerson",
+         "type": "object"
+      },
+      "Contributor": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "aliases": {
+               "description": "A property to be used to provide alternative names as strings.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "external_id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "items": {
+                  "$ref": "#/$defs/ExternalIdentifier"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Contributor",
+         "type": "object"
+      },
+      "Country": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Country",
+         "type": "object"
+      },
+      "Date": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "duration": {
+               "description": "The duration of an event or series which gets automatically derived, if a stard_date and end_date have been provided.",
+               "format": "date-time",
+               "type": "string"
+            },
+            "end_date": {
+               "description": "Similar to start_date but only for the end of an academic event or event series.",
+               "format": "date-time",
+               "type": "string"
+            },
+            "event_status": {
+               "$ref": "#/$defs/EventStatus"
+            },
+            "start_date": {
+               "description": "The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.",
+               "format": "date-time",
+               "type": "string"
+            }
+         },
+         "required": [
+            "start_date",
+            "event_status"
+         ],
+         "title": "Date",
+         "type": "object"
+      },
+      "DblpId": {
+         "additionalProperties": false,
+         "description": "The identifier of an academic event or series in dblp.",
+         "properties": {
+            "schema_base_uri": {
+               "description": "The base URI of a schema.",
+               "type": "string"
+            },
+            "schema_name": {
+               "type": "string"
+            },
+            "value": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "DblpId",
+         "type": "object"
+      },
+      "Deadline": {
+         "additionalProperties": false,
+         "description": "A container for event deadlines.",
+         "properties": {
+            "deadline_date": {
+               "description": "The date of a deadline.",
+               "format": "date-time",
+               "type": "string"
+            },
+            "deadline_other": {
+               "description": "This property can be used to specify another kind of deadline, if this type of deadline is not within the allowed values of DeadlineType.",
+               "type": "string"
+            },
+            "type": {
+               "$ref": "#/$defs/DeadlineType",
+               "description": "The type of deadline."
+            }
+         },
+         "required": [
+            "type",
+            "deadline_date"
+         ],
+         "title": "Deadline",
+         "type": "object"
+      },
+      "DeadlineType": {
+         "description": "",
+         "enum": [
+            "submission deadline",
+            "notification deadline",
+            "abstract deadline",
+            "camera-ready deadline",
+            "demo deadline",
+            "paper deadline",
+            "poster deadline",
+            "tutorial deadline",
+            "workshop deadline",
+            "other"
+         ],
+         "title": "DeadlineType",
+         "type": "string"
+      },
+      "EventFormat": {
+         "description": "The permissible values defined in this enum class represent the most common minimal event format specifications. For event formats that are not in this list, you can use \"other\" and provide the label of this other event format as strind using [other_format](https://stroemphi.github.io/ConfIDent-schema/academicEvent__other_format/).",
+         "enum": [
+            "colloquium",
+            "conference",
+            "congress",
+            "session",
+            "poster session",
+            "talk",
+            "keynote speech",
+            "event track",
+            "forum",
+            "hackathon",
+            "seminar",
+            "symposium",
+            "tutorial",
+            "workshop",
+            "other"
+         ],
+         "title": "EventFormat",
+         "type": "string"
+      },
+      "EventFormatSpecification": {
+         "additionalProperties": false,
+         "description": "An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathing is to be carried out by its participants in terms of achieving certain objectives, fulfiling certain conditions and performing certain actions. It thus concretizes the expectations of the contributers of an academic event. While the explicit details are often provied as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. \"conference\" or \"workshop\"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.",
+         "properties": {
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "other_format": {
+               "type": "string"
+            },
+            "specified_as": {
+               "$ref": "#/$defs/EventFormat"
+            }
+         },
+         "required": [
+            "id",
+            "specified_as"
+         ],
+         "title": "EventFormatSpecification",
+         "type": "object"
+      },
+      "EventMode": {
+         "description": "",
+         "enum": [
+            "on site",
+            "online",
+            "hybrid"
+         ],
+         "title": "EventMode",
+         "type": "string"
+      },
+      "EventStatus": {
+         "description": "",
+         "enum": [
+            "as scheduled",
+            "postponed",
+            "delayed",
+            "canceled",
+            "planned"
+         ],
+         "title": "EventStatus",
+         "type": "string"
+      },
+      "ExternalIdentifier": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "schema_base_uri": {
+               "description": "The base URI of a schema.",
+               "type": "string"
+            },
+            "schema_name": {
+               "type": "string"
+            },
+            "value": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "ExternalIdentifier",
+         "type": "object"
+      },
+      "GndId": {
+         "additionalProperties": false,
+         "description": "The identifier of a thing (item) in the German National authority file.",
+         "properties": {
+            "schema_base_uri": {
+               "description": "The base URI of a schema.",
+               "type": "string"
+            },
+            "schema_name": {
+               "type": "string"
+            },
+            "value": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "GndId",
+         "type": "object"
+      },
+      "KeynoteSpeaker": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "aliases": {
+               "description": "A property to be used to provide alternative names as strings.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "external_id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "items": {
+                  "$ref": "#/$defs/ExternalIdentifier"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "KeynoteSpeaker",
+         "type": "object"
+      },
+      "Location": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "city": {
+               "type": "string"
+            },
+            "country": {
+               "type": "string"
+            },
+            "lattitude": {
+               "type": "number"
+            },
+            "longitude": {
+               "type": "number"
+            },
+            "meeting_url": {
+               "type": "string"
+            },
+            "region": {
+               "type": "string"
+            },
+            "venue": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Location",
+         "type": "object"
+      },
+      "Metric": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "int_value": {
+               "type": "integer"
+            },
+            "other_metric": {
+               "type": "string"
+            },
+            "rate_value": {
+               "type": "number"
+            },
+            "str_value": {
+               "type": "string"
+            },
+            "truth_value": {
+               "type": "boolean"
+            },
+            "type": {
+               "$ref": "#/$defs/MetricType",
+               "description": "an abstract property used to specify the type of a thing"
+            }
+         },
+         "required": [],
+         "title": "Metric",
+         "type": "object"
+      },
+      "MetricType": {
+         "description": "",
+         "enum": [
+            "submitted papers",
+            "accepted papers",
+            "accepted short papers",
+            "number of attendees",
+            "number of tracks",
+            "has childcare options",
+            "is accessible"
+         ],
+         "title": "MetricType",
+         "type": "string"
+      },
+      "Moderator": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "aliases": {
+               "description": "A property to be used to provide alternative names as strings.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "external_id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "items": {
+                  "$ref": "#/$defs/ExternalIdentifier"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Moderator",
+         "type": "object"
+      },
+      "Organizer": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "aliases": {
+               "description": "A property to be used to provide alternative names as strings.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "external_id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "items": {
+                  "$ref": "#/$defs/ExternalIdentifier"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Organizer",
+         "type": "object"
+      },
+      "Presenter": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "aliases": {
+               "description": "A property to be used to provide alternative names as strings.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "external_id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "items": {
+                  "$ref": "#/$defs/ExternalIdentifier"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Presenter",
+         "type": "object"
+      },
+      "ProcessName": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "acronym": {
+               "description": "The official acronym of an academic event or series.",
+               "type": "string"
+            },
+            "aliases": {
+               "description": "A property to be used to provide alternative names as strings.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "former_name": {
+               "description": "The former official name of an academic event or series. Usually this will only be needed in case an academic event series has undergone a name change.",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "official_name": {
+               "description": "The official name of an academic event or series.",
+               "type": "string"
+            },
+            "translated_name": {
+               "description": "A translation of the official name to be used in different language contexts.",
+               "type": "string"
+            }
+         },
+         "required": [
+            "official_name"
+         ],
+         "title": "ProcessName",
+         "type": "object"
+      },
+      "ProcessRelation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "type": {
+               "$ref": "#/$defs/RelationType",
+               "description": "an abstract property used to specify the type of a thing"
+            }
+         },
+         "required": [],
+         "title": "ProcessRelation",
+         "type": "object"
+      },
+      "Region": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Region",
+         "type": "object"
+      },
+      "RelationType": {
+         "description": "",
+         "enum": [
+            "isUmbrellaEventOf",
+            "hasUmbrellaEvent",
+            "isJointEventOf",
+            "isColocatedEventOf",
+            "isSubEventOf",
+            "hasSubEvent"
+         ],
+         "title": "RelationType",
+         "type": "string"
+      },
+      "Reviewer": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "aliases": {
+               "description": "A property to be used to provide alternative names as strings.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "external_id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "items": {
+                  "$ref": "#/$defs/ExternalIdentifier"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Reviewer",
+         "type": "object"
+      },
+      "Sponsor": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "aliases": {
+               "description": "A property to be used to provide alternative names as strings.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "external_id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "items": {
+                  "$ref": "#/$defs/ExternalIdentifier"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Sponsor",
+         "type": "object"
+      },
+      "TibkatId": {
+         "additionalProperties": false,
+         "description": "The identifier of a publication in the TIB catalog.",
+         "properties": {
+            "schema_base_uri": {
+               "description": "The base URI of a schema.",
+               "type": "string"
+            },
+            "schema_name": {
+               "type": "string"
+            },
+            "value": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "TibkatId",
+         "type": "object"
+      },
+      "Venue": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "address": {
+               "type": "string"
+            },
+            "id": {
+               "description": "a property to provide the internal id of a schema entity",
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Venue",
+         "type": "object"
+      },
+      "WikiCfpId": {
+         "additionalProperties": false,
+         "description": "The identifier of an academic event or series in WikiCFP.",
+         "properties": {
+            "schema_base_uri": {
+               "description": "The base URI of a schema.",
+               "type": "string"
+            },
+            "schema_name": {
+               "type": "string"
+            },
+            "value": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "WikiCfpId",
+         "type": "object"
+      },
+      "WikidataId": {
+         "additionalProperties": false,
+         "description": "The identifier of a thing (item) in Wikidata.",
+         "properties": {
+            "schema_base_uri": {
+               "description": "The base URI of a schema.",
+               "type": "string"
+            },
+            "schema_name": {
+               "type": "string"
+            },
+            "value": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "WikidataId",
+         "type": "object"
+      }
+   },
+   "$id": "https://github.com/StroemPhi/ConfIDent-schema/",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "metamodel_version": "1.7.0",
+   "properties": {},
+   "required": [],
+   "title": "ConfIDent-schema",
+   "type": "object",
+   "version": "0.0.1"
+}
+

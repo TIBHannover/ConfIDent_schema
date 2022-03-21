@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>A model to describe academic events and event series.</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Index";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> A model to describe academic events and event series.</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="home/">Home</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Index</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mixins">Mixins</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#slots">Slots</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#enums">Enums</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#subsets">Subsets</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#types">Types</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#built-in">Built in</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#defined">Defined</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="credits/">Credits</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">A model to describe academic events and event series.</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Index</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="confident-schema">ConfIDent-schema</h1>
+<p><strong>metamodel version:</strong> 1.7.0</p>
+<p><strong>version:</strong> 0.0.1</p>
+<p>This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.</p>
+<h3 id="classes">Classes</h3>
+<ul>
+<li><a href="AcademicField/">AcademicField</a> - An academic field is the scientific subject of the planned process according to some controlled vocabulary or thesaurus and as such requires the scheme URI.</li>
+<li><a href="City/">City</a></li>
+<li><a href="ConfIDentRecords/">ConfIDentRecords</a> - This is a container to be able to bundle academic event and series data in one data file (e.g. YAML or JSON).</li>
+<li><a href="Contributor/">Contributor</a><ul>
+<li><a href="Attendee/">Attendee</a></li>
+<li><a href="Moderator/">Moderator</a></li>
+<li><a href="Organizer/">Organizer</a><ul>
+<li><a href="CommitteeMember/">CommitteeMember</a><ul>
+<li><a href="CommitteeChair/">CommitteeChair</a></li>
+</ul>
+</li>
+<li><a href="ContactPerson/">ContactPerson</a></li>
+</ul>
+</li>
+<li><a href="Presenter/">Presenter</a><ul>
+<li><a href="KeynoteSpeaker/">KeynoteSpeaker</a></li>
+</ul>
+</li>
+<li><a href="Reviewer/">Reviewer</a></li>
+<li><a href="Sponsor/">Sponsor</a></li>
+</ul>
+</li>
+<li><a href="Country/">Country</a></li>
+<li><a href="Date/">Date</a></li>
+<li><a href="Deadline/">Deadline</a> - A container for event deadlines.</li>
+<li><a href="EventFormatSpecification/">EventFormatSpecification</a> - An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathing is to be carried out by its participants in terms of achieving certain objectives, fulfiling certain conditions and performing certain actions. It thus concretizes the expectations of the contributers of an academic event. While the explicit details are often provied as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. "conference" or "workshop"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.</li>
+<li><a href="ExternalIdentifier/">ExternalIdentifier</a><ul>
+<li><a href="DblpId/">DblpId</a> - The identifier of an academic event or series in dblp.</li>
+<li><a href="GndId/">GndId</a> - The identifier of a thing (item) in the German National authority file.</li>
+<li><a href="TibkatId/">TibkatId</a> - The identifier of a publication in the TIB catalog.</li>
+<li><a href="WikiCfpId/">WikiCfpId</a> - The identifier of an academic event or series in WikiCFP.</li>
+<li><a href="WikidataId/">WikidataId</a> - The identifier of a thing (item) in Wikidata.</li>
+</ul>
+</li>
+<li><a href="Location/">Location</a></li>
+<li><a href="Metric/">Metric</a></li>
+<li><a href="PlannedProcess/">PlannedProcess</a> - Abstract base class for academic events and event series.<ul>
+<li><a href="AcademicEvent/">AcademicEvent</a> - An academic event is part of the established instruments of science communication as a format for conveying the latest scientific outputs. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these outputs. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function.</li>
+<li><a href="AcademicEventSeries/">AcademicEventSeries</a> - An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.</li>
+</ul>
+</li>
+<li><a href="ProcessName/">ProcessName</a></li>
+<li><a href="ProcessRelation/">ProcessRelation</a></li>
+<li><a href="Region/">Region</a></li>
+<li><a href="Venue/">Venue</a></li>
+</ul>
+<h3 id="mixins">Mixins</h3>
+<ul>
+<li><a href="NamedThing/">NamedThing</a></li>
+<li><a href="SchemaBasedThing/">SchemaBasedThing</a></li>
+</ul>
+<h3 id="slots">Slots</h3>
+<ul>
+<li><a href="academicEventSeries__series_of/">AcademicEventSeries➞series_of</a> - The relation used to provide the events belonging to an AcademicEventSeries.</li>
+<li><a href="academicEvent__at_location/">AcademicEvent➞at_location</a> - The location of the academic event.</li>
+<li><a href="academicEvent__deadlines/">AcademicEvent➞deadlines</a> - A property to deadline_type is mandatory.</li>
+<li><a href="academicEvent__event_format/">AcademicEvent➞event_format</a> - The sociocultural event format which is specified by the organizers, e.g. conference. Possible values are defined in the EventFormat enum, which uses the named individuals defined in AEON.</li>
+<li><a href="academicEvent__event_mode/">➞event_mode</a> - The event mode describes whether the event is a physical, virtual or hybrid event.</li>
+<li><a href="academicEvent__in_series/">AcademicEvent➞in_series</a> - The relation used to provide the series of which an AcademicEvent is a part.</li>
+<li><a href="academicEvent__ordinal/">AcademicEvent➞ordinal</a> - The ordnial number of an academic event within its series.</li>
+<li><a href="academicEvent__related_to/">AcademicEvent➞related_to</a></li>
+<li><a href="academic_fields/">academic_fields</a> - A property used to describe the scientific subject of the planned process according to some controlled vocabulary or thesaurus. Requires the as subproperties the name and if possible the URL of the identifiying scheme.</li>
+<li><a href="confIDentRecords__events/">ConfIDentRecords➞events</a> - An attribute that specifies a list of academic events within this container.</li>
+<li><a href="confIDentRecords__series/">ConfIDentRecords➞series</a> - An attribute that specifies a list of academic event series within this container.</li>
+<li><a href="contact/">contact</a> - The contact person of an academic event or event series.</li>
+<li><a href="contactPerson__email/">➞email</a> - The email address of the contact person.</li>
+<li><a href="contactPerson__telephone/">➞telephone</a> - The telephone number of the contact person.</li>
+<li><a href="date__duration/">➞duration</a> - The duration of an event or series which gets automatically derived, if a stard_date and end_date have been provided.</li>
+<li><a href="date__end_date/">➞end_date</a> - Similar to start_date but only for the end of an academic event or event series.</li>
+<li><a href="date__event_status/">➞event_status</a></li>
+<li><a href="date__start_date/">➞start_date</a> - The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.</li>
+<li><a href="dates/">dates</a> - A property refering to a date container that holds the start date, end date and status of a planned process.</li>
+<li><a href="deadline__deadline_date/">➞deadline_date</a></li>
+<li><a href="deadline__deadline_other/">➞deadline_other</a></li>
+<li><a href="doi/">doi</a> - A digital object identifier (DOI) according to https://doi.org/.</li>
+<li><a href="dpbl_id/">dpbl_id</a></li>
+<li><a href="eventFormatSpecification__other_format/">EventFormatSpecification➞other_format</a></li>
+<li><a href="eventFormatSpecification__specified_as/">EventFormatSpecification➞specified_as</a></li>
+<li><a href="external_id/">external_id</a> - a property to provide the internal id of a schema entity</li>
+<li><a href="gnd_id/">gnd_id</a></li>
+<li><a href="id/">id</a> - a property to provide the internal id of a schema entity<ul>
+<li><a href="ContactPerson_id/">ContactPerson➞id</a></li>
+<li><a href="EventFormatSpecification_id/">EventFormatSpecification➞id</a></li>
+</ul>
+</li>
+<li><a href="landing_page/">landing_page</a> - The website to which a persistent identifier is linking and which contains all the metadata about an academic event or series.</li>
+<li><a href="location__city/">➞city</a></li>
+<li><a href="location__country/">➞country</a></li>
+<li><a href="location__lattitude/">➞lattitude</a></li>
+<li><a href="location__longitude/">➞longitude</a></li>
+<li><a href="location__meeting_url/">➞meeting_url</a></li>
+<li><a href="location__region/">➞region</a></li>
+<li><a href="location__venue/">➞venue</a></li>
+<li><a href="metric__int_value/">➞int_value</a></li>
+<li><a href="metric__other_metric/">➞other_metric</a></li>
+<li><a href="metric__rate_value/">➞rate_value</a></li>
+<li><a href="metric__str_value/">➞str_value</a></li>
+<li><a href="metric__truth_value/">➞truth_value</a></li>
+<li><a href="metrics/">metrics</a></li>
+<li><a href="name/">name</a><ul>
+<li><a href="PlannedProcess_name/">PlannedProcess➞name</a> - This property is used to provide a name of the academic event or series, which itself has further properties to specify its type (e.g. official name, acronym, etc).</li>
+<li><a href="aliases/">aliases</a> - A property to be used to provide alternative names as strings.</li>
+<li><a href="processName__acronym/">ProcessName➞acronym</a> - The official acronym of an academic event or series.</li>
+<li><a href="processName__former_name/">ProcessName➞former_name</a> - The former official name of an academic event or series. Usually this will only be needed in case an academic event series has undergone a name change.</li>
+<li><a href="processName__official_name/">ProcessName➞official_name</a> - The official name of an academic event or series.</li>
+<li><a href="processName__translated_name/">ProcessName➞translated_name</a> - A translation of the official name to be used in different language contexts.</li>
+</ul>
+</li>
+<li><a href="organizers/">organizers</a></li>
+<li><a href="outputs/">outputs</a> - The published works that are related to the academic event or event series, such as proceedings and video recordings of talks.</li>
+<li><a href="schema_base_uri/">schema_base_uri</a> - The base URI of a schema.<ul>
+<li><a href="DblpId_schema_base_uri/">DblpId➞schema_base_uri</a></li>
+<li><a href="GndId_schema_base_uri/">GndId➞schema_base_uri</a></li>
+<li><a href="TibkatId_schema_base_uri/">TibkatId➞schema_base_uri</a></li>
+<li><a href="WikiCfpId_schema_base_uri/">WikiCfpId➞schema_base_uri</a></li>
+<li><a href="WikidataId_schema_base_uri/">WikidataId➞schema_base_uri</a></li>
+</ul>
+</li>
+<li><a href="schema_name/">schema_name</a><ul>
+<li><a href="DblpId_schema_name/">DblpId➞schema_name</a></li>
+<li><a href="GndId_schema_name/">GndId➞schema_name</a></li>
+<li><a href="TibkatId_schema_name/">TibkatId➞schema_name</a></li>
+<li><a href="WikiCfpId_schema_name/">WikiCfpId➞schema_name</a></li>
+<li><a href="WikidataId_schema_name/">WikidataId➞schema_name</a></li>
+</ul>
+</li>
+<li><a href="sponsors/">sponsors</a></li>
+<li><a href="summary/">summary</a></li>
+<li><a href="topics/">topics</a></li>
+<li><a href="type/">type</a> - an abstract property used to specify the type of a thing<ul>
+<li><a href="Deadline_type/">Deadline➞type</a> - The type of deadline.</li>
+<li><a href="Metric_type/">Metric➞type</a></li>
+<li><a href="ProcessRelation_type/">ProcessRelation➞type</a></li>
+</ul>
+</li>
+<li><a href="value/">value</a></li>
+<li><a href="venue__address/">➞address</a></li>
+<li><a href="website/">website</a><ul>
+<li><a href="AcademicEvent_website/">AcademicEvent➞website</a> - the official website of an academic event</li>
+</ul>
+</li>
+<li><a href="wikicfp_id/">wikicfp_id</a></li>
+<li><a href="wikidata_id/">wikidata_id</a></li>
+</ul>
+<h3 id="enums">Enums</h3>
+<ul>
+<li><a href="DeadlineType/">DeadlineType</a></li>
+<li><a href="EventFormat/">EventFormat</a> - The permissible values defined in this enum class represent the most common minimal event format specifications. For event formats that are not in this list, you can use "other" and provide the label of this other event format as strind using <a href="https://stroemphi.github.io/ConfIDent-schema/academicEvent__other_format/">other_format</a>.</li>
+<li><a href="EventMode/">EventMode</a></li>
+<li><a href="EventStatus/">EventStatus</a></li>
+<li><a href="MetricType/">MetricType</a></li>
+<li><a href="RelationType/">RelationType</a></li>
+</ul>
+<h3 id="subsets">Subsets</h3>
+<h3 id="types">Types</h3>
+<h4 id="built-in">Built in</h4>
+<ul>
+<li><strong>Bool</strong></li>
+<li><strong>Decimal</strong></li>
+<li><strong>ElementIdentifier</strong></li>
+<li><strong>NCName</strong></li>
+<li><strong>NodeIdentifier</strong></li>
+<li><strong>URI</strong></li>
+<li><strong>URIorCURIE</strong></li>
+<li><strong>XSDDate</strong></li>
+<li><strong>XSDDateTime</strong></li>
+<li><strong>XSDTime</strong></li>
+<li><strong>float</strong></li>
+<li><strong>int</strong></li>
+<li><strong>str</strong></li>
+</ul>
+<h4 id="defined">Defined</h4>
+<ul>
+<li><a href="Boolean/">Boolean</a>  (<strong>Bool</strong>)  - A binary (true or false) value</li>
+<li><a href="Date/">Date</a>  (<strong>XSDDate</strong>)  - a date (year, month and day) in an idealized calendar</li>
+<li><a href="Datetime/">Datetime</a>  (<strong>XSDDateTime</strong>)  - The combination of a date and time</li>
+<li><a href="Decimal/">Decimal</a>  (<strong>Decimal</strong>)  - A real number with arbitrary precision that conforms to the xsd:decimal specification</li>
+<li><a href="Double/">Double</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:double specification</li>
+<li><a href="Float/">Float</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:float specification</li>
+<li><a href="Integer/">Integer</a>  (<strong>int</strong>)  - An integer</li>
+<li><a href="Ncname/">Ncname</a>  (<strong>NCName</strong>)  - Prefix part of CURIE</li>
+<li><a href="Nodeidentifier/">Nodeidentifier</a>  (<strong>NodeIdentifier</strong>)  - A URI, CURIE or BNODE that represents a node in a model.</li>
+<li><a href="Objectidentifier/">Objectidentifier</a>  (<strong>ElementIdentifier</strong>)  - A URI or CURIE that represents an object in the model.</li>
+<li><a href="String/">String</a>  (<strong>str</strong>)  - A character string</li>
+<li><a href="Time/">Time</a>  (<strong>XSDTime</strong>)  - A time object represents a (local) time of day, independent of any particular day</li>
+<li><a href="Uri/">Uri</a>  (<strong>URI</strong>)  - a complete URI</li>
+<li><a href="Uriorcurie/">Uriorcurie</a>  (<strong>URIorCURIE</strong>)  - a URI or a CURIE</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="credits/" class="btn btn-neutral float-right" title="Credits">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="home/" class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="home/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="credits/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.2.3
+Build Date UTC : 2022-03-21 07:29:45.981900+00:00
+-->
