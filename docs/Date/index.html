@@ -92,6 +92,7 @@
             <div class="section">
               
                 <h1 id="class-date">Class: Date</h1>
+<p>A container for the start and end date, the date status as well as the duration of a planned process.</p>
 <p>URI: <a href="https://confident.org/Date">confident:Date</a></p>
 <p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess]++-%20dates%200..1&gt;[Date&#124;start_date:datetime;end_date:datetime%20%3F;event_status:EventStatus;duration:datetime%20%3F],[PlannedProcess]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess]++-%20dates%200..1&gt;[Date&#124;start_date:datetime;end_date:datetime%20%3F;event_status:EventStatus;duration:datetime%20%3F],[PlannedProcess]" /></a></p>
 <h2 id="referenced-by-class">Referenced by Class</h2>
@@ -101,21 +102,21 @@
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../date__start_date/">➞start_date</a>  <sub>1..1</sub><ul>
+<li><a href="../date__start_date/">Date➞start_date</a>  <sub>1..1</sub><ul>
 <li>Description: The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.</li>
 <li>Range: <a href="../Datetime/">Datetime</a></li>
 </ul>
 </li>
-<li><a href="../date__end_date/">➞end_date</a>  <sub>0..1</sub><ul>
+<li><a href="../date__end_date/">Date➞end_date</a>  <sub>0..1</sub><ul>
 <li>Description: Similar to start_date but only for the end of an academic event or event series.</li>
 <li>Range: <a href="../Datetime/">Datetime</a></li>
 </ul>
 </li>
-<li><a href="../date__event_status/">➞event_status</a>  <sub>1..1</sub><ul>
+<li><a href="../date__event_status/">Date➞event_status</a>  <sub>1..1</sub><ul>
 <li>Range: <a href="../EventStatus/">EventStatus</a></li>
 </ul>
 </li>
-<li><a href="../date__duration/">➞duration</a>  <sub>0..1</sub><ul>
+<li><a href="../date__duration/">Date➞duration</a>  <sub>0..1</sub><ul>
 <li>Description: The duration of an event or series which gets automatically derived, if a stard_date and end_date have been provided.</li>
 <li>Range: <a href="../Datetime/">Datetime</a></li>
 </ul>

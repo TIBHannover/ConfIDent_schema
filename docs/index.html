@@ -140,7 +140,7 @@
 </ul>
 </li>
 <li><a href="Country/">Country</a></li>
-<li><a href="Date/">Date</a></li>
+<li><a href="Date/">Date</a> - A container for the start and end date, the date status as well as the duration of a planned process.</li>
 <li><a href="Deadline/">Deadline</a> - A container for event deadlines.</li>
 <li><a href="EventFormatSpecification/">EventFormatSpecification</a> - An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathing is to be carried out by its participants in terms of achieving certain objectives, fulfiling certain conditions and performing certain actions. It thus concretizes the expectations of the contributers of an academic event. While the explicit details are often provied as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. "conference" or "workshop"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.</li>
 <li><a href="ExternalIdentifier/">ExternalIdentifier</a><ul>
@@ -174,7 +174,7 @@
 <li><a href="academicEvent__at_location/">AcademicEvent➞at_location</a> - The location of the academic event.</li>
 <li><a href="academicEvent__deadlines/">AcademicEvent➞deadlines</a> - A property to deadline_type is mandatory.</li>
 <li><a href="academicEvent__event_format/">AcademicEvent➞event_format</a> - The sociocultural event format which is specified by the organizers, e.g. conference. Possible values are defined in the EventFormat enum, which uses the named individuals defined in AEON.</li>
-<li><a href="academicEvent__event_mode/">➞event_mode</a> - The event mode describes whether the event is a physical, virtual or hybrid event.</li>
+<li><a href="academicEvent__event_mode/">AcademicEvent➞event_mode</a> - The event mode describes whether the event is a physical, virtual or hybrid event.</li>
 <li><a href="academicEvent__in_series/">AcademicEvent➞in_series</a> - The relation used to provide the series of which an AcademicEvent is a part.</li>
 <li><a href="academicEvent__ordinal/">AcademicEvent➞ordinal</a> - The ordnial number of an academic event within its series.</li>
 <li><a href="academicEvent__related_to/">AcademicEvent➞related_to</a></li>
@@ -182,15 +182,15 @@
 <li><a href="confIDentRecords__events/">ConfIDentRecords➞events</a> - An attribute that specifies a list of academic events within this container.</li>
 <li><a href="confIDentRecords__series/">ConfIDentRecords➞series</a> - An attribute that specifies a list of academic event series within this container.</li>
 <li><a href="contact/">contact</a> - The contact person of an academic event or event series.</li>
-<li><a href="contactPerson__email/">➞email</a> - The email address of the contact person.</li>
-<li><a href="contactPerson__telephone/">➞telephone</a> - The telephone number of the contact person.</li>
-<li><a href="date__duration/">➞duration</a> - The duration of an event or series which gets automatically derived, if a stard_date and end_date have been provided.</li>
-<li><a href="date__end_date/">➞end_date</a> - Similar to start_date but only for the end of an academic event or event series.</li>
-<li><a href="date__event_status/">➞event_status</a></li>
-<li><a href="date__start_date/">➞start_date</a> - The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.</li>
+<li><a href="contactPerson__email/">ContactPerson➞email</a> - The email address of the contact person.</li>
+<li><a href="contactPerson__telephone/">ContactPerson➞telephone</a> - The telephone number of the contact person.</li>
+<li><a href="date__duration/">Date➞duration</a> - The duration of an event or series which gets automatically derived, if a stard_date and end_date have been provided.</li>
+<li><a href="date__end_date/">Date➞end_date</a> - Similar to start_date but only for the end of an academic event or event series.</li>
+<li><a href="date__event_status/">Date➞event_status</a></li>
+<li><a href="date__start_date/">Date➞start_date</a> - The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.</li>
 <li><a href="dates/">dates</a> - A property refering to a date container that holds the start date, end date and status of a planned process.</li>
-<li><a href="deadline__deadline_date/">➞deadline_date</a></li>
-<li><a href="deadline__deadline_other/">➞deadline_other</a></li>
+<li><a href="deadline__deadline_date/">Deadline➞deadline_date</a> - The date of a deadline.</li>
+<li><a href="deadline__deadline_other/">Deadline➞deadline_other</a> - This property can be used to specify another kind of deadline, if this type of deadline is not within the allowed values of DeadlineType.</li>
 <li><a href="doi/">doi</a> - A digital object identifier (DOI) according to https://doi.org/.</li>
 <li><a href="dpbl_id/">dpbl_id</a></li>
 <li><a href="eventFormatSpecification__other_format/">EventFormatSpecification➞other_format</a></li>
@@ -363,5 +363,5 @@
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2022-03-21 07:29:45.981900+00:00
+Build Date UTC : 2022-03-21 07:58:58.595780+00:00
 -->

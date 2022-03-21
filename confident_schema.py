@@ -1,5 +1,5 @@
 # Auto generated from confident_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-21T08:30:06
+# Generation date: 2022-03-21T08:59:19
 # Schema: ConfIDent-schema
 #
 # id: https://github.com/StroemPhi/ConfIDent-schema/
@@ -398,6 +398,9 @@ class AcademicEvent(PlannedProcess):
 
 @dataclass
 class Date(YAMLRoot):
+    """
+    A container for the start and end date, the date status as well as the duration of a planned process.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = CONFIDENT.Date

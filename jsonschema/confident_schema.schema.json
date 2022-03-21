@@ -500,7 +500,7 @@
       },
       "Date": {
          "additionalProperties": false,
-         "description": "",
+         "description": "A container for the start and end date, the date status as well as the duration of a planned process.",
          "properties": {
             "duration": {
                "description": "The duration of an event or series which gets automatically derived, if a stard_date and end_date have been provided.",
