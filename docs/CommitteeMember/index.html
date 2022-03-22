@@ -92,18 +92,32 @@
             <div class="section">
               
                 <h1 id="class-committeemember">Class: CommitteeMember</h1>
+<p>A members of an academic event committee.</p>
 <p>URI: <a href="https://confident.org/CommitteeMember">confident:CommitteeMember</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Organizer],[ExternalIdentifier],[CommitteeMember&#124;id(i):uriorcurie;name(i):string%20%3F;aliases(i):string%20*]^-[CommitteeChair],[Organizer]^-[CommitteeMember],[CommitteeChair]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Organizer],[ExternalIdentifier],[CommitteeMember&#124;id(i):uriorcurie;name(i):string%20%3F;aliases(i):string%20*]^-[CommitteeChair],[Organizer]^-[CommitteeMember],[CommitteeChair]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Organizer],[ExternalIdentifier],[ContactPerson],[CommitteeMember&#124;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F]^-[CommitteeChair],[Organizer]^-[CommitteeMember],[CommitteeChair]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Organizer],[ExternalIdentifier],[ContactPerson],[CommitteeMember&#124;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F]^-[CommitteeChair],[Organizer]^-[CommitteeMember],[CommitteeChair]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../Organizer/">Organizer</a></li>
+<li>is_a: <a href="../Organizer/">Organizer</a> - An organizer of an academic event or event series.</li>
 </ul>
 <h2 id="children">Children</h2>
 <ul>
-<li><a href="../CommitteeChair/">CommitteeChair</a></li>
+<li><a href="../CommitteeChair/">CommitteeChair</a> - The head of an academic event committee.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <h2 id="attributes">Attributes</h2>
+<h3 id="inherited-from-organizer">Inherited from Organizer:</h3>
+<ul>
+<li><a href="../Contributor_type/">Contributor➞type</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide the information whether the contributor is an organization or person.</li>
+<li>Range: <a href="../ContributorType/">ContributorType</a></li>
+</ul>
+</li>
+<li><a href="../organizer__contact/">➞contact</a>  <sub>0..1</sub><ul>
+<li>Description: The contact person of an academic event or event series.</li>
+<li>Range: <a href="../ContactPerson/">ContactPerson</a></li>
+</ul>
+</li>
+</ul>
               
             </div>
           </div>

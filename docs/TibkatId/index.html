@@ -97,7 +97,7 @@
 <p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[ExternalIdentifier]^-[TibkatId&#124;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F;value(i):string%20%3F],[ExternalIdentifier]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[ExternalIdentifier]^-[TibkatId&#124;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F;value(i):string%20%3F],[ExternalIdentifier]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../ExternalIdentifier/">ExternalIdentifier</a></li>
+<li>is_a: <a href="../ExternalIdentifier/">ExternalIdentifier</a> - An identifer of an entity declared in another schema.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <h2 id="attributes">Attributes</h2>
@@ -108,8 +108,16 @@
 </ul>
 </li>
 <li><a href="../TibkatId_schema_base_uri/">TibkatId➞schema_base_uri</a>  <sub>0..1</sub><ul>
-<li>Description: The base URI of a schema.</li>
+<li>Description: The base URI of the schema that provides the context for the schema based value.</li>
 <li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="inherited-from-externalidentifier">Inherited from ExternalIdentifier:</h3>
+<ul>
+<li><a href="../ExternalIdentifier_value/">ExternalIdentifier➞value</a>  <sub>0..1</sub><ul>
+<li>Description: a property to provide the literal value of a schema based entity.</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>

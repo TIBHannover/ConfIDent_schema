@@ -94,14 +94,16 @@
                 <h1 id="class-wikicfpid">Class: WikiCfpId</h1>
 <p>The identifier of an academic event or series in WikiCFP.</p>
 <p>URI: <a href="https://confident.org/WikiCfpId">confident:WikiCfpId</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess]++-%20wikicfp_id%200..1&gt;[WikiCfpId&#124;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F;value(i):string%20%3F],[ExternalIdentifier]^-[WikiCfpId],[PlannedProcess],[ExternalIdentifier]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess]++-%20wikicfp_id%200..1&gt;[WikiCfpId&#124;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F;value(i):string%20%3F],[ExternalIdentifier]^-[WikiCfpId],[PlannedProcess],[ExternalIdentifier]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[AcademicEventSeries]++-%20wikicfp_id%200..1&gt;[WikiCfpId&#124;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F;value(i):string%20%3F],[AcademicEvent]++-%20wikicfp_id%200..1&gt;[WikiCfpId],[PlannedProcess]++-%20wikicfp_id%200..1&gt;[WikiCfpId],[ExternalIdentifier]^-[WikiCfpId],[PlannedProcess],[ExternalIdentifier],[AcademicEventSeries],[AcademicEvent]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[AcademicEventSeries]++-%20wikicfp_id%200..1&gt;[WikiCfpId&#124;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F;value(i):string%20%3F],[AcademicEvent]++-%20wikicfp_id%200..1&gt;[WikiCfpId],[PlannedProcess]++-%20wikicfp_id%200..1&gt;[WikiCfpId],[ExternalIdentifier]^-[WikiCfpId],[PlannedProcess],[ExternalIdentifier],[AcademicEventSeries],[AcademicEvent]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../ExternalIdentifier/">ExternalIdentifier</a></li>
+<li>is_a: <a href="../ExternalIdentifier/">ExternalIdentifier</a> - An identifer of an entity declared in another schema.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
-<li><strong>None</strong> <em><a href="../wikicfp_id/">wikicfp_id</a></em>  <sub>0..1</sub>  <strong><a href="./">WikiCfpId</a></strong></li>
+<li><strong><a href="../AcademicEventSeries/">AcademicEventSeries</a></strong> <em><a href="../AcademicEventSeries_wikicfp_id/">AcademicEventSeries➞wikicfp_id</a></em>  <sub>0..1</sub>  <strong><a href="./">WikiCfpId</a></strong></li>
+<li><strong><a href="../AcademicEvent/">AcademicEvent</a></strong> <em><a href="../AcademicEvent_wikicfp_id/">AcademicEvent➞wikicfp_id</a></em>  <sub>0..1</sub>  <strong><a href="./">WikiCfpId</a></strong></li>
+<li><strong><a href="../PlannedProcess/">PlannedProcess</a></strong> <em><a href="../wikicfp_id/">wikicfp_id</a></em>  <sub>0..1</sub>  <strong><a href="./">WikiCfpId</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
@@ -111,8 +113,16 @@
 </ul>
 </li>
 <li><a href="../WikiCfpId_schema_base_uri/">WikiCfpId➞schema_base_uri</a>  <sub>0..1</sub><ul>
-<li>Description: The base URI of a schema.</li>
+<li>Description: The base URI of the schema that provides the context for the schema based value.</li>
 <li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="inherited-from-externalidentifier">Inherited from ExternalIdentifier:</h3>
+<ul>
+<li><a href="../ExternalIdentifier_value/">ExternalIdentifier➞value</a>  <sub>0..1</sub><ul>
+<li>Description: a property to provide the literal value of a schema based entity.</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>

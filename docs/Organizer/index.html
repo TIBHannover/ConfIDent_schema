@@ -92,22 +92,41 @@
             <div class="section">
               
                 <h1 id="class-organizer">Class: Organizer</h1>
+<p>An organizer of an academic event or event series.</p>
 <p>URI: <a href="https://confident.org/Organizer">confident:Organizer</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess]++-%20organizers%200..*&gt;[Organizer&#124;id(i):uriorcurie;name(i):string%20%3F;aliases(i):string%20*],[Organizer]^-[ContactPerson],[Organizer]^-[CommitteeMember],[Contributor]^-[Organizer],[PlannedProcess],[ExternalIdentifier],[Contributor],[ContactPerson],[CommitteeMember]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess]++-%20organizers%200..*&gt;[Organizer&#124;id(i):uriorcurie;name(i):string%20%3F;aliases(i):string%20*],[Organizer]^-[ContactPerson],[Organizer]^-[CommitteeMember],[Contributor]^-[Organizer],[PlannedProcess],[ExternalIdentifier],[Contributor],[ContactPerson],[CommitteeMember]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess],[ContactPerson]&lt;contact%200..1-++[Organizer&#124;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F],[AcademicEventSeries]++-%20organizers%200..*&gt;[Organizer],[AcademicEvent]++-%20organizers%200..*&gt;[Organizer],[PlannedProcess]++-%20organizers%200..*&gt;[Organizer],[Organizer]^-[ContactPerson],[Organizer]^-[CommitteeMember],[Contributor]^-[Organizer],[ExternalIdentifier],[Contributor],[ContactPerson],[CommitteeMember],[AcademicEventSeries],[AcademicEvent]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess],[ContactPerson]&lt;contact%200..1-++[Organizer&#124;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F],[AcademicEventSeries]++-%20organizers%200..*&gt;[Organizer],[AcademicEvent]++-%20organizers%200..*&gt;[Organizer],[PlannedProcess]++-%20organizers%200..*&gt;[Organizer],[Organizer]^-[ContactPerson],[Organizer]^-[CommitteeMember],[Contributor]^-[Organizer],[ExternalIdentifier],[Contributor],[ContactPerson],[CommitteeMember],[AcademicEventSeries],[AcademicEvent]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../Contributor/">Contributor</a></li>
+<li>is_a: <a href="../Contributor/">Contributor</a> - A contributor is a person or organization that holds a contributor role which is being realized in a planned process.</li>
 </ul>
 <h2 id="children">Children</h2>
 <ul>
-<li><a href="../CommitteeMember/">CommitteeMember</a></li>
-<li><a href="../ContactPerson/">ContactPerson</a></li>
+<li><a href="../CommitteeMember/">CommitteeMember</a> - A members of an academic event committee.</li>
+<li><a href="../ContactPerson/">ContactPerson</a> - The contact person of an academic event or event series.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
-<li><strong>None</strong> <em><a href="../organizers/">organizers</a></em>  <sub>0..*</sub>  <strong><a href="./">Organizer</a></strong></li>
+<li><strong><a href="../AcademicEventSeries/">AcademicEventSeries</a></strong> <em><a href="../AcademicEventSeries_organizers/">AcademicEventSeries➞organizers</a></em>  <sub>0..*</sub>  <strong><a href="./">Organizer</a></strong></li>
+<li><strong><a href="../AcademicEvent/">AcademicEvent</a></strong> <em><a href="../AcademicEvent_organizers/">AcademicEvent➞organizers</a></em>  <sub>0..*</sub>  <strong><a href="./">Organizer</a></strong></li>
+<li><strong><a href="../PlannedProcess/">PlannedProcess</a></strong> <em><a href="../organizers/">organizers</a></em>  <sub>0..*</sub>  <strong><a href="./">Organizer</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../organizer__contact/">➞contact</a>  <sub>0..1</sub><ul>
+<li>Description: The contact person of an academic event or event series.</li>
+<li>Range: <a href="../ContactPerson/">ContactPerson</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="inherited-from-contributor">Inherited from Contributor:</h3>
+<ul>
+<li><a href="../Contributor_type/">Contributor➞type</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide the information whether the contributor is an organization or person.</li>
+<li>Range: <a href="../ContributorType/">ContributorType</a></li>
+</ul>
+</li>
+</ul>
               
             </div>
           </div>

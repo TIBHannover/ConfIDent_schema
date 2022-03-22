@@ -92,22 +92,39 @@
             <div class="section">
               
                 <h1 id="class-country">Class: Country</h1>
+<p>The country in which an academic event takes place.</p>
 <p>URI: <a href="https://confident.org/Country">confident:Country</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Location]-%20country%200..1&gt;[Country&#124;id:uriorcurie;name:string%20%3F],[Location]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Location]-%20country%200..1&gt;[Country&#124;id:uriorcurie;name:string%20%3F],[Location]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[Location],[ExternalIdentifier],[Location]-%20country%200..1&gt;[Country&#124;id:uriorcurie;name:string%20%3F],[Country]uses%20-.-&gt;[NamedThing]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[Location],[ExternalIdentifier],[Location]-%20country%200..1&gt;[Country&#124;id:uriorcurie;name:string%20%3F],[Country]uses%20-.-&gt;[NamedThing]" /></a></p>
+<h2 id="uses-mixin">Uses Mixin</h2>
+<ul>
+<li>mixin: <a href="../NamedThing/">NamedThing</a> - A mixin used to provide the attributes needed for the identification of named class.</li>
+</ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
-<li><strong>None</strong> <em><a href="../location__country/">➞country</a></em>  <sub>0..1</sub>  <strong><a href="./">Country</a></strong></li>
+<li><strong><a href="../Location/">Location</a></strong> <em><a href="../location__country/">Location➞country</a></em>  <sub>0..1</sub>  <strong><a href="./">Country</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
-<h3 id="own">Own</h3>
+<h3 id="mixed-in-from-namedthing">Mixed in from NamedThing:</h3>
 <ul>
 <li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Description: a property to provide the internal id of a schema entity</li>
+<li>Description: A property to provide an internal id of a schema entity in the ConfIDent plattform.</li>
 <li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
+</ul>
+<h3 id="mixed-in-from-namedthing_1">Mixed in from NamedThing:</h3>
+<ul>
 <li><a href="../name/">name</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide a name of a schema entity.</li>
 <li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mixed-in-from-namedthing_2">Mixed in from NamedThing:</h3>
+<ul>
+<li><a href="../external_id/">external_id</a>  <sub>0..*</sub><ul>
+<li>Description: A property to provide an external id of a schema entity.</li>
+<li>Range: <a href="../ExternalIdentifier/">ExternalIdentifier</a></li>
 </ul>
 </li>
 </ul>

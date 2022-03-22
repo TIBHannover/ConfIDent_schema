@@ -92,13 +92,22 @@
             <div class="section">
               
                 <h1 id="class-keynotespeaker">Class: KeynoteSpeaker</h1>
+<p>A 'keynote speaker' is a presenter that is an invited person - often a multiplier in his or her (research) field - responsible for delivering a keynote speech.</p>
 <p>URI: <a href="https://confident.org/KeynoteSpeaker">confident:KeynoteSpeaker</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Presenter],[Presenter]^-[KeynoteSpeaker&#124;id(i):uriorcurie;name(i):string%20%3F;aliases(i):string%20*],[ExternalIdentifier]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Presenter],[Presenter]^-[KeynoteSpeaker&#124;id(i):uriorcurie;name(i):string%20%3F;aliases(i):string%20*],[ExternalIdentifier]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Presenter],[Presenter]^-[KeynoteSpeaker&#124;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F],[ExternalIdentifier]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Presenter],[Presenter]^-[KeynoteSpeaker&#124;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F],[ExternalIdentifier]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../Presenter/">Presenter</a></li>
+<li>is_a: <a href="../Presenter/">Presenter</a> - A person that presents its work at an academic event.</li>
 </ul>
 <h2 id="attributes">Attributes</h2>
+<h3 id="inherited-from-presenter">Inherited from Presenter:</h3>
+<ul>
+<li><a href="../Contributor_type/">Contributor➞type</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide the information whether the contributor is an organization or person.</li>
+<li>Range: <a href="../ContributorType/">ContributorType</a></li>
+</ul>
+</li>
+</ul>
               
             </div>
           </div>

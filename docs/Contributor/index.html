@@ -92,51 +92,53 @@
             <div class="section">
               
                 <h1 id="class-contributor">Class: Contributor</h1>
+<p>A contributor is a person or organization that holds a contributor role which is being realized in a planned process.</p>
 <p>URI: <a href="https://confident.org/Contributor">confident:Contributor</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Sponsor],[Reviewer],[Presenter],[Organizer],[NamedThing],[Moderator],[ExternalIdentifier],[Contributor&#124;id:uriorcurie;name:string%20%3F;aliases:string%20*]uses%20-.-&gt;[NamedThing],[Contributor]^-[Sponsor],[Contributor]^-[Reviewer],[Contributor]^-[Presenter],[Contributor]^-[Organizer],[Contributor]^-[Moderator],[Contributor]^-[Attendee],[Attendee]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Sponsor],[Reviewer],[Presenter],[Organizer],[NamedThing],[Moderator],[ExternalIdentifier],[Contributor&#124;id:uriorcurie;name:string%20%3F;aliases:string%20*]uses%20-.-&gt;[NamedThing],[Contributor]^-[Sponsor],[Contributor]^-[Reviewer],[Contributor]^-[Presenter],[Contributor]^-[Organizer],[Contributor]^-[Moderator],[Contributor]^-[Attendee],[Attendee]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Sponsor],[Reviewer],[Presenter],[Organizer],[NamedThing],[Moderator],[ExternalIdentifier],[Contributor&#124;type:ContributorType%20%3F;id:uriorcurie;name:string%20%3F]uses%20-.-&gt;[NamedThing],[Contributor]^-[Sponsor],[Contributor]^-[Reviewer],[Contributor]^-[Presenter],[Contributor]^-[Organizer],[Contributor]^-[Moderator],[Contributor]^-[Attendee],[Attendee]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Sponsor],[Reviewer],[Presenter],[Organizer],[NamedThing],[Moderator],[ExternalIdentifier],[Contributor&#124;type:ContributorType%20%3F;id:uriorcurie;name:string%20%3F]uses%20-.-&gt;[NamedThing],[Contributor]^-[Sponsor],[Contributor]^-[Reviewer],[Contributor]^-[Presenter],[Contributor]^-[Organizer],[Contributor]^-[Moderator],[Contributor]^-[Attendee],[Attendee]" /></a></p>
 <h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
-<li>mixin: <a href="../NamedThing/">NamedThing</a></li>
+<li>mixin: <a href="../NamedThing/">NamedThing</a> - A mixin used to provide the attributes needed for the identification of named class.</li>
 </ul>
 <h2 id="children">Children</h2>
 <ul>
-<li><a href="../Attendee/">Attendee</a></li>
-<li><a href="../Moderator/">Moderator</a></li>
-<li><a href="../Organizer/">Organizer</a></li>
-<li><a href="../Presenter/">Presenter</a></li>
+<li><a href="../Attendee/">Attendee</a> - A attendee of an academic event.</li>
+<li><a href="../Moderator/">Moderator</a> - A moderator of an academic event.</li>
+<li><a href="../Organizer/">Organizer</a> - An organizer of an academic event or event series.</li>
+<li><a href="../Presenter/">Presenter</a> - A person that presents its work at an academic event.</li>
 <li><a href="../Reviewer/">Reviewer</a></li>
-<li><a href="../Sponsor/">Sponsor</a></li>
+<li><a href="../Sponsor/">Sponsor</a> - A sponsor of an academic event or event series.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../Contributor_type/">Contributor➞type</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide the information whether the contributor is an organization or person.</li>
+<li>Range: <a href="../ContributorType/">ContributorType</a></li>
+</ul>
+</li>
+</ul>
 <h3 id="mixed-in-from-namedthing">Mixed in from NamedThing:</h3>
 <ul>
 <li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Description: a property to provide the internal id of a schema entity</li>
+<li>Description: A property to provide an internal id of a schema entity in the ConfIDent plattform.</li>
 <li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="mixed-in-from-namedthing_1">Mixed in from NamedThing:</h3>
 <ul>
-<li><a href="../external_id/">external_id</a>  <sub>0..*</sub><ul>
-<li>Description: a property to provide the internal id of a schema entity</li>
-<li>Range: <a href="../ExternalIdentifier/">ExternalIdentifier</a></li>
+<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide a name of a schema entity.</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="mixed-in-from-namedthing_2">Mixed in from NamedThing:</h3>
 <ul>
-<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="mixed-in-from-namedthing_3">Mixed in from NamedThing:</h3>
-<ul>
-<li><a href="../aliases/">aliases</a>  <sub>0..*</sub><ul>
-<li>Description: A property to be used to provide alternative names as strings.</li>
-<li>Range: <a href="../String/">String</a></li>
+<li><a href="../external_id/">external_id</a>  <sub>0..*</sub><ul>
+<li>Description: A property to provide an external id of a schema entity.</li>
+<li>Range: <a href="../ExternalIdentifier/">ExternalIdentifier</a></li>
 </ul>
 </li>
 </ul>

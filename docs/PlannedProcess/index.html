@@ -94,41 +94,42 @@
                 <h1 id="class-plannedprocess">Class: PlannedProcess</h1>
 <p>Abstract base class for academic events and event series.</p>
 <p>URI: <a href="https://confident.org/PlannedProcess">confident:PlannedProcess</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[WikidataId],[WikiCfpId],[ProcessName],[ProcessName]&lt;name%200..1-++[PlannedProcess&#124;doi:uriorcurie%20%3F;landing_page:uriorcurie%20%3F;sponsors:string%20*;outputs:string%20*;topics:string%20*;website:uri%20%3F;summary:string%20%3F;id:uriorcurie;aliases:string%20*],[GndId]&lt;gnd_id%200..1-++[PlannedProcess],[DblpId]&lt;dpbl_id%200..1-++[PlannedProcess],[WikiCfpId]&lt;wikicfp_id%200..1-++[PlannedProcess],[WikidataId]&lt;wikidata_id%200..1-++[PlannedProcess],[Metric]&lt;metrics%200..*-++[PlannedProcess],[AcademicField]&lt;academic_fields%200..*-++[PlannedProcess],[ContactPerson]&lt;contact%200..1-++[PlannedProcess],[Organizer]&lt;organizers%200..*-++[PlannedProcess],[Date]&lt;dates%200..1-++[PlannedProcess],[PlannedProcess]uses%20-.-&gt;[NamedThing],[PlannedProcess]^-[AcademicEventSeries],[PlannedProcess]^-[AcademicEvent],[Organizer],[NamedThing],[Metric],[GndId],[ExternalIdentifier],[DblpId],[Date],[ContactPerson],[AcademicField],[AcademicEventSeries],[AcademicEvent]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[WikidataId],[WikiCfpId],[ProcessName],[ProcessName]&lt;name%200..1-++[PlannedProcess&#124;doi:uriorcurie%20%3F;landing_page:uriorcurie%20%3F;sponsors:string%20*;outputs:string%20*;topics:string%20*;website:uri%20%3F;summary:string%20%3F;id:uriorcurie;aliases:string%20*],[GndId]&lt;gnd_id%200..1-++[PlannedProcess],[DblpId]&lt;dpbl_id%200..1-++[PlannedProcess],[WikiCfpId]&lt;wikicfp_id%200..1-++[PlannedProcess],[WikidataId]&lt;wikidata_id%200..1-++[PlannedProcess],[Metric]&lt;metrics%200..*-++[PlannedProcess],[AcademicField]&lt;academic_fields%200..*-++[PlannedProcess],[ContactPerson]&lt;contact%200..1-++[PlannedProcess],[Organizer]&lt;organizers%200..*-++[PlannedProcess],[Date]&lt;dates%200..1-++[PlannedProcess],[PlannedProcess]uses%20-.-&gt;[NamedThing],[PlannedProcess]^-[AcademicEventSeries],[PlannedProcess]^-[AcademicEvent],[Organizer],[NamedThing],[Metric],[GndId],[ExternalIdentifier],[DblpId],[Date],[ContactPerson],[AcademicField],[AcademicEventSeries],[AcademicEvent]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[WikidataId],[WikiCfpId],[Sponsor],[ProcessName],[Context]&lt;context_info%200..1-++[PlannedProcess&#124;type:string%20%3F;landing_page:uri%20%3F;website:uri%20%3F;publications:string%20*;topics:string%20*;id:uriorcurie;name:string%20%3F],[Metric]&lt;metrics%200..*-++[PlannedProcess],[GndId]&lt;gnd_id%200..1-++[PlannedProcess],[DblpId]&lt;dpbl_id%200..1-++[PlannedProcess],[WikiCfpId]&lt;wikicfp_id%200..1-++[PlannedProcess],[WikidataId]&lt;wikidata_id%200..1-++[PlannedProcess],[Sponsor]&lt;sponsors%200..*-++[PlannedProcess],[AcademicField]&lt;academic_fields%200..*-++[PlannedProcess],[ContactPerson]&lt;contact%200..1-++[PlannedProcess],[Organizer]&lt;organizers%200..*-++[PlannedProcess],[DigitalObjectId]&lt;doi%200..1-++[PlannedProcess],[ProcessName]&lt;process_name%200..1-++[PlannedProcess],[PlannedProcess]uses%20-.-&gt;[NamedThing],[PlannedProcess]^-[AcademicEventSeries],[PlannedProcess]^-[AcademicEvent],[Organizer],[NamedThing],[Metric],[GndId],[ExternalIdentifier],[DigitalObjectId],[DblpId],[Context],[ContactPerson],[AcademicField],[AcademicEventSeries],[AcademicEvent]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[WikidataId],[WikiCfpId],[Sponsor],[ProcessName],[Context]&lt;context_info%200..1-++[PlannedProcess&#124;type:string%20%3F;landing_page:uri%20%3F;website:uri%20%3F;publications:string%20*;topics:string%20*;id:uriorcurie;name:string%20%3F],[Metric]&lt;metrics%200..*-++[PlannedProcess],[GndId]&lt;gnd_id%200..1-++[PlannedProcess],[DblpId]&lt;dpbl_id%200..1-++[PlannedProcess],[WikiCfpId]&lt;wikicfp_id%200..1-++[PlannedProcess],[WikidataId]&lt;wikidata_id%200..1-++[PlannedProcess],[Sponsor]&lt;sponsors%200..*-++[PlannedProcess],[AcademicField]&lt;academic_fields%200..*-++[PlannedProcess],[ContactPerson]&lt;contact%200..1-++[PlannedProcess],[Organizer]&lt;organizers%200..*-++[PlannedProcess],[DigitalObjectId]&lt;doi%200..1-++[PlannedProcess],[ProcessName]&lt;process_name%200..1-++[PlannedProcess],[PlannedProcess]uses%20-.-&gt;[NamedThing],[PlannedProcess]^-[AcademicEventSeries],[PlannedProcess]^-[AcademicEvent],[Organizer],[NamedThing],[Metric],[GndId],[ExternalIdentifier],[DigitalObjectId],[DblpId],[Context],[ContactPerson],[AcademicField],[AcademicEventSeries],[AcademicEvent]" /></a></p>
 <h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
-<li>mixin: <a href="../NamedThing/">NamedThing</a></li>
+<li>mixin: <a href="../NamedThing/">NamedThing</a> - A mixin used to provide the attributes needed for the identification of named class.</li>
 </ul>
 <h2 id="children">Children</h2>
 <ul>
-<li><a href="../AcademicEvent/">AcademicEvent</a> - An academic event is part of the established instruments of science communication as a format for conveying the latest scientific outputs. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these outputs. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function.</li>
+<li><a href="../AcademicEvent/">AcademicEvent</a> - An academic event is part of the established instruments of science communication as a format for conveying the latest scientific publications. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these publications. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function.</li>
 <li><a href="../AcademicEventSeries/">AcademicEventSeries</a> - An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
+<li><a href="../process_name/">process_name</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide a name of the academic event or series, which itself if further differentiated (e.g. official name, acronym, etc).</li>
+<li>Range: <a href="../ProcessName/">ProcessName</a></li>
+</ul>
+</li>
+<li><a href="../type/">type</a>  <sub>0..1</sub><ul>
+<li>Description: An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.</li>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
 <li><a href="../doi/">doi</a>  <sub>0..1</sub><ul>
-<li>Description: A digital object identifier (DOI) according to https://doi.org/.</li>
-<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
+<li>Description: A property to provide a digital object identifier (DOI) according to https://doi.org/.</li>
+<li>Range: <a href="../DigitalObjectId/">DigitalObjectId</a></li>
 </ul>
 </li>
 <li><a href="../landing_page/">landing_page</a>  <sub>0..1</sub><ul>
-<li>Description: The website to which a persistent identifier is linking and which contains all the metadata about an academic event or series.</li>
-<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
-</ul>
-</li>
-<li><a href="../landing_page/">landing_page</a>  <sub>0..1</sub><ul>
-<li>Description: The website to which a persistent identifier is linking and which contains all the metadata about an academic event or series.</li>
-<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
-</ul>
-</li>
-<li><a href="../dates/">dates</a>  <sub>0..1</sub><ul>
-<li>Description: A property refering to a date container that holds the start date, end date and status of a planned process.</li>
-<li>Range: <a href="../Date/">Date</a></li>
+<li>Description: A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.</li>
+<li>Range: <a href="../Uri/">Uri</a></li>
 </ul>
 </li>
 <li><a href="../organizers/">organizers</a>  <sub>0..*</sub><ul>
+<li>Description: A property to provide the organizers of an academic event or series.</li>
 <li>Range: <a href="../Organizer/">Organizer</a></li>
 </ul>
 </li>
@@ -137,45 +138,37 @@
 <li>Range: <a href="../ContactPerson/">ContactPerson</a></li>
 </ul>
 </li>
-<li><a href="../sponsors/">sponsors</a>  <sub>0..*</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
+<li><a href="../academic_fields/">academic_fields</a>  <sub>0..*</sub><ul>
+<li>Description: A property to describe the scientific subject(s) of a planned process, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [value] and [schema_name] are mandatory.</li>
+<li>Range: <a href="../AcademicField/">AcademicField</a></li>
 </ul>
 </li>
-<li><a href="../outputs/">outputs</a>  <sub>0..*</sub><ul>
+<li><a href="../website/">website</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide the URL the official website of a planned process.</li>
+<li>Range: <a href="../Uri/">Uri</a></li>
+</ul>
+</li>
+<li><a href="../sponsors/">sponsors</a>  <sub>0..*</sub><ul>
+<li>Range: <a href="../Sponsor/">Sponsor</a></li>
+</ul>
+</li>
+<li><a href="../publications/">publications</a>  <sub>0..*</sub><ul>
 <li>Description: The published works that are related to the academic event or event series, such as proceedings and video recordings of talks.</li>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
-<li><a href="../topics/">topics</a>  <sub>0..*</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../academic_fields/">academic_fields</a>  <sub>0..*</sub><ul>
-<li>Description: A property used to describe the scientific subject of the planned process according to some controlled vocabulary or thesaurus. Requires the as subproperties the name and if possible the URL of the identifiying scheme.</li>
-<li>Range: <a href="../AcademicField/">AcademicField</a></li>
-</ul>
-</li>
-<li><a href="../metrics/">metrics</a>  <sub>0..*</sub><ul>
-<li>Range: <a href="../Metric/">Metric</a></li>
-</ul>
-</li>
-<li><a href="../website/">website</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../Uri/">Uri</a></li>
-</ul>
-</li>
-<li><a href="../summary/">summary</a>  <sub>0..1</sub><ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
 <li><a href="../wikidata_id/">wikidata_id</a>  <sub>0..1</sub><ul>
+<li>Description: A property to link an entity with its Wikidata identifier.</li>
 <li>Range: <a href="../WikidataId/">WikidataId</a></li>
 </ul>
 </li>
 <li><a href="../wikicfp_id/">wikicfp_id</a>  <sub>0..1</sub><ul>
+<li>Description: A property to link a planned process with its WikiCFP identifier.</li>
 <li>Range: <a href="../WikiCfpId/">WikiCfpId</a></li>
 </ul>
 </li>
 <li><a href="../dpbl_id/">dpbl_id</a>  <sub>0..1</sub><ul>
+<li>Description: A property to link the a planned process with its DBLP identifier.</li>
 <li>Range: <a href="../DblpId/">DblpId</a></li>
 </ul>
 </li>
@@ -183,33 +176,43 @@
 <li>Range: <a href="../GndId/">GndId</a></li>
 </ul>
 </li>
-<li><a href="../PlannedProcess_name/">PlannedProcess➞name</a>  <sub>0..1</sub><ul>
-<li>Description: This property is used to provide a name of the academic event or series, which itself has further properties to specify its type (e.g. official name, acronym, etc).</li>
-<li>Range: <a href="../ProcessName/">ProcessName</a></li>
+<li><a href="../topics/">topics</a>  <sub>0..*</sub><ul>
+<li>Description: A property to provide the theme and topics of an academic event or event series as free keywords, phrases or text.</li>
+<li>Range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../metrics/">metrics</a>  <sub>0..*</sub><ul>
+<li>Description: A property to provide metrics of an academic event or series.</li>
+<li>Range: <a href="../Metric/">Metric</a></li>
+</ul>
+</li>
+<li><a href="../context_info/">context_info</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide extra information, such as call of papers event description.</li>
+<li>Range: <a href="../Context/">Context</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="mixed-in-from-namedthing">Mixed in from NamedThing:</h3>
 <ul>
 <li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Description: a property to provide the internal id of a schema entity</li>
+<li>Description: A property to provide an internal id of a schema entity in the ConfIDent plattform.</li>
 <li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="mixed-in-from-namedthing_1">Mixed in from NamedThing:</h3>
 <ul>
-<li><a href="../external_id/">external_id</a>  <sub>0..*</sub><ul>
-<li>Description: a property to provide the internal id of a schema entity</li>
-<li>Range: <a href="../ExternalIdentifier/">ExternalIdentifier</a></li>
+<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide a name of a schema entity.</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="mixed-in-from-namedthing_2">Mixed in from NamedThing:</h3>
 <ul>
-<li><a href="../aliases/">aliases</a>  <sub>0..*</sub><ul>
-<li>Description: A property to be used to provide alternative names as strings.</li>
-<li>Range: <a href="../String/">String</a></li>
+<li><a href="../external_id/">external_id</a>  <sub>0..*</sub><ul>
+<li>Description: A property to provide an external id of a schema entity.</li>
+<li>Range: <a href="../ExternalIdentifier/">ExternalIdentifier</a></li>
 </ul>
 </li>
 </ul>

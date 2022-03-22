@@ -92,13 +92,22 @@
             <div class="section">
               
                 <h1 id="class-attendee">Class: Attendee</h1>
+<p>A attendee of an academic event.</p>
 <p>URI: <a href="https://confident.org/Attendee">confident:Attendee</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[ExternalIdentifier],[Contributor],[Contributor]^-[Attendee&#124;id(i):uriorcurie;name(i):string%20%3F;aliases(i):string%20*]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[ExternalIdentifier],[Contributor],[Contributor]^-[Attendee&#124;id(i):uriorcurie;name(i):string%20%3F;aliases(i):string%20*]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[ExternalIdentifier],[Contributor],[Contributor]^-[Attendee&#124;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[ExternalIdentifier],[Contributor],[Contributor]^-[Attendee&#124;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../Contributor/">Contributor</a></li>
+<li>is_a: <a href="../Contributor/">Contributor</a> - A contributor is a person or organization that holds a contributor role which is being realized in a planned process.</li>
 </ul>
 <h2 id="attributes">Attributes</h2>
+<h3 id="inherited-from-contributor">Inherited from Contributor:</h3>
+<ul>
+<li><a href="../Contributor_type/">Contributor➞type</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide the information whether the contributor is an organization or person.</li>
+<li>Range: <a href="../ContributorType/">ContributorType</a></li>
+</ul>
+</li>
+</ul>
               
             </div>
           </div>

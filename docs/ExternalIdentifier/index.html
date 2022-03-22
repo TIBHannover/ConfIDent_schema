@@ -92,15 +92,17 @@
             <div class="section">
               
                 <h1 id="class-externalidentifier">Class: ExternalIdentifier</h1>
+<p>An identifer of an entity declared in another schema.</p>
 <p>URI: <a href="https://confident.org/ExternalIdentifier">confident:ExternalIdentifier</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[WikidataId],[WikiCfpId],[TibkatId],[SchemaBasedThing],[GndId],[NamedThing]++-%20external_id%200..*&gt;[ExternalIdentifier&#124;value:string%20%3F;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F],[ExternalIdentifier]uses%20-.-&gt;[SchemaBasedThing],[ExternalIdentifier]^-[WikidataId],[ExternalIdentifier]^-[WikiCfpId],[ExternalIdentifier]^-[TibkatId],[ExternalIdentifier]^-[GndId],[ExternalIdentifier]^-[DblpId],[NamedThing],[DblpId]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[WikidataId],[WikiCfpId],[TibkatId],[SchemaBasedThing],[GndId],[NamedThing]++-%20external_id%200..*&gt;[ExternalIdentifier&#124;value:string%20%3F;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F],[ExternalIdentifier]uses%20-.-&gt;[SchemaBasedThing],[ExternalIdentifier]^-[WikidataId],[ExternalIdentifier]^-[WikiCfpId],[ExternalIdentifier]^-[TibkatId],[ExternalIdentifier]^-[GndId],[ExternalIdentifier]^-[DblpId],[NamedThing],[DblpId]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[WikidataId],[WikiCfpId],[TibkatId],[SchemaBasedThing],[GndId],[NamedThing]++-%20external_id%200..*&gt;[ExternalIdentifier&#124;value:string%20%3F;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F],[ExternalIdentifier]uses%20-.-&gt;[SchemaBasedThing],[ExternalIdentifier]^-[WikidataId],[ExternalIdentifier]^-[WikiCfpId],[ExternalIdentifier]^-[TibkatId],[ExternalIdentifier]^-[GndId],[ExternalIdentifier]^-[DigitalObjectId],[ExternalIdentifier]^-[DblpId],[NamedThing],[DigitalObjectId],[DblpId]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[WikidataId],[WikiCfpId],[TibkatId],[SchemaBasedThing],[GndId],[NamedThing]++-%20external_id%200..*&gt;[ExternalIdentifier&#124;value:string%20%3F;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F],[ExternalIdentifier]uses%20-.-&gt;[SchemaBasedThing],[ExternalIdentifier]^-[WikidataId],[ExternalIdentifier]^-[WikiCfpId],[ExternalIdentifier]^-[TibkatId],[ExternalIdentifier]^-[GndId],[ExternalIdentifier]^-[DigitalObjectId],[ExternalIdentifier]^-[DblpId],[NamedThing],[DigitalObjectId],[DblpId]" /></a></p>
 <h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
-<li>mixin: <a href="../SchemaBasedThing/">SchemaBasedThing</a></li>
+<li>mixin: <a href="../SchemaBasedThing/">SchemaBasedThing</a> - A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing.</li>
 </ul>
 <h2 id="children">Children</h2>
 <ul>
 <li><a href="../DblpId/">DblpId</a> - The identifier of an academic event or series in dblp.</li>
+<li><a href="../DigitalObjectId/">DigitalObjectId</a> - A centrally registered identifier symbol used to uniquely identify digital objects given by International DOI Foundation.</li>
 <li><a href="../GndId/">GndId</a> - The identifier of a thing (item) in the German National authority file.</li>
 <li><a href="../TibkatId/">TibkatId</a> - The identifier of a publication in the TIB catalog.</li>
 <li><a href="../WikiCfpId/">WikiCfpId</a> - The identifier of an academic event or series in WikiCFP.</li>
@@ -111,24 +113,25 @@
 <li><strong>None</strong> <em><a href="../external_id/">external_id</a></em>  <sub>0..*</sub>  <strong><a href="./">ExternalIdentifier</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
-<h3 id="mixed-in-from-schemabasedthing">Mixed in from SchemaBasedThing:</h3>
+<h3 id="own">Own</h3>
 <ul>
-<li><a href="../value/">value</a>  <sub>0..1</sub><ul>
+<li><a href="../ExternalIdentifier_value/">ExternalIdentifier➞value</a>  <sub>0..1</sub><ul>
+<li>Description: a property to provide the literal value of a schema based entity.</li>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="mixed-in-from-schemabasedthing_1">Mixed in from SchemaBasedThing:</h3>
+<h3 id="mixed-in-from-schemabasedthing">Mixed in from SchemaBasedThing:</h3>
 <ul>
 <li><a href="../schema_name/">schema_name</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="mixed-in-from-schemabasedthing_2">Mixed in from SchemaBasedThing:</h3>
+<h3 id="mixed-in-from-schemabasedthing_1">Mixed in from SchemaBasedThing:</h3>
 <ul>
 <li><a href="../schema_base_uri/">schema_base_uri</a>  <sub>0..1</sub><ul>
-<li>Description: The base URI of a schema.</li>
+<li>Description: The base URI of the schema that provides the context for the schema based value.</li>
 <li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>

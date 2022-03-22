@@ -94,13 +94,15 @@
                 <h1 id="class-wikidataid">Class: WikidataId</h1>
 <p>The identifier of a thing (item) in Wikidata.</p>
 <p>URI: <a href="https://confident.org/WikidataId">confident:WikidataId</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess]++-%20wikidata_id%200..1&gt;[WikidataId&#124;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F;value(i):string%20%3F],[ExternalIdentifier]^-[WikidataId],[PlannedProcess],[ExternalIdentifier]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess]++-%20wikidata_id%200..1&gt;[WikidataId&#124;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F;value(i):string%20%3F],[ExternalIdentifier]^-[WikidataId],[PlannedProcess],[ExternalIdentifier]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[AcademicEventSeries]++-%20wikidata_id%200..1&gt;[WikidataId&#124;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F;value(i):string%20%3F],[AcademicEvent]++-%20wikidata_id%200..1&gt;[WikidataId],[PlannedProcess]++-%20wikidata_id%200..1&gt;[WikidataId],[ExternalIdentifier]^-[WikidataId],[PlannedProcess],[ExternalIdentifier],[AcademicEventSeries],[AcademicEvent]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[AcademicEventSeries]++-%20wikidata_id%200..1&gt;[WikidataId&#124;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F;value(i):string%20%3F],[AcademicEvent]++-%20wikidata_id%200..1&gt;[WikidataId],[PlannedProcess]++-%20wikidata_id%200..1&gt;[WikidataId],[ExternalIdentifier]^-[WikidataId],[PlannedProcess],[ExternalIdentifier],[AcademicEventSeries],[AcademicEvent]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../ExternalIdentifier/">ExternalIdentifier</a></li>
+<li>is_a: <a href="../ExternalIdentifier/">ExternalIdentifier</a> - An identifer of an entity declared in another schema.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
+<li><strong><a href="../AcademicEventSeries/">AcademicEventSeries</a></strong> <em><a href="../AcademicEventSeries_wikidata_id/">AcademicEventSeries➞wikidata_id</a></em>  <sub>0..1</sub>  <strong><a href="./">WikidataId</a></strong></li>
+<li><strong><a href="../AcademicEvent/">AcademicEvent</a></strong> <em><a href="../AcademicEvent_wikidata_id/">AcademicEvent➞wikidata_id</a></em>  <sub>0..1</sub>  <strong><a href="./">WikidataId</a></strong></li>
 <li><strong>None</strong> <em><a href="../wikidata_id/">wikidata_id</a></em>  <sub>0..1</sub>  <strong><a href="./">WikidataId</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
@@ -111,8 +113,16 @@
 </ul>
 </li>
 <li><a href="../WikidataId_schema_base_uri/">WikidataId➞schema_base_uri</a>  <sub>0..1</sub><ul>
-<li>Description: The base URI of a schema.</li>
+<li>Description: The base URI of the schema that provides the context for the schema based value.</li>
 <li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="inherited-from-externalidentifier">Inherited from ExternalIdentifier:</h3>
+<ul>
+<li><a href="../ExternalIdentifier_value/">ExternalIdentifier➞value</a>  <sub>0..1</sub><ul>
+<li>Description: a property to provide the literal value of a schema based entity.</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>
@@ -129,7 +139,7 @@
 <tr>
 <td><strong>Mappings:</strong></td>
 <td></td>
-<td>https://www.wikidata.org/wiki/Q43649390</td>
+<td>wikidata:Q43649390</td>
 </tr>
 </tbody>
 </table>

@@ -92,34 +92,36 @@
             <div class="section">
               
                 <h1 id="class-namedthing">Class: NamedThing</h1>
+<p>A mixin used to provide the attributes needed for the identification of named class.</p>
 <p>URI: <a href="https://confident.org/NamedThing">confident:NamedThing</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[ExternalIdentifier]&lt;external_id%200..*-++[NamedThing&#124;id:uriorcurie;name:string%20%3F;aliases:string%20*],[PlannedProcess]uses%20-.-&gt;[NamedThing],[Contributor]uses%20-.-&gt;[NamedThing],[PlannedProcess],[ExternalIdentifier],[Contributor]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[ExternalIdentifier]&lt;external_id%200..*-++[NamedThing&#124;id:uriorcurie;name:string%20%3F;aliases:string%20*],[PlannedProcess]uses%20-.-&gt;[NamedThing],[Contributor]uses%20-.-&gt;[NamedThing],[PlannedProcess],[ExternalIdentifier],[Contributor]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[ExternalIdentifier]&lt;external_id%200..*-++[NamedThing&#124;id:uriorcurie;name:string%20%3F],[Venue]uses%20-.-&gt;[NamedThing],[Region]uses%20-.-&gt;[NamedThing],[Publication]uses%20-.-&gt;[NamedThing],[PlannedProcess]uses%20-.-&gt;[NamedThing],[Country]uses%20-.-&gt;[NamedThing],[Contributor]uses%20-.-&gt;[NamedThing],[City]uses%20-.-&gt;[NamedThing],[Venue],[Region],[Publication],[PlannedProcess],[ExternalIdentifier],[Country],[Contributor],[City]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[ExternalIdentifier]&lt;external_id%200..*-++[NamedThing&#124;id:uriorcurie;name:string%20%3F],[Venue]uses%20-.-&gt;[NamedThing],[Region]uses%20-.-&gt;[NamedThing],[Publication]uses%20-.-&gt;[NamedThing],[PlannedProcess]uses%20-.-&gt;[NamedThing],[Country]uses%20-.-&gt;[NamedThing],[Contributor]uses%20-.-&gt;[NamedThing],[City]uses%20-.-&gt;[NamedThing],[Venue],[Region],[Publication],[PlannedProcess],[ExternalIdentifier],[Country],[Contributor],[City]" /></a></p>
 <h2 id="mixin-for">Mixin for</h2>
 <ul>
-<li><a href="../Contributor/">Contributor</a> (mixin) </li>
+<li><a href="../City/">City</a> (mixin)  - The city in which an academic event takes place.</li>
+<li><a href="../Contributor/">Contributor</a> (mixin)  - A contributor is a person or organization that holds a contributor role which is being realized in a planned process.</li>
+<li><a href="../Country/">Country</a> (mixin)  - The country in which an academic event takes place.</li>
 <li><a href="../PlannedProcess/">PlannedProcess</a> (mixin)  - Abstract base class for academic events and event series.</li>
+<li><a href="../Publication/">Publication</a> (mixin)  - A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.</li>
+<li><a href="../Region/">Region</a> (mixin)  - The region in which an academic event takes place. For non USA events this might often be negligible.</li>
+<li><a href="../Venue/">Venue</a> (mixin)  - The venue at which an academic event takes place.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
 <li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Description: a property to provide the internal id of a schema entity</li>
+<li>Description: A property to provide an internal id of a schema entity in the ConfIDent plattform.</li>
 <li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
-<li><a href="../external_id/">external_id</a>  <sub>0..*</sub><ul>
-<li>Description: a property to provide the internal id of a schema entity</li>
-<li>Range: <a href="../ExternalIdentifier/">ExternalIdentifier</a></li>
-</ul>
-</li>
 <li><a href="../name/">name</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide a name of a schema entity.</li>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
-<li><a href="../aliases/">aliases</a>  <sub>0..*</sub><ul>
-<li>Description: A property to be used to provide alternative names as strings.</li>
-<li>Range: <a href="../String/">String</a></li>
+<li><a href="../external_id/">external_id</a>  <sub>0..*</sub><ul>
+<li>Description: A property to provide an external id of a schema entity.</li>
+<li>Range: <a href="../ExternalIdentifier/">ExternalIdentifier</a></li>
 </ul>
 </li>
 </ul>

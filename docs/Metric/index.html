@@ -92,38 +92,46 @@
             <div class="section">
               
                 <h1 id="class-metric">Class: Metric</h1>
+<p>A container for statistical information about a planned process.</p>
 <p>URI: <a href="https://confident.org/Metric">confident:Metric</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess]++-%20metrics%200..*&gt;[Metric&#124;int_value:integer%20%3F;str_value:string%20%3F;rate_value:float%20%3F;truth_value:boolean%20%3F;other_metric:string%20%3F;type:MetricType%20%3F],[PlannedProcess]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess]++-%20metrics%200..*&gt;[Metric&#124;int_value:integer%20%3F;str_value:string%20%3F;rate_value:float%20%3F;truth_value:boolean%20%3F;other_metric:string%20%3F;type:MetricType%20%3F],[PlannedProcess]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess],[AcademicEventSeries]++-%20metrics%200..*&gt;[Metric&#124;type:MetricType%20%3F;int_value:integer%20%3F;str_value:string%20%3F;rate_value:float%20%3F;truth_value:boolean%20%3F;description:string%20%3F],[AcademicEvent]++-%20metrics%200..*&gt;[Metric],[PlannedProcess]++-%20metrics%200..*&gt;[Metric],[AcademicEventSeries],[AcademicEvent]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess],[AcademicEventSeries]++-%20metrics%200..*&gt;[Metric&#124;type:MetricType%20%3F;int_value:integer%20%3F;str_value:string%20%3F;rate_value:float%20%3F;truth_value:boolean%20%3F;description:string%20%3F],[AcademicEvent]++-%20metrics%200..*&gt;[Metric],[PlannedProcess]++-%20metrics%200..*&gt;[Metric],[AcademicEventSeries],[AcademicEvent]" /></a></p>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
-<li><strong>None</strong> <em><a href="../metrics/">metrics</a></em>  <sub>0..*</sub>  <strong><a href="./">Metric</a></strong></li>
+<li><strong><a href="../AcademicEventSeries/">AcademicEventSeries</a></strong> <em><a href="../AcademicEventSeries_metrics/">AcademicEventSeries➞metrics</a></em>  <sub>0..*</sub>  <strong><a href="./">Metric</a></strong></li>
+<li><strong><a href="../AcademicEvent/">AcademicEvent</a></strong> <em><a href="../AcademicEvent_metrics/">AcademicEvent➞metrics</a></em>  <sub>0..*</sub>  <strong><a href="./">Metric</a></strong></li>
+<li><strong><a href="../PlannedProcess/">PlannedProcess</a></strong> <em><a href="../metrics/">metrics</a></em>  <sub>0..*</sub>  <strong><a href="./">Metric</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../metric__int_value/">➞int_value</a>  <sub>0..1</sub><ul>
+<li><a href="../Metric_type/">Metric➞type</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide the type of relation between academic events.</li>
+<li>Range: <a href="../MetricType/">MetricType</a></li>
+</ul>
+</li>
+<li><a href="../metric__int_value/">Metric➞int_value</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide an integer value for a metric.</li>
 <li>Range: <a href="../Integer/">Integer</a></li>
 </ul>
 </li>
-<li><a href="../metric__str_value/">➞str_value</a>  <sub>0..1</sub><ul>
+<li><a href="../metric__str_value/">Metric➞str_value</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide a string value for a metric.</li>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
-<li><a href="../metric__rate_value/">➞rate_value</a>  <sub>0..1</sub><ul>
+<li><a href="../metric__rate_value/">Metric➞rate_value</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide a rate value as float for a metric.</li>
 <li>Range: <a href="../Float/">Float</a></li>
 </ul>
 </li>
-<li><a href="../metric__truth_value/">➞truth_value</a>  <sub>0..1</sub><ul>
+<li><a href="../metric__truth_value/">Metric➞truth_value</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide a truth value for a metric.</li>
 <li>Range: <a href="../Boolean/">Boolean</a></li>
 </ul>
 </li>
-<li><a href="../metric__other_metric/">➞other_metric</a>  <sub>0..1</sub><ul>
+<li><a href="../metric__description/">Metric➞description</a>  <sub>0..1</sub><ul>
+<li>Description: A property to provide a description of a metric.</li>
 <li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../Metric_type/">Metric➞type</a>  <sub>0..1</sub><ul>
-<li>Description: an abstract property used to specify the type of a thing</li>
-<li>Range: <a href="../MetricType/">MetricType</a></li>
 </ul>
 </li>
 </ul>

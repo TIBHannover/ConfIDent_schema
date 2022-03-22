@@ -92,6 +92,7 @@
             <div class="section">
               
                 <h1 id="class-location">Class: Location</h1>
+<p>A container for the information about the location in which an academic event takes place.</p>
 <p>URI: <a href="https://confident.org/Location">confident:Location</a></p>
 <p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Venue],[Region],[Venue]&lt;venue%200..1-%20[Location&#124;lattitude:float%20%3F;longitude:float%20%3F;meeting_url:uriorcurie%20%3F],[Region]&lt;region%200..1-%20[Location],[Country]&lt;country%200..1-%20[Location],[City]&lt;city%200..1-%20[Location],[AcademicEvent]++-%20at_location%200..1&gt;[Location],[Country],[City],[AcademicEvent]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Venue],[Region],[Venue]&lt;venue%200..1-%20[Location&#124;lattitude:float%20%3F;longitude:float%20%3F;meeting_url:uriorcurie%20%3F],[Region]&lt;region%200..1-%20[Location],[Country]&lt;country%200..1-%20[Location],[City]&lt;city%200..1-%20[Location],[AcademicEvent]++-%20at_location%200..1&gt;[Location],[Country],[City],[AcademicEvent]" /></a></p>
 <h2 id="referenced-by-class">Referenced by Class</h2>
@@ -101,31 +102,38 @@
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../location__city/">➞city</a>  <sub>0..1</sub><ul>
+<li><a href="../location__city/">Location➞city</a>  <sub>0..1</sub><ul>
+<li>Description: The property to specify the <a href="City">City</a> of an academic event location.</li>
 <li>Range: <a href="../City/">City</a></li>
 </ul>
 </li>
-<li><a href="../location__country/">➞country</a>  <sub>0..1</sub><ul>
+<li><a href="../location__country/">Location➞country</a>  <sub>0..1</sub><ul>
+<li>Description: The property to specify the <a href="Country">Country</a> of an academic event location.</li>
 <li>Range: <a href="../Country/">Country</a></li>
 </ul>
 </li>
-<li><a href="../location__region/">➞region</a>  <sub>0..1</sub><ul>
+<li><a href="../location__region/">Location➞region</a>  <sub>0..1</sub><ul>
+<li>Description: The property to specify the <a href="Region">Region</a> of an academic event location.</li>
 <li>Range: <a href="../Region/">Region</a></li>
 </ul>
 </li>
-<li><a href="../location__venue/">➞venue</a>  <sub>0..1</sub><ul>
+<li><a href="../location__venue/">Location➞venue</a>  <sub>0..1</sub><ul>
+<li>Description: The property to specify the <a href="Venue">Venue</a> of an academic event location.</li>
 <li>Range: <a href="../Venue/">Venue</a></li>
 </ul>
 </li>
-<li><a href="../location__lattitude/">➞lattitude</a>  <sub>0..1</sub><ul>
+<li><a href="../location__lattitude/">Location➞lattitude</a>  <sub>0..1</sub><ul>
+<li>Description: The property to specify the lattitude of an academic event location.</li>
 <li>Range: <a href="../Float/">Float</a></li>
 </ul>
 </li>
-<li><a href="../location__longitude/">➞longitude</a>  <sub>0..1</sub><ul>
+<li><a href="../location__longitude/">Location➞longitude</a>  <sub>0..1</sub><ul>
+<li>Description: The property to specify the longitude of an academic event location.</li>
 <li>Range: <a href="../Float/">Float</a></li>
 </ul>
 </li>
-<li><a href="../location__meeting_url/">➞meeting_url</a>  <sub>0..1</sub><ul>
+<li><a href="../location__meeting_url/">Location➞meeting_url</a>  <sub>0..1</sub><ul>
+<li>Description: The property to specify the URL under which a one can participate virtually in an academic event.</li>
 <li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>

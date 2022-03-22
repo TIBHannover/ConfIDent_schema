@@ -92,36 +92,39 @@
             <div class="section">
               
                 <h1 id="class-academicfield">Class: AcademicField</h1>
-<p>An academic field is the scientific subject of the planned process according to some controlled vocabulary or thesaurus and as such requires the scheme URI.</p>
+<p>An academic field is the scientific subject of a planned process according to some controlled vocabulary or thesaurus and as such requires the scheme URI.</p>
 <p>URI: <a href="https://confident.org/AcademicField">confident:AcademicField</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[SchemaBasedThing],[PlannedProcess],[PlannedProcess]++-%20academic_fields%200..*&gt;[AcademicField&#124;value:string%20%3F;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F],[AcademicField]uses%20-.-&gt;[SchemaBasedThing]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[SchemaBasedThing],[PlannedProcess],[PlannedProcess]++-%20academic_fields%200..*&gt;[AcademicField&#124;value:string%20%3F;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F],[AcademicField]uses%20-.-&gt;[SchemaBasedThing]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[SchemaBasedThing],[PlannedProcess],[AcademicEventSeries]++-%20academic_fields%200..*&gt;[AcademicField&#124;value:string;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F],[AcademicEvent]++-%20academic_fields%200..*&gt;[AcademicField],[PlannedProcess]++-%20academic_fields%200..*&gt;[AcademicField],[AcademicField]uses%20-.-&gt;[SchemaBasedThing],[AcademicEventSeries],[AcademicEvent]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[SchemaBasedThing],[PlannedProcess],[AcademicEventSeries]++-%20academic_fields%200..*&gt;[AcademicField&#124;value:string;schema_name:string%20%3F;schema_base_uri:uriorcurie%20%3F],[AcademicEvent]++-%20academic_fields%200..*&gt;[AcademicField],[PlannedProcess]++-%20academic_fields%200..*&gt;[AcademicField],[AcademicField]uses%20-.-&gt;[SchemaBasedThing],[AcademicEventSeries],[AcademicEvent]" /></a></p>
 <h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
-<li>mixin: <a href="../SchemaBasedThing/">SchemaBasedThing</a></li>
+<li>mixin: <a href="../SchemaBasedThing/">SchemaBasedThing</a> - A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <ul>
+<li><strong><a href="../AcademicEventSeries/">AcademicEventSeries</a></strong> <em><a href="../AcademicEventSeries_academic_fields/">AcademicEventSeries➞academic_fields</a></em>  <sub>0..*</sub>  <strong><a href="./">AcademicField</a></strong></li>
+<li><strong><a href="../AcademicEvent/">AcademicEvent</a></strong> <em><a href="../AcademicEvent_academic_fields/">AcademicEvent➞academic_fields</a></em>  <sub>0..*</sub>  <strong><a href="./">AcademicField</a></strong></li>
 <li><strong><a href="../PlannedProcess/">PlannedProcess</a></strong> <em><a href="../academic_fields/">academic_fields</a></em>  <sub>0..*</sub>  <strong><a href="./">AcademicField</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
-<h3 id="mixed-in-from-schemabasedthing">Mixed in from SchemaBasedThing:</h3>
+<h3 id="own">Own</h3>
 <ul>
-<li><a href="../value/">value</a>  <sub>0..1</sub><ul>
+<li><a href="../AcademicField_value/">AcademicField➞value</a>  <sub>1..1</sub><ul>
+<li>Description: The classification label of a certain classification schema.</li>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="mixed-in-from-schemabasedthing_1">Mixed in from SchemaBasedThing:</h3>
+<h3 id="mixed-in-from-schemabasedthing">Mixed in from SchemaBasedThing:</h3>
 <ul>
 <li><a href="../schema_name/">schema_name</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="mixed-in-from-schemabasedthing_2">Mixed in from SchemaBasedThing:</h3>
+<h3 id="mixed-in-from-schemabasedthing_1">Mixed in from SchemaBasedThing:</h3>
 <ul>
 <li><a href="../schema_base_uri/">schema_base_uri</a>  <sub>0..1</sub><ul>
-<li>Description: The base URI of a schema.</li>
+<li>Description: The base URI of the schema that provides the context for the schema based value.</li>
 <li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
 </ul>
 </li>
