@@ -1,0 +1,64 @@
+# ConfIDentRecord
+events:
+  ##############################
+  ### Academic Event Example ###
+  ##############################
+  - id: confident:event/qsdh-en13
+    doi: 
+      value: 10.25798/qsdh-en13
+    landing_page: https://vivoconference.org/vivo2021
+    process_name: 
+      official_name: 12th Annual / International VIVO Conference 2021
+      acronym: VIVO 2021
+      aliases: 
+        - VIVO Conference 2021
+        - 12th VIVO Conference 2021
+    type: conference
+    #event_format:
+    #  specified_as: ad-hoc meeting of university presidents
+    start_date: "2021-06-23"
+    end_date: "2021-06-25"
+    event_status: as scheduled
+    event_mode: hybrid
+    ordinal: 12
+    external_id:
+      - value: vivo2020
+        schema_base_uri: https://www.dblp.org/events/
+        schema_name: dblp
+    wikidata_id: 
+      value: Q108430463
+    gnd_id:
+      value: gnd-1234
+    dpbl_id:
+      value: vivo/vivo2020
+    wikicfp_id:
+      value: "12345"
+    organizers:
+      - name: The VIVO Project
+        id: confident:organizer1
+        ctype: organization
+      - name: TIB
+        id: confident:organizer2
+        external_id:
+          value: 04aj4c181
+          schema_base_uri: https://ror.org/
+          schema_name: ROR
+        contact:
+          name: Christian Hauschke
+          email: hauschke@tib.eu
+          telephone: 0049 511 762 1234
+    in_series: doi:10.25798/ea2h-xq32
+    academic_fields:
+      - value: ontology
+        schema_name: ConfIDent's core classification scheme
+        schema_base_uri: confident:classification
+      - value: social science
+        schema_name: ConfIDent's core classification scheme
+        schema_base_uri: confident:classification
+    topics: 
+      - reseach information systems
+      - open research
+    website: https://vivoconference.org/vivo2020/
+    context_info: 
+      text: some summary
+

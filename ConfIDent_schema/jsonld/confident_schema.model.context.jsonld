@@ -1,0 +1,241 @@
+{
+   "_comments": "Auto generated from confident_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-05-02T17:11:42\n    Schema: ConfIDent-schema\n    metamodel version: 1.7.0\n    model version: 0.2.0\n    \n    id: https://github.com/StroemPhi/ConfIDent-schema/\n    description: This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "@context": {
+      "NCBITaxon": {
+         "@id": "http://purl.obolibrary.org/obo/NCBITaxon_",
+         "@prefix": true
+      },
+      "aeon": {
+         "@id": "https://github.com/tibonto/aeon#AEON_",
+         "@prefix": true
+      },
+      "bfo": {
+         "@id": "http://purl.obolibrary.org/obo/BFO_",
+         "@prefix": true
+      },
+      "confident": "https://confident.org/",
+      "datacite": {
+         "@id": "http://schema.datacite.org/meta/kernel-4.4/metadata.xsd",
+         "@prefix": true
+      },
+      "dblp_series": "https://dblp.org/db/conf/",
+      "dc": "http://purl.org/dc/terms/",
+      "doi": {
+         "@type": "@id",
+         "@id": "iao:0000235"
+      },
+      "ex": "https://example.com/",
+      "iao": {
+         "@id": "http://purl.obolibrary.org/obo/IAO_",
+         "@prefix": true
+      },
+      "linkml": "https://w3id.org/linkml/",
+      "obi": {
+         "@id": "http://purl.obolibrary.org/obo/OBI_",
+         "@prefix": true
+      },
+      "orcid": "https://orcid.org/",
+      "provo": "https://www.w3.org/TR/2013/REC-prov-o-20130430/#",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "ror": "https://ror.org/",
+      "sdo": "https://schema.org/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "wikidata": "https://www.wikidata.org/wiki/",
+      "@vocab": "https://confident.org/",
+      "academic_fields": {
+         "@type": "@id",
+         "@id": "aeon:0000040"
+      },
+      "at_location": {
+         "@type": "@id"
+      },
+      "deadlines": {
+         "@type": "@id"
+      },
+      "end_date": {
+         "@type": "xsd:dateTime",
+         "@id": "aeon:end_date"
+      },
+      "event_format": {
+         "@type": "@id",
+         "@id": "aeon:0000032"
+      },
+      "event_mode": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "event_status": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "aeon:event_status"
+      },
+      "in_series": {
+         "@type": "@id"
+      },
+      "ordinal": {
+         "@type": "xsd:integer",
+         "@id": "aeon:event_number"
+      },
+      "related_to": {
+         "@type": "@id"
+      },
+      "start_date": {
+         "@type": "xsd:dateTime",
+         "@id": "aeon:start_date"
+      },
+      "id": "@id",
+      "series_of": {
+         "@type": "@id"
+      },
+      "events": {
+         "@type": "@id"
+      },
+      "series": {
+         "@type": "@id"
+      },
+      "contact": {
+         "@type": "@id"
+      },
+      "email": {
+         "@id": "sdo:email"
+      },
+      "telephone": {
+         "@id": "sdo:telephone"
+      },
+      "license_url": {
+         "@type": "@id"
+      },
+      "context_info": {
+         "@type": "@id"
+      },
+      "ctype": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "rdf:type"
+      },
+      "deadline_date": {
+         "@type": "xsd:dateTime"
+      },
+      "dpbl_id": {
+         "@type": "@id",
+         "@id": "iao:0000235"
+      },
+      "specified_as": {
+         "@id": "obi:0002815"
+      },
+      "external_id": {
+         "@type": "@id",
+         "@id": "iao:0000235"
+      },
+      "gnd_id": {
+         "@type": "@id",
+         "@id": "iao:0000235"
+      },
+      "landing_page": {
+         "@type": "@id"
+      },
+      "city": {
+         "@type": "@id"
+      },
+      "country": {
+         "@type": "@id"
+      },
+      "lattitude": {
+         "@type": "xsd:float"
+      },
+      "longitude": {
+         "@type": "xsd:float"
+      },
+      "meeting_url": {
+         "@type": "@id"
+      },
+      "region": {
+         "@type": "@id"
+      },
+      "venue": {
+         "@type": "@id"
+      },
+      "int_value": {
+         "@type": "xsd:integer"
+      },
+      "rate_value": {
+         "@type": "xsd:float"
+      },
+      "truth_value": {
+         "@type": "xsd:boolean"
+      },
+      "metrics": {
+         "@type": "@id"
+      },
+      "name": {
+         "@id": "sdo:name"
+      },
+      "organizers": {
+         "@type": "@id"
+      },
+      "process_name": {
+         "@type": "@id",
+         "@id": "iao:0000235"
+      },
+      "acronym": {
+         "@id": "aeon:0000091"
+      },
+      "aliases": {
+         "@id": "skos:altLabel"
+      },
+      "official_name": {
+         "@id": "skos:perfLabel"
+      },
+      "translated_name": {
+         "@id": "skos:altLabel"
+      },
+      "schema_base_uri": {
+         "@type": "@id"
+      },
+      "sponsors": {
+         "@type": "@id"
+      },
+      "website": {
+         "@type": "@id"
+      },
+      "wikicfp_id": {
+         "@type": "@id",
+         "@id": "iao:0000235"
+      },
+      "wikidata_id": {
+         "@type": "@id",
+         "@id": "iao:0000235"
+      },
+      "AcademicEventSeries": {
+         "@id": "aeon:0000002"
+      },
+      "DigitalObjectId": {
+         "@id": "obi:0002110"
+      },
+      "EventFormatSpecification": {
+         "@id": "aeon:0000004"
+      },
+      "PlannedProcess": {
+         "@id": "obi:0000011"
+      },
+      "ProcessName": {
+         "@id": "aeon:0000090"
+      },
+      "WikidataId": {
+         "@id": "wikidata:Q43649390"
+      }
+   }
+}
+
