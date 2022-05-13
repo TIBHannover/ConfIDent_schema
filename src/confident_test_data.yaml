@@ -36,7 +36,7 @@ events:
     organizers:
       - name: The VIVO Project
         id: confident:organizer1
-        ctype: organization
+        type: organization
       - name: TIB
         id: confident:organizer2
         external_ids:

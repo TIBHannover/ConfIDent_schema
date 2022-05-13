@@ -693,11 +693,9 @@ classes:
       - type
     slot_usage:
       type:
-        slot_uri: rdf:type
         #designates_type: true
         description: A property to provide the information whether the contributor is an organization or person.
-        domain: Contributor
-        range: string #ContributorType
+        #range: ContributorType
   Sponsor:
     is_a: Contributor
     description: A person or an organization whose role it is to sponsor an academic event or event series.
