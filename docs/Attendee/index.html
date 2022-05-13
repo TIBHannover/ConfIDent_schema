@@ -78,7 +78,7 @@
                 <h1 id="class-attendee">Class: Attendee</h1>
 <p>A person whose only role it is to attend an academic event.</p>
 <p>URI: <a href="https://confident.org/Attendee">confident:Attendee</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[ExternalIdentifier],[Contributor],[Contributor]^-[Attendee&#124;type(i):string%20%3F;ctype(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[ExternalIdentifier],[Contributor],[Contributor]^-[Attendee&#124;type(i):string%20%3F;ctype(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[ExternalIdentifier],[Contributor],[Contributor]^-[Attendee&#124;type(i):string%20%3F;id(i):uriorcurie;name(i):string%20%3F]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[ExternalIdentifier],[Contributor],[Contributor]^-[Attendee&#124;type(i):string%20%3F;id(i):uriorcurie;name(i):string%20%3F]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
 <li>is_a: <a href="../Contributor/">Contributor</a> - A contributor is a person or organization that holds a contributor role which is being realized in a planned process.</li>
@@ -86,14 +86,9 @@
 <h2 id="attributes">Attributes</h2>
 <h3 id="inherited-from-contributor">Inherited from Contributor:</h3>
 <ul>
-<li><a href="../type/">type</a>  <sub>0..1</sub><ul>
-<li>Description: An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.</li>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../contributor__ctype/">Contributor➞ctype</a>  <sub>0..1</sub><ul>
+<li><a href="../Contributor_type/">Contributor➞type</a>  <sub>0..1</sub><ul>
 <li>Description: A property to provide the information whether the contributor is an organization or person.</li>
-<li>Range: <a href="../ContributorType/">ContributorType</a></li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 </ul>

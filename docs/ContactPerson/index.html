@@ -78,7 +78,7 @@
                 <h1 id="class-contactperson">Class: ContactPerson</h1>
 <p>The contact person of an academic event or event series.</p>
 <p>URI: <a href="https://confident.org/ContactPerson">confident:ContactPerson</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess],[Organizer],[ExternalIdentifier],[PlannedProcess]++-%20contact%200..1&gt;[ContactPerson&#124;email:string%20%3F;telephone:string%20%3F;id:uriorcurie;type(i):string%20%3F;ctype(i):ContributorType%20%3F;name(i):string%20%3F],[Organizer]++-%20contact%200..1&gt;[ContactPerson],[Organizer]^-[ContactPerson]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess],[Organizer],[ExternalIdentifier],[PlannedProcess]++-%20contact%200..1&gt;[ContactPerson&#124;email:string%20%3F;telephone:string%20%3F;id:uriorcurie;type(i):string%20%3F;ctype(i):ContributorType%20%3F;name(i):string%20%3F],[Organizer]++-%20contact%200..1&gt;[ContactPerson],[Organizer]^-[ContactPerson]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess],[Organizer],[ExternalIdentifier],[PlannedProcess]++-%20contact%200..1&gt;[ContactPerson&#124;email:string%20%3F;telephone:string%20%3F;id:uriorcurie;type(i):string%20%3F;name(i):string%20%3F],[Organizer]++-%20contact%200..1&gt;[ContactPerson],[Organizer]^-[ContactPerson]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess],[Organizer],[ExternalIdentifier],[PlannedProcess]++-%20contact%200..1&gt;[ContactPerson&#124;email:string%20%3F;telephone:string%20%3F;id:uriorcurie;type(i):string%20%3F;name(i):string%20%3F],[Organizer]++-%20contact%200..1&gt;[ContactPerson],[Organizer]^-[ContactPerson]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
 <li>is_a: <a href="../Organizer/">Organizer</a> - An organizer of an academic event or event series.</li>
@@ -109,14 +109,9 @@
 </ul>
 <h3 id="inherited-from-organizer">Inherited from Organizer:</h3>
 <ul>
-<li><a href="../type/">type</a>  <sub>0..1</sub><ul>
-<li>Description: An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.</li>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-</li>
-<li><a href="../contributor__ctype/">Contributor➞ctype</a>  <sub>0..1</sub><ul>
+<li><a href="../Contributor_type/">Contributor➞type</a>  <sub>0..1</sub><ul>
 <li>Description: A property to provide the information whether the contributor is an organization or person.</li>
-<li>Range: <a href="../ContributorType/">ContributorType</a></li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 </li>
 <li><a href="../organizer__contact/">➞contact</a>  <sub>0..1</sub><ul>

@@ -2,8 +2,8 @@
   "name": "ConfIDent-schema",
   "description": "This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.",
   "title": "ConfIDent metadata schema",
-  "id": "https://github.com/StroemPhi/ConfIDent-schema/",
-  "version": "0.2.0",
+  "id": "https://tibhannover.github.io/ConfIDent_schema/",
+  "version": "0.2.4",
   "imports": [
     "linkml:types"
   ],
@@ -255,7 +255,7 @@
       "name": "EventType",
       "definition_uri": "https://confident.org/EventType",
       "description": "The most common minimal event types. For event types that are not in this list, you can use \"other\" and provide the label of this other event format using the [event_format](event_format) property.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "permissible_values": [
         {
           "text": "colloquium",
@@ -338,7 +338,7 @@
       "name": "EventStatus",
       "definition_uri": "https://confident.org/EventStatus",
       "description": "The status of the academic event which indicates if it takes place as planned.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "permissible_values": [
         {
           "text": "as scheduled",
@@ -362,7 +362,7 @@
       "name": "EventMode",
       "definition_uri": "https://confident.org/EventMode",
       "description": "An enum to specify if an academic event is in person, virtual or a hybrid of both.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "permissible_values": [
         {
           "text": "on site",
@@ -382,7 +382,7 @@
       "name": "DeadlineType",
       "definition_uri": "https://confident.org/DeadlineType",
       "description": "An enum that specifies the possible kinds of deadlines of an academic event.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "permissible_values": [
         {
           "text": "submission deadline",
@@ -430,7 +430,7 @@
       "name": "RelationType",
       "definition_uri": "https://confident.org/RelationType",
       "description": "The kinds of relations that are allowed between academic events.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "permissible_values": [
         {
           "text": "isUmbrellaEventOf"
@@ -456,7 +456,7 @@
       "name": "MetricType",
       "definition_uri": "https://confident.org/MetricType",
       "description": "The possible metric of an academic event.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "permissible_values": [
         {
           "text": "submitted papers"
@@ -490,7 +490,7 @@
       "name": "ContributorType",
       "definition_uri": "https://confident.org/ContributorType",
       "description": "An enumaration used to distinguish the contributors of a planned process with regard to them being either an organization or a person.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "permissible_values": [
         {
           "text": "organization",
@@ -510,7 +510,7 @@
       "name": "type",
       "definition_uri": "https://confident.org/type",
       "description": "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "abstract": true,
       "slot_uri": "https://confident.org/type",
       "owner": "Contributor",
@@ -534,7 +534,7 @@
         "http://schema.datacite.org/meta/kernel-4.4/metadata.xsddoi"
       ],
       "description": "A property to provide a digital object identifier (DOI) according to https://doi.org/.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "external_id",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
       "multivalued": true,
@@ -554,7 +554,7 @@
       "mappings": [
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "external_id",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
       "multivalued": true,
@@ -574,7 +574,7 @@
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
       "description": "A property to link an entity with its Wikidata identifier.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "external_id",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
       "multivalued": true,
@@ -594,7 +594,7 @@
         "https://schema.org/name"
       ],
       "description": "A property to provide a name of a schema entity.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slot_uri": "https://schema.org/name",
       "owner": "NamedThing",
       "domain_of": [
@@ -607,7 +607,7 @@
       "name": "id",
       "definition_uri": "https://confident.org/id",
       "description": "A property to provide an internal id of a schema entity in the ConfIDent plattform.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slot_uri": "https://confident.org/id",
       "identifier": true,
       "owner": "NamedThing",
@@ -624,8 +624,8 @@
       "mappings": [
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
-      "description": "A property to provide an external id of a schema entity.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "description": "A property to provide a list of external identifiers of a schema entity including their identifier scheme.",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
       "multivalued": true,
       "inlined": true,
@@ -641,7 +641,7 @@
       "name": "value",
       "definition_uri": "https://confident.org/value",
       "description": "a property to provide the literal value of a schema based entity.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slot_uri": "https://confident.org/value",
       "owner": "SchemaBasedThing",
       "domain_of": [
@@ -653,7 +653,7 @@
     {
       "name": "schema_name",
       "definition_uri": "https://confident.org/schema_name",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slot_uri": "https://confident.org/schema_name",
       "owner": "SchemaBasedThing",
       "domain_of": [
@@ -666,7 +666,7 @@
       "name": "schema_base_uri",
       "definition_uri": "https://confident.org/schema_base_uri",
       "description": "The base URI of the schema that provides the context for the schema based value.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slot_uri": "https://confident.org/schema_base_uri",
       "owner": "SchemaBasedThing",
       "domain_of": [
@@ -676,31 +676,13 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "process_name",
-      "definition_uri": "https://confident.org/process_name",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/IAO_0000235"
-      ],
-      "description": "A property to provide a name of the academic event or series, which itself if further differentiated (e.g. official name, acronym, etc).",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
-      "domain": "PlannedProcess",
-      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
-      "inlined": true,
-      "owner": "PlannedProcess",
-      "domain_of": [
-        "PlannedProcess"
-      ],
-      "range": "ProcessName",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "landing_page",
       "definition_uri": "https://confident.org/landing_page",
       "exact_mappings": [
         "http://schema.datacite.org/meta/kernel-4.4/metadata.xsdurl"
       ],
       "description": "A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "PlannedProcess",
       "slot_uri": "https://confident.org/landing_page",
       "owner": "PlannedProcess",
@@ -714,7 +696,7 @@
       "name": "organizers",
       "definition_uri": "https://confident.org/organizers",
       "description": "A property to provide the organizers of an academic event or series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "PlannedProcess",
       "slot_uri": "https://confident.org/organizers",
       "multivalued": true,
@@ -734,7 +716,7 @@
         "https://github.com/tibonto/aeon#AEON_0000040"
       ],
       "description": "A property to describe the scientific subject(s) of a planned process, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [value] and [schema_name] are mandatory.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "PlannedProcess",
       "slot_uri": "https://github.com/tibonto/aeon#AEON_0000040",
       "multivalued": true,
@@ -751,7 +733,7 @@
       "name": "website",
       "definition_uri": "https://confident.org/website",
       "description": "A property to provide the URL the official website of a planned process.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "PlannedProcess",
       "slot_uri": "https://confident.org/website",
       "owner": "PlannedProcess",
@@ -765,7 +747,7 @@
       "name": "contact",
       "definition_uri": "https://confident.org/contact",
       "description": "The contact person of an academic event or event series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "PlannedProcess",
       "slot_uri": "https://confident.org/contact",
       "inlined": true,
@@ -779,7 +761,7 @@
     {
       "name": "sponsors",
       "definition_uri": "https://confident.org/sponsors",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "PlannedProcess",
       "slot_uri": "https://confident.org/sponsors",
       "multivalued": true,
@@ -796,7 +778,7 @@
       "name": "publications",
       "definition_uri": "https://confident.org/publications",
       "description": "The published works that are related to the academic event or event series, such as proceedings and video recordings of talks.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "PlannedProcess",
       "slot_uri": "https://confident.org/publications",
       "multivalued": true,
@@ -811,7 +793,7 @@
       "name": "topics",
       "definition_uri": "https://confident.org/topics",
       "description": "A property to provide the theme and topics of an academic event or event series as free keywords, phrases or text.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "PlannedProcess",
       "slot_uri": "https://confident.org/topics",
       "multivalued": true,
@@ -826,7 +808,7 @@
       "name": "metrics",
       "definition_uri": "https://confident.org/metrics",
       "description": "A property to provide metrics of an academic event or series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "PlannedProcess",
       "slot_uri": "https://confident.org/metrics",
       "multivalued": true,
@@ -843,7 +825,7 @@
       "name": "context_info",
       "definition_uri": "https://confident.org/context_info",
       "description": "A property to provide extra information, such as call of papers event description.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "PlannedProcess",
       "slot_uri": "https://confident.org/context_info",
       "inlined": true,
@@ -861,7 +843,7 @@
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
       "description": "A property to link a planned process with its WikiCFP identifier.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "external_id",
       "domain": "PlannedProcess",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
@@ -882,7 +864,7 @@
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
       "description": "A property to link the a planned process with its DBLP identifier.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "external_id",
       "domain": "PlannedProcess",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
@@ -899,7 +881,7 @@
     {
       "name": "academicEventSeries__series_of",
       "description": "A property to link to the events that are part of an academic event series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "AcademicEventSeries",
       "slot_uri": "https://confident.org/series_of",
       "alias": "series_of",
@@ -917,7 +899,7 @@
         "https://github.com/tibonto/aeon#AEON_start_date"
       ],
       "description": "The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "AcademicEvent",
       "slot_uri": "https://github.com/tibonto/aeon#AEON_start_date",
       "alias": "start_date",
@@ -935,7 +917,7 @@
         "https://github.com/tibonto/aeon#AEON_end_date"
       ],
       "description": "Similar to start_date but only for the end of an academic event or event series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "AcademicEvent",
       "slot_uri": "https://github.com/tibonto/aeon#AEON_end_date",
       "alias": "end_date",
@@ -953,7 +935,7 @@
       "mappings": [
         "https://github.com/tibonto/aeon#AEON_event_status"
       ],
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "AcademicEvent",
       "slot_uri": "https://github.com/tibonto/aeon#AEON_event_status",
       "ifabsent": "string(as scheduled)",
@@ -969,7 +951,7 @@
     {
       "name": "academicEvent__in_series",
       "description": "The relation used to provide the series of which an AcademicEvent is a part.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "AcademicEvent",
       "slot_uri": "https://confident.org/in_series",
       "alias": "in_series",
@@ -986,7 +968,7 @@
       "mappings": [
         "https://github.com/tibonto/aeon#AEON_0000032"
       ],
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "AcademicEvent",
       "slot_uri": "https://github.com/tibonto/aeon#AEON_0000032",
       "inlined": true,
@@ -1002,7 +984,7 @@
     {
       "name": "academicEvent__at_location",
       "description": "The location of the academic event.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "AcademicEvent",
       "slot_uri": "https://confident.org/at_location",
       "inlined": true,
@@ -1018,7 +1000,7 @@
     {
       "name": "academicEvent__deadlines",
       "description": "A property to provide deadlines of an academic event.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "AcademicEvent",
       "slot_uri": "https://confident.org/deadlines",
       "multivalued": true,
@@ -1036,7 +1018,7 @@
     {
       "name": "academicEvent__related_to",
       "description": "A property to be used",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "AcademicEvent",
       "slot_uri": "https://confident.org/related_to",
       "multivalued": true,
@@ -1056,7 +1038,7 @@
         "https://github.com/tibonto/aeon#AEON_event_number"
       ],
       "description": "The ordnial number of an academic event within its series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "AcademicEvent",
       "slot_uri": "https://github.com/tibonto/aeon#AEON_event_number",
       "alias": "ordinal",
@@ -1070,7 +1052,7 @@
     {
       "name": "academicEvent__event_mode",
       "description": "The event mode describes whether the event is a physical, virtual or hybrid event.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "AcademicEvent",
       "slot_uri": "https://confident.org/event_mode",
       "alias": "event_mode",
@@ -1087,7 +1069,7 @@
         "http://www.w3.org/2004/02/skos/core#perfLabel"
       ],
       "description": "The official name of an academic event or series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "name",
       "domain": "ProcessName",
       "slot_uri": "http://www.w3.org/2004/02/skos/core#perfLabel",
@@ -1106,7 +1088,7 @@
         "https://github.com/tibonto/aeon#AEON_0000091"
       ],
       "description": "The official acronym of an academic event or series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "name",
       "domain": "ProcessName",
       "slot_uri": "https://github.com/tibonto/aeon#AEON_0000091",
@@ -1122,7 +1104,7 @@
     {
       "name": "processName__former_name",
       "description": "The former official name of an academic event or series. Usually this will only be needed in case an academic event series has undergone a name change.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "name",
       "domain": "ProcessName",
       "slot_uri": "https://confident.org/former_name",
@@ -1140,7 +1122,7 @@
         "http://www.w3.org/2004/02/skos/core#altLabel"
       ],
       "description": "A translation of the official process name to be used in different language contexts.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "name",
       "domain": "ProcessName",
       "slot_uri": "http://www.w3.org/2004/02/skos/core#altLabel",
@@ -1159,7 +1141,7 @@
         "http://www.w3.org/2004/02/skos/core#altLabel"
       ],
       "description": "A property to provide alternative names of a planned process.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "name",
       "domain": "ProcessName",
       "slot_uri": "http://www.w3.org/2004/02/skos/core#altLabel",
@@ -1185,7 +1167,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "EventFormatSpecification",
       "slot_uri": "http://purl.obolibrary.org/obo/OBI_0002815",
       "alias": "specified_as",
@@ -1200,7 +1182,7 @@
     {
       "name": "deadline__deadline_date",
       "description": "The date of a deadline.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Deadline",
       "slot_uri": "https://confident.org/deadline_date",
       "alias": "deadline_date",
@@ -1215,7 +1197,7 @@
     {
       "name": "deadline__deadline_other",
       "description": "A property to specify another type of deadline, if this type of deadline is not within the allowed values of [DeadlineType](DeadlineType).",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Deadline",
       "slot_uri": "https://confident.org/deadline_other",
       "alias": "deadline_other",
@@ -1229,7 +1211,7 @@
     {
       "name": "metric__int_value",
       "description": "A property to provide an integer value for a metric.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Metric",
       "slot_uri": "https://confident.org/int_value",
       "alias": "int_value",
@@ -1243,7 +1225,7 @@
     {
       "name": "metric__str_value",
       "description": "A property to provide a string value for a metric.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Metric",
       "slot_uri": "https://confident.org/str_value",
       "alias": "str_value",
@@ -1257,7 +1239,7 @@
     {
       "name": "metric__rate_value",
       "description": "A property to provide a rate value as float for a metric.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Metric",
       "slot_uri": "https://confident.org/rate_value",
       "alias": "rate_value",
@@ -1271,7 +1253,7 @@
     {
       "name": "metric__truth_value",
       "description": "A property to provide a truth value for a metric.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Metric",
       "slot_uri": "https://confident.org/truth_value",
       "alias": "truth_value",
@@ -1285,7 +1267,7 @@
     {
       "name": "metric__description",
       "description": "A property to provide a description of a metric.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Metric",
       "slot_uri": "https://confident.org/description",
       "alias": "description",
@@ -1299,7 +1281,7 @@
     {
       "name": "location__city",
       "description": "The property to specify the [City](City) of an academic event location.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Location",
       "slot_uri": "https://confident.org/city",
       "alias": "city",
@@ -1314,7 +1296,7 @@
     {
       "name": "location__country",
       "description": "The property to specify the [Country](Country) of an academic event location.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Location",
       "slot_uri": "https://confident.org/country",
       "alias": "country",
@@ -1329,7 +1311,7 @@
     {
       "name": "location__region",
       "description": "The property to specify the [Region](Region) of an academic event location.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Location",
       "slot_uri": "https://confident.org/region",
       "alias": "region",
@@ -1343,7 +1325,7 @@
     {
       "name": "location__venue",
       "description": "The property to specify the [Venue](Venue) of an academic event location.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Location",
       "slot_uri": "https://confident.org/venue",
       "alias": "venue",
@@ -1357,7 +1339,7 @@
     {
       "name": "location__lattitude",
       "description": "The property to specify the lattitude of an academic event location.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Location",
       "slot_uri": "https://confident.org/lattitude",
       "alias": "lattitude",
@@ -1371,7 +1353,7 @@
     {
       "name": "location__longitude",
       "description": "The property to specify the longitude of an academic event location.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Location",
       "slot_uri": "https://confident.org/longitude",
       "alias": "longitude",
@@ -1385,7 +1367,7 @@
     {
       "name": "location__meeting_url",
       "description": "The property to specify the URL under which a one can participate virtually in an academic event.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Location",
       "slot_uri": "https://confident.org/meeting_url",
       "alias": "meeting_url",
@@ -1406,7 +1388,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Venue",
       "slot_uri": "https://confident.org/street",
       "alias": "street",
@@ -1420,7 +1402,7 @@
     {
       "name": "venue__zip_code",
       "description": "The zip code of the venue.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Venue",
       "slot_uri": "https://confident.org/zip_code",
       "alias": "zip_code",
@@ -1434,7 +1416,7 @@
     {
       "name": "context__text",
       "description": "The free text used to provide more context information on a planned process.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Context",
       "slot_uri": "https://confident.org/text",
       "alias": "text",
@@ -1448,7 +1430,7 @@
     {
       "name": "context__license_str",
       "description": "The license of the context information as text, which must be used when copying text from other sources.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Context",
       "slot_uri": "https://confident.org/license_str",
       "alias": "license_str",
@@ -1462,7 +1444,7 @@
     {
       "name": "context__license_url",
       "description": "The license of the context information as URL, which should be used when copying text from other sources and such a URL exists.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "Context",
       "slot_uri": "https://confident.org/license_url",
       "alias": "license_url",
@@ -1474,26 +1456,9 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "contributor__ctype",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
-      ],
-      "description": "A property to provide the information whether the contributor is an organization or person.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
-      "domain": "Contributor",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "alias": "ctype",
-      "owner": "Contributor",
-      "domain_of": [
-        "Contributor"
-      ],
-      "range": "ContributorType",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "organizer__contact",
       "description": "The contact person of an academic event or event series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slot_uri": "https://confident.org/contact",
       "inlined": true,
       "alias": "contact",
@@ -1511,7 +1476,7 @@
         "https://schema.org/email"
       ],
       "description": "The email address of the contact person.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "ContactPerson",
       "slot_uri": "https://schema.org/email",
       "alias": "email",
@@ -1529,7 +1494,7 @@
         "https://schema.org/telephone"
       ],
       "description": "The telephone number of the contact person.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "ContactPerson",
       "slot_uri": "https://schema.org/telephone",
       "alias": "telephone",
@@ -1543,7 +1508,7 @@
     {
       "name": "confIDentRecords__events",
       "description": "A property to provide a list of academic events within this container.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "ConfIDentRecords",
       "slot_uri": "https://confident.org/events",
       "multivalued": true,
@@ -1560,7 +1525,7 @@
     {
       "name": "confIDentRecords__series",
       "description": "A property to provide a list of academic event series within this container.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "domain": "ConfIDentRecords",
       "slot_uri": "https://confident.org/series",
       "multivalued": true,
@@ -1575,11 +1540,78 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "PlannedProcess_id",
+      "definition_uri": "https://confident.org/id",
+      "description": "A property to provide an internal id of a schema entity in the ConfIDent plattform.",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
+      "is_a": "id",
+      "domain": "PlannedProcess",
+      "slot_uri": "https://confident.org/id",
+      "identifier": true,
+      "alias": "id",
+      "owner": "PlannedProcess",
+      "domain_of": [
+        "PlannedProcess"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "id",
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "PlannedProcess_name",
+      "definition_uri": "https://confident.org/name",
+      "mappings": [
+        "https://schema.org/name"
+      ],
+      "description": "The relatin to relate a name to a PlannedProcess.",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
+      "is_a": "name",
+      "domain": "PlannedProcess",
+      "slot_uri": "https://schema.org/name",
+      "inlined": true,
+      "alias": "name",
+      "owner": "PlannedProcess",
+      "domain_of": [
+        "PlannedProcess"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "name",
+      "range": "ProcessName",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "PlannedProcess_external_id",
+      "definition_uri": "https://confident.org/external_id",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "description": "A property to provide a list of external identifiers of a schema entity including their identifier scheme.",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
+      "is_a": "external_id",
+      "domain": "PlannedProcess",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "alias": "external_id",
+      "owner": "PlannedProcess",
+      "domain_of": [
+        "PlannedProcess"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "external_id",
+      "range": "ExternalIdentifier",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "AcademicEventSeries_id",
       "definition_uri": "https://confident.org/id",
       "description": "A property to provide an internal id of a schema entity in the ConfIDent plattform.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
-      "is_a": "id",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
+      "is_a": "PlannedProcess_id",
       "domain": "AcademicEventSeries",
       "slot_uri": "https://confident.org/id",
       "ifabsent": "string(confident:SeriesID)",
@@ -1596,24 +1628,24 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "AcademicEventSeries_process_name",
-      "definition_uri": "https://confident.org/process_name",
+      "name": "AcademicEventSeries_name",
+      "definition_uri": "https://confident.org/name",
       "mappings": [
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
-      "description": "A property to provide a name of the academic event or series, which itself if further differentiated (e.g. official name, acronym, etc).",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
-      "is_a": "process_name",
+      "description": "A property to provide a name of a schema entity.",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
+      "is_a": "PlannedProcess_name",
       "domain": "AcademicEventSeries",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
       "inlined": true,
-      "alias": "process_name",
+      "alias": "name",
       "owner": "AcademicEventSeries",
       "domain_of": [
         "AcademicEventSeries"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "process_name",
+      "usage_slot_name": "name",
       "range": "ProcessName",
       "required": true,
       "@type": "SlotDefinition"
@@ -1625,7 +1657,7 @@
         "http://schema.datacite.org/meta/kernel-4.4/metadata.xsdurl"
       ],
       "description": "A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "landing_page",
       "domain": "AcademicEventSeries",
       "slot_uri": "https://confident.org/landing_page",
@@ -1650,7 +1682,7 @@
         "http://schema.datacite.org/meta/kernel-4.4/metadata.xsddoi"
       ],
       "description": "A property to provide a digital object identifier (DOI) according to https://doi.org/.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "doi",
       "domain": "AcademicEventSeries",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
@@ -1672,7 +1704,7 @@
       "name": "AcademicEventSeries_organizers",
       "definition_uri": "https://confident.org/organizers",
       "description": "A property to provide the organizers of an academic event or series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "organizers",
       "domain": "AcademicEventSeries",
       "slot_uri": "https://confident.org/organizers",
@@ -1697,7 +1729,7 @@
         "https://github.com/tibonto/aeon#AEON_0000040"
       ],
       "description": "A property to describe the scientific subject(s) of a planned process, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [value] and [schema_name] are mandatory.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "academic_fields",
       "domain": "AcademicEventSeries",
       "slot_uri": "https://github.com/tibonto/aeon#AEON_0000040",
@@ -1719,7 +1751,7 @@
       "name": "AcademicEventSeries_website",
       "definition_uri": "https://confident.org/website",
       "description": "A property to provide the URL the official website of an academic event series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "website",
       "domain": "AcademicEventSeries",
       "slot_uri": "https://confident.org/website",
@@ -1738,7 +1770,7 @@
       "name": "AcademicEventSeries_sponsors",
       "definition_uri": "https://confident.org/sponsors",
       "description": "A property to provide the sponsors of an academic event series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "sponsors",
       "domain": "AcademicEventSeries",
       "slot_uri": "https://confident.org/sponsors",
@@ -1763,7 +1795,7 @@
       "comments": [
         "It will be most common that the publications of an academic event series are the set of publications associated with the individual events of the series."
       ],
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "publications",
       "domain": "AcademicEventSeries",
       "slot_uri": "https://confident.org/publications",
@@ -1788,7 +1820,7 @@
       "comments": [
         "Most likely the values of this property will be the set of topics aggregated from the academic events of the series."
       ],
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "topics",
       "domain": "AcademicEventSeries",
       "slot_uri": "https://confident.org/topics",
@@ -1808,7 +1840,7 @@
       "name": "AcademicEventSeries_metrics",
       "definition_uri": "https://confident.org/metrics",
       "description": "A property to provide metrics of an academic event or series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "metrics",
       "domain": "AcademicEventSeries",
       "slot_uri": "https://confident.org/metrics",
@@ -1829,7 +1861,7 @@
       "name": "AcademicEventSeries_context_info",
       "definition_uri": "https://confident.org/context_info",
       "description": "A property to provide extra information, such as call of papers event description.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "context_info",
       "domain": "AcademicEventSeries",
       "slot_uri": "https://confident.org/context_info",
@@ -1845,13 +1877,37 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "AcademicEventSeries_external_id",
+      "definition_uri": "https://confident.org/external_id",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "description": "A property to provide a list of external identifiers of a schema entity including their identifier scheme.",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
+      "is_a": "PlannedProcess_external_id",
+      "domain": "AcademicEventSeries",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "alias": "external_id",
+      "owner": "AcademicEventSeries",
+      "domain_of": [
+        "AcademicEventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "external_id",
+      "range": "ExternalIdentifier",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "AcademicEventSeries_gnd_id",
       "definition_uri": "https://confident.org/gnd_id",
       "mappings": [
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
       "description": "A property to link an academic event series with its [GND identifier](GndId).",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "gnd_id",
       "domain": "AcademicEventSeries",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
@@ -1875,7 +1931,7 @@
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
       "description": "A property to link an academic event series with its [WikiCFP identifier](WikiCfpId).",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "wikicfp_id",
       "domain": "AcademicEventSeries",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
@@ -1899,7 +1955,7 @@
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
       "description": "A property to link an academic event series with its [Wikidata identifier](WikidataId).",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "wikidata_id",
       "domain": "AcademicEventSeries",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
@@ -1923,7 +1979,7 @@
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
       "description": "A property to link an academic event series with its [DBLP identifier](DblpId).",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "dpbl_id",
       "domain": "AcademicEventSeries",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
@@ -1944,8 +2000,8 @@
       "name": "AcademicEvent_id",
       "definition_uri": "https://confident.org/id",
       "description": "A property to provide an internal id of a schema entity in the ConfIDent plattform.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
-      "is_a": "id",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
+      "is_a": "PlannedProcess_id",
       "domain": "AcademicEvent",
       "slot_uri": "https://confident.org/id",
       "ifabsent": "string(confident:EventID)",
@@ -1962,24 +2018,24 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "AcademicEvent_process_name",
-      "definition_uri": "https://confident.org/process_name",
+      "name": "AcademicEvent_name",
+      "definition_uri": "https://confident.org/name",
       "mappings": [
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
-      "description": "A property to provide a name of the academic event or series, which itself if further differentiated (e.g. official name, acronym, etc).",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
-      "is_a": "process_name",
+      "description": "The name of an academic event.",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
+      "is_a": "PlannedProcess_name",
       "domain": "AcademicEvent",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
       "inlined": true,
-      "alias": "process_name",
+      "alias": "name",
       "owner": "AcademicEvent",
       "domain_of": [
         "AcademicEvent"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "process_name",
+      "usage_slot_name": "name",
       "range": "ProcessName",
       "required": true,
       "@type": "SlotDefinition"
@@ -1991,7 +2047,7 @@
         "http://schema.datacite.org/meta/kernel-4.4/metadata.xsdurl"
       ],
       "description": "A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "landing_page",
       "domain": "AcademicEvent",
       "slot_uri": "https://confident.org/landing_page",
@@ -2016,7 +2072,7 @@
         "http://schema.datacite.org/meta/kernel-4.4/metadata.xsddoi"
       ],
       "description": "A property to provide a digital object identifier (DOI) according to https://doi.org/.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "doi",
       "domain": "AcademicEvent",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
@@ -2041,7 +2097,7 @@
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       ],
       "description": "A property to specify the subtype of the academic event according to a controlled list defined in [EventType](EventType). If the",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "type",
       "abstract": true,
       "domain": "AcademicEvent",
@@ -2062,7 +2118,7 @@
       "name": "AcademicEvent_organizers",
       "definition_uri": "https://confident.org/organizers",
       "description": "A property to provide the organizers of an academic event or series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "organizers",
       "domain": "AcademicEvent",
       "slot_uri": "https://confident.org/organizers",
@@ -2087,7 +2143,7 @@
         "https://github.com/tibonto/aeon#AEON_0000040"
       ],
       "description": "A property to describe the scientific subject(s) of a planned process, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [value] and [schema_name] are mandatory.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "academic_fields",
       "domain": "AcademicEvent",
       "slot_uri": "https://github.com/tibonto/aeon#AEON_0000040",
@@ -2109,7 +2165,7 @@
       "name": "AcademicEvent_website",
       "definition_uri": "https://confident.org/website",
       "description": "A property to provide the URL the official website of an academic event.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "website",
       "domain": "AcademicEvent",
       "slot_uri": "https://confident.org/website",
@@ -2128,7 +2184,7 @@
       "name": "AcademicEvent_sponsors",
       "definition_uri": "https://confident.org/sponsors",
       "description": "A property to provide the sponsors of an academic event.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "sponsors",
       "domain": "AcademicEvent",
       "slot_uri": "https://confident.org/sponsors",
@@ -2150,7 +2206,7 @@
       "name": "AcademicEvent_publications",
       "definition_uri": "https://confident.org/publications",
       "description": "The published works that are related to the academic event or event series, such as proceedings and video recordings of talks.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "publications",
       "domain": "AcademicEvent",
       "slot_uri": "https://confident.org/publications",
@@ -2169,10 +2225,34 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "AcademicEvent_external_id",
+      "definition_uri": "https://confident.org/external_id",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "description": "A property to provide a list of external identifiers of a schema entity including their identifier scheme.",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
+      "is_a": "PlannedProcess_external_id",
+      "domain": "AcademicEvent",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "alias": "external_id",
+      "owner": "AcademicEvent",
+      "domain_of": [
+        "AcademicEvent"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "external_id",
+      "range": "ExternalIdentifier",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "AcademicEvent_topics",
       "definition_uri": "https://confident.org/topics",
       "description": "A property to provide the theme and topics of an academic event or event series as free keywords, phrases or text.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "topics",
       "domain": "AcademicEvent",
       "slot_uri": "https://confident.org/topics",
@@ -2192,7 +2272,7 @@
       "name": "AcademicEvent_metrics",
       "definition_uri": "https://confident.org/metrics",
       "description": "A property to provide metrics of an academic event or series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "metrics",
       "domain": "AcademicEvent",
       "slot_uri": "https://confident.org/metrics",
@@ -2213,7 +2293,7 @@
       "name": "AcademicEvent_context_info",
       "definition_uri": "https://confident.org/context_info",
       "description": "A property to provide extra information, such as call of papers event description.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "context_info",
       "domain": "AcademicEvent",
       "slot_uri": "https://confident.org/context_info",
@@ -2235,7 +2315,7 @@
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
       "description": "A property to link an academic event with its [GND identifier](GndId).",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "gnd_id",
       "domain": "AcademicEvent",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
@@ -2259,7 +2339,7 @@
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
       "description": "A property to link an academic event with its [WikiCFP identifier](WikiCfpId).",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "wikicfp_id",
       "domain": "AcademicEvent",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
@@ -2283,7 +2363,7 @@
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
       "description": "A property to link an academic event with its [Wikidata identifier](WikidataId).",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "wikidata_id",
       "domain": "AcademicEvent",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
@@ -2307,7 +2387,7 @@
         "http://purl.obolibrary.org/obo/IAO_0000235"
       ],
       "description": "A property to link an academic event with its [DBLP identifier](DblpId).",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "dpbl_id",
       "domain": "AcademicEvent",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
@@ -2331,7 +2411,7 @@
         "http://purl.obolibrary.org/obo/OBI_0002815"
       ],
       "description": "a property to provide the literal value of a schema based entity.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "value",
       "domain": "ExternalIdentifier",
       "slot_uri": "http://purl.obolibrary.org/obo/OBI_0002815",
@@ -2348,7 +2428,7 @@
     {
       "name": "DigitalObjectId_schema_name",
       "definition_uri": "https://confident.org/schema_name",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "schema_name",
       "domain": "DigitalObjectId",
       "slot_uri": "https://confident.org/schema_name",
@@ -2367,7 +2447,7 @@
       "name": "DigitalObjectId_schema_base_uri",
       "definition_uri": "https://confident.org/schema_base_uri",
       "description": "The base URI of the schema that provides the context for the schema based value.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "schema_base_uri",
       "domain": "DigitalObjectId",
       "slot_uri": "https://confident.org/schema_base_uri",
@@ -2385,7 +2465,7 @@
     {
       "name": "WikidataId_schema_name",
       "definition_uri": "https://confident.org/schema_name",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "schema_name",
       "domain": "WikidataId",
       "slot_uri": "https://confident.org/schema_name",
@@ -2404,7 +2484,7 @@
       "name": "WikidataId_schema_base_uri",
       "definition_uri": "https://confident.org/schema_base_uri",
       "description": "The base URI of the schema that provides the context for the schema based value.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "schema_base_uri",
       "domain": "WikidataId",
       "slot_uri": "https://confident.org/schema_base_uri",
@@ -2422,7 +2502,7 @@
     {
       "name": "GndId_schema_name",
       "definition_uri": "https://confident.org/schema_name",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "schema_name",
       "domain": "GndId",
       "slot_uri": "https://confident.org/schema_name",
@@ -2441,7 +2521,7 @@
       "name": "GndId_schema_base_uri",
       "definition_uri": "https://confident.org/schema_base_uri",
       "description": "The base URI of the schema that provides the context for the schema based value.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "schema_base_uri",
       "domain": "GndId",
       "slot_uri": "https://confident.org/schema_base_uri",
@@ -2459,7 +2539,7 @@
     {
       "name": "TibkatId_schema_name",
       "definition_uri": "https://confident.org/schema_name",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "schema_name",
       "domain": "TibkatId",
       "slot_uri": "https://confident.org/schema_name",
@@ -2478,7 +2558,7 @@
       "name": "TibkatId_schema_base_uri",
       "definition_uri": "https://confident.org/schema_base_uri",
       "description": "The base URI of the schema that provides the context for the schema based value.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "schema_base_uri",
       "domain": "TibkatId",
       "slot_uri": "https://confident.org/schema_base_uri",
@@ -2496,7 +2576,7 @@
     {
       "name": "DblpId_schema_name",
       "definition_uri": "https://confident.org/schema_name",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "schema_name",
       "domain": "DblpId",
       "slot_uri": "https://confident.org/schema_name",
@@ -2515,7 +2595,7 @@
       "name": "DblpId_schema_base_uri",
       "definition_uri": "https://confident.org/schema_base_uri",
       "description": "The base URI of the schema that provides the context for the schema based value.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "schema_base_uri",
       "domain": "DblpId",
       "slot_uri": "https://confident.org/schema_base_uri",
@@ -2533,7 +2613,7 @@
     {
       "name": "WikiCfpId_schema_name",
       "definition_uri": "https://confident.org/schema_name",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "schema_name",
       "domain": "WikiCfpId",
       "slot_uri": "https://confident.org/schema_name",
@@ -2552,7 +2632,7 @@
       "name": "WikiCfpId_schema_base_uri",
       "definition_uri": "https://confident.org/schema_base_uri",
       "description": "The base URI of the schema that provides the context for the schema based value.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "schema_base_uri",
       "domain": "WikiCfpId",
       "slot_uri": "https://confident.org/schema_base_uri",
@@ -2571,7 +2651,7 @@
       "name": "Deadline_type",
       "definition_uri": "https://confident.org/type",
       "description": "The type of deadline.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "type",
       "abstract": true,
       "domain": "Deadline",
@@ -2591,7 +2671,7 @@
       "name": "Metric_type",
       "definition_uri": "https://confident.org/type",
       "description": "A property to provide the type of relation between academic events.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "type",
       "abstract": true,
       "domain": "Metric",
@@ -2610,7 +2690,7 @@
       "name": "ProcessRelation_type",
       "definition_uri": "https://confident.org/type",
       "description": "A property to provide the type of process relation.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "type",
       "abstract": true,
       "domain": "ProcessRelation",
@@ -2629,7 +2709,7 @@
       "name": "AcademicField_value",
       "definition_uri": "https://confident.org/value",
       "description": "The classification label of a certain classification schema.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "value",
       "domain": "AcademicField",
       "slot_uri": "https://confident.org/value",
@@ -2645,10 +2725,32 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "Contributor_type",
+      "definition_uri": "https://confident.org/type",
+      "description": "A property to provide the information whether the contributor is an organization or person.",
+      "todos": [
+        "find out why it throws an unhashable JsonObj error when the enum is used"
+      ],
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
+      "is_a": "type",
+      "abstract": true,
+      "domain": "Contributor",
+      "slot_uri": "https://confident.org/type",
+      "alias": "type",
+      "owner": "Contributor",
+      "domain_of": [
+        "Contributor"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "type",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "ContactPerson_id",
       "definition_uri": "https://confident.org/id",
       "description": "The autogenerated internal identifier of contact person.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "id",
       "domain": "ContactPerson",
       "slot_uri": "https://confident.org/id",
@@ -2671,7 +2773,7 @@
       "name": "SchemaBasedThing",
       "definition_uri": "https://confident.org/SchemaBasedThing",
       "description": "A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "mixin": true,
       "slots": [
         "value",
@@ -2686,7 +2788,7 @@
       "name": "NamedThing",
       "definition_uri": "https://confident.org/NamedThing",
       "description": "A mixin used to provide the attributes needed for the identification of named class.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "mixin": true,
       "slots": [
         "id",
@@ -2704,13 +2806,12 @@
         "obi:0000011"
       ],
       "description": "Abstract base class for academic events and event series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "abstract": true,
       "mixins": [
         "NamedThing"
       ],
       "slots": [
-        "process_name",
         "type",
         "doi",
         "landing_page",
@@ -2727,9 +2828,9 @@
         "topics",
         "metrics",
         "context_info",
-        "id",
-        "name",
-        "external_id"
+        "PlannedProcess_id",
+        "PlannedProcess_name",
+        "PlannedProcess_external_id"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0000011",
@@ -2745,16 +2846,14 @@
         "sdo:EventSeries"
       ],
       "description": "An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "PlannedProcess",
       "slots": [
         "type",
         "contact",
-        "name",
-        "external_id",
         "academicEventSeries__series_of",
         "AcademicEventSeries_id",
-        "AcademicEventSeries_process_name",
+        "AcademicEventSeries_name",
         "AcademicEventSeries_landing_page",
         "AcademicEventSeries_doi",
         "AcademicEventSeries_organizers",
@@ -2765,6 +2864,7 @@
         "AcademicEventSeries_topics",
         "AcademicEventSeries_metrics",
         "AcademicEventSeries_context_info",
+        "AcademicEventSeries_external_id",
         "AcademicEventSeries_gnd_id",
         "AcademicEventSeries_wikicfp_id",
         "AcademicEventSeries_wikidata_id",
@@ -2794,12 +2894,10 @@
         "sdo:Event"
       ],
       "description": "An academic event is part of the established instruments of science communication as a format for conveying the latest scientific publications. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these publications. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "PlannedProcess",
       "slots": [
         "contact",
-        "name",
-        "external_id",
         "academicEvent__start_date",
         "academicEvent__end_date",
         "academicEvent__event_status",
@@ -2811,7 +2909,7 @@
         "academicEvent__ordinal",
         "academicEvent__event_mode",
         "AcademicEvent_id",
-        "AcademicEvent_process_name",
+        "AcademicEvent_name",
         "AcademicEvent_landing_page",
         "AcademicEvent_doi",
         "AcademicEvent_type",
@@ -2820,6 +2918,7 @@
         "AcademicEvent_website",
         "AcademicEvent_sponsors",
         "AcademicEvent_publications",
+        "AcademicEvent_external_id",
         "AcademicEvent_topics",
         "AcademicEvent_metrics",
         "AcademicEvent_context_info",
@@ -2928,7 +3027,7 @@
         "aeon:0000090"
       ],
       "description": "The container for the various names denoting a planned process",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slots": [
         "processName__official_name",
         "processName__acronym",
@@ -2994,7 +3093,7 @@
       "name": "ExternalIdentifier",
       "definition_uri": "https://confident.org/ExternalIdentifier",
       "description": "An identifer of an entity declared in another schema.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "mixins": [
         "SchemaBasedThing"
       ],
@@ -3014,7 +3113,7 @@
         "obi:0002110"
       ],
       "description": "A centrally registered identifier symbol used to uniquely identify digital objects given by International DOI Foundation.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "ExternalIdentifier",
       "slots": [
         "ExternalIdentifier_value",
@@ -3032,7 +3131,7 @@
         "wikidata:Q43649390"
       ],
       "description": "The identifier of a thing (item) in Wikidata.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "ExternalIdentifier",
       "slots": [
         "ExternalIdentifier_value",
@@ -3047,7 +3146,7 @@
       "name": "GndId",
       "definition_uri": "https://confident.org/GndId",
       "description": "The identifier of a thing (item) in the German National authority file.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "ExternalIdentifier",
       "slots": [
         "ExternalIdentifier_value",
@@ -3062,7 +3161,7 @@
       "name": "TibkatId",
       "definition_uri": "https://confident.org/TibkatId",
       "description": "The identifier of a publication in the TIB catalog.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "ExternalIdentifier",
       "slots": [
         "ExternalIdentifier_value",
@@ -3077,7 +3176,7 @@
       "name": "DblpId",
       "definition_uri": "https://confident.org/DblpId",
       "description": "The identifier of an academic event or series in dblp.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "ExternalIdentifier",
       "slots": [
         "ExternalIdentifier_value",
@@ -3092,7 +3191,7 @@
       "name": "WikiCfpId",
       "definition_uri": "https://confident.org/WikiCfpId",
       "description": "The identifier of an academic event or series in WikiCFP.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "ExternalIdentifier",
       "slots": [
         "ExternalIdentifier_value",
@@ -3110,7 +3209,7 @@
         "aeon:0000004"
       ],
       "description": "An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathing is to be carried out by its participants in terms of achieving certain objectives, fulfiling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event. While the explicit details are often provied as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. \"conference\" or \"workshop\"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slots": [
         "eventFormatSpecification__specified_as"
       ],
@@ -3140,7 +3239,7 @@
       "name": "Deadline",
       "definition_uri": "https://confident.org/Deadline",
       "description": "A container for event deadlines.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slots": [
         "Deadline_type",
         "deadline__deadline_date",
@@ -3171,7 +3270,7 @@
       "name": "Metric",
       "definition_uri": "https://confident.org/Metric",
       "description": "A container for statistical information about a planned process.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slots": [
         "Metric_type",
         "metric__int_value",
@@ -3225,7 +3324,7 @@
       "name": "ProcessRelation",
       "definition_uri": "https://confident.org/ProcessRelation",
       "description": "A container for relations between academic events.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slots": [
         "ProcessRelation_type"
       ],
@@ -3237,7 +3336,7 @@
       "name": "Location",
       "definition_uri": "https://confident.org/Location",
       "description": "A container for the information about the location in which an academic event takes place.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slots": [
         "location__city",
         "location__country",
@@ -3308,7 +3407,7 @@
       "name": "City",
       "definition_uri": "https://confident.org/City",
       "description": "The city in which an academic event takes place.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "mixins": [
         "NamedThing"
       ],
@@ -3325,7 +3424,7 @@
       "name": "Country",
       "definition_uri": "https://confident.org/Country",
       "description": "The country in which an academic event takes place.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "mixins": [
         "NamedThing"
       ],
@@ -3349,7 +3448,7 @@
           "@type": "Example"
         }
       ],
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "mixins": [
         "NamedThing"
       ],
@@ -3366,7 +3465,7 @@
       "name": "Venue",
       "definition_uri": "https://confident.org/Venue",
       "description": "The venue at which an academic event takes place.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "mixins": [
         "NamedThing"
       ],
@@ -3408,7 +3507,7 @@
       "name": "AcademicField",
       "definition_uri": "https://confident.org/AcademicField",
       "description": "An academic field is the scientific subject of a planned process according to some controlled vocabulary or thesaurus and as such requires the scheme URI.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "mixins": [
         "SchemaBasedThing"
       ],
@@ -3425,7 +3524,7 @@
       "name": "Context",
       "definition_uri": "https://confident.org/Context",
       "description": "A container to provide extra information, such as call of papers event description.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slots": [
         "context__text",
         "context__license_str",
@@ -3462,28 +3561,17 @@
       "name": "Contributor",
       "definition_uri": "https://confident.org/Contributor",
       "description": "A contributor is a person or organization that holds a contributor role which is being realized in a planned process.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "mixins": [
         "NamedThing"
       ],
       "slots": [
-        "type",
-        "contributor__ctype",
+        "Contributor_type",
         "id",
         "name",
         "external_id"
       ],
       "slot_usage": {},
-      "attributes": [
-        {
-          "name": "ctype",
-          "description": "A property to provide the information whether the contributor is an organization or person.",
-          "domain": "Contributor",
-          "slot_uri": "rdf:type",
-          "range": "ContributorType",
-          "@type": "SlotDefinition"
-        }
-      ],
       "class_uri": "https://confident.org/Contributor",
       "@type": "ClassDefinition"
     },
@@ -3491,11 +3579,10 @@
       "name": "Sponsor",
       "definition_uri": "https://confident.org/Sponsor",
       "description": "A person or an organization whose role it is to sponsor an academic event or event series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "Contributor",
       "slots": [
-        "type",
-        "contributor__ctype",
+        "Contributor_type",
         "id",
         "name",
         "external_id"
@@ -3508,11 +3595,10 @@
       "name": "Attendee",
       "definition_uri": "https://confident.org/Attendee",
       "description": "A person whose only role it is to attend an academic event.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "Contributor",
       "slots": [
-        "type",
-        "contributor__ctype",
+        "Contributor_type",
         "id",
         "name",
         "external_id"
@@ -3525,11 +3611,10 @@
       "name": "Moderator",
       "definition_uri": "https://confident.org/Moderator",
       "description": "A person that has the role to moderate an academic event.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "Contributor",
       "slots": [
-        "type",
-        "contributor__ctype",
+        "Contributor_type",
         "id",
         "name",
         "external_id"
@@ -3542,11 +3627,10 @@
       "name": "Reviewer",
       "definition_uri": "https://confident.org/Reviewer",
       "description": "A person that has the role to review the submissions of an academic event.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "Contributor",
       "slots": [
-        "type",
-        "contributor__ctype",
+        "Contributor_type",
         "id",
         "name",
         "external_id"
@@ -3559,11 +3643,10 @@
       "name": "Organizer",
       "definition_uri": "https://confident.org/Organizer",
       "description": "An organizer of an academic event or event series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "Contributor",
       "slots": [
-        "type",
-        "contributor__ctype",
+        "Contributor_type",
         "id",
         "name",
         "external_id",
@@ -3587,11 +3670,10 @@
       "name": "ContactPerson",
       "definition_uri": "https://confident.org/ContactPerson",
       "description": "The contact person of an academic event or event series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "Organizer",
       "slots": [
-        "type",
-        "contributor__ctype",
+        "Contributor_type",
         "name",
         "external_id",
         "organizer__contact",
@@ -3626,11 +3708,10 @@
       "name": "CommitteeMember",
       "definition_uri": "https://confident.org/CommitteeMember",
       "description": "A members of an academic event committee.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "Organizer",
       "slots": [
-        "type",
-        "contributor__ctype",
+        "Contributor_type",
         "id",
         "name",
         "external_id",
@@ -3644,11 +3725,10 @@
       "name": "CommitteeChair",
       "definition_uri": "https://confident.org/CommitteeChair",
       "description": "The head of an academic event committee.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "CommitteeMember",
       "slots": [
-        "type",
-        "contributor__ctype",
+        "Contributor_type",
         "id",
         "name",
         "external_id",
@@ -3662,11 +3742,10 @@
       "name": "Presenter",
       "definition_uri": "https://confident.org/Presenter",
       "description": "A person that presents its work at an academic event.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "Contributor",
       "slots": [
-        "type",
-        "contributor__ctype",
+        "Contributor_type",
         "id",
         "name",
         "external_id"
@@ -3679,11 +3758,10 @@
       "name": "KeynoteSpeaker",
       "definition_uri": "https://confident.org/KeynoteSpeaker",
       "description": "A 'keynote speaker' is a presenter that is an invited person - often a multiplier in his or her (research) field - responsible for delivering a keynote speech.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "is_a": "Presenter",
       "slots": [
-        "type",
-        "contributor__ctype",
+        "Contributor_type",
         "id",
         "name",
         "external_id"
@@ -3696,7 +3774,7 @@
       "name": "Publication",
       "definition_uri": "https://confident.org/Publication",
       "description": "A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "mixins": [
         "NamedThing"
       ],
@@ -3714,7 +3792,7 @@
       "name": "ConfIDentRecords",
       "definition_uri": "https://confident.org/ConfIDentRecords",
       "description": "A container to be able to bundle academic event data and series in one data file (e.g. YAML or JSON).",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
+      "from_schema": "https://tibhannover.github.io/ConfIDent_schema/",
       "slots": [
         "confIDentRecords__events",
         "confIDentRecords__series"
@@ -3749,9 +3827,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "confident_schema.yaml",
-  "source_file_date": "2022-05-02T17:11:21",
-  "source_file_size": 40618,
-  "generation_date": "2022-05-02T17:11:51",
+  "source_file_date": "2022-05-13T22:19:22",
+  "source_file_size": 41038,
+  "generation_date": "2022-05-13T22:25:14",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",
