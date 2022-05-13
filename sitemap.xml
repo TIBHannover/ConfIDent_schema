@@ -16,12 +16,177 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_academic_fields/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_context_info/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_doi/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_dpbl_id/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_gnd_id/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_id/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_landing_page/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_metrics/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_organizers/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_process_name/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_publications/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_sponsors/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_topics/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_website/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_wikicfp_id/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEventSeries_wikidata_id/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_academic_fields/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_context_info/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_doi/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_dpbl_id/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_gnd_id/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_id/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_landing_page/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_metrics/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_organizers/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_process_name/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_publications/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_sponsors/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_topics/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_type/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_website/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_wikicfp_id/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/AcademicEvent_wikidata_id/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://my-org.github.io/my-datamodel/AcademicField/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Address/</loc>
+         <loc>https://my-org.github.io/my-datamodel/AcademicField_value/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -32,6 +197,11 @@
     </url>
     <url>
          <loc>https://my-org.github.io/my-datamodel/Boolean/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/City/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -56,7 +226,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://my-org.github.io/my-datamodel/ConfIDent_schema/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://my-org.github.io/my-datamodel/ContactPerson/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/ContactPerson_id/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -72,6 +252,11 @@
     </url>
     <url>
          <loc>https://my-org.github.io/my-datamodel/ContributorType/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/Contributor_type/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -96,6 +281,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://my-org.github.io/my-datamodel/DblpId_schema_base_uri/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/DblpId_schema_name/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://my-org.github.io/my-datamodel/Deadline/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
@@ -106,12 +301,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://my-org.github.io/my-datamodel/Deadline_type/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://my-org.github.io/my-datamodel/Decimal/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://my-org.github.io/my-datamodel/DigitalObjectId/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/DigitalObjectId_schema_base_uri/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/DigitalObjectId_schema_name/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -146,12 +356,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/FamilialRelationship/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://my-org.github.io/my-datamodel/FamilialRelationshipType/</loc>
+         <loc>https://my-org.github.io/my-datamodel/ExternalIdentifier_value/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -166,7 +371,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/HasAliases/</loc>
+         <loc>https://my-org.github.io/my-datamodel/GndId_schema_base_uri/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/GndId_schema_name/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -196,6 +406,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://my-org.github.io/my-datamodel/Metric_type/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://my-org.github.io/my-datamodel/Moderator/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
@@ -221,22 +436,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Organization/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://my-org.github.io/my-datamodel/Organizer/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://my-org.github.io/my-datamodel/Person/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://my-org.github.io/my-datamodel/PersonStatus/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -261,6 +461,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://my-org.github.io/my-datamodel/ProcessRelation_type/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://my-org.github.io/my-datamodel/Publication/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
@@ -271,17 +476,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Registry/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://my-org.github.io/my-datamodel/RelationType/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://my-org.github.io/my-datamodel/Relationship/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -311,6 +506,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://my-org.github.io/my-datamodel/TibkatId_schema_base_uri/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/TibkatId_schema_name/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://my-org.github.io/my-datamodel/Time/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
@@ -336,12 +541,92 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://my-org.github.io/my-datamodel/WikiCfpId_schema_base_uri/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/WikiCfpId_schema_name/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://my-org.github.io/my-datamodel/WikidataId/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://my-org.github.io/my-datamodel/WikidataId_schema_base_uri/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/WikidataId_schema_name/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://my-org.github.io/my-datamodel/about/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/academicEventSeries__series_of/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/academicEvent__at_location/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/academicEvent__deadlines/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/academicEvent__end_date/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/academicEvent__event_format/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/academicEvent__event_mode/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/academicEvent__event_status/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/academicEvent__in_series/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/academicEvent__index/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/academicEvent__ordinal/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/academicEvent__related_to/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/academicEvent__start_date/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -356,11 +641,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/age_in_years/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://my-org.github.io/my-datamodel/aliases/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
@@ -371,12 +651,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/birth_date/</loc>
+         <loc>https://my-org.github.io/my-datamodel/confIDentRecords__events/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/city/</loc>
+         <loc>https://my-org.github.io/my-datamodel/confIDentRecords__series/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -386,12 +666,42 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://my-org.github.io/my-datamodel/contactPerson__email/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/contactPerson__telephone/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/context__license_str/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/context__license_url/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/context__text/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://my-org.github.io/my-datamodel/context_info/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/current_address/</loc>
+         <loc>https://my-org.github.io/my-datamodel/deadline__deadline_date/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/deadline__deadline_other/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -431,17 +741,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/employed_at/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://my-org.github.io/my-datamodel/end_date/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/ended_at_time/</loc>
+         <loc>https://my-org.github.io/my-datamodel/eventFormatSpecification__specified_as/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -476,27 +781,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/founding_date/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://my-org.github.io/my-datamodel/gnd_id/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/has_familial_relationships/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://my-org.github.io/my-datamodel/id/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://my-org.github.io/my-datamodel/image/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -507,11 +797,6 @@
     </url>
     <url>
          <loc>https://my-org.github.io/my-datamodel/int_value/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://my-org.github.io/my-datamodel/is_current/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -536,6 +821,41 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://my-org.github.io/my-datamodel/location__city/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/location__country/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/location__lattitude/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/location__longitude/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/location__meeting_url/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/location__region/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/location__venue/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://my-org.github.io/my-datamodel/longitude/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
@@ -546,17 +866,32 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://my-org.github.io/my-datamodel/metric__description/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/metric__int_value/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/metric__rate_value/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/metric__str_value/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/metric__truth_value/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://my-org.github.io/my-datamodel/metrics/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://my-org.github.io/my-datamodel/mission_statement/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://my-org.github.io/my-datamodel/my_datamodel/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -576,7 +911,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/organizations/</loc>
+         <loc>https://my-org.github.io/my-datamodel/organizer__contact/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -586,17 +921,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/persons/</loc>
+         <loc>https://my-org.github.io/my-datamodel/processName__acronym/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/postal_code/</loc>
+         <loc>https://my-org.github.io/my-datamodel/processName__aliases/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/primary_email/</loc>
+         <loc>https://my-org.github.io/my-datamodel/processName__former_name/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/processName__official_name/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/processName__translated_name/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -656,11 +1001,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/started_at_time/</loc>
-         <lastmod>2022-05-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://my-org.github.io/my-datamodel/str_value/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
@@ -707,6 +1047,16 @@
     </url>
     <url>
          <loc>https://my-org.github.io/my-datamodel/value/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/venue__street/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/venue__zip_code/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>

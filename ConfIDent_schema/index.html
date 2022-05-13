@@ -1,0 +1,670 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://my-org.github.io/my-datamodel/ConfIDent_schema/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>ConfIDent-schema - My Datamodel</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#confident-schema" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Datamodel" class="md-header__button md-logo" aria-label="My Datamodel" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Datamodel
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ConfIDent-schema
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/my-org/my-datamodel/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Datamodel" class="md-nav__button md-logo" aria-label="My Datamodel" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Datamodel
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/my-org/my-datamodel/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AcademicEvent/" class="md-nav__link">
+        Academic Event
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AcademicEventSeries/" class="md-nav__link">
+        Academic EventSeries
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixins" class="md-nav__link">
+    Mixins
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    Slots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsets" class="md-nav__link">
+    Subsets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in" class="md-nav__link">
+    Built in
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined" class="md-nav__link">
+    Defined
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/my-org/my-datamodel/edit/master/docs/ConfIDent_schema.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+<h1 id="confident-schema">ConfIDent-schema</h1>
+<p><strong>metamodel version:</strong> 1.7.0</p>
+<p><strong>version:</strong> 0.3.0</p>
+<p>This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.</p>
+<h3 id="classes">Classes</h3>
+<ul>
+<li><a href="../AcademicField/">AcademicField</a> - An academic field is the scientific subject of a planned process according to some controlled vocabulary or thesaurus and as such requires the scheme URI.</li>
+<li><a href="../City/">City</a> - The city in which an academic event takes place.</li>
+<li><a href="../ConfIDentRecords/">ConfIDentRecords</a> - A container to be able to bundle academic event data and series in one data file (e.g. YAML or JSON).</li>
+<li><a href="../Context/">Context</a> - A container to provide extra information, such as call of papers event description.</li>
+<li><a href="../Contributor/">Contributor</a> - A contributor is a person or organization that holds a contributor role which is being realized in a planned process.<ul>
+<li><a href="../Attendee/">Attendee</a> - A person whose only role it is to attend an academic event.</li>
+<li><a href="../Moderator/">Moderator</a> - A person that has the role to moderate an academic event.</li>
+<li><a href="../Organizer/">Organizer</a> - An organizer of an academic event or event series.<ul>
+<li><a href="../CommitteeMember/">CommitteeMember</a> - A members of an academic event committee.<ul>
+<li><a href="../CommitteeChair/">CommitteeChair</a> - The head of an academic event committee.</li>
+</ul>
+</li>
+<li><a href="../ContactPerson/">ContactPerson</a> - The contact person of an academic event or event series.</li>
+</ul>
+</li>
+<li><a href="../Presenter/">Presenter</a> - A person that presents its work at an academic event.<ul>
+<li><a href="../KeynoteSpeaker/">KeynoteSpeaker</a> - A 'keynote speaker' is a presenter that is an invited person - often a multiplier in his or her (research) field - responsible for delivering a keynote speech.</li>
+</ul>
+</li>
+<li><a href="../Reviewer/">Reviewer</a> - A person that has the role to review the submissions of an academic event.</li>
+<li><a href="../Sponsor/">Sponsor</a> - A person or an organization whose role it is to sponsor an academic event or event series.</li>
+</ul>
+</li>
+<li><a href="../Country/">Country</a> - The country in which an academic event takes place.</li>
+<li><a href="../Deadline/">Deadline</a> - A container for event deadlines.</li>
+<li><a href="../EventFormatSpecification/">EventFormatSpecification</a> - An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathing is to be carried out by its participants in terms of achieving certain objectives, fulfiling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event. While the explicit details are often provied as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. "conference" or "workshop"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.</li>
+<li><a href="../ExternalIdentifier/">ExternalIdentifier</a> - An identifer of an entity declared in another schema.<ul>
+<li><a href="../DblpId/">DblpId</a> - The identifier of an academic event or series in dblp.</li>
+<li><a href="../DigitalObjectId/">DigitalObjectId</a> - A centrally registered identifier symbol used to uniquely identify digital objects given by International DOI Foundation.</li>
+<li><a href="../GndId/">GndId</a> - The identifier of a thing (item) in the German National authority file.</li>
+<li><a href="../TibkatId/">TibkatId</a> - The identifier of a publication in the TIB catalog.</li>
+<li><a href="../WikiCfpId/">WikiCfpId</a> - The identifier of an academic event or series in WikiCFP.</li>
+<li><a href="../WikidataId/">WikidataId</a> - The identifier of a thing (item) in Wikidata.</li>
+</ul>
+</li>
+<li><a href="../Location/">Location</a> - A container for the information about the location in which an academic event takes place.</li>
+<li><a href="../Metric/">Metric</a> - A container for statistical information about a planned process.</li>
+<li><a href="../PlannedProcess/">PlannedProcess</a> - Abstract base class for academic events and event series.<ul>
+<li><a href="../AcademicEvent/">AcademicEvent</a> - An academic event is part of the established instruments of science communication as a format for conveying the latest scientific publications. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these publications. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function.</li>
+<li><a href="../AcademicEventSeries/">AcademicEventSeries</a> - An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.</li>
+</ul>
+</li>
+<li><a href="../ProcessName/">ProcessName</a> - The container for the various names denoting a planned process</li>
+<li><a href="../ProcessRelation/">ProcessRelation</a> - A container for relations between academic events.</li>
+<li><a href="../Publication/">Publication</a> - A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.</li>
+<li><a href="../Region/">Region</a> - The region in which an academic event takes place. For non USA events this might often be negligible.</li>
+<li><a href="../Venue/">Venue</a> - The venue at which an academic event takes place.</li>
+</ul>
+<h3 id="mixins">Mixins</h3>
+<ul>
+<li><a href="../NamedThing/">NamedThing</a> - A mixin used to provide the attributes needed for the identification of named class.</li>
+<li><a href="../SchemaBasedThing/">SchemaBasedThing</a> - A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing.</li>
+</ul>
+<h3 id="slots">Slots</h3>
+<ul>
+<li><a href="../academicEventSeries__series_of/">AcademicEventSeries➞series_of</a> - A property to link to the events that are part of an academic event series.</li>
+<li><a href="../academicEvent__at_location/">AcademicEvent➞at_location</a> - The location of the academic event.</li>
+<li><a href="../academicEvent__deadlines/">AcademicEvent➞deadlines</a> - A property to provide deadlines of an academic event.</li>
+<li><a href="../academicEvent__end_date/">AcademicEvent➞end_date</a> - Similar to start_date but only for the end of an academic event or event series.</li>
+<li><a href="../academicEvent__event_format/">AcademicEvent➞event_format</a></li>
+<li><a href="../academicEvent__event_mode/">AcademicEvent➞event_mode</a> - The event mode describes whether the event is a physical, virtual or hybrid event.</li>
+<li><a href="../academicEvent__event_status/">AcademicEvent➞event_status</a></li>
+<li><a href="../academicEvent__in_series/">AcademicEvent➞in_series</a> - The relation used to provide the series of which an AcademicEvent is a part.</li>
+<li><a href="../academicEvent__index/">➞index</a></li>
+<li><a href="../academicEvent__ordinal/">AcademicEvent➞ordinal</a> - The ordnial number of an academic event within its series.</li>
+<li><a href="../academicEvent__related_to/">AcademicEvent➞related_to</a> - A property to be used</li>
+<li><a href="../academicEvent__start_date/">AcademicEvent➞start_date</a> - The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.</li>
+<li><a href="../academic_fields/">academic_fields</a> - A property to describe the scientific subject(s) of a planned process, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [value] and [schema_name] are mandatory.<ul>
+<li><a href="../AcademicEventSeries_academic_fields/">AcademicEventSeries➞academic_fields</a></li>
+<li><a href="../AcademicEvent_academic_fields/">AcademicEvent➞academic_fields</a></li>
+</ul>
+</li>
+<li><a href="../confIDentRecords__events/">ConfIDentRecords➞events</a> - A property to provide a list of academic events within this container.</li>
+<li><a href="../confIDentRecords__series/">ConfIDentRecords➞series</a> - A property to provide a list of academic event series within this container.</li>
+<li><a href="../contact/">contact</a> - The contact person of an academic event or event series.</li>
+<li><a href="../contactPerson__email/">ContactPerson➞email</a> - The email address of the contact person.</li>
+<li><a href="../contactPerson__telephone/">ContactPerson➞telephone</a> - The telephone number of the contact person.</li>
+<li><a href="../context__license_str/">Context➞license_str</a> - The license of the context information as text, which must be used when copying text from other sources.</li>
+<li><a href="../context__license_url/">Context➞license_url</a> - The license of the context information as URL, which should be used when copying text from other sources and such a URL exists.</li>
+<li><a href="../context__text/">Context➞text</a> - The free text used to provide more context information on a planned process.</li>
+<li><a href="../context_info/">context_info</a> - A property to provide extra information, such as call of papers event description.<ul>
+<li><a href="../AcademicEventSeries_context_info/">AcademicEventSeries➞context_info</a></li>
+<li><a href="../AcademicEvent_context_info/">AcademicEvent➞context_info</a></li>
+</ul>
+</li>
+<li><a href="../deadline__deadline_date/">Deadline➞deadline_date</a> - The date of a deadline.</li>
+<li><a href="../deadline__deadline_other/">Deadline➞deadline_other</a> - A property to specify another type of deadline, if this type of deadline is not within the allowed values of <a href="DeadlineType">DeadlineType</a>.</li>
+<li><a href="../eventFormatSpecification__specified_as/">EventFormatSpecification➞specified_as</a> - A mandatory property to provide the format of an academic event as string, in order to further specify its type in case it could not be specified according to the possible values of <a href="EventType">EventType</a>.</li>
+<li><a href="../external_id/">external_id</a> - A property to provide an external id of a schema entity.<ul>
+<li><a href="../doi/">doi</a> - A property to provide a digital object identifier (DOI) according to https://doi.org/.<ul>
+<li><a href="../AcademicEventSeries_doi/">AcademicEventSeries➞doi</a></li>
+<li><a href="../AcademicEvent_doi/">AcademicEvent➞doi</a></li>
+</ul>
+</li>
+<li><a href="../dpbl_id/">dpbl_id</a> - A property to link the a planned process with its DBLP identifier.<ul>
+<li><a href="../AcademicEventSeries_dpbl_id/">AcademicEventSeries➞dpbl_id</a> - A property to link an academic event series with its <a href="DblpId">DBLP identifier</a>.</li>
+<li><a href="../AcademicEvent_dpbl_id/">AcademicEvent➞dpbl_id</a> - A property to link an academic event with its <a href="DblpId">DBLP identifier</a>.</li>
+</ul>
+</li>
+<li><a href="../gnd_id/">gnd_id</a><ul>
+<li><a href="../AcademicEventSeries_gnd_id/">AcademicEventSeries➞gnd_id</a> - A property to link an academic event series with its <a href="GndId">GND identifier</a>.</li>
+<li><a href="../AcademicEvent_gnd_id/">AcademicEvent➞gnd_id</a> - A property to link an academic event with its <a href="GndId">GND identifier</a>.</li>
+</ul>
+</li>
+<li><a href="../wikicfp_id/">wikicfp_id</a> - A property to link a planned process with its WikiCFP identifier.<ul>
+<li><a href="../AcademicEventSeries_wikicfp_id/">AcademicEventSeries➞wikicfp_id</a> - A property to link an academic event series with its <a href="WikiCfpId">WikiCFP identifier</a>.</li>
+<li><a href="../AcademicEvent_wikicfp_id/">AcademicEvent➞wikicfp_id</a> - A property to link an academic event with its <a href="WikiCfpId">WikiCFP identifier</a>.</li>
+</ul>
+</li>
+<li><a href="../wikidata_id/">wikidata_id</a> - A property to link an entity with its Wikidata identifier.<ul>
+<li><a href="../AcademicEventSeries_wikidata_id/">AcademicEventSeries➞wikidata_id</a> - A property to link an academic event series with its <a href="WikidataId">Wikidata identifier</a>.</li>
+<li><a href="../AcademicEvent_wikidata_id/">AcademicEvent➞wikidata_id</a> - A property to link an academic event with its <a href="WikidataId">Wikidata identifier</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="../id/">id</a> - A property to provide an internal id of a schema entity in the ConfIDent plattform.<ul>
+<li><a href="../AcademicEventSeries_id/">AcademicEventSeries➞id</a></li>
+<li><a href="../AcademicEvent_id/">AcademicEvent➞id</a></li>
+<li><a href="../ContactPerson_id/">ContactPerson➞id</a> - The autogenerated internal identifier of contact person.</li>
+</ul>
+</li>
+<li><a href="../landing_page/">landing_page</a> - A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.<ul>
+<li><a href="../AcademicEventSeries_landing_page/">AcademicEventSeries➞landing_page</a></li>
+<li><a href="../AcademicEvent_landing_page/">AcademicEvent➞landing_page</a></li>
+</ul>
+</li>
+<li><a href="../location__city/">Location➞city</a> - The property to specify the <a href="City">City</a> of an academic event location.</li>
+<li><a href="../location__country/">Location➞country</a> - The property to specify the <a href="Country">Country</a> of an academic event location.</li>
+<li><a href="../location__lattitude/">Location➞lattitude</a> - The property to specify the lattitude of an academic event location.</li>
+<li><a href="../location__longitude/">Location➞longitude</a> - The property to specify the longitude of an academic event location.</li>
+<li><a href="../location__meeting_url/">Location➞meeting_url</a> - The property to specify the URL under which a one can participate virtually in an academic event.</li>
+<li><a href="../location__region/">Location➞region</a> - The property to specify the <a href="Region">Region</a> of an academic event location.</li>
+<li><a href="../location__venue/">Location➞venue</a> - The property to specify the <a href="Venue">Venue</a> of an academic event location.</li>
+<li><a href="../metric__description/">Metric➞description</a> - A property to provide a description of a metric.</li>
+<li><a href="../metric__int_value/">Metric➞int_value</a> - A property to provide an integer value for a metric.</li>
+<li><a href="../metric__rate_value/">Metric➞rate_value</a> - A property to provide a rate value as float for a metric.</li>
+<li><a href="../metric__str_value/">Metric➞str_value</a> - A property to provide a string value for a metric.</li>
+<li><a href="../metric__truth_value/">Metric➞truth_value</a> - A property to provide a truth value for a metric.</li>
+<li><a href="../metrics/">metrics</a> - A property to provide metrics of an academic event or series.<ul>
+<li><a href="../AcademicEventSeries_metrics/">AcademicEventSeries➞metrics</a></li>
+<li><a href="../AcademicEvent_metrics/">AcademicEvent➞metrics</a></li>
+</ul>
+</li>
+<li><a href="../name/">name</a> - A property to provide a name of a schema entity.<ul>
+<li><a href="../processName__acronym/">ProcessName➞acronym</a> - The official acronym of an academic event or series.</li>
+<li><a href="../processName__aliases/">ProcessName➞aliases</a> - A property to provide alternative names of a planned process.</li>
+<li><a href="../processName__former_name/">ProcessName➞former_name</a> - The former official name of an academic event or series. Usually this will only be needed in case an academic event series has undergone a name change.</li>
+<li><a href="../processName__official_name/">ProcessName➞official_name</a> - The official name of an academic event or series.</li>
+<li><a href="../processName__translated_name/">ProcessName➞translated_name</a> - A translation of the official process name to be used in different language contexts.</li>
+</ul>
+</li>
+<li><a href="../organizer__contact/">➞contact</a> - The contact person of an academic event or event series.</li>
+<li><a href="../organizers/">organizers</a> - A property to provide the organizers of an academic event or series.<ul>
+<li><a href="../AcademicEventSeries_organizers/">AcademicEventSeries➞organizers</a></li>
+<li><a href="../AcademicEvent_organizers/">AcademicEvent➞organizers</a></li>
+</ul>
+</li>
+<li><a href="../process_name/">process_name</a> - A property to provide a name of the academic event or series, which itself if further differentiated (e.g. official name, acronym, etc).<ul>
+<li><a href="../AcademicEventSeries_process_name/">AcademicEventSeries➞process_name</a></li>
+<li><a href="../AcademicEvent_process_name/">AcademicEvent➞process_name</a></li>
+</ul>
+</li>
+<li><a href="../publications/">publications</a> - The published works that are related to the academic event or event series, such as proceedings and video recordings of talks.<ul>
+<li><a href="../AcademicEventSeries_publications/">AcademicEventSeries➞publications</a></li>
+<li><a href="../AcademicEvent_publications/">AcademicEvent➞publications</a></li>
+</ul>
+</li>
+<li><a href="../schema_base_uri/">schema_base_uri</a> - The base URI of the schema that provides the context for the schema based value.<ul>
+<li><a href="../DblpId_schema_base_uri/">DblpId➞schema_base_uri</a></li>
+<li><a href="../DigitalObjectId_schema_base_uri/">DigitalObjectId➞schema_base_uri</a></li>
+<li><a href="../GndId_schema_base_uri/">GndId➞schema_base_uri</a></li>
+<li><a href="../TibkatId_schema_base_uri/">TibkatId➞schema_base_uri</a></li>
+<li><a href="../WikiCfpId_schema_base_uri/">WikiCfpId➞schema_base_uri</a></li>
+<li><a href="../WikidataId_schema_base_uri/">WikidataId➞schema_base_uri</a></li>
+</ul>
+</li>
+<li><a href="../schema_name/">schema_name</a><ul>
+<li><a href="../DblpId_schema_name/">DblpId➞schema_name</a></li>
+<li><a href="../DigitalObjectId_schema_name/">DigitalObjectId➞schema_name</a></li>
+<li><a href="../GndId_schema_name/">GndId➞schema_name</a></li>
+<li><a href="../TibkatId_schema_name/">TibkatId➞schema_name</a></li>
+<li><a href="../WikiCfpId_schema_name/">WikiCfpId➞schema_name</a></li>
+<li><a href="../WikidataId_schema_name/">WikidataId➞schema_name</a></li>
+</ul>
+</li>
+<li><a href="../sponsors/">sponsors</a><ul>
+<li><a href="../AcademicEventSeries_sponsors/">AcademicEventSeries➞sponsors</a> - A property to provide the sponsors of an academic event series.</li>
+<li><a href="../AcademicEvent_sponsors/">AcademicEvent➞sponsors</a> - A property to provide the sponsors of an academic event.</li>
+</ul>
+</li>
+<li><a href="../topics/">topics</a> - A property to provide the theme and topics of an academic event or event series as free keywords, phrases or text.<ul>
+<li><a href="../AcademicEventSeries_topics/">AcademicEventSeries➞topics</a></li>
+<li><a href="../AcademicEvent_topics/">AcademicEvent➞topics</a></li>
+</ul>
+</li>
+<li><a href="../type/">type</a> - An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.<ul>
+<li><a href="../AcademicEvent_type/">AcademicEvent➞type</a> - A property to specify the subtype of the academic event according to a controlled list defined in <a href="EventType">EventType</a>. If the</li>
+<li><a href="../Contributor_type/">Contributor➞type</a> - A property to provide the information whether the contributor is an organization or person.</li>
+<li><a href="../Deadline_type/">Deadline➞type</a> - The type of deadline.</li>
+<li><a href="../Metric_type/">Metric➞type</a> - A property to provide the type of relation between academic events.</li>
+<li><a href="../ProcessRelation_type/">ProcessRelation➞type</a> - A property to provide the type of process relation.</li>
+</ul>
+</li>
+<li><a href="../value/">value</a> - a property to provide the literal value of a schema based entity.<ul>
+<li><a href="../AcademicField_value/">AcademicField➞value</a> - The classification label of a certain classification schema.</li>
+<li><a href="../ExternalIdentifier_value/">ExternalIdentifier➞value</a></li>
+</ul>
+</li>
+<li><a href="../venue__street/">Venue➞street</a> - The street of the venue including the house number seperated by comma.</li>
+<li><a href="../venue__zip_code/">Venue➞zip_code</a> - The zip code of the venue.</li>
+<li><a href="../website/">website</a> - A property to provide the URL the official website of a planned process.<ul>
+<li><a href="../AcademicEventSeries_website/">AcademicEventSeries➞website</a> - A property to provide the URL the official website of an academic event series.</li>
+<li><a href="../AcademicEvent_website/">AcademicEvent➞website</a> - A property to provide the URL the official website of an academic event.</li>
+</ul>
+</li>
+</ul>
+<h3 id="enums">Enums</h3>
+<ul>
+<li><a href="../ContributorType/">ContributorType</a> - An enumaration used to distinguish the contributors of a planned process with regard to them being either an organization or a person.</li>
+<li><a href="../DeadlineType/">DeadlineType</a> - An enum that specifies the possible kinds of deadlines of an academic event.</li>
+<li><a href="../EventMode/">EventMode</a> - An enum to specify if an academic event is in person, virtual or a hybrid of both.</li>
+<li><a href="../EventStatus/">EventStatus</a> - The status of the academic event which indicates if it takes place as planned.</li>
+<li><a href="../EventType/">EventType</a> - The most common minimal event types. For event types that are not in this list, you can use "other" and provide the label of this other event format using the <a href="event_format">event_format</a> property.</li>
+<li><a href="../MetricType/">MetricType</a> - The possible metric of an academic event.</li>
+<li><a href="../RelationType/">RelationType</a> - The kinds of relations that are allowed between academic events.</li>
+</ul>
+<h3 id="subsets">Subsets</h3>
+<h3 id="types">Types</h3>
+<h4 id="built-in">Built in</h4>
+<ul>
+<li><strong>Bool</strong></li>
+<li><strong>Decimal</strong></li>
+<li><strong>ElementIdentifier</strong></li>
+<li><strong>NCName</strong></li>
+<li><strong>NodeIdentifier</strong></li>
+<li><strong>URI</strong></li>
+<li><strong>URIorCURIE</strong></li>
+<li><strong>XSDDate</strong></li>
+<li><strong>XSDDateTime</strong></li>
+<li><strong>XSDTime</strong></li>
+<li><strong>float</strong></li>
+<li><strong>int</strong></li>
+<li><strong>str</strong></li>
+</ul>
+<h4 id="defined">Defined</h4>
+<ul>
+<li><a href="types/Boolean.md">Boolean</a>  (<strong>Bool</strong>)  - A binary (true or false) value</li>
+<li><a href="types/Date.md">Date</a>  (<strong>XSDDate</strong>)  - a date (year, month and day) in an idealized calendar</li>
+<li><a href="types/Datetime.md">Datetime</a>  (<strong>XSDDateTime</strong>)  - The combination of a date and time</li>
+<li><a href="types/Decimal.md">Decimal</a>  (<strong>Decimal</strong>)  - A real number with arbitrary precision that conforms to the xsd:decimal specification</li>
+<li><a href="types/Double.md">Double</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:double specification</li>
+<li><a href="types/Float.md">Float</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:float specification</li>
+<li><a href="types/Integer.md">Integer</a>  (<strong>int</strong>)  - An integer</li>
+<li><a href="types/Ncname.md">Ncname</a>  (<strong>NCName</strong>)  - Prefix part of CURIE</li>
+<li><a href="types/Nodeidentifier.md">Nodeidentifier</a>  (<strong>NodeIdentifier</strong>)  - A URI, CURIE or BNODE that represents a node in a model.</li>
+<li><a href="types/Objectidentifier.md">Objectidentifier</a>  (<strong>ElementIdentifier</strong>)  - A URI or CURIE that represents an object in the model.</li>
+<li><a href="types/String.md">String</a>  (<strong>str</strong>)  - A character string</li>
+<li><a href="types/Time.md">Time</a>  (<strong>XSDTime</strong>)  - A time object represents a (local) time of day, independent of any particular day</li>
+<li><a href="types/Uri.md">Uri</a>  (<strong>URI</strong>)  - a complete URI</li>
+<li><a href="types/Uriorcurie.md">Uriorcurie</a>  (<strong>URIorCURIE</strong>)  - a URI or a CURIE</li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+    
+  </body>
+</html>
