@@ -56,23 +56,20 @@ classes:
     slots:
       - id 
       - name 
-      - external_id
+      - external_ids
 # processes
   PlannedProcess:
     description: Abstract base class for academic events and event series.
     class_uri: obi:0000011
     abstract: true
-    mixins:
+    mixins: 
       - NamedThing
     slots:
-    # required
-      - process_name
     # recommended
       - type
       - doi
       - landing_page
       - organizers
-      - contact
       - academic_fields
       - website
       - sponsors
@@ -85,6 +82,15 @@ classes:
       - topics
       - metrics
       - context_info 
+    slot_usage:
+      id:
+        description: The identifier of a PlannedProcess.
+      name:
+        description: The relatin to relate a name to a PlannedProcess.
+        range: ProcessName
+        required: true
+      external_ids:
+        recommended: false
   AcademicEventSeries:
     description: |-
       An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.
@@ -105,7 +111,7 @@ classes:
         domain: AcademicEventSeries
         range: uriorcurie
         required: true
-      process_name:
+      name:
         slot_uri: iao:0000235
         domain: AcademicEventSeries
         range: ProcessName
@@ -182,6 +188,8 @@ classes:
         range: Context
         required: false
         recommended: false
+      external_ids:
+        description: The property to provide external identifiers including their identifier scheme.
       gnd_id:
         description: A property to link an academic event series with its [GND identifier](GndId).
         slot_uri: iao:0000235
@@ -294,7 +302,8 @@ classes:
         domain: AcademicEvent
         range: uriorcurie
         required: true
-      process_name:
+      name:
+        description: The name of an academic event. 
         slot_uri: iao:0000235
         domain: AcademicEvent
         range: ProcessName
@@ -354,6 +363,8 @@ classes:
         required: false
         recommended: true
     # optional
+      external_ids:
+        description: A property to provide a list of external identifiers including their identifier scheme.
       topics:
         multivalued: true
         inlined_as_list: true
@@ -777,23 +788,23 @@ slots:
     abstract: true
 # common identifiers slots
   doi:
-    is_a: external_id
+    is_a: external_ids
     slot_uri: iao:0000235
     description: A property to provide a digital object identifier (DOI) according to https://doi.org/.
     range: DigitalObjectId
     exact_mappings:
       - datacite:doi
   gnd_id:
-    is_a: external_id
+    is_a: external_ids
     slot_uri: iao:0000235
     range: GndId
   wikidata_id:
-    is_a: external_id
+    is_a: external_ids
     description: A property to link an entity with its Wikidata identifier.
     slot_uri: iao:0000235
     range: WikidataId
 # NamedThing slots
-  name:
+  name:    
     description: A property to provide a name of a schema entity.
     slot_uri: sdo:name
     range: string
@@ -801,7 +812,7 @@ slots:
     description: A property to provide an internal id of a schema entity in the ConfIDent plattform.
     identifier: true
     range: uriorcurie
-  external_id:
+  external_ids:
     description: A property to provide an external id of a schema entity.
     slot_uri: iao:0000235
     multivalued: true
@@ -816,11 +827,6 @@ slots:
     description: The base URI of the schema that provides the context for the schema based value. 
     range: uriorcurie
 # PlannedProcess slots
-  process_name:
-    description: A property to provide a name of the academic event or series, which itself if further differentiated (e.g. official name, acronym, etc).
-    slot_uri: iao:0000235
-    domain: PlannedProcess
-    range: ProcessName
   landing_page:
     description: A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.
     domain: PlannedProcess
@@ -844,12 +850,6 @@ slots:
     description: A property to provide the URL the official website of a planned process.
     domain: PlannedProcess
     range: uri
-
-  contact:
-    description: The contact person of an academic event or event series.
-    domain: PlannedProcess
-    range: ContactPerson
-    inlined: true 
   sponsors:
     multivalued: true
     inlined_as_list: true
@@ -877,13 +877,13 @@ slots:
     range: Context
   
   wikicfp_id:
-    is_a: external_id
+    is_a: external_ids
     description: A property to link a planned process with its WikiCFP identifier.
     slot_uri: iao:0000235
     domain: PlannedProcess
     range: WikiCfpId
   dpbl_id:
-    is_a: external_id
+    is_a: external_ids
     description: A property to link the a planned process with its DBLP identifier.
     slot_uri: iao:0000235
     domain: PlannedProcess
@@ -1034,7 +1034,7 @@ enums:
     permissible_values:
       organization:
         description: An institution, or an association that has one or more people as members and which actsas some kind of participant in a planned process.
-        #meaning: obi:0000245
+        meaning: obi:0000245
       person:
         description: A human being that acts as some kind of participant in a planned process.
-        #meaning: NCBITaxon:9606
+        meaning: NCBITaxon:9606

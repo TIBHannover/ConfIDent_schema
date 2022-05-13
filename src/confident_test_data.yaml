@@ -7,7 +7,7 @@ events:
     doi: 
       value: 10.25798/qsdh-en13
     landing_page: https://vivoconference.org/vivo2021
-    process_name: 
+    name:
       official_name: 12th Annual / International VIVO Conference 2021
       acronym: VIVO 2021
       aliases: 
@@ -21,7 +21,7 @@ events:
     event_status: as scheduled
     event_mode: hybrid
     ordinal: 12
-    external_id:
+    external_ids:
       - value: vivo2020
         schema_base_uri: https://www.dblp.org/events/
         schema_name: dblp
@@ -39,7 +39,7 @@ events:
         ctype: organization
       - name: TIB
         id: confident:organizer2
-        external_id:
+        external_ids:
           value: 04aj4c181
           schema_base_uri: https://ror.org/
           schema_name: ROR
