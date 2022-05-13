@@ -1,10 +1,10 @@
-id: https://github.com/StroemPhi/ConfIDent-schema/
+id: https://tibhannover.github.io/ConfIDent_schema/
 name: ConfIDent-schema
 title: ConfIDent metadata schema
 description: |-
   This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
 license: https://creativecommons.org/licenses/by/4.0/
-version: 0.2.0
+version: 0.2.4
 default_curi_maps:
   - semweb_context
 
@@ -65,8 +65,6 @@ classes:
     mixins:
       - NamedThing
     slots:
-    # required
-      - process_name
     # recommended
       - type
       - doi
@@ -85,6 +83,17 @@ classes:
       - topics
       - metrics
       - context_info 
+    slot_usage:
+      id:
+        domain: PlannedProcess
+      name:
+        description: The relatin to relate a name to a PlannedProcess.
+        domain: PlannedProcess
+        range: ProcessName
+        required: true
+      external_id:
+        required: false
+        recommended: false
   AcademicEventSeries:
     description: |-
       An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.
@@ -105,7 +114,7 @@ classes:
         domain: AcademicEventSeries
         range: uriorcurie
         required: true
-      process_name:
+      name:
         slot_uri: iao:0000235
         domain: AcademicEventSeries
         range: ProcessName
@@ -180,6 +189,10 @@ classes:
         inlined: true
         domain: AcademicEventSeries
         range: Context
+        required: false
+        recommended: false
+      external_id:
+        domain: AcademicEventSeries
         required: false
         recommended: false
       gnd_id:
@@ -294,7 +307,8 @@ classes:
         domain: AcademicEvent
         range: uriorcurie
         required: true
-      process_name:
+      name:
+        description: The name of an academic event. 
         slot_uri: iao:0000235
         domain: AcademicEvent
         range: ProcessName
@@ -354,6 +368,10 @@ classes:
         required: false
         recommended: true
     # optional
+      external_id:
+        domain: AcademicEvent
+        required: false
+        recommended: false
       topics:
         multivalued: true
         inlined_as_list: true
@@ -680,12 +698,14 @@ classes:
       - NamedThing
     slots:
       - type
-    attributes:
-      ctype:
-        slot_uri: rdf:type
+    slot_usage:
+      type:
+        #designates_type: true
         description: A property to provide the information whether the contributor is an organization or person.
+        todos:
+          - find out why it throws an unhashable JsonObj error when the enum is used
         domain: Contributor
-        range: ContributorType
+        #range: ContributorType
   Sponsor:
     is_a: Contributor
     description: A person or an organization whose role it is to sponsor an academic event or event series.
@@ -801,7 +821,7 @@ slots:
     identifier: true
     range: uriorcurie
   external_id:
-    description: A property to provide an external id of a schema entity.
+    description: A property to provide a list of external identifiers of a schema entity including their identifier scheme.
     slot_uri: iao:0000235
     multivalued: true
     inlined_as_list: true
@@ -815,11 +835,6 @@ slots:
     description: The base URI of the schema that provides the context for the schema based value. 
     range: uriorcurie
 # PlannedProcess slots
-  process_name:
-    description: A property to provide a name of the academic event or series, which itself if further differentiated (e.g. official name, acronym, etc).
-    slot_uri: iao:0000235
-    domain: PlannedProcess
-    range: ProcessName
   landing_page:
     description: A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.
     domain: PlannedProcess
@@ -843,7 +858,6 @@ slots:
     description: A property to provide the URL the official website of a planned process.
     domain: PlannedProcess
     range: uri
-
   contact:
     description: The contact person of an academic event or event series.
     domain: PlannedProcess

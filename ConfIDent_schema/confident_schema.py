@@ -1,8 +1,8 @@
 # Auto generated from confident_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-02T17:11:55
+# Generation date: 2022-05-13T22:25:18
 # Schema: ConfIDent-schema
 #
-# id: https://github.com/StroemPhi/ConfIDent-schema/
+# id: https://tibhannover.github.io/ConfIDent_schema/
 # description: This is a schema for the ConfIDent project that describes the necessary metadata requirements of
 #              academic events and event series.
 # license: https://creativecommons.org/licenses/by/4.0/
@@ -27,7 +27,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Float, Integer,
 from linkml_runtime.utils.metamodelcore import Bool, URI, URIorCURIE, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "0.2.0"
+version = "0.2.4"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -213,7 +213,7 @@ class PlannedProcess(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = CONFIDENT.PlannedProcess
 
     id: Union[str, PlannedProcessId] = None
-    process_name: Optional[Union[dict, "ProcessName"]] = None
+    name: Union[dict, "ProcessName"] = None
     type: Optional[str] = None
     doi: Optional[Union[Union[dict, "DigitalObjectId"], List[Union[dict, "DigitalObjectId"]]]] = empty_list()
     landing_page: Optional[Union[str, URI]] = None
@@ -230,7 +230,6 @@ class PlannedProcess(YAMLRoot):
     topics: Optional[Union[str, List[str]]] = empty_list()
     metrics: Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]] = empty_list()
     context_info: Optional[Union[dict, "Context"]] = None
-    name: Optional[str] = None
     external_id: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -239,8 +238,10 @@ class PlannedProcess(YAMLRoot):
         if not isinstance(self.id, PlannedProcessId):
             self.id = PlannedProcessId(self.id)
 
-        if self.process_name is not None and not isinstance(self.process_name, ProcessName):
-            self.process_name = ProcessName(**as_dict(self.process_name))
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, ProcessName):
+            self.name = ProcessName(**as_dict(self.name))
 
         if self.type is not None and not isinstance(self.type, str):
             self.type = str(self.type)
@@ -297,9 +298,6 @@ class PlannedProcess(YAMLRoot):
         if self.context_info is not None and not isinstance(self.context_info, Context):
             self.context_info = Context(**as_dict(self.context_info))
 
-        if self.name is not None and not isinstance(self.name, str):
-            self.name = str(self.name)
-
         if not isinstance(self.external_id, list):
             self.external_id = [self.external_id] if self.external_id is not None else []
         self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
@@ -323,7 +321,7 @@ class AcademicEventSeries(PlannedProcess):
     class_name: ClassVar[str] = "AcademicEventSeries"
     class_model_uri: ClassVar[URIRef] = CONFIDENT.AcademicEventSeries
 
-    process_name: Union[dict, "ProcessName"] = None
+    name: Union[dict, "ProcessName"] = None
     id: Union[str, AcademicEventSeriesId] = "confident:SeriesID"
     series_of: Optional[Union[str, AcademicEventId]] = None
     landing_page: Optional[Union[str, URI]] = None
@@ -336,6 +334,7 @@ class AcademicEventSeries(PlannedProcess):
     topics: Optional[Union[str, List[str]]] = empty_list()
     metrics: Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]] = empty_list()
     context_info: Optional[Union[dict, "Context"]] = None
+    external_id: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
     gnd_id: Optional[Union[Union[dict, "DblpId"], List[Union[dict, "DblpId"]]]] = empty_list()
     wikicfp_id: Optional[Union[Union[dict, "WikiCfpId"], List[Union[dict, "WikiCfpId"]]]] = empty_list()
     wikidata_id: Optional[Union[Union[dict, "WikidataId"], List[Union[dict, "WikidataId"]]]] = empty_list()
@@ -347,10 +346,10 @@ class AcademicEventSeries(PlannedProcess):
         if not isinstance(self.id, AcademicEventSeriesId):
             self.id = AcademicEventSeriesId(self.id)
 
-        if self._is_empty(self.process_name):
-            self.MissingRequiredField("process_name")
-        if not isinstance(self.process_name, ProcessName):
-            self.process_name = ProcessName(**as_dict(self.process_name))
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, ProcessName):
+            self.name = ProcessName(**as_dict(self.name))
 
         if self.series_of is not None and not isinstance(self.series_of, AcademicEventId):
             self.series_of = AcademicEventId(self.series_of)
@@ -385,6 +384,10 @@ class AcademicEventSeries(PlannedProcess):
 
         if self.context_info is not None and not isinstance(self.context_info, Context):
             self.context_info = Context(**as_dict(self.context_info))
+
+        if not isinstance(self.external_id, list):
+            self.external_id = [self.external_id] if self.external_id is not None else []
+        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
 
         if not isinstance(self.gnd_id, list):
             self.gnd_id = [self.gnd_id] if self.gnd_id is not None else []
@@ -425,7 +428,7 @@ class AcademicEvent(PlannedProcess):
 
     start_date: Union[str, XSDDateTime] = None
     end_date: Union[str, XSDDateTime] = None
-    process_name: Union[dict, "ProcessName"] = None
+    name: Union[dict, "ProcessName"] = None
     event_status: Union[str, "EventStatus"] = "as scheduled"
     id: Union[str, AcademicEventId] = "confident:EventID"
     in_series: Optional[Union[str, AcademicEventSeriesId]] = None
@@ -443,6 +446,7 @@ class AcademicEvent(PlannedProcess):
     website: Optional[Union[str, URI]] = None
     sponsors: Optional[Union[Dict[Union[str, SponsorId], Union[dict, "Sponsor"]], List[Union[dict, "Sponsor"]]]] = empty_dict()
     publications: Optional[Union[Dict[Union[str, PublicationId], Union[dict, "Publication"]], List[Union[dict, "Publication"]]]] = empty_dict()
+    external_id: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
     topics: Optional[Union[str, List[str]]] = empty_list()
     metrics: Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]] = empty_list()
     context_info: Optional[Union[dict, "Context"]] = None
@@ -472,10 +476,10 @@ class AcademicEvent(PlannedProcess):
         if not isinstance(self.event_status, EventStatus):
             self.event_status = EventStatus(self.event_status)
 
-        if self._is_empty(self.process_name):
-            self.MissingRequiredField("process_name")
-        if not isinstance(self.process_name, ProcessName):
-            self.process_name = ProcessName(**as_dict(self.process_name))
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, ProcessName):
+            self.name = ProcessName(**as_dict(self.name))
 
         if self.in_series is not None and not isinstance(self.in_series, AcademicEventSeriesId):
             self.in_series = AcademicEventSeriesId(self.in_series)
@@ -522,6 +526,10 @@ class AcademicEvent(PlannedProcess):
         self._normalize_inlined_as_list(slot_name="sponsors", slot_type=Sponsor, key_name="id", keyed=True)
 
         self._normalize_inlined_as_list(slot_name="publications", slot_type=Publication, key_name="id", keyed=True)
+
+        if not isinstance(self.external_id, list):
+            self.external_id = [self.external_id] if self.external_id is not None else []
+        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
 
         if not isinstance(self.topics, list):
             self.topics = [self.topics] if self.topics is not None else []
@@ -1156,7 +1164,6 @@ class Contributor(YAMLRoot):
 
     id: Union[str, ContributorId] = None
     type: Optional[str] = None
-    ctype: Optional[Union[str, "ContributorType"]] = None
     name: Optional[str] = None
     external_id: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
 
@@ -1168,9 +1175,6 @@ class Contributor(YAMLRoot):
 
         if self.type is not None and not isinstance(self.type, str):
             self.type = str(self.type)
-
-        if self.ctype is not None and not isinstance(self.ctype, ContributorType):
-            self.ctype = ContributorType(self.ctype)
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)

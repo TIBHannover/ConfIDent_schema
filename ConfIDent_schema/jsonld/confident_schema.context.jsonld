@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from confident_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-05-02T17:11:38\n    Schema: ConfIDent-schema\n    metamodel version: 1.7.0\n    model version: 0.2.0\n    \n    id: https://github.com/StroemPhi/ConfIDent-schema/\n    description: This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "_comments": "Auto generated from confident_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-05-13T22:25:02\n    Schema: ConfIDent-schema\n    metamodel version: 1.7.0\n    model version: 0.2.4\n    \n    id: https://tibhannover.github.io/ConfIDent_schema/\n    description: This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
    "@context": {
       "NCBITaxon": {
          "@id": "http://purl.obolibrary.org/obo/NCBITaxon_",
@@ -36,7 +36,6 @@
       },
       "orcid": "https://orcid.org/",
       "provo": "https://www.w3.org/TR/2013/REC-prov-o-20130430/#",
-      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "ror": "https://ror.org/",
       "sdo": "https://schema.org/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
@@ -116,15 +115,6 @@
       "context_info": {
          "@type": "@id"
       },
-      "ctype": {
-         "@context": {
-            "@vocab": "@null",
-            "text": "skos:notation",
-            "description": "skos:prefLabel",
-            "meaning": "@id"
-         },
-         "@id": "rdf:type"
-      },
       "deadline_date": {
          "@type": "xsd:dateTime"
       },
@@ -184,10 +174,6 @@
       },
       "organizers": {
          "@type": "@id"
-      },
-      "process_name": {
-         "@type": "@id",
-         "@id": "iao:0000235"
       },
       "acronym": {
          "@id": "aeon:0000091"

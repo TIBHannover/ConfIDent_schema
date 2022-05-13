@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Slot: id - A model to describe academic events and event series.</title>
+    <title>Slot: type - A model to describe academic events and event series.</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Slot: id";
-        var mkdocs_page_input_path = "AcademicEvent_id.md";
+        var mkdocs_page_name = "Slot: type";
+        var mkdocs_page_input_path = "Contributor_type.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -65,7 +65,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Slot: id</li>
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Slot: type</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -75,19 +75,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="slot-id">Slot: id</h1>
-<p>A property to provide an internal id of a schema entity in the ConfIDent plattform.</p>
-<p>URI: <a href="https://confident.org/AcademicEvent_id">confident:AcademicEvent_id</a></p>
+                <h1 id="slot-type">Slot: type</h1>
+<p>A property to provide the information whether the contributor is an organization or person.</p>
+<p>URI: <a href="https://confident.org/Contributor_type">confident:Contributor_type</a></p>
 <h2 id="domain-and-range">Domain and Range</h2>
-<p><a href="../AcademicEvent/">AcademicEvent</a> &#8594;  <sub>1..1</sub> <a href="../Uriorcurie/">Uriorcurie</a></p>
+<p><a href="../Contributor/">Contributor</a> &#8594;  <sub>0..1</sub> <a href="../String/">String</a></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../PlannedProcess_id/">PlannedProcess➞id</a></li>
+<li>is_a: <a href="../type/">type</a></li>
 </ul>
 <h2 id="children">Children</h2>
 <h2 id="used-by">Used by</h2>
 <ul>
-<li><a href="../AcademicEvent/">AcademicEvent</a></li>
+<li><a href="../Attendee/">Attendee</a></li>
+<li><a href="../CommitteeChair/">CommitteeChair</a></li>
+<li><a href="../CommitteeMember/">CommitteeMember</a></li>
+<li><a href="../ContactPerson/">ContactPerson</a></li>
+<li><a href="../Contributor/">Contributor</a></li>
+<li><a href="../KeynoteSpeaker/">KeynoteSpeaker</a></li>
+<li><a href="../Moderator/">Moderator</a></li>
+<li><a href="../Organizer/">Organizer</a></li>
+<li><a href="../Presenter/">Presenter</a></li>
+<li><a href="../Reviewer/">Reviewer</a></li>
+<li><a href="../Sponsor/">Sponsor</a></li>
 </ul>
               
             </div>
