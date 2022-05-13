@@ -4,4 +4,6 @@ This is a schema used in the ConfIDent project to specify the metadata requireme
 
 ## [Documentation](https://tibhannover.github.io/ConfIDent_schema/)
 
+## Testing
 
+Just leaving some words here to see that the documentation deployment works in the GitHub pages
