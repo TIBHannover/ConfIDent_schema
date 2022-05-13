@@ -910,18 +910,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "academicEvent__index",
-      "from_schema": "https://github.com/StroemPhi/ConfIDent-schema/",
-      "slot_uri": "https://confident.org/index",
-      "alias": "index",
-      "owner": "AcademicEvent",
-      "domain_of": [
-        "AcademicEvent"
-      ],
-      "range": "integer",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "academicEvent__start_date",
       "mappings": [
         "https://github.com/tibonto/aeon#AEON_start_date"
@@ -2815,7 +2803,6 @@
         "contact",
         "name",
         "external_id",
-        "academicEvent__index",
         "academicEvent__start_date",
         "academicEvent__end_date",
         "academicEvent__event_status",
@@ -2846,11 +2833,6 @@
       ],
       "slot_usage": {},
       "attributes": [
-        {
-          "name": "index",
-          "range": "integer",
-          "@type": "SlotDefinition"
-        },
         {
           "name": "start_date",
           "description": "The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.",
@@ -3749,9 +3731,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ConfIDent_schema.yaml",
-  "source_file_date": "2022-05-13T01:07:25",
-  "source_file_size": 39655,
-  "generation_date": "2022-05-13T10:39:15",
+  "source_file_date": "2022-05-13T13:49:15",
+  "source_file_size": 40659,
+  "generation_date": "2022-05-13T13:49:28",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ConfIDent_schema.context.jsonld",

@@ -38,7 +38,6 @@ linkml:Nodeidentifier NONLITERAL
 <AcademicEvent> CLOSED {
     (  $<AcademicEvent_tes> (  &<PlannedProcess_tes> ;
           rdf:type [ <http://purl.obolibrary.org/obo/OBI_0000011> ] ? ;
-          <index> @linkml:Integer ? ;
           <https://github.com/tibonto/aeon#AEON_start_date> @linkml:Datetime ;
           <https://github.com/tibonto/aeon#AEON_end_date> @linkml:Datetime ;
           <https://github.com/tibonto/aeon#AEON_event_status> @<EventStatus> ;

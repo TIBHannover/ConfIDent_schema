@@ -4,7 +4,6 @@ CREATE TABLE "AcademicEvent" (
 	contact TEXT, 
 	name TEXT, 
 	external_id TEXT, 
-	"index" INTEGER, 
 	start_date DATETIME NOT NULL, 
 	end_date DATETIME NOT NULL, 
 	event_status VARCHAR(12) NOT NULL, 

@@ -43,12 +43,12 @@ confident:TibkatId a owl:Class,
     rdfs:label "TibkatId" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:schema_name ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:schema_base_uri ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty confident:schema_name ],
         confident:ExternalIdentifier .
 
 <https://github.com/StroemPhi/ConfIDent-schema/> a owl:Ontology ;
@@ -66,11 +66,11 @@ confident:TibkatId a owl:Class,
     dc1:license "https://creativecommons.org/licenses/by/4.0/" ;
     dc1:title "ConfIDent metadata schema" ;
     pav:version "0.3.0" ;
-    linkml:generation_date "2022-05-13T10:39:19" ;
+    linkml:generation_date "2022-05-13T13:49:34" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "ConfIDent_schema.yaml" ;
-    linkml:source_file_date "2022-05-13T01:07:25" ;
-    linkml:source_file_size 39655 .
+    linkml:source_file_date "2022-05-13T13:49:15" ;
+    linkml:source_file_size 40659 .
 
 linkml:SubsetDefinition a owl:Class ;
     rdfs:label "subset_definition" .
@@ -170,11 +170,6 @@ confident:in_series a owl:ObjectProperty,
     rdfs:label "in_series" ;
     rdfs:domain confident:AcademicEvent ;
     rdfs:range confident:AcademicEventSeries .
-
-confident:index a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "index" ;
-    rdfs:range linkml:Integer .
 
 confident:int_value a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -297,12 +292,12 @@ confident:City a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "City" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom confident:ExternalIdentifier ;
-            owl:onProperty iao:0000235 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty sdo:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:ExternalIdentifier ;
+            owl:onProperty iao:0000235 ],
         [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:id ;
@@ -332,12 +327,12 @@ confident:Country a owl:Class,
             owl:onClass linkml:String ;
             owl:onProperty sdo:name ],
         [ a owl:Restriction ;
+            owl:allValuesFrom confident:ExternalIdentifier ;
+            owl:onProperty iao:0000235 ],
+        [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:id ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:ExternalIdentifier ;
-            owl:onProperty iao:0000235 ],
         confident:NamedThing .
 
 <https://confident.org/DeadlineType#other> a owl:Class,
@@ -412,45 +407,51 @@ confident:PlannedProcess a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "PlannedProcess" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty sdo:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:Organizer ;
-            owl:onProperty confident:organizers ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty confident:topics ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:WikiCfpId ;
-            owl:onProperty iao:0000235 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:Metric ;
-            owl:onProperty confident:metrics ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:Sponsor ;
-            owl:onProperty confident:sponsors ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:GndId ;
-            owl:onProperty iao:0000235 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:ProcessName ;
-            owl:onProperty iao:0000235 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:Context ;
-            owl:onProperty confident:context_info ],
-        [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom confident:WikidataId ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty confident:topics ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:DblpId ;
             owl:onProperty iao:0000235 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:AcademicField ;
+            owl:onProperty aeon:0000040 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:GndId ;
+            owl:onProperty iao:0000235 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:ExternalIdentifier ;
+            owl:onProperty iao:0000235 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Sponsor ;
+            owl:onProperty confident:sponsors ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty confident:publications ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uri ;
+            owl:onProperty confident:website ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:WikiCfpId ;
+            owl:onProperty iao:0000235 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass confident:ContactPerson ;
+            owl:onProperty confident:contact ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Organizer ;
+            owl:onProperty confident:organizers ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Metric ;
+            owl:onProperty confident:metrics ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass confident:Context ;
+            owl:onProperty confident:context_info ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Uri ;
@@ -460,25 +461,19 @@ confident:PlannedProcess a owl:Class,
             owl:onClass linkml:String ;
             owl:onProperty confident:type ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uri ;
-            owl:onProperty confident:website ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:AcademicField ;
-            owl:onProperty aeon:0000040 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:ExternalIdentifier ;
-            owl:onProperty iao:0000235 ],
-        [ a owl:Restriction ;
             owl:allValuesFrom confident:DigitalObjectId ;
             owl:onProperty iao:0000235 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom confident:DblpId ;
+            owl:allValuesFrom confident:WikidataId ;
             owl:onProperty iao:0000235 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:ContactPerson ;
-            owl:onProperty confident:contact ],
+            owl:onClass confident:ProcessName ;
+            owl:onProperty iao:0000235 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sdo:name ],
         confident:NamedThing ;
     skos:exactMatch obi:0000011 .
 
@@ -486,35 +481,35 @@ confident:Publication a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Publication" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom confident:DigitalObjectId ;
-            owl:onProperty iao:0000235 ],
-        [ a owl:Restriction ;
             owl:allValuesFrom confident:ExternalIdentifier ;
             owl:onProperty iao:0000235 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:id ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty sdo:name ],
         [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:id ;
-            owl:qualifiedCardinality 1 ],
+            owl:allValuesFrom confident:DigitalObjectId ;
+            owl:onProperty iao:0000235 ],
         confident:NamedThing .
 
 confident:Region a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Region" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty sdo:name ],
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:id ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:allValuesFrom confident:ExternalIdentifier ;
             owl:onProperty iao:0000235 ],
         [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:id ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sdo:name ],
         confident:NamedThing ;
     linkml:examples "Example(value='Texas', description='the US state Texas as an example of a region')" .
 
@@ -701,17 +696,17 @@ confident:AcademicField a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AcademicField" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:value ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:schema_base_uri ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty confident:schema_name ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:schema_base_uri ],
+            owl:onClass linkml:String ;
+            owl:onProperty confident:value ;
+            owl:qualifiedCardinality 1 ],
         confident:SchemaBasedThing .
 
 confident:ConfIDentRecords a owl:Class,
@@ -746,16 +741,16 @@ confident:SchemaBasedThing a owl:Class,
     rdfs:label "SchemaBasedThing" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:schema_base_uri ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty confident:value ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty confident:schema_name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:schema_base_uri ],
         linkml:mixin .
 
 confident:Sponsor a owl:Class,
@@ -827,11 +822,11 @@ confident:ContactPerson a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty sdo:email ],
+            owl:onProperty sdo:telephone ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty sdo:telephone ],
+            owl:onProperty sdo:email ],
         [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:id ;
@@ -856,13 +851,13 @@ confident:Venue a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Venue" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:zip_code ],
-        [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:id ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sdo:name ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -873,7 +868,7 @@ confident:Venue a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty sdo:name ],
+            owl:onProperty confident:zip_code ],
         confident:NamedThing .
 
 confident:type a owl:ObjectProperty,
@@ -883,55 +878,32 @@ confident:AcademicEventSeries a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AcademicEventSeries" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom confident:DigitalObjectId ;
-            owl:onProperty iao:0000235 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uri ;
-            owl:onProperty confident:landing_page ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:WikidataId ;
-            owl:onProperty iao:0000235 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty confident:topics ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:Sponsor ;
-            owl:onProperty confident:sponsors ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:DblpId ;
-            owl:onProperty iao:0000235 ],
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:id ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass confident:AcademicEvent ;
             owl:onProperty confident:series_of ],
         [ a owl:Restriction ;
-            owl:allValuesFrom confident:Publication ;
-            owl:onProperty confident:publications ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:Metric ;
-            owl:onProperty confident:metrics ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:Organizer ;
-            owl:onProperty confident:organizers ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:id ;
+            owl:onClass confident:ProcessName ;
+            owl:onProperty iao:0000235 ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Sponsor ;
+            owl:onProperty confident:sponsors ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty confident:topics ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:DblpId ;
+            owl:onProperty iao:0000235 ],
         [ a owl:Restriction ;
             owl:allValuesFrom confident:AcademicField ;
             owl:onProperty aeon:0000040 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom confident:WikiCfpId ;
-            owl:onProperty iao:0000235 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uri ;
-            owl:onProperty confident:website ],
-        [ a owl:Restriction ;
-            owl:onClass confident:ProcessName ;
-            owl:onProperty iao:0000235 ;
-            owl:qualifiedCardinality 1 ],
+            owl:allValuesFrom confident:Publication ;
+            owl:onProperty confident:publications ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass confident:Context ;
@@ -939,6 +911,29 @@ confident:AcademicEventSeries a owl:Class,
         [ a owl:Restriction ;
             owl:allValuesFrom confident:DblpId ;
             owl:onProperty iao:0000235 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Organizer ;
+            owl:onProperty confident:organizers ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:WikidataId ;
+            owl:onProperty iao:0000235 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uri ;
+            owl:onProperty confident:website ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:DigitalObjectId ;
+            owl:onProperty iao:0000235 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uri ;
+            owl:onProperty confident:landing_page ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:WikiCfpId ;
+            owl:onProperty iao:0000235 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Metric ;
+            owl:onProperty confident:metrics ],
         confident:PlannedProcess ;
     skos:closeMatch sdo:EventSeries ;
     skos:exactMatch aeon:0000002 .
@@ -948,28 +943,28 @@ confident:DblpId a owl:Class,
     rdfs:label "DblpId" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:schema_name ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:schema_base_uri ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty confident:schema_name ],
         confident:ExternalIdentifier .
 
 confident:Deadline a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Deadline" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass confident:DeadlineType ;
-            owl:onProperty confident:type ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty confident:deadline_other ],
         [ a owl:Restriction ;
             owl:onClass linkml:Datetime ;
             owl:onProperty confident:deadline_date ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass confident:DeadlineType ;
+            owl:onProperty confident:type ;
             owl:qualifiedCardinality 1 ] .
 
 confident:EventMode a owl:Class,
@@ -993,10 +988,6 @@ confident:Contributor a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Contributor" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty sdo:name ],
@@ -1004,6 +995,10 @@ confident:Contributor a owl:Class,
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty rdf:type ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:id ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:allValuesFrom confident:ExternalIdentifier ;
             owl:onProperty iao:0000235 ],
@@ -1014,16 +1009,16 @@ confident:Context a owl:Class,
     rdfs:label "Context" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:license_url ],
+            owl:onClass linkml:String ;
+            owl:onProperty confident:license_str ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty confident:text ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:license_str ] .
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:license_url ] .
 
 confident:EventStatus a owl:Class,
         linkml:EnumDefinition ;
@@ -1039,13 +1034,6 @@ confident:ProcessName a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "ProcessName" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:former_name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty skos:altLabel ],
-        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty skos:altLabel ],
         [ a owl:Restriction ;
@@ -1055,7 +1043,14 @@ confident:ProcessName a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty aeon:0000091 ] ;
+            owl:onProperty confident:former_name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty aeon:0000091 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty skos:altLabel ] ;
     skos:exactMatch aeon:0000090 .
 
 confident:RelationType a owl:Class,
@@ -1073,13 +1068,13 @@ confident:NamedThing a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "NamedThing" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty sdo:name ],
-        [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:id ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sdo:name ],
         [ a owl:Restriction ;
             owl:allValuesFrom confident:ExternalIdentifier ;
             owl:onProperty iao:0000235 ],
@@ -1090,28 +1085,28 @@ confident:Metric a owl:Class,
     rdfs:label "Metric" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:str_value ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:MetricType ;
-            owl:onProperty confident:type ],
+            owl:onClass linkml:Float ;
+            owl:onProperty confident:rate_value ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty confident:description ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty confident:int_value ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty confident:str_value ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Boolean ;
             owl:onProperty confident:truth_value ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Float ;
-            owl:onProperty confident:rate_value ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty confident:int_value ] .
+            owl:onClass confident:MetricType ;
+            owl:onProperty confident:type ] .
 
 confident:MetricType a owl:Class,
         linkml:EnumDefinition ;
@@ -1137,32 +1132,32 @@ confident:Location a owl:Class,
     rdfs:label "Location" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:meeting_url ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:Region ;
-            owl:onProperty confident:region ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Float ;
-            owl:onProperty confident:longitude ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:City ;
-            owl:onProperty confident:city ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:Venue ;
-            owl:onProperty confident:venue ],
+            owl:onClass confident:Country ;
+            owl:onProperty confident:country ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Float ;
             owl:onProperty confident:lattitude ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:Country ;
-            owl:onProperty confident:country ] .
+            owl:onClass confident:Venue ;
+            owl:onProperty confident:venue ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass confident:City ;
+            owl:onProperty confident:city ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Float ;
+            owl:onProperty confident:longitude ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass confident:Region ;
+            owl:onProperty confident:region ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:meeting_url ] .
 
 confident:DeadlineType a owl:Class,
         linkml:EnumDefinition ;
@@ -1192,68 +1187,54 @@ confident:AcademicEvent a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AcademicEvent" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom confident:DblpId ;
-            owl:onProperty iao:0000235 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass confident:AcademicEventSeries ;
+            owl:onProperty confident:in_series ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uri ;
-            owl:onProperty confident:website ],
+            owl:onClass linkml:Integer ;
+            owl:onProperty aeon:event_number ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Sponsor ;
+            owl:onProperty confident:sponsors ],
+        [ a owl:Restriction ;
+            owl:onClass confident:EventStatus ;
+            owl:onProperty aeon:event_status ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Organizer ;
+            owl:onProperty confident:organizers ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Deadline ;
+            owl:onProperty confident:deadlines ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass confident:Location ;
+            owl:onProperty confident:at_location ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:ProcessRelation ;
+            owl:onProperty confident:related_to ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Publication ;
+            owl:onProperty confident:publications ],
         [ a owl:Restriction ;
             owl:allValuesFrom confident:WikidataId ;
-            owl:onProperty iao:0000235 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:EventType ;
-            owl:onProperty rdf:type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:DblpId ;
             owl:onProperty iao:0000235 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass confident:EventFormatSpecification ;
             owl:onProperty aeon:0000032 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom confident:DigitalObjectId ;
-            owl:onProperty iao:0000235 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:AcademicField ;
-            owl:onProperty aeon:0000040 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:Sponsor ;
-            owl:onProperty confident:sponsors ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty aeon:event_number ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty confident:index ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uri ;
-            owl:onProperty confident:landing_page ],
-        [ a owl:Restriction ;
-            owl:onClass confident:ProcessName ;
-            owl:onProperty iao:0000235 ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass linkml:Datetime ;
             owl:onProperty aeon:end_date ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom confident:Organizer ;
-            owl:onProperty confident:organizers ],
+            owl:allValuesFrom confident:AcademicField ;
+            owl:onProperty aeon:0000040 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom confident:Metric ;
-            owl:onProperty confident:metrics ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty confident:topics ],
-        [ a owl:Restriction ;
-            owl:onClass confident:EventStatus ;
-            owl:onProperty aeon:event_status ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uri ;
+            owl:onProperty confident:website ],
         [ a owl:Restriction ;
             owl:onClass linkml:Datetime ;
             owl:onProperty aeon:start_date ;
@@ -1262,34 +1243,44 @@ confident:AcademicEvent a owl:Class,
             owl:allValuesFrom confident:WikiCfpId ;
             owl:onProperty iao:0000235 ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:AcademicEventSeries ;
-            owl:onProperty confident:in_series ],
+            owl:allValuesFrom confident:DblpId ;
+            owl:onProperty iao:0000235 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom confident:Publication ;
-            owl:onProperty confident:publications ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty confident:topics ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Metric ;
+            owl:onProperty confident:metrics ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:DblpId ;
+            owl:onProperty iao:0000235 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:DigitalObjectId ;
+            owl:onProperty iao:0000235 ],
+        [ a owl:Restriction ;
+            owl:onClass confident:ProcessName ;
+            owl:onProperty iao:0000235 ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass confident:EventMode ;
             owl:onProperty confident:event_mode ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:Context ;
-            owl:onProperty confident:context_info ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:ProcessRelation ;
-            owl:onProperty confident:related_to ],
+            owl:onClass linkml:Uri ;
+            owl:onProperty confident:landing_page ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:Location ;
-            owl:onProperty confident:at_location ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:Deadline ;
-            owl:onProperty confident:deadlines ],
+            owl:onClass confident:EventType ;
+            owl:onProperty rdf:type ],
         [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:id ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass confident:Context ;
+            owl:onProperty confident:context_info ],
         confident:PlannedProcess ;
     skos:closeMatch sdo:Event ;
     skos:exactMatch aeon:0000001 .
@@ -1300,7 +1291,7 @@ confident:ExternalIdentifier a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty obi:0002815 ],
+            owl:onProperty confident:schema_name ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Uriorcurie ;
@@ -1308,7 +1299,7 @@ confident:ExternalIdentifier a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty confident:schema_name ],
+            owl:onProperty obi:0002815 ],
         confident:SchemaBasedThing .
 
 confident:EventType a owl:Class,

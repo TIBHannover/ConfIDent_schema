@@ -219,8 +219,6 @@ classes:
     is_a: PlannedProcess
     attributes:
     # required
-      index:
-        range: integer
       start_date:
         description: The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.
         domain: AcademicEvent

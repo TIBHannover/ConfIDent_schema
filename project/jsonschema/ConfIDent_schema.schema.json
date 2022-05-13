@@ -81,9 +81,6 @@
                "description": "The relation used to provide the series of which an AcademicEvent is a part.",
                "type": "string"
             },
-            "index": {
-               "type": "integer"
-            },
             "landing_page": {
                "description": "A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.",
                "type": "string"

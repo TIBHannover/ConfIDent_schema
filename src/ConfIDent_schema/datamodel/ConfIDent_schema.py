@@ -1,5 +1,5 @@
 # Auto generated from ConfIDent_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-13T10:39:25
+# Generation date: 2022-05-13T13:49:40
 # Schema: ConfIDent-schema
 #
 # id: https://github.com/StroemPhi/ConfIDent-schema/
@@ -428,7 +428,6 @@ class AcademicEvent(PlannedProcess):
     process_name: Union[dict, "ProcessName"] = None
     event_status: Union[str, "EventStatus"] = "as scheduled"
     id: Union[str, AcademicEventId] = "confident:EventID"
-    index: Optional[int] = None
     in_series: Optional[Union[str, AcademicEventSeriesId]] = None
     event_format: Optional[Union[dict, "EventFormatSpecification"]] = None
     at_location: Optional[Union[dict, "Location"]] = None
@@ -477,9 +476,6 @@ class AcademicEvent(PlannedProcess):
             self.MissingRequiredField("process_name")
         if not isinstance(self.process_name, ProcessName):
             self.process_name = ProcessName(**as_dict(self.process_name))
-
-        if self.index is not None and not isinstance(self.index, int):
-            self.index = int(self.index)
 
         if self.in_series is not None and not isinstance(self.in_series, AcademicEventSeriesId):
             self.in_series = AcademicEventSeriesId(self.in_series)
@@ -1766,9 +1762,6 @@ slots.dpbl_id = Slot(uri=IAO['0000235'], name="dpbl_id", curie=IAO.curie('000023
 
 slots.academicEventSeries__series_of = Slot(uri=CONFIDENT.series_of, name="academicEventSeries__series_of", curie=CONFIDENT.curie('series_of'),
                    model_uri=CONFIDENT.academicEventSeries__series_of, domain=AcademicEventSeries, range=Optional[Union[str, AcademicEventId]])
-
-slots.academicEvent__index = Slot(uri=CONFIDENT.index, name="academicEvent__index", curie=CONFIDENT.curie('index'),
-                   model_uri=CONFIDENT.academicEvent__index, domain=None, range=Optional[int])
 
 slots.academicEvent__start_date = Slot(uri=AEON.start_date, name="academicEvent__start_date", curie=AEON.curie('start_date'),
                    model_uri=CONFIDENT.academicEvent__start_date, domain=AcademicEvent, range=Union[str, XSDDateTime])

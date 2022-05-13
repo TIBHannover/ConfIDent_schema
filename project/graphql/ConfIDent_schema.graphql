@@ -3,7 +3,6 @@ type AcademicEvent
     contact: ContactPerson
     name: String
     externalId: [ExternalIdentifier]
-    index: Integer
     startDate: Datetime!
     endDate: Datetime!
     eventStatus: EventStatus!
