@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://my-org.github.io/my-datamodel/DigitalObjectId/">
+        <link rel="canonical" href="https://my-org.github.io/my-datamodel/event_name/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
     
     
       
-        <title>Class: DigitalObjectId - My Datamodel</title>
+        <title>Slot: event_name - My Datamodel</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#class-digitalobjectid" class="md-skip">
+        <a href="#slot-event_name" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Class: DigitalObjectId
+              Slot: event_name
             
           </span>
         </div>
@@ -290,15 +290,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slots" class="md-nav__link">
-    Slots
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usages" class="md-nav__link">
-    Usages
+  <a href="#properties" class="md-nav__link">
+    Properties
   </a>
   
 </li>
@@ -307,33 +300,6 @@
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linkml-specification" class="md-nav__link">
-    LinkML Specification
-  </a>
-  
-    <nav class="md-nav" aria-label="LinkML Specification">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#direct" class="md-nav__link">
-    Direct
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#induced" class="md-nav__link">
-    Induced
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -349,157 +315,27 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/my-org/my-datamodel/edit/master/docs/DigitalObjectId.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/my-org/my-datamodel/edit/master/docs/event_name.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-<h1 id="class-digitalobjectid">Class: DigitalObjectId</h1>
-<p><em>A centrally registered identifier symbol used to uniquely identify digital objects given by International DOI Foundation.</em></p>
-<p>URI: <a href="http://purl.obolibrary.org/obo/OBI_0002110">obi:0002110</a></p>
+<h1 id="slot-event_name">Slot: event_name</h1>
+<p><em>The name of an academic event.</em></p>
+<p>URI: <a href="http://purl.obolibrary.org/obo/IAO_0000235">http://purl.obolibrary.org/obo/IAO_0000235</a></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><a href="../ExternalIdentifier/">ExternalIdentifier</a> [ SchemaBasedThing]<ul>
-<li><strong>DigitalObjectId</strong></li>
+<li><a href="../process_name/">process_name</a><ul>
+<li><strong>event_name</strong></li>
 </ul>
 </li>
 </ul>
-<h2 id="slots">Slots</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Range</th>
-<th>Cardinality</th>
-<th>Description</th>
-<th>Info</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../value/">value</a></td>
-<td><a href="string.md">string</a></td>
-<td>0..1</td>
-<td>a property to provide the literal value of a schema based entity.</td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="../schema_name/">schema_name</a></td>
-<td><a href="string.md">string</a></td>
-<td>0..1</td>
-<td>None</td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="../schema_base_uri/">schema_base_uri</a></td>
-<td><a href="uriorcurie.md">uriorcurie</a></td>
-<td>0..1</td>
-<td>The base URI of the schema that provides the context for the schema based value.</td>
-<td>.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="usages">Usages</h2>
-<table>
-<thead>
-<tr>
-<th>used by</th>
-<th>used in</th>
-<th>type</th>
-<th>used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../PlannedProcess/">PlannedProcess</a></td>
-<td><a href="../doi/">doi</a></td>
-<td>range</td>
-<td>DigitalObjectId</td>
-</tr>
-<tr>
-<td><a href="../AcademicEventSeries/">AcademicEventSeries</a></td>
-<td><a href="../doi/">doi</a></td>
-<td>range</td>
-<td>DigitalObjectId</td>
-</tr>
-<tr>
-<td><a href="../AcademicEvent/">AcademicEvent</a></td>
-<td><a href="../doi/">doi</a></td>
-<td>range</td>
-<td>DigitalObjectId</td>
-</tr>
-<tr>
-<td><a href="../Publication/">Publication</a></td>
-<td><a href="../doi/">doi</a></td>
-<td>range</td>
-<td>DigitalObjectId</td>
-</tr>
-</tbody>
-</table>
+<h2 id="properties">Properties</h2>
+<ul>
+<li>Range: ProcessName</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h2 id="linkml-specification">LinkML Specification</h2>
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-<h3 id="direct">Direct</h3>
-<details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DigitalObjectId</span><span class="w"></span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A centrally registered identifier symbol used to uniquely identify digital</span><span class="w"></span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">objects given by International DOI Foundation.</span><span class="w"></span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
-<span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalIdentifier</span><span class="w"></span>
-<span class="nt">slot_usage</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">schema_name</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_name</span><span class="w"></span>
-<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string(DOI)</span><span class="w"></span>
-<span class="w">  </span><span class="nt">schema_base_uri</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_base_uri</span><span class="w"></span>
-<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uri(https://doi.org)</span><span class="w"></span>
-<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">obi:0002110</span><span class="w"></span>
-</code></pre></div>
-</details>
-
-<h3 id="induced">Induced</h3>
-<details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DigitalObjectId</span><span class="w"></span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A centrally registered identifier symbol used to uniquely identify digital</span><span class="w"></span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">objects given by International DOI Foundation.</span><span class="w"></span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
-<span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalIdentifier</span><span class="w"></span>
-<span class="nt">slot_usage</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">schema_name</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_name</span><span class="w"></span>
-<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string(DOI)</span><span class="w"></span>
-<span class="w">  </span><span class="nt">schema_base_uri</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_base_uri</span><span class="w"></span>
-<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uri(https://doi.org)</span><span class="w"></span>
-<span class="nt">attributes</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span><span class="w"></span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a property to provide the literal value of a schema based entity.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span><span class="w"></span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DigitalObjectId</span><span class="w"></span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
-<span class="w">  </span><span class="nt">schema_name</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_name</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
-<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string(DOI)</span><span class="w"></span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_name</span><span class="w"></span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DigitalObjectId</span><span class="w"></span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
-<span class="w">  </span><span class="nt">schema_base_uri</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_base_uri</span><span class="w"></span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The base URI of the schema that provides the context for the schema</span><span class="w"></span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">based value.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
-<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uri(https://doi.org)</span><span class="w"></span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_base_uri</span><span class="w"></span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DigitalObjectId</span><span class="w"></span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span><span class="w"></span>
-<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">obi:0002110</span><span class="w"></span>
-</code></pre></div>
-</details>
 
               
             </article>

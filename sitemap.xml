@@ -761,6 +761,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://my-org.github.io/my-datamodel/event_name/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://my-org.github.io/my-datamodel/event_status/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
@@ -772,6 +777,11 @@
     </url>
     <url>
          <loc>https://my-org.github.io/my-datamodel/external_id/</loc>
+         <lastmod>2022-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://my-org.github.io/my-datamodel/external_ids/</loc>
          <lastmod>2022-05-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
