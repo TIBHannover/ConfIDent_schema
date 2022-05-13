@@ -1,3 +1,0 @@
-name: ConfIDent_schema
-description: A model to describe academic events and event series.
-source_schema_path: src/linkml/ConfIDent_schema.yaml
