@@ -1,8 +1,8 @@
 # Auto generated from ConfIDent_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-13T13:49:40
+# Generation date: 2022-05-13T16:46:03
 # Schema: ConfIDent-schema
 #
-# id: https://github.com/StroemPhi/ConfIDent-schema/
+# id: https://tibhannover.github.io/ConfIDent_schema/
 # description: This is a schema for the ConfIDent project that describes the necessary metadata requirements of
 #              academic events and event series.
 # license: https://creativecommons.org/licenses/by/4.0/
@@ -182,7 +182,7 @@ class NamedThing(YAMLRoot):
 
     id: Union[str, NamedThingId] = None
     name: Optional[str] = None
-    external_id: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
+    external_ids: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -193,9 +193,9 @@ class NamedThing(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if not isinstance(self.external_id, list):
-            self.external_id = [self.external_id] if self.external_id is not None else []
-        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
+        if not isinstance(self.external_ids, list):
+            self.external_ids = [self.external_ids] if self.external_ids is not None else []
+        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
 
         super().__post_init__(**kwargs)
 
@@ -213,12 +213,11 @@ class PlannedProcess(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = CONFIDENT.PlannedProcess
 
     id: Union[str, PlannedProcessId] = None
-    process_name: Optional[Union[dict, "ProcessName"]] = None
+    name: Union[dict, "ProcessName"] = None
     type: Optional[str] = None
     doi: Optional[Union[Union[dict, "DigitalObjectId"], List[Union[dict, "DigitalObjectId"]]]] = empty_list()
     landing_page: Optional[Union[str, URI]] = None
     organizers: Optional[Union[Dict[Union[str, OrganizerId], Union[dict, "Organizer"]], List[Union[dict, "Organizer"]]]] = empty_dict()
-    contact: Optional[Union[dict, "ContactPerson"]] = None
     academic_fields: Optional[Union[Union[dict, "AcademicField"], List[Union[dict, "AcademicField"]]]] = empty_list()
     website: Optional[Union[str, URI]] = None
     sponsors: Optional[Union[Dict[Union[str, SponsorId], Union[dict, "Sponsor"]], List[Union[dict, "Sponsor"]]]] = empty_dict()
@@ -230,8 +229,7 @@ class PlannedProcess(YAMLRoot):
     topics: Optional[Union[str, List[str]]] = empty_list()
     metrics: Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]] = empty_list()
     context_info: Optional[Union[dict, "Context"]] = None
-    name: Optional[str] = None
-    external_id: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
+    external_ids: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -239,8 +237,10 @@ class PlannedProcess(YAMLRoot):
         if not isinstance(self.id, PlannedProcessId):
             self.id = PlannedProcessId(self.id)
 
-        if self.process_name is not None and not isinstance(self.process_name, ProcessName):
-            self.process_name = ProcessName(**as_dict(self.process_name))
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, ProcessName):
+            self.name = ProcessName(**as_dict(self.name))
 
         if self.type is not None and not isinstance(self.type, str):
             self.type = str(self.type)
@@ -253,9 +253,6 @@ class PlannedProcess(YAMLRoot):
             self.landing_page = URI(self.landing_page)
 
         self._normalize_inlined_as_list(slot_name="organizers", slot_type=Organizer, key_name="id", keyed=True)
-
-        if self.contact is not None and not isinstance(self.contact, ContactPerson):
-            self.contact = ContactPerson(**as_dict(self.contact))
 
         if not isinstance(self.academic_fields, list):
             self.academic_fields = [self.academic_fields] if self.academic_fields is not None else []
@@ -297,12 +294,9 @@ class PlannedProcess(YAMLRoot):
         if self.context_info is not None and not isinstance(self.context_info, Context):
             self.context_info = Context(**as_dict(self.context_info))
 
-        if self.name is not None and not isinstance(self.name, str):
-            self.name = str(self.name)
-
-        if not isinstance(self.external_id, list):
-            self.external_id = [self.external_id] if self.external_id is not None else []
-        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
+        if not isinstance(self.external_ids, list):
+            self.external_ids = [self.external_ids] if self.external_ids is not None else []
+        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
 
         super().__post_init__(**kwargs)
 
@@ -323,7 +317,7 @@ class AcademicEventSeries(PlannedProcess):
     class_name: ClassVar[str] = "AcademicEventSeries"
     class_model_uri: ClassVar[URIRef] = CONFIDENT.AcademicEventSeries
 
-    process_name: Union[dict, "ProcessName"] = None
+    name: Union[dict, "ProcessName"] = None
     id: Union[str, AcademicEventSeriesId] = "confident:SeriesID"
     series_of: Optional[Union[str, AcademicEventId]] = None
     landing_page: Optional[Union[str, URI]] = None
@@ -336,6 +330,7 @@ class AcademicEventSeries(PlannedProcess):
     topics: Optional[Union[str, List[str]]] = empty_list()
     metrics: Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]] = empty_list()
     context_info: Optional[Union[dict, "Context"]] = None
+    external_ids: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
     gnd_id: Optional[Union[Union[dict, "DblpId"], List[Union[dict, "DblpId"]]]] = empty_list()
     wikicfp_id: Optional[Union[Union[dict, "WikiCfpId"], List[Union[dict, "WikiCfpId"]]]] = empty_list()
     wikidata_id: Optional[Union[Union[dict, "WikidataId"], List[Union[dict, "WikidataId"]]]] = empty_list()
@@ -347,10 +342,10 @@ class AcademicEventSeries(PlannedProcess):
         if not isinstance(self.id, AcademicEventSeriesId):
             self.id = AcademicEventSeriesId(self.id)
 
-        if self._is_empty(self.process_name):
-            self.MissingRequiredField("process_name")
-        if not isinstance(self.process_name, ProcessName):
-            self.process_name = ProcessName(**as_dict(self.process_name))
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, ProcessName):
+            self.name = ProcessName(**as_dict(self.name))
 
         if self.series_of is not None and not isinstance(self.series_of, AcademicEventId):
             self.series_of = AcademicEventId(self.series_of)
@@ -385,6 +380,10 @@ class AcademicEventSeries(PlannedProcess):
 
         if self.context_info is not None and not isinstance(self.context_info, Context):
             self.context_info = Context(**as_dict(self.context_info))
+
+        if not isinstance(self.external_ids, list):
+            self.external_ids = [self.external_ids] if self.external_ids is not None else []
+        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
 
         if not isinstance(self.gnd_id, list):
             self.gnd_id = [self.gnd_id] if self.gnd_id is not None else []
@@ -425,7 +424,7 @@ class AcademicEvent(PlannedProcess):
 
     start_date: Union[str, XSDDateTime] = None
     end_date: Union[str, XSDDateTime] = None
-    process_name: Union[dict, "ProcessName"] = None
+    name: Union[dict, "ProcessName"] = None
     event_status: Union[str, "EventStatus"] = "as scheduled"
     id: Union[str, AcademicEventId] = "confident:EventID"
     in_series: Optional[Union[str, AcademicEventSeriesId]] = None
@@ -443,6 +442,7 @@ class AcademicEvent(PlannedProcess):
     website: Optional[Union[str, URI]] = None
     sponsors: Optional[Union[Dict[Union[str, SponsorId], Union[dict, "Sponsor"]], List[Union[dict, "Sponsor"]]]] = empty_dict()
     publications: Optional[Union[Dict[Union[str, PublicationId], Union[dict, "Publication"]], List[Union[dict, "Publication"]]]] = empty_dict()
+    external_ids: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
     topics: Optional[Union[str, List[str]]] = empty_list()
     metrics: Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]] = empty_list()
     context_info: Optional[Union[dict, "Context"]] = None
@@ -472,10 +472,10 @@ class AcademicEvent(PlannedProcess):
         if not isinstance(self.event_status, EventStatus):
             self.event_status = EventStatus(self.event_status)
 
-        if self._is_empty(self.process_name):
-            self.MissingRequiredField("process_name")
-        if not isinstance(self.process_name, ProcessName):
-            self.process_name = ProcessName(**as_dict(self.process_name))
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, ProcessName):
+            self.name = ProcessName(**as_dict(self.name))
 
         if self.in_series is not None and not isinstance(self.in_series, AcademicEventSeriesId):
             self.in_series = AcademicEventSeriesId(self.in_series)
@@ -522,6 +522,10 @@ class AcademicEvent(PlannedProcess):
         self._normalize_inlined_as_list(slot_name="sponsors", slot_type=Sponsor, key_name="id", keyed=True)
 
         self._normalize_inlined_as_list(slot_name="publications", slot_type=Publication, key_name="id", keyed=True)
+
+        if not isinstance(self.external_ids, list):
+            self.external_ids = [self.external_ids] if self.external_ids is not None else []
+        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
 
         if not isinstance(self.topics, list):
             self.topics = [self.topics] if self.topics is not None else []
@@ -958,7 +962,7 @@ class City(YAMLRoot):
 
     id: Union[str, CityId] = None
     name: Optional[str] = None
-    external_id: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
+    external_ids: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -969,9 +973,9 @@ class City(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if not isinstance(self.external_id, list):
-            self.external_id = [self.external_id] if self.external_id is not None else []
-        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
+        if not isinstance(self.external_ids, list):
+            self.external_ids = [self.external_ids] if self.external_ids is not None else []
+        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
 
         super().__post_init__(**kwargs)
 
@@ -990,7 +994,7 @@ class Country(YAMLRoot):
 
     id: Union[str, CountryId] = None
     name: Optional[str] = None
-    external_id: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
+    external_ids: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1001,9 +1005,9 @@ class Country(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if not isinstance(self.external_id, list):
-            self.external_id = [self.external_id] if self.external_id is not None else []
-        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
+        if not isinstance(self.external_ids, list):
+            self.external_ids = [self.external_ids] if self.external_ids is not None else []
+        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
 
         super().__post_init__(**kwargs)
 
@@ -1022,7 +1026,7 @@ class Region(YAMLRoot):
 
     id: Union[str, RegionId] = None
     name: Optional[str] = None
-    external_id: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
+    external_ids: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1033,9 +1037,9 @@ class Region(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if not isinstance(self.external_id, list):
-            self.external_id = [self.external_id] if self.external_id is not None else []
-        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
+        if not isinstance(self.external_ids, list):
+            self.external_ids = [self.external_ids] if self.external_ids is not None else []
+        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
 
         super().__post_init__(**kwargs)
 
@@ -1056,7 +1060,7 @@ class Venue(YAMLRoot):
     street: Optional[str] = None
     zip_code: Optional[str] = None
     name: Optional[str] = None
-    external_id: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
+    external_ids: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1073,9 +1077,9 @@ class Venue(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if not isinstance(self.external_id, list):
-            self.external_id = [self.external_id] if self.external_id is not None else []
-        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
+        if not isinstance(self.external_ids, list):
+            self.external_ids = [self.external_ids] if self.external_ids is not None else []
+        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
 
         super().__post_init__(**kwargs)
 
@@ -1157,7 +1161,7 @@ class Contributor(YAMLRoot):
     id: Union[str, ContributorId] = None
     type: Optional[str] = None
     name: Optional[str] = None
-    external_id: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
+    external_ids: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1171,9 +1175,9 @@ class Contributor(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if not isinstance(self.external_id, list):
-            self.external_id = [self.external_id] if self.external_id is not None else []
-        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
+        if not isinstance(self.external_ids, list):
+            self.external_ids = [self.external_ids] if self.external_ids is not None else []
+        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
 
         super().__post_init__(**kwargs)
 
@@ -1436,7 +1440,7 @@ class Publication(YAMLRoot):
     id: Union[str, PublicationId] = None
     doi: Optional[Union[Union[dict, DigitalObjectId], List[Union[dict, DigitalObjectId]]]] = empty_list()
     name: Optional[str] = None
-    external_id: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
+    external_ids: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1451,9 +1455,9 @@ class Publication(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if not isinstance(self.external_id, list):
-            self.external_id = [self.external_id] if self.external_id is not None else []
-        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
+        if not isinstance(self.external_ids, list):
+            self.external_ids = [self.external_ids] if self.external_ids is not None else []
+        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
 
         super().__post_init__(**kwargs)
 
@@ -1678,9 +1682,11 @@ class ContributorType(EnumDefinitionImpl):
     organization or a person.
     """
     organization = PermissibleValue(text="organization",
-                                               description="An institution, or an association that has one or more people as members and which actsas some kind of participant in a planned process.")
+                                               description="An institution, or an association that has one or more people as members and which actsas some kind of participant in a planned process.",
+                                               meaning=OBI["0000245"])
     person = PermissibleValue(text="person",
-                                   description="A human being that acts as some kind of participant in a planned process.")
+                                   description="A human being that acts as some kind of participant in a planned process.",
+                                   meaning=NCBITAXON["9606"])
 
     _defn = EnumDefinition(
         name="ContributorType",
@@ -1709,8 +1715,8 @@ slots.name = Slot(uri=SDO.name, name="name", curie=SDO.curie('name'),
 slots.id = Slot(uri=CONFIDENT.id, name="id", curie=CONFIDENT.curie('id'),
                    model_uri=CONFIDENT.id, domain=None, range=URIRef)
 
-slots.external_id = Slot(uri=IAO['0000235'], name="external_id", curie=IAO.curie('0000235'),
-                   model_uri=CONFIDENT.external_id, domain=None, range=Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]])
+slots.external_ids = Slot(uri=IAO['0000235'], name="external_ids", curie=IAO.curie('0000235'),
+                   model_uri=CONFIDENT.external_ids, domain=None, range=Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]])
 
 slots.value = Slot(uri=CONFIDENT.value, name="value", curie=CONFIDENT.curie('value'),
                    model_uri=CONFIDENT.value, domain=None, range=Optional[str])
@@ -1720,9 +1726,6 @@ slots.schema_name = Slot(uri=CONFIDENT.schema_name, name="schema_name", curie=CO
 
 slots.schema_base_uri = Slot(uri=CONFIDENT.schema_base_uri, name="schema_base_uri", curie=CONFIDENT.curie('schema_base_uri'),
                    model_uri=CONFIDENT.schema_base_uri, domain=None, range=Optional[Union[str, URIorCURIE]])
-
-slots.process_name = Slot(uri=IAO['0000235'], name="process_name", curie=IAO.curie('0000235'),
-                   model_uri=CONFIDENT.process_name, domain=PlannedProcess, range=Optional[Union[dict, "ProcessName"]])
 
 slots.landing_page = Slot(uri=CONFIDENT.landing_page, name="landing_page", curie=CONFIDENT.curie('landing_page'),
                    model_uri=CONFIDENT.landing_page, domain=PlannedProcess, range=Optional[Union[str, URI]])
@@ -1735,9 +1738,6 @@ slots.academic_fields = Slot(uri=AEON['0000040'], name="academic_fields", curie=
 
 slots.website = Slot(uri=CONFIDENT.website, name="website", curie=CONFIDENT.curie('website'),
                    model_uri=CONFIDENT.website, domain=PlannedProcess, range=Optional[Union[str, URI]])
-
-slots.contact = Slot(uri=CONFIDENT.contact, name="contact", curie=CONFIDENT.curie('contact'),
-                   model_uri=CONFIDENT.contact, domain=PlannedProcess, range=Optional[Union[dict, "ContactPerson"]])
 
 slots.sponsors = Slot(uri=CONFIDENT.sponsors, name="sponsors", curie=CONFIDENT.curie('sponsors'),
                    model_uri=CONFIDENT.sponsors, domain=PlannedProcess, range=Optional[Union[Dict[Union[str, SponsorId], Union[dict, "Sponsor"]], List[Union[dict, "Sponsor"]]]])
@@ -1884,11 +1884,20 @@ slots.confIDentRecords__events = Slot(uri=CONFIDENT.events, name="confIDentRecor
 slots.confIDentRecords__series = Slot(uri=CONFIDENT.series, name="confIDentRecords__series", curie=CONFIDENT.curie('series'),
                    model_uri=CONFIDENT.confIDentRecords__series, domain=ConfIDentRecords, range=Optional[Union[Dict[Union[str, AcademicEventSeriesId], Union[dict, AcademicEventSeries]], List[Union[dict, AcademicEventSeries]]]])
 
+slots.PlannedProcess_id = Slot(uri=CONFIDENT.id, name="PlannedProcess_id", curie=CONFIDENT.curie('id'),
+                   model_uri=CONFIDENT.PlannedProcess_id, domain=PlannedProcess, range=Union[str, PlannedProcessId])
+
+slots.PlannedProcess_name = Slot(uri=SDO.name, name="PlannedProcess_name", curie=SDO.curie('name'),
+                   model_uri=CONFIDENT.PlannedProcess_name, domain=PlannedProcess, range=Union[dict, "ProcessName"])
+
+slots.PlannedProcess_external_ids = Slot(uri=IAO['0000235'], name="PlannedProcess_external_ids", curie=IAO.curie('0000235'),
+                   model_uri=CONFIDENT.PlannedProcess_external_ids, domain=PlannedProcess, range=Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]])
+
 slots.AcademicEventSeries_id = Slot(uri=CONFIDENT.id, name="AcademicEventSeries_id", curie=CONFIDENT.curie('id'),
                    model_uri=CONFIDENT.AcademicEventSeries_id, domain=AcademicEventSeries, range=Union[str, AcademicEventSeriesId])
 
-slots.AcademicEventSeries_process_name = Slot(uri=IAO['0000235'], name="AcademicEventSeries_process_name", curie=IAO.curie('0000235'),
-                   model_uri=CONFIDENT.AcademicEventSeries_process_name, domain=AcademicEventSeries, range=Union[dict, "ProcessName"])
+slots.AcademicEventSeries_name = Slot(uri=IAO['0000235'], name="AcademicEventSeries_name", curie=IAO.curie('0000235'),
+                   model_uri=CONFIDENT.AcademicEventSeries_name, domain=AcademicEventSeries, range=Union[dict, "ProcessName"])
 
 slots.AcademicEventSeries_landing_page = Slot(uri=CONFIDENT.landing_page, name="AcademicEventSeries_landing_page", curie=CONFIDENT.curie('landing_page'),
                    model_uri=CONFIDENT.AcademicEventSeries_landing_page, domain=AcademicEventSeries, range=Optional[Union[str, URI]])
@@ -1920,6 +1929,9 @@ slots.AcademicEventSeries_metrics = Slot(uri=CONFIDENT.metrics, name="AcademicEv
 slots.AcademicEventSeries_context_info = Slot(uri=CONFIDENT.context_info, name="AcademicEventSeries_context_info", curie=CONFIDENT.curie('context_info'),
                    model_uri=CONFIDENT.AcademicEventSeries_context_info, domain=AcademicEventSeries, range=Optional[Union[dict, "Context"]])
 
+slots.AcademicEventSeries_external_ids = Slot(uri=IAO['0000235'], name="AcademicEventSeries_external_ids", curie=IAO.curie('0000235'),
+                   model_uri=CONFIDENT.AcademicEventSeries_external_ids, domain=AcademicEventSeries, range=Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]])
+
 slots.AcademicEventSeries_gnd_id = Slot(uri=IAO['0000235'], name="AcademicEventSeries_gnd_id", curie=IAO.curie('0000235'),
                    model_uri=CONFIDENT.AcademicEventSeries_gnd_id, domain=AcademicEventSeries, range=Optional[Union[Union[dict, "DblpId"], List[Union[dict, "DblpId"]]]])
 
@@ -1935,8 +1947,8 @@ slots.AcademicEventSeries_dpbl_id = Slot(uri=IAO['0000235'], name="AcademicEvent
 slots.AcademicEvent_id = Slot(uri=CONFIDENT.id, name="AcademicEvent_id", curie=CONFIDENT.curie('id'),
                    model_uri=CONFIDENT.AcademicEvent_id, domain=AcademicEvent, range=Union[str, AcademicEventId])
 
-slots.AcademicEvent_process_name = Slot(uri=IAO['0000235'], name="AcademicEvent_process_name", curie=IAO.curie('0000235'),
-                   model_uri=CONFIDENT.AcademicEvent_process_name, domain=AcademicEvent, range=Union[dict, "ProcessName"])
+slots.AcademicEvent_name = Slot(uri=IAO['0000235'], name="AcademicEvent_name", curie=IAO.curie('0000235'),
+                   model_uri=CONFIDENT.AcademicEvent_name, domain=AcademicEvent, range=Union[dict, "ProcessName"])
 
 slots.AcademicEvent_landing_page = Slot(uri=CONFIDENT.landing_page, name="AcademicEvent_landing_page", curie=CONFIDENT.curie('landing_page'),
                    model_uri=CONFIDENT.AcademicEvent_landing_page, domain=AcademicEvent, range=Optional[Union[str, URI]])
@@ -1961,6 +1973,9 @@ slots.AcademicEvent_sponsors = Slot(uri=CONFIDENT.sponsors, name="AcademicEvent_
 
 slots.AcademicEvent_publications = Slot(uri=CONFIDENT.publications, name="AcademicEvent_publications", curie=CONFIDENT.curie('publications'),
                    model_uri=CONFIDENT.AcademicEvent_publications, domain=AcademicEvent, range=Optional[Union[Dict[Union[str, PublicationId], Union[dict, "Publication"]], List[Union[dict, "Publication"]]]])
+
+slots.AcademicEvent_external_ids = Slot(uri=IAO['0000235'], name="AcademicEvent_external_ids", curie=IAO.curie('0000235'),
+                   model_uri=CONFIDENT.AcademicEvent_external_ids, domain=AcademicEvent, range=Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]])
 
 slots.AcademicEvent_topics = Slot(uri=CONFIDENT.topics, name="AcademicEvent_topics", curie=CONFIDENT.curie('topics'),
                    model_uri=CONFIDENT.AcademicEvent_topics, domain=AcademicEvent, range=Optional[Union[str, List[str]]])
@@ -2034,7 +2049,7 @@ slots.ProcessRelation_type = Slot(uri=CONFIDENT.type, name="ProcessRelation_type
 slots.AcademicField_value = Slot(uri=CONFIDENT.value, name="AcademicField_value", curie=CONFIDENT.curie('value'),
                    model_uri=CONFIDENT.AcademicField_value, domain=AcademicField, range=str)
 
-slots.Contributor_type = Slot(uri=RDF.type, name="Contributor_type", curie=RDF.curie('type'),
+slots.Contributor_type = Slot(uri=CONFIDENT.type, name="Contributor_type", curie=CONFIDENT.curie('type'),
                    model_uri=CONFIDENT.Contributor_type, domain=Contributor, range=Optional[str])
 
 slots.ContactPerson_id = Slot(uri=CONFIDENT.id, name="ContactPerson_id", curie=CONFIDENT.curie('id'),

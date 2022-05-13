@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from ConfIDent_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-05-13T13:49:27\n    Schema: ConfIDent-schema\n    metamodel version: 1.7.0\n    model version: 0.3.0\n    \n    id: https://github.com/StroemPhi/ConfIDent-schema/\n    description: This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "_comments": "Auto generated from ConfIDent_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-05-13T16:45:53\n    Schema: ConfIDent-schema\n    metamodel version: 1.7.0\n    model version: 0.3.0\n    \n    id: https://tibhannover.github.io/ConfIDent_schema/\n    description: This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
    "@context": {
       "NCBITaxon": {
          "@id": "http://purl.obolibrary.org/obo/NCBITaxon_",
@@ -100,9 +100,6 @@
       "series": {
          "@type": "@id"
       },
-      "contact": {
-         "@type": "@id"
-      },
       "email": {
          "@id": "sdo:email"
       },
@@ -125,7 +122,7 @@
       "specified_as": {
          "@id": "obi:0002815"
       },
-      "external_id": {
+      "external_ids": {
          "@type": "@id",
          "@id": "iao:0000235"
       },
@@ -172,12 +169,11 @@
       "name": {
          "@id": "sdo:name"
       },
-      "organizers": {
+      "contact": {
          "@type": "@id"
       },
-      "process_name": {
-         "@type": "@id",
-         "@id": "iao:0000235"
+      "organizers": {
+         "@type": "@id"
       },
       "acronym": {
          "@id": "aeon:0000091"

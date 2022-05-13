@@ -1,9 +1,6 @@
 
 
 CREATE TABLE "AcademicEvent" (
-	contact TEXT, 
-	name TEXT, 
-	external_id TEXT, 
 	start_date DATETIME NOT NULL, 
 	end_date DATETIME NOT NULL, 
 	event_status VARCHAR(12) NOT NULL, 
@@ -13,7 +10,7 @@ CREATE TABLE "AcademicEvent" (
 	ordinal INTEGER, 
 	event_mode VARCHAR(7), 
 	id TEXT NOT NULL, 
-	process_name TEXT NOT NULL, 
+	name TEXT NOT NULL, 
 	landing_page TEXT, 
 	doi TEXT, 
 	type VARCHAR(14), 
@@ -22,6 +19,7 @@ CREATE TABLE "AcademicEvent" (
 	website TEXT, 
 	sponsors TEXT, 
 	publications TEXT, 
+	external_ids TEXT, 
 	metrics TEXT, 
 	context_info TEXT, 
 	gnd_id TEXT, 
@@ -29,18 +27,14 @@ CREATE TABLE "AcademicEvent" (
 	wikidata_id TEXT, 
 	dpbl_id TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(contact) REFERENCES "ContactPerson" (id), 
 	FOREIGN KEY(in_series) REFERENCES "AcademicEventSeries" (id)
 );
 
 CREATE TABLE "AcademicEventSeries" (
 	type TEXT, 
-	contact TEXT, 
-	name TEXT, 
-	external_id TEXT, 
 	series_of TEXT, 
 	id TEXT NOT NULL, 
-	process_name TEXT NOT NULL, 
+	name TEXT NOT NULL, 
 	landing_page TEXT, 
 	doi TEXT, 
 	organizers TEXT, 
@@ -50,12 +44,12 @@ CREATE TABLE "AcademicEventSeries" (
 	publications TEXT, 
 	metrics TEXT, 
 	context_info TEXT, 
+	external_ids TEXT, 
 	gnd_id TEXT, 
 	wikicfp_id TEXT, 
 	wikidata_id TEXT, 
 	dpbl_id TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(contact) REFERENCES "ContactPerson" (id), 
 	FOREIGN KEY(series_of) REFERENCES "AcademicEvent" (id)
 );
 
@@ -70,14 +64,14 @@ CREATE TABLE "Attendee" (
 	type TEXT, 
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	PRIMARY KEY (id)
 );
 
 CREATE TABLE "City" (
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	PRIMARY KEY (id)
 );
 
@@ -90,7 +84,7 @@ CREATE TABLE "ConfIDentRecords" (
 CREATE TABLE "ContactPerson" (
 	type TEXT, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	contact TEXT, 
 	email TEXT, 
 	telephone TEXT, 
@@ -110,14 +104,14 @@ CREATE TABLE "Contributor" (
 	type TEXT, 
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	PRIMARY KEY (id)
 );
 
 CREATE TABLE "Country" (
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	PRIMARY KEY (id)
 );
 
@@ -158,7 +152,7 @@ CREATE TABLE "KeynoteSpeaker" (
 	type TEXT, 
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	PRIMARY KEY (id)
 );
 
@@ -176,7 +170,7 @@ CREATE TABLE "Moderator" (
 	type TEXT, 
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	PRIMARY KEY (id)
 );
 
@@ -184,7 +178,7 @@ CREATE TABLE "Presenter" (
 	type TEXT, 
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	PRIMARY KEY (id)
 );
 
@@ -201,14 +195,14 @@ CREATE TABLE "Publication" (
 	doi TEXT, 
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	PRIMARY KEY (id)
 );
 
 CREATE TABLE "Region" (
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	PRIMARY KEY (id)
 );
 
@@ -216,7 +210,7 @@ CREATE TABLE "Reviewer" (
 	type TEXT, 
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	PRIMARY KEY (id)
 );
 
@@ -224,7 +218,7 @@ CREATE TABLE "Sponsor" (
 	type TEXT, 
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	PRIMARY KEY (id)
 );
 
@@ -240,7 +234,7 @@ CREATE TABLE "Venue" (
 	zip_code TEXT, 
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	PRIMARY KEY (id)
 );
 
@@ -262,7 +256,7 @@ CREATE TABLE "CommitteeChair" (
 	type TEXT, 
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	contact TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(contact) REFERENCES "ContactPerson" (id)
@@ -272,7 +266,7 @@ CREATE TABLE "CommitteeMember" (
 	type TEXT, 
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	contact TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(contact) REFERENCES "ContactPerson" (id)
@@ -306,7 +300,7 @@ CREATE TABLE "Organizer" (
 	type TEXT, 
 	id TEXT NOT NULL, 
 	name TEXT, 
-	external_id TEXT, 
+	external_ids TEXT, 
 	contact TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(contact) REFERENCES "ContactPerson" (id)
