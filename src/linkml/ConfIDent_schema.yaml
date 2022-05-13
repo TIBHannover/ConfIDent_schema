@@ -1,0 +1,1042 @@
+id: https://github.com/StroemPhi/ConfIDent-schema/
+name: ConfIDent-schema
+title: ConfIDent metadata schema
+description: |-
+  This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
+license: https://creativecommons.org/licenses/by/4.0/
+version: 0.3.0
+default_curi_maps:
+  - semweb_context
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sdo: https://schema.org/
+  confident: https://confident.org/
+  aeon: https://github.com/tibonto/aeon#AEON_
+  obi: http://purl.obolibrary.org/obo/OBI_
+  iao: http://purl.obolibrary.org/obo/IAO_
+  bfo: http://purl.obolibrary.org/obo/BFO_
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  provo: https://www.w3.org/TR/2013/REC-prov-o-20130430/#
+  dc: http://purl.org/dc/terms/
+  orcid: https://orcid.org/
+  ror: https://ror.org/
+  wikidata: https://www.wikidata.org/wiki/
+  dblp_series: https://dblp.org/db/conf/
+  doi: https://doi.org/
+  ex: https://example.com/
+  datacite: http://schema.datacite.org/meta/kernel-4.4/metadata.xsd
+
+default_prefix: confident
+default_range: string
+
+imports:
+ - linkml:types
+
+emit_prefixes:
+  - aeon
+
+
+#####################################
+#             Classes               #
+#####################################
+classes:  
+# mixins
+  SchemaBasedThing:
+    description: A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing.
+    mixin: true
+    slots:
+      - value
+      - schema_name
+      - schema_base_uri
+  NamedThing:
+    description: A mixin used to provide the attributes needed for the identification of named class.
+    mixin: true
+    slots:
+      - id 
+      - name 
+      - external_id
+# processes
+  PlannedProcess:
+    description: Abstract base class for academic events and event series.
+    class_uri: obi:0000011
+    abstract: true
+    mixins:
+      - NamedThing
+    slots:
+    # required
+      - process_name
+    # recommended
+      - type
+      - doi
+      - landing_page
+      - organizers
+      - contact
+      - academic_fields
+      - website
+      - sponsors
+      - publications
+    # optional
+      - wikidata_id
+      - wikicfp_id
+      - dpbl_id
+      - gnd_id
+      - topics
+      - metrics
+      - context_info 
+  AcademicEventSeries:
+    description: |-
+      An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.
+    class_uri: aeon:0000002
+    is_a: PlannedProcess
+    attributes:
+    # recommended
+      series_of:
+        description: A property to link to the events that are part of an academic event series.
+        domain: AcademicEventSeries
+        range: AcademicEvent
+        required: false
+        recommended: true
+    slot_usage:
+    # required 
+      id:
+        ifabsent: string(confident:SeriesID)
+        domain: AcademicEventSeries
+        range: uriorcurie
+        required: true
+      process_name:
+        slot_uri: iao:0000235
+        domain: AcademicEventSeries
+        range: ProcessName
+        required: true
+    # recommended
+      landing_page:
+        domain: AcademicEventSeries
+        range: uri
+        required: false
+        recommended: true
+        exact_mappings:
+          - datacite:url
+      doi:
+        domain: AcademicEventSeries
+        range: DigitalObjectId
+        required: false
+        recommended: true
+      organizers:
+        multivalued: true
+        inlined_as_list: true
+        domain: AcademicEventSeries
+        range: Organizer
+        required: false
+        recommended: true
+      academic_fields:
+        domain: AcademicEventSeries
+        range: AcademicField
+        multivalued: true
+        inlined_as_list: true
+        required: false
+        recommended: true
+      website:
+        description: A property to provide the URL the official website of an academic event series.
+        domain: AcademicEventSeries
+        range: uri
+        required: false
+        recommended: true
+      sponsors:
+        description: A property to provide the sponsors of an academic event series.
+        domain: AcademicEventSeries
+        range: Sponsor
+        multivalued: true
+        inlined_as_list: true
+        required: false
+        recommended: true
+      publications:
+        comments: 
+          - It will be most common that the publications of an academic event series are the set of publications associated with the individual events of the series.
+        domain: AcademicEventSeries
+        range: Publication
+        multivalued: true
+        inlined_as_list: true
+        required: false
+        recommended: true
+    # optional
+      topics:
+        comments: 
+          - Most likely the values of this property will be the set of topics aggregated from the academic events of the series.
+        multivalued: true
+        inlined_as_list: true
+        domain: AcademicEventSeries
+        range: string
+        required: false
+        recommended: false
+      metrics:
+        multivalued: true
+        domain: AcademicEventSeries
+        range: Metric
+        required: false
+        recommended: false
+      context_info:
+        inlined: true
+        domain: AcademicEventSeries
+        range: Context
+        required: false
+        recommended: false
+      gnd_id:
+        description: A property to link an academic event series with its [GND identifier](GndId).
+        slot_uri: iao:0000235
+        domain: AcademicEventSeries
+        range: DblpId
+        required: false
+        recommended: false
+      wikicfp_id:
+        description: A property to link an academic event series with its [WikiCFP identifier](WikiCfpId).
+        slot_uri: iao:0000235
+        domain: AcademicEventSeries
+        range: WikiCfpId
+        required: false
+        recommended: false
+      wikidata_id:
+        description: A property to link an academic event series with its [Wikidata identifier](WikidataId).
+        slot_uri: iao:0000235
+        domain: AcademicEventSeries
+        range: WikidataId
+        required: false
+        recommended: false
+      dpbl_id:
+        description: A property to link an academic event series with its [DBLP identifier](DblpId).
+        slot_uri: iao:0000235
+        domain: AcademicEventSeries
+        range: DblpId
+        required: false
+        recommended: false
+    close_mappings:
+      - sdo:EventSeries
+  AcademicEvent:
+    description: |-
+      An academic event is part of the established instruments of science communication as a format for conveying the latest scientific publications. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these publications. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function.
+    #tree_root: true
+    is_a: PlannedProcess
+    attributes:
+    # required
+      index:
+        range: integer
+      start_date:
+        description: The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.
+        domain: AcademicEvent
+        range: datetime
+        required: true
+        slot_uri: aeon:start_date
+      end_date:
+        description: Similar to start_date but only for the end of an academic event or event series.
+        domain: AcademicEvent
+        range: datetime
+        required: true
+        recommended: true
+        slot_uri: aeon:end_date
+      event_status:
+        required: true
+        slot_uri: aeon:event_status
+        domain: AcademicEvent
+        range: EventStatus
+        ifabsent: string(as scheduled)
+    # recommended
+      in_series:
+        description: The relation used to provide the series of which an AcademicEvent is a part.
+        domain: AcademicEvent
+        range: AcademicEventSeries
+        required: false
+        recommended: true
+      event_format:
+        slot_uri: aeon:0000032
+        domain: AcademicEvent
+        range: EventFormatSpecification
+        required: false
+        recommended: true
+      at_location:
+        description: The location of the academic event.
+        domain: AcademicEvent
+        range: Location
+        required: false
+        recommended: true
+      deadlines:
+        description: A property to provide deadlines of an academic event.
+        domain: AcademicEvent
+        range: Deadline
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        required: false
+        recommended: true
+      related_to:
+        description: A property to be used
+        multivalued: true
+        domain: AcademicEvent
+        range: ProcessRelation    
+        required: false
+        recommended: true
+    # optional
+      ordinal:
+        description: The ordnial number of an academic event within its series.
+        slot_uri: aeon:event_number
+        domain: AcademicEvent
+        range: integer
+        required: false
+        recommended: false
+      event_mode:
+        description: The event mode describes whether the event is a physical, virtual or hybrid event.
+        domain: AcademicEvent
+        range: EventMode
+        required: false
+        recommended: false
+    slot_usage:
+    # required
+      id:
+        ifabsent: string(confident:EventID)
+        domain: AcademicEvent
+        range: uriorcurie
+        required: true
+      process_name:
+        slot_uri: iao:0000235
+        domain: AcademicEvent
+        range: ProcessName
+        required: true
+    # recommended
+      landing_page:
+        domain: AcademicEvent
+        range: uri
+        required: false
+        recommended: true
+      doi:
+        domain: AcademicEvent
+        range: DigitalObjectId
+        required: false
+        recommended: true
+      type:
+        slot_uri: rdf:type
+        designates_type: true
+        description: A property to specify the subtype of the academic event according to a controlled list defined in [EventType](EventType). If the 
+        domain: AcademicEvent
+        range: EventType
+        required: false
+        recommended: true
+      organizers:
+        domain: AcademicEvent
+        range: Organizer
+        multivalued: true
+        inlined_as_list: true
+        required: false
+        recommended: true
+      academic_fields:
+        domain: AcademicEvent
+        range: AcademicField
+        multivalued: true
+        inlined_as_list: true
+        required: false
+        recommended: true
+      website:
+        description: A property to provide the URL the official website of an academic event.
+        domain: AcademicEvent
+        range: uri
+        required: false
+        recommended: true
+      sponsors:
+        description: A property to provide the sponsors of an academic event.
+        domain: AcademicEvent
+        range: Sponsor
+        multivalued: true
+        inlined_as_list: true
+        required: false
+        recommended: true
+      publications:
+        domain: AcademicEvent
+        range: Publication
+        multivalued: true
+        inlined_as_list: true
+        required: false
+        recommended: true
+    # optional
+      topics:
+        multivalued: true
+        inlined_as_list: true
+        domain: AcademicEvent
+        range: string
+        required: false
+        recommended: false
+      metrics:
+        multivalued: true
+        inlined_as_list: true
+        domain: AcademicEventSeries
+        range: Metric
+        required: false
+        recommended: false
+      context_info:
+        inlined: true
+        domain: AcademicEvent
+        range: Context
+        required: false
+        recommended: false
+      gnd_id:
+        description: A property to link an academic event with its [GND identifier](GndId).
+        slot_uri: iao:0000235
+        domain: AcademicEvent
+        range: DblpId
+        required: false
+        recommended: false
+      wikicfp_id:
+        description: A property to link an academic event with its [WikiCFP identifier](WikiCfpId).
+        slot_uri: iao:0000235
+        domain: AcademicEvent
+        range: WikiCfpId
+        required: false
+        recommended: false
+      wikidata_id:
+        description: A property to link an academic event with its [Wikidata identifier](WikidataId).
+        slot_uri: iao:0000235
+        domain: AcademicEvent
+        range: WikidataId
+        required: false
+        recommended: false
+      dpbl_id:
+        description: A property to link an academic event with its [DBLP identifier](DblpId).
+        slot_uri: iao:0000235
+        domain: AcademicEvent
+        range: DblpId
+        required: false
+        recommended: false
+    exact_mappings:
+      - aeon:0000001
+    close_mappings:
+      - sdo:Event
+    
+# identifiers
+  ProcessName:
+    description: The container for the various names denoting a planned process
+    class_uri: aeon:0000090
+    attributes:
+      official_name:
+        description: The official name of an academic event or series.
+        is_a: name
+        slot_uri: skos:perfLabel
+        domain: ProcessName
+        range: string
+        required: true
+      acronym:
+        description: The official acronym of an academic event or series.
+        is_a: name
+        slot_uri: aeon:0000091
+        domain: ProcessName
+        range: string
+        required: false
+        recommended: true
+      former_name:
+        description: The former official name of an academic event or series. Usually this will only be needed in case an academic event series has undergone a name change. 
+        is_a: name
+        domain: ProcessName
+        range: string
+        required: false
+        recommended: false
+      translated_name:
+        description: A translation of the official process name to be used in different language contexts. 
+        is_a: name
+        slot_uri: skos:altLabel
+        domain: ProcessName
+        range: string
+        multivalued: true
+        required: false
+        recommended: false
+      aliases:
+        is_a: name
+        slot_uri: skos:altLabel
+        description: A property to provide alternative names of a planned process.
+        domain: ProcessName
+        range: string
+        multivalued: true
+        required: false
+        recommended: false
+  ExternalIdentifier:
+    description: An identifer of an entity declared in another schema.
+    mixins:
+      - SchemaBasedThing
+    slot_usage:
+      value:
+        slot_uri: obi:0002815
+  DigitalObjectId:
+    description: A centrally registered identifier symbol used to uniquely identify digital objects given by International DOI Foundation. 
+    is_a: ExternalIdentifier
+    class_uri: obi:0002110
+    slot_usage:
+      schema_name:
+        ifabsent: string(DOI)
+      schema_base_uri: 
+        ifabsent: uri(https://doi.org)
+  WikidataId:
+    is_a: ExternalIdentifier
+    class_uri: wikidata:Q43649390
+    description: The identifier of a thing (item) in Wikidata.
+    slot_usage:
+      schema_name:
+        ifabsent: string(Wikidata)
+      schema_base_uri:
+        ifabsent: uri(https://www.wikidata.org/entity/)
+  GndId:
+    is_a: ExternalIdentifier
+    description: The identifier of a thing (item) in the German National authority file.
+    slot_usage:
+      schema_name:
+        ifabsent: string(GND)
+      schema_base_uri:
+        ifabsent: uri(http://d-nb.info/gnd/)
+  TibkatId:
+    is_a: ExternalIdentifier
+    description: The identifier of a publication in the TIB catalog.
+    slot_usage:
+      schema_name:
+        ifabsent: string(TIBKAT)
+      schema_base_uri:
+        ifabsent: uri(https://www.tib.eu/en/search/id/TIBKAT:)
+  DblpId:
+    is_a: ExternalIdentifier
+    description: The identifier of an academic event or series in dblp.
+    slot_usage:
+      schema_name:
+        ifabsent: string(dblp)
+      schema_base_uri:
+        ifabsent: uri(https://dblp.org/db/conf/)  
+  WikiCfpId:
+    is_a: ExternalIdentifier
+    description: The identifier of an academic event or series in WikiCFP.
+    slot_usage:
+      schema_name:
+        ifabsent: string(WikiCFP)
+      schema_base_uri:
+        ifabsent: uri(http://www.wikicfp.com/cfp/program?id=) 
+# plan specs
+  EventFormatSpecification:
+    class_uri: aeon:0000004
+    description: >-
+      An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathing is to be carried out by its participants in terms of achieving certain objectives, fulfiling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event.
+      While the explicit details are often provied as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. "conference" or "workshop"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.
+    attributes:
+      specified_as: 
+        description: A mandatory property to provide the format of an academic event as string, in order to further specify its type in case it could not be specified according to the possible values of [EventType](EventType).
+        slot_uri: obi:0002815
+        examples:
+          - value: ad-hoc meeting of university presidents
+            description: An example to provide a format specification for special type of academic event that is not in the schema's [EventType](EventType) enum.
+        required: true
+        domain: EventFormatSpecification
+        range: string
+  Deadline:
+    description: A container for event deadlines.
+    slots:
+      - type
+    attributes:
+      deadline_date:
+        description: The date of a deadline.
+        domain: Deadline
+        range: datetime
+        required: true        
+      deadline_other:
+        description: A property to specify another type of deadline, if this type of deadline is not within the allowed values of [DeadlineType](DeadlineType).
+        domain: Deadline
+        range: string
+    slot_usage:
+      type: 
+        description: The type of deadline.
+        range: DeadlineType
+        required: true
+  Metric:
+    description: A container for statistical information about a planned process.
+    attributes:
+      int_value:
+        description: A property to provide an integer value for a metric.
+        domain: Metric
+        range: integer
+      str_value:
+        description: A property to provide a string value for a metric.
+        domain: Metric
+        range: string
+      rate_value:
+        description: A property to provide a rate value as float for a metric.
+        domain: Metric
+        range: float
+      truth_value:
+        description: A property to provide a truth value for a metric.
+        domain: Metric
+        range: boolean
+      description:
+        description: A property to provide a description of a metric.
+        domain: Metric
+        range: string
+    slots:
+      - type
+    slot_usage:
+      type:
+        description: A property to provide the type of relation between academic events.
+        domain: Metric
+        range: MetricType
+  ProcessRelation:
+    description: A container for relations between academic events.
+    slots:
+      - type
+    slot_usage:
+      type:
+        description: A property to provide the type of process relation.
+        range: RelationType
+# location
+  Location:
+    description: A container for the information about the location in which an academic event takes place.
+    attributes:
+      city:
+        description: The property to specify the [City](City) of an academic event location.
+        domain: Location
+        range: City
+        recommended: true
+      country:
+        description: The property to specify the [Country](Country) of an academic event location.
+        domain: Location
+        range: Country
+        recommended: true
+      region:
+        description: The property to specify the [Region](Region) of an academic event location.
+        domain: Location
+        range: Region
+      venue:
+        description: The property to specify the [Venue](Venue) of an academic event location.
+        domain: Location
+        range: Venue
+      lattitude:
+        description: The property to specify the lattitude of an academic event location.
+        domain: Location
+        range: float
+      longitude:
+        description: The property to specify the longitude of an academic event location.
+        domain: Location
+        range: float
+      meeting_url:
+        description: The property to specify the URL under which a one can participate virtually in an academic event.
+        domain: Location
+        range: uriorcurie
+  City:
+    description: The city in which an academic event takes place.
+    mixins:
+      - NamedThing
+  Country:
+    description: The country in which an academic event takes place.
+    mixins:
+      - NamedThing
+  Region:
+    description: The region in which an academic event takes place. For non USA events this might often be negligible.
+    examples:
+      - value: Texas
+        description: the US state Texas as an example of a region
+    mixins:
+      - NamedThing
+  Venue:
+    description: The venue at which an academic event takes place.
+    mixins:
+      - NamedThing
+    attributes:
+      street:
+        description: The street of the venue including the house number seperated by comma.
+        examples:
+          - value: 'Am Welfengarten, 1'
+            description: street, hous number
+        domain: Venue
+        range: string
+      zip_code:
+        description: The zip code of the venue.
+        domain: Venue
+        range: string
+# descriptors
+  AcademicField:
+    mixins:
+      - SchemaBasedThing
+    description: An academic field is the scientific subject of a planned process according to some controlled vocabulary or thesaurus and as such requires the scheme URI.
+    slot_usage:
+      value:
+        description: The classification label of a certain classification schema.
+        domain: AcademicField
+        range: string
+        required: true
+  Context:
+    description: A container to provide extra information, such as call of papers event description.
+    attributes:
+      text:
+        description: The free text used to provide more context information on a planned process. 
+        domain: Context
+        range: string
+      license_str:
+        description: The license of the context information as text, which must be used when copying text from other sources.
+        domain: Context
+        range: string
+      license_url:
+        description: The license of the context information as URL, which should be used when copying text from other sources and such a URL exists.
+        domain: Context
+        range: uriorcurie
+# contributors
+  Contributor:
+    description: A contributor is a person or organization that holds a contributor role which is being realized in a planned process.
+    mixins:
+      - NamedThing
+    slots:
+      - type
+    slot_usage:
+      type:
+        slot_uri: rdf:type
+        #designates_type: true
+        description: A property to provide the information whether the contributor is an organization or person.
+        domain: Contributor
+        range: string #ContributorType
+  Sponsor:
+    is_a: Contributor
+    description: A person or an organization whose role it is to sponsor an academic event or event series.
+  Attendee:
+    is_a: Contributor
+    description: A person whose only role it is to attend an academic event.
+  Moderator:
+    is_a: Contributor
+    description: A person that has the role to moderate an academic event.
+  Reviewer:
+    is_a: Contributor
+    description: A person that has the role to review the submissions of an academic event.
+  Organizer:
+    is_a: Contributor
+    description: An organizer of an academic event or event series.
+    attributes:
+      contact:
+        description: The contact person of an academic event or event series.
+        range: ContactPerson
+        inlined: true
+        required: false
+        recommended: true
+  ContactPerson:
+    description: The contact person of an academic event or event series.
+    is_a: Organizer
+    slot_usage:
+      id:
+        description: The autogenerated internal identifier of contact person.
+        ifabsent: uri(ex:ContactPerson)
+    attributes:
+      email:
+        slot_uri: sdo:email
+        description: The email address of the contact person.
+        pattern: \b[-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b
+        domain: ContactPerson
+        range: string
+      telephone:
+        slot_uri: sdo:telephone
+        description: The telephone number of the contact person.
+        domain: ContactPerson
+        range: string
+  CommitteeMember:
+    is_a: Organizer
+    description: A members of an academic event committee.
+  CommitteeChair:
+    is_a: CommitteeMember
+    description: The head of an academic event committee.
+  Presenter:
+    is_a: Contributor
+    description: A person that presents its work at an academic event.
+  KeynoteSpeaker:
+    is_a: Presenter
+    description: A 'keynote speaker' is a presenter that is an invited person - often a multiplier in his or her (research) field - responsible for delivering a keynote speech.
+# output
+  Publication:
+    description: A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.
+    mixins:
+      - NamedThing
+    slots:
+      - doi
+# record collection
+  ConfIDentRecords:
+    tree_root: true
+    description: A container to be able to bundle academic event data and series in one data file (e.g. YAML or JSON).
+    attributes:
+      events:
+        description: A property to provide a list of academic events within this container.
+        domain: ConfIDentRecords
+        range: AcademicEvent
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      series:
+        description: A property to provide a list of academic event series within this container.
+        domain: ConfIDentRecords
+        range: AcademicEventSeries
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+
+#####################################
+#              Slots                #
+#####################################
+slots:
+# common slots
+  type:
+    description: An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.
+    abstract: true
+# common identifiers slots
+  doi:
+    is_a: external_id
+    slot_uri: iao:0000235
+    description: A property to provide a digital object identifier (DOI) according to https://doi.org/.
+    range: DigitalObjectId
+    exact_mappings:
+      - datacite:doi
+  gnd_id:
+    is_a: external_id
+    slot_uri: iao:0000235
+    range: GndId
+  wikidata_id:
+    is_a: external_id
+    description: A property to link an entity with its Wikidata identifier.
+    slot_uri: iao:0000235
+    range: WikidataId
+# NamedThing slots
+  name:
+    description: A property to provide a name of a schema entity.
+    slot_uri: sdo:name
+    range: string
+  id:
+    description: A property to provide an internal id of a schema entity in the ConfIDent plattform.
+    identifier: true
+    range: uriorcurie
+  external_id:
+    description: A property to provide an external id of a schema entity.
+    slot_uri: iao:0000235
+    multivalued: true
+    inlined_as_list: true
+    range: ExternalIdentifier
+# SchemaBasedThing slots
+  value:
+    description: a property to provide the literal value of a schema based entity.
+  schema_name:
+    range: string
+  schema_base_uri:
+    description: The base URI of the schema that provides the context for the schema based value. 
+    range: uriorcurie
+# PlannedProcess slots
+  process_name:
+    description: A property to provide a name of the academic event or series, which itself if further differentiated (e.g. official name, acronym, etc).
+    slot_uri: iao:0000235
+    domain: PlannedProcess
+    range: ProcessName
+  landing_page:
+    description: A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.
+    domain: PlannedProcess
+    range: uri
+    exact_mappings:
+      - datacite:url
+  organizers:
+    description: A property to provide the organizers of an academic event or series.
+    multivalued: true
+    inlined_as_list: true
+    domain: PlannedProcess
+    range: Organizer
+  academic_fields:
+    slot_uri: aeon:0000040
+    description: A property to describe the scientific subject(s) of a planned process, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [value] and [schema_name] are mandatory.
+    multivalued: true
+    inlined_as_list: true
+    domain: PlannedProcess
+    range: AcademicField
+  website:
+    description: A property to provide the URL the official website of a planned process.
+    domain: PlannedProcess
+    range: uri
+
+  contact:
+    description: The contact person of an academic event or event series.
+    domain: PlannedProcess
+    range: ContactPerson
+    inlined: true 
+  sponsors:
+    multivalued: true
+    inlined_as_list: true
+    domain: PlannedProcess
+    range: Sponsor
+  publications:
+    description: The published works that are related to the academic event or event series, such as proceedings and video recordings of talks. 
+    multivalued: true
+    domain: PlannedProcess
+  topics:
+    description: A property to provide the theme and topics of an academic event or event series as free keywords, phrases or text.
+    multivalued: true
+    domain: PlannedProcess
+    range: string
+  
+  metrics:
+    description: A property to provide metrics of an academic event or series.
+    multivalued: true
+    inlined_as_list: true
+    domain: PlannedProcess
+    range: Metric
+  context_info:
+    description: A property to provide extra information, such as call of papers event description.
+    domain: PlannedProcess
+    range: Context
+  
+  wikicfp_id:
+    is_a: external_id
+    description: A property to link a planned process with its WikiCFP identifier.
+    slot_uri: iao:0000235
+    domain: PlannedProcess
+    range: WikiCfpId
+  dpbl_id:
+    is_a: external_id
+    description: A property to link the a planned process with its DBLP identifier.
+    slot_uri: iao:0000235
+    domain: PlannedProcess
+    range: DblpId
+
+#####################################
+#               Enums               #
+#####################################
+
+enums:
+# event type  
+  EventType:
+    description: >-
+      The most common minimal event types. For event types that are not in this list, you can use "other" and provide the label of this other event format using the [event_format](event_format) property.
+    permissible_values:
+      colloquium:
+        description: >-
+          A colloquium is an academic meeting that usually lasts only a few hours and serves to discuss a specific topic. Colloquia are usually part of the academic exchange in everyday university life with only one speaker, but can also take place on special occasions (anniversaries, start or end of the lecture phase, etc.) and can have more than one speaker.
+        meaning: aeon:0000101
+      conference:
+        description: >-
+          A conference is an academic event that lasts up to several days and serves as a forum for presentations on a specific topic or subject area. In addition to subject-specific conferences, there are also interdisciplinary conferences which allow both a broader focus and more specific questions on a particular (academic) problem. Conferences often have a highly formalized structure of parallel, clearly defined sessions with several short presentations and plenary sessions with invited (keynote) speakers who are considered multipliers in their (research) field. Ideally, the selection of the speakers and their contributions is subject to a review process.
+        meaning: aeon:0000103
+      congress:
+        description: >-
+          A congress is a certain type of conference which is characterised by a larger number of participants (often several hundred) and is oftentimes organised jointly by large, established (e.g. specialised societies) and/or several institutions. Congresses have a broader thematic focus than simple conferences, take place in certain cycles, but can still target an exclusive group of participants (e.g. representatives of a single discipline).
+        meaning: aeon:0000123
+      session:
+        description: >-
+          A session is a clearly defined part of a academic event in which a small number of speakers (usually 2-5) focus on a specific topic. A session is usually formally accompanied by a session chair, who assumes the function of a moderator.
+        meaning: aeon:0000111
+      poster session:
+        description: >-
+          A poster session is a session at which poster papers are presented.
+        meaning: aeon:0000127
+      talk:
+        description: >-
+          A talk is a central part of a larger academic event, at which a specific topic is being presented in a rather short way.
+        meaning: aeon:0000125
+      keynote speech: 
+        description: >-
+          A keynote speech is a special talk that has the function to set the underlying tone and summarize the core message or most important revelation of the academic event at which it is given.
+        meaning: aeon:00001115
+      event track:
+        description: >-
+          An academic event that, as a part of a larger academic event, has the function to group even smaller parts of the academic event, like sessions and talks, according to a shared theme or topic. It usually has dedicated chairs and program committees.
+        meaning: aeon:00001117
+      forum:
+        description: >-
+          An academic event whose sociocultural format is determined in an academic event type specification that classifies the academic event as a forum.
+        meaning: aeon:0000105
+      hackathon:
+        description: >-
+          A hackathon is a gathering of software developers with the goal to develop software collaboratively in a short timeframe.
+        meaning: aeon:0000107
+      seminar:
+        description: >-
+          A seminar can serve as a term for older conference series, but in current usage the term mainly describes a specific teaching format that serves to develop content and provides space for discussion. Participation from the audience is usually encouraged.
+        meaning: aeon:0000109
+      symposium:
+        description: >-
+          A symposium is a specific type of conference with a narrower thematic focus, with fewer participants and of shorter duration. The degree of structuring lies between a classic conference and a workshop, allows more discussion than the larger conference, but is usually more formalized than the workshop.
+        meaning: aeon:0000113
+      tutorial:
+        description: >-
+          An academic event that has the function to educate the audience on a certain topic. A tutorial is often realized as an academic event talk or academic event session.
+        meaning: aeon:0000119
+      workshop:
+        description: >-
+          Workshops are smaller academic events that serve to exchange information on a specific topic or problem. They usually last one or two days and offer space for discussion and the development of content and solutions. Group work is often part of the event concept.
+        meaning: aeon:0000121
+      other: 
+        description: >-
+          This value is to be used if the event format cannot be represented using one of the other permissible values defined in the [EventFormat](https://stroemphi.github.io/ConfIDent-schema/EventFormat/) enum. If this value is chosen the use of [other_format](https://stroemphi.github.io/ConfIDent-schema/academicEvent__other_format/) is mandatory.
+        meaning: aeon:0000001 
+# event status
+  EventStatus:
+    description: The status of the academic event which indicates if it takes place as planned.
+    permissible_values:
+      as scheduled:
+        description: |-
+          Default: used to indicate that the event takes place as planned.
+      postponed:
+      delayed:
+      canceled:
+      planned:
+# event mode
+  EventMode:
+    description: An enum to specify if an academic event is in person, virtual or a hybrid of both.
+    permissible_values:
+      on site:
+        description: The event takes place in a physical location.
+      online:
+        description: The event takes place in a virtual location.
+      hybrid:
+        description: The event takes place physically and virtually.
+# deadline type
+  DeadlineType:
+    description: An enum that specifies the possible kinds of deadlines of an academic event.
+    permissible_values:
+      submission deadline:
+        meaning: aeon:0000067
+      notification deadline:
+        meaning: aeon:0000064
+      abstract deadline:
+        meaning: aeon:0000061
+      camera-ready deadline:
+        meaning: aeon:0000062
+      demo deadline:
+        meaning: aeon:0000063
+      paper deadline:
+        meaning: aeon:0000065
+      poster deadline:
+        meaning: aeon:0000066
+      tutorial deadline:
+        meaning: aeon:0000068
+      workshop deadline:
+        meaning: aeon:0000069
+      other:
+        description: This value is to be used, if the other allowed values are not applicable.
+# event relation type
+  RelationType:
+    description: The kinds of relations that are allowed between academic events.
+    permissible_values:
+      isUmbrellaEventOf:
+      hasUmbrellaEvent:
+      isJointEventOf:
+      isColocatedEventOf:
+      isSubEventOf:
+      hasSubEvent:  
+# metric type
+  MetricType:
+    description: The possible metric of an academic event.
+    permissible_values:
+      submitted papers:
+      accepted papers:
+      accepted short papers:
+      number of attendees:
+      number of tracks:
+      has childcare options:
+      frequency:
+        description: The time frame in which the events of a series reoccur.
+      is accessible:
+        description: If true then the event is accessible for people with impairments.
+# contributor type
+  ContributorType:
+    description: An enumaration used to distinguish the contributors of a planned process with regard to them being either an organization or a person.
+    permissible_values:
+      organization:
+        description: An institution, or an association that has one or more people as members and which actsas some kind of participant in a planned process.
+        #meaning: obi:0000245
+      person:
+        description: A human being that acts as some kind of participant in a planned process.
+        #meaning: NCBITaxon:9606

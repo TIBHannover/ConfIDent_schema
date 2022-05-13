@@ -1,0 +1,453 @@
+BASE <https://confident.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+PREFIX sdo: <https://schema.org/>
+PREFIX wikidata: <https://www.wikidata.org/wiki/>
+
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:dateTime
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:Uriorcurie IRI
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+<AcademicEvent> CLOSED {
+    (  $<AcademicEvent_tes> (  &<PlannedProcess_tes> ;
+          rdf:type [ <http://purl.obolibrary.org/obo/OBI_0000011> ] ? ;
+          <index> @linkml:Integer ? ;
+          <https://github.com/tibonto/aeon#AEON_start_date> @linkml:Datetime ;
+          <https://github.com/tibonto/aeon#AEON_end_date> @linkml:Datetime ;
+          <https://github.com/tibonto/aeon#AEON_event_status> @<EventStatus> ;
+          <in_series> @<AcademicEventSeries> ? ;
+          <https://github.com/tibonto/aeon#AEON_0000032> @<EventFormatSpecification> ? ;
+          <at_location> @<Location> ? ;
+          <deadlines> @<Deadline> * ;
+          <related_to> @<ProcessRelation> * ;
+          <https://github.com/tibonto/aeon#AEON_event_number> @linkml:Integer ? ;
+          <event_mode> @<EventMode> ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<ProcessName> ;
+          <landing_page> @linkml:Uri ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<DigitalObjectId> * ;
+          <organizers> @<Organizer> * ;
+          <https://github.com/tibonto/aeon#AEON_0000040> @<AcademicField> * ;
+          <website> @linkml:Uri ? ;
+          <sponsors> @<Sponsor> * ;
+          <publications> @<Publication> * ;
+          <topics> @linkml:String * ;
+          <metrics> @<Metric> * ;
+          <context_info> @<Context> ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<DblpId> * ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<WikiCfpId> * ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<WikidataId> * ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<DblpId> *
+       ) ;
+       rdf:type [ <AcademicEvent> ]
+    )
+}
+
+<AcademicEventSeries> CLOSED {
+    (  $<AcademicEventSeries_tes> (  &<PlannedProcess_tes> ;
+          rdf:type [ <http://purl.obolibrary.org/obo/OBI_0000011> ] ? ;
+          <series_of> @<AcademicEvent> ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<ProcessName> ;
+          <landing_page> @linkml:Uri ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<DigitalObjectId> * ;
+          <organizers> @<Organizer> * ;
+          <https://github.com/tibonto/aeon#AEON_0000040> @<AcademicField> * ;
+          <website> @linkml:Uri ? ;
+          <sponsors> @<Sponsor> * ;
+          <publications> @<Publication> * ;
+          <topics> @linkml:String * ;
+          <metrics> @<Metric> * ;
+          <context_info> @<Context> ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<DblpId> * ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<WikiCfpId> * ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<WikidataId> * ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<DblpId> *
+       ) ;
+       rdf:type [ <https://github.com/tibonto/aeon#AEON_0000002> ]
+    )
+}
+
+<AcademicField> CLOSED {
+    (  $<AcademicField_tes> (  &<SchemaBasedThing_tes> ;
+          rdf:type [ <SchemaBasedThing> ] ? ;
+          <value> @linkml:String ;
+          <schema_name> @linkml:String ? ;
+          <schema_base_uri> @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ <AcademicField> ] ?
+    )
+}
+
+<Attendee> CLOSED {
+    (  $<Attendee_tes> (  &<Contributor_tes> ;
+          rdf:type [ <Contributor> ] ?
+       ) ;
+       rdf:type [ <Attendee> ]
+    )
+}
+
+<City> CLOSED {
+    (  $<City_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          sdo:name @linkml:String ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<ExternalIdentifier> *
+       ) ;
+       rdf:type [ <City> ]
+    )
+}
+
+<CommitteeChair> CLOSED {
+    (  $<CommitteeChair_tes> (  &<CommitteeMember_tes> ;
+          rdf:type [ <CommitteeMember> ] ?
+       ) ;
+       rdf:type [ <CommitteeChair> ]
+    )
+}
+
+<CommitteeMember>  (
+    CLOSED {
+       (  $<CommitteeMember_tes> (  &<Organizer_tes> ;
+             rdf:type [ <Organizer> ] ?
+          ) ;
+          rdf:type [ <CommitteeMember> ]
+       )
+    } OR @<CommitteeChair>
+)
+
+<ConfIDentRecords> CLOSED {
+    (  $<ConfIDentRecords_tes> (  <events> @<AcademicEvent> * ;
+          <series> @<AcademicEventSeries> *
+       ) ;
+       rdf:type [ <ConfIDentRecords> ] ?
+    )
+}
+
+<ContactPerson> CLOSED {
+    (  $<ContactPerson_tes> (  &<Organizer_tes> ;
+          rdf:type [ <Organizer> ] ? ;
+          sdo:email @linkml:String ? ;
+          sdo:telephone @linkml:String ?
+       ) ;
+       rdf:type [ <ContactPerson> ]
+    )
+}
+
+<Context> CLOSED {
+    (  $<Context_tes> (  <text> @linkml:String ? ;
+          <license_str> @linkml:String ? ;
+          <license_url> @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ <Context> ] ?
+    )
+}
+
+<Contributor>  (
+    CLOSED {
+       (  $<Contributor_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ? ;
+             sdo:name @linkml:String ? ;
+             <http://purl.obolibrary.org/obo/IAO_0000235> @<ExternalIdentifier> *
+          ) ;
+          rdf:type [ <Contributor> ]
+       )
+    } OR @<Attendee> OR @<Moderator> OR @<Organizer> OR @<Presenter> OR @<Reviewer> OR @<Sponsor>
+)
+
+<Country> CLOSED {
+    (  $<Country_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          sdo:name @linkml:String ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<ExternalIdentifier> *
+       ) ;
+       rdf:type [ <Country> ]
+    )
+}
+
+<DblpId> CLOSED {
+    (  $<DblpId_tes> (  &<ExternalIdentifier_tes> ;
+          rdf:type [ <ExternalIdentifier> ] ? ;
+          <schema_name> @linkml:String ? ;
+          <schema_base_uri> @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ <DblpId> ] ?
+    )
+}
+
+<Deadline> CLOSED {
+    (  $<Deadline_tes> (  <deadline_date> @linkml:Datetime ;
+          <deadline_other> @linkml:String ?
+       ) ;
+       rdf:type [ <Deadline> ] ?
+    )
+}
+
+<DigitalObjectId> CLOSED {
+    (  $<DigitalObjectId_tes> (  &<ExternalIdentifier_tes> ;
+          rdf:type [ <ExternalIdentifier> ] ? ;
+          <schema_name> @linkml:String ? ;
+          <schema_base_uri> @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ <http://purl.obolibrary.org/obo/OBI_0002110> ] ?
+    )
+}
+
+<EventFormatSpecification> CLOSED {
+    (  $<EventFormatSpecification_tes> <http://purl.obolibrary.org/obo/OBI_0002815> @linkml:String ;
+       rdf:type [ <https://github.com/tibonto/aeon#AEON_0000004> ] ?
+    )
+}
+
+<ExternalIdentifier>  (
+    CLOSED {
+       (  $<ExternalIdentifier_tes> (  &<SchemaBasedThing_tes> ;
+             rdf:type [ <SchemaBasedThing> ] ? ;
+             <http://purl.obolibrary.org/obo/OBI_0002815> @linkml:String ? ;
+             <schema_name> @linkml:String ? ;
+             <schema_base_uri> @linkml:Uriorcurie ?
+          ) ;
+          rdf:type [ <ExternalIdentifier> ] ?
+       )
+    } OR @<DblpId> OR @<DigitalObjectId> OR @<GndId> OR @<TibkatId> OR @<WikiCfpId> OR @<WikidataId>
+)
+
+<GndId> CLOSED {
+    (  $<GndId_tes> (  &<ExternalIdentifier_tes> ;
+          rdf:type [ <ExternalIdentifier> ] ? ;
+          <schema_name> @linkml:String ? ;
+          <schema_base_uri> @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ <GndId> ] ?
+    )
+}
+
+<KeynoteSpeaker> CLOSED {
+    (  $<KeynoteSpeaker_tes> (  &<Presenter_tes> ;
+          rdf:type [ <Presenter> ] ?
+       ) ;
+       rdf:type [ <KeynoteSpeaker> ]
+    )
+}
+
+<Location> CLOSED {
+    (  $<Location_tes> (  <city> @<City> ? ;
+          <country> @<Country> ? ;
+          <region> @<Region> ? ;
+          <venue> @<Venue> ? ;
+          <lattitude> @linkml:Float ? ;
+          <longitude> @linkml:Float ? ;
+          <meeting_url> @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ <Location> ] ?
+    )
+}
+
+<Metric> CLOSED {
+    (  $<Metric_tes> (  <int_value> @linkml:Integer ? ;
+          <str_value> @linkml:String ? ;
+          <rate_value> @linkml:Float ? ;
+          <truth_value> @linkml:Boolean ? ;
+          <description> @linkml:String ?
+       ) ;
+       rdf:type [ <Metric> ] ?
+    )
+}
+
+<Moderator> CLOSED {
+    (  $<Moderator_tes> (  &<Contributor_tes> ;
+          rdf:type [ <Contributor> ] ?
+       ) ;
+       rdf:type [ <Moderator> ]
+    )
+}
+
+<NamedThing> {
+    (  $<NamedThing_tes> (  sdo:name @linkml:String ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<ExternalIdentifier> *
+       ) ;
+       rdf:type [ <NamedThing> ]
+    )
+}
+
+<Organizer>  (
+    CLOSED {
+       (  $<Organizer_tes> (  &<Contributor_tes> ;
+             rdf:type [ <Contributor> ] ? ;
+             <contact> @<ContactPerson> ?
+          ) ;
+          rdf:type [ <Organizer> ]
+       )
+    } OR @<CommitteeMember> OR @<ContactPerson>
+)
+
+<PlannedProcess>  (
+    @<AcademicEvent> OR @<AcademicEventSeries>
+)
+
+<PlannedProcess_struct> {
+    (  $<PlannedProcess_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<ProcessName> ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<DigitalObjectId> * ;
+          <landing_page> @linkml:Uri ? ;
+          <organizers> @<Organizer> * ;
+          <contact> @<ContactPerson> ? ;
+          <https://github.com/tibonto/aeon#AEON_0000040> @<AcademicField> * ;
+          <website> @linkml:Uri ? ;
+          <sponsors> @<Sponsor> * ;
+          <publications> @linkml:String * ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<WikidataId> * ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<WikiCfpId> * ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<DblpId> * ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<GndId> * ;
+          <topics> @linkml:String * ;
+          <metrics> @<Metric> * ;
+          <context_info> @<Context> ? ;
+          sdo:name @linkml:String ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<ExternalIdentifier> *
+       ) ;
+       rdf:type [ <http://purl.obolibrary.org/obo/OBI_0000011> ]
+    )
+}
+
+<Presenter>  (
+    CLOSED {
+       (  $<Presenter_tes> (  &<Contributor_tes> ;
+             rdf:type [ <Contributor> ] ?
+          ) ;
+          rdf:type [ <Presenter> ]
+       )
+    } OR @<KeynoteSpeaker>
+)
+
+<ProcessName> CLOSED {
+    (  $<ProcessName_tes> (  skos:perfLabel @linkml:String ;
+          <https://github.com/tibonto/aeon#AEON_0000091> @linkml:String ? ;
+          <former_name> @linkml:String ? ;
+          skos:altLabel @linkml:String * ;
+          skos:altLabel @linkml:String *
+       ) ;
+       rdf:type [ <https://github.com/tibonto/aeon#AEON_0000090> ] ?
+    )
+}
+
+<ProcessRelation> CLOSED {
+    (  $<ProcessRelation_tes> rdf:type . * ;
+       rdf:type [ <ProcessRelation> ] ?
+    )
+}
+
+<Publication> CLOSED {
+    (  $<Publication_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<DigitalObjectId> * ;
+          sdo:name @linkml:String ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<ExternalIdentifier> *
+       ) ;
+       rdf:type [ <Publication> ]
+    )
+}
+
+<Region> CLOSED {
+    (  $<Region_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          sdo:name @linkml:String ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<ExternalIdentifier> *
+       ) ;
+       rdf:type [ <Region> ]
+    )
+}
+
+<Reviewer> CLOSED {
+    (  $<Reviewer_tes> (  &<Contributor_tes> ;
+          rdf:type [ <Contributor> ] ?
+       ) ;
+       rdf:type [ <Reviewer> ]
+    )
+}
+
+<SchemaBasedThing> {
+    (  $<SchemaBasedThing_tes> (  <value> @linkml:String ? ;
+          <schema_name> @linkml:String ? ;
+          <schema_base_uri> @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ <SchemaBasedThing> ] ?
+    )
+}
+
+<Sponsor> CLOSED {
+    (  $<Sponsor_tes> (  &<Contributor_tes> ;
+          rdf:type [ <Contributor> ] ?
+       ) ;
+       rdf:type [ <Sponsor> ]
+    )
+}
+
+<TibkatId> CLOSED {
+    (  $<TibkatId_tes> (  &<ExternalIdentifier_tes> ;
+          rdf:type [ <ExternalIdentifier> ] ? ;
+          <schema_name> @linkml:String ? ;
+          <schema_base_uri> @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ <TibkatId> ] ?
+    )
+}
+
+<Venue> CLOSED {
+    (  $<Venue_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          <street> @linkml:String ? ;
+          <zip_code> @linkml:String ? ;
+          sdo:name @linkml:String ? ;
+          <http://purl.obolibrary.org/obo/IAO_0000235> @<ExternalIdentifier> *
+       ) ;
+       rdf:type [ <Venue> ]
+    )
+}
+
+<WikiCfpId> CLOSED {
+    (  $<WikiCfpId_tes> (  &<ExternalIdentifier_tes> ;
+          rdf:type [ <ExternalIdentifier> ] ? ;
+          <schema_name> @linkml:String ? ;
+          <schema_base_uri> @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ <WikiCfpId> ] ?
+    )
+}
+
+<WikidataId> CLOSED {
+    (  $<WikidataId_tes> (  &<ExternalIdentifier_tes> ;
+          rdf:type [ <ExternalIdentifier> ] ? ;
+          <schema_name> @linkml:String ? ;
+          <schema_base_uri> @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ wikidata:Q43649390 ] ?
+    )
+}
+
+
