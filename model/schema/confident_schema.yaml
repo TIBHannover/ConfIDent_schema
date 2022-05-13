@@ -4,7 +4,7 @@ title: ConfIDent metadata schema
 description: |-
   This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
 license: https://creativecommons.org/licenses/by/4.0/
-version: 0.2.0
+version: 0.2.3
 default_curi_maps:
   - semweb_context
 
@@ -87,6 +87,9 @@ classes:
         description: The relatin to relate a name to a PlannedProcess.
         range: ProcessName
         required: true
+      external_id:
+        required: false
+        recommended: false
   AcademicEventSeries:
     description: |-
       An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.
@@ -182,6 +185,10 @@ classes:
         inlined: true
         domain: AcademicEventSeries
         range: Context
+        required: false
+        recommended: false
+      external_id:
+        domain: AcademicEventSeries
         required: false
         recommended: false
       gnd_id:
@@ -357,6 +364,10 @@ classes:
         required: false
         recommended: true
     # optional
+      external_id:
+        domain: AcademicEvent
+        required: false
+        recommended: false
       topics:
         multivalued: true
         inlined_as_list: true
@@ -804,7 +815,7 @@ slots:
     identifier: true
     range: uriorcurie
   external_id:
-    description: A property to provide an external id of a schema entity.
+    description: A property to provide a list of external identifiers of a schema entity including their identifier scheme.
     slot_uri: iao:0000235
     multivalued: true
     inlined_as_list: true
