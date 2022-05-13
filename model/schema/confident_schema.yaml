@@ -88,6 +88,7 @@ classes:
         domain: PlannedProcess
       name:
         description: The relatin to relate a name to a PlannedProcess.
+        domain: PlannedProcess
         range: ProcessName
         required: true
       external_id:
@@ -697,12 +698,14 @@ classes:
       - NamedThing
     slots:
       - type
-    attributes:
-      ctype:
-        slot_uri: rdf:type
+    slot_usage:
+      type:
+        #designates_type: true
         description: A property to provide the information whether the contributor is an organization or person.
+        todos:
+          - find out why it throws an unhashable JsonObj error when the enum is used
         domain: Contributor
-        range: ContributorType
+        #range: ContributorType
   Sponsor:
     is_a: Contributor
     description: A person or an organization whose role it is to sponsor an academic event or event series.
@@ -855,7 +858,6 @@ slots:
     description: A property to provide the URL the official website of a planned process.
     domain: PlannedProcess
     range: uri
-
   contact:
     description: The contact person of an academic event or event series.
     domain: PlannedProcess
