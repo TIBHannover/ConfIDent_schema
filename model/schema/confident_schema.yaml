@@ -65,8 +65,6 @@ classes:
     mixins:
       - NamedThing
     slots:
-    # required
-      - process_name
     # recommended
       - type
       - doi
@@ -85,6 +83,10 @@ classes:
       - topics
       - metrics
       - context_info 
+      name:
+        description: The relatin to relate a name to a PlannedProcess.
+        range: ProcessName
+        required: true
   AcademicEventSeries:
     description: |-
       An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.
@@ -105,7 +107,7 @@ classes:
         domain: AcademicEventSeries
         range: uriorcurie
         required: true
-      process_name:
+      name:
         slot_uri: iao:0000235
         domain: AcademicEventSeries
         range: ProcessName
@@ -294,7 +296,8 @@ classes:
         domain: AcademicEvent
         range: uriorcurie
         required: true
-      process_name:
+      name:
+        description: The name of an academic event. 
         slot_uri: iao:0000235
         domain: AcademicEvent
         range: ProcessName
@@ -815,11 +818,6 @@ slots:
     description: The base URI of the schema that provides the context for the schema based value. 
     range: uriorcurie
 # PlannedProcess slots
-  process_name:
-    description: A property to provide a name of the academic event or series, which itself if further differentiated (e.g. official name, acronym, etc).
-    slot_uri: iao:0000235
-    domain: PlannedProcess
-    range: ProcessName
   landing_page:
     description: A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.
     domain: PlannedProcess
