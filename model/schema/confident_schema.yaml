@@ -4,7 +4,7 @@ title: ConfIDent metadata schema
 description: |-
   This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
 license: https://creativecommons.org/licenses/by/4.0/
-version: 0.2.3
+version: 0.2.4
 default_curi_maps:
   - semweb_context
 
@@ -83,6 +83,9 @@ classes:
       - topics
       - metrics
       - context_info 
+    slot_usage:
+      id:
+        domain: PlannedProcess
       name:
         description: The relatin to relate a name to a PlannedProcess.
         range: ProcessName
