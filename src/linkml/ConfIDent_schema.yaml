@@ -68,7 +68,6 @@ classes:
     # recommended
       series_of:
         description: A property to link to the events that are part of an academic event series.
-        domain: AcademicEventSeries
         range: AcademicEvent
         required: false
         recommended: true
@@ -94,19 +93,16 @@ classes:
       id:
         ifabsent: string(confident:SeriesID)
         description: A property to provide the internal identifier of an academic event series.
-        domain: AcademicEventSeries
         range: uriorcurie
         required: true
       name:
         description: A property to provide the the various names (official name, acronym, ...) of an academic event series.
         slot_uri: iao:0000235
-        domain: AcademicEventSeries
         range: ProcessName
         required: true
     # recommended
       landing_page:
         description: A property to provide the website to which the DOI an academic event is resolving to.
-        domain: AcademicEventSeries
         range: uri
         required: false
         recommended: true
@@ -114,20 +110,17 @@ classes:
           - datacite:url
       doi:
         range: DigitalObjectId
-        domain: AcademicEventSeries
         required: false
         recommended: true
       organizers:
         description: A property to provide the organizers of an academic event series.
         multivalued: true
         inlined_as_list: true
-        domain: AcademicEventSeries
         range: Organizer
         required: false
         recommended: true
       academic_fields:
         description: A property to provide the academic fields (aka subject or diciplines) associated with an academic event series.
-        domain: AcademicEventSeries
         range: AcademicField
         multivalued: true
         inlined_as_list: true
@@ -135,13 +128,11 @@ classes:
         recommended: true
       website:
         description: A property to provide the URL the official website of an academic event series.
-        domain: AcademicEventSeries
         range: uri
         required: false
         recommended: true
       sponsors:
         description: A property to provide the sponsors of an academic event series.
-        domain: AcademicEventSeries
         range: Sponsor
         multivalued: true
         inlined_as_list: true
@@ -151,7 +142,6 @@ classes:
         description: A property to provide the publication associated with 
         comments: 
           - It will be most common that the publications of an academic event series are the set of publications associated with the individual events of the series.
-        domain: AcademicEventSeries
         range: Publication
         multivalued: true
         inlined_as_list: true
@@ -163,19 +153,16 @@ classes:
           - Most likely the values of this property will be the set of topics aggregated from the academic events of the series.
         multivalued: true
         inlined_as_list: true
-        domain: AcademicEventSeries
         range: string
         required: false
         recommended: false
       metrics:
         multivalued: true
-        domain: AcademicEventSeries
         range: Metric
         required: false
         recommended: false
       context_info:
         inlined: true
-        domain: AcademicEventSeries
         range: Context
         required: false
         recommended: false
@@ -184,28 +171,24 @@ classes:
       gnd_id:
         description: A property to link an academic event series with its [GND identifier](GndId).
         slot_uri: iao:0000235
-        domain: AcademicEventSeries
         range: DblpId
         required: false
         recommended: false
       wikicfp_id:
         description: A property to link an academic event series with its [WikiCFP identifier](WikiCfpId).
         slot_uri: iao:0000235
-        domain: AcademicEventSeries
         range: WikiCfpId
         required: false
         recommended: false
       wikidata_id:
         description: A property to link an academic event series with its [Wikidata identifier](WikidataId).
         slot_uri: iao:0000235
-        domain: AcademicEventSeries
         range: WikidataId
         required: false
         recommended: false
       dpbl_id:
         description: A property to link an academic event series with its [DBLP identifier](DblpId).
         slot_uri: iao:0000235
-        domain: AcademicEventSeries
         range: DblpId
         required: false
         recommended: false
@@ -299,24 +282,20 @@ classes:
       id:
         ifabsent: string(confident:EventID)
         description: A property to provide the internal identifier of an academic event.
-        domain: AcademicEvent
         range: uriorcurie
         required: true
       name:
         description: A property to provide the the various names (official name, acronym, ...) of an academic event.
         slot_uri: iao:0000235
-        domain: AcademicEvent
         range: ProcessName
         required: true
     # recommended
       landing_page:
         description: A property to provide the website to which the DOI an academic event is resolving to.
-        domain: AcademicEvent
         range: uri
         required: false
         recommended: true
       doi:
-        domain: AcademicEvent
         range: DigitalObjectId
         required: false
         recommended: true
@@ -324,13 +303,11 @@ classes:
         slot_uri: rdf:type
         designates_type: true
         description: A property to specify the subtype of the academic event according to a controlled list defined in [EventType](https://tibhannover.github.io/ConfIDent_schema/EventType). If none of subtypes of in this list can be applied, then you need to select "other" and provide a description of the event format using the [event_format](https://tibhannover.github.io/ConfIDent_schema/event_format) property.
-        domain: AcademicEvent
         range: EventType
         required: false
         recommended: true
       organizers:
         description: A property to provide the organizers of an academic event.
-        domain: AcademicEvent
         range: Organizer
         multivalued: true
         inlined_as_list: true
@@ -338,7 +315,6 @@ classes:
         recommended: true
       academic_fields:
         description: A property to provide the academic fields associated with an academic event.
-        domain: AcademicEvent
         range: AcademicField
         multivalued: true
         inlined_as_list: true
@@ -346,21 +322,17 @@ classes:
         recommended: true
       website:
         description: A property to provide the URL of the official website of an academic event.
-        domain: AcademicEvent
-        domain: AcademicEvent
         range: uri
         required: false
         recommended: true
       sponsors:
         description: A property to provide the sponsors of an academic event.
-        domain: AcademicEvent
         range: Sponsor
         multivalued: true
         inlined_as_list: true
         required: false
         recommended: true
       publications:
-        domain: AcademicEvent
         range: Publication
         multivalued: true
         inlined_as_list: true
@@ -372,48 +344,41 @@ classes:
       topics:
         multivalued: true
         inlined_as_list: true
-        domain: AcademicEvent
         range: string
         required: false
         recommended: false
       metrics:
         multivalued: true
         inlined_as_list: true
-        domain: AcademicEventSeries
         range: Metric
         required: false
         recommended: false
       context_info:
         inlined: true
-        domain: AcademicEvent
         range: Context
         required: false
         recommended: false
       gnd_id:
         description: A property to link an academic event with its [GND identifier](GndId).
         slot_uri: iao:0000235
-        domain: AcademicEvent
         range: DblpId
         required: false
         recommended: false
       wikicfp_id:
         description: A property to link an academic event with its [WikiCFP identifier](WikiCfpId).
         slot_uri: iao:0000235
-        domain: AcademicEvent
         range: WikiCfpId
         required: false
         recommended: false
       wikidata_id:
         description: A property to link an academic event with its [Wikidata identifier](WikidataId).
         slot_uri: iao:0000235
-        domain: AcademicEvent
         range: WikidataId
         required: false
         recommended: false
       dpbl_id:
         description: A property to link an academic event with its [DBLP identifier](DblpId).
         slot_uri: iao:0000235
-        domain: AcademicEvent
         range: DblpId
         required: false
         recommended: false
@@ -431,21 +396,18 @@ classes:
         description: The official name of an academic event or series.
         is_a: name
         slot_uri: skos:perfLabel
-        domain: ProcessName
         range: string
         required: true
       acronym:
         description: The official acronym of an academic event or series.
         is_a: name
         slot_uri: aeon:0000091
-        domain: ProcessName
         range: string
         required: false
         recommended: true
       former_name:
         description: The former official name of an academic event or series. Usually this will only be needed in case an academic event series has undergone a name change. 
         is_a: name
-        domain: ProcessName
         range: string
         required: false
         recommended: false
@@ -453,7 +415,6 @@ classes:
         description: A translation of the official process name to be used in different language contexts. 
         is_a: name
         slot_uri: skos:altLabel
-        domain: ProcessName
         range: string
         multivalued: true
         required: false
@@ -462,7 +423,6 @@ classes:
         is_a: name
         slot_uri: skos:altLabel
         description: A property to provide alternative names of an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).
-        domain: ProcessName
         range: string
         multivalued: true
         required: false
@@ -538,7 +498,6 @@ classes:
           - value: ad-hoc meeting of university presidents
             description: An example to provide a format specification for special type of academic event that is not in the schema's [EventType](EventType) enum.
         required: true
-        domain: EventFormatSpecification
         range: string
   Deadline:
     description: A container for event deadlines.
@@ -547,12 +506,10 @@ classes:
     attributes:
       deadline_date:
         description: The date of a deadline.
-        domain: Deadline
         range: datetime
         required: true        
       deadline_other:
         description: A property to specify another type of deadline, if this type of deadline is not within the allowed values of [DeadlineType](DeadlineType).
-        domain: Deadline
         range: string
     slot_usage:
       type: 
@@ -564,30 +521,24 @@ classes:
     attributes:
       int_value:
         description: A property to provide an integer value for a metric.
-        domain: Metric
         range: integer
       str_value:
         description: A property to provide a string value for a metric.
-        domain: Metric
         range: string
       rate_value:
         description: A property to provide a rate value as float for a metric.
-        domain: Metric
         range: float
       truth_value:
         description: A property to provide a truth value for a metric.
-        domain: Metric
         range: boolean
       description:
         description: A property to provide a description of a metric.
-        domain: Metric
         range: string
     slots:
       - type
     slot_usage:
       type:
         description: A property to provide the type of relation between academic events.
-        domain: Metric
         range: MetricType
   ProcessRelation:
     description: A container for relations between academic events.
@@ -603,33 +554,26 @@ classes:
     attributes:
       city:
         description: The property to specify the [City](City) of an academic event location.
-        domain: Location
         range: City
         recommended: true
       country:
         description: The property to specify the [Country](Country) of an academic event location.
-        domain: Location
         range: Country
         recommended: true
       region:
         description: The property to specify the [Region](Region) of an academic event location.
-        domain: Location
         range: Region
       venue:
         description: The property to specify the [Venue](Venue) of an academic event location.
-        domain: Location
         range: Venue
       lattitude:
         description: The property to specify the lattitude of an academic event location.
-        domain: Location
         range: float
       longitude:
         description: The property to specify the longitude of an academic event location.
-        domain: Location
         range: float
       meeting_url:
         description: The property to specify the URL under which a one can participate virtually in an academic event.
-        domain: Location
         range: uriorcurie
   City:
     description: The city in which an academic event takes place.
@@ -656,11 +600,9 @@ classes:
         examples:
           - value: 'Am Welfengarten, 1'
             description: street, hous number
-        domain: Venue
         range: string
       zip_code:
         description: The zip code of the venue.
-        domain: Venue
         range: string
 # descriptors
   AcademicField:
@@ -670,7 +612,6 @@ classes:
     slot_usage:
       value:
         description: The classification label of a certain classification schema.
-        domain: AcademicField
         range: string
         required: true
   Context:
@@ -678,15 +619,12 @@ classes:
     attributes:
       text:
         description: The free text used to provide more context information on an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/). 
-        domain: Context
         range: string
       license_str:
         description: The license of the context information as text, which must be used when copying text from other sources.
-        domain: Context
         range: string
       license_url:
         description: The license of the context information as URL, which should be used when copying text from other sources and such a URL exists.
-        domain: Context
         range: uriorcurie
 # contributors
   Contributor:
@@ -734,12 +672,10 @@ classes:
         slot_uri: sdo:email
         description: The email address of the contact person.
         pattern: \b[-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b
-        domain: ContactPerson
         range: string
       telephone:
         slot_uri: sdo:telephone
         description: The telephone number of the contact person.
-        domain: ContactPerson
         range: string
   CommitteeMember:
     is_a: Organizer
@@ -767,14 +703,12 @@ classes:
     attributes:
       events:
         description: A property to provide a list of academic events within this container.
-        domain: ConfIDentRecords
         range: AcademicEvent
         multivalued: true
         inlined: true
         inlined_as_list: true
       series:
         description: A property to provide a list of academic event series within this container.
-        domain: ConfIDentRecords
         range: AcademicEventSeries
         multivalued: true
         inlined: true
