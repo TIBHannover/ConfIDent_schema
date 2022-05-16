@@ -32,7 +32,6 @@ type AcademicEvent implements NamedThing
 
 type AcademicEventSeries implements NamedThing
   {
-    type: String
     doi: [DigitalObjectId]
     landingPage: Uri
     organizers: [Organizer]

@@ -31,7 +31,6 @@ CREATE TABLE "AcademicEvent" (
 );
 
 CREATE TABLE "AcademicEventSeries" (
-	type TEXT, 
 	doi TEXT, 
 	landing_page TEXT, 
 	organizers TEXT, 

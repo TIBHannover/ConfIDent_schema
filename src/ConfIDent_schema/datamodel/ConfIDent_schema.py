@@ -1,5 +1,5 @@
 # Auto generated from ConfIDent_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-16T13:48:25
+# Generation date: 2022-05-17T00:02:56
 # Schema: ConfIDent-schema
 #
 # id: https://tibhannover.github.io/ConfIDent_schema/
@@ -27,7 +27,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Float, Integer,
 from linkml_runtime.utils.metamodelcore import Bool, URI, URIorCURIE, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "0.3.3"
+version = "0.3.5"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -214,7 +214,6 @@ class AcademicEventSeries(YAMLRoot):
 
     name: Union[dict, "ProcessName"] = None
     id: Union[str, AcademicEventSeriesId] = "confident:SeriesID"
-    type: Optional[str] = None
     doi: Optional[Union[Union[dict, "DigitalObjectId"], List[Union[dict, "DigitalObjectId"]]]] = empty_list()
     landing_page: Optional[Union[str, URI]] = None
     organizers: Optional[Union[Dict[Union[str, OrganizerId], Union[dict, "Organizer"]], List[Union[dict, "Organizer"]]]] = empty_dict()
@@ -242,9 +241,6 @@ class AcademicEventSeries(YAMLRoot):
             self.MissingRequiredField("name")
         if not isinstance(self.name, ProcessName):
             self.name = ProcessName(**as_dict(self.name))
-
-        if self.type is not None and not isinstance(self.type, str):
-            self.type = str(self.type)
 
         if not isinstance(self.doi, list):
             self.doi = [self.doi] if self.doi is not None else []
@@ -743,7 +739,9 @@ class Deadline(YAMLRoot):
 @dataclass
 class Metric(YAMLRoot):
     """
-    A container for statistical information about a planned process.
+    A container for statistical information about an [academic
+    event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event
+    series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -986,8 +984,10 @@ class Venue(YAMLRoot):
 @dataclass
 class AcademicField(YAMLRoot):
     """
-    An academic field is the scientific subject of a planned process according to some controlled vocabulary or
-    thesaurus and as such requires the scheme URI.
+    An academic field is the scientific subject of an [academic
+    event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event
+    series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/) according to some controlled
+    vocabulary or thesaurus and as such requires the scheme URI.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1047,8 +1047,9 @@ class Context(YAMLRoot):
 @dataclass
 class Contributor(YAMLRoot):
     """
-    A contributor is a person or organization that holds a contributor role which is being realized in a planned
-    process.
+    A contributor is a person or organization that holds a contributor role which is being realized in an [academic
+    event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event
+    series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1130,7 +1131,7 @@ class Attendee(Contributor):
 @dataclass
 class Moderator(Contributor):
     """
-    A person that has the role to moderate an academic event.
+    A person whose role is to moderate an academic event.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1153,7 +1154,7 @@ class Moderator(Contributor):
 @dataclass
 class Reviewer(Contributor):
     """
-    A person that has the role to review the submissions of an academic event.
+    A person whose role is to review the submissions of an academic event.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1176,7 +1177,7 @@ class Reviewer(Contributor):
 @dataclass
 class Organizer(Contributor):
     """
-    An organizer of an academic event or event series.
+    A person or organization whose role is to organize an academic event or maintain an event series.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1577,19 +1578,21 @@ class MetricType(EnumDefinitionImpl):
 
 class ContributorType(EnumDefinitionImpl):
     """
-    An enumaration used to distinguish the contributors of a planned process with regard to them being either an
+    An enumaration used to distinguish the contributors of an [academic
+    event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event
+    series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/) with regard to them being either an
     organization or a person.
     """
     organization = PermissibleValue(text="organization",
-                                               description="An institution, or an association that has one or more people as members and which actsas some kind of participant in a planned process.",
+                                               description="An institution, or an association that has one or more people as members and which actsas some kind of participant in an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).",
                                                meaning=OBI["0000245"])
     person = PermissibleValue(text="person",
-                                   description="A human being that acts as some kind of participant in a planned process.",
+                                   description="A human being that acts as some kind of participant in an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).",
                                    meaning=NCBITAXON["9606"])
 
     _defn = EnumDefinition(
         name="ContributorType",
-        description="An enumaration used to distinguish the contributors of a planned process with regard to them being either an organization or a person.",
+        description="An enumaration used to distinguish the contributors of an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/) with regard to them being either an organization or a person.",
     )
 
 # Slots
@@ -1660,7 +1663,7 @@ slots.dpbl_id = Slot(uri=IAO['0000235'], name="dpbl_id", curie=IAO.curie('000023
                    model_uri=CONFIDENT.dpbl_id, domain=None, range=Optional[Union[Union[dict, DblpId], List[Union[dict, DblpId]]]])
 
 slots.academicEventSeries__series_of = Slot(uri=CONFIDENT.series_of, name="academicEventSeries__series_of", curie=CONFIDENT.curie('series_of'),
-                   model_uri=CONFIDENT.academicEventSeries__series_of, domain=AcademicEventSeries, range=Optional[Union[str, AcademicEventId]])
+                   model_uri=CONFIDENT.academicEventSeries__series_of, domain=None, range=Optional[Union[str, AcademicEventId]])
 
 slots.academicEvent__start_date = Slot(uri=AEON.start_date, name="academicEvent__start_date", curie=AEON.curie('start_date'),
                    model_uri=CONFIDENT.academicEvent__start_date, domain=None, range=Union[str, XSDDateTime])
@@ -1693,95 +1696,95 @@ slots.academicEvent__event_mode = Slot(uri=CONFIDENT.event_mode, name="academicE
                    model_uri=CONFIDENT.academicEvent__event_mode, domain=None, range=Optional[Union[str, "EventMode"]])
 
 slots.processName__official_name = Slot(uri=SKOS.perfLabel, name="processName__official_name", curie=SKOS.curie('perfLabel'),
-                   model_uri=CONFIDENT.processName__official_name, domain=ProcessName, range=str)
+                   model_uri=CONFIDENT.processName__official_name, domain=None, range=str)
 
 slots.processName__acronym = Slot(uri=AEON['0000091'], name="processName__acronym", curie=AEON.curie('0000091'),
-                   model_uri=CONFIDENT.processName__acronym, domain=ProcessName, range=Optional[str])
+                   model_uri=CONFIDENT.processName__acronym, domain=None, range=Optional[str])
 
 slots.processName__former_name = Slot(uri=CONFIDENT.former_name, name="processName__former_name", curie=CONFIDENT.curie('former_name'),
-                   model_uri=CONFIDENT.processName__former_name, domain=ProcessName, range=Optional[str])
+                   model_uri=CONFIDENT.processName__former_name, domain=None, range=Optional[str])
 
 slots.processName__translated_name = Slot(uri=SKOS.altLabel, name="processName__translated_name", curie=SKOS.curie('altLabel'),
-                   model_uri=CONFIDENT.processName__translated_name, domain=ProcessName, range=Optional[Union[str, List[str]]])
+                   model_uri=CONFIDENT.processName__translated_name, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.processName__aliases = Slot(uri=SKOS.altLabel, name="processName__aliases", curie=SKOS.curie('altLabel'),
-                   model_uri=CONFIDENT.processName__aliases, domain=ProcessName, range=Optional[Union[str, List[str]]])
+                   model_uri=CONFIDENT.processName__aliases, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.eventFormatSpecification__specified_as = Slot(uri=OBI['0002815'], name="eventFormatSpecification__specified_as", curie=OBI.curie('0002815'),
-                   model_uri=CONFIDENT.eventFormatSpecification__specified_as, domain=EventFormatSpecification, range=str)
+                   model_uri=CONFIDENT.eventFormatSpecification__specified_as, domain=None, range=str)
 
 slots.deadline__deadline_date = Slot(uri=CONFIDENT.deadline_date, name="deadline__deadline_date", curie=CONFIDENT.curie('deadline_date'),
-                   model_uri=CONFIDENT.deadline__deadline_date, domain=Deadline, range=Union[str, XSDDateTime])
+                   model_uri=CONFIDENT.deadline__deadline_date, domain=None, range=Union[str, XSDDateTime])
 
 slots.deadline__deadline_other = Slot(uri=CONFIDENT.deadline_other, name="deadline__deadline_other", curie=CONFIDENT.curie('deadline_other'),
-                   model_uri=CONFIDENT.deadline__deadline_other, domain=Deadline, range=Optional[str])
+                   model_uri=CONFIDENT.deadline__deadline_other, domain=None, range=Optional[str])
 
 slots.metric__int_value = Slot(uri=CONFIDENT.int_value, name="metric__int_value", curie=CONFIDENT.curie('int_value'),
-                   model_uri=CONFIDENT.metric__int_value, domain=Metric, range=Optional[int])
+                   model_uri=CONFIDENT.metric__int_value, domain=None, range=Optional[int])
 
 slots.metric__str_value = Slot(uri=CONFIDENT.str_value, name="metric__str_value", curie=CONFIDENT.curie('str_value'),
-                   model_uri=CONFIDENT.metric__str_value, domain=Metric, range=Optional[str])
+                   model_uri=CONFIDENT.metric__str_value, domain=None, range=Optional[str])
 
 slots.metric__rate_value = Slot(uri=CONFIDENT.rate_value, name="metric__rate_value", curie=CONFIDENT.curie('rate_value'),
-                   model_uri=CONFIDENT.metric__rate_value, domain=Metric, range=Optional[float])
+                   model_uri=CONFIDENT.metric__rate_value, domain=None, range=Optional[float])
 
 slots.metric__truth_value = Slot(uri=CONFIDENT.truth_value, name="metric__truth_value", curie=CONFIDENT.curie('truth_value'),
-                   model_uri=CONFIDENT.metric__truth_value, domain=Metric, range=Optional[Union[bool, Bool]])
+                   model_uri=CONFIDENT.metric__truth_value, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.metric__description = Slot(uri=CONFIDENT.description, name="metric__description", curie=CONFIDENT.curie('description'),
-                   model_uri=CONFIDENT.metric__description, domain=Metric, range=Optional[str])
+                   model_uri=CONFIDENT.metric__description, domain=None, range=Optional[str])
 
 slots.location__city = Slot(uri=CONFIDENT.city, name="location__city", curie=CONFIDENT.curie('city'),
-                   model_uri=CONFIDENT.location__city, domain=Location, range=Optional[Union[str, CityId]])
+                   model_uri=CONFIDENT.location__city, domain=None, range=Optional[Union[str, CityId]])
 
 slots.location__country = Slot(uri=CONFIDENT.country, name="location__country", curie=CONFIDENT.curie('country'),
-                   model_uri=CONFIDENT.location__country, domain=Location, range=Optional[Union[str, CountryId]])
+                   model_uri=CONFIDENT.location__country, domain=None, range=Optional[Union[str, CountryId]])
 
 slots.location__region = Slot(uri=CONFIDENT.region, name="location__region", curie=CONFIDENT.curie('region'),
-                   model_uri=CONFIDENT.location__region, domain=Location, range=Optional[Union[str, RegionId]])
+                   model_uri=CONFIDENT.location__region, domain=None, range=Optional[Union[str, RegionId]])
 
 slots.location__venue = Slot(uri=CONFIDENT.venue, name="location__venue", curie=CONFIDENT.curie('venue'),
-                   model_uri=CONFIDENT.location__venue, domain=Location, range=Optional[Union[str, VenueId]])
+                   model_uri=CONFIDENT.location__venue, domain=None, range=Optional[Union[str, VenueId]])
 
 slots.location__lattitude = Slot(uri=CONFIDENT.lattitude, name="location__lattitude", curie=CONFIDENT.curie('lattitude'),
-                   model_uri=CONFIDENT.location__lattitude, domain=Location, range=Optional[float])
+                   model_uri=CONFIDENT.location__lattitude, domain=None, range=Optional[float])
 
 slots.location__longitude = Slot(uri=CONFIDENT.longitude, name="location__longitude", curie=CONFIDENT.curie('longitude'),
-                   model_uri=CONFIDENT.location__longitude, domain=Location, range=Optional[float])
+                   model_uri=CONFIDENT.location__longitude, domain=None, range=Optional[float])
 
 slots.location__meeting_url = Slot(uri=CONFIDENT.meeting_url, name="location__meeting_url", curie=CONFIDENT.curie('meeting_url'),
-                   model_uri=CONFIDENT.location__meeting_url, domain=Location, range=Optional[Union[str, URIorCURIE]])
+                   model_uri=CONFIDENT.location__meeting_url, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.venue__street = Slot(uri=CONFIDENT.street, name="venue__street", curie=CONFIDENT.curie('street'),
-                   model_uri=CONFIDENT.venue__street, domain=Venue, range=Optional[str])
+                   model_uri=CONFIDENT.venue__street, domain=None, range=Optional[str])
 
 slots.venue__zip_code = Slot(uri=CONFIDENT.zip_code, name="venue__zip_code", curie=CONFIDENT.curie('zip_code'),
-                   model_uri=CONFIDENT.venue__zip_code, domain=Venue, range=Optional[str])
+                   model_uri=CONFIDENT.venue__zip_code, domain=None, range=Optional[str])
 
 slots.context__text = Slot(uri=CONFIDENT.text, name="context__text", curie=CONFIDENT.curie('text'),
-                   model_uri=CONFIDENT.context__text, domain=Context, range=Optional[str])
+                   model_uri=CONFIDENT.context__text, domain=None, range=Optional[str])
 
 slots.context__license_str = Slot(uri=CONFIDENT.license_str, name="context__license_str", curie=CONFIDENT.curie('license_str'),
-                   model_uri=CONFIDENT.context__license_str, domain=Context, range=Optional[str])
+                   model_uri=CONFIDENT.context__license_str, domain=None, range=Optional[str])
 
 slots.context__license_url = Slot(uri=CONFIDENT.license_url, name="context__license_url", curie=CONFIDENT.curie('license_url'),
-                   model_uri=CONFIDENT.context__license_url, domain=Context, range=Optional[Union[str, URIorCURIE]])
+                   model_uri=CONFIDENT.context__license_url, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.organizer__contact = Slot(uri=CONFIDENT.contact, name="organizer__contact", curie=CONFIDENT.curie('contact'),
                    model_uri=CONFIDENT.organizer__contact, domain=None, range=Optional[Union[dict, ContactPerson]])
 
 slots.contactPerson__email = Slot(uri=SDO.email, name="contactPerson__email", curie=SDO.curie('email'),
-                   model_uri=CONFIDENT.contactPerson__email, domain=ContactPerson, range=Optional[str],
+                   model_uri=CONFIDENT.contactPerson__email, domain=None, range=Optional[str],
                    pattern=re.compile(r'\b[-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'))
 
 slots.contactPerson__telephone = Slot(uri=SDO.telephone, name="contactPerson__telephone", curie=SDO.curie('telephone'),
-                   model_uri=CONFIDENT.contactPerson__telephone, domain=ContactPerson, range=Optional[str])
+                   model_uri=CONFIDENT.contactPerson__telephone, domain=None, range=Optional[str])
 
 slots.confIDentRecords__events = Slot(uri=CONFIDENT.events, name="confIDentRecords__events", curie=CONFIDENT.curie('events'),
-                   model_uri=CONFIDENT.confIDentRecords__events, domain=ConfIDentRecords, range=Optional[Union[Dict[Union[str, AcademicEventId], Union[dict, AcademicEvent]], List[Union[dict, AcademicEvent]]]])
+                   model_uri=CONFIDENT.confIDentRecords__events, domain=None, range=Optional[Union[Dict[Union[str, AcademicEventId], Union[dict, AcademicEvent]], List[Union[dict, AcademicEvent]]]])
 
 slots.confIDentRecords__series = Slot(uri=CONFIDENT.series, name="confIDentRecords__series", curie=CONFIDENT.curie('series'),
-                   model_uri=CONFIDENT.confIDentRecords__series, domain=ConfIDentRecords, range=Optional[Union[Dict[Union[str, AcademicEventSeriesId], Union[dict, AcademicEventSeries]], List[Union[dict, AcademicEventSeries]]]])
+                   model_uri=CONFIDENT.confIDentRecords__series, domain=None, range=Optional[Union[Dict[Union[str, AcademicEventSeriesId], Union[dict, AcademicEventSeries]], List[Union[dict, AcademicEventSeries]]]])
 
 slots.AcademicEventSeries_id = Slot(uri=CONFIDENT.id, name="AcademicEventSeries_id", curie=CONFIDENT.curie('id'),
                    model_uri=CONFIDENT.AcademicEventSeries_id, domain=AcademicEventSeries, range=Union[str, AcademicEventSeriesId])

@@ -138,7 +138,7 @@
             },
             "type": {
                "$ref": "#/$defs/EventType",
-               "description": "A property to specify the subtype of the academic event according to a controlled list defined in [EventType](https://tibhannover.github.io/ConfIDent_schema/EventType). If none of subtypes of in this list can be applied, then you need to select \"other\" and provide a description of the event format using the"
+               "description": "A property to specify the subtype of the academic event according to a controlled list defined in [EventType](https://tibhannover.github.io/ConfIDent_schema/EventType). If none of subtypes of in this list can be applied, then you need to select \"other\" and provide a description of the event format using the [event_format](https://tibhannover.github.io/ConfIDent_schema/event_format) property."
             },
             "website": {
                "description": "A property to provide the URL of the official website of an academic event.",
@@ -174,7 +174,7 @@
          "description": "An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.",
          "properties": {
             "academic_fields": {
-               "description": "A property to describe the scientific subject(s) of a planned process, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [value] and [schema_name] are mandatory.",
+               "description": "A property to provide the academic fields (aka subject or diciplines) associated with an academic event series.",
                "items": {
                   "$ref": "#/$defs/AcademicField"
                },
@@ -263,10 +263,6 @@
                },
                "type": "array"
             },
-            "type": {
-               "description": "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.",
-               "type": "string"
-            },
             "website": {
                "description": "A property to provide the URL the official website of an academic event series.",
                "type": "string"
@@ -295,7 +291,7 @@
       },
       "AcademicField": {
          "additionalProperties": false,
-         "description": "An academic field is the scientific subject of a planned process according to some controlled vocabulary or thesaurus and as such requires the scheme URI.",
+         "description": "An academic field is the scientific subject of an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/) according to some controlled vocabulary or thesaurus and as such requires the scheme URI.",
          "properties": {
             "schema_base_uri": {
                "description": "The base URI of the schema that provides the context for the schema based value.",
@@ -377,7 +373,7 @@
          "properties": {
             "contact": {
                "$ref": "#/$defs/ContactPerson",
-               "description": "The contact person of an academic event or event series."
+               "description": "A relation  person of an academic event or event series."
             },
             "external_id": {
                "description": "A property to provide an external id of a schema entity.",
@@ -411,7 +407,7 @@
          "properties": {
             "contact": {
                "$ref": "#/$defs/ContactPerson",
-               "description": "The contact person of an academic event or event series."
+               "description": "A relation  person of an academic event or event series."
             },
             "external_id": {
                "description": "A property to provide an external id of a schema entity.",
@@ -468,7 +464,7 @@
          "properties": {
             "contact": {
                "$ref": "#/$defs/ContactPerson",
-               "description": "The contact person of an academic event or event series."
+               "description": "A relation  person of an academic event or event series."
             },
             "email": {
                "description": "The email address of the contact person.",
@@ -518,7 +514,7 @@
                "type": "string"
             },
             "text": {
-               "description": "The free text used to provide more context information on a planned process.",
+               "description": "The free text used to provide more context information on an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).",
                "type": "string"
             }
          },
@@ -528,7 +524,7 @@
       },
       "Contributor": {
          "additionalProperties": false,
-         "description": "A contributor is a person or organization that holds a contributor role which is being realized in a planned process.",
+         "description": "A contributor is a person or organization that holds a contributor role which is being realized in an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).",
          "properties": {
             "external_id": {
                "description": "A property to provide an external id of a schema entity.",
@@ -557,7 +553,7 @@
          "type": "object"
       },
       "ContributorType": {
-         "description": "An enumaration used to distinguish the contributors of a planned process with regard to them being either an organization or a person.",
+         "description": "An enumaration used to distinguish the contributors of an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/) with regard to them being either an organization or a person.",
          "enum": [
             "organization",
             "person"
@@ -841,7 +837,7 @@
       },
       "Metric": {
          "additionalProperties": false,
-         "description": "A container for statistical information about a planned process.",
+         "description": "A container for statistical information about an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).",
          "properties": {
             "description": {
                "description": "A property to provide a description of a metric.",
@@ -889,7 +885,7 @@
       },
       "Moderator": {
          "additionalProperties": false,
-         "description": "A person that has the role to moderate an academic event.",
+         "description": "A person whose role is to moderate an academic event.",
          "properties": {
             "external_id": {
                "description": "A property to provide an external id of a schema entity.",
@@ -919,11 +915,11 @@
       },
       "Organizer": {
          "additionalProperties": false,
-         "description": "An organizer of an academic event or event series.",
+         "description": "A person or organization whose role is to organize an academic event or maintain an event series.",
          "properties": {
             "contact": {
                "$ref": "#/$defs/ContactPerson",
-               "description": "The contact person of an academic event or event series."
+               "description": "A relation  person of an academic event or event series."
             },
             "external_id": {
                "description": "A property to provide an external id of a schema entity.",
@@ -990,7 +986,7 @@
                "type": "string"
             },
             "aliases": {
-               "description": "A property to provide alternative names of a planned process.",
+               "description": "A property to provide alternative names of an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).",
                "items": {
                   "type": "string"
                },
@@ -1105,7 +1101,7 @@
       },
       "Reviewer": {
          "additionalProperties": false,
-         "description": "A person that has the role to review the submissions of an academic event.",
+         "description": "A person whose role is to review the submissions of an academic event.",
          "properties": {
             "external_id": {
                "description": "A property to provide an external id of a schema entity.",
@@ -1281,5 +1277,5 @@
    "required": [],
    "title": "ConfIDent-schema",
    "type": "object",
-   "version": "0.3.3"
+   "version": "0.3.5"
 }
