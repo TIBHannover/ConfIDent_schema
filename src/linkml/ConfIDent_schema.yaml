@@ -4,7 +4,7 @@ title: ConfIDent metadata schema
 description: |-
   This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
 license: https://creativecommons.org/licenses/by/4.0/
-version: 0.3.0
+version: 0.3.1
 default_curi_maps:
   - semweb_context
 
@@ -12,7 +12,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   skos: http://www.w3.org/2004/02/skos/core#
   sdo: https://schema.org/
-  confident: https://confident.org/
+  confident: https://www.confident-conference.org/
   aeon: https://github.com/tibonto/aeon#AEON_
   obi: http://purl.obolibrary.org/obo/OBI_
   iao: http://purl.obolibrary.org/obo/IAO_
