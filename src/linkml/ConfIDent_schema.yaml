@@ -815,7 +815,6 @@ slots:
 # Event & Series slots
   landing_page:
     description: A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.
-    domain: PlannedProcess
     range: uri
     exact_mappings:
       - datacite:url
@@ -823,54 +822,44 @@ slots:
     description: A property to provide the organizers of an academic event or series.
     multivalued: true
     inlined_as_list: true
-    domain: PlannedProcess
     range: Organizer
   academic_fields:
     slot_uri: aeon:0000040
     description: A property to describe the scientific subject(s) of a planned process, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [value] and [schema_name] are mandatory.
     multivalued: true
     inlined_as_list: true
-    domain: PlannedProcess
     range: AcademicField
   website:
     description: A property to provide the URL the official website of a planned process.
-    domain: PlannedProcess
     range: uri
   sponsors:
     multivalued: true
     inlined_as_list: true
-    domain: PlannedProcess
     range: Sponsor
   publications:
     description: The published works that are related to the academic event or event series, such as proceedings and video recordings of talks. 
     multivalued: true
-    domain: PlannedProcess
   topics:
     description: A property to provide the theme and topics of an academic event or event series as free keywords, phrases or text.
     multivalued: true
-    domain: PlannedProcess
     range: string
   metrics:
     description: A property to provide metrics of an academic event or series.
     multivalued: true
     inlined_as_list: true
-    domain: PlannedProcess
     range: Metric
   context_info:
     description: A property to provide extra information, such as call of papers event description.
-    domain: PlannedProcess
     range: Context
   wikicfp_id:
     is_a: external_id
     description: A property to link a planned process with its WikiCFP identifier.
     slot_uri: iao:0000235
-    domain: PlannedProcess
     range: WikiCfpId
   dpbl_id:
     is_a: external_id
     description: A property to link the a planned process with its DBLP identifier.
     slot_uri: iao:0000235
-    domain: PlannedProcess
     range: DblpId
 
 #####################################
