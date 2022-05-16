@@ -2,7 +2,7 @@
    "NCBITaxon": "http://purl.obolibrary.org/obo/NCBITaxon_",
    "aeon": "https://github.com/tibonto/aeon#AEON_",
    "bfo": "http://purl.obolibrary.org/obo/BFO_",
-   "confident": "https://confident.org/",
+   "confident": "https://www.confident-conference.org/",
    "datacite": "http://schema.datacite.org/meta/kernel-4.4/metadata.xsd",
    "dblp_series": "https://dblp.org/db/conf/",
    "dc": "http://purl.org/dc/terms/",
@@ -26,9 +26,6 @@
    },
    "EventFormatSpecification": {
       "@id": "aeon:0000004"
-   },
-   "PlannedProcess": {
-      "@id": "obi:0000011"
    },
    "ProcessName": {
       "@id": "aeon:0000090"

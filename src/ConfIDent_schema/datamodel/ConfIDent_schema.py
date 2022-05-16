@@ -1,5 +1,5 @@
 # Auto generated from ConfIDent_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-13T16:46:03
+# Generation date: 2022-05-16T13:48:25
 # Schema: ConfIDent-schema
 #
 # id: https://tibhannover.github.io/ConfIDent_schema/
@@ -27,7 +27,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Float, Integer,
 from linkml_runtime.utils.metamodelcore import Bool, URI, URIorCURIE, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "0.3.0"
+version = "0.3.3"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -36,7 +36,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
 AEON = CurieNamespace('aeon', 'https://github.com/tibonto/aeon#AEON_')
 BFO = CurieNamespace('bfo', 'http://purl.obolibrary.org/obo/BFO_')
-CONFIDENT = CurieNamespace('confident', 'https://confident.org/')
+CONFIDENT = CurieNamespace('confident', 'https://www.confident-conference.org/')
 DATACITE = CurieNamespace('datacite', 'http://schema.datacite.org/meta/kernel-4.4/metadata.xsd')
 DBLP_SERIES = CurieNamespace('dblp_series', 'https://dblp.org/db/conf/')
 DC = CurieNamespace('dc', 'http://purl.org/dc/terms/')
@@ -62,15 +62,11 @@ class NamedThingId(URIorCURIE):
     pass
 
 
-class PlannedProcessId(URIorCURIE):
+class AcademicEventSeriesId(URIorCURIE):
     pass
 
 
-class AcademicEventSeriesId(PlannedProcessId):
-    pass
-
-
-class AcademicEventId(PlannedProcessId):
+class AcademicEventId(URIorCURIE):
     pass
 
 
@@ -171,7 +167,7 @@ class SchemaBasedThing(YAMLRoot):
 @dataclass
 class NamedThing(YAMLRoot):
     """
-    A mixin used to provide the attributes needed for the identification of named class.
+    A mixin used to provide the attributes needed for the identification of a thing.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -182,7 +178,7 @@ class NamedThing(YAMLRoot):
 
     id: Union[str, NamedThingId] = None
     name: Optional[str] = None
-    external_ids: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
+    external_id: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -193,27 +189,31 @@ class NamedThing(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if not isinstance(self.external_ids, list):
-            self.external_ids = [self.external_ids] if self.external_ids is not None else []
-        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
+        if not isinstance(self.external_id, list):
+            self.external_id = [self.external_id] if self.external_id is not None else []
+        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class PlannedProcess(YAMLRoot):
+class AcademicEventSeries(YAMLRoot):
     """
-    Abstract base class for academic events and event series.
+    An academic event series describes the set of academic events which take place on a regular basis and thus have an
+    established common identity. This identity is constituted, for example, through institutional continuity in the
+    hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series
+    is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change
+    over time.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = OBI["0000011"]
-    class_class_curie: ClassVar[str] = "obi:0000011"
-    class_name: ClassVar[str] = "PlannedProcess"
-    class_model_uri: ClassVar[URIRef] = CONFIDENT.PlannedProcess
+    class_class_uri: ClassVar[URIRef] = AEON["0000002"]
+    class_class_curie: ClassVar[str] = "aeon:0000002"
+    class_name: ClassVar[str] = "AcademicEventSeries"
+    class_model_uri: ClassVar[URIRef] = CONFIDENT.AcademicEventSeries
 
-    id: Union[str, PlannedProcessId] = None
     name: Union[dict, "ProcessName"] = None
+    id: Union[str, AcademicEventSeriesId] = "confident:SeriesID"
     type: Optional[str] = None
     doi: Optional[Union[Union[dict, "DigitalObjectId"], List[Union[dict, "DigitalObjectId"]]]] = empty_list()
     landing_page: Optional[Union[str, URI]] = None
@@ -221,21 +221,22 @@ class PlannedProcess(YAMLRoot):
     academic_fields: Optional[Union[Union[dict, "AcademicField"], List[Union[dict, "AcademicField"]]]] = empty_list()
     website: Optional[Union[str, URI]] = None
     sponsors: Optional[Union[Dict[Union[str, SponsorId], Union[dict, "Sponsor"]], List[Union[dict, "Sponsor"]]]] = empty_dict()
-    publications: Optional[Union[str, List[str]]] = empty_list()
+    publications: Optional[Union[Dict[Union[str, PublicationId], Union[dict, "Publication"]], List[Union[dict, "Publication"]]]] = empty_dict()
     wikidata_id: Optional[Union[Union[dict, "WikidataId"], List[Union[dict, "WikidataId"]]]] = empty_list()
     wikicfp_id: Optional[Union[Union[dict, "WikiCfpId"], List[Union[dict, "WikiCfpId"]]]] = empty_list()
     dpbl_id: Optional[Union[Union[dict, "DblpId"], List[Union[dict, "DblpId"]]]] = empty_list()
-    gnd_id: Optional[Union[Union[dict, "GndId"], List[Union[dict, "GndId"]]]] = empty_list()
+    gnd_id: Optional[Union[Union[dict, "DblpId"], List[Union[dict, "DblpId"]]]] = empty_list()
     topics: Optional[Union[str, List[str]]] = empty_list()
     metrics: Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]] = empty_list()
     context_info: Optional[Union[dict, "Context"]] = None
-    external_ids: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
+    series_of: Optional[Union[str, AcademicEventId]] = None
+    external_id: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, PlannedProcessId):
-            self.id = PlannedProcessId(self.id)
+        if not isinstance(self.id, AcademicEventSeriesId):
+            self.id = AcademicEventSeriesId(self.id)
 
         if self._is_empty(self.name):
             self.MissingRequiredField("name")
@@ -263,9 +264,7 @@ class PlannedProcess(YAMLRoot):
 
         self._normalize_inlined_as_list(slot_name="sponsors", slot_type=Sponsor, key_name="id", keyed=True)
 
-        if not isinstance(self.publications, list):
-            self.publications = [self.publications] if self.publications is not None else []
-        self.publications = [v if isinstance(v, str) else str(v) for v in self.publications]
+        self._normalize_inlined_as_list(slot_name="publications", slot_type=Publication, key_name="id", keyed=True)
 
         if not isinstance(self.wikidata_id, list):
             self.wikidata_id = [self.wikidata_id] if self.wikidata_id is not None else []
@@ -278,134 +277,34 @@ class PlannedProcess(YAMLRoot):
         if not isinstance(self.dpbl_id, list):
             self.dpbl_id = [self.dpbl_id] if self.dpbl_id is not None else []
         self.dpbl_id = [v if isinstance(v, DblpId) else DblpId(**as_dict(v)) for v in self.dpbl_id]
-
-        if not isinstance(self.gnd_id, list):
-            self.gnd_id = [self.gnd_id] if self.gnd_id is not None else []
-        self.gnd_id = [v if isinstance(v, GndId) else GndId(**as_dict(v)) for v in self.gnd_id]
-
-        if not isinstance(self.topics, list):
-            self.topics = [self.topics] if self.topics is not None else []
-        self.topics = [v if isinstance(v, str) else str(v) for v in self.topics]
-
-        if not isinstance(self.metrics, list):
-            self.metrics = [self.metrics] if self.metrics is not None else []
-        self.metrics = [v if isinstance(v, Metric) else Metric(**as_dict(v)) for v in self.metrics]
-
-        if self.context_info is not None and not isinstance(self.context_info, Context):
-            self.context_info = Context(**as_dict(self.context_info))
-
-        if not isinstance(self.external_ids, list):
-            self.external_ids = [self.external_ids] if self.external_ids is not None else []
-        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class AcademicEventSeries(PlannedProcess):
-    """
-    An academic event series describes the set of academic events which take place on a regular basis and thus have an
-    established common identity. This identity is constituted, for example, through institutional continuity in the
-    hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series
-    is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change
-    over time.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = AEON["0000002"]
-    class_class_curie: ClassVar[str] = "aeon:0000002"
-    class_name: ClassVar[str] = "AcademicEventSeries"
-    class_model_uri: ClassVar[URIRef] = CONFIDENT.AcademicEventSeries
-
-    name: Union[dict, "ProcessName"] = None
-    id: Union[str, AcademicEventSeriesId] = "confident:SeriesID"
-    series_of: Optional[Union[str, AcademicEventId]] = None
-    landing_page: Optional[Union[str, URI]] = None
-    doi: Optional[Union[Union[dict, "DigitalObjectId"], List[Union[dict, "DigitalObjectId"]]]] = empty_list()
-    organizers: Optional[Union[Dict[Union[str, OrganizerId], Union[dict, "Organizer"]], List[Union[dict, "Organizer"]]]] = empty_dict()
-    academic_fields: Optional[Union[Union[dict, "AcademicField"], List[Union[dict, "AcademicField"]]]] = empty_list()
-    website: Optional[Union[str, URI]] = None
-    sponsors: Optional[Union[Dict[Union[str, SponsorId], Union[dict, "Sponsor"]], List[Union[dict, "Sponsor"]]]] = empty_dict()
-    publications: Optional[Union[Dict[Union[str, PublicationId], Union[dict, "Publication"]], List[Union[dict, "Publication"]]]] = empty_dict()
-    topics: Optional[Union[str, List[str]]] = empty_list()
-    metrics: Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]] = empty_list()
-    context_info: Optional[Union[dict, "Context"]] = None
-    external_ids: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
-    gnd_id: Optional[Union[Union[dict, "DblpId"], List[Union[dict, "DblpId"]]]] = empty_list()
-    wikicfp_id: Optional[Union[Union[dict, "WikiCfpId"], List[Union[dict, "WikiCfpId"]]]] = empty_list()
-    wikidata_id: Optional[Union[Union[dict, "WikidataId"], List[Union[dict, "WikidataId"]]]] = empty_list()
-    dpbl_id: Optional[Union[Union[dict, "DblpId"], List[Union[dict, "DblpId"]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, AcademicEventSeriesId):
-            self.id = AcademicEventSeriesId(self.id)
-
-        if self._is_empty(self.name):
-            self.MissingRequiredField("name")
-        if not isinstance(self.name, ProcessName):
-            self.name = ProcessName(**as_dict(self.name))
-
-        if self.series_of is not None and not isinstance(self.series_of, AcademicEventId):
-            self.series_of = AcademicEventId(self.series_of)
-
-        if self.landing_page is not None and not isinstance(self.landing_page, URI):
-            self.landing_page = URI(self.landing_page)
-
-        if not isinstance(self.doi, list):
-            self.doi = [self.doi] if self.doi is not None else []
-        self.doi = [v if isinstance(v, DigitalObjectId) else DigitalObjectId(**as_dict(v)) for v in self.doi]
-
-        self._normalize_inlined_as_list(slot_name="organizers", slot_type=Organizer, key_name="id", keyed=True)
-
-        if not isinstance(self.academic_fields, list):
-            self.academic_fields = [self.academic_fields] if self.academic_fields is not None else []
-        self.academic_fields = [v if isinstance(v, AcademicField) else AcademicField(**as_dict(v)) for v in self.academic_fields]
-
-        if self.website is not None and not isinstance(self.website, URI):
-            self.website = URI(self.website)
-
-        self._normalize_inlined_as_list(slot_name="sponsors", slot_type=Sponsor, key_name="id", keyed=True)
-
-        self._normalize_inlined_as_list(slot_name="publications", slot_type=Publication, key_name="id", keyed=True)
-
-        if not isinstance(self.topics, list):
-            self.topics = [self.topics] if self.topics is not None else []
-        self.topics = [v if isinstance(v, str) else str(v) for v in self.topics]
-
-        if not isinstance(self.metrics, list):
-            self.metrics = [self.metrics] if self.metrics is not None else []
-        self.metrics = [v if isinstance(v, Metric) else Metric(**as_dict(v)) for v in self.metrics]
-
-        if self.context_info is not None and not isinstance(self.context_info, Context):
-            self.context_info = Context(**as_dict(self.context_info))
-
-        if not isinstance(self.external_ids, list):
-            self.external_ids = [self.external_ids] if self.external_ids is not None else []
-        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
 
         if not isinstance(self.gnd_id, list):
             self.gnd_id = [self.gnd_id] if self.gnd_id is not None else []
         self.gnd_id = [v if isinstance(v, DblpId) else DblpId(**as_dict(v)) for v in self.gnd_id]
 
-        if not isinstance(self.wikicfp_id, list):
-            self.wikicfp_id = [self.wikicfp_id] if self.wikicfp_id is not None else []
-        self.wikicfp_id = [v if isinstance(v, WikiCfpId) else WikiCfpId(**as_dict(v)) for v in self.wikicfp_id]
+        if not isinstance(self.topics, list):
+            self.topics = [self.topics] if self.topics is not None else []
+        self.topics = [v if isinstance(v, str) else str(v) for v in self.topics]
 
-        if not isinstance(self.wikidata_id, list):
-            self.wikidata_id = [self.wikidata_id] if self.wikidata_id is not None else []
-        self.wikidata_id = [v if isinstance(v, WikidataId) else WikidataId(**as_dict(v)) for v in self.wikidata_id]
+        if not isinstance(self.metrics, list):
+            self.metrics = [self.metrics] if self.metrics is not None else []
+        self.metrics = [v if isinstance(v, Metric) else Metric(**as_dict(v)) for v in self.metrics]
 
-        if not isinstance(self.dpbl_id, list):
-            self.dpbl_id = [self.dpbl_id] if self.dpbl_id is not None else []
-        self.dpbl_id = [v if isinstance(v, DblpId) else DblpId(**as_dict(v)) for v in self.dpbl_id]
+        if self.context_info is not None and not isinstance(self.context_info, Context):
+            self.context_info = Context(**as_dict(self.context_info))
+
+        if self.series_of is not None and not isinstance(self.series_of, AcademicEventId):
+            self.series_of = AcademicEventId(self.series_of)
+
+        if not isinstance(self.external_id, list):
+            self.external_id = [self.external_id] if self.external_id is not None else []
+        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class AcademicEvent(PlannedProcess):
+class AcademicEvent(YAMLRoot):
     """
     An academic event is part of the established instruments of science communication as a format for conveying the
     latest scientific publications. It is defined by the meeting of researchers at a specific time and place (virtual
@@ -427,6 +326,21 @@ class AcademicEvent(PlannedProcess):
     name: Union[dict, "ProcessName"] = None
     event_status: Union[str, "EventStatus"] = "as scheduled"
     id: Union[str, AcademicEventId] = "confident:EventID"
+    type: Optional[Union[str, "EventType"]] = None
+    doi: Optional[Union[Union[dict, "DigitalObjectId"], List[Union[dict, "DigitalObjectId"]]]] = empty_list()
+    landing_page: Optional[Union[str, URI]] = None
+    organizers: Optional[Union[Dict[Union[str, OrganizerId], Union[dict, "Organizer"]], List[Union[dict, "Organizer"]]]] = empty_dict()
+    academic_fields: Optional[Union[Union[dict, "AcademicField"], List[Union[dict, "AcademicField"]]]] = empty_list()
+    website: Optional[Union[str, URI]] = None
+    sponsors: Optional[Union[Dict[Union[str, SponsorId], Union[dict, "Sponsor"]], List[Union[dict, "Sponsor"]]]] = empty_dict()
+    publications: Optional[Union[Dict[Union[str, PublicationId], Union[dict, "Publication"]], List[Union[dict, "Publication"]]]] = empty_dict()
+    wikidata_id: Optional[Union[Union[dict, "WikidataId"], List[Union[dict, "WikidataId"]]]] = empty_list()
+    wikicfp_id: Optional[Union[Union[dict, "WikiCfpId"], List[Union[dict, "WikiCfpId"]]]] = empty_list()
+    dpbl_id: Optional[Union[Union[dict, "DblpId"], List[Union[dict, "DblpId"]]]] = empty_list()
+    gnd_id: Optional[Union[Union[dict, "DblpId"], List[Union[dict, "DblpId"]]]] = empty_list()
+    topics: Optional[Union[str, List[str]]] = empty_list()
+    metrics: Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]] = empty_list()
+    context_info: Optional[Union[dict, "Context"]] = None
     in_series: Optional[Union[str, AcademicEventSeriesId]] = None
     event_format: Optional[Union[dict, "EventFormatSpecification"]] = None
     at_location: Optional[Union[dict, "Location"]] = None
@@ -434,22 +348,7 @@ class AcademicEvent(PlannedProcess):
     related_to: Optional[Union[Union[dict, "ProcessRelation"], List[Union[dict, "ProcessRelation"]]]] = empty_list()
     ordinal: Optional[int] = None
     event_mode: Optional[Union[str, "EventMode"]] = None
-    landing_page: Optional[Union[str, URI]] = None
-    doi: Optional[Union[Union[dict, "DigitalObjectId"], List[Union[dict, "DigitalObjectId"]]]] = empty_list()
-    type: Optional[Union[str, "EventType"]] = None
-    organizers: Optional[Union[Dict[Union[str, OrganizerId], Union[dict, "Organizer"]], List[Union[dict, "Organizer"]]]] = empty_dict()
-    academic_fields: Optional[Union[Union[dict, "AcademicField"], List[Union[dict, "AcademicField"]]]] = empty_list()
-    website: Optional[Union[str, URI]] = None
-    sponsors: Optional[Union[Dict[Union[str, SponsorId], Union[dict, "Sponsor"]], List[Union[dict, "Sponsor"]]]] = empty_dict()
-    publications: Optional[Union[Dict[Union[str, PublicationId], Union[dict, "Publication"]], List[Union[dict, "Publication"]]]] = empty_dict()
-    external_ids: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
-    topics: Optional[Union[str, List[str]]] = empty_list()
-    metrics: Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]] = empty_list()
-    context_info: Optional[Union[dict, "Context"]] = None
-    gnd_id: Optional[Union[Union[dict, "DblpId"], List[Union[dict, "DblpId"]]]] = empty_list()
-    wikicfp_id: Optional[Union[Union[dict, "WikiCfpId"], List[Union[dict, "WikiCfpId"]]]] = empty_list()
-    wikidata_id: Optional[Union[Union[dict, "WikidataId"], List[Union[dict, "WikidataId"]]]] = empty_list()
-    dpbl_id: Optional[Union[Union[dict, "DblpId"], List[Union[dict, "DblpId"]]]] = empty_list()
+    external_id: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -477,6 +376,56 @@ class AcademicEvent(PlannedProcess):
         if not isinstance(self.name, ProcessName):
             self.name = ProcessName(**as_dict(self.name))
 
+        if self.type is not None and not isinstance(self.type, EventType):
+            self.type = EventType(self.type)
+
+        if not isinstance(self.doi, list):
+            self.doi = [self.doi] if self.doi is not None else []
+        self.doi = [v if isinstance(v, DigitalObjectId) else DigitalObjectId(**as_dict(v)) for v in self.doi]
+
+        if self.landing_page is not None and not isinstance(self.landing_page, URI):
+            self.landing_page = URI(self.landing_page)
+
+        self._normalize_inlined_as_list(slot_name="organizers", slot_type=Organizer, key_name="id", keyed=True)
+
+        if not isinstance(self.academic_fields, list):
+            self.academic_fields = [self.academic_fields] if self.academic_fields is not None else []
+        self.academic_fields = [v if isinstance(v, AcademicField) else AcademicField(**as_dict(v)) for v in self.academic_fields]
+
+        if self.website is not None and not isinstance(self.website, URI):
+            self.website = URI(self.website)
+
+        self._normalize_inlined_as_list(slot_name="sponsors", slot_type=Sponsor, key_name="id", keyed=True)
+
+        self._normalize_inlined_as_list(slot_name="publications", slot_type=Publication, key_name="id", keyed=True)
+
+        if not isinstance(self.wikidata_id, list):
+            self.wikidata_id = [self.wikidata_id] if self.wikidata_id is not None else []
+        self.wikidata_id = [v if isinstance(v, WikidataId) else WikidataId(**as_dict(v)) for v in self.wikidata_id]
+
+        if not isinstance(self.wikicfp_id, list):
+            self.wikicfp_id = [self.wikicfp_id] if self.wikicfp_id is not None else []
+        self.wikicfp_id = [v if isinstance(v, WikiCfpId) else WikiCfpId(**as_dict(v)) for v in self.wikicfp_id]
+
+        if not isinstance(self.dpbl_id, list):
+            self.dpbl_id = [self.dpbl_id] if self.dpbl_id is not None else []
+        self.dpbl_id = [v if isinstance(v, DblpId) else DblpId(**as_dict(v)) for v in self.dpbl_id]
+
+        if not isinstance(self.gnd_id, list):
+            self.gnd_id = [self.gnd_id] if self.gnd_id is not None else []
+        self.gnd_id = [v if isinstance(v, DblpId) else DblpId(**as_dict(v)) for v in self.gnd_id]
+
+        if not isinstance(self.topics, list):
+            self.topics = [self.topics] if self.topics is not None else []
+        self.topics = [v if isinstance(v, str) else str(v) for v in self.topics]
+
+        if not isinstance(self.metrics, list):
+            self.metrics = [self.metrics] if self.metrics is not None else []
+        self.metrics = [v if isinstance(v, Metric) else Metric(**as_dict(v)) for v in self.metrics]
+
+        if self.context_info is not None and not isinstance(self.context_info, Context):
+            self.context_info = Context(**as_dict(self.context_info))
+
         if self.in_series is not None and not isinstance(self.in_series, AcademicEventSeriesId):
             self.in_series = AcademicEventSeriesId(self.in_series)
 
@@ -500,59 +449,9 @@ class AcademicEvent(PlannedProcess):
         if self.event_mode is not None and not isinstance(self.event_mode, EventMode):
             self.event_mode = EventMode(self.event_mode)
 
-        if self.landing_page is not None and not isinstance(self.landing_page, URI):
-            self.landing_page = URI(self.landing_page)
-
-        if not isinstance(self.doi, list):
-            self.doi = [self.doi] if self.doi is not None else []
-        self.doi = [v if isinstance(v, DigitalObjectId) else DigitalObjectId(**as_dict(v)) for v in self.doi]
-
-        if self.type is not None and not isinstance(self.type, EventType):
-            self.type = EventType(self.type)
-
-        self._normalize_inlined_as_list(slot_name="organizers", slot_type=Organizer, key_name="id", keyed=True)
-
-        if not isinstance(self.academic_fields, list):
-            self.academic_fields = [self.academic_fields] if self.academic_fields is not None else []
-        self.academic_fields = [v if isinstance(v, AcademicField) else AcademicField(**as_dict(v)) for v in self.academic_fields]
-
-        if self.website is not None and not isinstance(self.website, URI):
-            self.website = URI(self.website)
-
-        self._normalize_inlined_as_list(slot_name="sponsors", slot_type=Sponsor, key_name="id", keyed=True)
-
-        self._normalize_inlined_as_list(slot_name="publications", slot_type=Publication, key_name="id", keyed=True)
-
-        if not isinstance(self.external_ids, list):
-            self.external_ids = [self.external_ids] if self.external_ids is not None else []
-        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
-
-        if not isinstance(self.topics, list):
-            self.topics = [self.topics] if self.topics is not None else []
-        self.topics = [v if isinstance(v, str) else str(v) for v in self.topics]
-
-        if not isinstance(self.metrics, list):
-            self.metrics = [self.metrics] if self.metrics is not None else []
-        self.metrics = [v if isinstance(v, Metric) else Metric(**as_dict(v)) for v in self.metrics]
-
-        if self.context_info is not None and not isinstance(self.context_info, Context):
-            self.context_info = Context(**as_dict(self.context_info))
-
-        if not isinstance(self.gnd_id, list):
-            self.gnd_id = [self.gnd_id] if self.gnd_id is not None else []
-        self.gnd_id = [v if isinstance(v, DblpId) else DblpId(**as_dict(v)) for v in self.gnd_id]
-
-        if not isinstance(self.wikicfp_id, list):
-            self.wikicfp_id = [self.wikicfp_id] if self.wikicfp_id is not None else []
-        self.wikicfp_id = [v if isinstance(v, WikiCfpId) else WikiCfpId(**as_dict(v)) for v in self.wikicfp_id]
-
-        if not isinstance(self.wikidata_id, list):
-            self.wikidata_id = [self.wikidata_id] if self.wikidata_id is not None else []
-        self.wikidata_id = [v if isinstance(v, WikidataId) else WikidataId(**as_dict(v)) for v in self.wikidata_id]
-
-        if not isinstance(self.dpbl_id, list):
-            self.dpbl_id = [self.dpbl_id] if self.dpbl_id is not None else []
-        self.dpbl_id = [v if isinstance(v, DblpId) else DblpId(**as_dict(v)) for v in self.dpbl_id]
+        if not isinstance(self.external_id, list):
+            self.external_id = [self.external_id] if self.external_id is not None else []
+        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
 
         super().__post_init__(**kwargs)
 
@@ -560,7 +459,7 @@ class AcademicEvent(PlannedProcess):
 @dataclass
 class ProcessName(YAMLRoot):
     """
-    The container for the various names denoting a planned process
+    A container for the various names denoting an academic event or series.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -962,7 +861,7 @@ class City(YAMLRoot):
 
     id: Union[str, CityId] = None
     name: Optional[str] = None
-    external_ids: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
+    external_id: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -973,9 +872,9 @@ class City(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if not isinstance(self.external_ids, list):
-            self.external_ids = [self.external_ids] if self.external_ids is not None else []
-        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
+        if not isinstance(self.external_id, list):
+            self.external_id = [self.external_id] if self.external_id is not None else []
+        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
 
         super().__post_init__(**kwargs)
 
@@ -994,7 +893,7 @@ class Country(YAMLRoot):
 
     id: Union[str, CountryId] = None
     name: Optional[str] = None
-    external_ids: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
+    external_id: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1005,9 +904,9 @@ class Country(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if not isinstance(self.external_ids, list):
-            self.external_ids = [self.external_ids] if self.external_ids is not None else []
-        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
+        if not isinstance(self.external_id, list):
+            self.external_id = [self.external_id] if self.external_id is not None else []
+        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
 
         super().__post_init__(**kwargs)
 
@@ -1026,7 +925,7 @@ class Region(YAMLRoot):
 
     id: Union[str, RegionId] = None
     name: Optional[str] = None
-    external_ids: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
+    external_id: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1037,9 +936,9 @@ class Region(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if not isinstance(self.external_ids, list):
-            self.external_ids = [self.external_ids] if self.external_ids is not None else []
-        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
+        if not isinstance(self.external_id, list):
+            self.external_id = [self.external_id] if self.external_id is not None else []
+        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
 
         super().__post_init__(**kwargs)
 
@@ -1060,7 +959,7 @@ class Venue(YAMLRoot):
     street: Optional[str] = None
     zip_code: Optional[str] = None
     name: Optional[str] = None
-    external_ids: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
+    external_id: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1077,9 +976,9 @@ class Venue(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if not isinstance(self.external_ids, list):
-            self.external_ids = [self.external_ids] if self.external_ids is not None else []
-        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
+        if not isinstance(self.external_id, list):
+            self.external_id = [self.external_id] if self.external_id is not None else []
+        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
 
         super().__post_init__(**kwargs)
 
@@ -1161,7 +1060,7 @@ class Contributor(YAMLRoot):
     id: Union[str, ContributorId] = None
     type: Optional[str] = None
     name: Optional[str] = None
-    external_ids: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
+    external_id: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1175,9 +1074,9 @@ class Contributor(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if not isinstance(self.external_ids, list):
-            self.external_ids = [self.external_ids] if self.external_ids is not None else []
-        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
+        if not isinstance(self.external_id, list):
+            self.external_id = [self.external_id] if self.external_id is not None else []
+        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
 
         super().__post_init__(**kwargs)
 
@@ -1440,7 +1339,7 @@ class Publication(YAMLRoot):
     id: Union[str, PublicationId] = None
     doi: Optional[Union[Union[dict, DigitalObjectId], List[Union[dict, DigitalObjectId]]]] = empty_list()
     name: Optional[str] = None
-    external_ids: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
+    external_id: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1455,9 +1354,9 @@ class Publication(YAMLRoot):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if not isinstance(self.external_ids, list):
-            self.external_ids = [self.external_ids] if self.external_ids is not None else []
-        self.external_ids = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_ids]
+        if not isinstance(self.external_id, list):
+            self.external_id = [self.external_id] if self.external_id is not None else []
+        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
 
         super().__post_init__(**kwargs)
 
@@ -1715,8 +1614,8 @@ slots.name = Slot(uri=SDO.name, name="name", curie=SDO.curie('name'),
 slots.id = Slot(uri=CONFIDENT.id, name="id", curie=CONFIDENT.curie('id'),
                    model_uri=CONFIDENT.id, domain=None, range=URIRef)
 
-slots.external_ids = Slot(uri=IAO['0000235'], name="external_ids", curie=IAO.curie('0000235'),
-                   model_uri=CONFIDENT.external_ids, domain=None, range=Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]])
+slots.external_id = Slot(uri=IAO['0000235'], name="external_id", curie=IAO.curie('0000235'),
+                   model_uri=CONFIDENT.external_id, domain=None, range=Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]])
 
 slots.value = Slot(uri=CONFIDENT.value, name="value", curie=CONFIDENT.curie('value'),
                    model_uri=CONFIDENT.value, domain=None, range=Optional[str])
@@ -1728,70 +1627,70 @@ slots.schema_base_uri = Slot(uri=CONFIDENT.schema_base_uri, name="schema_base_ur
                    model_uri=CONFIDENT.schema_base_uri, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.landing_page = Slot(uri=CONFIDENT.landing_page, name="landing_page", curie=CONFIDENT.curie('landing_page'),
-                   model_uri=CONFIDENT.landing_page, domain=PlannedProcess, range=Optional[Union[str, URI]])
+                   model_uri=CONFIDENT.landing_page, domain=None, range=Optional[Union[str, URI]])
 
 slots.organizers = Slot(uri=CONFIDENT.organizers, name="organizers", curie=CONFIDENT.curie('organizers'),
-                   model_uri=CONFIDENT.organizers, domain=PlannedProcess, range=Optional[Union[Dict[Union[str, OrganizerId], Union[dict, "Organizer"]], List[Union[dict, "Organizer"]]]])
+                   model_uri=CONFIDENT.organizers, domain=None, range=Optional[Union[Dict[Union[str, OrganizerId], Union[dict, Organizer]], List[Union[dict, Organizer]]]])
 
 slots.academic_fields = Slot(uri=AEON['0000040'], name="academic_fields", curie=AEON.curie('0000040'),
-                   model_uri=CONFIDENT.academic_fields, domain=PlannedProcess, range=Optional[Union[Union[dict, "AcademicField"], List[Union[dict, "AcademicField"]]]])
+                   model_uri=CONFIDENT.academic_fields, domain=None, range=Optional[Union[Union[dict, AcademicField], List[Union[dict, AcademicField]]]])
 
 slots.website = Slot(uri=CONFIDENT.website, name="website", curie=CONFIDENT.curie('website'),
-                   model_uri=CONFIDENT.website, domain=PlannedProcess, range=Optional[Union[str, URI]])
+                   model_uri=CONFIDENT.website, domain=None, range=Optional[Union[str, URI]])
 
 slots.sponsors = Slot(uri=CONFIDENT.sponsors, name="sponsors", curie=CONFIDENT.curie('sponsors'),
-                   model_uri=CONFIDENT.sponsors, domain=PlannedProcess, range=Optional[Union[Dict[Union[str, SponsorId], Union[dict, "Sponsor"]], List[Union[dict, "Sponsor"]]]])
+                   model_uri=CONFIDENT.sponsors, domain=None, range=Optional[Union[Dict[Union[str, SponsorId], Union[dict, Sponsor]], List[Union[dict, Sponsor]]]])
 
 slots.publications = Slot(uri=CONFIDENT.publications, name="publications", curie=CONFIDENT.curie('publications'),
-                   model_uri=CONFIDENT.publications, domain=PlannedProcess, range=Optional[Union[str, List[str]]])
+                   model_uri=CONFIDENT.publications, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.topics = Slot(uri=CONFIDENT.topics, name="topics", curie=CONFIDENT.curie('topics'),
-                   model_uri=CONFIDENT.topics, domain=PlannedProcess, range=Optional[Union[str, List[str]]])
+                   model_uri=CONFIDENT.topics, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.metrics = Slot(uri=CONFIDENT.metrics, name="metrics", curie=CONFIDENT.curie('metrics'),
-                   model_uri=CONFIDENT.metrics, domain=PlannedProcess, range=Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]])
+                   model_uri=CONFIDENT.metrics, domain=None, range=Optional[Union[Union[dict, Metric], List[Union[dict, Metric]]]])
 
 slots.context_info = Slot(uri=CONFIDENT.context_info, name="context_info", curie=CONFIDENT.curie('context_info'),
-                   model_uri=CONFIDENT.context_info, domain=PlannedProcess, range=Optional[Union[dict, "Context"]])
+                   model_uri=CONFIDENT.context_info, domain=None, range=Optional[Union[dict, Context]])
 
 slots.wikicfp_id = Slot(uri=IAO['0000235'], name="wikicfp_id", curie=IAO.curie('0000235'),
-                   model_uri=CONFIDENT.wikicfp_id, domain=PlannedProcess, range=Optional[Union[Union[dict, "WikiCfpId"], List[Union[dict, "WikiCfpId"]]]])
+                   model_uri=CONFIDENT.wikicfp_id, domain=None, range=Optional[Union[Union[dict, WikiCfpId], List[Union[dict, WikiCfpId]]]])
 
 slots.dpbl_id = Slot(uri=IAO['0000235'], name="dpbl_id", curie=IAO.curie('0000235'),
-                   model_uri=CONFIDENT.dpbl_id, domain=PlannedProcess, range=Optional[Union[Union[dict, "DblpId"], List[Union[dict, "DblpId"]]]])
+                   model_uri=CONFIDENT.dpbl_id, domain=None, range=Optional[Union[Union[dict, DblpId], List[Union[dict, DblpId]]]])
 
 slots.academicEventSeries__series_of = Slot(uri=CONFIDENT.series_of, name="academicEventSeries__series_of", curie=CONFIDENT.curie('series_of'),
                    model_uri=CONFIDENT.academicEventSeries__series_of, domain=AcademicEventSeries, range=Optional[Union[str, AcademicEventId]])
 
 slots.academicEvent__start_date = Slot(uri=AEON.start_date, name="academicEvent__start_date", curie=AEON.curie('start_date'),
-                   model_uri=CONFIDENT.academicEvent__start_date, domain=AcademicEvent, range=Union[str, XSDDateTime])
+                   model_uri=CONFIDENT.academicEvent__start_date, domain=None, range=Union[str, XSDDateTime])
 
 slots.academicEvent__end_date = Slot(uri=AEON.end_date, name="academicEvent__end_date", curie=AEON.curie('end_date'),
-                   model_uri=CONFIDENT.academicEvent__end_date, domain=AcademicEvent, range=Union[str, XSDDateTime])
+                   model_uri=CONFIDENT.academicEvent__end_date, domain=None, range=Union[str, XSDDateTime])
 
 slots.academicEvent__event_status = Slot(uri=AEON.event_status, name="academicEvent__event_status", curie=AEON.curie('event_status'),
-                   model_uri=CONFIDENT.academicEvent__event_status, domain=AcademicEvent, range=Union[str, "EventStatus"])
+                   model_uri=CONFIDENT.academicEvent__event_status, domain=None, range=Union[str, "EventStatus"])
 
 slots.academicEvent__in_series = Slot(uri=CONFIDENT.in_series, name="academicEvent__in_series", curie=CONFIDENT.curie('in_series'),
-                   model_uri=CONFIDENT.academicEvent__in_series, domain=AcademicEvent, range=Optional[Union[str, AcademicEventSeriesId]])
+                   model_uri=CONFIDENT.academicEvent__in_series, domain=None, range=Optional[Union[str, AcademicEventSeriesId]])
 
 slots.academicEvent__event_format = Slot(uri=AEON['0000032'], name="academicEvent__event_format", curie=AEON.curie('0000032'),
-                   model_uri=CONFIDENT.academicEvent__event_format, domain=AcademicEvent, range=Optional[Union[dict, "EventFormatSpecification"]])
+                   model_uri=CONFIDENT.academicEvent__event_format, domain=None, range=Optional[Union[dict, EventFormatSpecification]])
 
 slots.academicEvent__at_location = Slot(uri=CONFIDENT.at_location, name="academicEvent__at_location", curie=CONFIDENT.curie('at_location'),
-                   model_uri=CONFIDENT.academicEvent__at_location, domain=AcademicEvent, range=Optional[Union[dict, "Location"]])
+                   model_uri=CONFIDENT.academicEvent__at_location, domain=None, range=Optional[Union[dict, Location]])
 
 slots.academicEvent__deadlines = Slot(uri=CONFIDENT.deadlines, name="academicEvent__deadlines", curie=CONFIDENT.curie('deadlines'),
-                   model_uri=CONFIDENT.academicEvent__deadlines, domain=AcademicEvent, range=Optional[Union[Union[dict, "Deadline"], List[Union[dict, "Deadline"]]]])
+                   model_uri=CONFIDENT.academicEvent__deadlines, domain=None, range=Optional[Union[Union[dict, Deadline], List[Union[dict, Deadline]]]])
 
 slots.academicEvent__related_to = Slot(uri=CONFIDENT.related_to, name="academicEvent__related_to", curie=CONFIDENT.curie('related_to'),
-                   model_uri=CONFIDENT.academicEvent__related_to, domain=AcademicEvent, range=Optional[Union[Union[dict, "ProcessRelation"], List[Union[dict, "ProcessRelation"]]]])
+                   model_uri=CONFIDENT.academicEvent__related_to, domain=None, range=Optional[Union[Union[dict, ProcessRelation], List[Union[dict, ProcessRelation]]]])
 
 slots.academicEvent__ordinal = Slot(uri=AEON.event_number, name="academicEvent__ordinal", curie=AEON.curie('event_number'),
-                   model_uri=CONFIDENT.academicEvent__ordinal, domain=AcademicEvent, range=Optional[int])
+                   model_uri=CONFIDENT.academicEvent__ordinal, domain=None, range=Optional[int])
 
 slots.academicEvent__event_mode = Slot(uri=CONFIDENT.event_mode, name="academicEvent__event_mode", curie=CONFIDENT.curie('event_mode'),
-                   model_uri=CONFIDENT.academicEvent__event_mode, domain=AcademicEvent, range=Optional[Union[str, "EventMode"]])
+                   model_uri=CONFIDENT.academicEvent__event_mode, domain=None, range=Optional[Union[str, "EventMode"]])
 
 slots.processName__official_name = Slot(uri=SKOS.perfLabel, name="processName__official_name", curie=SKOS.curie('perfLabel'),
                    model_uri=CONFIDENT.processName__official_name, domain=ProcessName, range=str)
@@ -1884,15 +1783,6 @@ slots.confIDentRecords__events = Slot(uri=CONFIDENT.events, name="confIDentRecor
 slots.confIDentRecords__series = Slot(uri=CONFIDENT.series, name="confIDentRecords__series", curie=CONFIDENT.curie('series'),
                    model_uri=CONFIDENT.confIDentRecords__series, domain=ConfIDentRecords, range=Optional[Union[Dict[Union[str, AcademicEventSeriesId], Union[dict, AcademicEventSeries]], List[Union[dict, AcademicEventSeries]]]])
 
-slots.PlannedProcess_id = Slot(uri=CONFIDENT.id, name="PlannedProcess_id", curie=CONFIDENT.curie('id'),
-                   model_uri=CONFIDENT.PlannedProcess_id, domain=PlannedProcess, range=Union[str, PlannedProcessId])
-
-slots.PlannedProcess_name = Slot(uri=SDO.name, name="PlannedProcess_name", curie=SDO.curie('name'),
-                   model_uri=CONFIDENT.PlannedProcess_name, domain=PlannedProcess, range=Union[dict, "ProcessName"])
-
-slots.PlannedProcess_external_ids = Slot(uri=IAO['0000235'], name="PlannedProcess_external_ids", curie=IAO.curie('0000235'),
-                   model_uri=CONFIDENT.PlannedProcess_external_ids, domain=PlannedProcess, range=Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]])
-
 slots.AcademicEventSeries_id = Slot(uri=CONFIDENT.id, name="AcademicEventSeries_id", curie=CONFIDENT.curie('id'),
                    model_uri=CONFIDENT.AcademicEventSeries_id, domain=AcademicEventSeries, range=Union[str, AcademicEventSeriesId])
 
@@ -1929,8 +1819,8 @@ slots.AcademicEventSeries_metrics = Slot(uri=CONFIDENT.metrics, name="AcademicEv
 slots.AcademicEventSeries_context_info = Slot(uri=CONFIDENT.context_info, name="AcademicEventSeries_context_info", curie=CONFIDENT.curie('context_info'),
                    model_uri=CONFIDENT.AcademicEventSeries_context_info, domain=AcademicEventSeries, range=Optional[Union[dict, "Context"]])
 
-slots.AcademicEventSeries_external_ids = Slot(uri=IAO['0000235'], name="AcademicEventSeries_external_ids", curie=IAO.curie('0000235'),
-                   model_uri=CONFIDENT.AcademicEventSeries_external_ids, domain=AcademicEventSeries, range=Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]])
+slots.AcademicEventSeries_external_id = Slot(uri=IAO['0000235'], name="AcademicEventSeries_external_id", curie=IAO.curie('0000235'),
+                   model_uri=CONFIDENT.AcademicEventSeries_external_id, domain=AcademicEventSeries, range=Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]])
 
 slots.AcademicEventSeries_gnd_id = Slot(uri=IAO['0000235'], name="AcademicEventSeries_gnd_id", curie=IAO.curie('0000235'),
                    model_uri=CONFIDENT.AcademicEventSeries_gnd_id, domain=AcademicEventSeries, range=Optional[Union[Union[dict, "DblpId"], List[Union[dict, "DblpId"]]]])
@@ -1974,8 +1864,8 @@ slots.AcademicEvent_sponsors = Slot(uri=CONFIDENT.sponsors, name="AcademicEvent_
 slots.AcademicEvent_publications = Slot(uri=CONFIDENT.publications, name="AcademicEvent_publications", curie=CONFIDENT.curie('publications'),
                    model_uri=CONFIDENT.AcademicEvent_publications, domain=AcademicEvent, range=Optional[Union[Dict[Union[str, PublicationId], Union[dict, "Publication"]], List[Union[dict, "Publication"]]]])
 
-slots.AcademicEvent_external_ids = Slot(uri=IAO['0000235'], name="AcademicEvent_external_ids", curie=IAO.curie('0000235'),
-                   model_uri=CONFIDENT.AcademicEvent_external_ids, domain=AcademicEvent, range=Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]])
+slots.AcademicEvent_external_id = Slot(uri=IAO['0000235'], name="AcademicEvent_external_id", curie=IAO.curie('0000235'),
+                   model_uri=CONFIDENT.AcademicEvent_external_id, domain=AcademicEvent, range=Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]])
 
 slots.AcademicEvent_topics = Slot(uri=CONFIDENT.topics, name="AcademicEvent_topics", curie=CONFIDENT.curie('topics'),
                    model_uri=CONFIDENT.AcademicEvent_topics, domain=AcademicEvent, range=Optional[Union[str, List[str]]])

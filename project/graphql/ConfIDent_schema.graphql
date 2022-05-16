@@ -1,5 +1,20 @@
-type AcademicEvent
+type AcademicEvent implements NamedThing
   {
+    type: EventType
+    doi: [DigitalObjectId]
+    landingPage: Uri
+    organizers: [Organizer]
+    academicFields: [AcademicField]
+    website: Uri
+    sponsors: [Sponsor]
+    publications: [Publication]
+    wikidataId: [WikidataId]
+    wikicfpId: [WikiCfpId]
+    dpblId: [DblpId]
+    gndId: [DblpId]
+    topics: [String]
+    metrics: [Metric]
+    contextInfo: Context
     startDate: Datetime!
     endDate: Datetime!
     eventStatus: EventStatus!
@@ -12,45 +27,30 @@ type AcademicEvent
     eventMode: EventMode
     id: Uriorcurie!
     name: ProcessName!
-    landingPage: Uri
+    externalId: [ExternalIdentifier]
+  }
+
+type AcademicEventSeries implements NamedThing
+  {
+    type: String
     doi: [DigitalObjectId]
-    type: EventType
+    landingPage: Uri
     organizers: [Organizer]
     academicFields: [AcademicField]
     website: Uri
     sponsors: [Sponsor]
     publications: [Publication]
-    externalIds: [ExternalIdentifier]
+    wikidataId: [WikidataId]
+    wikicfpId: [WikiCfpId]
+    dpblId: [DblpId]
+    gndId: [DblpId]
     topics: [String]
     metrics: [Metric]
     contextInfo: Context
-    gndId: [DblpId]
-    wikicfpId: [WikiCfpId]
-    wikidataId: [WikidataId]
-    dpblId: [DblpId]
-  }
-
-type AcademicEventSeries
-  {
-    type: String
     seriesOf: AcademicEvent
     id: Uriorcurie!
     name: ProcessName!
-    landingPage: Uri
-    doi: [DigitalObjectId]
-    organizers: [Organizer]
-    academicFields: [AcademicField]
-    website: Uri
-    sponsors: [Sponsor]
-    publications: [Publication]
-    topics: [String]
-    metrics: [Metric]
-    contextInfo: Context
-    externalIds: [ExternalIdentifier]
-    gndId: [DblpId]
-    wikicfpId: [WikiCfpId]
-    wikidataId: [WikidataId]
-    dpblId: [DblpId]
+    externalId: [ExternalIdentifier]
   }
 
 type AcademicField implements SchemaBasedThing
@@ -65,14 +65,14 @@ type Attendee
     type: String
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
   }
 
 type City implements NamedThing
   {
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
   }
 
 type CommitteeChair
@@ -80,7 +80,7 @@ type CommitteeChair
     type: String
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
     contact: ContactPerson
   }
 
@@ -89,7 +89,7 @@ type CommitteeMember
     type: String
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
     contact: ContactPerson
   }
 
@@ -103,7 +103,7 @@ type ContactPerson
   {
     type: String
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
     contact: ContactPerson
     email: String
     telephone: String
@@ -122,14 +122,14 @@ type Contributor implements NamedThing
     type: String
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
   }
 
 type Country implements NamedThing
   {
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
   }
 
 type DblpId
@@ -177,7 +177,7 @@ type KeynoteSpeaker
     type: String
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
   }
 
 type Location
@@ -206,14 +206,14 @@ type Moderator
     type: String
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
   }
 
 interface NamedThing
   {
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
   }
 
 type Organizer
@@ -221,30 +221,8 @@ type Organizer
     type: String
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
     contact: ContactPerson
-  }
-
-type PlannedProcess implements NamedThing
-  {
-    type: String
-    doi: [DigitalObjectId]
-    landingPage: Uri
-    organizers: [Organizer]
-    academicFields: [AcademicField]
-    website: Uri
-    sponsors: [Sponsor]
-    publications: [String]
-    wikidataId: [WikidataId]
-    wikicfpId: [WikiCfpId]
-    dpblId: [DblpId]
-    gndId: [GndId]
-    topics: [String]
-    metrics: [Metric]
-    contextInfo: Context
-    id: Uriorcurie!
-    name: ProcessName!
-    externalIds: [ExternalIdentifier]
   }
 
 type Presenter
@@ -252,7 +230,7 @@ type Presenter
     type: String
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
   }
 
 type ProcessName
@@ -274,14 +252,14 @@ type Publication implements NamedThing
     doi: [DigitalObjectId]
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
   }
 
 type Region implements NamedThing
   {
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
   }
 
 type Reviewer
@@ -289,7 +267,7 @@ type Reviewer
     type: String
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
   }
 
 interface SchemaBasedThing
@@ -304,7 +282,7 @@ type Sponsor
     type: String
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
   }
 
 type TibkatId
@@ -320,7 +298,7 @@ type Venue implements NamedThing
     zipCode: String
     id: Uriorcurie!
     name: String
-    externalIds: [ExternalIdentifier]
+    externalId: [ExternalIdentifier]
   }
 
 type WikiCfpId

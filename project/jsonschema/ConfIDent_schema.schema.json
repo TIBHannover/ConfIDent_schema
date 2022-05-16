@@ -5,7 +5,7 @@
          "description": "An academic event is part of the established instruments of science communication as a format for conveying the latest scientific publications. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these publications. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function.",
          "properties": {
             "academic_fields": {
-               "description": "A property to describe the scientific subject(s) of a planned process, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [value] and [schema_name] are mandatory.",
+               "description": "A property to provide the academic fields associated with an academic event.",
                "items": {
                   "$ref": "#/$defs/AcademicField"
                },
@@ -55,7 +55,7 @@
             "event_status": {
                "$ref": "#/$defs/EventStatus"
             },
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide a list of external identifiers including their identifier scheme.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -70,7 +70,7 @@
                "type": "array"
             },
             "id": {
-               "description": "A property to provide an internal id of a schema entity in the ConfIDent plattform.",
+               "description": "A property to provide the internal identifier of an academic event.",
                "type": "string"
             },
             "in_series": {
@@ -78,7 +78,7 @@
                "type": "string"
             },
             "landing_page": {
-               "description": "A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.",
+               "description": "A property to provide the website to which the DOI an academic event is resolving to.",
                "type": "string"
             },
             "metrics": {
@@ -90,14 +90,14 @@
             },
             "name": {
                "$ref": "#/$defs/ProcessName",
-               "description": "The name of an academic event."
+               "description": "A property to provide the the various names (official name, acronym, ...) of an academic event."
             },
             "ordinal": {
                "description": "The ordnial number of an academic event within its series.",
                "type": "integer"
             },
             "organizers": {
-               "description": "A property to provide the organizers of an academic event or series.",
+               "description": "A property to provide the organizers of an academic event.",
                "items": {
                   "$ref": "#/$defs/Organizer"
                },
@@ -138,10 +138,10 @@
             },
             "type": {
                "$ref": "#/$defs/EventType",
-               "description": "A property to specify the subtype of the academic event according to a controlled list defined in [EventType](EventType). If the"
+               "description": "A property to specify the subtype of the academic event according to a controlled list defined in [EventType](https://tibhannover.github.io/ConfIDent_schema/EventType). If none of subtypes of in this list can be applied, then you need to select \"other\" and provide a description of the event format using the"
             },
             "website": {
-               "description": "A property to provide the URL the official website of an academic event.",
+               "description": "A property to provide the URL of the official website of an academic event.",
                "type": "string"
             },
             "wikicfp_id": {
@@ -198,7 +198,7 @@
                },
                "type": "array"
             },
-            "external_ids": {
+            "external_id": {
                "description": "The property to provide external identifiers including their identifier scheme.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -213,11 +213,11 @@
                "type": "array"
             },
             "id": {
-               "description": "A property to provide an internal id of a schema entity in the ConfIDent plattform.",
+               "description": "A property to provide the internal identifier of an academic event series.",
                "type": "string"
             },
             "landing_page": {
-               "description": "A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.",
+               "description": "A property to provide the website to which the DOI an academic event is resolving to.",
                "type": "string"
             },
             "metrics": {
@@ -229,17 +229,17 @@
             },
             "name": {
                "$ref": "#/$defs/ProcessName",
-               "description": "A property to provide a name of a schema entity."
+               "description": "A property to provide the the various names (official name, acronym, ...) of an academic event series."
             },
             "organizers": {
-               "description": "A property to provide the organizers of an academic event or series.",
+               "description": "A property to provide the organizers of an academic event series.",
                "items": {
                   "$ref": "#/$defs/Organizer"
                },
                "type": "array"
             },
             "publications": {
-               "description": "The published works that are related to the academic event or event series, such as proceedings and video recordings of talks.",
+               "description": "A property to provide the publication associated with",
                "items": {
                   "$ref": "#/$defs/Publication"
                },
@@ -319,7 +319,7 @@
          "additionalProperties": false,
          "description": "A person whose only role it is to attend an academic event.",
          "properties": {
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -349,7 +349,7 @@
          "additionalProperties": false,
          "description": "The city in which an academic event takes place.",
          "properties": {
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -379,7 +379,7 @@
                "$ref": "#/$defs/ContactPerson",
                "description": "The contact person of an academic event or event series."
             },
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -413,7 +413,7 @@
                "$ref": "#/$defs/ContactPerson",
                "description": "The contact person of an academic event or event series."
             },
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -475,7 +475,7 @@
                "pattern": "\\b[-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b",
                "type": "string"
             },
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -530,7 +530,7 @@
          "additionalProperties": false,
          "description": "A contributor is a person or organization that holds a contributor role which is being realized in a planned process.",
          "properties": {
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -569,7 +569,7 @@
          "additionalProperties": false,
          "description": "The country in which an academic event takes place.",
          "properties": {
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -776,7 +776,7 @@
          "additionalProperties": false,
          "description": "A 'keynote speaker' is a presenter that is an invited person - often a multiplier in his or her (research) field - responsible for delivering a keynote speech.",
          "properties": {
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -891,7 +891,7 @@
          "additionalProperties": false,
          "description": "A person that has the role to moderate an academic event.",
          "properties": {
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -925,7 +925,7 @@
                "$ref": "#/$defs/ContactPerson",
                "description": "The contact person of an academic event or event series."
             },
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -955,7 +955,7 @@
          "additionalProperties": false,
          "description": "A person that presents its work at an academic event.",
          "properties": {
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -983,7 +983,7 @@
       },
       "ProcessName": {
          "additionalProperties": false,
-         "description": "The container for the various names denoting a planned process",
+         "description": "A container for the various names denoting an academic event or series.",
          "properties": {
             "acronym": {
                "description": "The official acronym of an academic event or series.",
@@ -1042,7 +1042,7 @@
                },
                "type": "array"
             },
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -1068,7 +1068,7 @@
          "additionalProperties": false,
          "description": "The region in which an academic event takes place. For non USA events this might often be negligible.",
          "properties": {
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -1107,7 +1107,7 @@
          "additionalProperties": false,
          "description": "A person that has the role to review the submissions of an academic event.",
          "properties": {
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -1137,7 +1137,7 @@
          "additionalProperties": false,
          "description": "A person or an organization whose role it is to sponsor an academic event or event series.",
          "properties": {
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -1187,7 +1187,7 @@
          "additionalProperties": false,
          "description": "The venue at which an academic event takes place.",
          "properties": {
-            "external_ids": {
+            "external_id": {
                "description": "A property to provide an external id of a schema entity.",
                "items": {
                   "$ref": "#/$defs/ExternalIdentifier"
@@ -1281,5 +1281,5 @@
    "required": [],
    "title": "ConfIDent-schema",
    "type": "object",
-   "version": "0.3.0"
+   "version": "0.3.3"
 }
