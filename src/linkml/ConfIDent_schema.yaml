@@ -4,7 +4,7 @@ title: ConfIDent metadata schema
 description: |-
   This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
 license: https://creativecommons.org/licenses/by/4.0/
-version: 0.3.2
+version: 0.3.3
 default_curi_maps:
   - semweb_context
 
@@ -51,19 +51,27 @@ classes:
       - schema_name
       - schema_base_uri
   NamedThing:
-    description: A mixin used to provide the attributes needed for the identification of named class.
+    description: A mixin used to provide the attributes needed for the identification of a thing.
     mixin: true
     slots:
       - id 
       - name 
-      - external_ids
-# processes
-  PlannedProcess:
-    description: Abstract base class for academic events and event series.
-    class_uri: obi:0000011
-    abstract: true
+      - external_id
+# acadmic events and event series
+  AcademicEventSeries:
+    description: |-
+      An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.
+    class_uri: aeon:0000002
     mixins: 
       - NamedThing
+    attributes:
+    # recommended
+      series_of:
+        description: A property to link to the events that are part of an academic event series.
+        domain: AcademicEventSeries
+        range: AcademicEvent
+        required: false
+        recommended: true
     slots:
     # recommended
       - type
@@ -83,61 +91,37 @@ classes:
       - metrics
       - context_info 
     slot_usage:
-      id:
-        description: The identifier of a PlannedProcess.
-      name:
-        description: The relatin to relate a name to a PlannedProcess.
-        range: ProcessName
-        required: true
-      external_ids:
-        recommended: false
-  AcademicEventSeries:
-    description: |-
-      An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.
-    class_uri: aeon:0000002
-    is_a: PlannedProcess
-    attributes:
-    # recommended
-      series_of:
-        description: A property to link to the events that are part of an academic event series.
-        domain: AcademicEventSeries
-        range: AcademicEvent
-        required: false
-        recommended: true
-    slot_usage:
     # required 
       id:
         ifabsent: string(confident:SeriesID)
-        domain: AcademicEventSeries
+        description: A property to provide the internal identifier of an academic event series.
         range: uriorcurie
         required: true
       name:
+        description: A property to provide the the various names (official name, acronym, ...) of an academic event series.
         slot_uri: iao:0000235
-        domain: AcademicEventSeries
         range: ProcessName
         required: true
     # recommended
       landing_page:
-        domain: AcademicEventSeries
+        description: A property to provide the website to which the DOI an academic event is resolving to.
         range: uri
         required: false
         recommended: true
         exact_mappings:
           - datacite:url
       doi:
-        domain: AcademicEventSeries
         range: DigitalObjectId
         required: false
         recommended: true
       organizers:
+        description: A property to provide the organizers of an academic event series.
         multivalued: true
         inlined_as_list: true
-        domain: AcademicEventSeries
         range: Organizer
         required: false
         recommended: true
       academic_fields:
-        domain: AcademicEventSeries
         range: AcademicField
         multivalued: true
         inlined_as_list: true
@@ -145,22 +129,20 @@ classes:
         recommended: true
       website:
         description: A property to provide the URL the official website of an academic event series.
-        domain: AcademicEventSeries
         range: uri
         required: false
         recommended: true
       sponsors:
         description: A property to provide the sponsors of an academic event series.
-        domain: AcademicEventSeries
         range: Sponsor
         multivalued: true
         inlined_as_list: true
         required: false
         recommended: true
       publications:
+        description: A property to provide the publication associated with 
         comments: 
           - It will be most common that the publications of an academic event series are the set of publications associated with the individual events of the series.
-        domain: AcademicEventSeries
         range: Publication
         multivalued: true
         inlined_as_list: true
@@ -223,19 +205,17 @@ classes:
   AcademicEvent:
     description: |-
       An academic event is part of the established instruments of science communication as a format for conveying the latest scientific publications. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these publications. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function.
-    #tree_root: true
-    is_a: PlannedProcess
+    mixins: 
+      - NamedThing
     attributes:
     # required
       start_date:
         description: The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.
-        domain: AcademicEvent
         range: datetime
         required: true
         slot_uri: aeon:start_date
       end_date:
         description: Similar to start_date but only for the end of an academic event or event series.
-        domain: AcademicEvent
         range: datetime
         required: true
         recommended: true
@@ -243,31 +223,26 @@ classes:
       event_status:
         required: true
         slot_uri: aeon:event_status
-        domain: AcademicEvent
         range: EventStatus
         ifabsent: string(as scheduled)
     # recommended
       in_series:
         description: The relation used to provide the series of which an AcademicEvent is a part.
-        domain: AcademicEvent
         range: AcademicEventSeries
         required: false
         recommended: true
       event_format:
         slot_uri: aeon:0000032
-        domain: AcademicEvent
         range: EventFormatSpecification
         required: false
         recommended: true
       at_location:
         description: The location of the academic event.
-        domain: AcademicEvent
         range: Location
         required: false
         recommended: true
       deadlines:
         description: A property to provide deadlines of an academic event.
-        domain: AcademicEvent
         range: Deadline
         multivalued: true
         inlined: true
@@ -277,7 +252,6 @@ classes:
       related_to:
         description: A property to be used
         multivalued: true
-        domain: AcademicEvent
         range: ProcessRelation    
         required: false
         recommended: true
@@ -285,64 +259,78 @@ classes:
       ordinal:
         description: The ordnial number of an academic event within its series.
         slot_uri: aeon:event_number
-        domain: AcademicEvent
         range: integer
         required: false
         recommended: false
       event_mode:
         description: The event mode describes whether the event is a physical, virtual or hybrid event.
-        domain: AcademicEvent
         range: EventMode
         required: false
         recommended: false
+    slots:
+    # recommended
+      - type
+      - doi
+      - landing_page
+      - organizers
+      - academic_fields
+      - website
+      - sponsors
+      - publications
+    # optional
+      - wikidata_id
+      - wikicfp_id
+      - dpbl_id
+      - gnd_id
+      - topics
+      - metrics
+      - context_info 
     slot_usage:
     # required
       id:
         ifabsent: string(confident:EventID)
-        domain: AcademicEvent
+        description: A property to provide the internal identifier of an academic event.
         range: uriorcurie
         required: true
       name:
-        description: The name of an academic event. 
+        description: A property to provide the the various names (official name, acronym, ...) of an academic event.
         slot_uri: iao:0000235
         domain: AcademicEvent
         range: ProcessName
         required: true
     # recommended
       landing_page:
-        domain: AcademicEvent
+        description: A property to provide the website to which the DOI an academic event is resolving to.
         range: uri
         required: false
         recommended: true
       doi:
-        domain: AcademicEvent
         range: DigitalObjectId
         required: false
         recommended: true
       type:
         slot_uri: rdf:type
         designates_type: true
-        description: A property to specify the subtype of the academic event according to a controlled list defined in [EventType](EventType). If the 
-        domain: AcademicEvent
+        description: A property to specify the subtype of the academic event according to a controlled list defined in [EventType](https://tibhannover.github.io/ConfIDent_schema/EventType). If none of subtypes of in this list can be applied, then you need to select "other" and provide a description of the event format using the 
         range: EventType
         required: false
         recommended: true
       organizers:
-        domain: AcademicEvent
+        description: A property to provide the organizers of an academic event.
         range: Organizer
         multivalued: true
         inlined_as_list: true
         required: false
         recommended: true
       academic_fields:
-        domain: AcademicEvent
+        description: A property to provide the academic fields associated with an academic event.
         range: AcademicField
         multivalued: true
         inlined_as_list: true
         required: false
         recommended: true
       website:
-        description: A property to provide the URL the official website of an academic event.
+        description: A property to provide the URL of the official website of an academic event.
         domain: AcademicEvent
         range: uri
         required: false
@@ -420,7 +408,7 @@ classes:
     
 # identifiers
   ProcessName:
-    description: The container for the various names denoting a planned process
+    description: A container for the various names denoting an academic event or series.
     class_uri: aeon:0000090
     attributes:
       official_name:
@@ -824,7 +812,7 @@ slots:
   schema_base_uri:
     description: The base URI of the schema that provides the context for the schema based value. 
     range: uriorcurie
-# PlannedProcess slots
+# Event & Series slots
   landing_page:
     description: A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.
     domain: PlannedProcess
@@ -862,7 +850,6 @@ slots:
     multivalued: true
     domain: PlannedProcess
     range: string
-  
   metrics:
     description: A property to provide metrics of an academic event or series.
     multivalued: true
@@ -873,7 +860,6 @@ slots:
     description: A property to provide extra information, such as call of papers event description.
     domain: PlannedProcess
     range: Context
-  
   wikicfp_id:
     is_a: external_id
     description: A property to link a planned process with its WikiCFP identifier.
