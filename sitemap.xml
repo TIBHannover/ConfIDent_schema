@@ -396,6 +396,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://tibhannover.github.io/ConfIDent_schema/external_id/</loc>
+         <lastmod>2022-05-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://tibhannover.github.io/ConfIDent_schema/external_ids/</loc>
          <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
