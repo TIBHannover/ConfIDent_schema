@@ -4,7 +4,7 @@ title: ConfIDent metadata schema
 description: |-
   This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
 license: https://creativecommons.org/licenses/by/4.0/
-version: 0.3.1
+version: 0.3.2
 default_curi_maps:
   - semweb_context
 
@@ -188,7 +188,7 @@ classes:
         range: Context
         required: false
         recommended: false
-      external_ids:
+      external_id:
         description: The property to provide external identifiers including their identifier scheme.
       gnd_id:
         description: A property to link an academic event series with its [GND identifier](GndId).
@@ -363,7 +363,7 @@ classes:
         required: false
         recommended: true
     # optional
-      external_ids:
+      external_id:
         description: A property to provide a list of external identifiers including their identifier scheme.
       topics:
         multivalued: true
@@ -786,18 +786,18 @@ slots:
     abstract: true
 # common identifiers slots
   doi:
-    is_a: external_ids
+    is_a: external_id
     slot_uri: iao:0000235
     description: A property to provide a digital object identifier (DOI) according to https://doi.org/.
     range: DigitalObjectId
     exact_mappings:
       - datacite:doi
   gnd_id:
-    is_a: external_ids
+    is_a: external_id
     slot_uri: iao:0000235
     range: GndId
   wikidata_id:
-    is_a: external_ids
+    is_a: external_id
     description: A property to link an entity with its Wikidata identifier.
     slot_uri: iao:0000235
     range: WikidataId
@@ -810,7 +810,7 @@ slots:
     description: A property to provide an internal id of a schema entity in the ConfIDent plattform.
     identifier: true
     range: uriorcurie
-  external_ids:
+  external_id:
     description: A property to provide an external id of a schema entity.
     slot_uri: iao:0000235
     multivalued: true
@@ -875,13 +875,13 @@ slots:
     range: Context
   
   wikicfp_id:
-    is_a: external_ids
+    is_a: external_id
     description: A property to link a planned process with its WikiCFP identifier.
     slot_uri: iao:0000235
     domain: PlannedProcess
     range: WikiCfpId
   dpbl_id:
-    is_a: external_ids
+    is_a: external_id
     description: A property to link the a planned process with its DBLP identifier.
     slot_uri: iao:0000235
     domain: PlannedProcess
