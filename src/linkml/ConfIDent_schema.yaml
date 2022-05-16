@@ -4,7 +4,7 @@ title: ConfIDent metadata schema
 description: |-
   This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
 license: https://creativecommons.org/licenses/by/4.0/
-version: 0.3.3
+version: 0.3.4
 default_curi_maps:
   - semweb_context
 
@@ -95,16 +95,19 @@ classes:
       id:
         ifabsent: string(confident:SeriesID)
         description: A property to provide the internal identifier of an academic event series.
+        domain: AcademicEventSeries
         range: uriorcurie
         required: true
       name:
         description: A property to provide the the various names (official name, acronym, ...) of an academic event series.
         slot_uri: iao:0000235
+        domain: AcademicEventSeries
         range: ProcessName
         required: true
     # recommended
       landing_page:
         description: A property to provide the website to which the DOI an academic event is resolving to.
+        domain: AcademicEventSeries
         range: uri
         required: false
         recommended: true
@@ -112,16 +115,20 @@ classes:
           - datacite:url
       doi:
         range: DigitalObjectId
+        domain: AcademicEventSeries
         required: false
         recommended: true
       organizers:
         description: A property to provide the organizers of an academic event series.
         multivalued: true
         inlined_as_list: true
+        domain: AcademicEventSeries
         range: Organizer
         required: false
         recommended: true
       academic_fields:
+        description: A property to provide the academic fields (aka subject or diciplines) associated with an academic event series.
+        domain: AcademicEventSeries
         range: AcademicField
         multivalued: true
         inlined_as_list: true
@@ -129,11 +136,13 @@ classes:
         recommended: true
       website:
         description: A property to provide the URL the official website of an academic event series.
+        domain: AcademicEventSeries
         range: uri
         required: false
         recommended: true
       sponsors:
         description: A property to provide the sponsors of an academic event series.
+        domain: AcademicEventSeries
         range: Sponsor
         multivalued: true
         inlined_as_list: true
@@ -143,6 +152,7 @@ classes:
         description: A property to provide the publication associated with 
         comments: 
           - It will be most common that the publications of an academic event series are the set of publications associated with the individual events of the series.
+        domain: AcademicEventSeries
         range: Publication
         multivalued: true
         inlined_as_list: true
@@ -290,6 +300,7 @@ classes:
       id:
         ifabsent: string(confident:EventID)
         description: A property to provide the internal identifier of an academic event.
+        domain: AcademicEvent
         range: uriorcurie
         required: true
       name:
@@ -301,22 +312,26 @@ classes:
     # recommended
       landing_page:
         description: A property to provide the website to which the DOI an academic event is resolving to.
+        domain: AcademicEvent
         range: uri
         required: false
         recommended: true
       doi:
+        domain: AcademicEvent
         range: DigitalObjectId
         required: false
         recommended: true
       type:
         slot_uri: rdf:type
         designates_type: true
-        description: A property to specify the subtype of the academic event according to a controlled list defined in [EventType](https://tibhannover.github.io/ConfIDent_schema/EventType). If none of subtypes of in this list can be applied, then you need to select "other" and provide a description of the event format using the 
+        description: A property to specify the subtype of the academic event according to a controlled list defined in [EventType](https://tibhannover.github.io/ConfIDent_schema/EventType). If none of subtypes of in this list can be applied, then you need to select "other" and provide a description of the event format using the [event_format](https://tibhannover.github.io/ConfIDent_schema/event_format) property.
+        domain: AcademicEvent
         range: EventType
         required: false
         recommended: true
       organizers:
         description: A property to provide the organizers of an academic event.
+        domain: AcademicEvent
         range: Organizer
         multivalued: true
         inlined_as_list: true
@@ -324,6 +339,7 @@ classes:
         recommended: true
       academic_fields:
         description: A property to provide the academic fields associated with an academic event.
+        domain: AcademicEvent
         range: AcademicField
         multivalued: true
         inlined_as_list: true
@@ -331,6 +347,7 @@ classes:
         recommended: true
       website:
         description: A property to provide the URL of the official website of an academic event.
+        domain: AcademicEvent
         domain: AcademicEvent
         range: uri
         required: false
@@ -445,7 +462,7 @@ classes:
       aliases:
         is_a: name
         slot_uri: skos:altLabel
-        description: A property to provide alternative names of a planned process.
+        description: A property to provide alternative names of an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).
         domain: ProcessName
         range: string
         multivalued: true
@@ -544,7 +561,7 @@ classes:
         range: DeadlineType
         required: true
   Metric:
-    description: A container for statistical information about a planned process.
+    description: A container for statistical information about an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).
     attributes:
       int_value:
         description: A property to provide an integer value for a metric.
@@ -650,7 +667,7 @@ classes:
   AcademicField:
     mixins:
       - SchemaBasedThing
-    description: An academic field is the scientific subject of a planned process according to some controlled vocabulary or thesaurus and as such requires the scheme URI.
+    description: An academic field is the scientific subject of an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/) according to some controlled vocabulary or thesaurus and as such requires the scheme URI.
     slot_usage:
       value:
         description: The classification label of a certain classification schema.
@@ -661,7 +678,7 @@ classes:
     description: A container to provide extra information, such as call of papers event description.
     attributes:
       text:
-        description: The free text used to provide more context information on a planned process. 
+        description: The free text used to provide more context information on an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/). 
         domain: Context
         range: string
       license_str:
@@ -674,7 +691,7 @@ classes:
         range: uriorcurie
 # contributors
   Contributor:
-    description: A contributor is a person or organization that holds a contributor role which is being realized in a planned process.
+    description: A contributor is a person or organization that holds a contributor role which is being realized in an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).
     mixins:
       - NamedThing
     slots:
@@ -825,12 +842,12 @@ slots:
     range: Organizer
   academic_fields:
     slot_uri: aeon:0000040
-    description: A property to describe the scientific subject(s) of a planned process, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [value] and [schema_name] are mandatory.
+    description: A property to describe the scientific subject(s) of an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/), according to some controlled vocabulary or thesaurus. If this is used, its subproperties [value] and [schema_name] are mandatory.
     multivalued: true
     inlined_as_list: true
     range: AcademicField
   website:
-    description: A property to provide the URL the official website of a planned process.
+    description: A property to provide the URL the official website of a [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).
     range: uri
   sponsors:
     multivalued: true
@@ -853,12 +870,12 @@ slots:
     range: Context
   wikicfp_id:
     is_a: external_id
-    description: A property to link a planned process with its WikiCFP identifier.
+    description: A property to link a [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/) with its WikiCFP identifier.
     slot_uri: iao:0000235
     range: WikiCfpId
   dpbl_id:
     is_a: external_id
-    description: A property to link the a planned process with its DBLP identifier.
+    description: A property to link the a [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/) with its DBLP identifier.
     slot_uri: iao:0000235
     range: DblpId
 
@@ -1003,11 +1020,11 @@ enums:
         description: If true then the event is accessible for people with impairments.
 # contributor type
   ContributorType:
-    description: An enumaration used to distinguish the contributors of a planned process with regard to them being either an organization or a person.
+    description: An enumaration used to distinguish the contributors of an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/) with regard to them being either an organization or a person.
     permissible_values:
       organization:
-        description: An institution, or an association that has one or more people as members and which actsas some kind of participant in a planned process.
+        description: An institution, or an association that has one or more people as members and which actsas some kind of participant in an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).
         meaning: obi:0000245
       person:
-        description: A human being that acts as some kind of participant in a planned process.
+        description: A human being that acts as some kind of participant in an [academic event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).
         meaning: NCBITaxon:9606
