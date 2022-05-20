@@ -42,21 +42,6 @@ emit_prefixes:
 #             Classes               #
 #####################################
 classes:  
-# mixins
-  SchemaBasedThing:
-    description: A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing.
-    mixin: true
-    slots:
-      - value
-      - schema_name
-      - schema_base_uri
-  NamedThing:
-    description: A mixin used to provide the attributes needed for the identification of a thing.
-    mixin: true
-    slots:
-      - id 
-      - name 
-      - external_id
 # acadmic events and event series
   AcademicEventSeries:
     description: |-
@@ -386,7 +371,6 @@ classes:
       - aeon:0000001
     close_mappings:
       - sdo:Event
-    
 # identifiers
   ProcessName:
     description: A container for the various names denoting an academic event or series.
@@ -713,6 +697,21 @@ classes:
         multivalued: true
         inlined: true
         inlined_as_list: true
+# mixins
+  SchemaBasedThing:
+    description: A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing.
+    mixin: true
+    slots:
+      - value
+      - schema_name
+      - schema_base_uri
+  NamedThing:
+    description: A mixin used to provide the attributes needed for the identification of a thing.
+    mixin: true
+    slots:
+      - id 
+      - name 
+      - external_id
 
 #####################################
 #              Slots                #
