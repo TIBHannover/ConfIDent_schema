@@ -1,4 +1,5 @@
-# A model to describe academic events and event series.
-This is a schema used in the ConfIDent project to specify the metadata requirements needed in the description of academic events and event series.
+# ConfIDent_schema
 
-## [Documentation](https://tibhannover.github.io/ConfIDent_schema/)
+my awesome datamodel is for awesome things
+
+

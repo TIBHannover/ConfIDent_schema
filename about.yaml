@@ -1,0 +1,3 @@
+name: ConfIDent_schema
+description: my awesome datamodel is for awesome things
+source_schema_path: src/linkml/ConfIDent_schema.yaml
