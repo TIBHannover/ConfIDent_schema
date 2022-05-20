@@ -373,7 +373,7 @@
          "properties": {
             "contact": {
                "$ref": "#/$defs/ContactPerson",
-               "description": "A relation  person of an academic event or event series."
+               "description": "The contact person of an academic event or event series."
             },
             "external_id": {
                "description": "A property to provide an external id of a schema entity.",
@@ -407,7 +407,7 @@
          "properties": {
             "contact": {
                "$ref": "#/$defs/ContactPerson",
-               "description": "A relation  person of an academic event or event series."
+               "description": "The contact person of an academic event or event series."
             },
             "external_id": {
                "description": "A property to provide an external id of a schema entity.",
@@ -464,7 +464,7 @@
          "properties": {
             "contact": {
                "$ref": "#/$defs/ContactPerson",
-               "description": "A relation  person of an academic event or event series."
+               "description": "The contact person of an academic event or event series."
             },
             "email": {
                "description": "The email address of the contact person.",
@@ -885,7 +885,7 @@
       },
       "Moderator": {
          "additionalProperties": false,
-         "description": "A person whose role is to moderate an academic event.",
+         "description": "A person that has the role to moderate an academic event.",
          "properties": {
             "external_id": {
                "description": "A property to provide an external id of a schema entity.",
@@ -915,11 +915,11 @@
       },
       "Organizer": {
          "additionalProperties": false,
-         "description": "A person or organization whose role is to organize an academic event or maintain an event series.",
+         "description": "An organizer of an academic event or event series.",
          "properties": {
             "contact": {
                "$ref": "#/$defs/ContactPerson",
-               "description": "A relation  person of an academic event or event series."
+               "description": "The contact person of an academic event or event series."
             },
             "external_id": {
                "description": "A property to provide an external id of a schema entity.",
@@ -1101,7 +1101,7 @@
       },
       "Reviewer": {
          "additionalProperties": false,
-         "description": "A person whose role is to review the submissions of an academic event.",
+         "description": "A person that has the role to review the submissions of an academic event.",
          "properties": {
             "external_id": {
                "description": "A property to provide an external id of a schema entity.",

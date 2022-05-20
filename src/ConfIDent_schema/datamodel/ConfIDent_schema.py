@@ -1,5 +1,5 @@
 # Auto generated from ConfIDent_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-17T00:02:56
+# Generation date: 2022-05-20T11:37:22
 # Schema: ConfIDent-schema
 #
 # id: https://tibhannover.github.io/ConfIDent_schema/
@@ -1131,7 +1131,7 @@ class Attendee(Contributor):
 @dataclass
 class Moderator(Contributor):
     """
-    A person whose role is to moderate an academic event.
+    A person that has the role to moderate an academic event.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1154,7 +1154,7 @@ class Moderator(Contributor):
 @dataclass
 class Reviewer(Contributor):
     """
-    A person whose role is to review the submissions of an academic event.
+    A person that has the role to review the submissions of an academic event.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1177,7 +1177,7 @@ class Reviewer(Contributor):
 @dataclass
 class Organizer(Contributor):
     """
-    A person or organization whose role is to organize an academic event or maintain an event series.
+    An organizer of an academic event or event series.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
