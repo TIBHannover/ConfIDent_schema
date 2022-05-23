@@ -353,6 +353,11 @@ classes:
         title: Metric Truth Value
         description: A property to provide a truth value for a metric.
         range: boolean
+      metric_year:
+        title: Metric Year
+        description: A property to provide the year for which the metric value is valid.
+        range: string
+        pattern: ^\d{4}$
       description:
         title: Metric Description
         description: A property to provide a description of a metric.
