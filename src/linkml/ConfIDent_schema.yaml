@@ -364,6 +364,7 @@ classes:
         description: A property to provide the type of relation between academic events.
         range: MetricType
   ProcessRelation:
+    title: Subobject Process Relation
     description: A container for relations between academic events.
     slots:
       - type
@@ -992,6 +993,7 @@ enums:
         description: This value is to be used, if the other allowed values are not applicable.
 # event relation type
   RelationType:
+    title: Event Relation Type
     description: The kinds of relations that are allowed between academic events.
     permissible_values:
       isUmbrellaEventOf:
