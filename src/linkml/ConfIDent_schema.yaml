@@ -298,7 +298,7 @@ classes:
 # plan specs
   EventFormatSpecification:
     class_uri: aeon:0000004
-    title: Event Format
+    title: Subobject Event Format
     description: >-
       An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathing is to be carried out by its participants in terms of achieving certain objectives, fulfiling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event.
       While the explicit details are often provied as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. "conference" or "workshop"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.
@@ -313,7 +313,7 @@ classes:
         required: true
         range: string
   Deadline:
-    title: Deadline
+    title: Subobject Deadline
     description: A container for event deadlines.
     slots:
       - type
@@ -334,7 +334,7 @@ classes:
         range: DeadlineType
         required: true
   Metric:
-    title: Metric
+    title: Subobject Metric
     description: A container for statistical information about an event or event series.
     attributes:
       int_value:
@@ -465,7 +465,7 @@ classes:
         range: uriorcurie
 # contributors
   Contributor:
-    title: Contributor
+    title: Subobject Contributor
     description: A contributor is a person or organization that holds a contributor role which is being realized in an event or event series.
     mixins:
       - NamedThing
@@ -477,23 +477,23 @@ classes:
         description: A property to provide the information whether the contributor is an organization or person.
         #range: ContributorType
   Sponsor:
-    title: Sponsor
+    title: Subobject Sponsor
     is_a: Contributor
     description: A person or an organization whose role it is to sponsor an academic event or event series.
   Attendee:
-    title: Attendee
+    title: Subobject Attendee
     is_a: Contributor
     description: A person whose only role it is to attend an academic event.
   Moderator:
-    title: Moderator
+    title: Subobject Moderator
     is_a: Contributor
     description: A person that has the role to moderate an academic event.
   Reviewer:
-    title: Reviewer
+    title: Subobject Reviewer
     is_a: Contributor
     description: A person that has the role to review the submissions of an academic event.
   Organizer:
-    title: Organizer
+    title: Subobject Organizer
     is_a: Contributor
     description: An organizer of an academic event or event series.
     attributes:
@@ -504,7 +504,7 @@ classes:
         required: false
         recommended: true
   ContactPerson:
-    title: Contact Person
+    title: Subobject Contact Person
     description: The contact person of an academic event or event series.
     is_a: Organizer
     attributes:
@@ -520,23 +520,24 @@ classes:
         description: The telephone number of the contact person.
         range: string
   CommitteeMember:
-    title: Committee Member
+    title: Subobject Committee Member
     is_a: Organizer
     description: A members of an academic event committee.
   CommitteeChair:
-    title: Committee Chair
+    title: Subobject Committee Chair
     is_a: CommitteeMember
     description: The head of an academic event committee.
   Presenter:
-    title: Presenter
+    title: Subobject Presenter
     is_a: Contributor
     description: A person that presents its work at an academic event.
   KeynoteSpeaker:
-    title: Keynote Speaker
+    title: Subobject Keynote Speaker
     is_a: Presenter
     description: A 'keynote speaker' is a presenter that is an invited person - often a multiplier in his or her (research) field - responsible for delivering a keynote speech.
 # output
   Publication:
+    title: Subobject Publication
     description: A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.
     mixins:
       - NamedThing
@@ -566,7 +567,7 @@ classes:
         inlined_as_list: true
 # mixins
   SchemaBasedThing:
-    title: Schema Based Thing
+    title: Subobject Schema Based Thing
     description: A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing.
     mixin: true
     slots:
@@ -574,7 +575,7 @@ classes:
       - schema_name
       - schema_base_uri
   NamedThing:
-    title: Named Thing
+    title: Subobject Named Thing
     description: A mixin used to provide the attributes needed for the identification of a thing.
     mixin: true
     slots:
