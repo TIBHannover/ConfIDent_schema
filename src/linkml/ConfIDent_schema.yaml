@@ -947,7 +947,7 @@ enums:
         meaning: aeon:0000121
       other: 
         description: >-
-          This value is to be used if the event format cannot be represented using one of the other permissible values defined in the [EventFormat](EventFormat.md) enum. If this value is chosen the use of [other_format](other_format.md) is mandatory.
+          This value is to be used if the event format cannot be represented using one of the other permissible values defined in the [Event Type](EventType.md) enum. If this value is chosen the use of [Other Event Format](other_format.md) is mandatory.
         meaning: aeon:0000001 
 # event status
   EventStatus:
