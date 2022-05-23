@@ -2,7 +2,7 @@
    "NCBITaxon": "http://purl.obolibrary.org/obo/NCBITaxon_",
    "aeon": "https://github.com/tibonto/aeon#AEON_",
    "bfo": "http://purl.obolibrary.org/obo/BFO_",
-   "confident": "https://www.confident-conference.org/",
+   "confident": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#",
    "datacite": "http://schema.datacite.org/meta/kernel-4.4/metadata.xsd",
    "dblp_series": "https://dblp.org/db/conf/",
    "dc": "http://purl.org/dc/terms/",
@@ -13,22 +13,21 @@
    "obi": "http://purl.obolibrary.org/obo/OBI_",
    "orcid": "https://orcid.org/",
    "provo": "https://www.w3.org/TR/2013/REC-prov-o-20130430/#",
-   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
    "ror": "https://ror.org/",
    "sdo": "https://schema.org/",
    "skos": "http://www.w3.org/2004/02/skos/core#",
    "wikidata": "https://www.wikidata.org/wiki/",
-   "AcademicEventSeries": {
-      "@id": "aeon:0000002"
-   },
    "DigitalObjectId": {
       "@id": "obi:0002110"
+   },
+   "Event": {
+      "@id": "aeon:0000001"
    },
    "EventFormatSpecification": {
       "@id": "aeon:0000004"
    },
-   "ProcessName": {
-      "@id": "aeon:0000090"
+   "EventSeries": {
+      "@id": "aeon:0000002"
    },
    "WikidataId": {
       "@id": "wikidata:Q43649390"
