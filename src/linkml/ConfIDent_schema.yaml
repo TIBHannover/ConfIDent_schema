@@ -89,7 +89,7 @@ classes:
       has_doi:
         description: A property to provide a digital object identifier (DOI) for an event series. This is set automatically.
       academic_field:
-        description: A property to describe the scientific subject(s) associated with an academic event series, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [schema_value][schema_value.md] and [schema_name](schema_name.md) are mandatory.
+        description: A property to describe the scientific subject(s) associated with an academic event series, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [Schema Value](schema_value.md) and [Schema Name](schema_name.md) are mandatory.
       website:
         description: A property to provide the URL the official website of an academic event series.
       sponsored_by:
@@ -184,7 +184,7 @@ classes:
       has_doi:
         description: A property to provide a digital object identifier (DOI) for an event. This is set automatically.
       academic_field:
-        description: A property to describe the scientific subject(s) associated with an academic event, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [schema_value][schema_value.md] and [schema_name](schema_name.md) are mandatory.
+        description: A property to describe the scientific subject(s) associated with an academic event, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [schema_value](schema_value.md) and [schema_name](schema_name.md) are mandatory.
       website:
         description: A property to provide the URL the official website of an academic event.
       sponsored_by:
@@ -694,7 +694,7 @@ slots:
     recommended: true
   academic_field:
     title: Academic Field
-    description: A property to describe the scientific subject(s) of an event or event series, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [schema_value][schema_value.md] and [schema_name](schema_name.md) are mandatory.
+    description: A property to describe the scientific subject(s) of an event or event series, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [Schema Value](schema_value.md) and [Schema Name](schema_name.md) are mandatory.
     slot_uri: aeon:0000040
     range: AcademicField
     multivalued: true
