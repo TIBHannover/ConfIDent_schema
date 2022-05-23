@@ -15,7 +15,7 @@
     
     
       
-        <title>Class: Context - ConfIDent metadata schema</title>
+        <title>Class: Subobject Context - ConfIDent metadata schema</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#class-context" class="md-skip">
+        <a href="#class-subobject-context" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Class: Context
+              Class: Subobject Context
             
           </span>
         </div>
@@ -219,7 +219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AcademicEvent/" class="md-nav__link">
+      <a href="../Event/" class="md-nav__link">
         Academic Event
       </a>
     </li>
@@ -234,8 +234,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../AcademicEventSeries/" class="md-nav__link">
-        Academic EventSeries
+      <a href="../EventSeries/" class="md-nav__link">
+        Academic Event Series
       </a>
     </li>
   
@@ -297,8 +297,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
@@ -348,9 +348,8 @@
 
 
 
-<h1 id="class-context">Class: Context</h1>
+<h1 id="class-subobject-context">Class: Subobject Context</h1>
 <p><em>A container to provide extra information, such as call of papers event description.</em></p>
-<p>URI: <a href="https://www.confident-conference.org/Context">confident:Context</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="slots">Slots</h2>
@@ -361,30 +360,26 @@
 <th>Range</th>
 <th>Cardinality</th>
 <th>Description</th>
-<th>Info</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../text/">text</a></td>
-<td><a href="string.md">string</a></td>
+<td><a href="../text/">Context Description</a></td>
+<td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td>
 <td>0..1</td>
-<td>The free text used to provide more context information on an <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/">academic event</a> or <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/">academic event series</a>.</td>
-<td>.</td>
+<td>The free text used to provide more context information on an event or event series.</td>
 </tr>
 <tr>
-<td><a href="../license_str/">license_str</a></td>
-<td><a href="string.md">string</a></td>
+<td><a href="../license_str/">Context License</a></td>
+<td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td>
 <td>0..1</td>
 <td>The license of the context information as text, which must be used when copying text from other sources.</td>
-<td>.</td>
 </tr>
 <tr>
-<td><a href="../license_url/">license_url</a></td>
-<td><a href="uriorcurie.md">uriorcurie</a></td>
+<td><a href="../license_url/">Context License URL</a></td>
+<td><a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></td>
 <td>0..1</td>
 <td>The license of the context information as URL, which should be used when copying text from other sources and such a URL exists.</td>
-<td>.</td>
 </tr>
 </tbody>
 </table>
@@ -400,20 +395,38 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../AcademicEventSeries/">AcademicEventSeries</a></td>
-<td><a href="../context_info/">context_info</a></td>
+<td><a href="../EventSeries/">Event Series</a></td>
+<td><a href="../context_info/">Context Information</a></td>
 <td>range</td>
 <td>Context</td>
 </tr>
 <tr>
-<td><a href="../AcademicEvent/">AcademicEvent</a></td>
-<td><a href="../context_info/">context_info</a></td>
+<td><a href="../Event/">Event</a></td>
+<td><a href="../context_info/">Context Information</a></td>
 <td>range</td>
 <td>Context</td>
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>['confident:Context']</td>
+</tr>
+<tr>
+<td>native</td>
+<td>['confident:Context']</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-specification">LinkML Specification</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 
@@ -422,26 +435,29 @@
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Context</span><span class="w"></span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A container to provide extra information, such as call of papers event</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">description.</span><span class="w"></span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Subobject Context</span><span class="w"></span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="nt">attributes</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The free text used to provide more context information on an [academic</span><span class="w"></span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic</span><span class="w"></span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The free text used to provide more context information on an event</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">or event series.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Context Description</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 <span class="w">  </span><span class="nt">license_str</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">license_str</span><span class="w"></span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The license of the context information as text, which must be used</span><span class="w"></span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">when copying text from other sources.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Context License</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 <span class="w">  </span><span class="nt">license_url</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">license_url</span><span class="w"></span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The license of the context information as URL, which should be used</span><span class="w"></span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">when copying text from other sources and such a URL exists.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Context License URL</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span><span class="w"></span>
 </code></pre></div>
 </details>
@@ -451,14 +467,15 @@
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Context</span><span class="w"></span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A container to provide extra information, such as call of papers event</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">description.</span><span class="w"></span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Subobject Context</span><span class="w"></span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="nt">attributes</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The free text used to provide more context information on an [academic</span><span class="w"></span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">event](https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/) or [academic</span><span class="w"></span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">event series](https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/).</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The free text used to provide more context information on an event</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">or event series.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Context Description</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text</span><span class="w"></span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Context</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
@@ -466,7 +483,8 @@
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">license_str</span><span class="w"></span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The license of the context information as text, which must be used</span><span class="w"></span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">when copying text from other sources.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Context License</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">license_str</span><span class="w"></span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Context</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
@@ -474,7 +492,8 @@
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">license_url</span><span class="w"></span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The license of the context information as URL, which should be used</span><span class="w"></span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">when copying text from other sources and such a URL exists.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Context License URL</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">license_url</span><span class="w"></span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Context</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span><span class="w"></span>

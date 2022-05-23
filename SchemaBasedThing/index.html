@@ -15,7 +15,7 @@
     
     
       
-        <title>Class: SchemaBasedThing - ConfIDent metadata schema</title>
+        <title>Class: Subobject Schema Based Thing - ConfIDent metadata schema</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#class-schemabasedthing" class="md-skip">
+        <a href="#class-subobject-schema-based-thing" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Class: SchemaBasedThing
+              Class: Subobject Schema Based Thing
             
           </span>
         </div>
@@ -219,7 +219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AcademicEvent/" class="md-nav__link">
+      <a href="../Event/" class="md-nav__link">
         Academic Event
       </a>
     </li>
@@ -234,8 +234,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../AcademicEventSeries/" class="md-nav__link">
-        Academic EventSeries
+      <a href="../EventSeries/" class="md-nav__link">
+        Academic Event Series
       </a>
     </li>
   
@@ -297,8 +297,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
@@ -348,12 +348,11 @@
 
 
 
-<h1 id="class-schemabasedthing">Class: SchemaBasedThing</h1>
+<h1 id="class-subobject-schema-based-thing">Class: Subobject Schema Based Thing</h1>
 <p><em>A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing.</em></p>
 <ul>
 <li><strong>NOTE</strong>: this is a mixin class intended to be used in combination with other classes, and not used directly</li>
 </ul>
-<p>URI: <a href="https://www.confident-conference.org/SchemaBasedThing">confident:SchemaBasedThing</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="slots">Slots</h2>
@@ -364,35 +363,49 @@
 <th>Range</th>
 <th>Cardinality</th>
 <th>Description</th>
-<th>Info</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../value/">value</a></td>
-<td><a href="string.md">string</a></td>
+<td><a href="../schema_value/">Schema Value</a></td>
+<td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td>
 <td>0..1</td>
-<td>a property to provide the literal value of a schema based entity.</td>
-<td>.</td>
+<td>A property to provide the literal value of a schema based entity.</td>
 </tr>
 <tr>
-<td><a href="../schema_name/">schema_name</a></td>
-<td><a href="string.md">string</a></td>
+<td><a href="../schema_name/">Schema Name</a></td>
+<td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td>
 <td>0..1</td>
-<td>None</td>
-<td>.</td>
+<td>A property to provide the name of a schema.</td>
 </tr>
 <tr>
-<td><a href="../schema_base_uri/">schema_base_uri</a></td>
-<td><a href="uriorcurie.md">uriorcurie</a></td>
+<td><a href="../schema_base_uri/">External formatter URI</a></td>
+<td><a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></td>
 <td>0..1</td>
 <td>The base URI of the schema that provides the context for the schema based value.</td>
-<td>.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="usages">Usages</h2>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>['confident:SchemaBasedThing']</td>
+</tr>
+<tr>
+<td>native</td>
+<td>['confident:SchemaBasedThing']</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-specification">LinkML Specification</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 
@@ -402,10 +415,11 @@
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A mixin used in classes that contain schema based values, such as the</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">classifications used to denote the academic field of an event or the external identifiers</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">used to denote a thing.</span><span class="w"></span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Subobject Schema Based Thing</span><span class="w"></span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="nt">mixin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="nt">slots</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_value</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_name</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_base_uri</span><span class="w"></span>
 </code></pre></div>
@@ -417,19 +431,23 @@
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A mixin used in classes that contain schema based values, such as the</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">classifications used to denote the academic field of an event or the external identifiers</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">used to denote a thing.</span><span class="w"></span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Subobject Schema Based Thing</span><span class="w"></span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="nt">mixin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="nt">attributes</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span><span class="w"></span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a property to provide the literal value of a schema based entity.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span><span class="w"></span>
+<span class="w">  </span><span class="nt">schema_value</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_value</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A property to provide the literal value of a schema based entity.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Schema Value</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_value</span><span class="w"></span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SchemaBasedThing</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 <span class="w">  </span><span class="nt">schema_name</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_name</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A property to provide the name of a schema.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Schema Name</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_name</span><span class="w"></span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SchemaBasedThing</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
@@ -437,7 +455,8 @@
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_base_uri</span><span class="w"></span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The base URI of the schema that provides the context for the schema</span><span class="w"></span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">based value.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">External formatter URI</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema_base_uri</span><span class="w"></span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SchemaBasedThing</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span><span class="w"></span>

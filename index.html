@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#confident-schema" class="md-skip">
+        <a href="#confident-metadata-schema" class="md-skip">
           Skip to content
         </a>
       
@@ -252,8 +252,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enums" class="md-nav__link">
-    Enums
+  <a href="#enumerations" class="md-nav__link">
+    Enumerations
   </a>
   
 </li>
@@ -274,7 +274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="AcademicEvent/" class="md-nav__link">
+      <a href="Event/" class="md-nav__link">
         Academic Event
       </a>
     </li>
@@ -289,8 +289,8 @@
   
   
     <li class="md-nav__item">
-      <a href="AcademicEventSeries/" class="md-nav__link">
-        Academic EventSeries
+      <a href="EventSeries/" class="md-nav__link">
+        Academic Event Series
       </a>
     </li>
   
@@ -352,8 +352,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enums" class="md-nav__link">
-    Enums
+  <a href="#enumerations" class="md-nav__link">
+    Enumerations
   </a>
   
 </li>
@@ -376,9 +376,10 @@
 
 
 
-<h1 id="confident-schema">ConfIDent-schema</h1>
+<h1 id="confident-metadata-schema">ConfIDent Metadata Schema</h1>
 <p>This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.</p>
-<p>URI: https://tibhannover.github.io/ConfIDent_schema/</p>
+<p>URI: <a href="https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</a></p>
+<p>Version: 0.4.0</p>
 <h2 id="classes">Classes</h2>
 <table>
 <thead>
@@ -389,148 +390,148 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="SchemaBasedThing/">SchemaBasedThing</a></td>
-<td>A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing.</td>
+<td><a href="AcademicField/">Subobject Academic Field</a></td>
+<td>An academic field is the scientific subject of an event or event series according to some controlled vocabulary or thesaurus and as such requires the scheme URI.</td>
 </tr>
 <tr>
-<td><a href="NamedThing/">NamedThing</a></td>
-<td>A mixin used to provide the attributes needed for the identification of a thing.</td>
-</tr>
-<tr>
-<td><a href="AcademicEventSeries/">AcademicEventSeries</a></td>
-<td>An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.</td>
-</tr>
-<tr>
-<td><a href="AcademicEvent/">AcademicEvent</a></td>
-<td>An academic event is part of the established instruments of science communication as a format for conveying the latest scientific publications. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these publications. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function.</td>
-</tr>
-<tr>
-<td><a href="ProcessName/">ProcessName</a></td>
-<td>A container for the various names denoting an academic event or series.</td>
-</tr>
-<tr>
-<td><a href="ExternalIdentifier/">ExternalIdentifier</a></td>
-<td>An identifer of an entity declared in another schema.</td>
-</tr>
-<tr>
-<td><a href="DigitalObjectId/">DigitalObjectId</a></td>
-<td>A centrally registered identifier symbol used to uniquely identify digital objects given by International DOI Foundation.</td>
-</tr>
-<tr>
-<td><a href="WikidataId/">WikidataId</a></td>
-<td>The identifier of a thing (item) in Wikidata.</td>
-</tr>
-<tr>
-<td><a href="GndId/">GndId</a></td>
-<td>The identifier of a thing (item) in the German National authority file.</td>
-</tr>
-<tr>
-<td><a href="TibkatId/">TibkatId</a></td>
-<td>The identifier of a publication in the TIB catalog.</td>
-</tr>
-<tr>
-<td><a href="DblpId/">DblpId</a></td>
-<td>The identifier of an academic event or series in dblp.</td>
-</tr>
-<tr>
-<td><a href="WikiCfpId/">WikiCfpId</a></td>
-<td>The identifier of an academic event or series in WikiCFP.</td>
-</tr>
-<tr>
-<td><a href="EventFormatSpecification/">EventFormatSpecification</a></td>
-<td>An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathing is to be carried out by its participants in terms of achieving certain objectives, fulfiling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event. While the explicit details are often provied as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. "conference" or "workshop"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.</td>
-</tr>
-<tr>
-<td><a href="Deadline/">Deadline</a></td>
-<td>A container for event deadlines.</td>
-</tr>
-<tr>
-<td><a href="Metric/">Metric</a></td>
-<td>A container for statistical information about an <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/">academic event</a> or <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/">academic event series</a>.</td>
-</tr>
-<tr>
-<td><a href="ProcessRelation/">ProcessRelation</a></td>
-<td>A container for relations between academic events.</td>
-</tr>
-<tr>
-<td><a href="Location/">Location</a></td>
-<td>A container for the information about the location in which an academic event takes place.</td>
+<td><a href="Attendee/">Subobject Attendee</a></td>
+<td>A person whose only role it is to attend an academic event.</td>
 </tr>
 <tr>
 <td><a href="City/">City</a></td>
 <td>The city in which an academic event takes place.</td>
 </tr>
 <tr>
+<td><a href="CommitteeChair/">Subobject Committee Chair</a></td>
+<td>The head of an academic event committee.</td>
+</tr>
+<tr>
+<td><a href="CommitteeMember/">Subobject Committee Member</a></td>
+<td>A members of an academic event committee.</td>
+</tr>
+<tr>
+<td><a href="ConfIDentRecords/">ConfIDent Records</a></td>
+<td>A container to be able to bundle academic event data and series in one data file (e.g. YAML or JSON).</td>
+</tr>
+<tr>
+<td><a href="ContactPerson/">Subobject Contact Person</a></td>
+<td>The contact person of an academic event or event series.</td>
+</tr>
+<tr>
+<td><a href="Context/">Subobject Context</a></td>
+<td>A container to provide extra information, such as call of papers event description.</td>
+</tr>
+<tr>
+<td><a href="Contributor/">Subobject Contributor</a></td>
+<td>A contributor is a person or organization that holds a contributor role which is being realized in an event or event series.</td>
+</tr>
+<tr>
 <td><a href="Country/">Country</a></td>
 <td>The country in which an academic event takes place.</td>
+</tr>
+<tr>
+<td><a href="DblpId/">DBLP ID</a></td>
+<td>The identifier of an academic event or series in dblp.</td>
+</tr>
+<tr>
+<td><a href="Deadline/">Subobject Deadline</a></td>
+<td>A container for event deadlines.</td>
+</tr>
+<tr>
+<td><a href="DigitalObjectId/">Digital Object Identifier</a></td>
+<td>A centrally registered identifier symbol used to uniquely identify digital objects given by International DOI Foundation.</td>
+</tr>
+<tr>
+<td><a href="Event/">Event</a></td>
+<td>An academic event is part of the established instruments of science communication as a format for conveying the latest scientific publications. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these publications. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function.</td>
+</tr>
+<tr>
+<td><a href="EventFormatSpecification/">Subobject Event Format</a></td>
+<td>An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathing is to be carried out by its participants in terms of achieving certain objectives, fulfiling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event. While the explicit details are often provied as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. "conference" or "workshop"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.</td>
+</tr>
+<tr>
+<td><a href="EventSeries/">Event Series</a></td>
+<td>An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.</td>
+</tr>
+<tr>
+<td><a href="ExternalIdentifier/">External ID</a></td>
+<td>An identifer of an entity declared in another schema.</td>
+</tr>
+<tr>
+<td><a href="GndId/">GND ID</a></td>
+<td>The identifier of a thing (item) in the German National authority file.</td>
+</tr>
+<tr>
+<td><a href="KeynoteSpeaker/">Subobject Keynote Speaker</a></td>
+<td>A 'keynote speaker' is a presenter that is an invited person - often a multiplier in his or her (research) field - responsible for delivering a keynote speech.</td>
+</tr>
+<tr>
+<td><a href="Location/">Subobject Location</a></td>
+<td>A container for the information about the location in which an academic event takes place.</td>
+</tr>
+<tr>
+<td><a href="Metric/">Subobject Metric</a></td>
+<td>A container for statistical information about an event or event series.</td>
+</tr>
+<tr>
+<td><a href="Moderator/">Subobject Moderator</a></td>
+<td>A person that has the role to moderate an academic event.</td>
+</tr>
+<tr>
+<td><a href="NamedThing/">Subobject Named Thing</a></td>
+<td>A mixin used to provide the attributes needed for the identification of a thing.</td>
+</tr>
+<tr>
+<td><a href="Organizer/">Subobject Organizer</a></td>
+<td>An organizer of an academic event or event series.</td>
+</tr>
+<tr>
+<td><a href="Presenter/">Subobject Presenter</a></td>
+<td>A person that presents its work at an academic event.</td>
+</tr>
+<tr>
+<td><a href="ProcessRelation/">Subobject Process Relation</a></td>
+<td>A container for relations between academic events.</td>
+</tr>
+<tr>
+<td><a href="Publication/">Subobject Publication</a></td>
+<td>A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.</td>
 </tr>
 <tr>
 <td><a href="Region/">Region</a></td>
 <td>The region in which an academic event takes place. For non USA events this might often be negligible.</td>
 </tr>
 <tr>
+<td><a href="Reviewer/">Subobject Reviewer</a></td>
+<td>A person that has the role to review the submissions of an academic event.</td>
+</tr>
+<tr>
+<td><a href="SchemaBasedThing/">Subobject Schema Based Thing</a></td>
+<td>A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing.</td>
+</tr>
+<tr>
+<td><a href="Sponsor/">Subobject Sponsor</a></td>
+<td>A person or an organization whose role it is to sponsor an academic event or event series.</td>
+</tr>
+<tr>
+<td><a href="TibkatId/">TIBKAT ID</a></td>
+<td>The identifier of a publication in the TIB catalog that references an event or event series.</td>
+</tr>
+<tr>
 <td><a href="Venue/">Venue</a></td>
 <td>The venue at which an academic event takes place.</td>
 </tr>
 <tr>
-<td><a href="AcademicField/">AcademicField</a></td>
-<td>An academic field is the scientific subject of an <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/">academic event</a> or <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/">academic event series</a> according to some controlled vocabulary or thesaurus and as such requires the scheme URI.</td>
+<td><a href="WikiCfpEventId/">WikiCFP Event ID</a></td>
+<td>The identifier of an academic event or series in WikiCFP.</td>
 </tr>
 <tr>
-<td><a href="Context/">Context</a></td>
-<td>A container to provide extra information, such as call of papers event description.</td>
+<td><a href="WikiCfpSeriesId/">WikiCFP Series ID</a></td>
+<td>The identifier of an academic event or series in WikiCFP.</td>
 </tr>
 <tr>
-<td><a href="Contributor/">Contributor</a></td>
-<td>A contributor is a person or organization that holds a contributor role which is being realized in an <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/">academic event</a> or <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/">academic event series</a>.</td>
-</tr>
-<tr>
-<td><a href="Sponsor/">Sponsor</a></td>
-<td>A person or an organization whose role it is to sponsor an academic event or event series.</td>
-</tr>
-<tr>
-<td><a href="Attendee/">Attendee</a></td>
-<td>A person whose only role it is to attend an academic event.</td>
-</tr>
-<tr>
-<td><a href="Moderator/">Moderator</a></td>
-<td>A person that has the role to moderate an academic event.</td>
-</tr>
-<tr>
-<td><a href="Reviewer/">Reviewer</a></td>
-<td>A person that has the role to review the submissions of an academic event.</td>
-</tr>
-<tr>
-<td><a href="Organizer/">Organizer</a></td>
-<td>An organizer of an academic event or event series.</td>
-</tr>
-<tr>
-<td><a href="ContactPerson/">ContactPerson</a></td>
-<td>The contact person of an academic event or event series.</td>
-</tr>
-<tr>
-<td><a href="CommitteeMember/">CommitteeMember</a></td>
-<td>A members of an academic event committee.</td>
-</tr>
-<tr>
-<td><a href="CommitteeChair/">CommitteeChair</a></td>
-<td>The head of an academic event committee.</td>
-</tr>
-<tr>
-<td><a href="Presenter/">Presenter</a></td>
-<td>A person that presents its work at an academic event.</td>
-</tr>
-<tr>
-<td><a href="KeynoteSpeaker/">KeynoteSpeaker</a></td>
-<td>A 'keynote speaker' is a presenter that is an invited person - often a multiplier in his or her (research) field - responsible for delivering a keynote speech.</td>
-</tr>
-<tr>
-<td><a href="Publication/">Publication</a></td>
-<td>A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.</td>
-</tr>
-<tr>
-<td><a href="ConfIDentRecords/">ConfIDentRecords</a></td>
-<td>A container to be able to bundle academic event data and series in one data file (e.g. YAML or JSON).</td>
+<td><a href="WikidataId/">Wikidata ID</a></td>
+<td>The identifier of a thing (item) in Wikidata.</td>
 </tr>
 </tbody>
 </table>
@@ -544,291 +545,303 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="type/">type</a></td>
-<td>An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.</td>
+<td><a href="academic_field/">Academic Field</a></td>
+<td>A property to describe the scientific subject(s) of an event or event series, according to some controlled vocabulary or thesaurus. If this is used, its subproperties <a href="schema_value/">Schema Value</a> and <a href="schema_name/">Schema Name</a> are mandatory.</td>
 </tr>
 <tr>
-<td><a href="doi/">doi</a></td>
-<td>A property to provide a digital object identifier (DOI) according to https://doi.org/.</td>
+<td><a href="alternative_name/">Alternative Name</a></td>
+<td>A property to provide alternative names of an event or event series.</td>
 </tr>
 <tr>
-<td><a href="gnd_id/">gnd_id</a></td>
-<td>None</td>
-</tr>
-<tr>
-<td><a href="wikidata_id/">wikidata_id</a></td>
-<td>A property to link an entity with its Wikidata identifier.</td>
-</tr>
-<tr>
-<td><a href="name/">name</a></td>
-<td>A property to provide a name of a schema entity.</td>
-</tr>
-<tr>
-<td><a href="id/">id</a></td>
-<td>A property to provide an internal id of a schema entity in the ConfIDent plattform.</td>
-</tr>
-<tr>
-<td><a href="external_id/">external_id</a></td>
-<td>A property to provide an external id of a schema entity.</td>
-</tr>
-<tr>
-<td><a href="value/">value</a></td>
-<td>a property to provide the literal value of a schema based entity.</td>
-</tr>
-<tr>
-<td><a href="schema_name/">schema_name</a></td>
-<td>None</td>
-</tr>
-<tr>
-<td><a href="schema_base_uri/">schema_base_uri</a></td>
-<td>The base URI of the schema that provides the context for the schema based value.</td>
-</tr>
-<tr>
-<td><a href="landing_page/">landing_page</a></td>
-<td>A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an academic event or series.</td>
-</tr>
-<tr>
-<td><a href="organizers/">organizers</a></td>
-<td>A property to provide the organizers of an academic event or series.</td>
-</tr>
-<tr>
-<td><a href="academic_fields/">academic_fields</a></td>
-<td>A property to describe the scientific subject(s) of an <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/">academic event</a> or <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/">academic event series</a>, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [value] and [schema_name] are mandatory.</td>
-</tr>
-<tr>
-<td><a href="website/">website</a></td>
-<td>A property to provide the URL the official website of a <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/">academic event</a> or <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/">academic event series</a>.</td>
-</tr>
-<tr>
-<td><a href="sponsors/">sponsors</a></td>
-<td>None</td>
-</tr>
-<tr>
-<td><a href="publications/">publications</a></td>
-<td>The published works that are related to the academic event or event series, such as proceedings and video recordings of talks.</td>
-</tr>
-<tr>
-<td><a href="topics/">topics</a></td>
-<td>A property to provide the theme and topics of an academic event or event series as free keywords, phrases or text.</td>
-</tr>
-<tr>
-<td><a href="metrics/">metrics</a></td>
-<td>A property to provide metrics of an academic event or series.</td>
-</tr>
-<tr>
-<td><a href="context_info/">context_info</a></td>
-<td>A property to provide extra information, such as call of papers event description.</td>
-</tr>
-<tr>
-<td><a href="wikicfp_id/">wikicfp_id</a></td>
-<td>A property to link a <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/">academic event</a> or <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/">academic event series</a> with its WikiCFP identifier.</td>
-</tr>
-<tr>
-<td><a href="dpbl_id/">dpbl_id</a></td>
-<td>A property to link the a <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/">academic event</a> or <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/">academic event series</a> with its DBLP identifier.</td>
-</tr>
-<tr>
-<td><a href="series_of/">series_of</a></td>
-<td>A property to link to the events that are part of an academic event series.</td>
-</tr>
-<tr>
-<td><a href="start_date/">start_date</a></td>
-<td>The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.</td>
-</tr>
-<tr>
-<td><a href="end_date/">end_date</a></td>
-<td>Similar to start_date but only for the end of an academic event or event series.</td>
-</tr>
-<tr>
-<td><a href="event_status/">event_status</a></td>
-<td>None</td>
-</tr>
-<tr>
-<td><a href="in_series/">in_series</a></td>
-<td>The relation used to provide the series of which an AcademicEvent is a part.</td>
-</tr>
-<tr>
-<td><a href="event_format/">event_format</a></td>
-<td>None</td>
-</tr>
-<tr>
-<td><a href="at_location/">at_location</a></td>
+<td><a href="at_location/">Location</a></td>
 <td>The location of the academic event.</td>
 </tr>
 <tr>
-<td><a href="deadlines/">deadlines</a></td>
-<td>A property to provide deadlines of an academic event.</td>
-</tr>
-<tr>
-<td><a href="related_to/">related_to</a></td>
-<td>A property to be used</td>
-</tr>
-<tr>
-<td><a href="ordinal/">ordinal</a></td>
-<td>The ordnial number of an academic event within its series.</td>
-</tr>
-<tr>
-<td><a href="event_mode/">event_mode</a></td>
-<td>The event mode describes whether the event is a physical, virtual or hybrid event.</td>
-</tr>
-<tr>
-<td><a href="official_name/">official_name</a></td>
-<td>The official name of an academic event or series.</td>
-</tr>
-<tr>
-<td><a href="acronym/">acronym</a></td>
-<td>The official acronym of an academic event or series.</td>
-</tr>
-<tr>
-<td><a href="former_name/">former_name</a></td>
-<td>The former official name of an academic event or series. Usually this will only be needed in case an academic event series has undergone a name change.</td>
-</tr>
-<tr>
-<td><a href="translated_name/">translated_name</a></td>
-<td>A translation of the official process name to be used in different language contexts.</td>
-</tr>
-<tr>
-<td><a href="aliases/">aliases</a></td>
-<td>A property to provide alternative names of an <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/">academic event</a> or <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/">academic event series</a>.</td>
-</tr>
-<tr>
-<td><a href="specified_as/">specified_as</a></td>
-<td>A mandatory property to provide the format of an academic event as string, in order to further specify its type in case it could not be specified according to the possible values of <a href="EventType">EventType</a>.</td>
-</tr>
-<tr>
-<td><a href="deadline_date/">deadline_date</a></td>
-<td>The date of a deadline.</td>
-</tr>
-<tr>
-<td><a href="deadline_other/">deadline_other</a></td>
-<td>A property to specify another type of deadline, if this type of deadline is not within the allowed values of <a href="DeadlineType">DeadlineType</a>.</td>
-</tr>
-<tr>
-<td><a href="int_value/">int_value</a></td>
-<td>A property to provide an integer value for a metric.</td>
-</tr>
-<tr>
-<td><a href="str_value/">str_value</a></td>
-<td>A property to provide a string value for a metric.</td>
-</tr>
-<tr>
-<td><a href="rate_value/">rate_value</a></td>
-<td>A property to provide a rate value as float for a metric.</td>
-</tr>
-<tr>
-<td><a href="truth_value/">truth_value</a></td>
-<td>A property to provide a truth value for a metric.</td>
-</tr>
-<tr>
-<td><a href="description/">description</a></td>
-<td>A property to provide a description of a metric.</td>
-</tr>
-<tr>
-<td><a href="city.md">city</a></td>
-<td>The property to specify the <a href="City">City</a> of an academic event location.</td>
-</tr>
-<tr>
-<td><a href="country.md">country</a></td>
-<td>The property to specify the <a href="Country">Country</a> of an academic event location.</td>
-</tr>
-<tr>
-<td><a href="region.md">region</a></td>
-<td>The property to specify the <a href="Region">Region</a> of an academic event location.</td>
-</tr>
-<tr>
-<td><a href="venue.md">venue</a></td>
-<td>The property to specify the <a href="Venue">Venue</a> of an academic event location.</td>
-</tr>
-<tr>
-<td><a href="lattitude/">lattitude</a></td>
-<td>The property to specify the lattitude of an academic event location.</td>
-</tr>
-<tr>
-<td><a href="longitude/">longitude</a></td>
-<td>The property to specify the longitude of an academic event location.</td>
-</tr>
-<tr>
-<td><a href="meeting_url/">meeting_url</a></td>
-<td>The property to specify the URL under which a one can participate virtually in an academic event.</td>
-</tr>
-<tr>
-<td><a href="street/">street</a></td>
-<td>The street of the venue including the house number seperated by comma.</td>
-</tr>
-<tr>
-<td><a href="zip_code/">zip_code</a></td>
-<td>The zip code of the venue.</td>
-</tr>
-<tr>
-<td><a href="text/">text</a></td>
-<td>The free text used to provide more context information on an <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/">academic event</a> or <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/">academic event series</a>.</td>
-</tr>
-<tr>
-<td><a href="license_str/">license_str</a></td>
-<td>The license of the context information as text, which must be used when copying text from other sources.</td>
-</tr>
-<tr>
-<td><a href="license_url/">license_url</a></td>
-<td>The license of the context information as URL, which should be used when copying text from other sources and such a URL exists.</td>
-</tr>
-<tr>
-<td><a href="contact/">contact</a></td>
+<td><a href="contact/">Contact</a></td>
 <td>The contact person of an academic event or event series.</td>
 </tr>
 <tr>
-<td><a href="email/">email</a></td>
+<td><a href="context_info/">Context Information</a></td>
+<td>A property to provide extra information, such as call of papers summary,  event or event series description.</td>
+</tr>
+<tr>
+<td><a href="deadline_date/">Deadline Date</a></td>
+<td>The date of a deadline.</td>
+</tr>
+<tr>
+<td><a href="deadline_other/">Other Deadline Type</a></td>
+<td>A property to specify another type of deadline, if this type of deadline is not within the allowed values of <a href="DeadlineType/">DeadlineType</a>.</td>
+</tr>
+<tr>
+<td><a href="description/">Metric Description</a></td>
+<td>A property to provide a description of a metric.</td>
+</tr>
+<tr>
+<td><a href="dpbl_id/">DBLP ID</a></td>
+<td>A property to link the an event or event series with its DBLP identifier.</td>
+</tr>
+<tr>
+<td><a href="email/">Email</a></td>
 <td>The email address of the contact person.</td>
 </tr>
 <tr>
-<td><a href="telephone/">telephone</a></td>
-<td>The telephone number of the contact person.</td>
+<td><a href="end_date/">End Date</a></td>
+<td>Similar to start_date but only for the end of an academic event or event series.</td>
 </tr>
 <tr>
-<td><a href="events/">events</a></td>
+<td><a href="event_format/">Event Format</a></td>
+<td>A property to provide an event format specification, if none of the [Event Types] are applicable to specify the format of an academic event.</td>
+</tr>
+<tr>
+<td><a href="event_mode/">Event Mode</a></td>
+<td>The event mode describes whether the event is a physical, virtual or hybrid event.</td>
+</tr>
+<tr>
+<td><a href="event_status/">Event Status</a></td>
+<td>A property to provide the status of an event from a controlled list (e.g. as scheduled (default), postpooned, canceld etc).</td>
+</tr>
+<tr>
+<td><a href="events/">Events</a></td>
 <td>A property to provide a list of academic events within this container.</td>
 </tr>
 <tr>
-<td><a href="series/">series</a></td>
+<td><a href="external_id/">External ID</a></td>
+<td>A property to provide an external id of a schema entity.</td>
+</tr>
+<tr>
+<td><a href="former_name/">Former Name</a></td>
+<td>The former official name of an academic event or series. Usually this will only be needed in case an academic event series has undergone a name change.</td>
+</tr>
+<tr>
+<td><a href="gnd_id/">GND ID</a></td>
+<td>A property to link an entity to the authority file of the German National Library.</td>
+</tr>
+<tr>
+<td><a href="has_acronym/">Acronym</a></td>
+<td>The official acronym of an event or event series.</td>
+</tr>
+<tr>
+<td><a href="has_city/">City</a></td>
+<td>The property to specify the <a href="City/">City</a> of an academic event location.</td>
+</tr>
+<tr>
+<td><a href="has_country/">Country</a></td>
+<td>The property to specify the <a href="Country/">Country</a> of an academic event location.</td>
+</tr>
+<tr>
+<td><a href="has_deadline/">Deadline</a></td>
+<td>A property to provide a deadline of an academic event.</td>
+</tr>
+<tr>
+<td><a href="has_doi/">DOI</a></td>
+<td>A property to provide a digital object identifier (DOI) according to https://doi.org/.</td>
+</tr>
+<tr>
+<td><a href="has_metric/">Metric</a></td>
+<td>A property to provide one or more metrics of an event or event series.</td>
+</tr>
+<tr>
+<td><a href="has_publication/">Publication</a></td>
+<td>The published works that are related to the event or event series, such as proceedings and video recordings of talks.</td>
+</tr>
+<tr>
+<td><a href="has_region/">Region</a></td>
+<td>The property to specify the <a href="Region/">Region</a> of an academic event location.</td>
+</tr>
+<tr>
+<td><a href="has_topic/">Topic</a></td>
+<td>A property to provide the theme and topics of an event or event series as free keywords, phrases or text.</td>
+</tr>
+<tr>
+<td><a href="has_venue/">Venue</a></td>
+<td>The property to specify the <a href="Venue/">Venue</a> of an academic event location.</td>
+</tr>
+<tr>
+<td><a href="id/">ID</a></td>
+<td>A property to provide an internal id of a schema entity in the ConfIDent plattform.</td>
+</tr>
+<tr>
+<td><a href="in_series/">In Series</a></td>
+<td>The relation used to provide the series of which an Event is a part.</td>
+</tr>
+<tr>
+<td><a href="int_value/">Metric Integer Value</a></td>
+<td>A property to provide an integer value for a metric.</td>
+</tr>
+<tr>
+<td><a href="landing_page/">Landing Page</a></td>
+<td>A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an event or event series.</td>
+</tr>
+<tr>
+<td><a href="lattitude/">Lattitude</a></td>
+<td>The property to specify the lattitude of an academic event location.</td>
+</tr>
+<tr>
+<td><a href="license_str/">Context License</a></td>
+<td>The license of the context information as text, which must be used when copying text from other sources.</td>
+</tr>
+<tr>
+<td><a href="license_url/">Context License URL</a></td>
+<td>The license of the context information as URL, which should be used when copying text from other sources and such a URL exists.</td>
+</tr>
+<tr>
+<td><a href="longitude/">Longitude</a></td>
+<td>The property to specify the longitude of an academic event location.</td>
+</tr>
+<tr>
+<td><a href="meeting_url/">Meeting URL</a></td>
+<td>The property to specify the URL under which a one can participate virtually in an academic event.</td>
+</tr>
+<tr>
+<td><a href="metric_year/">Metric Year</a></td>
+<td>A property to provide the year for which the metric value is valid.</td>
+</tr>
+<tr>
+<td><a href="name/">Name</a></td>
+<td>A property to provide a name of a schema entity.</td>
+</tr>
+<tr>
+<td><a href="official_name/">Official Name</a></td>
+<td>The official name of an event or event series.</td>
+</tr>
+<tr>
+<td><a href="ordinal/">Ordinal</a></td>
+<td>The ordnial number of an academic event within its series.</td>
+</tr>
+<tr>
+<td><a href="organized_by/">Organizer</a></td>
+<td>A property to provide the organizers of an event or event series.</td>
+</tr>
+<tr>
+<td><a href="other_format/">Other Event Format</a></td>
+<td>A mandatory property to provide the format of an academic event as string, in order to further specify its type in case it could not be specified according to the possible values of <a href="EventType/">Event Type</a>.</td>
+</tr>
+<tr>
+<td><a href="rate_value/">Metric Rate Value</a></td>
+<td>A property to provide a rate value as float for a metric.</td>
+</tr>
+<tr>
+<td><a href="related_to/">Related To</a></td>
+<td>A property to be used to link events to each other.</td>
+</tr>
+<tr>
+<td><a href="schema_base_uri/">External formatter URI</a></td>
+<td>The base URI of the schema that provides the context for the schema based value.</td>
+</tr>
+<tr>
+<td><a href="schema_name/">Schema Name</a></td>
+<td>A property to provide the name of a schema.</td>
+</tr>
+<tr>
+<td><a href="schema_value/">Schema Value</a></td>
+<td>A property to provide the literal value of a schema based entity.</td>
+</tr>
+<tr>
+<td><a href="series/">Series</a></td>
 <td>A property to provide a list of academic event series within this container.</td>
+</tr>
+<tr>
+<td><a href="series_of/">Series Of</a></td>
+<td>A property to link to the events that are part of an academic event series.</td>
+</tr>
+<tr>
+<td><a href="sponsored_by/">Sponsor</a></td>
+<td>A property to provide the sponsor of an event or event series.</td>
+</tr>
+<tr>
+<td><a href="start_date/">Start Date</a></td>
+<td>The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.</td>
+</tr>
+<tr>
+<td><a href="str_value/">Metric String Value</a></td>
+<td>A property to provide a string value for a metric.</td>
+</tr>
+<tr>
+<td><a href="street/">Street</a></td>
+<td>The street of the venue including the house number seperated by comma.</td>
+</tr>
+<tr>
+<td><a href="telephone/">Telephone</a></td>
+<td>The telephone number of the contact person.</td>
+</tr>
+<tr>
+<td><a href="text/">Context Description</a></td>
+<td>The free text used to provide more context information on an event or event series.</td>
+</tr>
+<tr>
+<td><a href="tibkat_id/">TIBKAT ID</a></td>
+<td>A property to link to a publication indexed in the TIB catalouge that references an event or event series.</td>
+</tr>
+<tr>
+<td><a href="translated_name/">Translated Name</a></td>
+<td>A translation of the official name of an event or event series to be used in different language contexts.</td>
+</tr>
+<tr>
+<td><a href="truth_value/">Metric Truth Value</a></td>
+<td>A property to provide a truth value for a metric.</td>
+</tr>
+<tr>
+<td><a href="type/">Type</a></td>
+<td>An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.</td>
+</tr>
+<tr>
+<td><a href="website/">Official Website</a></td>
+<td>A property to provide the URL the official website of a event or event series.</td>
+</tr>
+<tr>
+<td><a href="wikicfp_event_id/">WikiCFP Event ID</a></td>
+<td>A property to link an event or event series with its WikiCFP identifier.</td>
+</tr>
+<tr>
+<td><a href="wikicfp_series_id/">WikiCFP Series ID</a></td>
+<td>A property to link an event or event series with its WikiCFP identifier.</td>
+</tr>
+<tr>
+<td><a href="wikidata_id/">Wikidata ID</a></td>
+<td>A property to link an entity with its Wikidata identifier.</td>
+</tr>
+<tr>
+<td><a href="zip_code/">ZIP Code</a></td>
+<td>The zip code of the venue.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="enums">Enums</h2>
+<h2 id="enumerations">Enumerations</h2>
 <table>
 <thead>
 <tr>
-<th>Enums</th>
+<th>Enumeration</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="EventType/">EventType</a></td>
-<td>The most common minimal event types. For event types that are not in this list, you can use "other" and provide the label of this other event format using the <a href="event_format">event_format</a> property.</td>
+<td><a href="ContributorType/">Contributor Type</a></td>
+<td>An enumaration used to distinguish the contributors of an event or event series with regard to them being either an organization or a person.</td>
 </tr>
 <tr>
-<td><a href="EventStatus/">EventStatus</a></td>
-<td>The status of the academic event which indicates if it takes place as planned.</td>
-</tr>
-<tr>
-<td><a href="EventMode/">EventMode</a></td>
-<td>An enum to specify if an academic event is in person, virtual or a hybrid of both.</td>
-</tr>
-<tr>
-<td><a href="DeadlineType/">DeadlineType</a></td>
+<td><a href="DeadlineType/">Deadline Type</a></td>
 <td>An enum that specifies the possible kinds of deadlines of an academic event.</td>
 </tr>
 <tr>
-<td><a href="RelationType/">RelationType</a></td>
-<td>The kinds of relations that are allowed between academic events.</td>
+<td><a href="EventMode/">Event Mode</a></td>
+<td>An enum to specify if an academic event is in person, virtual or a hybrid of both.</td>
 </tr>
 <tr>
-<td><a href="MetricType/">MetricType</a></td>
+<td><a href="EventStatus/">Event Status</a></td>
+<td>The status of the academic event which indicates if it takes place as planned.</td>
+</tr>
+<tr>
+<td><a href="EventType/">Event Type</a></td>
+<td>The most common minimal event types. For event types that are not in this list, you can use "other" and provide the label of this other event format using the <a href="event_format/">Event Format</a> property.</td>
+</tr>
+<tr>
+<td><a href="MetricType/">Metric Type</a></td>
 <td>The possible metric of an academic event.</td>
 </tr>
 <tr>
-<td><a href="ContributorType/">ContributorType</a></td>
-<td>An enumaration used to distinguish the contributors of an <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEvent/">academic event</a> or <a href="https://tibhannover.github.io/ConfIDent_schema/AcademicEventSeries/">academic event series</a> with regard to them being either an organization or a person.</td>
+<td><a href="RelationType/">Event Relation Type</a></td>
+<td>The kinds of relations that are allowed between academic events.</td>
 </tr>
 </tbody>
 </table>
@@ -846,7 +859,7 @@
       
       
         
-        <a href="AcademicEvent/" class="md-footer__link md-footer__link--next" aria-label="Next: Academic Event" rel="next">
+        <a href="Event/" class="md-footer__link md-footer__link--next" aria-label="Next: Academic Event" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">

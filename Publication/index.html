@@ -15,7 +15,7 @@
     
     
       
-        <title>Class: Publication - ConfIDent metadata schema</title>
+        <title>Class: Subobject Publication - ConfIDent metadata schema</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#class-publication" class="md-skip">
+        <a href="#class-subobject-publication" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Class: Publication
+              Class: Subobject Publication
             
           </span>
         </div>
@@ -219,7 +219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AcademicEvent/" class="md-nav__link">
+      <a href="../Event/" class="md-nav__link">
         Academic Event
       </a>
     </li>
@@ -234,8 +234,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../AcademicEventSeries/" class="md-nav__link">
-        Academic EventSeries
+      <a href="../EventSeries/" class="md-nav__link">
+        Academic Event Series
       </a>
     </li>
   
@@ -304,8 +304,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
@@ -355,12 +355,11 @@
 
 
 
-<h1 id="class-publication">Class: Publication</h1>
+<h1 id="class-subobject-publication">Class: Subobject Publication</h1>
 <p><em>A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.</em></p>
-<p>URI: <a href="https://www.confident-conference.org/Publication">confident:Publication</a></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><strong>Publication</strong> [ NamedThing]</li>
+<li><strong>Subobject Publication</strong> [NamedThing]</li>
 </ul>
 <h2 id="slots">Slots</h2>
 <table>
@@ -370,37 +369,32 @@
 <th>Range</th>
 <th>Cardinality</th>
 <th>Description</th>
-<th>Info</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../doi/">doi</a></td>
-<td><a href="../DigitalObjectId/">DigitalObjectId</a></td>
-<td>0..*</td>
+<td><a href="../has_doi/">DOI</a></td>
+<td><a href="../DigitalObjectId/">Digital Object Identifier</a></td>
+<td>0..* <em>recommended</em></td>
 <td>A property to provide a digital object identifier (DOI) according to https://doi.org/.</td>
-<td>.</td>
 </tr>
 <tr>
-<td><a href="../id/">id</a></td>
-<td><a href="uriorcurie.md">uriorcurie</a></td>
-<td>0..1</td>
+<td><a href="../id/">ID</a></td>
+<td><a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></td>
+<td>1..1</td>
 <td>A property to provide an internal id of a schema entity in the ConfIDent plattform.</td>
-<td>.</td>
 </tr>
 <tr>
-<td><a href="../name/">name</a></td>
-<td><a href="string.md">string</a></td>
+<td><a href="../name/">Name</a></td>
+<td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td>
 <td>0..1</td>
 <td>A property to provide a name of a schema entity.</td>
-<td>.</td>
 </tr>
 <tr>
-<td><a href="../external_id/">external_id</a></td>
-<td><a href="../ExternalIdentifier/">ExternalIdentifier</a></td>
+<td><a href="../external_id/">External ID</a></td>
+<td><a href="../ExternalIdentifier/">External ID</a></td>
 <td>0..*</td>
 <td>A property to provide an external id of a schema entity.</td>
-<td>.</td>
 </tr>
 </tbody>
 </table>
@@ -416,20 +410,38 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../AcademicEventSeries/">AcademicEventSeries</a></td>
-<td><a href="../publications/">publications</a></td>
+<td><a href="../EventSeries/">Event Series</a></td>
+<td><a href="../has_publication/">Publication</a></td>
 <td>range</td>
 <td>Publication</td>
 </tr>
 <tr>
-<td><a href="../AcademicEvent/">AcademicEvent</a></td>
-<td><a href="../publications/">publications</a></td>
+<td><a href="../Event/">Event</a></td>
+<td><a href="../has_publication/">Publication</a></td>
 <td>range</td>
 <td>Publication</td>
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>['confident:Publication']</td>
+</tr>
+<tr>
+<td>native</td>
+<td>['confident:Publication']</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-specification">LinkML Specification</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 
@@ -438,11 +450,12 @@
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publication</span><span class="w"></span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A published work, e.g. proceedings or conferenc paper, that is the output</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">of an academic event or series.</span><span class="w"></span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Subobject Publication</span><span class="w"></span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="nt">mixins</span><span class="p">:</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NamedThing</span><span class="w"></span>
 <span class="nt">slots</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doi</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has_doi</span><span class="w"></span>
 </code></pre></div>
 </details>
 
@@ -451,38 +464,44 @@
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publication</span><span class="w"></span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A published work, e.g. proceedings or conferenc paper, that is the output</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">of an academic event or series.</span><span class="w"></span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Subobject Publication</span><span class="w"></span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="nt">mixins</span><span class="p">:</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NamedThing</span><span class="w"></span>
 <span class="nt">attributes</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">doi</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doi</span><span class="w"></span>
+<span class="w">  </span><span class="nt">has_doi</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has_doi</span><span class="w"></span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A property to provide a digital object identifier (DOI) according</span><span class="w"></span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">to https://doi.org/.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DOI</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">datacite:doi</span><span class="w"></span>
 <span class="w">    </span><span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external_id</span><span class="w"></span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">iao:0000235</span><span class="w"></span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doi</span><span class="w"></span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has_doi</span><span class="w"></span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publication</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DigitalObjectId</span><span class="w"></span>
+<span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id</span><span class="w"></span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A property to provide an internal id of a schema entity in the ConfIDent</span><span class="w"></span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">plattform.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ID</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id</span><span class="w"></span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publication</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span><span class="w"></span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span><span class="w"></span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A property to provide a name of a schema entity.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Name</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sdo:name</span><span class="w"></span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span><span class="w"></span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publication</span><span class="w"></span>
@@ -490,7 +509,8 @@
 <span class="w">  </span><span class="nt">external_id</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external_id</span><span class="w"></span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A property to provide an external id of a schema entity.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">External ID</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">iao:0000235</span><span class="w"></span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external_id</span><span class="w"></span>

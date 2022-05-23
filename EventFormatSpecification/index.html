@@ -15,7 +15,7 @@
     
     
       
-        <title>Class: EventFormatSpecification - ConfIDent metadata schema</title>
+        <title>Class: Subobject Event Format - ConfIDent metadata schema</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#class-eventformatspecification" class="md-skip">
+        <a href="#class-subobject-event-format" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Class: EventFormatSpecification
+              Class: Subobject Event Format
             
           </span>
         </div>
@@ -219,7 +219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AcademicEvent/" class="md-nav__link">
+      <a href="../Event/" class="md-nav__link">
         Academic Event
       </a>
     </li>
@@ -234,8 +234,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../AcademicEventSeries/" class="md-nav__link">
-        Academic EventSeries
+      <a href="../EventSeries/" class="md-nav__link">
+        Academic Event Series
       </a>
     </li>
   
@@ -297,8 +297,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
+  <a href="#mappings" class="md-nav__link">
+    Mappings
   </a>
   
 </li>
@@ -348,9 +348,8 @@
 
 
 
-<h1 id="class-eventformatspecification">Class: EventFormatSpecification</h1>
+<h1 id="class-subobject-event-format">Class: Subobject Event Format</h1>
 <p><em>An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathing is to be carried out by its participants in terms of achieving certain objectives, fulfiling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event. While the explicit details are often provied as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. "conference" or "workshop"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.</em></p>
-<p>URI: <a href="https://github.com/tibonto/aeon#AEON_0000004">aeon:0000004</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="slots">Slots</h2>
@@ -361,39 +360,37 @@
 <th>Range</th>
 <th>Cardinality</th>
 <th>Description</th>
-<th>Info</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../specified_as/">specified_as</a></td>
-<td><a href="string.md">string</a></td>
+<td><a href="../other_format/">Other Event Format</a></td>
+<td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td>
 <td>1..1</td>
-<td>A mandatory property to provide the format of an academic event as string, in order to further specify its type in case it could not be specified according to the possible values of <a href="EventType">EventType</a>.</td>
-<td>.</td>
+<td>A mandatory property to provide the format of an academic event as string, in order to further specify its type in case it could not be specified according to the possible values of <a href="../EventType/">Event Type</a>.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="usages">Usages</h2>
+<h2 id="mappings">Mappings</h2>
 <table>
 <thead>
 <tr>
-<th>used by</th>
-<th>used in</th>
-<th>type</th>
-<th>used</th>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../AcademicEvent/">AcademicEvent</a></td>
-<td><a href="../event_format/">event_format</a></td>
-<td>range</td>
-<td>EventFormatSpecification</td>
+<td>self</td>
+<td>['aeon:0000004']</td>
+</tr>
+<tr>
+<td>native</td>
+<td>['confident:EventFormatSpecification']</td>
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h2 id="linkml-specification">LinkML Specification</h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 
@@ -410,18 +407,20 @@
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">details depend on the semantics encoded in the words used for the classification</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">of academic events (e.g. &quot;conference&quot; or &quot;workshop&quot;). Depending on the sociocultural</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">background these classifications can overlap or vary to a certain degree.</span><span class="w"></span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Subobject Event Format</span><span class="w"></span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="nt">attributes</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">specified_as</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">specified_as</span><span class="w"></span>
+<span class="w">  </span><span class="nt">other_format</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other_format</span><span class="w"></span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A mandatory property to provide the format of an academic event as</span><span class="w"></span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">string, in order to further specify its type in case it could not be specified</span><span class="w"></span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">according to the possible values of [EventType](EventType).</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">according to the possible values of [Event Type](EventType.md).</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Other Event Format</span><span class="w"></span>
 <span class="w">    </span><span class="nt">examples</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ad-hoc meeting of university presidents</span><span class="w"></span>
 <span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An example to provide a format specification for special type of</span><span class="w"></span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">academic event that is not in the schema&#39;s [EventType](EventType) enum.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">obi:0002815</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
@@ -442,20 +441,22 @@
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">details depend on the semantics encoded in the words used for the classification</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">of academic events (e.g. &quot;conference&quot; or &quot;workshop&quot;). Depending on the sociocultural</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">background these classifications can overlap or vary to a certain degree.</span><span class="w"></span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Subobject Event Format</span><span class="w"></span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="nt">attributes</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">specified_as</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">specified_as</span><span class="w"></span>
+<span class="w">  </span><span class="nt">other_format</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other_format</span><span class="w"></span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A mandatory property to provide the format of an academic event as</span><span class="w"></span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">string, in order to further specify its type in case it could not be specified</span><span class="w"></span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">according to the possible values of [EventType](EventType).</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">according to the possible values of [Event Type](EventType.md).</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Other Event Format</span><span class="w"></span>
 <span class="w">    </span><span class="nt">examples</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ad-hoc meeting of university presidents</span><span class="w"></span>
 <span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An example to provide a format specification for special type of</span><span class="w"></span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">academic event that is not in the schema&#39;s [EventType](EventType) enum.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tibhannover.github.io/ConfIDent_schema/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">obi:0002815</span><span class="w"></span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">specified_as</span><span class="w"></span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other_format</span><span class="w"></span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventFormatSpecification</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>

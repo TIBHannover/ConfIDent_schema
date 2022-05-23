@@ -15,7 +15,7 @@
     
     
       
-        <title>MetricType - ConfIDent metadata schema</title>
+        <title>Enum: Metric Type - ConfIDent metadata schema</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#metrictype" class="md-skip">
+        <a href="#enum-metric-type" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MetricType
+              Enum: Metric Type
             
           </span>
         </div>
@@ -219,7 +219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AcademicEvent/" class="md-nav__link">
+      <a href="../Event/" class="md-nav__link">
         Academic Event
       </a>
     </li>
@@ -234,8 +234,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../AcademicEventSeries/" class="md-nav__link">
-        Academic EventSeries
+      <a href="../EventSeries/" class="md-nav__link">
+        Academic Event Series
       </a>
     </li>
   
@@ -289,13 +289,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -314,9 +307,8 @@
 
 
 
-<h1 id="metrictype">MetricType</h1>
+<h1 id="enum-metric-type">Enum: Metric Type</h1>
 <p>The possible metric of an academic event.</p>
-<p>URI: MetricType</p>
 <h2 id="permissible-values">Permissible Values</h2>
 <table>
 <thead>
@@ -324,61 +316,71 @@
 <th>Value</th>
 <th>Meaning</th>
 <th>Description</th>
-<th>Info</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>submitted papers</td>
 <td>None</td>
-<td>None</td>
-<td></td>
+<td>This metric provides the number of papers that have been submitted to the organizers of an academic event.</td>
 </tr>
 <tr>
 <td>accepted papers</td>
 <td>None</td>
+<td>This metric provides the number of papers that have been accepted by the organizers of an academic event and from which an acceptance rate can be calculated.</td>
+</tr>
+<tr>
+<td>submitted short papers</td>
 <td>None</td>
-<td></td>
+<td>This metric provides the number of short papers that have been submitted to the organizers of an academic event.</td>
 </tr>
 <tr>
 <td>accepted short papers</td>
 <td>None</td>
+<td>This metric provides the number of short papers that have been accepted by the organizers of an academic event and from which an acceptance rate can be calculated.</td>
+</tr>
+<tr>
+<td>submitted abstracts</td>
 <td>None</td>
-<td></td>
+<td>This metric provides the number of abstracts that have been submitted to the organizers of an academic event.</td>
+</tr>
+<tr>
+<td>accepted abstracts</td>
+<td>None</td>
+<td>This metric provides the number of abstracts that have been accepted by the organizers of an academic event and from which an acceptance rate can be calculated.</td>
 </tr>
 <tr>
 <td>number of attendees</td>
 <td>None</td>
-<td>None</td>
-<td></td>
+<td>This metric provides the number of attendees of an academic event.</td>
 </tr>
 <tr>
 <td>number of tracks</td>
 <td>None</td>
-<td>None</td>
-<td></td>
+<td>This metric provides the number of tracks of an academic event.</td>
 </tr>
 <tr>
 <td>has childcare options</td>
 <td>None</td>
-<td>None</td>
-<td></td>
+<td>This boolean metric states whether the academic event has a childcare option for its attendees.</td>
 </tr>
 <tr>
 <td>frequency</td>
 <td>None</td>
-<td>The time frame in which the events of a series reoccur.</td>
-<td></td>
+<td>This rate metric states the time frame in which the events of a series reoccur.</td>
 </tr>
 <tr>
 <td>is accessible</td>
 <td>None</td>
-<td>If true then the event is accessible for people with impairments.</td>
-<td></td>
+<td>This boolean metric states whether the event is accessible for people with impairments.</td>
+</tr>
+<tr>
+<td>CORE rank</td>
+<td>None</td>
+<td>This score metric grades academic events according to the ranking of <a href="https://www.core.edu.au/">CORE Inc.</a>.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 
               
             </article>
