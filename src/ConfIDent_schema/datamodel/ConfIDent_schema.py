@@ -1,8 +1,8 @@
 # Auto generated from ConfIDent_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-20T11:37:22
-# Schema: ConfIDent-schema
+# Generation date: 2022-05-20T14:35:05
+# Schema: confident_schema
 #
-# id: https://tibhannover.github.io/ConfIDent_schema/
+# id: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml
 # description: This is a schema for the ConfIDent project that describes the necessary metadata requirements of
 #              academic events and event series.
 # license: https://creativecommons.org/licenses/by/4.0/
@@ -58,10 +58,6 @@ DEFAULT_ = CONFIDENT
 # Types
 
 # Class references
-class NamedThingId(URIorCURIE):
-    pass
-
-
 class AcademicEventSeriesId(URIorCURIE):
     pass
 
@@ -134,66 +130,8 @@ class PublicationId(URIorCURIE):
     pass
 
 
-@dataclass
-class SchemaBasedThing(YAMLRoot):
-    """
-    A mixin used in classes that contain schema based values, such as the classifications used to denote the academic
-    field of an event or the external identifiers used to denote a thing.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = CONFIDENT.SchemaBasedThing
-    class_class_curie: ClassVar[str] = "confident:SchemaBasedThing"
-    class_name: ClassVar[str] = "SchemaBasedThing"
-    class_model_uri: ClassVar[URIRef] = CONFIDENT.SchemaBasedThing
-
-    value: Optional[str] = None
-    schema_name: Optional[str] = None
-    schema_base_uri: Optional[Union[str, URIorCURIE]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.value is not None and not isinstance(self.value, str):
-            self.value = str(self.value)
-
-        if self.schema_name is not None and not isinstance(self.schema_name, str):
-            self.schema_name = str(self.schema_name)
-
-        if self.schema_base_uri is not None and not isinstance(self.schema_base_uri, URIorCURIE):
-            self.schema_base_uri = URIorCURIE(self.schema_base_uri)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class NamedThing(YAMLRoot):
-    """
-    A mixin used to provide the attributes needed for the identification of a thing.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = CONFIDENT.NamedThing
-    class_class_curie: ClassVar[str] = "confident:NamedThing"
-    class_name: ClassVar[str] = "NamedThing"
-    class_model_uri: ClassVar[URIRef] = CONFIDENT.NamedThing
-
-    id: Union[str, NamedThingId] = None
-    name: Optional[str] = None
-    external_id: Optional[Union[Union[dict, "ExternalIdentifier"], List[Union[dict, "ExternalIdentifier"]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, NamedThingId):
-            self.id = NamedThingId(self.id)
-
-        if self.name is not None and not isinstance(self.name, str):
-            self.name = str(self.name)
-
-        if not isinstance(self.external_id, list):
-            self.external_id = [self.external_id] if self.external_id is not None else []
-        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
-
-        super().__post_init__(**kwargs)
+class NamedThingId(URIorCURIE):
+    pass
 
 
 @dataclass
@@ -1381,6 +1319,68 @@ class ConfIDentRecords(YAMLRoot):
         self._normalize_inlined_as_list(slot_name="events", slot_type=AcademicEvent, key_name="id", keyed=True)
 
         self._normalize_inlined_as_list(slot_name="series", slot_type=AcademicEventSeries, key_name="id", keyed=True)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class SchemaBasedThing(YAMLRoot):
+    """
+    A mixin used in classes that contain schema based values, such as the classifications used to denote the academic
+    field of an event or the external identifiers used to denote a thing.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CONFIDENT.SchemaBasedThing
+    class_class_curie: ClassVar[str] = "confident:SchemaBasedThing"
+    class_name: ClassVar[str] = "SchemaBasedThing"
+    class_model_uri: ClassVar[URIRef] = CONFIDENT.SchemaBasedThing
+
+    value: Optional[str] = None
+    schema_name: Optional[str] = None
+    schema_base_uri: Optional[Union[str, URIorCURIE]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.value is not None and not isinstance(self.value, str):
+            self.value = str(self.value)
+
+        if self.schema_name is not None and not isinstance(self.schema_name, str):
+            self.schema_name = str(self.schema_name)
+
+        if self.schema_base_uri is not None and not isinstance(self.schema_base_uri, URIorCURIE):
+            self.schema_base_uri = URIorCURIE(self.schema_base_uri)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class NamedThing(YAMLRoot):
+    """
+    A mixin used to provide the attributes needed for the identification of a thing.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CONFIDENT.NamedThing
+    class_class_curie: ClassVar[str] = "confident:NamedThing"
+    class_name: ClassVar[str] = "NamedThing"
+    class_model_uri: ClassVar[URIRef] = CONFIDENT.NamedThing
+
+    id: Union[str, NamedThingId] = None
+    name: Optional[str] = None
+    external_id: Optional[Union[Union[dict, ExternalIdentifier], List[Union[dict, ExternalIdentifier]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, NamedThingId):
+            self.id = NamedThingId(self.id)
+
+        if self.name is not None and not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        if not isinstance(self.external_id, list):
+            self.external_id = [self.external_id] if self.external_id is not None else []
+        self.external_id = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(**as_dict(v)) for v in self.external_id]
 
         super().__post_init__(**kwargs)
 
