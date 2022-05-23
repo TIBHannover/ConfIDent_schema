@@ -224,7 +224,7 @@ classes:
 # identifiers
   ExternalIdentifier:
     description: An identifer of an entity declared in another schema.
-    title: External Identifier
+    title: External ID
     mixins:
       - SchemaBasedThing
     slot_usage:
@@ -242,7 +242,7 @@ classes:
         ifabsent: uri(https://doi.org)
   WikidataId:
     is_a: ExternalIdentifier
-    title: Wikidata Identifier
+    title: Wikidata ID
     class_uri: wikidata:Q43649390
     description: The identifier of a thing (item) in Wikidata.
     slot_usage:
@@ -252,7 +252,7 @@ classes:
         ifabsent: uri(https://www.wikidata.org/entity/)
   GndId:
     is_a: ExternalIdentifier
-    title: GND Identifier
+    title: GND ID
     description: The identifier of a thing (item) in the German National authority file.
     slot_usage:
       schema_name:
