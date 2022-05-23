@@ -193,6 +193,12 @@ classes:
         description: A property to provide the publication associated with 
         comments: 
           - It will be most common that the publications of an academic event series are the set of publications associated with the individual events of the series.
+      type: 
+        description: A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.
+        title: Event Type
+        range: EventType
+        designates_type: true
+        recommended: true
     # optional
       alternative_name:
         description: A property to provide alternative names of an academic event.
