@@ -165,7 +165,7 @@ classes:
       - wikidata_id
       - dpbl_id
       - gnd_id
-      - wikicfp_series_id
+      - wikicfp_event_id
       - tibkat_id
     slot_usage:
     # required
