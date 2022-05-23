@@ -881,7 +881,7 @@ enums:
   EventType:
     title: Event Type
     description: >-
-      The most common minimal event types. For event types that are not in this list, you can use "other" and provide the label of this other event format using the [Event Format](event_format) property.
+      The most common minimal event types. For event types that are not in this list, you can use "other" and provide the label of this other event format using the [Event Format](event_format.md) property.
     permissible_values:
       colloquium:
         description: >-
@@ -942,7 +942,7 @@ enums:
         meaning: aeon:0000121
       other: 
         description: >-
-          This value is to be used if the event format cannot be represented using one of the other permissible values defined in the [EventFormat](https://stroemphi.github.io/ConfIDent-schema/EventFormat/) enum. If this value is chosen the use of [other_format](https://stroemphi.github.io/ConfIDent-schema/academicEvent__other_format/) is mandatory.
+          This value is to be used if the event format cannot be represented using one of the other permissible values defined in the [EventFormat](EventFormat.md) enum. If this value is chosen the use of [other_format](other_format.md) is mandatory.
         meaning: aeon:0000001 
 # event status
   EventStatus:
