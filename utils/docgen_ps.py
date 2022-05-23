@@ -332,9 +332,9 @@ class DocGenerator(Generator):
         indent = ' ' * depth * 4
         name = self.name(element)
         if element.name == focus:
-            lname = f'**{name}**'
+            lname = f'**{element.title}**'
         else:
-            lname = self.link(element)
+            lname = self.link_title(element)
         s = f'{indent}* {lname}'
         if mixins and element.mixins:
             s += ' ['
