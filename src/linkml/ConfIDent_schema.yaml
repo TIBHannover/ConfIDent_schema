@@ -437,12 +437,14 @@ classes:
       - NamedThing
     attributes:
       street:
+        title: Street
         description: The street of the venue including the house number seperated by comma.
         examples:
           - value: 'Am Welfengarten, 1'
             description: street, hous number
         range: string
       zip_code:
+        title: ZIP Code
         description: The zip code of the venue.
         range: string
 # descriptors
@@ -457,16 +459,19 @@ classes:
         range: string
         required: true
   Context:
-    title: Context
+    title: Subobject Context
     description: A container to provide extra information, such as call of papers event description.
     attributes:
       text:
+        title: Context Description
         description: The free text used to provide more context information on an event or event series. 
         range: string
       license_str:
+        title: Context License
         description: The license of the context information as text, which must be used when copying text from other sources.
         range: string
       license_url:
+        title: Context License URL
         description: The license of the context information as URL, which should be used when copying text from other sources and such a URL exists.
         range: uriorcurie
 # contributors
@@ -504,6 +509,7 @@ classes:
     description: An organizer of an academic event or event series.
     attributes:
       contact:
+        title: Contact
         description: The contact person of an academic event or event series.
         range: ContactPerson
         inlined: true
