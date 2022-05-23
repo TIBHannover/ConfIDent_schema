@@ -385,7 +385,7 @@ classes:
         range: RelationType
 # location
   Location:
-    title: Location
+    title: Subobject Location
     description: A container for the information about the location in which an academic event takes place.
     attributes:
       has_city:
@@ -455,7 +455,7 @@ classes:
         range: string
 # descriptors
   AcademicField:
-    title: Academic Field
+    title: Subobject Academic Field
     mixins:
       - SchemaBasedThing
     description: An academic field is the scientific subject of an event or event series according to some controlled vocabulary or thesaurus and as such requires the scheme URI.
