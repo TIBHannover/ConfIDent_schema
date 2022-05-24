@@ -970,9 +970,9 @@ enums:
         description: |-
           Default: used to indicate that the event takes place as planned.
       postponed:
-      delayed:
+        description: Used to indicate that the event has been postponed to a later date.
       canceled:
-      planned:
+        description: Used to indicate that the event has been canceled.
 # event mode
   EventMode:
     title: Event Mode
