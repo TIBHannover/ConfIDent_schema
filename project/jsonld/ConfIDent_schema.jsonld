@@ -350,16 +350,12 @@
           "description": "Default: used to indicate that the event takes place as planned."
         },
         {
-          "text": "postponed"
+          "text": "postponed",
+          "description": "Used to indicate that the event has been postponed to a later date."
         },
         {
-          "text": "delayed"
-        },
-        {
-          "text": "canceled"
-        },
-        {
-          "text": "planned"
+          "text": "canceled",
+          "description": "Used to indicate that the event has been canceled."
         }
       ]
     },
@@ -2712,7 +2708,7 @@
       "is_a": "schema_base_uri",
       "domain": "DigitalObjectId",
       "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
-      "ifabsent": "uri(https://doi.org)",
+      "ifabsent": "uri(https://doi.org/)",
       "alias": "schema_base_uri",
       "owner": "DigitalObjectId",
       "domain_of": [
@@ -3983,9 +3979,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "confident_schema.yaml",
-  "source_file_date": "2022-05-24T00:11:37",
-  "source_file_size": 45014,
-  "generation_date": "2022-05-24T00:13:28",
+  "source_file_date": "2022-05-24T12:16:14",
+  "source_file_size": 45146,
+  "generation_date": "2022-05-24T12:19:04",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/confident_schema.context.jsonld",

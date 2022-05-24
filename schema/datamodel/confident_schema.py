@@ -1,5 +1,5 @@
 # Auto generated from confident_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-24T00:13:47
+# Generation date: 2022-05-24T12:19:13
 # Schema: confident_schema
 #
 # id: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
@@ -465,7 +465,7 @@ class DigitalObjectId(ExternalIdentifier):
     class_model_uri: ClassVar[URIRef] = CONFIDENT.DigitalObjectId
 
     schema_name: Optional[str] = "DOI"
-    schema_base_uri: Optional[Union[str, URIorCURIE]] = "https://doi.org"
+    schema_base_uri: Optional[Union[str, URIorCURIE]] = URIRef(str(DOI))
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.schema_name is not None and not isinstance(self.schema_name, str):
@@ -1467,10 +1467,10 @@ class EventStatus(EnumDefinitionImpl):
     """
     The status of the academic event which indicates if it takes place as planned.
     """
-    postponed = PermissibleValue(text="postponed")
-    delayed = PermissibleValue(text="delayed")
-    canceled = PermissibleValue(text="canceled")
-    planned = PermissibleValue(text="planned")
+    postponed = PermissibleValue(text="postponed",
+                                         description="Used to indicate that the event has been postponed to a later date.")
+    canceled = PermissibleValue(text="canceled",
+                                       description="Used to indicate that the event has been canceled.")
 
     _defn = EnumDefinition(
         name="EventStatus",

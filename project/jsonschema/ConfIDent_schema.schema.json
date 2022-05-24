@@ -745,9 +745,7 @@
          "enum": [
             "as scheduled",
             "postponed",
-            "delayed",
-            "canceled",
-            "planned"
+            "canceled"
          ],
          "title": "EventStatus",
          "type": "string"
