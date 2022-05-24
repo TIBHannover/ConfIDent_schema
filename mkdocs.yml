@@ -26,8 +26,8 @@ markdown_extensions:
 nav:
 #  - Home: home.md
   - Index: index.md
-  - Academic Event: AcademicEvent.md
-  - Academic EventSeries: AcademicEventSeries.md
+  - Academic Event: Event.md
+  - Academic Event Series: EventSeries.md
   - About: about.md
 site_url: https://tibhannover.github.io/ConfIDent_schema/
 repo_url: https://github.com/TIBHannover/ConfIDent_schema

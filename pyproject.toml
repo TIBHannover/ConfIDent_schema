@@ -12,7 +12,7 @@ linkml-runtime = "^1.1.24"
 linkml = "^1.2.11"
 
 [tool.poetry.dev-dependencies]
-linkml = "^1.2.6"
+linkml = "^1.2.11"
 mkdocs-material = "^8.2.8"
 
 [build-system]

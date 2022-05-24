@@ -1,0 +1,31 @@
+# {{ schema.title }}
+
+{{ schema.description }}
+
+URI: [{{ schema.id }}]({{ schema.id }})
+
+Version: {{ schema.version }}
+
+## Classes
+
+| Class | Description |
+| --- | --- |
+{% for c in schemaview.all_classes().values()|sort(attribute='name') -%}
+| {{gen.link_title(c)}} | {{c.description}} |
+{% endfor %}
+
+## Slots
+
+| Slot | Description |
+| --- | --- |
+{% for s in schemaview.all_slots().values()|sort(attribute='name') -%}
+| {{gen.link_title(s)}} | {{s.description}} |
+{% endfor %}
+
+## Enumerations
+
+| Enumeration | Description |
+| --- | --- |
+{% for e in schemaview.all_enums().values()|sort(attribute='name') -%}
+| {{gen.link_title(e)}} | {{e.description}} |
+{% endfor %}
