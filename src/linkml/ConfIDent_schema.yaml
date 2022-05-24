@@ -245,7 +245,7 @@ classes:
       schema_name:
         ifabsent: string(DOI)
       schema_base_uri: 
-        ifabsent: uri(https://doi.org)
+        ifabsent: uri(https://doi.org/)
   WikidataId:
     is_a: ExternalIdentifier
     title: Wikidata ID
