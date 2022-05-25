@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "ConfIDent_metadata_schema"
-version = "0.1.0"
-description = "The metadata schema for the COnfIDent project"
+version = "0.4.0"
+description = "The metadata schema for the ConfIDent project"
 authors = ["Philip Strömert <philip.stroemert@tib.eu>"]
 license = "CC-BY 4.0"
 include = ["README.md", "src/linkml", "project"]

@@ -1,3 +1,3 @@
-name: ConfIDent schema
-description: my awesome datamodel is for awesome things
+name: ConfIDent_metadata_schema
+description: A model to describe academic events and event series.
 source_schema_path: src/linkml/confident_schema.yaml

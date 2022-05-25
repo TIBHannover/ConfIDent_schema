@@ -26,7 +26,7 @@ help: status
 	@echo "make test -- runs tests"
 	@echo "make testdoc -- builds docs and runs local test server"
 	@echo "make deploy -- deploys site"
-	@echo "make update -- updates linkml version"
+	@echo "make upgrade -- updates linkml version"
 	@echo "make help -- show this help"
 	@echo ""
 
