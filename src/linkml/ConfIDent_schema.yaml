@@ -38,7 +38,7 @@ emit_prefixes:
 #####################################
 #             Classes               #
 #####################################
-classes:  
+classes:
 # Series
   EventSeries:
     description: |-
@@ -64,7 +64,7 @@ classes:
       - alternative_name
       - former_name
       - translated_name
-      - context_info 
+      - context_info
       - has_metric
       - has_topic
       - external_id
@@ -73,7 +73,7 @@ classes:
       - gnd_id
       - wikicfp_series_id
     slot_usage:
-    # required 
+    # required
       id:
         ifabsent: string(confident:SeriesID)
         description: A property to provide the internal identifier of an academic event series.
@@ -95,19 +95,19 @@ classes:
       sponsored_by:
         description: A property to provide the sponsors of an academic event series.
       has_publication:
-        description: A property to provide the publication associated with 
-        comments: 
+        description: A property to provide the publication associated with
+        comments:
           - It will be most common that the publications of an academic event series are the set of publications associated with the individual events of the series.
     # optional
       alternative_name:
         description: A property to provide alternative names of an academic event series.
       former_name:
-        description: The former official name of an academic event series. Usually this will only be needed in case an academic event series has undergone a name change. 
+        description: The former official name of an academic event series. Usually this will only be needed in case an academic event series has undergone a name change.
       translated_name:
-        description: A translation of the official name of an event series to be used in different language contexts. 
+        description: A translation of the official name of an event series to be used in different language contexts.
       has_topic:
         description: A property to provide the theme and topics of an event series as free keywords, phrases or text.
-        comments: 
+        comments:
           - Most likely the values of this property will be the set of topics and free keywords aggregated from the academic events of the series.
       has_metric:
         description: A property to provide one ore more metrics of an academic event series.
@@ -122,7 +122,7 @@ classes:
       dpbl_id:
         description: A property to link an academic event series with its DBLP identifier.
       wikicfp_series_id:
-        description: A property to link an academic event series with its WikiCFP identifier.   
+        description: A property to link an academic event series with its WikiCFP identifier.
     close_mappings:
       - sdo:EventSeries
 # Event
@@ -158,7 +158,7 @@ classes:
       - alternative_name
       - former_name
       - translated_name
-      - context_info 
+      - context_info
       - has_metric
       - has_topic
       - external_id
@@ -190,10 +190,10 @@ classes:
       sponsored_by:
         description: A property to provide the sponsors of an academic event.
       has_publication:
-        description: A property to provide the publication associated with 
-        comments: 
+        description: A property to provide the publication associated with
+        comments:
           - It will be most common that the publications of an academic event series are the set of publications associated with the individual events of the series.
-      type: 
+      type:
         description: A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.
         title: Event Type
         range: EventType
@@ -203,9 +203,9 @@ classes:
       alternative_name:
         description: A property to provide alternative names of an academic event.
       former_name:
-        description: The former official name of an academic event. Usually this will only be needed in case an academic event has undergone a name change. 
+        description: The former official name of an academic event. Usually this will only be needed in case an academic event has undergone a name change.
       translated_name:
-        description: A translation of the official name of an event to be used in different language contexts. 
+        description: A translation of the official name of an event to be used in different language contexts.
       has_topic:
         description: A property to provide the theme and topics of an event as free keywords, phrases or text.
       has_metric:
@@ -217,11 +217,11 @@ classes:
       wikidata_id:
         description: A property to link an academic event with its Wikidata identifier.
       gnd_id:
-        description: A property to link an academic event with its GND identifier.     
+        description: A property to link an academic event with its GND identifier.
       dpbl_id:
         description: A property to link an academic event with its DBLP identifier.
       wikicfp_event_id:
-        description: A property to link an academic event with its WikiCFP identifier. 
+        description: A property to link an academic event with its WikiCFP identifier.
       tibkat_id:
         description: A property to link an academic event with its TIBKAT identifier.
     close_mappings:
@@ -237,14 +237,14 @@ classes:
       schema_value:
         slot_uri: obi:0002815
   DigitalObjectId:
-    description: A centrally registered identifier symbol used to uniquely identify digital objects given by International DOI Foundation. 
+    description: A centrally registered identifier symbol used to uniquely identify digital objects given by International DOI Foundation.
     title: Digital Object Identifier
     is_a: ExternalIdentifier
     class_uri: obi:0002110
     slot_usage:
       schema_name:
         ifabsent: string(DOI)
-      schema_base_uri: 
+      schema_base_uri:
         ifabsent: uri(https://doi.org/)
   WikidataId:
     is_a: ExternalIdentifier
@@ -282,7 +282,7 @@ classes:
       schema_name:
         ifabsent: string(dblp)
       schema_base_uri:
-        ifabsent: uri(https://dblp.org/db/conf/)  
+        ifabsent: uri(https://dblp.org/db/conf/)
   WikiCfpEventId:
     is_a: ExternalIdentifier
     title: WikiCFP Event ID
@@ -306,8 +306,8 @@ classes:
     class_uri: aeon:0000004
     title: Subobject Event Format
     description: >-
-      An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathing is to be carried out by its participants in terms of achieving certain objectives, fulfiling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event.
-      While the explicit details are often provied as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. "conference" or "workshop"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.
+      An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathering is to be carried out by its participants in terms of achieving certain objectives, fulfilling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event.
+      While the explicit details are often provided as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. "conference" or "workshop"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.
     attributes:
       other_format:
         title: Other Event Format
@@ -328,7 +328,7 @@ classes:
         title: Deadline Date
         description: The date of a deadline.
         range: datetime
-        required: true        
+        required: true
       deadline_other:
         title: Other Deadline Type
         description: A property to specify another type of deadline, if this type of deadline is not within the allowed values of [DeadlineType](DeadlineType.md).
@@ -470,7 +470,7 @@ classes:
     attributes:
       text:
         title: Context Description
-        description: The free text used to provide more context information on an event or event series. 
+        description: The free text used to provide more context information on an event or event series.
         range: string
       license_str:
         title: Context License
@@ -597,8 +597,8 @@ classes:
     description: A mixin used to provide the attributes needed for the identification of a thing.
     mixin: true
     slots:
-      - id 
-      - name 
+      - id
+      - name
       - external_id
 
 #####################################
@@ -666,7 +666,7 @@ slots:
     range: string
   schema_base_uri:
     title: External formatter URI
-    description: The base URI of the schema that provides the context for the schema based value. 
+    description: The base URI of the schema that provides the context for the schema based value.
     range: uriorcurie
 
 # required Event & Series slots
@@ -711,7 +711,7 @@ slots:
       - datacite:url
   has_publication:
     title: Publication
-    description: The published works that are related to the event or event series, such as proceedings and video recordings of talks. 
+    description: The published works that are related to the event or event series, such as proceedings and video recordings of talks.
     range: Publication
     multivalued: true
     inlined_as_list: true
@@ -742,19 +742,19 @@ slots:
     recommended: false
   former_name:
     title: Former Name
-    description: The former official name of an academic event or series. Usually this will only be needed in case an academic event series has undergone a name change. 
+    description: The former official name of an academic event or series. Usually this will only be needed in case an academic event series has undergone a name change.
     is_a: name
     range: string
     required: false
     recommended: false
   translated_name:
     title: Translated Name
-    description: A translation of the official name of an event or event series to be used in different language contexts. 
+    description: A translation of the official name of an event or event series to be used in different language contexts.
     is_a: name
     range: string
     multivalued: true
     required: false
-    recommended: false 
+    recommended: false
   context_info:
     title: Context Information
     description: A property to provide extra information, such as call of papers summary,  event or event series description.
@@ -838,7 +838,7 @@ slots:
     title: Related To
     description: A property to be used to link events to each other.
     multivalued: true
-    range: ProcessRelation    
+    range: ProcessRelation
     required: false
     recommended: true
 # optional Event slots
@@ -894,7 +894,7 @@ slots:
 #####################################
 
 enums:
-# event type  
+# event type
   EventType:
     title: Event Type
     description: >-
@@ -925,7 +925,7 @@ enums:
         description: >-
           A talk is a central part of a larger academic event, at which a specific topic is being presented in a rather short way.
         meaning: aeon:0000125
-      Keynote Speech: 
+      Keynote Speech:
         description: >-
           A keynote speech is a special talk that has the function to set the underlying tone and summarize the core message or most important revelation of the academic event at which it is given.
         meaning: aeon:00001115
@@ -957,10 +957,10 @@ enums:
         description: >-
           Workshops are smaller academic events that serve to exchange information on a specific topic or problem. They usually last one or two days and offer space for discussion and the development of content and solutions. Group work is often part of the event concept.
         meaning: aeon:0000121
-      other: 
+      other:
         description: >-
           This value is to be used if the event format cannot be represented using one of the other permissible values defined in the [Event Type](EventType.md) enum. If this value is chosen the use of [Other Event Format](other_format.md) is mandatory.
-        meaning: aeon:0000001 
+        meaning: aeon:0000001
 # event status
   EventStatus:
     title: Event Status
@@ -1019,7 +1019,7 @@ enums:
       isJointEventOf:
       isColocatedEventOf:
       isSubEventOf:
-      hasSubEvent:  
+      hasSubEvent:
 # metric type
   MetricType:
     title: Metric Type
