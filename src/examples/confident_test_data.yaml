@@ -3,17 +3,16 @@ events:
   ##############################
   ### Academic Event Example ###
   ##############################
-  - id: confident:event/qsdh-en13
-    doi: 
-      value: 10.25798/qsdh-en13
+  - id: confident:qsdh-en13
+    has_doi: 
+      schema_value: 10.25798/qsdh-en13
     landing_page: https://vivoconference.org/vivo2021
-    name:
-      official_name: 12th Annual / International VIVO Conference 2021
-      acronym: VIVO 2021
-      aliases: 
-        - VIVO Conference 2021
-        - 12th VIVO Conference 2021
-    type: conference
+    official_name: 12th Annual / International VIVO Conference 2021
+    has_acronym: VIVO 2021
+    alternative_name: 
+      - VIVO Conference 2021
+      - 12th VIVO Conference 2021
+    type: Conference
     #event_format:
     #  specified_as: ad-hoc meeting of university presidents
     start_date: "2021-06-23"
@@ -21,41 +20,39 @@ events:
     event_status: as scheduled
     event_mode: hybrid
     ordinal: 12
-    external_ids:
-      - value: vivo2020
+    external_id:
+      - schema_value: vivo2020
         schema_base_uri: https://www.dblp.org/events/
         schema_name: dblp
     wikidata_id: 
-      value: Q108430463
+      schema_value: Q108430463
     gnd_id:
-      value: gnd-1234
+      schema_value: gnd-1234
     dpbl_id:
-      value: vivo/vivo2020
-    wikicfp_id:
-      value: "12345"
-    organizers:
+      schema_value: vivo/vivo2020
+    wikicfp_event_id:
+      schema_value: "12345"
+    organized_by:
       - name: The VIVO Project
         id: confident:organizer1
         type: organization
       - name: TIB
         id: confident:organizer2
-        external_ids:
-          value: 04aj4c181
-          schema_base_uri: https://ror.org/
-          schema_name: ROR
-        contact:
-          name: Christian Hauschke
-          email: hauschke@tib.eu
-          telephone: 0049 511 762 1234
+        type: person
+        external_id:
+          - schema_value: 04aj4c181
+            schema_base_uri: https://ror.org/
+            schema_name: ROR
+
     in_series: doi:10.25798/ea2h-xq32
-    academic_fields:
-      - value: ontology
+    academic_field:
+      - schema_value: ontology
         schema_name: ConfIDent's core classification scheme
         schema_base_uri: confident:classification
-      - value: social science
+      - schema_value: social science
         schema_name: ConfIDent's core classification scheme
         schema_base_uri: confident:classification
-    topics: 
+    has_topic: 
       - reseach information systems
       - open research
     website: https://vivoconference.org/vivo2020/
