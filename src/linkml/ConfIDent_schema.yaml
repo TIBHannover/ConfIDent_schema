@@ -165,8 +165,11 @@ classes:
       - wikidata_id
       - dpbl_id
       - gnd_id
-      - wikicfp_event_id
+      # only event specific
+      - ordinal
+      - event_mode
       - tibkat_id
+      - wikicfp_event_id
     slot_usage:
     # required
       id:
