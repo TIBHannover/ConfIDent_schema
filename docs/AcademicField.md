@@ -8,7 +8,7 @@ _An academic field is the scientific subject of an event or event series accordi
 
 
 ## Inheritance
-* **Subobject Academic Field** [SchemaBasedThing]
+* **Subobject Academic Field** [ SchemaBasedThing]
 
 
 

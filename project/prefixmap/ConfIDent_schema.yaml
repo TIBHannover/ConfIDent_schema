@@ -13,6 +13,7 @@
    "obi": "http://purl.obolibrary.org/obo/OBI_",
    "orcid": "https://orcid.org/",
    "provo": "https://www.w3.org/TR/2013/REC-prov-o-20130430/#",
+   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
    "ror": "https://ror.org/",
    "sdo": "https://schema.org/",
    "skos": "http://www.w3.org/2004/02/skos/core#",

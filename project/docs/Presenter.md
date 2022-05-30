@@ -7,7 +7,7 @@ A person that presents its work at an academic event.
 URI: [confident:Presenter](https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Presenter)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Presenter&#124;type(i):string%20%3F;id(i):uriorcurie;name(i):string%20%3F]^-[KeynoteSpeaker],[Contributor]^-[Presenter],[KeynoteSpeaker],[ExternalIdentifier],[Contributor])](https://yuml.me/diagram/nofunky;dir:TB/class/[Presenter&#124;type(i):string%20%3F;id(i):uriorcurie;name(i):string%20%3F]^-[KeynoteSpeaker],[Contributor]^-[Presenter],[KeynoteSpeaker],[ExternalIdentifier],[Contributor])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Presenter&#124;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F]^-[KeynoteSpeaker],[Contributor]^-[Presenter],[KeynoteSpeaker],[ExternalIdentifier],[Contributor])](https://yuml.me/diagram/nofunky;dir:TB/class/[Presenter&#124;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F]^-[KeynoteSpeaker],[Contributor]^-[Presenter],[KeynoteSpeaker],[ExternalIdentifier],[Contributor])
 
 ## Parents
 
@@ -27,4 +27,7 @@ URI: [confident:Presenter](https://raw.githubusercontent.com/TIBHannover/ConfIDe
 
  * [Contributor➞type](Contributor_type.md)  <sub>0..1</sub>
      * Description: A property to provide the information whether the contributor is an organization or person.
-     * Range: [String](types/String.md)
+     * Range: [ContributorType](ContributorType.md)
+ * [Contributor➞id](Contributor_id.md)  <sub>1..1</sub>
+     * Description: The internal ConfIDent identifier for a contibutor
+     * Range: [Uriorcurie](types/Uriorcurie.md)

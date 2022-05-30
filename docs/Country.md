@@ -8,7 +8,7 @@ _The country in which an academic event takes place._
 
 
 ## Inheritance
-* **Country** [NamedThing]
+* **Country** [ NamedThing]
 
 
 

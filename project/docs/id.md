@@ -16,25 +16,15 @@ None &#8594;  <sub>1..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Children
 
+ *  [Contributor➞id](Contributor_id.md)
  *  [EventSeries➞id](EventSeries_id.md)
  *  [Event➞id](Event_id.md)
 
 ## Used by
 
- * [Attendee](Attendee.md)
  * [City](City.md)
- * [CommitteeChair](CommitteeChair.md)
- * [CommitteeMember](CommitteeMember.md)
- * [ContactPerson](ContactPerson.md)
- * [Contributor](Contributor.md)
  * [Country](Country.md)
- * [KeynoteSpeaker](KeynoteSpeaker.md)
- * [Moderator](Moderator.md)
  * [NamedThing](NamedThing.md)
- * [Organizer](Organizer.md)
- * [Presenter](Presenter.md)
  * [Publication](Publication.md)
  * [Region](Region.md)
- * [Reviewer](Reviewer.md)
- * [Sponsor](Sponsor.md)
  * [Venue](Venue.md)

@@ -540,8 +540,11 @@
       "description": "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.",
       "title": "Type",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
       "abstract": true,
-      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
       "owner": "Contributor",
       "domain_of": [
         "Event",
@@ -1072,7 +1075,7 @@
     {
       "name": "event_format",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#event_format",
-      "description": "A property to provide an event format specification, if none of the [Event Types] are applicable to specify the format of an academic event.",
+      "description": "A property to provide an event format specification, if none of the [Event Types](EventType.md) are applicable to specify the format of an academic event.",
       "title": "Event Format",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
@@ -1145,6 +1148,10 @@
         "https://github.com/tibonto/aeon#AEON_event_number"
       ],
       "slot_uri": "https://github.com/tibonto/aeon#AEON_event_number",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
       "range": "integer",
       "@type": "SlotDefinition"
     },
@@ -1155,6 +1162,10 @@
       "title": "Event Mode",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml",
       "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#event_mode",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
       "range": "EventMode",
       "@type": "SlotDefinition"
     },
@@ -2367,10 +2378,13 @@
       "description": "A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.",
       "title": "Event Type",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
       "is_a": "type",
       "abstract": true,
       "domain": "Event",
-      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
       "designates_type": true,
       "alias": "type",
       "owner": "Event",
@@ -2965,10 +2979,13 @@
       "description": "A propery to provide the type of the deadline.",
       "title": "Deadline Type",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
       "is_a": "type",
       "abstract": true,
       "domain": "Deadline",
-      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
       "alias": "type",
       "owner": "Deadline",
       "domain_of": [
@@ -2986,10 +3003,13 @@
       "description": "A property to provide the type of relation between academic events.",
       "title": "Type",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
       "is_a": "type",
       "abstract": true,
       "domain": "Metric",
-      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
       "alias": "type",
       "owner": "Metric",
       "domain_of": [
@@ -3006,10 +3026,13 @@
       "description": "A property to provide the type of process relation.",
       "title": "Type",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
       "is_a": "type",
       "abstract": true,
       "domain": "ProcessRelation",
-      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
       "alias": "type",
       "owner": "ProcessRelation",
       "domain_of": [
@@ -3046,10 +3069,14 @@
       "description": "A property to provide the information whether the contributor is an organization or person.",
       "title": "Type",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
       "is_a": "type",
       "abstract": true,
       "domain": "Contributor",
-      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "designates_type": true,
       "alias": "type",
       "owner": "Contributor",
       "domain_of": [
@@ -3057,7 +3084,28 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "type",
-      "range": "string",
+      "range": "ContributorType",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Contributor_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#id",
+      "description": "The internal ConfIDent identifier for a contibutor",
+      "title": "ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "id",
+      "domain": "Contributor",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#id",
+      "identifier": true,
+      "alias": "id",
+      "owner": "Contributor",
+      "domain_of": [
+        "Contributor"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "id",
+      "range": "uriorcurie",
+      "required": true,
       "@type": "SlotDefinition"
     }
   ],
@@ -3143,8 +3191,10 @@
         "Event_wikidata_id",
         "Event_dpbl_id",
         "Event_gnd_id",
-        "Event_wikicfp_event_id",
-        "Event_tibkat_id"
+        "ordinal",
+        "event_mode",
+        "Event_tibkat_id",
+        "Event_wikicfp_event_id"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/tibonto/aeon#AEON_0000001",
@@ -3289,7 +3339,7 @@
     {
       "name": "EventFormatSpecification",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#EventFormatSpecification",
-      "description": "An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathing is to be carried out by its participants in terms of achieving certain objectives, fulfiling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event. While the explicit details are often provied as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. \"conference\" or \"workshop\"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.",
+      "description": "An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathering is to be carried out by its participants in terms of achieving certain objectives, fulfilling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event. While the explicit details are often provided as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. \"conference\" or \"workshop\"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.",
       "title": "Subobject Event Format",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
@@ -3672,7 +3722,7 @@
       ],
       "slots": [
         "Contributor_type",
-        "id",
+        "Contributor_id",
         "name",
         "external_id"
       ],
@@ -3689,7 +3739,7 @@
       "is_a": "Contributor",
       "slots": [
         "Contributor_type",
-        "id",
+        "Contributor_id",
         "name",
         "external_id"
       ],
@@ -3706,7 +3756,7 @@
       "is_a": "Contributor",
       "slots": [
         "Contributor_type",
-        "id",
+        "Contributor_id",
         "name",
         "external_id"
       ],
@@ -3723,7 +3773,7 @@
       "is_a": "Contributor",
       "slots": [
         "Contributor_type",
-        "id",
+        "Contributor_id",
         "name",
         "external_id"
       ],
@@ -3740,7 +3790,7 @@
       "is_a": "Contributor",
       "slots": [
         "Contributor_type",
-        "id",
+        "Contributor_id",
         "name",
         "external_id"
       ],
@@ -3757,7 +3807,7 @@
       "is_a": "Contributor",
       "slots": [
         "Contributor_type",
-        "id",
+        "Contributor_id",
         "name",
         "external_id",
         "organizer__contact"
@@ -3786,7 +3836,7 @@
       "is_a": "Organizer",
       "slots": [
         "Contributor_type",
-        "id",
+        "Contributor_id",
         "name",
         "external_id",
         "organizer__contact",
@@ -3825,7 +3875,7 @@
       "is_a": "Organizer",
       "slots": [
         "Contributor_type",
-        "id",
+        "Contributor_id",
         "name",
         "external_id",
         "organizer__contact"
@@ -3843,7 +3893,7 @@
       "is_a": "CommitteeMember",
       "slots": [
         "Contributor_type",
-        "id",
+        "Contributor_id",
         "name",
         "external_id",
         "organizer__contact"
@@ -3861,7 +3911,7 @@
       "is_a": "Contributor",
       "slots": [
         "Contributor_type",
-        "id",
+        "Contributor_id",
         "name",
         "external_id"
       ],
@@ -3878,7 +3928,7 @@
       "is_a": "Presenter",
       "slots": [
         "Contributor_type",
-        "id",
+        "Contributor_id",
         "name",
         "external_id"
       ],
@@ -3979,9 +4029,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "confident_schema.yaml",
-  "source_file_date": "2022-05-24T12:16:14",
-  "source_file_size": 45146,
-  "generation_date": "2022-05-24T12:19:04",
+  "source_file_date": "2022-05-30T08:53:20",
+  "source_file_size": 45283,
+  "generation_date": "2022-05-30T09:08:10",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/confident_schema.context.jsonld",

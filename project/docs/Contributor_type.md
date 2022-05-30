@@ -9,7 +9,7 @@ URI: [confident:Contributor_type](https://raw.githubusercontent.com/TIBHannover/
 
 ## Domain and Range
 
-[Contributor](Contributor.md) &#8594;  <sub>0..1</sub> [String](types/String.md)
+[Contributor](Contributor.md) &#8594;  <sub>0..1</sub> [ContributorType](ContributorType.md)
 
 ## Parents
 
@@ -31,3 +31,10 @@ URI: [confident:Contributor_type](https://raw.githubusercontent.com/TIBHannover/
  * [Presenter](Presenter.md)
  * [Reviewer](Reviewer.md)
  * [Sponsor](Sponsor.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | rdf:type |
+

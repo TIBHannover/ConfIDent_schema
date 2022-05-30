@@ -8,7 +8,7 @@ _The contact person of an academic event or event series._
 
 
 ## Inheritance
-* [Subobject Contributor](Contributor.md) [NamedThing]
+* [Subobject Contributor](Contributor.md) [ NamedThing]
     * [Subobject Organizer](Organizer.md)
         * **Subobject Contact Person**
 
@@ -21,7 +21,7 @@ _The contact person of an academic event or event series._
 | [Email](email.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 | The email address of the contact person.  | 
 | [Telephone](telephone.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 | The telephone number of the contact person.  | 
 | [Contact](contact.md) | [Subobject Contact Person](ContactPerson.md) | 0..1 _recommended_ | The contact person of an academic event or event series.  | 
-| [Type](type.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 | An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.  | 
+| [Type](type.md) | [Contributor Type](ContributorType.md) | 0..1 | An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.  | 
 | [ID](id.md) | [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | 1..1 | A property to provide an internal id of a schema entity in the ConfIDent plattform.  | 
 | [Name](name.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 | A property to provide a name of a schema entity.  | 
 | [External ID](external_id.md) | [External ID](ExternalIdentifier.md) | 0..* | A property to provide an external id of a schema entity.  | 
@@ -136,9 +136,11 @@ attributes:
     title: Type
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
     abstract: true
+    slot_uri: rdf:type
+    designates_type: true
     alias: type
     owner: ContactPerson
-    range: string
+    range: ContributorType
   id:
     name: id
     description: A property to provide an internal id of a schema entity in the ConfIDent

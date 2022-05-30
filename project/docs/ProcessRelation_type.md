@@ -21,3 +21,10 @@ URI: [confident:ProcessRelation_type](https://raw.githubusercontent.com/TIBHanno
 ## Used by
 
  * [ProcessRelation](ProcessRelation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | rdf:type |
+

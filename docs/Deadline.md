@@ -124,6 +124,7 @@ attributes:
     title: Deadline Type
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
     abstract: true
+    slot_uri: rdf:type
     alias: type
     owner: Deadline
     range: DeadlineType

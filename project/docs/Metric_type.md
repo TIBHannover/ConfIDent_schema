@@ -21,3 +21,10 @@ URI: [confident:Metric_type](https://raw.githubusercontent.com/TIBHannover/ConfI
 ## Used by
 
  * [Metric](Metric.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | rdf:type |
+

@@ -8,7 +8,7 @@ _An identifer of an entity declared in another schema._
 
 
 ## Inheritance
-* **External ID** [SchemaBasedThing]
+* **External ID** [ SchemaBasedThing]
     * [Digital Object Identifier](DigitalObjectId.md)
     * [Wikidata ID](WikidataId.md)
     * [GND ID](GndId.md)

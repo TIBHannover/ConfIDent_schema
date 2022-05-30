@@ -8,7 +8,7 @@ _A published work, e.g. proceedings or conferenc paper, that is the output of an
 
 
 ## Inheritance
-* **Subobject Publication** [NamedThing]
+* **Subobject Publication** [ NamedThing]
 
 
 

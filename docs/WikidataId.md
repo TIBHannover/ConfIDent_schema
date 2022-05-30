@@ -8,7 +8,7 @@ _The identifier of a thing (item) in Wikidata._
 
 
 ## Inheritance
-* [External ID](ExternalIdentifier.md) [SchemaBasedThing]
+* [External ID](ExternalIdentifier.md) [ SchemaBasedThing]
     * **Wikidata ID**
 
 

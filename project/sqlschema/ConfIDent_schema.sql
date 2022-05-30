@@ -8,7 +8,7 @@ CREATE TABLE "AcademicField" (
 );
 
 CREATE TABLE "Attendee" (
-	type TEXT, 
+	type VARCHAR(12), 
 	id TEXT NOT NULL, 
 	name TEXT, 
 	external_id TEXT, 
@@ -29,7 +29,7 @@ CREATE TABLE "ConfIDentRecords" (
 );
 
 CREATE TABLE "ContactPerson" (
-	type TEXT, 
+	type VARCHAR(12), 
 	id TEXT NOT NULL, 
 	name TEXT, 
 	external_id TEXT, 
@@ -48,7 +48,7 @@ CREATE TABLE "Context" (
 );
 
 CREATE TABLE "Contributor" (
-	type TEXT, 
+	type VARCHAR(12), 
 	id TEXT NOT NULL, 
 	name TEXT, 
 	external_id TEXT, 
@@ -100,6 +100,8 @@ CREATE TABLE "Event" (
 	wikidata_id TEXT, 
 	dpbl_id TEXT, 
 	gnd_id TEXT, 
+	ordinal INTEGER, 
+	event_mode VARCHAR(7), 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(in_series) REFERENCES "EventSeries" (id)
 );
@@ -147,7 +149,7 @@ CREATE TABLE "GndId" (
 );
 
 CREATE TABLE "KeynoteSpeaker" (
-	type TEXT, 
+	type VARCHAR(12), 
 	id TEXT NOT NULL, 
 	name TEXT, 
 	external_id TEXT, 
@@ -166,7 +168,7 @@ CREATE TABLE "Metric" (
 );
 
 CREATE TABLE "Moderator" (
-	type TEXT, 
+	type VARCHAR(12), 
 	id TEXT NOT NULL, 
 	name TEXT, 
 	external_id TEXT, 
@@ -174,7 +176,7 @@ CREATE TABLE "Moderator" (
 );
 
 CREATE TABLE "Presenter" (
-	type TEXT, 
+	type VARCHAR(12), 
 	id TEXT NOT NULL, 
 	name TEXT, 
 	external_id TEXT, 
@@ -197,7 +199,7 @@ CREATE TABLE "Region" (
 );
 
 CREATE TABLE "Reviewer" (
-	type TEXT, 
+	type VARCHAR(12), 
 	id TEXT NOT NULL, 
 	name TEXT, 
 	external_id TEXT, 
@@ -205,7 +207,7 @@ CREATE TABLE "Reviewer" (
 );
 
 CREATE TABLE "Sponsor" (
-	type TEXT, 
+	type VARCHAR(12), 
 	id TEXT NOT NULL, 
 	name TEXT, 
 	external_id TEXT, 
@@ -229,7 +231,7 @@ CREATE TABLE "WikidataId" (
 );
 
 CREATE TABLE "CommitteeChair" (
-	type TEXT, 
+	type VARCHAR(12), 
 	id TEXT NOT NULL, 
 	name TEXT, 
 	external_id TEXT, 
@@ -239,7 +241,7 @@ CREATE TABLE "CommitteeChair" (
 );
 
 CREATE TABLE "CommitteeMember" (
-	type TEXT, 
+	type VARCHAR(12), 
 	id TEXT NOT NULL, 
 	name TEXT, 
 	external_id TEXT, 
@@ -273,7 +275,7 @@ CREATE TABLE "Location" (
 );
 
 CREATE TABLE "Organizer" (
-	type TEXT, 
+	type VARCHAR(12), 
 	id TEXT NOT NULL, 
 	name TEXT, 
 	external_id TEXT, 

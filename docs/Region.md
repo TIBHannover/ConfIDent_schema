@@ -8,7 +8,7 @@ _The region in which an academic event takes place. For non USA events this migh
 
 
 ## Inheritance
-* **Region** [NamedThing]
+* **Region** [ NamedThing]
 
 
 

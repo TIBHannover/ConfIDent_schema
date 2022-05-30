@@ -8,7 +8,7 @@ _The venue at which an academic event takes place._
 
 
 ## Inheritance
-* **Venue** [NamedThing]
+* **Venue** [ NamedThing]
 
 
 

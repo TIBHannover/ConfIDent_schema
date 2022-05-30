@@ -8,7 +8,7 @@ _The identifier of an academic event or series in WikiCFP._
 
 
 ## Inheritance
-* [External ID](ExternalIdentifier.md) [SchemaBasedThing]
+* [External ID](ExternalIdentifier.md) [ SchemaBasedThing]
     * **WikiCFP Series ID**
 
 

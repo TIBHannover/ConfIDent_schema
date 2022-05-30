@@ -8,7 +8,7 @@ _The city in which an academic event takes place._
 
 
 ## Inheritance
-* **City** [NamedThing]
+* **City** [ NamedThing]
 
 
 

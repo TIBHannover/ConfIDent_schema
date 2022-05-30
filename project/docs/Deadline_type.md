@@ -21,3 +21,10 @@ URI: [confident:Deadline_type](https://raw.githubusercontent.com/TIBHannover/Con
 ## Used by
 
  * [Deadline](Deadline.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | rdf:type |
+

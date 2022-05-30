@@ -8,7 +8,7 @@ _A 'keynote speaker' is a presenter that is an invited person - often a multipli
 
 
 ## Inheritance
-* [Subobject Contributor](Contributor.md) [NamedThing]
+* [Subobject Contributor](Contributor.md) [ NamedThing]
     * [Subobject Presenter](Presenter.md)
         * **Subobject Keynote Speaker**
 
@@ -18,7 +18,7 @@ _A 'keynote speaker' is a presenter that is an invited person - often a multipli
 
 | Name | Range | Cardinality | Description  | 
 | ---  | --- | --- | --- | 
-| [Type](type.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 | An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.  | 
+| [Type](type.md) | [Contributor Type](ContributorType.md) | 0..1 | An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.  | 
 | [ID](id.md) | [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | 1..1 | A property to provide an internal id of a schema entity in the ConfIDent plattform.  | 
 | [Name](name.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 | A property to provide a name of a schema entity.  | 
 | [External ID](external_id.md) | [External ID](ExternalIdentifier.md) | 0..* | A property to provide an external id of a schema entity.  | 
@@ -83,9 +83,11 @@ attributes:
     title: Type
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
     abstract: true
+    slot_uri: rdf:type
+    designates_type: true
     alias: type
     owner: KeynoteSpeaker
-    range: string
+    range: ContributorType
   id:
     name: id
     description: A property to provide an internal id of a schema entity in the ConfIDent

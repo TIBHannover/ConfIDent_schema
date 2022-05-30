@@ -41,8 +41,10 @@ _An academic event is part of the established instruments of science communicati
 | [Wikidata ID](wikidata_id.md) | [Wikidata ID](WikidataId.md) | 0..* | A property to link an academic event with its Wikidata identifier.  | 
 | [DBLP ID](dpbl_id.md) | [DBLP ID](DblpId.md) | 0..* | A property to link an academic event with its DBLP identifier.  | 
 | [GND ID](gnd_id.md) | [GND ID](GndId.md) | 0..* | A property to link an academic event with its GND identifier.  | 
-| [WikiCFP Event ID](wikicfp_event_id.md) | [WikiCFP Event ID](WikiCfpEventId.md) | 0..* | A property to link an academic event with its WikiCFP identifier.  | 
+| [Ordinal](ordinal.md) | [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) | 0..1 | The ordnial number of an academic event within its series.  | 
+| [Event Mode](event_mode.md) | [Event Mode](EventMode.md) | 0..1 | The event mode describes whether the event is a physical, virtual or hybrid event.  | 
 | [TIBKAT ID](tibkat_id.md) | [TIBKAT ID](TibkatId.md) | 0..* | A property to link an academic event with its TIBKAT identifier.  | 
+| [WikiCFP Event ID](wikicfp_event_id.md) | [WikiCFP Event ID](WikiCfpEventId.md) | 0..* | A property to link an academic event with its WikiCFP identifier.  | 
 
 
 ## Usages
@@ -125,8 +127,10 @@ slots:
 - wikidata_id
 - dpbl_id
 - gnd_id
-- wikicfp_event_id
+- ordinal
+- event_mode
 - tibkat_id
+- wikicfp_event_id
 slot_usage:
   id:
     name: id
@@ -500,6 +504,7 @@ attributes:
     title: Event Type
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
     abstract: true
+    slot_uri: rdf:type
     designates_type: true
     alias: type
     owner: Event
@@ -680,21 +685,28 @@ attributes:
     recommended: false
     inlined: true
     inlined_as_list: true
-  wikicfp_event_id:
-    name: wikicfp_event_id
-    description: A property to link an academic event with its WikiCFP identifier.
-    title: WikiCFP Event ID
+  ordinal:
+    name: ordinal
+    description: The ordnial number of an academic event within its series.
+    title: Ordinal
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
-    is_a: external_id
-    slot_uri: iao:0000235
-    multivalued: true
-    alias: wikicfp_event_id
+    slot_uri: aeon:event_number
+    alias: ordinal
     owner: Event
-    range: WikiCfpEventId
+    range: integer
     required: false
     recommended: false
-    inlined: true
-    inlined_as_list: true
+  event_mode:
+    name: event_mode
+    description: The event mode describes whether the event is a physical, virtual
+      or hybrid event.
+    title: Event Mode
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    alias: event_mode
+    owner: Event
+    range: EventMode
+    required: false
+    recommended: false
   tibkat_id:
     name: tibkat_id
     description: A property to link an academic event with its TIBKAT identifier.
@@ -706,6 +718,21 @@ attributes:
     alias: tibkat_id
     owner: Event
     range: TibkatId
+    required: false
+    recommended: false
+    inlined: true
+    inlined_as_list: true
+  wikicfp_event_id:
+    name: wikicfp_event_id
+    description: A property to link an academic event with its WikiCFP identifier.
+    title: WikiCFP Event ID
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    is_a: external_id
+    slot_uri: iao:0000235
+    multivalued: true
+    alias: wikicfp_event_id
+    owner: Event
+    range: WikiCfpEventId
     required: false
     recommended: false
     inlined: true

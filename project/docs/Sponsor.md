@@ -7,7 +7,7 @@ A person or an organization whose role it is to sponsor an academic event or eve
 URI: [confident:Sponsor](https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Sponsor)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[EventSeries]++-%20sponsored_by%200..*>[Sponsor&#124;type(i):string%20%3F;id(i):uriorcurie;name(i):string%20%3F],[Event]++-%20sponsored_by%200..*>[Sponsor],[EventSeries]++-%20sponsored_by(i)%200..*>[Sponsor],[Event]++-%20sponsored_by(i)%200..*>[Sponsor],[Contributor]^-[Sponsor],[ExternalIdentifier],[EventSeries],[Event],[Contributor])](https://yuml.me/diagram/nofunky;dir:TB/class/[EventSeries]++-%20sponsored_by%200..*>[Sponsor&#124;type(i):string%20%3F;id(i):uriorcurie;name(i):string%20%3F],[Event]++-%20sponsored_by%200..*>[Sponsor],[EventSeries]++-%20sponsored_by(i)%200..*>[Sponsor],[Event]++-%20sponsored_by(i)%200..*>[Sponsor],[Contributor]^-[Sponsor],[ExternalIdentifier],[EventSeries],[Event],[Contributor])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[EventSeries]++-%20sponsored_by%200..*>[Sponsor&#124;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F],[Event]++-%20sponsored_by%200..*>[Sponsor],[EventSeries]++-%20sponsored_by(i)%200..*>[Sponsor],[Event]++-%20sponsored_by(i)%200..*>[Sponsor],[Contributor]^-[Sponsor],[ExternalIdentifier],[EventSeries],[Event],[Contributor])](https://yuml.me/diagram/nofunky;dir:TB/class/[EventSeries]++-%20sponsored_by%200..*>[Sponsor&#124;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F],[Event]++-%20sponsored_by%200..*>[Sponsor],[EventSeries]++-%20sponsored_by(i)%200..*>[Sponsor],[Event]++-%20sponsored_by(i)%200..*>[Sponsor],[Contributor]^-[Sponsor],[ExternalIdentifier],[EventSeries],[Event],[Contributor])
 
 ## Parents
 
@@ -26,4 +26,7 @@ URI: [confident:Sponsor](https://raw.githubusercontent.com/TIBHannover/ConfIDent
 
  * [Contributor➞type](Contributor_type.md)  <sub>0..1</sub>
      * Description: A property to provide the information whether the contributor is an organization or person.
-     * Range: [String](types/String.md)
+     * Range: [ContributorType](ContributorType.md)
+ * [Contributor➞id](Contributor_id.md)  <sub>1..1</sub>
+     * Description: The internal ConfIDent identifier for a contibutor
+     * Range: [Uriorcurie](types/Uriorcurie.md)

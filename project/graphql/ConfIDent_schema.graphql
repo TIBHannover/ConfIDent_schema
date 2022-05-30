@@ -7,7 +7,7 @@ type AcademicField implements SchemaBasedThing
 
 type Attendee
   {
-    type: String
+    type: ContributorType
     id: Uriorcurie!
     name: String
     externalId: [ExternalIdentifier]
@@ -22,7 +22,7 @@ type City implements NamedThing
 
 type CommitteeChair
   {
-    type: String
+    type: ContributorType
     id: Uriorcurie!
     name: String
     externalId: [ExternalIdentifier]
@@ -31,7 +31,7 @@ type CommitteeChair
 
 type CommitteeMember
   {
-    type: String
+    type: ContributorType
     id: Uriorcurie!
     name: String
     externalId: [ExternalIdentifier]
@@ -46,7 +46,7 @@ type ConfIDentRecords
 
 type ContactPerson
   {
-    type: String
+    type: ContributorType
     id: Uriorcurie!
     name: String
     externalId: [ExternalIdentifier]
@@ -64,7 +64,7 @@ type Context
 
 type Contributor implements NamedThing
   {
-    type: String
+    type: ContributorType
     id: Uriorcurie!
     name: String
     externalId: [ExternalIdentifier]
@@ -128,8 +128,10 @@ type Event
     wikidataId: [WikidataId]
     dpblId: [DblpId]
     gndId: [GndId]
-    wikicfpEventId: [WikiCfpEventId]
+    ordinal: Integer
+    eventMode: EventMode
     tibkatId: [TibkatId]
+    wikicfpEventId: [WikiCfpEventId]
   }
 
 type EventFormatSpecification
@@ -179,7 +181,7 @@ type GndId
 
 type KeynoteSpeaker
   {
-    type: String
+    type: ContributorType
     id: Uriorcurie!
     name: String
     externalId: [ExternalIdentifier]
@@ -209,7 +211,7 @@ type Metric
 
 type Moderator
   {
-    type: String
+    type: ContributorType
     id: Uriorcurie!
     name: String
     externalId: [ExternalIdentifier]
@@ -224,7 +226,7 @@ interface NamedThing
 
 type Organizer
   {
-    type: String
+    type: ContributorType
     id: Uriorcurie!
     name: String
     externalId: [ExternalIdentifier]
@@ -233,7 +235,7 @@ type Organizer
 
 type Presenter
   {
-    type: String
+    type: ContributorType
     id: Uriorcurie!
     name: String
     externalId: [ExternalIdentifier]
@@ -261,7 +263,7 @@ type Region implements NamedThing
 
 type Reviewer
   {
-    type: String
+    type: ContributorType
     id: Uriorcurie!
     name: String
     externalId: [ExternalIdentifier]
@@ -276,7 +278,7 @@ interface SchemaBasedThing
 
 type Sponsor
   {
-    type: String
+    type: ContributorType
     id: Uriorcurie!
     name: String
     externalId: [ExternalIdentifier]

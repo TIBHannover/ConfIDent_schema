@@ -21,3 +21,10 @@ URI: [confident:Event_type](https://raw.githubusercontent.com/TIBHannover/ConfID
 ## Used by
 
  * [Event](Event.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | rdf:type |
+

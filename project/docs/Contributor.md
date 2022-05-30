@@ -7,7 +7,7 @@ A contributor is a person or organization that holds a contributor role which is
 URI: [confident:Contributor](https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Contributor)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Sponsor],[Reviewer],[Presenter],[Organizer],[NamedThing],[Moderator],[ExternalIdentifier],[Contributor&#124;type:string%20%3F;id:uriorcurie;name:string%20%3F]uses%20-.->[NamedThing],[Contributor]^-[Sponsor],[Contributor]^-[Reviewer],[Contributor]^-[Presenter],[Contributor]^-[Organizer],[Contributor]^-[Moderator],[Contributor]^-[Attendee],[Attendee])](https://yuml.me/diagram/nofunky;dir:TB/class/[Sponsor],[Reviewer],[Presenter],[Organizer],[NamedThing],[Moderator],[ExternalIdentifier],[Contributor&#124;type:string%20%3F;id:uriorcurie;name:string%20%3F]uses%20-.->[NamedThing],[Contributor]^-[Sponsor],[Contributor]^-[Reviewer],[Contributor]^-[Presenter],[Contributor]^-[Organizer],[Contributor]^-[Moderator],[Contributor]^-[Attendee],[Attendee])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Sponsor],[Reviewer],[Presenter],[Organizer],[NamedThing],[Moderator],[ExternalIdentifier],[Contributor&#124;type:ContributorType%20%3F;id:uriorcurie;name:string%20%3F]uses%20-.->[NamedThing],[Contributor]^-[Sponsor],[Contributor]^-[Reviewer],[Contributor]^-[Presenter],[Contributor]^-[Organizer],[Contributor]^-[Moderator],[Contributor]^-[Attendee],[Attendee])](https://yuml.me/diagram/nofunky;dir:TB/class/[Sponsor],[Reviewer],[Presenter],[Organizer],[NamedThing],[Moderator],[ExternalIdentifier],[Contributor&#124;type:ContributorType%20%3F;id:uriorcurie;name:string%20%3F]uses%20-.->[NamedThing],[Contributor]^-[Sponsor],[Contributor]^-[Reviewer],[Contributor]^-[Presenter],[Contributor]^-[Organizer],[Contributor]^-[Moderator],[Contributor]^-[Attendee],[Attendee])
 
 ## Uses Mixin
 
@@ -32,12 +32,9 @@ URI: [confident:Contributor](https://raw.githubusercontent.com/TIBHannover/ConfI
 
  * [Contributor➞type](Contributor_type.md)  <sub>0..1</sub>
      * Description: A property to provide the information whether the contributor is an organization or person.
-     * Range: [String](types/String.md)
-
-### Mixed in from NamedThing:
-
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A property to provide an internal id of a schema entity in the ConfIDent plattform.
+     * Range: [ContributorType](ContributorType.md)
+ * [Contributor➞id](Contributor_id.md)  <sub>1..1</sub>
+     * Description: The internal ConfIDent identifier for a contibutor
      * Range: [Uriorcurie](types/Uriorcurie.md)
 
 ### Mixed in from NamedThing:

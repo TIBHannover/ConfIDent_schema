@@ -7,7 +7,7 @@ A 'keynote speaker' is a presenter that is an invited person - often a multiplie
 URI: [confident:KeynoteSpeaker](https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#KeynoteSpeaker)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Presenter],[Presenter]^-[KeynoteSpeaker&#124;type(i):string%20%3F;id(i):uriorcurie;name(i):string%20%3F],[ExternalIdentifier])](https://yuml.me/diagram/nofunky;dir:TB/class/[Presenter],[Presenter]^-[KeynoteSpeaker&#124;type(i):string%20%3F;id(i):uriorcurie;name(i):string%20%3F],[ExternalIdentifier])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Presenter],[Presenter]^-[KeynoteSpeaker&#124;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F],[ExternalIdentifier])](https://yuml.me/diagram/nofunky;dir:TB/class/[Presenter],[Presenter]^-[KeynoteSpeaker&#124;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F],[ExternalIdentifier])
 
 ## Parents
 
@@ -20,4 +20,7 @@ URI: [confident:KeynoteSpeaker](https://raw.githubusercontent.com/TIBHannover/Co
 
  * [Contributor➞type](Contributor_type.md)  <sub>0..1</sub>
      * Description: A property to provide the information whether the contributor is an organization or person.
-     * Range: [String](types/String.md)
+     * Range: [ContributorType](ContributorType.md)
+ * [Contributor➞id](Contributor_id.md)  <sub>1..1</sub>
+     * Description: The internal ConfIDent identifier for a contibutor
+     * Range: [Uriorcurie](types/Uriorcurie.md)

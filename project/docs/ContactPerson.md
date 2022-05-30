@@ -7,7 +7,7 @@ The contact person of an academic event or event series.
 URI: [confident:ContactPerson](https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#ContactPerson)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Organizer],[ExternalIdentifier],[Organizer]++-%20contact%200..1>[ContactPerson&#124;email:string%20%3F;telephone:string%20%3F;type(i):string%20%3F;id(i):uriorcurie;name(i):string%20%3F],[Organizer]^-[ContactPerson])](https://yuml.me/diagram/nofunky;dir:TB/class/[Organizer],[ExternalIdentifier],[Organizer]++-%20contact%200..1>[ContactPerson&#124;email:string%20%3F;telephone:string%20%3F;type(i):string%20%3F;id(i):uriorcurie;name(i):string%20%3F],[Organizer]^-[ContactPerson])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Organizer],[ExternalIdentifier],[Organizer]++-%20contact%200..1>[ContactPerson&#124;email:string%20%3F;telephone:string%20%3F;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F],[Organizer]^-[ContactPerson])](https://yuml.me/diagram/nofunky;dir:TB/class/[Organizer],[ExternalIdentifier],[Organizer]++-%20contact%200..1>[ContactPerson&#124;email:string%20%3F;telephone:string%20%3F;type(i):ContributorType%20%3F;id(i):uriorcurie;name(i):string%20%3F],[Organizer]^-[ContactPerson])
 
 ## Parents
 
@@ -33,7 +33,10 @@ URI: [confident:ContactPerson](https://raw.githubusercontent.com/TIBHannover/Con
 
  * [Contributor➞type](Contributor_type.md)  <sub>0..1</sub>
      * Description: A property to provide the information whether the contributor is an organization or person.
-     * Range: [String](types/String.md)
+     * Range: [ContributorType](ContributorType.md)
+ * [Contributor➞id](Contributor_id.md)  <sub>1..1</sub>
+     * Description: The internal ConfIDent identifier for a contibutor
+     * Range: [Uriorcurie](types/Uriorcurie.md)
  * [➞contact](organizer__contact.md)  <sub>0..1</sub>
      * Description: The contact person of an academic event or event series.
      * Range: [ContactPerson](ContactPerson.md)

@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from confident_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-05-24T12:19:03\n    Schema: confident_schema\n    metamodel version: 1.7.0\n    model version: 0.4.0\n    \n    id: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml\n    description: This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
+   "_comments": "Auto generated from confident_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-05-30T09:08:09\n    Schema: confident_schema\n    metamodel version: 1.7.0\n    model version: 0.4.0\n    \n    id: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml\n    description: This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.\n    license: https://creativecommons.org/licenses/by/4.0/\n    ",
    "@context": {
       "NCBITaxon": {
          "@id": "http://purl.obolibrary.org/obo/NCBITaxon_",
@@ -33,6 +33,7 @@
       },
       "orcid": "https://orcid.org/",
       "provo": "https://www.w3.org/TR/2013/REC-prov-o-20130430/#",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "ror": "https://ror.org/",
       "sdo": "https://schema.org/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
@@ -66,6 +67,7 @@
       "context_info": {
          "@type": "@id"
       },
+      "id": "@id",
       "deadline_date": {
          "@type": "xsd:dateTime"
       },
@@ -81,7 +83,6 @@
          "@type": "@id",
          "@id": "aeon:0000032"
       },
-      "id": "@id",
       "event_mode": {
          "@context": {
             "@vocab": "@null",
@@ -194,6 +195,9 @@
       "tibkat_id": {
          "@type": "@id",
          "@id": "iao:0000235"
+      },
+      "type": {
+         "@id": "rdf:type"
       },
       "website": {
          "@type": "@id"

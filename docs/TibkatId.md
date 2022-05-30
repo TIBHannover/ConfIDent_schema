@@ -8,7 +8,7 @@ _The identifier of a publication in the TIB catalog that references an event or 
 
 
 ## Inheritance
-* [External ID](ExternalIdentifier.md) [SchemaBasedThing]
+* [External ID](ExternalIdentifier.md) [ SchemaBasedThing]
     * **TIBKAT ID**
 
 

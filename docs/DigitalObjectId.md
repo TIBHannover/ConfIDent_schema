@@ -8,7 +8,7 @@ _A centrally registered identifier symbol used to uniquely identify digital obje
 
 
 ## Inheritance
-* [External ID](ExternalIdentifier.md) [SchemaBasedThing]
+* [External ID](ExternalIdentifier.md) [ SchemaBasedThing]
     * **Digital Object Identifier**
 
 
