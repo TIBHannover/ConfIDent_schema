@@ -817,7 +817,7 @@ slots:
     recommended: true
   event_format:
     title: Event Format
-    description: A property to provide an event format specification, if none of the [Event Types] are applicable to specify the format of an academic event.
+    description: A property to provide an event format specification, if none of the [Event Types](EventType.md) are applicable to specify the format of an academic event.
     slot_uri: aeon:0000032
     range: EventFormatSpecification
     required: false
