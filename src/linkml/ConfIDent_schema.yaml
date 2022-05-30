@@ -493,9 +493,12 @@ classes:
       - type
     slot_usage:
       type:
-        #designates_type: true
+        designates_type: true
         description: A property to provide the information whether the contributor is an organization or person.
-        #range: ContributorType
+        range: ContributorType
+      id:
+        description: The internal ConfIDent identifier for a contibutor
+
   Sponsor:
     title: Subobject Sponsor
     is_a: Contributor
@@ -611,6 +614,7 @@ slots:
 # common slots
   type:
     title: Type
+    slot_uri: rdf:type
     description: An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.
     abstract: true
 # common identifiers slots
