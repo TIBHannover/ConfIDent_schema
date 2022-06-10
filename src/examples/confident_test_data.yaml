@@ -17,7 +17,7 @@ events:
     #  specified_as: ad-hoc meeting of university presidents
     start_date: "2021-06-23"
     end_date: "2021-06-25"
-    event_status: as scheduled
+    event_status: to be confirmed
     event_mode: hybrid
     ordinal: 12
     external_id:

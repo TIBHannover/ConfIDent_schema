@@ -4,7 +4,7 @@ title: ConfIDent Metadata Schema
 description: |-
   This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
 license: https://creativecommons.org/licenses/by/4.0/
-version: 0.4.2
+version: 0.4.3
 default_curi_maps:
   - semweb_context
 prefixes:
@@ -995,6 +995,8 @@ enums:
         description: Used to indicate that the event has been postponed to a later date.
       canceled:
         description: Used to indicate that the event has been canceled.
+      to be confirmed:
+        description: Used to indicate that the provided Event Start and Event End values are not yet officially confirmed.
 # event mode
   EventMode:
     title: Event Mode
