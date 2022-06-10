@@ -58,4 +58,7 @@ events:
     website: https://vivoconference.org/vivo2020/
     context_info: 
       text: some summary
+    has_metric:
+      - type: review process
+        str_value: double-blind peer review
 
