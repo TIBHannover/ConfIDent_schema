@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://tibhannover.github.io/ConfIDent_schema/MetricType/">
+        <link rel="canonical" href="https://tibhannover.github.io/ConfIDent_schema/ReviewProcessType/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Enum: Metric Type - ConfIDent metadata schema</title>
+        <title>Enum: Review Process Type - ConfIDent metadata schema</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-metric-type" class="md-skip">
+        <a href="#enum-review-process-type" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Metric Type
+              Enum: Review Process Type
             
           </span>
         </div>
@@ -301,14 +301,14 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/TIBHannover/ConfIDent_schema/edit/master/docs/MetricType.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/TIBHannover/ConfIDent_schema/edit/master/docs/ReviewProcessType.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="enum-metric-type">Enum: Metric Type</h1>
-<p>The possible metric of an academic event.</p>
+<h1 id="enum-review-process-type">Enum: Review Process Type</h1>
+<p>The possible values for the metric that describes the review process undertaken by the organizers of an academic event.</p>
 <h2 id="permissible-values">Permissible Values</h2>
 <table>
 <thead>
@@ -320,69 +320,39 @@
 </thead>
 <tbody>
 <tr>
-<td>submitted papers</td>
+<td>double-blind peer review</td>
 <td>None</td>
-<td>This metric provides the number of papers that have been submitted to the organizers of an academic event.</td>
+<td>The reviewers do not know who the authors of the manuscript are. And the authors do not know who the reviewers are either.</td>
 </tr>
 <tr>
-<td>accepted papers</td>
+<td>single-blind peer review</td>
 <td>None</td>
-<td>This metric provides the number of papers that have been accepted by the organizers of an academic event and from which an acceptance rate can be calculated.</td>
+<td>The reviewers know who is the authors of the manuscript are. But the authors do not know who the reviewers are.</td>
 </tr>
 <tr>
-<td>submitted short papers</td>
+<td>open peer review</td>
 <td>None</td>
-<td>This metric provides the number of short papers that have been submitted to the organizers of an academic event.</td>
+<td>The reviewers know who is the authors of the manuscript are. Abd the authors know who the reviewers are.</td>
 </tr>
 <tr>
-<td>accepted short papers</td>
+<td>post-publication peer review</td>
 <td>None</td>
-<td>This metric provides the number of short papers that have been accepted by the organizers of an academic event and from which an acceptance rate can be calculated.</td>
+<td>There is a plattform on which the manuscript is being reviewed after its publication.</td>
 </tr>
 <tr>
-<td>submitted abstracts</td>
+<td>transparent peer review</td>
 <td>None</td>
-<td>This metric provides the number of abstracts that have been submitted to the organizers of an academic event.</td>
+<td>The authors' identity is known to the reviewers but the reviewers' identity is only made public if the reviewers give their consent to reveal their identity.</td>
 </tr>
 <tr>
-<td>accepted abstracts</td>
+<td>collaborative peer review</td>
 <td>None</td>
-<td>This metric provides the number of abstracts that have been accepted by the organizers of an academic event and from which an acceptance rate can be calculated.</td>
+<td>The authors and reviewers discuss together how the manuscript can be improved, whereas the reviewers identity is concealed and can be unvealed upon publication.</td>
 </tr>
 <tr>
-<td>number of attendees</td>
+<td>cascading peer review</td>
 <td>None</td>
-<td>This metric provides the number of attendees of an academic event.</td>
-</tr>
-<tr>
-<td>number of tracks</td>
-<td>None</td>
-<td>This metric provides the number of tracks of an academic event.</td>
-</tr>
-<tr>
-<td>has childcare options</td>
-<td>None</td>
-<td>This boolean metric states whether the academic event has a childcare option for its attendees.</td>
-</tr>
-<tr>
-<td>frequency</td>
-<td>None</td>
-<td>This rate metric states the time frame in which the events of a series reoccur.</td>
-</tr>
-<tr>
-<td>is accessible</td>
-<td>None</td>
-<td>This boolean metric states whether the event is accessible for people with impairments.</td>
-</tr>
-<tr>
-<td>CORE rank</td>
-<td>None</td>
-<td>This score metric grades academic events according to the ranking of <a href="https://www.core.edu.au/">CORE Inc.</a>.</td>
-</tr>
-<tr>
-<td>review process</td>
-<td>None</td>
-<td>This metric provides the possible typy of review a submission to an academic event has undergone.</td>
+<td>If the manuscript has been reviewd but the editors reject it and refer to submit it elsewhere alongn with the review.</td>
 </tr>
 </tbody>
 </table>

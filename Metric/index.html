@@ -297,6 +297,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rules" class="md-nav__link">
+    Rules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mappings" class="md-nav__link">
     Mappings
   </a>
@@ -367,7 +374,7 @@
 <td><a href="../type/">Type</a></td>
 <td><a href="../MetricType/">Metric Type</a></td>
 <td>0..1</td>
-<td>A property to provide the type of relation between academic events.</td>
+<td>A property to provide the type of metric according to the permissible values defined in the <a href="../MetricType/">Metric Type Enum</a>. If the metric type "review process" is used, one of the permissible values defined in the <a href="../ReviewProcessType/">Review Process Type</a> must be provided using the <a href="../str_value/">Metric String Value</a> property.</td>
 </tr>
 <tr>
 <td><a href="../int_value/">Metric Integer Value</a></td>
@@ -432,6 +439,7 @@
 </tr>
 </tbody>
 </table>
+<h2 id="rules">Rules</h2>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -465,7 +473,11 @@
 <span class="nt">slot_usage</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span><span class="w"></span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A property to provide the type of relation between academic events.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A property to provide the type of metric according to the permissible</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">values defined in the [Metric Type Enum](MetricType.md). If the metric type</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">&quot;review process&quot; is used, one of the permissible values defined in the [Review</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Process Type](ReviewProcessType.md) must be provided using the [Metric String</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Value](str_value.md) property.</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MetricType</span><span class="w"></span>
 <span class="nt">attributes</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">int_value</span><span class="p">:</span><span class="w"></span>
@@ -505,6 +517,18 @@
 <span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metric Description</span><span class="w"></span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="nt">rules</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">preconditions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span><span class="w"></span>
+<span class="w">        </span><span class="nt">equals_string</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">review process</span><span class="w"></span>
+<span class="w">  </span><span class="nt">postconditions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">str_value</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">str_value</span><span class="w"></span>
+<span class="w">        </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReviewMetricType</span><span class="w"></span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 </details>
 
@@ -517,7 +541,11 @@
 <span class="nt">slot_usage</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span><span class="w"></span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A property to provide the type of relation between academic events.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A property to provide the type of metric according to the permissible</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">values defined in the [Metric Type Enum](MetricType.md). If the metric type</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">&quot;review process&quot; is used, one of the permissible values defined in the [Review</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Process Type](ReviewProcessType.md) must be provided using the [Metric String</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Value](str_value.md) property.</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MetricType</span><span class="w"></span>
 <span class="nt">attributes</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">int_value</span><span class="p">:</span><span class="w"></span>
@@ -571,7 +599,11 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span><span class="w"></span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A property to provide the type of relation between academic events.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A property to provide the type of metric according to the permissible</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">values defined in the [Metric Type Enum](MetricType.md). If the metric type</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">&quot;review process&quot; is used, one of the permissible values defined in the [Review</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Process Type](ReviewProcessType.md) must be provided using the [Metric String</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Value](str_value.md) property.</span><span class="w"></span>
 <span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Type</span><span class="w"></span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
@@ -579,6 +611,18 @@
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span><span class="w"></span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metric</span><span class="w"></span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MetricType</span><span class="w"></span>
+<span class="nt">rules</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">preconditions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span><span class="w"></span>
+<span class="w">        </span><span class="nt">equals_string</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">review process</span><span class="w"></span>
+<span class="w">  </span><span class="nt">postconditions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">slot_conditions</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">str_value</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">str_value</span><span class="w"></span>
+<span class="w">        </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReviewMetricType</span><span class="w"></span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 </details>
 
