@@ -4,4 +4,4 @@ This is a schema for the ConfIDent project that describes the necessary metadata
 
 URI: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
 
-Version: 0.4.0
+Version: 0.4.2

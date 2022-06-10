@@ -21,7 +21,7 @@ URI: [confident:Metric](https://raw.githubusercontent.com/TIBHannover/ConfIDent_
 ### Own
 
  * [Metric➞type](Metric_type.md)  <sub>0..1</sub>
-     * Description: A property to provide the type of relation between academic events.
+     * Description: A property to provide the type of metric according to the permissible values defined in the [Metric Type Enum](MetricType.md). If the metric type "review process" is used, one of the permissible values defined in the [Review Process Type](ReviewProcessType.md) must be provided using the [Metric String Value](str_value.md) property.
      * Range: [MetricType](MetricType.md)
  * [➞int_value](metric__int_value.md)  <sub>0..1</sub>
      * Description: A property to provide an integer value for a metric.

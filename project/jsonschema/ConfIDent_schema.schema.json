@@ -920,7 +920,7 @@
             },
             "type": {
                "$ref": "#/$defs/MetricType",
-               "description": "A property to provide the type of relation between academic events."
+               "description": "A property to provide the type of metric according to the permissible values defined in the [Metric Type Enum](MetricType.md). If the metric type \"review process\" is used, one of the permissible values defined in the [Review Process Type](ReviewProcessType.md) must be provided using the [Metric String Value](str_value.md) property."
             }
          },
          "required": [],
@@ -941,7 +941,8 @@
             "has childcare options",
             "frequency",
             "is accessible",
-            "CORE rank"
+            "CORE rank",
+            "review process"
          ],
          "title": "MetricType",
          "type": "string"
@@ -1123,6 +1124,20 @@
             "hasSubEvent"
          ],
          "title": "RelationType",
+         "type": "string"
+      },
+      "ReviewProcessType": {
+         "description": "The possible values for the metric that describes the review process undertaken by the organizers of an academic event.",
+         "enum": [
+            "double-blind peer review",
+            "single-blind peer review",
+            "open peer review",
+            "post-publication peer review",
+            "transparent peer review",
+            "collaborative peer review",
+            "cascading peer review"
+         ],
+         "title": "ReviewProcessType",
          "type": "string"
       },
       "Reviewer": {
@@ -1327,5 +1342,5 @@
    "required": [],
    "title": "confident_schema",
    "type": "object",
-   "version": "0.4.0"
+   "version": "0.4.2"
 }

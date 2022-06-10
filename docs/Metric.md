@@ -13,7 +13,7 @@ _A container for statistical information about an event or event series._
 
 | Name | Range | Cardinality | Description  | 
 | ---  | --- | --- | --- | 
-| [Type](type.md) | [Metric Type](MetricType.md) | 0..1 | A property to provide the type of relation between academic events.  | 
+| [Type](type.md) | [Metric Type](MetricType.md) | 0..1 | A property to provide the type of metric according to the permissible values defined in the [Metric Type Enum](MetricType.md). If the metric type "review process" is used, one of the permissible values defined in the [Review Process Type](ReviewProcessType.md) must be provided using the [Metric String Value](str_value.md) property.  | 
 | [Metric Integer Value](int_value.md) | [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) | 0..1 | A property to provide an integer value for a metric.  | 
 | [Metric String Value](str_value.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 | A property to provide a string value for a metric.  | 
 | [Metric Rate Value](rate_value.md) | [xsd:float](http://www.w3.org/2001/XMLSchema#float) | 0..1 | A property to provide a rate value as float for a metric.  | 
@@ -38,6 +38,10 @@ _A container for statistical information about an event or event series._
 
 
 
+
+
+
+## Rules
 
 
 
@@ -66,7 +70,11 @@ slots:
 slot_usage:
   type:
     name: type
-    description: A property to provide the type of relation between academic events.
+    description: A property to provide the type of metric according to the permissible
+      values defined in the [Metric Type Enum](MetricType.md). If the metric type
+      "review process" is used, one of the permissible values defined in the [Review
+      Process Type](ReviewProcessType.md) must be provided using the [Metric String
+      Value](str_value.md) property.
     range: MetricType
 attributes:
   int_value:
@@ -106,6 +114,18 @@ attributes:
     title: Metric Description
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
     range: string
+rules:
+- preconditions:
+    slot_conditions:
+      type:
+        name: type
+        equals_string: review process
+  postconditions:
+    slot_conditions:
+      str_value:
+        name: str_value
+        range: ReviewMetricType
+        required: true
 
 ```
 </details>
@@ -121,7 +141,11 @@ from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238
 slot_usage:
   type:
     name: type
-    description: A property to provide the type of relation between academic events.
+    description: A property to provide the type of metric according to the permissible
+      values defined in the [Metric Type Enum](MetricType.md). If the metric type
+      "review process" is used, one of the permissible values defined in the [Review
+      Process Type](ReviewProcessType.md) must be provided using the [Metric String
+      Value](str_value.md) property.
     range: MetricType
 attributes:
   int_value:
@@ -175,7 +199,11 @@ attributes:
     range: string
   type:
     name: type
-    description: A property to provide the type of relation between academic events.
+    description: A property to provide the type of metric according to the permissible
+      values defined in the [Metric Type Enum](MetricType.md). If the metric type
+      "review process" is used, one of the permissible values defined in the [Review
+      Process Type](ReviewProcessType.md) must be provided using the [Metric String
+      Value](str_value.md) property.
     title: Type
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
     abstract: true
@@ -183,6 +211,18 @@ attributes:
     alias: type
     owner: Metric
     range: MetricType
+rules:
+- preconditions:
+    slot_conditions:
+      type:
+        name: type
+        equals_string: review process
+  postconditions:
+    slot_conditions:
+      str_value:
+        name: str_value
+        range: ReviewMetricType
+        required: true
 
 ```
 </details>

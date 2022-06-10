@@ -4,7 +4,7 @@ This is a schema for the ConfIDent project that describes the necessary metadata
 
 URI: [https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml](https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml)
 
-Version: 0.4.0
+Version: 0.4.2
 
 ## Classes
 
@@ -130,3 +130,4 @@ Version: 0.4.0
 | [Event Type](EventType.md) | The most common minimal event types. For event types that are not in this list, you can use "other" and provide the label of this other event format using the [Event Format](event_format.md) property. |
 | [Metric Type](MetricType.md) | The possible metric of an academic event. |
 | [Event Relation Type](RelationType.md) | The kinds of relations that are allowed between academic events. |
+| [Review Process Type](ReviewProcessType.md) | The possible values for the metric that describes the review process undertaken by the organizers of an academic event. |

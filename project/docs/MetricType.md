@@ -28,4 +28,5 @@ URI: [confident:MetricType](https://raw.githubusercontent.com/TIBHannover/ConfID
 | frequency | This rate metric states the time frame in which the events of a series reoccur. |  |  |
 | is accessible | This boolean metric states whether the event is accessible for people with impairments. |  |  |
 | CORE rank | This score metric grades academic events according to the ranking of [CORE Inc.](https://www.core.edu.au/). |  |  |
+| review process | This metric provides the possible typy of review a submission to an academic event has undergone. |  |  |
 

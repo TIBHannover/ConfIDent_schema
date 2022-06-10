@@ -18,6 +18,7 @@ The possible metric of an academic event.
 | frequency | None | This rate metric states the time frame in which the events of a series reoccur. |
 | is accessible | None | This boolean metric states whether the event is accessible for people with impairments. |
 | CORE rank | None | This score metric grades academic events according to the ranking of [CORE Inc.](https://www.core.edu.au/). |
+| review process | None | This metric provides the possible typy of review a submission to an academic event has undergone. |
 
 
 

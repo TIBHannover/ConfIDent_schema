@@ -1,5 +1,5 @@
-# Auto generated from confident_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-30T09:08:19
+# Auto generated from ConfIDent_schema.yaml by pythongen.py version: 0.9.0
+# Generation date: 2022-06-10T20:36:35
 # Schema: confident_schema
 #
 # id: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
@@ -27,7 +27,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Float, Integer,
 from linkml_runtime.utils.metamodelcore import Bool, URI, URIorCURIE, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "0.4.0"
+version = "0.4.2"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -1617,6 +1617,43 @@ class MetricType(EnumDefinitionImpl):
         setattr(cls, "CORE rank",
                 PermissibleValue(text="CORE rank",
                                  description="This score metric grades academic events according to the ranking of [CORE Inc.](https://www.core.edu.au/).") )
+        setattr(cls, "review process",
+                PermissibleValue(text="review process",
+                                 description="This metric provides the possible typy of review a submission to an academic event has undergone.") )
+
+class ReviewProcessType(EnumDefinitionImpl):
+    """
+    The possible values for the metric that describes the review process undertaken by the organizers of an academic
+    event.
+    """
+    _defn = EnumDefinition(
+        name="ReviewProcessType",
+        description="The possible values for the metric that describes the review process undertaken by the organizers of an academic event.",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "double-blind peer review",
+                PermissibleValue(text="double-blind peer review",
+                                 description="The reviewers do not know who the authors of the manuscript are. And the authors do not know who the reviewers are either.") )
+        setattr(cls, "single-blind peer review",
+                PermissibleValue(text="single-blind peer review",
+                                 description="The reviewers know who is the authors of the manuscript are. But the authors do not know who the reviewers are.") )
+        setattr(cls, "open peer review",
+                PermissibleValue(text="open peer review",
+                                 description="The reviewers know who is the authors of the manuscript are. Abd the authors know who the reviewers are.") )
+        setattr(cls, "post-publication peer review",
+                PermissibleValue(text="post-publication peer review",
+                                 description="There is a plattform on which the manuscript is being reviewed after its publication.") )
+        setattr(cls, "transparent peer review",
+                PermissibleValue(text="transparent peer review",
+                                 description="The authors' identity is known to the reviewers but the reviewers' identity is only made public if the reviewers give their consent to reveal their identity.") )
+        setattr(cls, "collaborative peer review",
+                PermissibleValue(text="collaborative peer review",
+                                 description="The authors and reviewers discuss together how the manuscript can be improved, whereas the reviewers identity is concealed and can be unvealed upon publication.") )
+        setattr(cls, "cascading peer review",
+                PermissibleValue(text="cascading peer review",
+                                 description="If the manuscript has been reviewd but the editors reject it and refer to submit it elsewhere alongn with the review.") )
 
 class ContributorType(EnumDefinitionImpl):
     """

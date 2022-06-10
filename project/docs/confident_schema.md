@@ -4,7 +4,7 @@
 
 **metamodel version:** 1.7.0
 
-**version:** 0.4.0
+**version:** 0.4.2
 
 
 This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
@@ -177,7 +177,7 @@ This is a schema for the ConfIDent project that describes the necessary metadata
      * [Contributor➞type](Contributor_type.md) - A property to provide the information whether the contributor is an organization or person.
      * [Deadline➞type](Deadline_type.md) - A propery to provide the type of the deadline.
      * [Event➞type](Event_type.md) - A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.
-     * [Metric➞type](Metric_type.md) - A property to provide the type of relation between academic events.
+     * [Metric➞type](Metric_type.md) - A property to provide the type of metric according to the permissible values defined in the [Metric Type Enum](MetricType.md). If the metric type "review process" is used, one of the permissible values defined in the [Review Process Type](ReviewProcessType.md) must be provided using the [Metric String Value](str_value.md) property.
      * [ProcessRelation➞type](ProcessRelation_type.md) - A property to provide the type of process relation.
  * [➞street](venue__street.md) - The street of the venue including the house number seperated by comma.
  * [➞zip_code](venue__zip_code.md) - The zip code of the venue.
@@ -194,6 +194,7 @@ This is a schema for the ConfIDent project that describes the necessary metadata
  * [EventType](EventType.md) - The most common minimal event types. For event types that are not in this list, you can use "other" and provide the label of this other event format using the [Event Format](event_format.md) property.
  * [MetricType](MetricType.md) - The possible metric of an academic event.
  * [RelationType](RelationType.md) - The kinds of relations that are allowed between academic events.
+ * [ReviewProcessType](ReviewProcessType.md) - The possible values for the metric that describes the review process undertaken by the organizers of an academic event.
 
 ### Subsets
 

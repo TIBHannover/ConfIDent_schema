@@ -3,7 +3,7 @@
   "description": "This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.",
   "title": "ConfIDent Metadata Schema",
   "id": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml",
-  "version": "0.4.0",
+  "version": "0.4.2",
   "imports": [
     "linkml:types"
   ],
@@ -510,6 +510,50 @@
         {
           "text": "CORE rank",
           "description": "This score metric grades academic events according to the ranking of [CORE Inc.](https://www.core.edu.au/)."
+        },
+        {
+          "text": "review process",
+          "description": "This metric provides the possible typy of review a submission to an academic event has undergone."
+        }
+      ]
+    },
+    {
+      "name": "ReviewProcessType",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#ReviewProcessType",
+      "description": "The possible values for the metric that describes the review process undertaken by the organizers of an academic event.",
+      "title": "Review Process Type",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml",
+      "permissible_values": [
+        {
+          "text": "double-blind peer review",
+          "description": "The reviewers do not know who the authors of the manuscript are. And the authors do not know who the reviewers are either."
+        },
+        {
+          "text": "single-blind peer review",
+          "description": "The reviewers know who is the authors of the manuscript are. But the authors do not know who the reviewers are."
+        },
+        {
+          "text": "open peer review",
+          "description": "The reviewers know who is the authors of the manuscript are. Abd the authors know who the reviewers are."
+        },
+        {
+          "text": "post-publication peer review",
+          "description": "There is a plattform on which the manuscript is being reviewed after its publication."
+        },
+        {
+          "text": "transparent peer review",
+          "description": "The authors' identity is known to the reviewers but the reviewers' identity is only made public if the reviewers give their consent to reveal their identity."
+        },
+        {
+          "text": "collaborative peer review",
+          "description": "The authors and reviewers discuss together how the manuscript can be improved, whereas the reviewers identity is concealed and can be unvealed upon publication."
+        },
+        {
+          "text": "cascading peer review",
+          "description": "If the manuscript has been reviewd but the editors reject it and refer to submit it elsewhere alongn with the review.",
+          "aliases": [
+            "waterfall peer review"
+          ]
         }
       ]
     },
@@ -3000,7 +3044,7 @@
     {
       "name": "Metric_type",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
-      "description": "A property to provide the type of relation between academic events.",
+      "description": "A property to provide the type of metric according to the permissible values defined in the [Metric Type Enum](MetricType.md). If the metric type \"review process\" is used, one of the permissible values defined in the [Review Process Type](ReviewProcessType.md) must be provided using the [Metric String Value](str_value.md) property.",
       "title": "Type",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
@@ -3464,6 +3508,32 @@
         }
       ],
       "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Metric",
+      "rules": [
+        {
+          "preconditions": {
+            "slot_conditions": [
+              {
+                "name": "type",
+                "equals_string": "review process",
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "postconditions": {
+            "slot_conditions": [
+              {
+                "name": "str_value",
+                "range": "ReviewMetricType",
+                "required": true,
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "@type": "ClassRule"
+        }
+      ],
       "@type": "ClassDefinition"
     },
     {
@@ -4028,13 +4098,13 @@
     }
   ],
   "metamodel_version": "1.7.0",
-  "source_file": "confident_schema.yaml",
-  "source_file_date": "2022-05-30T08:53:20",
-  "source_file_size": 45283,
-  "generation_date": "2022-05-30T09:08:10",
+  "source_file": "ConfIDent_schema.yaml",
+  "source_file_date": "2022-06-10T20:30:36",
+  "source_file_size": 47497,
+  "generation_date": "2022-06-10T20:36:15",
   "@type": "SchemaDefinition",
   "@context": [
-    "project/jsonld/confident_schema.context.jsonld",
+    "project/jsonld/ConfIDent_schema.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
     {
       "@base": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#"
