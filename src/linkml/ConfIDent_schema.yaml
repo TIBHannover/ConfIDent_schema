@@ -160,19 +160,20 @@ classes:
       - event_status
     # recommended
       - has_acronym
+      # only event specific
+      - type
+      - at_location
+      - in_series
       - subevent_of
       - superevent_of
+      - has_deadline
+      # only event specific
       - academic_field
       - landing_page
       - has_publication
       - sponsored_by
       - website
       - has_doi
-      # only event specific
-      - type
-      - at_location
-      - in_series
-      - has_deadline
       - umbrella_of
       - has_umbrella
       - colocated_with
@@ -203,6 +204,12 @@ classes:
       organized_by:
         description: A property to provide the organizer of an academic event.
     # recommended
+      type:
+        description: A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.
+        title: Event Type
+        range: EventType
+        designates_type: true
+        recommended: true
       has_acronym:
         description: The official acronym of an academic event.
       landing_page:
@@ -219,12 +226,6 @@ classes:
         description: A property to provide the publication associated with
         comments:
           - It will be most common that the publications of an academic event series are the set of publications associated with the individual events of the series.
-      type:
-        description: A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.
-        title: Event Type
-        range: EventType
-        designates_type: true
-        recommended: true
       umbrella_of:
         title: Umbrella Of
         description: A relation to be used to link an event that hosts several events to its subordinate parts. 
