@@ -83,7 +83,7 @@ _An identifer of an entity declared in another schema._
 name: ExternalIdentifier
 description: An identifer of an entity declared in another schema.
 title: External ID
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 mixins:
 - SchemaBasedThing
 slot_usage:
@@ -101,7 +101,7 @@ slot_usage:
 name: ExternalIdentifier
 description: An identifer of an entity declared in another schema.
 title: External ID
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 mixins:
 - SchemaBasedThing
 slot_usage:
@@ -113,7 +113,7 @@ attributes:
     name: schema_value
     description: A property to provide the literal value of a schema based entity.
     title: Schema Value
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: obi:0002815
     alias: schema_value
     owner: ExternalIdentifier
@@ -122,7 +122,7 @@ attributes:
     name: schema_name
     description: A property to provide the name of a schema.
     title: Schema Name
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: schema_name
     owner: ExternalIdentifier
     range: string
@@ -131,7 +131,7 @@ attributes:
     description: The base URI of the schema that provides the context for the schema
       based value.
     title: External formatter URI
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: schema_base_uri
     owner: ExternalIdentifier
     range: uriorcurie

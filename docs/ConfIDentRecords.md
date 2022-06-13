@@ -56,13 +56,13 @@ name: ConfIDentRecords
 description: A container to be able to bundle academic event data and series in one
   data file (e.g. YAML or JSON).
 title: ConfIDent Records
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 attributes:
   events:
     name: events
     description: A property to provide a list of academic events within this container.
     title: Events
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     domain: ConfIDentRecords
     multivalued: true
     range: Event
@@ -73,7 +73,7 @@ attributes:
     description: A property to provide a list of academic event series within this
       container.
     title: Series
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     domain: ConfIDentRecords
     multivalued: true
     range: EventSeries
@@ -92,13 +92,13 @@ name: ConfIDentRecords
 description: A container to be able to bundle academic event data and series in one
   data file (e.g. YAML or JSON).
 title: ConfIDent Records
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 attributes:
   events:
     name: events
     description: A property to provide a list of academic events within this container.
     title: Events
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     domain: ConfIDentRecords
     multivalued: true
     alias: events
@@ -111,7 +111,7 @@ attributes:
     description: A property to provide a list of academic event series within this
       container.
     title: Series
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     domain: ConfIDentRecords
     multivalued: true
     alias: series

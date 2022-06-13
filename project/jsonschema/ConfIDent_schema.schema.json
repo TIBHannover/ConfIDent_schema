@@ -753,7 +753,8 @@
          "enum": [
             "as scheduled",
             "postponed",
-            "canceled"
+            "canceled",
+            "to be confirmed"
          ],
          "title": "EventStatus",
          "type": "string"
@@ -1319,7 +1320,7 @@
          "type": "object"
       }
    },
-   "$id": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml",
+   "$id": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "metamodel_version": "1.7.0",
@@ -1342,5 +1343,5 @@
    "required": [],
    "title": "confident_schema",
    "type": "object",
-   "version": "0.4.2"
+   "version": "0.4.3"
 }

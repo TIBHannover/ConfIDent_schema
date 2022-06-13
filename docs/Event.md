@@ -95,7 +95,7 @@ description: An academic event is part of the established instruments of science
   it from events in which researchers mainly act as external experts or with a purely
   legitimising function.
 title: Event
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 close_mappings:
 - sdo:Event
 slots:
@@ -241,7 +241,7 @@ description: An academic event is part of the established instruments of science
   it from events in which researchers mainly act as external experts or with a purely
   legitimising function.
 title: Event
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 close_mappings:
 - sdo:Event
 slot_usage:
@@ -338,7 +338,7 @@ attributes:
     name: id
     description: A property to provide the internal identifier of an academic event.
     title: ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     ifabsent: string(confident:EventID)
     identifier: true
     alias: id
@@ -349,7 +349,7 @@ attributes:
     name: official_name
     description: A property to provide the the official name of an academic event.
     title: Official Name
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: name
     slot_uri: skos:perfLabel
     alias: official_name
@@ -360,7 +360,7 @@ attributes:
     name: organized_by
     description: A property to provide the organizer of an academic event.
     title: Organizer
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     multivalued: true
     alias: organized_by
     owner: Event
@@ -375,7 +375,7 @@ attributes:
       unless there is some other source from which it is possible to derive the date
       of the inception of the series.
     title: Start Date
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: aeon:start_date
     alias: start_date
     owner: Event
@@ -386,7 +386,7 @@ attributes:
     description: Similar to start_date but only for the end of an academic event or
       event series.
     title: End Date
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: aeon:end_date
     alias: end_date
     owner: Event
@@ -397,7 +397,7 @@ attributes:
     description: A property to provide the status of an event from a controlled list
       (e.g. as scheduled (default), postpooned, canceld etc).
     title: Event Status
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: aeon:event_status
     ifabsent: string(as scheduled)
     alias: event_status
@@ -408,7 +408,7 @@ attributes:
     name: has_acronym
     description: The official acronym of an academic event.
     title: Acronym
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: name
     alias: has_acronym
     owner: Event
@@ -422,7 +422,7 @@ attributes:
       this is used, its subproperties [schema_value](schema_value.md) and [schema_name](schema_name.md)
       are mandatory.
     title: Academic Field
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: aeon:0000040
     multivalued: true
     alias: academic_field
@@ -437,7 +437,7 @@ attributes:
     description: A property to provide the website to which the DOI an academic event
       is resolving to.
     title: Landing Page
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: landing_page
     owner: Event
     range: uri
@@ -450,7 +450,7 @@ attributes:
     comments:
     - It will be most common that the publications of an academic event series are
       the set of publications associated with the individual events of the series.
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     multivalued: true
     alias: has_publication
     owner: Event
@@ -463,7 +463,7 @@ attributes:
     name: sponsored_by
     description: A property to provide the sponsors of an academic event.
     title: Sponsor
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     multivalued: true
     alias: sponsored_by
     owner: Event
@@ -477,7 +477,7 @@ attributes:
     description: A property to provide the URL the official website of an academic
       event.
     title: Official Website
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: website
     owner: Event
     range: uri
@@ -487,7 +487,7 @@ attributes:
     description: A property to provide a digital object identifier (DOI) for an event.
       This is set automatically.
     title: DOI
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
     slot_uri: iao:0000235
     multivalued: true
@@ -502,7 +502,7 @@ attributes:
     description: A property to provide the format of an academic event according to
       the possible values of the [Event Type](EventType.md) enum.
     title: Event Type
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     abstract: true
     slot_uri: rdf:type
     designates_type: true
@@ -514,7 +514,7 @@ attributes:
     name: at_location
     description: The location of the academic event.
     title: Location
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: at_location
     owner: Event
     range: Location
@@ -524,7 +524,7 @@ attributes:
     name: in_series
     description: The relation used to provide the series of which an Event is a part.
     title: In Series
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: in_series
     owner: Event
     range: EventSeries
@@ -534,7 +534,7 @@ attributes:
     name: has_deadline
     description: A property to provide a deadline of an academic event.
     title: Deadline
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     multivalued: true
     alias: has_deadline
     owner: Event
@@ -547,7 +547,7 @@ attributes:
     name: related_to
     description: A property to be used to link events to each other.
     title: Related To
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     multivalued: true
     alias: related_to
     owner: Event
@@ -558,7 +558,7 @@ attributes:
     name: alternative_name
     description: A property to provide alternative names of an academic event.
     title: Alternative Name
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: name
     slot_uri: skos:altLabel
     multivalued: true
@@ -572,7 +572,7 @@ attributes:
     description: The former official name of an academic event. Usually this will
       only be needed in case an academic event has undergone a name change.
     title: Former Name
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: name
     alias: former_name
     owner: Event
@@ -584,7 +584,7 @@ attributes:
     description: A translation of the official name of an event to be used in different
       language contexts.
     title: Translated Name
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: name
     multivalued: true
     alias: translated_name
@@ -596,7 +596,7 @@ attributes:
     name: context_info
     description: A property to provide extra information for an academic event.
     title: Context Information
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: context_info
     owner: Event
     range: Context
@@ -606,7 +606,7 @@ attributes:
     name: has_metric
     description: A property to provide one ore more metrics of an academic event.
     title: Metric
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     multivalued: true
     alias: has_metric
     owner: Event
@@ -620,7 +620,7 @@ attributes:
     description: A property to provide the theme and topics of an event as free keywords,
       phrases or text.
     title: Topic
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     multivalued: true
     alias: has_topic
     owner: Event
@@ -632,7 +632,7 @@ attributes:
     description: The property to provide external identifiers for an academic event,
       including their identifier scheme.
     title: External ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: iao:0000235
     multivalued: true
     alias: external_id
@@ -644,7 +644,7 @@ attributes:
     name: wikidata_id
     description: A property to link an academic event with its Wikidata identifier.
     title: Wikidata ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
     slot_uri: iao:0000235
     multivalued: true
@@ -659,7 +659,7 @@ attributes:
     name: dpbl_id
     description: A property to link an academic event with its DBLP identifier.
     title: DBLP ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
     slot_uri: iao:0000235
     multivalued: true
@@ -674,7 +674,7 @@ attributes:
     name: gnd_id
     description: A property to link an academic event with its GND identifier.
     title: GND ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
     slot_uri: iao:0000235
     multivalued: true
@@ -689,7 +689,7 @@ attributes:
     name: ordinal
     description: The ordnial number of an academic event within its series.
     title: Ordinal
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: aeon:event_number
     alias: ordinal
     owner: Event
@@ -701,7 +701,7 @@ attributes:
     description: The event mode describes whether the event is a physical, virtual
       or hybrid event.
     title: Event Mode
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: event_mode
     owner: Event
     range: EventMode
@@ -711,7 +711,7 @@ attributes:
     name: tibkat_id
     description: A property to link an academic event with its TIBKAT identifier.
     title: TIBKAT ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
     slot_uri: iao:0000235
     multivalued: true
@@ -726,7 +726,7 @@ attributes:
     name: wikicfp_event_id
     description: A property to link an academic event with its WikiCFP identifier.
     title: WikiCFP Event ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
     slot_uri: iao:0000235
     multivalued: true

@@ -61,7 +61,7 @@ name: Publication
 description: A published work, e.g. proceedings or conferenc paper, that is the output
   of an academic event or series.
 title: Subobject Publication
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 mixins:
 - NamedThing
 slots:
@@ -78,7 +78,7 @@ name: Publication
 description: A published work, e.g. proceedings or conferenc paper, that is the output
   of an academic event or series.
 title: Subobject Publication
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 mixins:
 - NamedThing
 attributes:
@@ -87,7 +87,7 @@ attributes:
     description: A property to provide a digital object identifier (DOI) according
       to https://doi.org/.
     title: DOI
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     exact_mappings:
     - datacite:doi
     is_a: external_id
@@ -104,7 +104,7 @@ attributes:
     description: A property to provide an internal id of a schema entity in the ConfIDent
       plattform.
     title: ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     identifier: true
     alias: id
     owner: Publication
@@ -114,7 +114,7 @@ attributes:
     name: name
     description: A property to provide a name of a schema entity.
     title: Name
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: sdo:name
     alias: name
     owner: Publication
@@ -123,7 +123,7 @@ attributes:
     name: external_id
     description: A property to provide an external id of a schema entity.
     title: External ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: iao:0000235
     multivalued: true
     alias: external_id

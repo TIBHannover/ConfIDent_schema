@@ -53,7 +53,7 @@ _A container for relations between academic events._
 name: ProcessRelation
 description: A container for relations between academic events.
 title: Subobject Process Relation
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 slots:
 - type
 slot_usage:
@@ -72,7 +72,7 @@ slot_usage:
 name: ProcessRelation
 description: A container for relations between academic events.
 title: Subobject Process Relation
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 slot_usage:
   type:
     name: type
@@ -83,7 +83,7 @@ attributes:
     name: type
     description: A property to provide the type of process relation.
     title: Type
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     abstract: true
     slot_uri: rdf:type
     alias: type

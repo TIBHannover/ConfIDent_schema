@@ -57,7 +57,7 @@ description: An academic event format specification is a plan specification that
   of academic events (e.g. "conference" or "workshop"). Depending on the sociocultural
   background these classifications can overlap or vary to a certain degree.
 title: Subobject Event Format
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 attributes:
   other_format:
     name: other_format
@@ -69,7 +69,7 @@ attributes:
     - value: ad-hoc meeting of university presidents
       description: An example to provide a format specification for special type of
         academic event that is not in the schema's [EventType](EventType) enum.
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: obi:0002815
     range: string
     required: true
@@ -94,7 +94,7 @@ description: An academic event format specification is a plan specification that
   of academic events (e.g. "conference" or "workshop"). Depending on the sociocultural
   background these classifications can overlap or vary to a certain degree.
 title: Subobject Event Format
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 attributes:
   other_format:
     name: other_format
@@ -106,7 +106,7 @@ attributes:
     - value: ad-hoc meeting of university presidents
       description: An example to provide a format specification for special type of
         academic event that is not in the schema's [EventType](EventType) enum.
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: obi:0002815
     alias: other_format
     owner: EventFormatSpecification

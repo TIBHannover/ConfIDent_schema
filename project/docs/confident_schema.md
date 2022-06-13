@@ -4,7 +4,7 @@
 
 **metamodel version:** 1.7.0
 
-**version:** 0.4.2
+**version:** 0.4.3
 
 
 This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.

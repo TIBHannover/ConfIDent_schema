@@ -53,7 +53,7 @@ name: NamedThing
 description: A mixin used to provide the attributes needed for the identification
   of a thing.
 title: Subobject Named Thing
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 mixin: true
 slots:
 - id
@@ -71,7 +71,7 @@ name: NamedThing
 description: A mixin used to provide the attributes needed for the identification
   of a thing.
 title: Subobject Named Thing
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 mixin: true
 attributes:
   id:
@@ -79,7 +79,7 @@ attributes:
     description: A property to provide an internal id of a schema entity in the ConfIDent
       plattform.
     title: ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     identifier: true
     alias: id
     owner: NamedThing
@@ -89,7 +89,7 @@ attributes:
     name: name
     description: A property to provide a name of a schema entity.
     title: Name
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: sdo:name
     alias: name
     owner: NamedThing
@@ -98,7 +98,7 @@ attributes:
     name: external_id
     description: A property to provide an external id of a schema entity.
     title: External ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: iao:0000235
     multivalued: true
     alias: external_id

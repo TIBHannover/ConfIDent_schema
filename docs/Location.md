@@ -60,14 +60,14 @@ name: Location
 description: A container for the information about the location in which an academic
   event takes place.
 title: Subobject Location
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 attributes:
   has_city:
     name: has_city
     description: The property to specify the [City](City.md) of an academic event
       location.
     title: City
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: City
     recommended: true
   has_country:
@@ -75,7 +75,7 @@ attributes:
     description: The property to specify the [Country](Country.md) of an academic
       event location.
     title: Country
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: Country
     recommended: true
   has_region:
@@ -83,33 +83,33 @@ attributes:
     description: The property to specify the [Region](Region.md) of an academic event
       location.
     title: Region
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: Region
   has_venue:
     name: has_venue
     description: The property to specify the [Venue](Venue.md) of an academic event
       location.
     title: Venue
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: Venue
   lattitude:
     name: lattitude
     description: The property to specify the lattitude of an academic event location.
     title: Lattitude
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: float
   longitude:
     name: longitude
     description: The property to specify the longitude of an academic event location.
     title: Longitude
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: float
   meeting_url:
     name: meeting_url
     description: The property to specify the URL under which a one can participate
       virtually in an academic event.
     title: Meeting URL
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: uriorcurie
 
 ```
@@ -123,14 +123,14 @@ name: Location
 description: A container for the information about the location in which an academic
   event takes place.
 title: Subobject Location
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 attributes:
   has_city:
     name: has_city
     description: The property to specify the [City](City.md) of an academic event
       location.
     title: City
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: has_city
     owner: Location
     range: City
@@ -140,7 +140,7 @@ attributes:
     description: The property to specify the [Country](Country.md) of an academic
       event location.
     title: Country
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: has_country
     owner: Location
     range: Country
@@ -150,7 +150,7 @@ attributes:
     description: The property to specify the [Region](Region.md) of an academic event
       location.
     title: Region
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: has_region
     owner: Location
     range: Region
@@ -159,7 +159,7 @@ attributes:
     description: The property to specify the [Venue](Venue.md) of an academic event
       location.
     title: Venue
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: has_venue
     owner: Location
     range: Venue
@@ -167,7 +167,7 @@ attributes:
     name: lattitude
     description: The property to specify the lattitude of an academic event location.
     title: Lattitude
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: lattitude
     owner: Location
     range: float
@@ -175,7 +175,7 @@ attributes:
     name: longitude
     description: The property to specify the longitude of an academic event location.
     title: Longitude
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: longitude
     owner: Location
     range: float
@@ -184,7 +184,7 @@ attributes:
     description: The property to specify the URL under which a one can participate
       virtually in an academic event.
     title: Meeting URL
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: meeting_url
     owner: Location
     range: uriorcurie

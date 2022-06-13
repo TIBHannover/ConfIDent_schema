@@ -82,7 +82,7 @@ CREATE TABLE "Event" (
 	organized_by TEXT NOT NULL, 
 	start_date DATETIME NOT NULL, 
 	end_date DATETIME NOT NULL, 
-	event_status VARCHAR(12) NOT NULL, 
+	event_status VARCHAR(15) NOT NULL, 
 	has_acronym TEXT, 
 	academic_field TEXT, 
 	landing_page TEXT, 

@@ -67,14 +67,14 @@ _The contact person of an academic event or event series._
 name: ContactPerson
 description: The contact person of an academic event or event series.
 title: Subobject Contact Person
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 is_a: Organizer
 attributes:
   email:
     name: email
     description: The email address of the contact person.
     title: Email
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: sdo:email
     range: string
     pattern: \b[-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b
@@ -82,7 +82,7 @@ attributes:
     name: telephone
     description: The telephone number of the contact person.
     title: Telephone
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: sdo:telephone
     range: string
 
@@ -96,14 +96,14 @@ attributes:
 name: ContactPerson
 description: The contact person of an academic event or event series.
 title: Subobject Contact Person
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 is_a: Organizer
 attributes:
   email:
     name: email
     description: The email address of the contact person.
     title: Email
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: sdo:email
     alias: email
     owner: ContactPerson
@@ -113,7 +113,7 @@ attributes:
     name: telephone
     description: The telephone number of the contact person.
     title: Telephone
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: sdo:telephone
     alias: telephone
     owner: ContactPerson
@@ -122,7 +122,7 @@ attributes:
     name: contact
     description: The contact person of an academic event or event series.
     title: Contact
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: contact
     owner: ContactPerson
     range: ContactPerson
@@ -134,7 +134,7 @@ attributes:
     description: An abstract property that is reused in certain classes to differentiate
       their instances according to the type enums defined as the range.
     title: Type
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     abstract: true
     slot_uri: rdf:type
     designates_type: true
@@ -146,7 +146,7 @@ attributes:
     description: A property to provide an internal id of a schema entity in the ConfIDent
       plattform.
     title: ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     identifier: true
     alias: id
     owner: ContactPerson
@@ -156,7 +156,7 @@ attributes:
     name: name
     description: A property to provide a name of a schema entity.
     title: Name
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: sdo:name
     alias: name
     owner: ContactPerson
@@ -165,7 +165,7 @@ attributes:
     name: external_id
     description: A property to provide an external id of a schema entity.
     title: External ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: iao:0000235
     multivalued: true
     alias: external_id

@@ -60,7 +60,7 @@ _The venue at which an academic event takes place._
 name: Venue
 description: The venue at which an academic event takes place.
 title: Venue
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 mixins:
 - NamedThing
 attributes:
@@ -71,13 +71,13 @@ attributes:
     examples:
     - value: Am Welfengarten, 1
       description: street, hous number
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: string
   zip_code:
     name: zip_code
     description: The zip code of the venue.
     title: ZIP Code
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: string
 
 ```
@@ -90,7 +90,7 @@ attributes:
 name: Venue
 description: The venue at which an academic event takes place.
 title: Venue
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 mixins:
 - NamedThing
 attributes:
@@ -101,7 +101,7 @@ attributes:
     examples:
     - value: Am Welfengarten, 1
       description: street, hous number
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: street
     owner: Venue
     range: string
@@ -109,7 +109,7 @@ attributes:
     name: zip_code
     description: The zip code of the venue.
     title: ZIP Code
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: zip_code
     owner: Venue
     range: string
@@ -118,7 +118,7 @@ attributes:
     description: A property to provide an internal id of a schema entity in the ConfIDent
       plattform.
     title: ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     identifier: true
     alias: id
     owner: Venue
@@ -128,7 +128,7 @@ attributes:
     name: name
     description: A property to provide a name of a schema entity.
     title: Name
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: sdo:name
     alias: name
     owner: Venue
@@ -137,7 +137,7 @@ attributes:
     name: external_id
     description: A property to provide an external id of a schema entity.
     title: External ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: iao:0000235
     multivalued: true
     alias: external_id

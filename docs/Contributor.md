@@ -61,7 +61,7 @@ name: Contributor
 description: A contributor is a person or organization that holds a contributor role
   which is being realized in an event or event series.
 title: Subobject Contributor
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 mixins:
 - NamedThing
 slots:
@@ -88,7 +88,7 @@ name: Contributor
 description: A contributor is a person or organization that holds a contributor role
   which is being realized in an event or event series.
 title: Subobject Contributor
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 mixins:
 - NamedThing
 slot_usage:
@@ -107,7 +107,7 @@ attributes:
     description: A property to provide the information whether the contributor is
       an organization or person.
     title: Type
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     abstract: true
     slot_uri: rdf:type
     designates_type: true
@@ -118,7 +118,7 @@ attributes:
     name: id
     description: The internal ConfIDent identifier for a contibutor
     title: ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     identifier: true
     alias: id
     owner: Contributor
@@ -128,7 +128,7 @@ attributes:
     name: name
     description: A property to provide a name of a schema entity.
     title: Name
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: sdo:name
     alias: name
     owner: Contributor
@@ -137,7 +137,7 @@ attributes:
     name: external_id
     description: A property to provide an external id of a schema entity.
     title: External ID
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     slot_uri: iao:0000235
     multivalued: true
     alias: external_id

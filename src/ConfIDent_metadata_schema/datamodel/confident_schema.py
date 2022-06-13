@@ -1,8 +1,8 @@
 # Auto generated from ConfIDent_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-06-10T22:16:28
+# Generation date: 2022-06-13T10:04:21
 # Schema: confident_schema
 #
-# id: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+# id: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 # description: This is a schema for the ConfIDent project that describes the necessary metadata requirements of
 #              academic events and event series.
 # license: https://creativecommons.org/licenses/by/4.0/
@@ -27,7 +27,7 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Float, Integer,
 from linkml_runtime.utils.metamodelcore import Bool, URI, URIorCURIE, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "0.4.2"
+version = "0.4.3"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -1491,6 +1491,9 @@ class EventStatus(EnumDefinitionImpl):
         setattr(cls, "as scheduled",
                 PermissibleValue(text="as scheduled",
                                  description="Default: used to indicate that the event takes place as planned.") )
+        setattr(cls, "to be confirmed",
+                PermissibleValue(text="to be confirmed",
+                                 description="Used to indicate that the provided Event Start and Event End values are not yet officially confirmed.") )
 
 class EventMode(EnumDefinitionImpl):
     """

@@ -19,4 +19,5 @@ URI: [confident:EventStatus](https://raw.githubusercontent.com/TIBHannover/ConfI
 | as scheduled | Default: used to indicate that the event takes place as planned. |  |  |
 | postponed | Used to indicate that the event has been postponed to a later date. |  |  |
 | canceled | Used to indicate that the event has been canceled. |  |  |
+| to be confirmed | Used to indicate that the provided Event Start and Event End values are not yet officially confirmed. |  |  |
 

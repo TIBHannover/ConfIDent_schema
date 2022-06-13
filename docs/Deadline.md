@@ -55,7 +55,7 @@ _A container for event deadlines._
 name: Deadline
 description: A container for event deadlines.
 title: Subobject Deadline
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 slots:
 - type
 slot_usage:
@@ -70,7 +70,7 @@ attributes:
     name: deadline_date
     description: The date of a deadline.
     title: Deadline Date
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: datetime
     required: true
   deadline_other:
@@ -78,7 +78,7 @@ attributes:
     description: A property to specify another type of deadline, if this type of deadline
       is not within the allowed values of [DeadlineType](DeadlineType.md).
     title: Other Deadline Type
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: string
 
 ```
@@ -91,7 +91,7 @@ attributes:
 name: Deadline
 description: A container for event deadlines.
 title: Subobject Deadline
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 slot_usage:
   type:
     name: type
@@ -104,7 +104,7 @@ attributes:
     name: deadline_date
     description: The date of a deadline.
     title: Deadline Date
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: deadline_date
     owner: Deadline
     range: datetime
@@ -114,7 +114,7 @@ attributes:
     description: A property to specify another type of deadline, if this type of deadline
       is not within the allowed values of [DeadlineType](DeadlineType.md).
     title: Other Deadline Type
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: deadline_other
     owner: Deadline
     range: string
@@ -122,7 +122,7 @@ attributes:
     name: type
     description: A propery to provide the type of the deadline.
     title: Deadline Type
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     abstract: true
     slot_uri: rdf:type
     alias: type

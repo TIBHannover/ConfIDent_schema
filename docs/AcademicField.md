@@ -61,7 +61,7 @@ description: An academic field is the scientific subject of an event or event se
   according to some controlled vocabulary or thesaurus and as such requires the scheme
   URI.
 title: Subobject Academic Field
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 mixins:
 - SchemaBasedThing
 slot_usage:
@@ -83,7 +83,7 @@ description: An academic field is the scientific subject of an event or event se
   according to some controlled vocabulary or thesaurus and as such requires the scheme
   URI.
 title: Subobject Academic Field
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 mixins:
 - SchemaBasedThing
 slot_usage:
@@ -97,7 +97,7 @@ attributes:
     name: schema_value
     description: The classification label of a certain classification schema.
     title: Schema Value
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: schema_value
     owner: AcademicField
     range: string
@@ -106,7 +106,7 @@ attributes:
     name: schema_name
     description: A property to provide the name of a schema.
     title: Schema Name
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: schema_name
     owner: AcademicField
     range: string
@@ -115,7 +115,7 @@ attributes:
     description: The base URI of the schema that provides the context for the schema
       based value.
     title: External formatter URI
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: schema_base_uri
     owner: AcademicField
     range: uriorcurie

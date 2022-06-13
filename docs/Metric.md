@@ -64,7 +64,7 @@ _A container for statistical information about an event or event series._
 name: Metric
 description: A container for statistical information about an event or event series.
 title: Subobject Metric
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 slots:
 - type
 slot_usage:
@@ -81,38 +81,38 @@ attributes:
     name: int_value
     description: A property to provide an integer value for a metric.
     title: Metric Integer Value
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: integer
   str_value:
     name: str_value
     description: A property to provide a string value for a metric.
     title: Metric String Value
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: string
   rate_value:
     name: rate_value
     description: A property to provide a rate value as float for a metric.
     title: Metric Rate Value
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: float
   truth_value:
     name: truth_value
     description: A property to provide a truth value for a metric.
     title: Metric Truth Value
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: boolean
   metric_year:
     name: metric_year
     description: A property to provide the year for which the metric value is valid.
     title: Metric Year
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: string
     pattern: ^\d{4}$
   description:
     name: description
     description: A property to provide a description of a metric.
     title: Metric Description
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     range: string
 rules:
 - preconditions:
@@ -137,7 +137,7 @@ rules:
 name: Metric
 description: A container for statistical information about an event or event series.
 title: Subobject Metric
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 slot_usage:
   type:
     name: type
@@ -152,7 +152,7 @@ attributes:
     name: int_value
     description: A property to provide an integer value for a metric.
     title: Metric Integer Value
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: int_value
     owner: Metric
     range: integer
@@ -160,7 +160,7 @@ attributes:
     name: str_value
     description: A property to provide a string value for a metric.
     title: Metric String Value
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: str_value
     owner: Metric
     range: string
@@ -168,7 +168,7 @@ attributes:
     name: rate_value
     description: A property to provide a rate value as float for a metric.
     title: Metric Rate Value
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: rate_value
     owner: Metric
     range: float
@@ -176,7 +176,7 @@ attributes:
     name: truth_value
     description: A property to provide a truth value for a metric.
     title: Metric Truth Value
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: truth_value
     owner: Metric
     range: boolean
@@ -184,7 +184,7 @@ attributes:
     name: metric_year
     description: A property to provide the year for which the metric value is valid.
     title: Metric Year
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: metric_year
     owner: Metric
     range: string
@@ -193,7 +193,7 @@ attributes:
     name: description
     description: A property to provide a description of a metric.
     title: Metric Description
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: description
     owner: Metric
     range: string
@@ -205,7 +205,7 @@ attributes:
       Process Type](ReviewProcessType.md) must be provided using the [Metric String
       Value](str_value.md) property.
     title: Type
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     abstract: true
     slot_uri: rdf:type
     alias: type

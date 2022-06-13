@@ -59,7 +59,7 @@ _The identifier of an academic event or series in WikiCFP._
 name: WikiCfpSeriesId
 description: The identifier of an academic event or series in WikiCFP.
 title: WikiCFP Series ID
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 is_a: ExternalIdentifier
 slot_usage:
   schema_name:
@@ -79,7 +79,7 @@ slot_usage:
 name: WikiCfpSeriesId
 description: The identifier of an academic event or series in WikiCFP.
 title: WikiCFP Series ID
-from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 is_a: ExternalIdentifier
 slot_usage:
   schema_name:
@@ -93,7 +93,7 @@ attributes:
     name: schema_value
     description: A property to provide the literal value of a schema based entity.
     title: Schema Value
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     alias: schema_value
     owner: WikiCfpSeriesId
     range: string
@@ -101,7 +101,7 @@ attributes:
     name: schema_name
     description: A property to provide the name of a schema.
     title: Schema Name
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     ifabsent: string(WikiCFP)
     alias: schema_name
     owner: WikiCfpSeriesId
@@ -111,7 +111,7 @@ attributes:
     description: The base URI of the schema that provides the context for the schema
       based value.
     title: External formatter URI
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/%238_naming/src/linkml/ConfIDent_schema.yaml
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     ifabsent: uri(http://www.wikicfp.com/cfp/program?id=$1)
     alias: schema_base_uri
     owner: WikiCfpSeriesId
