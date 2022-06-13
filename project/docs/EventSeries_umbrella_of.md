@@ -9,7 +9,7 @@ URI: [confident:EventSeries_umbrella_of](https://raw.githubusercontent.com/TIBHa
 
 ## Domain and Range
 
-[EventSeries](EventSeries.md) &#8594;  <sub>0..1</sub> [String](types/String.md)
+[EventSeries](EventSeries.md) &#8594;  <sub>0..\*</sub> [String](types/String.md)
 
 ## Parents
 

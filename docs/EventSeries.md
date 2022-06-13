@@ -23,7 +23,7 @@ _An academic event series describes the set of academic events which take place 
 | [Sponsor](sponsored_by.md) | [Subobject Sponsor](Sponsor.md) | 0..* _recommended_ | A property to provide the sponsors of an academic event series.  | 
 | [Official Website](website.md) | [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | 0..1 _recommended_ | A property to provide the URL the official website of an academic event series.  | 
 | [DOI](has_doi.md) | [Digital Object Identifier](DigitalObjectId.md) | 0..* _recommended_ | A property to provide a digital object identifier (DOI) for an event series. This is set automatically.  | 
-| [Umbrella Of](umbrella_of.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 _recommended_ | A relation to be used to link a series that hosts several series to its subordinate parts.  | 
+| [Umbrella Of](umbrella_of.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* _recommended_ | A relation to be used to link a series that hosts several series to its subordinate parts.  | 
 | [Has Umbrella](has_umbrella.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 _recommended_ | A relation to be used to link a series to its hosting superordinate series.  | 
 | [Colocated With](colocated_with.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* _recommended_ | A relation to be used to link a series to one or more other series that share the same location but not the same schedule and that are open to all attendees.  | 
 | [Joint Venture With](joint_venture_with.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* _recommended_ | A relation to be used to link a series to one or more other series that share the same location, have a joint schedule and that are open to all attendees.  | 
@@ -476,11 +476,13 @@ attributes:
       to its subordinate parts.
     title: Umbrella Of
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
+    multivalued: true
     alias: umbrella_of
     owner: EventSeries
     range: string
     required: false
     recommended: true
+    inlined_as_list: true
   has_umbrella:
     name: has_umbrella
     description: A relation to be used to link a series to its hosting superordinate

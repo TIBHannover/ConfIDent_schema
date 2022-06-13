@@ -95,7 +95,6 @@ CREATE TABLE "Event" (
 	sponsored_by TEXT, 
 	website TEXT, 
 	has_doi TEXT, 
-	umbrella_of TEXT, 
 	has_umbrella TEXT, 
 	context_info TEXT, 
 	has_metric TEXT, 
@@ -107,8 +106,7 @@ CREATE TABLE "Event" (
 	event_mode VARCHAR(7), 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(in_series) REFERENCES "EventSeries" (id), 
-	FOREIGN KEY(subevent_of) REFERENCES "Event" (id), 
-	FOREIGN KEY(superevent_of) REFERENCES "Event" (id)
+	FOREIGN KEY(subevent_of) REFERENCES "Event" (id)
 );
 
 CREATE TABLE "EventFormatSpecification" (
@@ -127,7 +125,6 @@ CREATE TABLE "EventSeries" (
 	sponsored_by TEXT, 
 	website TEXT, 
 	has_doi TEXT, 
-	umbrella_of TEXT, 
 	has_umbrella TEXT, 
 	series_of TEXT, 
 	context_info TEXT, 
@@ -317,6 +314,13 @@ CREATE TABLE "WikiCfpSeriesId" (
 	FOREIGN KEY("EventSeries_id") REFERENCES "EventSeries" (id)
 );
 
+CREATE TABLE "Event_umbrella_of" (
+	backref_id TEXT, 
+	umbrella_of TEXT, 
+	PRIMARY KEY (backref_id, umbrella_of), 
+	FOREIGN KEY(backref_id) REFERENCES "Event" (id)
+);
+
 CREATE TABLE "Event_colocated_with" (
 	backref_id TEXT, 
 	colocated_with TEXT, 
@@ -357,6 +361,13 @@ CREATE TABLE "Event_has_topic" (
 	has_topic TEXT, 
 	PRIMARY KEY (backref_id, has_topic), 
 	FOREIGN KEY(backref_id) REFERENCES "Event" (id)
+);
+
+CREATE TABLE "EventSeries_umbrella_of" (
+	backref_id TEXT, 
+	umbrella_of TEXT, 
+	PRIMARY KEY (backref_id, umbrella_of), 
+	FOREIGN KEY(backref_id) REFERENCES "EventSeries" (id)
 );
 
 CREATE TABLE "EventSeries_colocated_with" (

@@ -108,7 +108,7 @@ Version: 0.4.6
 | [Metric String Value](str_value.md) | A property to provide a string value for a metric. |
 | [Street](street.md) | The street of the venue including the house number seperated by comma. |
 | [Subevent Of](subevent_of.md) | A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place). |
-| [Superevent Of](superevent_of.md) | A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session). |
+| [Superevent Of](superevent_of.md) | A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event parts (e.g. the session). |
 | [Telephone](telephone.md) | The telephone number of the contact person. |
 | [Context Description](text.md) | The free text used to provide more context information on an event or event series. |
 | [TIBKAT ID](tibkat_id.md) | A property to link to a publication indexed in the TIB catalouge that references an event or event series. |

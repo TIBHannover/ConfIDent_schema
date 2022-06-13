@@ -181,7 +181,7 @@ This is a schema for the ConfIDent project that describes the necessary metadata
      * [Event➞sponsored_by](Event_sponsored_by.md) - A property to provide the sponsors of an academic event.
  * [start_date](start_date.md) - The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.
  * [subevent_of](subevent_of.md) - A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place).
- * [superevent_of](superevent_of.md) - A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).
+ * [superevent_of](superevent_of.md) - A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event parts (e.g. the session).
  * [type](type.md) - An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.
      * [Contributor➞type](Contributor_type.md) - A property to provide the information whether the contributor is an organization or person.
      * [Deadline➞type](Deadline_type.md) - A propery to provide the type of the deadline.

@@ -778,6 +778,8 @@ slots:
   umbrella_of:
     title: Umbrella Of
     description: A relation to be used to link an event or series that hosts several events or series to its subordinate parts. 
+    multivalued: true
+    inlined_as_list: true
     required: false
     recommended: true
   has_umbrella:
@@ -894,8 +896,10 @@ slots:
     recommended: true
   superevent_of:
     title: Superevent Of
-    description: A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).
+    description: A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event parts (e.g. the session).
     range: Event
+    multivalued: true
+    inlined_as_list: true
     required: false
     recommended: true
   event_format:

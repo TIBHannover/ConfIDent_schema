@@ -24,7 +24,7 @@ _An academic event is part of the established instruments of science communicati
 | [Location](at_location.md) | [Subobject Location](Location.md) | 0..1 _recommended_ | The location of the academic event.  | 
 | [In Series](in_series.md) | [Event Series](EventSeries.md) | 0..1 _recommended_ | The relation used to provide the series of which an Event is a part.  | 
 | [Subevent Of](subevent_of.md) | [Event](Event.md) | 0..1 _recommended_ | A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place).  | 
-| [Superevent Of](superevent_of.md) | [Event](Event.md) | 0..1 _recommended_ | A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).  | 
+| [Superevent Of](superevent_of.md) | [Event](Event.md) | 0..* _recommended_ | A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event parts (e.g. the session).  | 
 | [Deadline](has_deadline.md) | [Subobject Deadline](Deadline.md) | 0..* _recommended_ | A property to provide a deadline of an academic event.  | 
 | [Academic Field](academic_field.md) | [Subobject Academic Field](AcademicField.md) | 0..* _recommended_ | A property to describe the scientific subject(s) associated with an academic event, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [schema_value](schema_value.md) and [schema_name](schema_name.md) are mandatory.  | 
 | [Landing Page](landing_page.md) | [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | 0..1 _recommended_ | A property to provide the website to which the DOI an academic event is resolving to.  | 
@@ -32,7 +32,7 @@ _An academic event is part of the established instruments of science communicati
 | [Sponsor](sponsored_by.md) | [Subobject Sponsor](Sponsor.md) | 0..* _recommended_ | A property to provide the sponsors of an academic event.  | 
 | [Official Website](website.md) | [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | 0..1 _recommended_ | A property to provide the URL the official website of an academic event.  | 
 | [DOI](has_doi.md) | [Digital Object Identifier](DigitalObjectId.md) | 0..* _recommended_ | A property to provide a digital object identifier (DOI) for an event. This is set automatically.  | 
-| [Umbrella Of](umbrella_of.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 _recommended_ | A relation to be used to link an event that hosts several events to its subordinate parts.  | 
+| [Umbrella Of](umbrella_of.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* _recommended_ | A relation to be used to link an event that hosts several events to its subordinate parts.  | 
 | [Has Umbrella](has_umbrella.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 _recommended_ | A relation to be used to link an event to its hosting superordinate event.  | 
 | [Colocated With](colocated_with.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* _recommended_ | A relation to be used to link an event to one or more other events that share the same location but not the same schedule and that are open to all attendees.  | 
 | [Joint Venture With](joint_venture_with.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* _recommended_ | A relation to be used to link a series or event to one or more other events that share the same location, have a joint schedule and that are open to all attendees.  | 
@@ -519,14 +519,17 @@ attributes:
   superevent_of:
     name: superevent_of
     description: A relation used to link the an superordinate event (e.g. the conference
-      in which a session takes place) to its event part (e.g. the session).
+      in which a session takes place) to its event parts (e.g. the session).
     title: Superevent Of
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
+    multivalued: true
     alias: superevent_of
     owner: Event
     range: Event
     required: false
     recommended: true
+    inlined: true
+    inlined_as_list: true
   has_deadline:
     name: has_deadline
     description: A property to provide a deadline of an academic event.
@@ -628,11 +631,14 @@ attributes:
       to its subordinate parts.
     title: Umbrella Of
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
+    multivalued: true
     alias: umbrella_of
     owner: Event
     range: string
     required: false
     recommended: true
+    inlined: true
+    inlined_as_list: true
   has_umbrella:
     name: has_umbrella
     description: A relation to be used to link an event to its hosting superordinate

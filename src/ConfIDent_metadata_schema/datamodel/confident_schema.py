@@ -1,5 +1,5 @@
 # Auto generated from ConfIDent_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-06-13T15:24:53
+# Generation date: 2022-06-13T15:29:48
 # Schema: confident_schema
 #
 # id: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
@@ -162,7 +162,7 @@ class EventSeries(YAMLRoot):
     sponsored_by: Optional[Union[Dict[Union[str, SponsorId], Union[dict, "Sponsor"]], List[Union[dict, "Sponsor"]]]] = empty_dict()
     website: Optional[Union[str, URI]] = None
     has_doi: Optional[Union[Union[dict, "DigitalObjectId"], List[Union[dict, "DigitalObjectId"]]]] = empty_list()
-    umbrella_of: Optional[str] = None
+    umbrella_of: Optional[Union[str, List[str]]] = empty_list()
     has_umbrella: Optional[str] = None
     colocated_with: Optional[Union[str, List[str]]] = empty_list()
     joint_venture_with: Optional[Union[str, List[str]]] = empty_list()
@@ -215,8 +215,9 @@ class EventSeries(YAMLRoot):
             self.has_doi = [self.has_doi] if self.has_doi is not None else []
         self.has_doi = [v if isinstance(v, DigitalObjectId) else DigitalObjectId(**as_dict(v)) for v in self.has_doi]
 
-        if self.umbrella_of is not None and not isinstance(self.umbrella_of, str):
-            self.umbrella_of = str(self.umbrella_of)
+        if not isinstance(self.umbrella_of, list):
+            self.umbrella_of = [self.umbrella_of] if self.umbrella_of is not None else []
+        self.umbrella_of = [v if isinstance(v, str) else str(v) for v in self.umbrella_of]
 
         if self.has_umbrella is not None and not isinstance(self.has_umbrella, str):
             self.has_umbrella = str(self.has_umbrella)
@@ -307,7 +308,7 @@ class Event(YAMLRoot):
     at_location: Optional[Union[dict, "Location"]] = None
     in_series: Optional[Union[str, EventSeriesId]] = None
     subevent_of: Optional[Union[str, EventId]] = None
-    superevent_of: Optional[Union[str, EventId]] = None
+    superevent_of: Optional[Union[Dict[Union[str, EventId], Union[dict, "Event"]], List[Union[dict, "Event"]]]] = empty_dict()
     has_deadline: Optional[Union[Union[dict, "Deadline"], List[Union[dict, "Deadline"]]]] = empty_list()
     academic_field: Optional[Union[Union[dict, "AcademicField"], List[Union[dict, "AcademicField"]]]] = empty_list()
     landing_page: Optional[Union[str, URI]] = None
@@ -315,7 +316,7 @@ class Event(YAMLRoot):
     sponsored_by: Optional[Union[Dict[Union[str, SponsorId], Union[dict, "Sponsor"]], List[Union[dict, "Sponsor"]]]] = empty_dict()
     website: Optional[Union[str, URI]] = None
     has_doi: Optional[Union[Union[dict, "DigitalObjectId"], List[Union[dict, "DigitalObjectId"]]]] = empty_list()
-    umbrella_of: Optional[str] = None
+    umbrella_of: Optional[Union[str, List[str]]] = empty_list()
     has_umbrella: Optional[str] = None
     colocated_with: Optional[Union[str, List[str]]] = empty_list()
     joint_venture_with: Optional[Union[str, List[str]]] = empty_list()
@@ -379,8 +380,7 @@ class Event(YAMLRoot):
         if self.subevent_of is not None and not isinstance(self.subevent_of, EventId):
             self.subevent_of = EventId(self.subevent_of)
 
-        if self.superevent_of is not None and not isinstance(self.superevent_of, EventId):
-            self.superevent_of = EventId(self.superevent_of)
+        self._normalize_inlined_as_list(slot_name="superevent_of", slot_type=Event, key_name="id", keyed=True)
 
         if not isinstance(self.has_deadline, list):
             self.has_deadline = [self.has_deadline] if self.has_deadline is not None else []
@@ -404,8 +404,9 @@ class Event(YAMLRoot):
             self.has_doi = [self.has_doi] if self.has_doi is not None else []
         self.has_doi = [v if isinstance(v, DigitalObjectId) else DigitalObjectId(**as_dict(v)) for v in self.has_doi]
 
-        if self.umbrella_of is not None and not isinstance(self.umbrella_of, str):
-            self.umbrella_of = str(self.umbrella_of)
+        if not isinstance(self.umbrella_of, list):
+            self.umbrella_of = [self.umbrella_of] if self.umbrella_of is not None else []
+        self.umbrella_of = [v if isinstance(v, str) else str(v) for v in self.umbrella_of]
 
         if self.has_umbrella is not None and not isinstance(self.has_umbrella, str):
             self.has_umbrella = str(self.has_umbrella)
@@ -1740,7 +1741,7 @@ slots.website = Slot(uri=CONFIDENT.website, name="website", curie=CONFIDENT.curi
                    model_uri=CONFIDENT.website, domain=None, range=Optional[Union[str, URI]])
 
 slots.umbrella_of = Slot(uri=CONFIDENT.umbrella_of, name="umbrella_of", curie=CONFIDENT.curie('umbrella_of'),
-                   model_uri=CONFIDENT.umbrella_of, domain=None, range=Optional[str])
+                   model_uri=CONFIDENT.umbrella_of, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.has_umbrella = Slot(uri=CONFIDENT.has_umbrella, name="has_umbrella", curie=CONFIDENT.curie('has_umbrella'),
                    model_uri=CONFIDENT.has_umbrella, domain=None, range=Optional[str])
@@ -1788,7 +1789,7 @@ slots.subevent_of = Slot(uri=RO['0002012'], name="subevent_of", curie=RO.curie('
                    model_uri=CONFIDENT.subevent_of, domain=None, range=Optional[Union[str, EventId]])
 
 slots.superevent_of = Slot(uri=CONFIDENT.superevent_of, name="superevent_of", curie=CONFIDENT.curie('superevent_of'),
-                   model_uri=CONFIDENT.superevent_of, domain=None, range=Optional[Union[str, EventId]])
+                   model_uri=CONFIDENT.superevent_of, domain=None, range=Optional[Union[Dict[Union[str, EventId], Union[dict, Event]], List[Union[dict, Event]]]])
 
 slots.event_format = Slot(uri=AEON['0000032'], name="event_format", curie=AEON.curie('0000032'),
                    model_uri=CONFIDENT.event_format, domain=None, range=Optional[Union[dict, EventFormatSpecification]])
@@ -1928,7 +1929,7 @@ slots.EventSeries_has_publication = Slot(uri=CONFIDENT.has_publication, name="Ev
                    model_uri=CONFIDENT.EventSeries_has_publication, domain=EventSeries, range=Optional[Union[Dict[Union[str, PublicationId], Union[dict, "Publication"]], List[Union[dict, "Publication"]]]])
 
 slots.EventSeries_umbrella_of = Slot(uri=CONFIDENT.umbrella_of, name="EventSeries_umbrella_of", curie=CONFIDENT.curie('umbrella_of'),
-                   model_uri=CONFIDENT.EventSeries_umbrella_of, domain=EventSeries, range=Optional[str])
+                   model_uri=CONFIDENT.EventSeries_umbrella_of, domain=EventSeries, range=Optional[Union[str, List[str]]])
 
 slots.EventSeries_has_umbrella = Slot(uri=CONFIDENT.has_umbrella, name="EventSeries_has_umbrella", curie=CONFIDENT.curie('has_umbrella'),
                    model_uri=CONFIDENT.EventSeries_has_umbrella, domain=EventSeries, range=Optional[str])
@@ -2006,7 +2007,7 @@ slots.Event_has_publication = Slot(uri=CONFIDENT.has_publication, name="Event_ha
                    model_uri=CONFIDENT.Event_has_publication, domain=Event, range=Optional[Union[Dict[Union[str, PublicationId], Union[dict, "Publication"]], List[Union[dict, "Publication"]]]])
 
 slots.Event_umbrella_of = Slot(uri=CONFIDENT.umbrella_of, name="Event_umbrella_of", curie=CONFIDENT.curie('umbrella_of'),
-                   model_uri=CONFIDENT.Event_umbrella_of, domain=Event, range=Optional[str])
+                   model_uri=CONFIDENT.Event_umbrella_of, domain=Event, range=Optional[Union[str, List[str]]])
 
 slots.Event_has_umbrella = Slot(uri=CONFIDENT.has_umbrella, name="Event_has_umbrella", curie=CONFIDENT.curie('has_umbrella'),
                    model_uri=CONFIDENT.Event_has_umbrella, domain=Event, range=Optional[str])

@@ -551,8 +551,11 @@
                "type": "string"
             },
             "superevent_of": {
-               "description": "A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).",
-               "type": "string"
+               "description": "A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event parts (e.g. the session).",
+               "items": {
+                  "$ref": "#/$defs/Event"
+               },
+               "type": "array"
             },
             "tibkat_id": {
                "description": "A property to link an academic event with its TIBKAT identifier.",
@@ -574,7 +577,10 @@
             },
             "umbrella_of": {
                "description": "A relation to be used to link an event that hosts several events to its subordinate parts.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "website": {
                "description": "A property to provide the URL the official website of an academic event.",
@@ -770,7 +776,10 @@
             },
             "umbrella_of": {
                "description": "A relation to be used to link a series that hosts several series to its subordinate parts.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "website": {
                "description": "A property to provide the URL the official website of an academic event series.",

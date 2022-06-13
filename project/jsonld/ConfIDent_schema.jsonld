@@ -912,6 +912,7 @@
       "title": "Umbrella Of",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "multivalued": true,
       "owner": "Event",
       "domain_of": [
         "EventSeries",
@@ -919,6 +920,7 @@
       ],
       "range": "string",
       "recommended": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1194,16 +1196,19 @@
     {
       "name": "superevent_of",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#superevent_of",
-      "description": "A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).",
+      "description": "A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event parts (e.g. the session).",
       "title": "Superevent Of",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#superevent_of",
+      "multivalued": true,
       "owner": "Event",
       "domain_of": [
         "Event"
       ],
       "range": "Event",
       "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2011,6 +2016,7 @@
       "is_a": "umbrella_of",
       "domain": "EventSeries",
       "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "multivalued": true,
       "alias": "umbrella_of",
       "owner": "EventSeries",
       "domain_of": [
@@ -2020,6 +2026,7 @@
       "usage_slot_name": "umbrella_of",
       "range": "string",
       "recommended": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2612,6 +2619,7 @@
       "is_a": "umbrella_of",
       "domain": "Event",
       "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "multivalued": true,
       "alias": "umbrella_of",
       "owner": "Event",
       "domain_of": [
@@ -2621,6 +2629,7 @@
       "usage_slot_name": "umbrella_of",
       "range": "string",
       "recommended": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4323,9 +4332,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ConfIDent_schema.yaml",
-  "source_file_date": "2022-06-13T15:24:36",
-  "source_file_size": 50493,
-  "generation_date": "2022-06-13T15:24:43",
+  "source_file_date": "2022-06-13T15:29:21",
+  "source_file_size": 50594,
+  "generation_date": "2022-06-13T15:29:38",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ConfIDent_schema.context.jsonld",

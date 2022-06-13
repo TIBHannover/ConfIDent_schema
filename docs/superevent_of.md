@@ -1,5 +1,5 @@
 # Slot: Superevent Of
-_A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session)._
+_A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event parts (e.g. the session)._
 
 
 
