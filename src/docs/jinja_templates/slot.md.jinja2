@@ -29,4 +29,17 @@ _{{ element.description }}_
 {% endfor %}
 {% endif %}
 
+{% if schemaview.get_mappings(element.name).items() -%}
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+{% for m, mt in schemaview.get_mappings(element.name).items() -%}
+{% if mt|length > 0 -%}
+| {{ m }} | {{ mt }} |
+{% endif -%}
+{% endfor %}
+
+{% endif -%}
+
 {% include "common_metadata.md.jinja2" %}
