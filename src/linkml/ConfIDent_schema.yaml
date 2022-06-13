@@ -4,7 +4,7 @@ title: ConfIDent Metadata Schema
 description: |-
   This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
 license: https://creativecommons.org/licenses/by/4.0/
-version: 0.4.5
+version: 0.4.6
 default_curi_maps:
   - semweb_context
 prefixes:
@@ -809,6 +809,7 @@ slots:
     slot_uri: skos:altLabel
     range: string
     multivalued: true
+    inlined_as_list: true
     required: false
     recommended: false
   former_name:
@@ -816,6 +817,8 @@ slots:
     description: The former official name of an academic event or series. Usually this will only be needed in case an academic event series has undergone a name change.
     is_a: name
     range: string
+    multivalued: true
+    inlined_as_list: true
     required: false
     recommended: false
   translated_name:
@@ -824,6 +827,7 @@ slots:
     is_a: name
     range: string
     multivalued: true
+    inlined_as_list: true
     required: false
     recommended: false
   context_info:
@@ -845,6 +849,7 @@ slots:
     description: A property to provide the theme and topics of an event or event series as free keywords, phrases or text.
     range: string
     multivalued: true
+    inlined_as_list: true
     required: false
     recommended: false
   dpbl_id:
