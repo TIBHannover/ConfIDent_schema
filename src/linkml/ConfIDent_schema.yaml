@@ -778,13 +778,11 @@ slots:
   umbrella_of:
     title: Umbrella Of
     description: A relation to be used to link an event or series that hosts several events or series to its subordinate parts. 
-    inverse: has_umbrella
     required: false
     recommended: true
   has_umbrella:
     title: Has Umbrella
     description: A relation to be used to link an event or series to its hosting superordinate event or series. 
-    inverse: umbrella_of
     required: false
     recommended: true
   colocated_with:
@@ -890,14 +888,12 @@ slots:
   subevent_of:
     slot_uri: RO:0002012
     title: Subevent Of
-    inverse: superevent_of
     description: A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place).
     range: Event
     required: false
     recommended: true
   superevent_of:
     title: superevent_of
-    inverse: subevent_of
     description: A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).
     range: Event
     required: false
