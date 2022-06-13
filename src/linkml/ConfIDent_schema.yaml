@@ -852,8 +852,6 @@ slots:
     range: DblpId
     required: false
     recommended: false
-
-
 # required Event slots
   start_date:
     title: Start Date
@@ -956,7 +954,6 @@ slots:
     range: Event
     required: false
     recommended: true
-
   wikicfp_series_id:
     title: WikiCFP Series ID
     is_a: external_id
@@ -969,7 +966,6 @@ slots:
 #####################################
 #               Enums               #
 #####################################
-
 enums:
 # event type
   EventType:
