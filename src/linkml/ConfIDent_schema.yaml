@@ -774,6 +774,8 @@ slots:
     description: A property to provide the URL the official website of a event or event series.
     range: uri
     recommended: true
+  umbrella_of:
+    title: Umbrella Of
     description: A relation to be used to link an event or series that hosts several events or series to its subordinate parts. 
     inverse: has_umbrella
     required: false
