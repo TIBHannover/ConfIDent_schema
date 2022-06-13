@@ -4,7 +4,7 @@ title: ConfIDent Metadata Schema
 description: |-
   This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
 license: https://creativecommons.org/licenses/by/4.0/
-version: 0.4.3
+version: 0.4.6
 default_curi_maps:
   - semweb_context
 prefixes:
@@ -13,9 +13,11 @@ prefixes:
   sdo: https://schema.org/
   confident: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#
   aeon: https://github.com/tibonto/aeon#AEON_
-  obi: http://purl.obolibrary.org/obo/OBI_
-  iao: http://purl.obolibrary.org/obo/IAO_
-  bfo: http://purl.obolibrary.org/obo/BFO_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  BFO: http://purl.obolibrary.org/obo/BFO_
+  RO: http://purl.obolibrary.org/obo/RO_
+  TXPO: http://purl.obolibrary.org/obo/TXPO_
   NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
   provo: https://www.w3.org/TR/2013/REC-prov-o-20130430/#
   dc: http://purl.org/dc/terms/
@@ -58,6 +60,10 @@ classes:
       - sponsored_by
       - website
       - has_doi
+      - umbrella_of
+      - has_umbrella
+      - colocated_with
+      - joint_venture_with
       # only series specific
       - series_of
     # optional
@@ -98,6 +104,18 @@ classes:
         description: A property to provide the publication associated with
         comments:
           - It will be most common that the publications of an academic event series are the set of publications associated with the individual events of the series.
+      umbrella_of:
+        title: Umbrella Of
+        description: A relation to be used to link a series that hosts several series to its subordinate parts. 
+      has_umbrella:
+        title: Has Umbrella
+        description: A relation to be used to link a series to its hosting superordinate series. 
+      colocated_with:
+        title: Colocated With
+        description: A relation to be used to link a series to one or more other series that share the same location but not the same schedule and that are open to all attendees.
+      joint_venture_with:
+        title: Joint Venture With
+        description: A relation to be used to link a series to one or more other series that share the same location, have a joint schedule and that are open to all attendees.
     # optional
       alternative_name:
         description: A property to provide alternative names of an academic event series.
@@ -142,18 +160,24 @@ classes:
       - event_status
     # recommended
       - has_acronym
+      # only event specific
+      - type
+      - at_location
+      - in_series
+      - subevent_of
+      - superevent_of
+      - has_deadline
+      # only event specific
       - academic_field
       - landing_page
       - has_publication
       - sponsored_by
       - website
       - has_doi
-      # only event specific
-      - type
-      - at_location
-      - in_series
-      - has_deadline
-      - related_to
+      - umbrella_of
+      - has_umbrella
+      - colocated_with
+      - joint_venture_with
     # optional
       - alternative_name
       - former_name
@@ -180,6 +204,12 @@ classes:
       organized_by:
         description: A property to provide the organizer of an academic event.
     # recommended
+      type:
+        description: A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.
+        title: Event Type
+        range: EventType
+        designates_type: true
+        recommended: true
       has_acronym:
         description: The official acronym of an academic event.
       landing_page:
@@ -196,12 +226,18 @@ classes:
         description: A property to provide the publication associated with
         comments:
           - It will be most common that the publications of an academic event series are the set of publications associated with the individual events of the series.
-      type:
-        description: A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.
-        title: Event Type
-        range: EventType
-        designates_type: true
-        recommended: true
+      umbrella_of:
+        title: Umbrella Of
+        description: A relation to be used to link an event that hosts several events to its subordinate parts. 
+      has_umbrella:
+        title: Has Umbrella
+        description: A relation to be used to link an event to its hosting superordinate event. 
+      colocated_with:
+        title: Colocated With
+        description: A relation to be used to link an event to one or more other events that share the same location but not the same schedule and that are open to all attendees.
+      joint_venture_with:
+        title: Joint Venture With
+        description: A relation to be used to link a series or event to one or more other events that share the same location, have a joint schedule and that are open to all attendees.
     # optional
       alternative_name:
         description: A property to provide alternative names of an academic event.
@@ -238,12 +274,12 @@ classes:
       - SchemaBasedThing
     slot_usage:
       schema_value:
-        slot_uri: obi:0002815
+        slot_uri: OBI:0002815
   DigitalObjectId:
     description: A centrally registered identifier symbol used to uniquely identify digital objects given by International DOI Foundation.
     title: Digital Object Identifier
     is_a: ExternalIdentifier
-    class_uri: obi:0002110
+    class_uri: OBI:0002110
     slot_usage:
       schema_name:
         ifabsent: string(DOI)
@@ -315,7 +351,7 @@ classes:
       other_format:
         title: Other Event Format
         description: A mandatory property to provide the format of an academic event as string, in order to further specify its type in case it could not be specified according to the possible values of [Event Type](EventType.md).
-        slot_uri: obi:0002815
+        slot_uri: OBI:0002815
         examples:
           - value: ad-hoc meeting of university presidents
             description: An example to provide a format specification for special type of academic event that is not in the schema's [EventType](EventType) enum.
@@ -388,18 +424,6 @@ classes:
             str_value:
               range: ReviewMetricType
               required: true
-
-
-
-  ProcessRelation:
-    title: Subobject Process Relation
-    description: A container for relations between academic events.
-    slots:
-      - type
-    slot_usage:
-      type:
-        description: A property to provide the type of process relation.
-        range: RelationType
 # location
   Location:
     title: Subobject Location
@@ -636,7 +660,7 @@ slots:
     title: DOI
     description: A property to provide a digital object identifier (DOI) according to https://doi.org/.
     is_a: external_id
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     range: DigitalObjectId
     recommended: true
     exact_mappings:
@@ -645,7 +669,7 @@ slots:
     title: GND ID
     is_a: external_id
     description: A property to link an entity to the authority file of the German National Library.
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     range: GndId
     required: false
     recommended: false
@@ -653,7 +677,7 @@ slots:
     title: Wikidata ID
     is_a: external_id
     description: A property to link an entity with its Wikidata identifier.
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     range: WikidataId
     required: false
     recommended: false
@@ -673,7 +697,7 @@ slots:
   external_id:
     title: External ID
     description: A property to provide an external id of a schema entity.
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     inlined_as_list: true
     range: ExternalIdentifier
@@ -751,6 +775,30 @@ slots:
     description: A property to provide the URL the official website of a event or event series.
     range: uri
     recommended: true
+  umbrella_of:
+    title: Umbrella Of
+    description: A relation to be used to link an event or series that hosts several events or series to its subordinate parts. 
+    required: false
+    recommended: true
+  has_umbrella:
+    title: Has Umbrella
+    description: A relation to be used to link an event or series to its hosting superordinate event or series. 
+    required: false
+    recommended: true
+  colocated_with:
+    title: Colocated With
+    description: A relation to be used to link a series or event to one or more other series or events that share the same location but not the same schedule and that are open to all attendees.
+    required: false
+    recommended: true
+    multivalued: true
+    inlined_as_list: true
+  joint_venture_with:
+    title: Joint Venture With
+    description: A relation to be used to link a series or event to one or more other series or events that share the same location, have a joint schedule and that are open to all attendees.
+    required: false
+    recommended: true
+    multivalued: true
+    inlined_as_list: true
 # optional Event & Series slots
   alternative_name:
     title: Alternative Name
@@ -759,6 +807,7 @@ slots:
     slot_uri: skos:altLabel
     range: string
     multivalued: true
+    inlined_as_list: true
     required: false
     recommended: false
   former_name:
@@ -766,6 +815,8 @@ slots:
     description: The former official name of an academic event or series. Usually this will only be needed in case an academic event series has undergone a name change.
     is_a: name
     range: string
+    multivalued: true
+    inlined_as_list: true
     required: false
     recommended: false
   translated_name:
@@ -774,6 +825,7 @@ slots:
     is_a: name
     range: string
     multivalued: true
+    inlined_as_list: true
     required: false
     recommended: false
   context_info:
@@ -795,18 +847,17 @@ slots:
     description: A property to provide the theme and topics of an event or event series as free keywords, phrases or text.
     range: string
     multivalued: true
+    inlined_as_list: true
     required: false
     recommended: false
   dpbl_id:
     title: DBLP ID
     is_a: external_id
     description: A property to link the an event or event series with its DBLP identifier.
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     range: DblpId
     required: false
     recommended: false
-
-
 # required Event slots
   start_date:
     title: Start Date
@@ -834,6 +885,19 @@ slots:
     range: EventSeries
     required: false
     recommended: true
+  subevent_of:
+    slot_uri: RO:0002012
+    title: Subevent Of
+    description: A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place).
+    range: Event
+    required: false
+    recommended: true
+  superevent_of:
+    title: superevent_of
+    description: A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).
+    range: Event
+    required: false
+    recommended: true
   event_format:
     title: Event Format
     description: A property to provide an event format specification, if none of the [Event Types](EventType.md) are applicable to specify the format of an academic event.
@@ -856,13 +920,6 @@ slots:
     inlined_as_list: true
     required: false
     recommended: true
-  related_to:
-    title: Related To
-    description: A property to be used to link events to each other.
-    multivalued: true
-    range: ProcessRelation
-    required: false
-    recommended: true
 # optional Event slots
   ordinal:
     title: Ordinal
@@ -881,7 +938,7 @@ slots:
     title: TIBKAT ID
     is_a: external_id
     description: A property to link to a publication indexed in the TIB catalouge that references an event or event series.
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     range: TibkatId
     required: false
     recommended: false
@@ -889,7 +946,7 @@ slots:
     title: WikiCFP Event ID
     is_a: external_id
     description: A property to link an event or event series with its WikiCFP identifier.
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     range: WikiCfpEventId
     required: false
     recommended: false
@@ -901,12 +958,11 @@ slots:
     range: Event
     required: false
     recommended: true
-
   wikicfp_series_id:
     title: WikiCFP Series ID
     is_a: external_id
     description: A property to link an event or event series with its WikiCFP identifier.
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     range: WikiCfpSeriesId
     required: false
     recommended: false
@@ -914,7 +970,6 @@ slots:
 #####################################
 #               Enums               #
 #####################################
-
 enums:
 # event type
   EventType:
@@ -1033,17 +1088,6 @@ enums:
         meaning: aeon:0000069
       other:
         description: This value is to be used, if the other allowed values are not applicable.
-# event relation type
-  RelationType:
-    title: Event Relation Type
-    description: The kinds of relations that are allowed between academic events.
-    permissible_values:
-      isUmbrellaEventOf:
-      hasUmbrellaEvent:
-      isJointEventOf:
-      isColocatedEventOf:
-      isSubEventOf:
-      hasSubEvent:
 # metric type
   MetricType:
     title: Metric Type
@@ -1102,7 +1146,7 @@ enums:
     permissible_values:
       organization:
         description: An institution, or an association that has one or more people as members and which actsas some kind of participant in an event or event series.
-        meaning: obi:0000245
+        meaning: OBI:0000245
       person:
         description: A human being that acts as some kind of participant in an event or event series.
         meaning: NCBITaxon:9606
