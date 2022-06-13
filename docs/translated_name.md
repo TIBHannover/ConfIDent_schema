@@ -17,6 +17,14 @@ _A translation of the official name of an event or event series to be used in di
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:translated_name'] |
+| native | ['confident:translated_name'] |
+
+
 
 
 

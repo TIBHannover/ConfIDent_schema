@@ -12,6 +12,14 @@ _The property to specify the longitude of an academic event location._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:longitude'] |
+| native | ['confident:longitude'] |
+
+
 
 
 

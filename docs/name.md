@@ -16,6 +16,14 @@ _A property to provide a name of a schema entity._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['sdo:name'] |
+| native | ['confident:name'] |
+
+
 
 
 

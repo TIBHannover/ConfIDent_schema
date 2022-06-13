@@ -12,6 +12,14 @@ _The event mode describes whether the event is a physical, virtual or hybrid eve
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:event_mode'] |
+| native | ['confident:event_mode'] |
+
+
 
 
 

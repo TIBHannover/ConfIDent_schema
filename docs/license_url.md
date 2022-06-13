@@ -12,6 +12,14 @@ _The license of the context information as URL, which should be used when copyin
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:license_url'] |
+| native | ['confident:license_url'] |
+
+
 
 
 

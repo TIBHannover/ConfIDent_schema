@@ -12,6 +12,14 @@ _A property to provide the status of an event from a controlled list (e.g. as sc
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['aeon:event_status'] |
+| native | ['confident:event_status'] |
+
+
 
 
 

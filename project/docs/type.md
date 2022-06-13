@@ -20,7 +20,6 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
  *  [Deadline➞type](Deadline_type.md)
  *  [Event➞type](Event_type.md)
  *  [Metric➞type](Metric_type.md)
- *  [ProcessRelation➞type](ProcessRelation_type.md)
 
 ## Used by
 

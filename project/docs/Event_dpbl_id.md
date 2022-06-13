@@ -26,5 +26,5 @@ URI: [confident:Event_dpbl_id](https://raw.githubusercontent.com/TIBHannover/Con
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | iao:0000235 |
+| **Mappings:** | | IAO:0000235 |
 

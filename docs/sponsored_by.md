@@ -12,6 +12,14 @@ _A property to provide the sponsor of an event or event series._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:sponsored_by'] |
+| native | ['confident:sponsored_by'] |
+
+
 
 
 

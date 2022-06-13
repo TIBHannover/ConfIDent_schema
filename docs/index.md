@@ -4,7 +4,7 @@ This is a schema for the ConfIDent project that describes the necessary metadata
 
 URI: [https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml](https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml)
 
-Version: 0.4.3
+Version: 0.4.6
 
 ## Classes
 
@@ -35,7 +35,6 @@ Version: 0.4.3
 | [Subobject Named Thing](NamedThing.md) | A mixin used to provide the attributes needed for the identification of a thing. |
 | [Subobject Organizer](Organizer.md) | An organizer of an academic event or event series. |
 | [Subobject Presenter](Presenter.md) | A person that presents its work at an academic event. |
-| [Subobject Process Relation](ProcessRelation.md) | A container for relations between academic events. |
 | [Subobject Publication](Publication.md) | A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series. |
 | [Region](Region.md) | The region in which an academic event takes place. For non USA events this might often be negligible. |
 | [Subobject Reviewer](Reviewer.md) | A person that has the role to review the submissions of an academic event. |
@@ -55,6 +54,7 @@ Version: 0.4.3
 | [Academic Field](academic_field.md) | A property to describe the scientific subject(s) of an event or event series, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [Schema Value](schema_value.md) and [Schema Name](schema_name.md) are mandatory. |
 | [Alternative Name](alternative_name.md) | A property to provide alternative names of an event or event series. |
 | [Location](at_location.md) | The location of the academic event. |
+| [Colocated With](colocated_with.md) | A relation to be used to link a series or event to one or more other series or events that share the same location but not the same schedule and that are open to all attendees. |
 | [Contact](contact.md) | The contact person of an academic event or event series. |
 | [Context Information](context_info.md) | A property to provide extra information, such as call of papers summary,  event or event series description. |
 | [Deadline Date](deadline_date.md) | The date of a deadline. |
@@ -79,10 +79,12 @@ Version: 0.4.3
 | [Publication](has_publication.md) | The published works that are related to the event or event series, such as proceedings and video recordings of talks. |
 | [Region](has_region.md) | The property to specify the [Region](Region.md) of an academic event location. |
 | [Topic](has_topic.md) | A property to provide the theme and topics of an event or event series as free keywords, phrases or text. |
+| [Has Umbrella](has_umbrella.md) | A relation to be used to link an event or series to its hosting superordinate event or series. |
 | [Venue](has_venue.md) | The property to specify the [Venue](Venue.md) of an academic event location. |
 | [ID](id.md) | A property to provide an internal id of a schema entity in the ConfIDent plattform. |
 | [In Series](in_series.md) | The relation used to provide the series of which an Event is a part. |
 | [Metric Integer Value](int_value.md) | A property to provide an integer value for a metric. |
+| [Joint Venture With](joint_venture_with.md) | A relation to be used to link a series or event to one or more other series or events that share the same location, have a joint schedule and that are open to all attendees. |
 | [Landing Page](landing_page.md) | A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an event or event series. |
 | [Lattitude](lattitude.md) | The property to specify the lattitude of an academic event location. |
 | [Context License](license_str.md) | The license of the context information as text, which must be used when copying text from other sources. |
@@ -96,7 +98,6 @@ Version: 0.4.3
 | [Organizer](organized_by.md) | A property to provide the organizers of an event or event series. |
 | [Other Event Format](other_format.md) | A mandatory property to provide the format of an academic event as string, in order to further specify its type in case it could not be specified according to the possible values of [Event Type](EventType.md). |
 | [Metric Rate Value](rate_value.md) | A property to provide a rate value as float for a metric. |
-| [Related To](related_to.md) | A property to be used to link events to each other. |
 | [External formatter URI](schema_base_uri.md) | The base URI of the schema that provides the context for the schema based value. |
 | [Schema Name](schema_name.md) | A property to provide the name of a schema. |
 | [Schema Value](schema_value.md) | A property to provide the literal value of a schema based entity. |
@@ -106,12 +107,15 @@ Version: 0.4.3
 | [Start Date](start_date.md) | The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series. |
 | [Metric String Value](str_value.md) | A property to provide a string value for a metric. |
 | [Street](street.md) | The street of the venue including the house number seperated by comma. |
+| [Subevent Of](subevent_of.md) | A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place). |
+| [Superevent Of](superevent_of.md) | A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session). |
 | [Telephone](telephone.md) | The telephone number of the contact person. |
 | [Context Description](text.md) | The free text used to provide more context information on an event or event series. |
 | [TIBKAT ID](tibkat_id.md) | A property to link to a publication indexed in the TIB catalouge that references an event or event series. |
 | [Translated Name](translated_name.md) | A translation of the official name of an event or event series to be used in different language contexts. |
 | [Metric Truth Value](truth_value.md) | A property to provide a truth value for a metric. |
 | [Type](type.md) | An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range. |
+| [Umbrella Of](umbrella_of.md) | A relation to be used to link an event or series that hosts several events or series to its subordinate parts. |
 | [Official Website](website.md) | A property to provide the URL the official website of a event or event series. |
 | [WikiCFP Event ID](wikicfp_event_id.md) | A property to link an event or event series with its WikiCFP identifier. |
 | [WikiCFP Series ID](wikicfp_series_id.md) | A property to link an event or event series with its WikiCFP identifier. |
@@ -129,5 +133,4 @@ Version: 0.4.3
 | [Event Status](EventStatus.md) | The status of the academic event which indicates if it takes place as planned. |
 | [Event Type](EventType.md) | The most common minimal event types. For event types that are not in this list, you can use "other" and provide the label of this other event format using the [Event Format](event_format.md) property. |
 | [Metric Type](MetricType.md) | The possible metric of an academic event. |
-| [Event Relation Type](RelationType.md) | The kinds of relations that are allowed between academic events. |
 | [Review Process Type](ReviewProcessType.md) | The possible values for the metric that describes the review process undertaken by the organizers of an academic event. |

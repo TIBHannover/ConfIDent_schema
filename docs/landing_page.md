@@ -12,6 +12,15 @@ _A property to provide the website to which a persistent identifier is resolving
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:landing_page'] |
+| native | ['confident:landing_page'] |
+| exact | ['datacite:url'] |
+
+
 
 
 

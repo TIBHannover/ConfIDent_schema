@@ -50,5 +50,5 @@ None &#8594;  <sub>0..\*</sub> [ExternalIdentifier](ExternalIdentifier.md)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | iao:0000235 |
+| **Mappings:** | | IAO:0000235 |
 

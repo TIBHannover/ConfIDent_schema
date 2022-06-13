@@ -46,7 +46,7 @@ _A centrally registered identifier symbol used to uniquely identify digital obje
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ['obi:0002110'] |
+| self | ['OBI:0002110'] |
 | native | ['confident:DigitalObjectId'] |
 
 
@@ -71,7 +71,7 @@ slot_usage:
   schema_base_uri:
     name: schema_base_uri
     ifabsent: uri(https://doi.org/)
-class_uri: obi:0002110
+class_uri: OBI:0002110
 
 ```
 </details>
@@ -121,7 +121,7 @@ attributes:
     alias: schema_base_uri
     owner: DigitalObjectId
     range: uriorcurie
-class_uri: obi:0002110
+class_uri: OBI:0002110
 
 ```
 </details>

@@ -17,6 +17,14 @@ _A property to provide alternative names of an event or event series._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['skos:altLabel'] |
+| native | ['confident:alternative_name'] |
+
+
 
 
 

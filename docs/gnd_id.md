@@ -17,6 +17,14 @@ _A property to link an entity to the authority file of the German National Libra
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['IAO:0000235'] |
+| native | ['confident:gnd_id'] |
+
+
 
 
 

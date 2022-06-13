@@ -12,6 +12,14 @@ _The zip code of the venue._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:zip_code'] |
+| native | ['confident:zip_code'] |
+
+
 
 
 

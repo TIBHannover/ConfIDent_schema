@@ -17,6 +17,15 @@ _A property to provide a digital object identifier (DOI) according to https://do
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['IAO:0000235'] |
+| native | ['confident:has_doi'] |
+| exact | ['datacite:doi'] |
+
+
 
 
 

@@ -17,6 +17,14 @@ _The former official name of an academic event or series. Usually this will only
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:former_name'] |
+| native | ['confident:former_name'] |
+
+
 
 
 

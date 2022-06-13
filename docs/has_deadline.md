@@ -12,6 +12,14 @@ _A property to provide a deadline of an academic event._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:has_deadline'] |
+| native | ['confident:has_deadline'] |
+
+
 
 
 

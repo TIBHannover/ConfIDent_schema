@@ -12,6 +12,14 @@ _A property to provide the literal value of a schema based entity._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:schema_value'] |
+| native | ['confident:schema_value'] |
+
+
 
 
 

@@ -70,7 +70,7 @@ attributes:
       description: An example to provide a format specification for special type of
         academic event that is not in the schema's [EventType](EventType) enum.
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
-    slot_uri: obi:0002815
+    slot_uri: OBI:0002815
     range: string
     required: true
 class_uri: aeon:0000004
@@ -107,7 +107,7 @@ attributes:
       description: An example to provide a format specification for special type of
         academic event that is not in the schema's [EventType](EventType) enum.
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
-    slot_uri: obi:0002815
+    slot_uri: OBI:0002815
     alias: other_format
     owner: EventFormatSpecification
     range: string

@@ -33,5 +33,5 @@ URI: [confident:ExternalIdentifier_schema_value](https://raw.githubusercontent.c
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | obi:0002815 |
+| **Mappings:** | | OBI:0002815 |
 

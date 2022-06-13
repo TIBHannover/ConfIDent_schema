@@ -12,6 +12,14 @@ _The email address of the contact person._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['sdo:email'] |
+| native | ['confident:email'] |
+
+
 
 
 

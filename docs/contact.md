@@ -12,6 +12,14 @@ _The contact person of an academic event or event series._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:contact'] |
+| native | ['confident:contact'] |
+
+
 
 
 

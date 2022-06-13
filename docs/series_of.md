@@ -12,6 +12,14 @@ _A property to link to the events that are part of an academic event series._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:series_of'] |
+| native | ['confident:series_of'] |
+
+
 
 
 

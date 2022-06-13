@@ -12,6 +12,14 @@ _The street of the venue including the house number seperated by comma._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:street'] |
+| native | ['confident:street'] |
+
+
 
 
 

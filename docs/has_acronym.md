@@ -17,6 +17,14 @@ _The official acronym of an event or event series._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:has_acronym'] |
+| native | ['confident:has_acronym'] |
+
+
 
 
 

@@ -12,6 +12,14 @@ _The location of the academic event._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:at_location'] |
+| native | ['confident:at_location'] |
+
+
 
 
 

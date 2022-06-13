@@ -17,6 +17,14 @@ _The official name of an event or event series._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['skos:perfLabel'] |
+| native | ['confident:official_name'] |
+
+
 
 
 

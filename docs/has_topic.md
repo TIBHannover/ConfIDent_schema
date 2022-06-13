@@ -12,6 +12,14 @@ _A property to provide the theme and topics of an event or event series as free 
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:has_topic'] |
+| native | ['confident:has_topic'] |
+
+
 
 
 

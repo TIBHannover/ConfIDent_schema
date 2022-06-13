@@ -12,6 +12,14 @@ _The property to specify the URL under which a one can participate virtually in 
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:meeting_url'] |
+| native | ['confident:meeting_url'] |
+
+
 
 
 

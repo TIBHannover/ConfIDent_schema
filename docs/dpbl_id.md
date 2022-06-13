@@ -17,6 +17,14 @@ _A property to link the an event or event series with its DBLP identifier._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['IAO:0000235'] |
+| native | ['confident:dpbl_id'] |
+
+
 
 
 

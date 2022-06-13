@@ -12,6 +12,14 @@ _A property to provide the year for which the metric value is valid._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:metric_year'] |
+| native | ['confident:metric_year'] |
+
+
 
 
 

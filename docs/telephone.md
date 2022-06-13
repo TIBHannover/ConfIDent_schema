@@ -12,6 +12,14 @@ _The telephone number of the contact person._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['sdo:telephone'] |
+| native | ['confident:telephone'] |
+
+
 
 
 

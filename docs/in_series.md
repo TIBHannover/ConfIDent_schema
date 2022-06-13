@@ -12,6 +12,14 @@ _The relation used to provide the series of which an Event is a part._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:in_series'] |
+| native | ['confident:in_series'] |
+
+
 
 
 

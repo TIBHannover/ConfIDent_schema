@@ -12,6 +12,14 @@ _A property to specify another type of deadline, if this type of deadline is not
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:deadline_other'] |
+| native | ['confident:deadline_other'] |
+
+
 
 
 

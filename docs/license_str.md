@@ -12,6 +12,14 @@ _The license of the context information as text, which must be used when copying
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:license_str'] |
+| native | ['confident:license_str'] |
+
+
 
 
 

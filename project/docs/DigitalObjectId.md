@@ -41,5 +41,5 @@ URI: [confident:DigitalObjectId](https://raw.githubusercontent.com/TIBHannover/C
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | obi:0002110 |
+| **Mappings:** | | OBI:0002110 |
 

@@ -12,6 +12,14 @@ _An abstract property that is reused in certain classes to differentiate their i
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['rdf:type'] |
+| native | ['confident:type'] |
+
+
 
 
 

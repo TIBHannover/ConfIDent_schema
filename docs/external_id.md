@@ -16,6 +16,14 @@ _A property to provide an external id of a schema entity._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['IAO:0000235'] |
+| native | ['confident:external_id'] |
+
+
 
 
 

@@ -17,6 +17,14 @@ _A property to link to a publication indexed in the TIB catalouge that reference
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['IAO:0000235'] |
+| native | ['confident:tibkat_id'] |
+
+
 
 
 

@@ -26,5 +26,5 @@ URI: [confident:EventSeries_wikicfp_series_id](https://raw.githubusercontent.com
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | iao:0000235 |
+| **Mappings:** | | IAO:0000235 |
 

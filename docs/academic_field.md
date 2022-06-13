@@ -12,6 +12,14 @@ _A property to describe the scientific subject(s) of an event or event series, a
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['aeon:0000040'] |
+| native | ['confident:academic_field'] |
+
+
 
 
 

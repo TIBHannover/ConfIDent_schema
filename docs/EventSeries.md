@@ -23,9 +23,13 @@ _An academic event series describes the set of academic events which take place 
 | [Sponsor](sponsored_by.md) | [Subobject Sponsor](Sponsor.md) | 0..* _recommended_ | A property to provide the sponsors of an academic event series.  | 
 | [Official Website](website.md) | [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | 0..1 _recommended_ | A property to provide the URL the official website of an academic event series.  | 
 | [DOI](has_doi.md) | [Digital Object Identifier](DigitalObjectId.md) | 0..* _recommended_ | A property to provide a digital object identifier (DOI) for an event series. This is set automatically.  | 
+| [Umbrella Of](umbrella_of.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 _recommended_ | A relation to be used to link a series that hosts several series to its subordinate parts.  | 
+| [Has Umbrella](has_umbrella.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 _recommended_ | A relation to be used to link a series to its hosting superordinate series.  | 
+| [Colocated With](colocated_with.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* _recommended_ | A relation to be used to link a series to one or more other series that share the same location but not the same schedule and that are open to all attendees.  | 
+| [Joint Venture With](joint_venture_with.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* _recommended_ | A relation to be used to link a series to one or more other series that share the same location, have a joint schedule and that are open to all attendees.  | 
 | [Series Of](series_of.md) | [Event](Event.md) | 0..1 _recommended_ | A property to link to the events that are part of an academic event series.  | 
 | [Alternative Name](alternative_name.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* | A property to provide alternative names of an academic event series.  | 
-| [Former Name](former_name.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 | The former official name of an academic event series. Usually this will only be needed in case an academic event series has undergone a name change.  | 
+| [Former Name](former_name.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* | The former official name of an academic event series. Usually this will only be needed in case an academic event series has undergone a name change.  | 
 | [Translated Name](translated_name.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* | A translation of the official name of an event series to be used in different language contexts.  | 
 | [Context Information](context_info.md) | [Subobject Context](Context.md) | 0..1 | A property to provide extra information for an academic event series.  | 
 | [Metric](has_metric.md) | [Subobject Metric](Metric.md) | 0..* | A property to provide one ore more metrics of an academic event series.  | 
@@ -95,6 +99,10 @@ slots:
 - sponsored_by
 - website
 - has_doi
+- umbrella_of
+- has_umbrella
+- colocated_with
+- joint_venture_with
 - series_of
 - alternative_name
 - former_name
@@ -150,6 +158,28 @@ slot_usage:
     comments:
     - It will be most common that the publications of an academic event series are
       the set of publications associated with the individual events of the series.
+  umbrella_of:
+    name: umbrella_of
+    description: A relation to be used to link a series that hosts several series
+      to its subordinate parts.
+    title: Umbrella Of
+  has_umbrella:
+    name: has_umbrella
+    description: A relation to be used to link a series to its hosting superordinate
+      series.
+    title: Has Umbrella
+  colocated_with:
+    name: colocated_with
+    description: A relation to be used to link a series to one or more other series
+      that share the same location but not the same schedule and that are open to
+      all attendees.
+    title: Colocated With
+  joint_venture_with:
+    name: joint_venture_with
+    description: A relation to be used to link a series to one or more other series
+      that share the same location, have a joint schedule and that are open to all
+      attendees.
+    title: Joint Venture With
   alternative_name:
     name: alternative_name
     description: A property to provide alternative names of an academic event series.
@@ -253,6 +283,28 @@ slot_usage:
     comments:
     - It will be most common that the publications of an academic event series are
       the set of publications associated with the individual events of the series.
+  umbrella_of:
+    name: umbrella_of
+    description: A relation to be used to link a series that hosts several series
+      to its subordinate parts.
+    title: Umbrella Of
+  has_umbrella:
+    name: has_umbrella
+    description: A relation to be used to link a series to its hosting superordinate
+      series.
+    title: Has Umbrella
+  colocated_with:
+    name: colocated_with
+    description: A relation to be used to link a series to one or more other series
+      that share the same location but not the same schedule and that are open to
+      all attendees.
+    title: Colocated With
+  joint_venture_with:
+    name: joint_venture_with
+    description: A relation to be used to link a series to one or more other series
+      that share the same location, have a joint schedule and that are open to all
+      attendees.
+    title: Joint Venture With
   alternative_name:
     name: alternative_name
     description: A property to provide alternative names of an academic event series.
@@ -411,11 +463,61 @@ attributes:
     title: DOI
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: has_doi
     owner: EventSeries
     range: DigitalObjectId
+    recommended: true
+    inlined_as_list: true
+  umbrella_of:
+    name: umbrella_of
+    description: A relation to be used to link a series that hosts several series
+      to its subordinate parts.
+    title: Umbrella Of
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
+    alias: umbrella_of
+    owner: EventSeries
+    range: string
+    required: false
+    recommended: true
+  has_umbrella:
+    name: has_umbrella
+    description: A relation to be used to link a series to its hosting superordinate
+      series.
+    title: Has Umbrella
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
+    alias: has_umbrella
+    owner: EventSeries
+    range: string
+    required: false
+    recommended: true
+  colocated_with:
+    name: colocated_with
+    description: A relation to be used to link a series to one or more other series
+      that share the same location but not the same schedule and that are open to
+      all attendees.
+    title: Colocated With
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
+    multivalued: true
+    alias: colocated_with
+    owner: EventSeries
+    range: string
+    required: false
+    recommended: true
+    inlined_as_list: true
+  joint_venture_with:
+    name: joint_venture_with
+    description: A relation to be used to link a series to one or more other series
+      that share the same location, have a joint schedule and that are open to all
+      attendees.
+    title: Joint Venture With
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
+    multivalued: true
+    alias: joint_venture_with
+    owner: EventSeries
+    range: string
+    required: false
     recommended: true
     inlined_as_list: true
   series_of:
@@ -442,6 +544,7 @@ attributes:
     range: string
     required: false
     recommended: false
+    inlined_as_list: true
   former_name:
     name: former_name
     description: The former official name of an academic event series. Usually this
@@ -449,11 +552,13 @@ attributes:
     title: Former Name
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: name
+    multivalued: true
     alias: former_name
     owner: EventSeries
     range: string
     required: false
     recommended: false
+    inlined_as_list: true
   translated_name:
     name: translated_name
     description: A translation of the official name of an event series to be used
@@ -467,6 +572,7 @@ attributes:
     range: string
     required: false
     recommended: false
+    inlined_as_list: true
   context_info:
     name: context_info
     description: A property to provide extra information for an academic event series.
@@ -504,13 +610,14 @@ attributes:
     range: string
     required: false
     recommended: false
+    inlined_as_list: true
   external_id:
     name: external_id
     description: The property to provide external identifiers for an academic event
       series, including their identifier scheme.
     title: External ID
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: external_id
     owner: EventSeries
@@ -522,7 +629,7 @@ attributes:
     title: Wikidata ID
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: wikidata_id
     owner: EventSeries
@@ -537,7 +644,7 @@ attributes:
     title: DBLP ID
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: dpbl_id
     owner: EventSeries
@@ -552,7 +659,7 @@ attributes:
     title: GND ID
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: gnd_id
     owner: EventSeries
@@ -567,7 +674,7 @@ attributes:
     title: WikiCFP Series ID
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: wikicfp_series_id
     owner: EventSeries

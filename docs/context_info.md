@@ -12,6 +12,14 @@ _A property to provide extra information, such as call of papers summary,  event
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:context_info'] |
+| native | ['confident:context_info'] |
+
+
 
 
 

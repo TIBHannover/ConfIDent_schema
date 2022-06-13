@@ -12,6 +12,14 @@ _The ordnial number of an academic event within its series._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['aeon:event_number'] |
+| native | ['confident:ordinal'] |
+
+
 
 
 

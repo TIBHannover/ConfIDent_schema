@@ -12,6 +12,14 @@ _A property to provide an event format specification, if none of the [Event Type
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['aeon:0000032'] |
+| native | ['confident:event_format'] |
+
+
 
 
 

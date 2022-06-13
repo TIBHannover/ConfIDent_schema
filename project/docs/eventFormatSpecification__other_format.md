@@ -25,6 +25,6 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | obi:0002815 |
+| **Mappings:** | | OBI:0002815 |
 | **Examples:** | | Example(value='ad-hoc meeting of university presidents', description="An example to provide a format specification for special type of academic event that is not in the schema's [EventType](EventType) enum.") |
 

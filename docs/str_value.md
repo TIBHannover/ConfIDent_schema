@@ -12,6 +12,14 @@ _A property to provide a string value for a metric._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:str_value'] |
+| native | ['confident:str_value'] |
+
+
 
 
 

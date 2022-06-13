@@ -20,19 +20,24 @@ _An academic event is part of the established instruments of science communicati
 | [End Date](end_date.md) | [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) | 1..1 | Similar to start_date but only for the end of an academic event or event series.  | 
 | [Event Status](event_status.md) | [Event Status](EventStatus.md) | 1..1 | A property to provide the status of an event from a controlled list (e.g. as scheduled (default), postpooned, canceld etc).  | 
 | [Acronym](has_acronym.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 _recommended_ | The official acronym of an academic event.  | 
+| [Event Type](type.md) | [Event Type](EventType.md) | 0..1 _recommended_ | A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.  | 
+| [Location](at_location.md) | [Subobject Location](Location.md) | 0..1 _recommended_ | The location of the academic event.  | 
+| [In Series](in_series.md) | [Event Series](EventSeries.md) | 0..1 _recommended_ | The relation used to provide the series of which an Event is a part.  | 
+| [Subevent Of](subevent_of.md) | [Event](Event.md) | 0..1 _recommended_ | A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place).  | 
+| [Superevent Of](superevent_of.md) | [Event](Event.md) | 0..1 _recommended_ | A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).  | 
+| [Deadline](has_deadline.md) | [Subobject Deadline](Deadline.md) | 0..* _recommended_ | A property to provide a deadline of an academic event.  | 
 | [Academic Field](academic_field.md) | [Subobject Academic Field](AcademicField.md) | 0..* _recommended_ | A property to describe the scientific subject(s) associated with an academic event, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [schema_value](schema_value.md) and [schema_name](schema_name.md) are mandatory.  | 
 | [Landing Page](landing_page.md) | [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | 0..1 _recommended_ | A property to provide the website to which the DOI an academic event is resolving to.  | 
 | [Publication](has_publication.md) | [Subobject Publication](Publication.md) | 0..* _recommended_ | A property to provide the publication associated with  | 
 | [Sponsor](sponsored_by.md) | [Subobject Sponsor](Sponsor.md) | 0..* _recommended_ | A property to provide the sponsors of an academic event.  | 
 | [Official Website](website.md) | [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | 0..1 _recommended_ | A property to provide the URL the official website of an academic event.  | 
 | [DOI](has_doi.md) | [Digital Object Identifier](DigitalObjectId.md) | 0..* _recommended_ | A property to provide a digital object identifier (DOI) for an event. This is set automatically.  | 
-| [Event Type](type.md) | [Event Type](EventType.md) | 0..1 _recommended_ | A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.  | 
-| [Location](at_location.md) | [Subobject Location](Location.md) | 0..1 _recommended_ | The location of the academic event.  | 
-| [In Series](in_series.md) | [Event Series](EventSeries.md) | 0..1 _recommended_ | The relation used to provide the series of which an Event is a part.  | 
-| [Deadline](has_deadline.md) | [Subobject Deadline](Deadline.md) | 0..* _recommended_ | A property to provide a deadline of an academic event.  | 
-| [Related To](related_to.md) | [Subobject Process Relation](ProcessRelation.md) | 0..* _recommended_ | A property to be used to link events to each other.  | 
+| [Umbrella Of](umbrella_of.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 _recommended_ | A relation to be used to link an event that hosts several events to its subordinate parts.  | 
+| [Has Umbrella](has_umbrella.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 _recommended_ | A relation to be used to link an event to its hosting superordinate event.  | 
+| [Colocated With](colocated_with.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* _recommended_ | A relation to be used to link an event to one or more other events that share the same location but not the same schedule and that are open to all attendees.  | 
+| [Joint Venture With](joint_venture_with.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* _recommended_ | A relation to be used to link a series or event to one or more other events that share the same location, have a joint schedule and that are open to all attendees.  | 
 | [Alternative Name](alternative_name.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* | A property to provide alternative names of an academic event.  | 
-| [Former Name](former_name.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..1 | The former official name of an academic event. Usually this will only be needed in case an academic event has undergone a name change.  | 
+| [Former Name](former_name.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* | The former official name of an academic event. Usually this will only be needed in case an academic event has undergone a name change.  | 
 | [Translated Name](translated_name.md) | [xsd:string](http://www.w3.org/2001/XMLSchema#string) | 0..* | A translation of the official name of an event to be used in different language contexts.  | 
 | [Context Information](context_info.md) | [Subobject Context](Context.md) | 0..1 | A property to provide extra information for an academic event.  | 
 | [Metric](has_metric.md) | [Subobject Metric](Metric.md) | 0..* | A property to provide one ore more metrics of an academic event.  | 
@@ -53,6 +58,8 @@ _An academic event is part of the established instruments of science communicati
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Event Series](EventSeries.md) | [Series Of](series_of.md) | range | Event |
+| [Event](Event.md) | [Subevent Of](subevent_of.md) | range | Event |
+| [Event](Event.md) | [Superevent Of](superevent_of.md) | range | Event |
 | [ConfIDent Records](ConfIDentRecords.md) | [Events](events.md) | range | Event |
 
 
@@ -106,17 +113,22 @@ slots:
 - end_date
 - event_status
 - has_acronym
+- type
+- at_location
+- in_series
+- subevent_of
+- superevent_of
+- has_deadline
 - academic_field
 - landing_page
 - has_publication
 - sponsored_by
 - website
 - has_doi
-- type
-- at_location
-- in_series
-- has_deadline
-- related_to
+- umbrella_of
+- has_umbrella
+- colocated_with
+- joint_venture_with
 - alternative_name
 - former_name
 - translated_name
@@ -142,6 +154,14 @@ slot_usage:
   organized_by:
     name: organized_by
     description: A property to provide the organizer of an academic event.
+  type:
+    name: type
+    description: A property to provide the format of an academic event according to
+      the possible values of the [Event Type](EventType.md) enum.
+    title: Event Type
+    designates_type: true
+    range: EventType
+    recommended: true
   has_acronym:
     name: has_acronym
     description: The official acronym of an academic event.
@@ -172,14 +192,28 @@ slot_usage:
     comments:
     - It will be most common that the publications of an academic event series are
       the set of publications associated with the individual events of the series.
-  type:
-    name: type
-    description: A property to provide the format of an academic event according to
-      the possible values of the [Event Type](EventType.md) enum.
-    title: Event Type
-    designates_type: true
-    range: EventType
-    recommended: true
+  umbrella_of:
+    name: umbrella_of
+    description: A relation to be used to link an event that hosts several events
+      to its subordinate parts.
+    title: Umbrella Of
+  has_umbrella:
+    name: has_umbrella
+    description: A relation to be used to link an event to its hosting superordinate
+      event.
+    title: Has Umbrella
+  colocated_with:
+    name: colocated_with
+    description: A relation to be used to link an event to one or more other events
+      that share the same location but not the same schedule and that are open to
+      all attendees.
+    title: Colocated With
+  joint_venture_with:
+    name: joint_venture_with
+    description: A relation to be used to link a series or event to one or more other
+      events that share the same location, have a joint schedule and that are open
+      to all attendees.
+    title: Joint Venture With
   alternative_name:
     name: alternative_name
     description: A property to provide alternative names of an academic event.
@@ -255,6 +289,14 @@ slot_usage:
   organized_by:
     name: organized_by
     description: A property to provide the organizer of an academic event.
+  type:
+    name: type
+    description: A property to provide the format of an academic event according to
+      the possible values of the [Event Type](EventType.md) enum.
+    title: Event Type
+    designates_type: true
+    range: EventType
+    recommended: true
   has_acronym:
     name: has_acronym
     description: The official acronym of an academic event.
@@ -285,14 +327,28 @@ slot_usage:
     comments:
     - It will be most common that the publications of an academic event series are
       the set of publications associated with the individual events of the series.
-  type:
-    name: type
-    description: A property to provide the format of an academic event according to
-      the possible values of the [Event Type](EventType.md) enum.
-    title: Event Type
-    designates_type: true
-    range: EventType
-    recommended: true
+  umbrella_of:
+    name: umbrella_of
+    description: A relation to be used to link an event that hosts several events
+      to its subordinate parts.
+    title: Umbrella Of
+  has_umbrella:
+    name: has_umbrella
+    description: A relation to be used to link an event to its hosting superordinate
+      event.
+    title: Has Umbrella
+  colocated_with:
+    name: colocated_with
+    description: A relation to be used to link an event to one or more other events
+      that share the same location but not the same schedule and that are open to
+      all attendees.
+    title: Colocated With
+  joint_venture_with:
+    name: joint_venture_with
+    description: A relation to be used to link a series or event to one or more other
+      events that share the same location, have a joint schedule and that are open
+      to all attendees.
+    title: Joint Venture With
   alternative_name:
     name: alternative_name
     description: A property to provide alternative names of an academic event.
@@ -415,6 +471,75 @@ attributes:
     range: string
     required: false
     recommended: true
+  type:
+    name: type
+    description: A property to provide the format of an academic event according to
+      the possible values of the [Event Type](EventType.md) enum.
+    title: Event Type
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
+    abstract: true
+    slot_uri: rdf:type
+    designates_type: true
+    alias: type
+    owner: Event
+    range: EventType
+    recommended: true
+  at_location:
+    name: at_location
+    description: The location of the academic event.
+    title: Location
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
+    alias: at_location
+    owner: Event
+    range: Location
+    required: false
+    recommended: true
+  in_series:
+    name: in_series
+    description: The relation used to provide the series of which an Event is a part.
+    title: In Series
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
+    alias: in_series
+    owner: Event
+    range: EventSeries
+    required: false
+    recommended: true
+  subevent_of:
+    name: subevent_of
+    description: A relation used to link the an event part (e.g. a session) to its
+      superordinate event (e.g. the conference in which the session takes place).
+    title: Subevent Of
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
+    slot_uri: RO:0002012
+    alias: subevent_of
+    owner: Event
+    range: Event
+    required: false
+    recommended: true
+  superevent_of:
+    name: superevent_of
+    description: A relation used to link the an superordinate event (e.g. the conference
+      in which a session takes place) to its event part (e.g. the session).
+    title: Superevent Of
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
+    alias: superevent_of
+    owner: Event
+    range: Event
+    required: false
+    recommended: true
+  has_deadline:
+    name: has_deadline
+    description: A property to provide a deadline of an academic event.
+    title: Deadline
+    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
+    multivalued: true
+    alias: has_deadline
+    owner: Event
+    range: Deadline
+    required: false
+    recommended: true
+    inlined: true
+    inlined_as_list: true
   academic_field:
     name: academic_field
     description: A property to describe the scientific subject(s) associated with
@@ -489,7 +614,7 @@ attributes:
     title: DOI
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: has_doi
     owner: Event
@@ -497,63 +622,58 @@ attributes:
     recommended: true
     inlined: true
     inlined_as_list: true
-  type:
-    name: type
-    description: A property to provide the format of an academic event according to
-      the possible values of the [Event Type](EventType.md) enum.
-    title: Event Type
+  umbrella_of:
+    name: umbrella_of
+    description: A relation to be used to link an event that hosts several events
+      to its subordinate parts.
+    title: Umbrella Of
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
-    abstract: true
-    slot_uri: rdf:type
-    designates_type: true
-    alias: type
+    alias: umbrella_of
     owner: Event
-    range: EventType
-    recommended: true
-  at_location:
-    name: at_location
-    description: The location of the academic event.
-    title: Location
-    from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
-    alias: at_location
-    owner: Event
-    range: Location
+    range: string
     required: false
     recommended: true
-  in_series:
-    name: in_series
-    description: The relation used to provide the series of which an Event is a part.
-    title: In Series
+  has_umbrella:
+    name: has_umbrella
+    description: A relation to be used to link an event to its hosting superordinate
+      event.
+    title: Has Umbrella
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
-    alias: in_series
+    alias: has_umbrella
     owner: Event
-    range: EventSeries
+    range: string
     required: false
     recommended: true
-  has_deadline:
-    name: has_deadline
-    description: A property to provide a deadline of an academic event.
-    title: Deadline
+  colocated_with:
+    name: colocated_with
+    description: A relation to be used to link an event to one or more other events
+      that share the same location but not the same schedule and that are open to
+      all attendees.
+    title: Colocated With
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     multivalued: true
-    alias: has_deadline
+    alias: colocated_with
     owner: Event
-    range: Deadline
+    range: string
     required: false
     recommended: true
     inlined: true
     inlined_as_list: true
-  related_to:
-    name: related_to
-    description: A property to be used to link events to each other.
-    title: Related To
+  joint_venture_with:
+    name: joint_venture_with
+    description: A relation to be used to link a series or event to one or more other
+      events that share the same location, have a joint schedule and that are open
+      to all attendees.
+    title: Joint Venture With
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     multivalued: true
-    alias: related_to
+    alias: joint_venture_with
     owner: Event
-    range: ProcessRelation
+    range: string
     required: false
     recommended: true
+    inlined: true
+    inlined_as_list: true
   alternative_name:
     name: alternative_name
     description: A property to provide alternative names of an academic event.
@@ -567,6 +687,8 @@ attributes:
     range: string
     required: false
     recommended: false
+    inlined: true
+    inlined_as_list: true
   former_name:
     name: former_name
     description: The former official name of an academic event. Usually this will
@@ -574,11 +696,14 @@ attributes:
     title: Former Name
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: name
+    multivalued: true
     alias: former_name
     owner: Event
     range: string
     required: false
     recommended: false
+    inlined: true
+    inlined_as_list: true
   translated_name:
     name: translated_name
     description: A translation of the official name of an event to be used in different
@@ -592,6 +717,8 @@ attributes:
     range: string
     required: false
     recommended: false
+    inlined: true
+    inlined_as_list: true
   context_info:
     name: context_info
     description: A property to provide extra information for an academic event.
@@ -627,13 +754,15 @@ attributes:
     range: string
     required: false
     recommended: false
+    inlined: true
+    inlined_as_list: true
   external_id:
     name: external_id
     description: The property to provide external identifiers for an academic event,
       including their identifier scheme.
     title: External ID
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: external_id
     owner: Event
@@ -646,7 +775,7 @@ attributes:
     title: Wikidata ID
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: wikidata_id
     owner: Event
@@ -661,7 +790,7 @@ attributes:
     title: DBLP ID
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: dpbl_id
     owner: Event
@@ -676,7 +805,7 @@ attributes:
     title: GND ID
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: gnd_id
     owner: Event
@@ -713,7 +842,7 @@ attributes:
     title: TIBKAT ID
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: tibkat_id
     owner: Event
@@ -728,7 +857,7 @@ attributes:
     title: WikiCFP Event ID
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
     is_a: external_id
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: wikicfp_event_id
     owner: Event

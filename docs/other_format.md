@@ -12,6 +12,14 @@ _A mandatory property to provide the format of an academic event as string, in o
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['OBI:0002815'] |
+| native | ['confident:other_format'] |
+
+
 
 
 

@@ -12,6 +12,14 @@ _A property to provide the URL the official website of a event or event series._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:website'] |
+| native | ['confident:website'] |
+
+
 
 
 

@@ -12,6 +12,14 @@ _A property to provide a description of a metric._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:description'] |
+| native | ['confident:description'] |
+
+
 
 
 

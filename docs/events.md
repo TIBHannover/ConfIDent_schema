@@ -12,6 +12,14 @@ _A property to provide a list of academic events within this container._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:events'] |
+| native | ['confident:events'] |
+
+
 
 
 

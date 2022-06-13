@@ -12,6 +12,14 @@ _A property to provide a rate value as float for a metric._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:rate_value'] |
+| native | ['confident:rate_value'] |
+
+
 
 
 

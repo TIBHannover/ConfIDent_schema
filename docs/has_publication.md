@@ -12,6 +12,14 @@ _The published works that are related to the event or event series, such as proc
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:has_publication'] |
+| native | ['confident:has_publication'] |
+
+
 
 
 

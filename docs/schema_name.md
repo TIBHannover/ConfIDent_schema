@@ -12,6 +12,14 @@ _A property to provide the name of a schema._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:schema_name'] |
+| native | ['confident:schema_name'] |
+
+
 
 
 

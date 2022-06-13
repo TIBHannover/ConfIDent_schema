@@ -26,5 +26,5 @@ URI: [confident:EventSeries_wikidata_id](https://raw.githubusercontent.com/TIBHa
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | iao:0000235 |
+| **Mappings:** | | IAO:0000235 |
 

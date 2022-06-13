@@ -12,6 +12,14 @@ _The property to specify the [City](City.md) of an academic event location._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:has_city'] |
+| native | ['confident:has_city'] |
+
+
 
 
 

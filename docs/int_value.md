@@ -12,6 +12,14 @@ _A property to provide an integer value for a metric._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:int_value'] |
+| native | ['confident:int_value'] |
+
+
 
 
 

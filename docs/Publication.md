@@ -91,7 +91,7 @@ attributes:
     exact_mappings:
     - datacite:doi
     is_a: external_id
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: has_doi
     owner: Publication
@@ -124,7 +124,7 @@ attributes:
     description: A property to provide an external id of a schema entity.
     title: External ID
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     alias: external_id
     owner: Publication

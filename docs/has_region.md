@@ -12,6 +12,14 @@ _The property to specify the [Region](Region.md) of an academic event location._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:has_region'] |
+| native | ['confident:has_region'] |
+
+
 
 
 

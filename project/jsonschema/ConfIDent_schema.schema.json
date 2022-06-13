@@ -405,6 +405,13 @@
                "$ref": "#/$defs/Location",
                "description": "The location of the academic event."
             },
+            "colocated_with": {
+               "description": "A relation to be used to link an event to one or more other events that share the same location but not the same schedule and that are open to all attendees.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "context_info": {
                "$ref": "#/$defs/Context",
                "description": "A property to provide extra information for an academic event."
@@ -438,7 +445,10 @@
             },
             "former_name": {
                "description": "The former official name of an academic event. Usually this will only be needed in case an academic event has undergone a name change.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "gnd_id": {
                "description": "A property to link an academic event with its GND identifier.",
@@ -486,6 +496,10 @@
                },
                "type": "array"
             },
+            "has_umbrella": {
+               "description": "A relation to be used to link an event to its hosting superordinate event.",
+               "type": "string"
+            },
             "id": {
                "description": "A property to provide the internal identifier of an academic event.",
                "type": "string"
@@ -493,6 +507,13 @@
             "in_series": {
                "description": "The relation used to provide the series of which an Event is a part.",
                "type": "string"
+            },
+            "joint_venture_with": {
+               "description": "A relation to be used to link a series or event to one or more other events that share the same location, have a joint schedule and that are open to all attendees.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "landing_page": {
                "description": "A property to provide the website to which the DOI an academic event is resolving to.",
@@ -513,13 +534,6 @@
                },
                "type": "array"
             },
-            "related_to": {
-               "description": "A property to be used to link events to each other.",
-               "items": {
-                  "$ref": "#/$defs/ProcessRelation"
-               },
-               "type": "array"
-            },
             "sponsored_by": {
                "description": "A property to provide the sponsors of an academic event.",
                "items": {
@@ -530,6 +544,14 @@
             "start_date": {
                "description": "The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.",
                "format": "date-time",
+               "type": "string"
+            },
+            "subevent_of": {
+               "description": "A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place).",
+               "type": "string"
+            },
+            "superevent_of": {
+               "description": "A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).",
                "type": "string"
             },
             "tibkat_id": {
@@ -549,6 +571,10 @@
             "type": {
                "$ref": "#/$defs/EventType",
                "description": "A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum."
+            },
+            "umbrella_of": {
+               "description": "A relation to be used to link an event that hosts several events to its subordinate parts.",
+               "type": "string"
             },
             "website": {
                "description": "A property to provide the URL the official website of an academic event.",
@@ -623,6 +649,13 @@
                },
                "type": "array"
             },
+            "colocated_with": {
+               "description": "A relation to be used to link a series to one or more other series that share the same location but not the same schedule and that are open to all attendees.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "context_info": {
                "$ref": "#/$defs/Context",
                "description": "A property to provide extra information for an academic event series."
@@ -643,7 +676,10 @@
             },
             "former_name": {
                "description": "The former official name of an academic event series. Usually this will only be needed in case an academic event series has undergone a name change.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "gnd_id": {
                "description": "A property to link an academic event series with its GND identifier.",
@@ -684,9 +720,20 @@
                },
                "type": "array"
             },
+            "has_umbrella": {
+               "description": "A relation to be used to link a series to its hosting superordinate series.",
+               "type": "string"
+            },
             "id": {
                "description": "A property to provide the internal identifier of an academic event series.",
                "type": "string"
+            },
+            "joint_venture_with": {
+               "description": "A relation to be used to link a series to one or more other series that share the same location, have a joint schedule and that are open to all attendees.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "landing_page": {
                "description": "A property to provide the website to which the DOI an academic event series is resolving to.",
@@ -720,6 +767,10 @@
                   "type": "string"
                },
                "type": "array"
+            },
+            "umbrella_of": {
+               "description": "A relation to be used to link a series that hosts several series to its subordinate parts.",
+               "type": "string"
             },
             "website": {
                "description": "A property to provide the URL the official website of an academic event series.",
@@ -1042,19 +1093,6 @@
          "title": "Presenter",
          "type": "object"
       },
-      "ProcessRelation": {
-         "additionalProperties": false,
-         "description": "A container for relations between academic events.",
-         "properties": {
-            "type": {
-               "$ref": "#/$defs/RelationType",
-               "description": "A property to provide the type of process relation."
-            }
-         },
-         "required": [],
-         "title": "ProcessRelation",
-         "type": "object"
-      },
       "Publication": {
          "additionalProperties": false,
          "description": "A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.",
@@ -1113,19 +1151,6 @@
          ],
          "title": "Region",
          "type": "object"
-      },
-      "RelationType": {
-         "description": "The kinds of relations that are allowed between academic events.",
-         "enum": [
-            "isUmbrellaEventOf",
-            "hasUmbrellaEvent",
-            "isJointEventOf",
-            "isColocatedEventOf",
-            "isSubEventOf",
-            "hasSubEvent"
-         ],
-         "title": "RelationType",
-         "type": "string"
       },
       "ReviewProcessType": {
          "description": "The possible values for the metric that describes the review process undertaken by the organizers of an academic event.",
@@ -1343,5 +1368,5 @@
    "required": [],
    "title": "confident_schema",
    "type": "object",
-   "version": "0.4.3"
+   "version": "0.4.6"
 }

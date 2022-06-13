@@ -9,7 +9,7 @@ URI: [confident:Event_former_name](https://raw.githubusercontent.com/TIBHannover
 
 ## Domain and Range
 
-[Event](Event.md) &#8594;  <sub>0..1</sub> [String](types/String.md)
+[Event](Event.md) &#8594;  <sub>0..\*</sub> [String](types/String.md)
 
 ## Parents
 

@@ -1,5 +1,5 @@
 # Auto generated from ConfIDent_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-06-13T10:04:21
+# Generation date: 2022-06-13T15:24:53
 # Schema: confident_schema
 #
 # id: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
@@ -27,24 +27,26 @@ from linkml_runtime.linkml_model.types import Boolean, Datetime, Float, Integer,
 from linkml_runtime.utils.metamodelcore import Bool, URI, URIorCURIE, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "0.4.3"
+version = "0.4.6"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
+BFO = CurieNamespace('BFO', 'http://purl.obolibrary.org/obo/BFO_')
+IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
+OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
+RO = CurieNamespace('RO', 'http://purl.obolibrary.org/obo/RO_')
+TXPO = CurieNamespace('TXPO', 'http://purl.obolibrary.org/obo/TXPO_')
 AEON = CurieNamespace('aeon', 'https://github.com/tibonto/aeon#AEON_')
-BFO = CurieNamespace('bfo', 'http://purl.obolibrary.org/obo/BFO_')
 CONFIDENT = CurieNamespace('confident', 'https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#')
 DATACITE = CurieNamespace('datacite', 'http://schema.datacite.org/meta/kernel-4.4/metadata.xsd')
 DBLP_SERIES = CurieNamespace('dblp_series', 'https://dblp.org/db/conf/')
 DC = CurieNamespace('dc', 'http://purl.org/dc/terms/')
 DOI = CurieNamespace('doi', 'https://doi.org/')
 EX = CurieNamespace('ex', 'https://example.com/')
-IAO = CurieNamespace('iao', 'http://purl.obolibrary.org/obo/IAO_')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
-OBI = CurieNamespace('obi', 'http://purl.obolibrary.org/obo/OBI_')
 ORCID = CurieNamespace('orcid', 'https://orcid.org/')
 PROVO = CurieNamespace('provo', 'https://www.w3.org/TR/2013/REC-prov-o-20130430/#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
@@ -160,9 +162,13 @@ class EventSeries(YAMLRoot):
     sponsored_by: Optional[Union[Dict[Union[str, SponsorId], Union[dict, "Sponsor"]], List[Union[dict, "Sponsor"]]]] = empty_dict()
     website: Optional[Union[str, URI]] = None
     has_doi: Optional[Union[Union[dict, "DigitalObjectId"], List[Union[dict, "DigitalObjectId"]]]] = empty_list()
+    umbrella_of: Optional[str] = None
+    has_umbrella: Optional[str] = None
+    colocated_with: Optional[Union[str, List[str]]] = empty_list()
+    joint_venture_with: Optional[Union[str, List[str]]] = empty_list()
     series_of: Optional[Union[str, EventId]] = None
     alternative_name: Optional[Union[str, List[str]]] = empty_list()
-    former_name: Optional[str] = None
+    former_name: Optional[Union[str, List[str]]] = empty_list()
     translated_name: Optional[Union[str, List[str]]] = empty_list()
     context_info: Optional[Union[dict, "Context"]] = None
     has_metric: Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]] = empty_list()
@@ -209,6 +215,20 @@ class EventSeries(YAMLRoot):
             self.has_doi = [self.has_doi] if self.has_doi is not None else []
         self.has_doi = [v if isinstance(v, DigitalObjectId) else DigitalObjectId(**as_dict(v)) for v in self.has_doi]
 
+        if self.umbrella_of is not None and not isinstance(self.umbrella_of, str):
+            self.umbrella_of = str(self.umbrella_of)
+
+        if self.has_umbrella is not None and not isinstance(self.has_umbrella, str):
+            self.has_umbrella = str(self.has_umbrella)
+
+        if not isinstance(self.colocated_with, list):
+            self.colocated_with = [self.colocated_with] if self.colocated_with is not None else []
+        self.colocated_with = [v if isinstance(v, str) else str(v) for v in self.colocated_with]
+
+        if not isinstance(self.joint_venture_with, list):
+            self.joint_venture_with = [self.joint_venture_with] if self.joint_venture_with is not None else []
+        self.joint_venture_with = [v if isinstance(v, str) else str(v) for v in self.joint_venture_with]
+
         if self.series_of is not None and not isinstance(self.series_of, EventId):
             self.series_of = EventId(self.series_of)
 
@@ -216,8 +236,9 @@ class EventSeries(YAMLRoot):
             self.alternative_name = [self.alternative_name] if self.alternative_name is not None else []
         self.alternative_name = [v if isinstance(v, str) else str(v) for v in self.alternative_name]
 
-        if self.former_name is not None and not isinstance(self.former_name, str):
-            self.former_name = str(self.former_name)
+        if not isinstance(self.former_name, list):
+            self.former_name = [self.former_name] if self.former_name is not None else []
+        self.former_name = [v if isinstance(v, str) else str(v) for v in self.former_name]
 
         if not isinstance(self.translated_name, list):
             self.translated_name = [self.translated_name] if self.translated_name is not None else []
@@ -282,19 +303,24 @@ class Event(YAMLRoot):
     id: Union[str, EventId] = "confident:EventID"
     event_status: Union[str, "EventStatus"] = "as scheduled"
     has_acronym: Optional[str] = None
+    type: Optional[Union[str, "EventType"]] = None
+    at_location: Optional[Union[dict, "Location"]] = None
+    in_series: Optional[Union[str, EventSeriesId]] = None
+    subevent_of: Optional[Union[str, EventId]] = None
+    superevent_of: Optional[Union[str, EventId]] = None
+    has_deadline: Optional[Union[Union[dict, "Deadline"], List[Union[dict, "Deadline"]]]] = empty_list()
     academic_field: Optional[Union[Union[dict, "AcademicField"], List[Union[dict, "AcademicField"]]]] = empty_list()
     landing_page: Optional[Union[str, URI]] = None
     has_publication: Optional[Union[Dict[Union[str, PublicationId], Union[dict, "Publication"]], List[Union[dict, "Publication"]]]] = empty_dict()
     sponsored_by: Optional[Union[Dict[Union[str, SponsorId], Union[dict, "Sponsor"]], List[Union[dict, "Sponsor"]]]] = empty_dict()
     website: Optional[Union[str, URI]] = None
     has_doi: Optional[Union[Union[dict, "DigitalObjectId"], List[Union[dict, "DigitalObjectId"]]]] = empty_list()
-    type: Optional[Union[str, "EventType"]] = None
-    at_location: Optional[Union[dict, "Location"]] = None
-    in_series: Optional[Union[str, EventSeriesId]] = None
-    has_deadline: Optional[Union[Union[dict, "Deadline"], List[Union[dict, "Deadline"]]]] = empty_list()
-    related_to: Optional[Union[Union[dict, "ProcessRelation"], List[Union[dict, "ProcessRelation"]]]] = empty_list()
+    umbrella_of: Optional[str] = None
+    has_umbrella: Optional[str] = None
+    colocated_with: Optional[Union[str, List[str]]] = empty_list()
+    joint_venture_with: Optional[Union[str, List[str]]] = empty_list()
     alternative_name: Optional[Union[str, List[str]]] = empty_list()
-    former_name: Optional[str] = None
+    former_name: Optional[Union[str, List[str]]] = empty_list()
     translated_name: Optional[Union[str, List[str]]] = empty_list()
     context_info: Optional[Union[dict, "Context"]] = None
     has_metric: Optional[Union[Union[dict, "Metric"], List[Union[dict, "Metric"]]]] = empty_list()
@@ -341,6 +367,25 @@ class Event(YAMLRoot):
         if self.has_acronym is not None and not isinstance(self.has_acronym, str):
             self.has_acronym = str(self.has_acronym)
 
+        if self.type is not None and not isinstance(self.type, EventType):
+            self.type = EventType(self.type)
+
+        if self.at_location is not None and not isinstance(self.at_location, Location):
+            self.at_location = Location(**as_dict(self.at_location))
+
+        if self.in_series is not None and not isinstance(self.in_series, EventSeriesId):
+            self.in_series = EventSeriesId(self.in_series)
+
+        if self.subevent_of is not None and not isinstance(self.subevent_of, EventId):
+            self.subevent_of = EventId(self.subevent_of)
+
+        if self.superevent_of is not None and not isinstance(self.superevent_of, EventId):
+            self.superevent_of = EventId(self.superevent_of)
+
+        if not isinstance(self.has_deadline, list):
+            self.has_deadline = [self.has_deadline] if self.has_deadline is not None else []
+        self.has_deadline = [v if isinstance(v, Deadline) else Deadline(**as_dict(v)) for v in self.has_deadline]
+
         if not isinstance(self.academic_field, list):
             self.academic_field = [self.academic_field] if self.academic_field is not None else []
         self.academic_field = [v if isinstance(v, AcademicField) else AcademicField(**as_dict(v)) for v in self.academic_field]
@@ -359,29 +404,27 @@ class Event(YAMLRoot):
             self.has_doi = [self.has_doi] if self.has_doi is not None else []
         self.has_doi = [v if isinstance(v, DigitalObjectId) else DigitalObjectId(**as_dict(v)) for v in self.has_doi]
 
-        if self.type is not None and not isinstance(self.type, EventType):
-            self.type = EventType(self.type)
+        if self.umbrella_of is not None and not isinstance(self.umbrella_of, str):
+            self.umbrella_of = str(self.umbrella_of)
 
-        if self.at_location is not None and not isinstance(self.at_location, Location):
-            self.at_location = Location(**as_dict(self.at_location))
+        if self.has_umbrella is not None and not isinstance(self.has_umbrella, str):
+            self.has_umbrella = str(self.has_umbrella)
 
-        if self.in_series is not None and not isinstance(self.in_series, EventSeriesId):
-            self.in_series = EventSeriesId(self.in_series)
+        if not isinstance(self.colocated_with, list):
+            self.colocated_with = [self.colocated_with] if self.colocated_with is not None else []
+        self.colocated_with = [v if isinstance(v, str) else str(v) for v in self.colocated_with]
 
-        if not isinstance(self.has_deadline, list):
-            self.has_deadline = [self.has_deadline] if self.has_deadline is not None else []
-        self.has_deadline = [v if isinstance(v, Deadline) else Deadline(**as_dict(v)) for v in self.has_deadline]
-
-        if not isinstance(self.related_to, list):
-            self.related_to = [self.related_to] if self.related_to is not None else []
-        self.related_to = [v if isinstance(v, ProcessRelation) else ProcessRelation(**as_dict(v)) for v in self.related_to]
+        if not isinstance(self.joint_venture_with, list):
+            self.joint_venture_with = [self.joint_venture_with] if self.joint_venture_with is not None else []
+        self.joint_venture_with = [v if isinstance(v, str) else str(v) for v in self.joint_venture_with]
 
         if not isinstance(self.alternative_name, list):
             self.alternative_name = [self.alternative_name] if self.alternative_name is not None else []
         self.alternative_name = [v if isinstance(v, str) else str(v) for v in self.alternative_name]
 
-        if self.former_name is not None and not isinstance(self.former_name, str):
-            self.former_name = str(self.former_name)
+        if not isinstance(self.former_name, list):
+            self.former_name = [self.former_name] if self.former_name is not None else []
+        self.former_name = [v if isinstance(v, str) else str(v) for v in self.former_name]
 
         if not isinstance(self.translated_name, list):
             self.translated_name = [self.translated_name] if self.translated_name is not None else []
@@ -469,7 +512,7 @@ class DigitalObjectId(ExternalIdentifier):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OBI["0002110"]
-    class_class_curie: ClassVar[str] = "obi:0002110"
+    class_class_curie: ClassVar[str] = "OBI:0002110"
     class_name: ClassVar[str] = "DigitalObjectId"
     class_model_uri: ClassVar[URIRef] = CONFIDENT.DigitalObjectId
 
@@ -740,27 +783,6 @@ class Metric(YAMLRoot):
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ProcessRelation(YAMLRoot):
-    """
-    A container for relations between academic events.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = CONFIDENT.ProcessRelation
-    class_class_curie: ClassVar[str] = "confident:ProcessRelation"
-    class_name: ClassVar[str] = "ProcessRelation"
-    class_model_uri: ClassVar[URIRef] = CONFIDENT.ProcessRelation
-
-    type: Optional[Union[str, "RelationType"]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.type is not None and not isinstance(self.type, RelationType):
-            self.type = RelationType(self.type)
 
         super().__post_init__(**kwargs)
 
@@ -1557,22 +1579,6 @@ class DeadlineType(EnumDefinitionImpl):
                 PermissibleValue(text="workshop deadline",
                                  meaning=AEON["0000069"]) )
 
-class RelationType(EnumDefinitionImpl):
-    """
-    The kinds of relations that are allowed between academic events.
-    """
-    isUmbrellaEventOf = PermissibleValue(text="isUmbrellaEventOf")
-    hasUmbrellaEvent = PermissibleValue(text="hasUmbrellaEvent")
-    isJointEventOf = PermissibleValue(text="isJointEventOf")
-    isColocatedEventOf = PermissibleValue(text="isColocatedEventOf")
-    isSubEventOf = PermissibleValue(text="isSubEventOf")
-    hasSubEvent = PermissibleValue(text="hasSubEvent")
-
-    _defn = EnumDefinition(
-        name="RelationType",
-        description="The kinds of relations that are allowed between academic events.",
-    )
-
 class MetricType(EnumDefinitionImpl):
     """
     The possible metric of an academic event.
@@ -1733,11 +1739,23 @@ slots.sponsored_by = Slot(uri=CONFIDENT.sponsored_by, name="sponsored_by", curie
 slots.website = Slot(uri=CONFIDENT.website, name="website", curie=CONFIDENT.curie('website'),
                    model_uri=CONFIDENT.website, domain=None, range=Optional[Union[str, URI]])
 
+slots.umbrella_of = Slot(uri=CONFIDENT.umbrella_of, name="umbrella_of", curie=CONFIDENT.curie('umbrella_of'),
+                   model_uri=CONFIDENT.umbrella_of, domain=None, range=Optional[str])
+
+slots.has_umbrella = Slot(uri=CONFIDENT.has_umbrella, name="has_umbrella", curie=CONFIDENT.curie('has_umbrella'),
+                   model_uri=CONFIDENT.has_umbrella, domain=None, range=Optional[str])
+
+slots.colocated_with = Slot(uri=CONFIDENT.colocated_with, name="colocated_with", curie=CONFIDENT.curie('colocated_with'),
+                   model_uri=CONFIDENT.colocated_with, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.joint_venture_with = Slot(uri=CONFIDENT.joint_venture_with, name="joint_venture_with", curie=CONFIDENT.curie('joint_venture_with'),
+                   model_uri=CONFIDENT.joint_venture_with, domain=None, range=Optional[Union[str, List[str]]])
+
 slots.alternative_name = Slot(uri=SKOS.altLabel, name="alternative_name", curie=SKOS.curie('altLabel'),
                    model_uri=CONFIDENT.alternative_name, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.former_name = Slot(uri=CONFIDENT.former_name, name="former_name", curie=CONFIDENT.curie('former_name'),
-                   model_uri=CONFIDENT.former_name, domain=None, range=Optional[str])
+                   model_uri=CONFIDENT.former_name, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.translated_name = Slot(uri=CONFIDENT.translated_name, name="translated_name", curie=CONFIDENT.curie('translated_name'),
                    model_uri=CONFIDENT.translated_name, domain=None, range=Optional[Union[str, List[str]]])
@@ -1766,6 +1784,12 @@ slots.event_status = Slot(uri=AEON.event_status, name="event_status", curie=AEON
 slots.in_series = Slot(uri=CONFIDENT.in_series, name="in_series", curie=CONFIDENT.curie('in_series'),
                    model_uri=CONFIDENT.in_series, domain=None, range=Optional[Union[str, EventSeriesId]])
 
+slots.subevent_of = Slot(uri=RO['0002012'], name="subevent_of", curie=RO.curie('0002012'),
+                   model_uri=CONFIDENT.subevent_of, domain=None, range=Optional[Union[str, EventId]])
+
+slots.superevent_of = Slot(uri=CONFIDENT.superevent_of, name="superevent_of", curie=CONFIDENT.curie('superevent_of'),
+                   model_uri=CONFIDENT.superevent_of, domain=None, range=Optional[Union[str, EventId]])
+
 slots.event_format = Slot(uri=AEON['0000032'], name="event_format", curie=AEON.curie('0000032'),
                    model_uri=CONFIDENT.event_format, domain=None, range=Optional[Union[dict, EventFormatSpecification]])
 
@@ -1774,9 +1798,6 @@ slots.at_location = Slot(uri=CONFIDENT.at_location, name="at_location", curie=CO
 
 slots.has_deadline = Slot(uri=CONFIDENT.has_deadline, name="has_deadline", curie=CONFIDENT.curie('has_deadline'),
                    model_uri=CONFIDENT.has_deadline, domain=None, range=Optional[Union[Union[dict, Deadline], List[Union[dict, Deadline]]]])
-
-slots.related_to = Slot(uri=CONFIDENT.related_to, name="related_to", curie=CONFIDENT.curie('related_to'),
-                   model_uri=CONFIDENT.related_to, domain=None, range=Optional[Union[Union[dict, ProcessRelation], List[Union[dict, ProcessRelation]]]])
 
 slots.ordinal = Slot(uri=AEON.event_number, name="ordinal", curie=AEON.curie('event_number'),
                    model_uri=CONFIDENT.ordinal, domain=None, range=Optional[int])
@@ -1906,11 +1927,23 @@ slots.EventSeries_sponsored_by = Slot(uri=CONFIDENT.sponsored_by, name="EventSer
 slots.EventSeries_has_publication = Slot(uri=CONFIDENT.has_publication, name="EventSeries_has_publication", curie=CONFIDENT.curie('has_publication'),
                    model_uri=CONFIDENT.EventSeries_has_publication, domain=EventSeries, range=Optional[Union[Dict[Union[str, PublicationId], Union[dict, "Publication"]], List[Union[dict, "Publication"]]]])
 
+slots.EventSeries_umbrella_of = Slot(uri=CONFIDENT.umbrella_of, name="EventSeries_umbrella_of", curie=CONFIDENT.curie('umbrella_of'),
+                   model_uri=CONFIDENT.EventSeries_umbrella_of, domain=EventSeries, range=Optional[str])
+
+slots.EventSeries_has_umbrella = Slot(uri=CONFIDENT.has_umbrella, name="EventSeries_has_umbrella", curie=CONFIDENT.curie('has_umbrella'),
+                   model_uri=CONFIDENT.EventSeries_has_umbrella, domain=EventSeries, range=Optional[str])
+
+slots.EventSeries_colocated_with = Slot(uri=CONFIDENT.colocated_with, name="EventSeries_colocated_with", curie=CONFIDENT.curie('colocated_with'),
+                   model_uri=CONFIDENT.EventSeries_colocated_with, domain=EventSeries, range=Optional[Union[str, List[str]]])
+
+slots.EventSeries_joint_venture_with = Slot(uri=CONFIDENT.joint_venture_with, name="EventSeries_joint_venture_with", curie=CONFIDENT.curie('joint_venture_with'),
+                   model_uri=CONFIDENT.EventSeries_joint_venture_with, domain=EventSeries, range=Optional[Union[str, List[str]]])
+
 slots.EventSeries_alternative_name = Slot(uri=SKOS.altLabel, name="EventSeries_alternative_name", curie=SKOS.curie('altLabel'),
                    model_uri=CONFIDENT.EventSeries_alternative_name, domain=EventSeries, range=Optional[Union[str, List[str]]])
 
 slots.EventSeries_former_name = Slot(uri=CONFIDENT.former_name, name="EventSeries_former_name", curie=CONFIDENT.curie('former_name'),
-                   model_uri=CONFIDENT.EventSeries_former_name, domain=EventSeries, range=Optional[str])
+                   model_uri=CONFIDENT.EventSeries_former_name, domain=EventSeries, range=Optional[Union[str, List[str]]])
 
 slots.EventSeries_translated_name = Slot(uri=CONFIDENT.translated_name, name="EventSeries_translated_name", curie=CONFIDENT.curie('translated_name'),
                    model_uri=CONFIDENT.EventSeries_translated_name, domain=EventSeries, range=Optional[Union[str, List[str]]])
@@ -1948,6 +1981,9 @@ slots.Event_official_name = Slot(uri=SKOS.perfLabel, name="Event_official_name",
 slots.Event_organized_by = Slot(uri=CONFIDENT.organized_by, name="Event_organized_by", curie=CONFIDENT.curie('organized_by'),
                    model_uri=CONFIDENT.Event_organized_by, domain=Event, range=Union[Dict[Union[str, OrganizerId], Union[dict, "Organizer"]], List[Union[dict, "Organizer"]]])
 
+slots.Event_type = Slot(uri=RDF.type, name="Event_type", curie=RDF.curie('type'),
+                   model_uri=CONFIDENT.Event_type, domain=Event, range=Optional[Union[str, "EventType"]])
+
 slots.Event_has_acronym = Slot(uri=CONFIDENT.has_acronym, name="Event_has_acronym", curie=CONFIDENT.curie('has_acronym'),
                    model_uri=CONFIDENT.Event_has_acronym, domain=Event, range=Optional[str])
 
@@ -1969,14 +2005,23 @@ slots.Event_sponsored_by = Slot(uri=CONFIDENT.sponsored_by, name="Event_sponsore
 slots.Event_has_publication = Slot(uri=CONFIDENT.has_publication, name="Event_has_publication", curie=CONFIDENT.curie('has_publication'),
                    model_uri=CONFIDENT.Event_has_publication, domain=Event, range=Optional[Union[Dict[Union[str, PublicationId], Union[dict, "Publication"]], List[Union[dict, "Publication"]]]])
 
-slots.Event_type = Slot(uri=RDF.type, name="Event_type", curie=RDF.curie('type'),
-                   model_uri=CONFIDENT.Event_type, domain=Event, range=Optional[Union[str, "EventType"]])
+slots.Event_umbrella_of = Slot(uri=CONFIDENT.umbrella_of, name="Event_umbrella_of", curie=CONFIDENT.curie('umbrella_of'),
+                   model_uri=CONFIDENT.Event_umbrella_of, domain=Event, range=Optional[str])
+
+slots.Event_has_umbrella = Slot(uri=CONFIDENT.has_umbrella, name="Event_has_umbrella", curie=CONFIDENT.curie('has_umbrella'),
+                   model_uri=CONFIDENT.Event_has_umbrella, domain=Event, range=Optional[str])
+
+slots.Event_colocated_with = Slot(uri=CONFIDENT.colocated_with, name="Event_colocated_with", curie=CONFIDENT.curie('colocated_with'),
+                   model_uri=CONFIDENT.Event_colocated_with, domain=Event, range=Optional[Union[str, List[str]]])
+
+slots.Event_joint_venture_with = Slot(uri=CONFIDENT.joint_venture_with, name="Event_joint_venture_with", curie=CONFIDENT.curie('joint_venture_with'),
+                   model_uri=CONFIDENT.Event_joint_venture_with, domain=Event, range=Optional[Union[str, List[str]]])
 
 slots.Event_alternative_name = Slot(uri=SKOS.altLabel, name="Event_alternative_name", curie=SKOS.curie('altLabel'),
                    model_uri=CONFIDENT.Event_alternative_name, domain=Event, range=Optional[Union[str, List[str]]])
 
 slots.Event_former_name = Slot(uri=CONFIDENT.former_name, name="Event_former_name", curie=CONFIDENT.curie('former_name'),
-                   model_uri=CONFIDENT.Event_former_name, domain=Event, range=Optional[str])
+                   model_uri=CONFIDENT.Event_former_name, domain=Event, range=Optional[Union[str, List[str]]])
 
 slots.Event_translated_name = Slot(uri=CONFIDENT.translated_name, name="Event_translated_name", curie=CONFIDENT.curie('translated_name'),
                    model_uri=CONFIDENT.Event_translated_name, domain=Event, range=Optional[Union[str, List[str]]])
@@ -2058,9 +2103,6 @@ slots.Deadline_type = Slot(uri=RDF.type, name="Deadline_type", curie=RDF.curie('
 
 slots.Metric_type = Slot(uri=RDF.type, name="Metric_type", curie=RDF.curie('type'),
                    model_uri=CONFIDENT.Metric_type, domain=Metric, range=Optional[Union[str, "MetricType"]])
-
-slots.ProcessRelation_type = Slot(uri=RDF.type, name="ProcessRelation_type", curie=RDF.curie('type'),
-                   model_uri=CONFIDENT.ProcessRelation_type, domain=ProcessRelation, range=Optional[Union[str, "RelationType"]])
 
 slots.AcademicField_schema_value = Slot(uri=CONFIDENT.schema_value, name="AcademicField_schema_value", curie=CONFIDENT.curie('schema_value'),
                    model_uri=CONFIDENT.AcademicField_schema_value, domain=AcademicField, range=str)

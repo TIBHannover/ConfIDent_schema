@@ -12,6 +12,14 @@ _Similar to start_date but only for the end of an academic event or event series
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['aeon:end_date'] |
+| native | ['confident:end_date'] |
+
+
 
 
 

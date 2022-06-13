@@ -89,7 +89,7 @@ mixins:
 slot_usage:
   schema_value:
     name: schema_value
-    slot_uri: obi:0002815
+    slot_uri: OBI:0002815
 
 ```
 </details>
@@ -107,14 +107,14 @@ mixins:
 slot_usage:
   schema_value:
     name: schema_value
-    slot_uri: obi:0002815
+    slot_uri: OBI:0002815
 attributes:
   schema_value:
     name: schema_value
     description: A property to provide the literal value of a schema based entity.
     title: Schema Value
     from_schema: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
-    slot_uri: obi:0002815
+    slot_uri: OBI:0002815
     alias: schema_value
     owner: ExternalIdentifier
     range: string

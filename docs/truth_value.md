@@ -12,6 +12,14 @@ _A property to provide a truth value for a metric._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:truth_value'] |
+| native | ['confident:truth_value'] |
+
+
 
 
 

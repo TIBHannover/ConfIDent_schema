@@ -3,7 +3,7 @@
   "description": "This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.",
   "title": "ConfIDent Metadata Schema",
   "id": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
-  "version": "0.4.3",
+  "version": "0.4.6",
   "imports": [
     "linkml:types"
   ],
@@ -30,16 +30,24 @@
       "prefix_reference": "https://github.com/tibonto/aeon#AEON_"
     },
     {
-      "prefix_prefix": "obi",
+      "prefix_prefix": "OBI",
       "prefix_reference": "http://purl.obolibrary.org/obo/OBI_"
     },
     {
-      "prefix_prefix": "iao",
+      "prefix_prefix": "IAO",
       "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"
     },
     {
-      "prefix_prefix": "bfo",
+      "prefix_prefix": "BFO",
       "prefix_reference": "http://purl.obolibrary.org/obo/BFO_"
+    },
+    {
+      "prefix_prefix": "RO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/RO_"
+    },
+    {
+      "prefix_prefix": "TXPO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/TXPO_"
     },
     {
       "prefix_prefix": "NCBITaxon",
@@ -434,33 +442,6 @@
       ]
     },
     {
-      "name": "RelationType",
-      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#RelationType",
-      "description": "The kinds of relations that are allowed between academic events.",
-      "title": "Event Relation Type",
-      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
-      "permissible_values": [
-        {
-          "text": "isUmbrellaEventOf"
-        },
-        {
-          "text": "hasUmbrellaEvent"
-        },
-        {
-          "text": "isJointEventOf"
-        },
-        {
-          "text": "isColocatedEventOf"
-        },
-        {
-          "text": "isSubEventOf"
-        },
-        {
-          "text": "hasSubEvent"
-        }
-      ]
-    },
-    {
       "name": "MetricType",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#MetricType",
       "description": "The possible metric of an academic event.",
@@ -571,7 +552,7 @@
         {
           "text": "organization",
           "description": "An institution, or an association that has one or more people as members and which actsas some kind of participant in an event or event series.",
-          "meaning": "obi:0000245"
+          "meaning": "OBI:0000245"
         },
         {
           "text": "person",
@@ -598,7 +579,6 @@
         "Event",
         "Deadline",
         "Metric",
-        "ProcessRelation",
         "Contributor"
       ],
       "range": "string",
@@ -926,6 +906,74 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "umbrella_of",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "description": "A relation to be used to link an event or series that hosts several events or series to its subordinate parts.",
+      "title": "Umbrella Of",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_umbrella",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_umbrella",
+      "description": "A relation to be used to link an event or series to its hosting superordinate event or series.",
+      "title": "Has Umbrella",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_umbrella",
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "colocated_with",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#colocated_with",
+      "description": "A relation to be used to link a series or event to one or more other series or events that share the same location but not the same schedule and that are open to all attendees.",
+      "title": "Colocated With",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#colocated_with",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "joint_venture_with",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#joint_venture_with",
+      "description": "A relation to be used to link a series or event to one or more other series or events that share the same location, have a joint schedule and that are open to all attendees.",
+      "title": "Joint Venture With",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#joint_venture_with",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "alternative_name",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#alternative_name",
       "description": "A property to provide alternative names of an event or event series.",
@@ -943,6 +991,7 @@
         "Event"
       ],
       "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -953,12 +1002,14 @@
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "is_a": "name",
       "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#former_name",
+      "multivalued": true,
       "owner": "Event",
       "domain_of": [
         "EventSeries",
         "Event"
       ],
       "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -976,6 +1027,7 @@
         "Event"
       ],
       "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1026,6 +1078,7 @@
         "Event"
       ],
       "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1121,6 +1174,39 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "subevent_of",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#subevent_of",
+      "description": "A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place).",
+      "title": "Subevent Of",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0002012"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0002012",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "range": "Event",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "superevent_of",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#superevent_of",
+      "description": "A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).",
+      "title": "Superevent Of",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#superevent_of",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "range": "Event",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "event_format",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#event_format",
       "description": "A property to provide an event format specification, if none of the [Event Types](EventType.md) are applicable to specify the format of an academic event.",
@@ -1167,23 +1253,6 @@
       "recommended": true,
       "inlined": true,
       "inlined_as_list": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "related_to",
-      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#related_to",
-      "description": "A property to be used to link events to each other.",
-      "title": "Related To",
-      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
-      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#related_to",
-      "multivalued": true,
-      "owner": "Event",
-      "domain_of": [
-        "Event"
-      ],
-      "range": "ProcessRelation",
-      "recommended": true,
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1934,6 +2003,90 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "EventSeries_umbrella_of",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "description": "A relation to be used to link a series that hosts several series to its subordinate parts.",
+      "title": "Umbrella Of",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "umbrella_of",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "alias": "umbrella_of",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "umbrella_of",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_has_umbrella",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_umbrella",
+      "description": "A relation to be used to link a series to its hosting superordinate series.",
+      "title": "Has Umbrella",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "has_umbrella",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_umbrella",
+      "alias": "has_umbrella",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_umbrella",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_colocated_with",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#colocated_with",
+      "description": "A relation to be used to link a series to one or more other series that share the same location but not the same schedule and that are open to all attendees.",
+      "title": "Colocated With",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "colocated_with",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#colocated_with",
+      "multivalued": true,
+      "alias": "colocated_with",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "colocated_with",
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_joint_venture_with",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#joint_venture_with",
+      "description": "A relation to be used to link a series to one or more other series that share the same location, have a joint schedule and that are open to all attendees.",
+      "title": "Joint Venture With",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "joint_venture_with",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#joint_venture_with",
+      "multivalued": true,
+      "alias": "joint_venture_with",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "joint_venture_with",
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "EventSeries_alternative_name",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#alternative_name",
       "description": "A property to provide alternative names of an academic event series.",
@@ -1954,6 +2107,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "alternative_name",
       "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1965,6 +2119,7 @@
       "is_a": "former_name",
       "domain": "EventSeries",
       "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#former_name",
+      "multivalued": true,
       "alias": "former_name",
       "owner": "EventSeries",
       "domain_of": [
@@ -1973,6 +2128,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "former_name",
       "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1993,6 +2149,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "translated_name",
       "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2016,6 +2173,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "has_topic",
       "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2254,6 +2412,31 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "Event_type",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
+      "description": "A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.",
+      "title": "Event Type",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
+      "is_a": "type",
+      "abstract": true,
+      "domain": "Event",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "designates_type": true,
+      "alias": "type",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "type",
+      "range": "EventType",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "Event_has_acronym",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_acronym",
       "description": "The official acronym of an academic event.",
@@ -2421,28 +2604,87 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Event_type",
-      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
-      "description": "A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.",
-      "title": "Event Type",
+      "name": "Event_umbrella_of",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "description": "A relation to be used to link an event that hosts several events to its subordinate parts.",
+      "title": "Umbrella Of",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
-      ],
-      "is_a": "type",
-      "abstract": true,
+      "is_a": "umbrella_of",
       "domain": "Event",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "designates_type": true,
-      "alias": "type",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "alias": "umbrella_of",
       "owner": "Event",
       "domain_of": [
         "Event"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "type",
-      "range": "EventType",
+      "usage_slot_name": "umbrella_of",
+      "range": "string",
       "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_has_umbrella",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_umbrella",
+      "description": "A relation to be used to link an event to its hosting superordinate event.",
+      "title": "Has Umbrella",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "has_umbrella",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_umbrella",
+      "alias": "has_umbrella",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_umbrella",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_colocated_with",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#colocated_with",
+      "description": "A relation to be used to link an event to one or more other events that share the same location but not the same schedule and that are open to all attendees.",
+      "title": "Colocated With",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "colocated_with",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#colocated_with",
+      "multivalued": true,
+      "alias": "colocated_with",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "colocated_with",
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_joint_venture_with",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#joint_venture_with",
+      "description": "A relation to be used to link a series or event to one or more other events that share the same location, have a joint schedule and that are open to all attendees.",
+      "title": "Joint Venture With",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "joint_venture_with",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#joint_venture_with",
+      "multivalued": true,
+      "alias": "joint_venture_with",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "joint_venture_with",
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2466,6 +2708,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "alternative_name",
       "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2477,6 +2720,7 @@
       "is_a": "former_name",
       "domain": "Event",
       "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#former_name",
+      "multivalued": true,
       "alias": "former_name",
       "owner": "Event",
       "domain_of": [
@@ -2485,6 +2729,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "former_name",
       "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2505,6 +2750,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "translated_name",
       "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2525,6 +2771,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "has_topic",
       "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3069,29 +3316,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "ProcessRelation_type",
-      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
-      "description": "A property to provide the type of process relation.",
-      "title": "Type",
-      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
-      ],
-      "is_a": "type",
-      "abstract": true,
-      "domain": "ProcessRelation",
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "alias": "type",
-      "owner": "ProcessRelation",
-      "domain_of": [
-        "ProcessRelation"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "type",
-      "range": "RelationType",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "AcademicField_schema_value",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_value",
       "description": "The classification label of a certain classification schema.",
@@ -3181,6 +3405,10 @@
         "EventSeries_sponsored_by",
         "EventSeries_website",
         "EventSeries_has_doi",
+        "EventSeries_umbrella_of",
+        "EventSeries_has_umbrella",
+        "EventSeries_colocated_with",
+        "EventSeries_joint_venture_with",
         "series_of",
         "EventSeries_alternative_name",
         "EventSeries_former_name",
@@ -3218,17 +3446,22 @@
         "end_date",
         "event_status",
         "Event_has_acronym",
+        "Event_type",
+        "at_location",
+        "in_series",
+        "subevent_of",
+        "superevent_of",
+        "has_deadline",
         "Event_academic_field",
         "Event_landing_page",
         "Event_has_publication",
         "Event_sponsored_by",
         "Event_website",
         "Event_has_doi",
-        "Event_type",
-        "at_location",
-        "in_series",
-        "has_deadline",
-        "related_to",
+        "Event_umbrella_of",
+        "Event_has_umbrella",
+        "Event_colocated_with",
+        "Event_joint_venture_with",
         "Event_alternative_name",
         "Event_former_name",
         "Event_translated_name",
@@ -3273,7 +3506,7 @@
       "title": "Digital Object Identifier",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
-        "obi:0002110"
+        "OBI:0002110"
       ],
       "is_a": "ExternalIdentifier",
       "slots": [
@@ -3409,7 +3642,7 @@
               "@type": "Example"
             }
           ],
-          "slot_uri": "obi:0002815",
+          "slot_uri": "OBI:0002815",
           "range": "string",
           "required": true,
           "@type": "SlotDefinition"
@@ -3538,19 +3771,6 @@
           "@type": "ClassRule"
         }
       ],
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "ProcessRelation",
-      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#ProcessRelation",
-      "description": "A container for relations between academic events.",
-      "title": "Subobject Process Relation",
-      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
-      "slots": [
-        "ProcessRelation_type"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#ProcessRelation",
       "@type": "ClassDefinition"
     },
     {
@@ -4103,9 +4323,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ConfIDent_schema.yaml",
-  "source_file_date": "2022-06-13T10:01:09",
-  "source_file_size": 47638,
-  "generation_date": "2022-06-13T10:04:11",
+  "source_file_date": "2022-06-13T15:24:36",
+  "source_file_size": 50493,
+  "generation_date": "2022-06-13T15:24:43",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ConfIDent_schema.context.jsonld",

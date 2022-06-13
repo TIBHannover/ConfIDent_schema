@@ -84,16 +84,19 @@ CREATE TABLE "Event" (
 	end_date DATETIME NOT NULL, 
 	event_status VARCHAR(15) NOT NULL, 
 	has_acronym TEXT, 
+	type VARCHAR(14), 
+	at_location TEXT, 
+	in_series TEXT, 
+	subevent_of TEXT, 
+	superevent_of TEXT, 
 	academic_field TEXT, 
 	landing_page TEXT, 
 	has_publication TEXT, 
 	sponsored_by TEXT, 
 	website TEXT, 
 	has_doi TEXT, 
-	type VARCHAR(14), 
-	at_location TEXT, 
-	in_series TEXT, 
-	former_name TEXT, 
+	umbrella_of TEXT, 
+	has_umbrella TEXT, 
 	context_info TEXT, 
 	has_metric TEXT, 
 	external_id TEXT, 
@@ -103,7 +106,9 @@ CREATE TABLE "Event" (
 	ordinal INTEGER, 
 	event_mode VARCHAR(7), 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(in_series) REFERENCES "EventSeries" (id)
+	FOREIGN KEY(in_series) REFERENCES "EventSeries" (id), 
+	FOREIGN KEY(subevent_of) REFERENCES "Event" (id), 
+	FOREIGN KEY(superevent_of) REFERENCES "Event" (id)
 );
 
 CREATE TABLE "EventFormatSpecification" (
@@ -122,8 +127,9 @@ CREATE TABLE "EventSeries" (
 	sponsored_by TEXT, 
 	website TEXT, 
 	has_doi TEXT, 
+	umbrella_of TEXT, 
+	has_umbrella TEXT, 
 	series_of TEXT, 
-	former_name TEXT, 
 	context_info TEXT, 
 	has_metric TEXT, 
 	external_id TEXT, 
@@ -284,13 +290,6 @@ CREATE TABLE "Organizer" (
 	FOREIGN KEY(contact) REFERENCES "ContactPerson" (id)
 );
 
-CREATE TABLE "ProcessRelation" (
-	type VARCHAR(18), 
-	"Event_id" TEXT, 
-	PRIMARY KEY (type, "Event_id"), 
-	FOREIGN KEY("Event_id") REFERENCES "Event" (id)
-);
-
 CREATE TABLE "TibkatId" (
 	schema_value TEXT, 
 	schema_name TEXT, 
@@ -318,10 +317,31 @@ CREATE TABLE "WikiCfpSeriesId" (
 	FOREIGN KEY("EventSeries_id") REFERENCES "EventSeries" (id)
 );
 
+CREATE TABLE "Event_colocated_with" (
+	backref_id TEXT, 
+	colocated_with TEXT, 
+	PRIMARY KEY (backref_id, colocated_with), 
+	FOREIGN KEY(backref_id) REFERENCES "Event" (id)
+);
+
+CREATE TABLE "Event_joint_venture_with" (
+	backref_id TEXT, 
+	joint_venture_with TEXT, 
+	PRIMARY KEY (backref_id, joint_venture_with), 
+	FOREIGN KEY(backref_id) REFERENCES "Event" (id)
+);
+
 CREATE TABLE "Event_alternative_name" (
 	backref_id TEXT, 
 	alternative_name TEXT, 
 	PRIMARY KEY (backref_id, alternative_name), 
+	FOREIGN KEY(backref_id) REFERENCES "Event" (id)
+);
+
+CREATE TABLE "Event_former_name" (
+	backref_id TEXT, 
+	former_name TEXT, 
+	PRIMARY KEY (backref_id, former_name), 
 	FOREIGN KEY(backref_id) REFERENCES "Event" (id)
 );
 
@@ -339,10 +359,31 @@ CREATE TABLE "Event_has_topic" (
 	FOREIGN KEY(backref_id) REFERENCES "Event" (id)
 );
 
+CREATE TABLE "EventSeries_colocated_with" (
+	backref_id TEXT, 
+	colocated_with TEXT, 
+	PRIMARY KEY (backref_id, colocated_with), 
+	FOREIGN KEY(backref_id) REFERENCES "EventSeries" (id)
+);
+
+CREATE TABLE "EventSeries_joint_venture_with" (
+	backref_id TEXT, 
+	joint_venture_with TEXT, 
+	PRIMARY KEY (backref_id, joint_venture_with), 
+	FOREIGN KEY(backref_id) REFERENCES "EventSeries" (id)
+);
+
 CREATE TABLE "EventSeries_alternative_name" (
 	backref_id TEXT, 
 	alternative_name TEXT, 
 	PRIMARY KEY (backref_id, alternative_name), 
+	FOREIGN KEY(backref_id) REFERENCES "EventSeries" (id)
+);
+
+CREATE TABLE "EventSeries_former_name" (
+	backref_id TEXT, 
+	former_name TEXT, 
+	PRIMARY KEY (backref_id, former_name), 
 	FOREIGN KEY(backref_id) REFERENCES "EventSeries" (id)
 );
 

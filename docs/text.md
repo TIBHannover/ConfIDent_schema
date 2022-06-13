@@ -12,6 +12,14 @@ _The free text used to provide more context information on an event or event ser
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:text'] |
+| native | ['confident:text'] |
+
+
 
 
 

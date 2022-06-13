@@ -7,12 +7,14 @@ An academic event is part of the established instruments of science communicatio
 URI: [confident:Event](https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Event)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[WikidataId],[WikiCfpEventId],[TibkatId],[Sponsor],[Publication],[ProcessRelation],[Organizer],[Metric],[Location],[GndId],[ExternalIdentifier],[EventSeries],[WikiCfpEventId]<wikicfp_event_id%200..*-++[Event&#124;id:uriorcurie;official_name:string;start_date:datetime;end_date:datetime;event_status:EventStatus;has_acronym:string%20%3F;landing_page:uri%20%3F;website:uri%20%3F;type:EventType%20%3F;alternative_name:string%20*;former_name:string%20%3F;translated_name:string%20*;has_topic:string%20*;ordinal:integer%20%3F;event_mode:EventMode%20%3F],[TibkatId]<tibkat_id%200..*-++[Event],[GndId]<gnd_id%200..*-++[Event],[DblpId]<dpbl_id%200..*-++[Event],[WikidataId]<wikidata_id%200..*-++[Event],[ExternalIdentifier]<external_id%200..*-++[Event],[Metric]<has_metric%200..*-++[Event],[Context]<context_info%200..1-++[Event],[ProcessRelation]<related_to%200..*-++[Event],[Deadline]<has_deadline%200..*-++[Event],[EventSeries]<in_series%200..1-%20[Event],[Location]<at_location%200..1-++[Event],[DigitalObjectId]<has_doi%200..*-++[Event],[Sponsor]<sponsored_by%200..*-++[Event],[Publication]<has_publication%200..*-++[Event],[AcademicField]<academic_field%200..*-++[Event],[Organizer]<organized_by%201..*-++[Event],[ConfIDentRecords]++-%20events%200..*>[Event],[EventSeries]-%20series_of%200..1>[Event],[DigitalObjectId],[Deadline],[DblpId],[Context],[ConfIDentRecords],[AcademicField])](https://yuml.me/diagram/nofunky;dir:TB/class/[WikidataId],[WikiCfpEventId],[TibkatId],[Sponsor],[Publication],[ProcessRelation],[Organizer],[Metric],[Location],[GndId],[ExternalIdentifier],[EventSeries],[WikiCfpEventId]<wikicfp_event_id%200..*-++[Event&#124;id:uriorcurie;official_name:string;start_date:datetime;end_date:datetime;event_status:EventStatus;has_acronym:string%20%3F;landing_page:uri%20%3F;website:uri%20%3F;type:EventType%20%3F;alternative_name:string%20*;former_name:string%20%3F;translated_name:string%20*;has_topic:string%20*;ordinal:integer%20%3F;event_mode:EventMode%20%3F],[TibkatId]<tibkat_id%200..*-++[Event],[GndId]<gnd_id%200..*-++[Event],[DblpId]<dpbl_id%200..*-++[Event],[WikidataId]<wikidata_id%200..*-++[Event],[ExternalIdentifier]<external_id%200..*-++[Event],[Metric]<has_metric%200..*-++[Event],[Context]<context_info%200..1-++[Event],[ProcessRelation]<related_to%200..*-++[Event],[Deadline]<has_deadline%200..*-++[Event],[EventSeries]<in_series%200..1-%20[Event],[Location]<at_location%200..1-++[Event],[DigitalObjectId]<has_doi%200..*-++[Event],[Sponsor]<sponsored_by%200..*-++[Event],[Publication]<has_publication%200..*-++[Event],[AcademicField]<academic_field%200..*-++[Event],[Organizer]<organized_by%201..*-++[Event],[ConfIDentRecords]++-%20events%200..*>[Event],[EventSeries]-%20series_of%200..1>[Event],[DigitalObjectId],[Deadline],[DblpId],[Context],[ConfIDentRecords],[AcademicField])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[WikidataId],[WikiCfpEventId],[TibkatId],[Sponsor],[Publication],[Organizer],[Metric],[Location],[GndId],[ExternalIdentifier],[EventSeries],[WikiCfpEventId]<wikicfp_event_id%200..*-++[Event&#124;id:uriorcurie;official_name:string;start_date:datetime;end_date:datetime;event_status:EventStatus;has_acronym:string%20%3F;type:EventType%20%3F;landing_page:uri%20%3F;website:uri%20%3F;umbrella_of:string%20%3F;has_umbrella:string%20%3F;colocated_with:string%20*;joint_venture_with:string%20*;alternative_name:string%20*;former_name:string%20*;translated_name:string%20*;has_topic:string%20*;ordinal:integer%20%3F;event_mode:EventMode%20%3F],[TibkatId]<tibkat_id%200..*-++[Event],[GndId]<gnd_id%200..*-++[Event],[DblpId]<dpbl_id%200..*-++[Event],[WikidataId]<wikidata_id%200..*-++[Event],[ExternalIdentifier]<external_id%200..*-++[Event],[Metric]<has_metric%200..*-++[Event],[Context]<context_info%200..1-++[Event],[DigitalObjectId]<has_doi%200..*-++[Event],[Sponsor]<sponsored_by%200..*-++[Event],[Publication]<has_publication%200..*-++[Event],[AcademicField]<academic_field%200..*-++[Event],[Deadline]<has_deadline%200..*-++[Event],[Event]<superevent_of%200..1-%20[Event],[Event]<subevent_of%200..1-%20[Event],[EventSeries]<in_series%200..1-%20[Event],[Location]<at_location%200..1-++[Event],[Organizer]<organized_by%201..*-++[Event],[ConfIDentRecords]++-%20events%200..*>[Event],[EventSeries]-%20series_of%200..1>[Event],[DigitalObjectId],[Deadline],[DblpId],[Context],[ConfIDentRecords],[AcademicField])](https://yuml.me/diagram/nofunky;dir:TB/class/[WikidataId],[WikiCfpEventId],[TibkatId],[Sponsor],[Publication],[Organizer],[Metric],[Location],[GndId],[ExternalIdentifier],[EventSeries],[WikiCfpEventId]<wikicfp_event_id%200..*-++[Event&#124;id:uriorcurie;official_name:string;start_date:datetime;end_date:datetime;event_status:EventStatus;has_acronym:string%20%3F;type:EventType%20%3F;landing_page:uri%20%3F;website:uri%20%3F;umbrella_of:string%20%3F;has_umbrella:string%20%3F;colocated_with:string%20*;joint_venture_with:string%20*;alternative_name:string%20*;former_name:string%20*;translated_name:string%20*;has_topic:string%20*;ordinal:integer%20%3F;event_mode:EventMode%20%3F],[TibkatId]<tibkat_id%200..*-++[Event],[GndId]<gnd_id%200..*-++[Event],[DblpId]<dpbl_id%200..*-++[Event],[WikidataId]<wikidata_id%200..*-++[Event],[ExternalIdentifier]<external_id%200..*-++[Event],[Metric]<has_metric%200..*-++[Event],[Context]<context_info%200..1-++[Event],[DigitalObjectId]<has_doi%200..*-++[Event],[Sponsor]<sponsored_by%200..*-++[Event],[Publication]<has_publication%200..*-++[Event],[AcademicField]<academic_field%200..*-++[Event],[Deadline]<has_deadline%200..*-++[Event],[Event]<superevent_of%200..1-%20[Event],[Event]<subevent_of%200..1-%20[Event],[EventSeries]<in_series%200..1-%20[Event],[Location]<at_location%200..1-++[Event],[Organizer]<organized_by%201..*-++[Event],[ConfIDentRecords]++-%20events%200..*>[Event],[EventSeries]-%20series_of%200..1>[Event],[DigitalObjectId],[Deadline],[DblpId],[Context],[ConfIDentRecords],[AcademicField])
 
 ## Referenced by Class
 
  *  **[ConfIDentRecords](ConfIDentRecords.md)** *[ConfIDentRecords➞events](confIDentRecords__events.md)*  <sub>0..\*</sub>  **[Event](Event.md)**
  *  **None** *[series_of](series_of.md)*  <sub>0..1</sub>  **[Event](Event.md)**
+ *  **None** *[subevent_of](subevent_of.md)*  <sub>0..1</sub>  **[Event](Event.md)**
+ *  **None** *[superevent_of](superevent_of.md)*  <sub>0..1</sub>  **[Event](Event.md)**
 
 ## Attributes
 
@@ -40,6 +42,24 @@ URI: [confident:Event](https://raw.githubusercontent.com/TIBHannover/ConfIDent_s
  * [Event➞has_acronym](Event_has_acronym.md)  <sub>0..1</sub>
      * Description: The official acronym of an academic event.
      * Range: [String](types/String.md)
+ * [Event➞type](Event_type.md)  <sub>0..1</sub>
+     * Description: A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.
+     * Range: [EventType](EventType.md)
+ * [at_location](at_location.md)  <sub>0..1</sub>
+     * Description: The location of the academic event.
+     * Range: [Location](Location.md)
+ * [in_series](in_series.md)  <sub>0..1</sub>
+     * Description: The relation used to provide the series of which an Event is a part.
+     * Range: [EventSeries](EventSeries.md)
+ * [subevent_of](subevent_of.md)  <sub>0..1</sub>
+     * Description: A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place).
+     * Range: [Event](Event.md)
+ * [superevent_of](superevent_of.md)  <sub>0..1</sub>
+     * Description: A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).
+     * Range: [Event](Event.md)
+ * [has_deadline](has_deadline.md)  <sub>0..\*</sub>
+     * Description: A property to provide a deadline of an academic event.
+     * Range: [Deadline](Deadline.md)
  * [Event➞academic_field](Event_academic_field.md)  <sub>0..\*</sub>
      * Description: A property to describe the scientific subject(s) associated with an academic event, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [schema_value](schema_value.md) and [schema_name](schema_name.md) are mandatory.
      * Range: [AcademicField](AcademicField.md)
@@ -58,25 +78,22 @@ URI: [confident:Event](https://raw.githubusercontent.com/TIBHannover/ConfIDent_s
  * [Event➞has_doi](Event_has_doi.md)  <sub>0..\*</sub>
      * Description: A property to provide a digital object identifier (DOI) for an event. This is set automatically.
      * Range: [DigitalObjectId](DigitalObjectId.md)
- * [Event➞type](Event_type.md)  <sub>0..1</sub>
-     * Description: A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.
-     * Range: [EventType](EventType.md)
- * [at_location](at_location.md)  <sub>0..1</sub>
-     * Description: The location of the academic event.
-     * Range: [Location](Location.md)
- * [in_series](in_series.md)  <sub>0..1</sub>
-     * Description: The relation used to provide the series of which an Event is a part.
-     * Range: [EventSeries](EventSeries.md)
- * [has_deadline](has_deadline.md)  <sub>0..\*</sub>
-     * Description: A property to provide a deadline of an academic event.
-     * Range: [Deadline](Deadline.md)
- * [related_to](related_to.md)  <sub>0..\*</sub>
-     * Description: A property to be used to link events to each other.
-     * Range: [ProcessRelation](ProcessRelation.md)
+ * [Event➞umbrella_of](Event_umbrella_of.md)  <sub>0..1</sub>
+     * Description: A relation to be used to link an event that hosts several events to its subordinate parts.
+     * Range: [String](types/String.md)
+ * [Event➞has_umbrella](Event_has_umbrella.md)  <sub>0..1</sub>
+     * Description: A relation to be used to link an event to its hosting superordinate event.
+     * Range: [String](types/String.md)
+ * [Event➞colocated_with](Event_colocated_with.md)  <sub>0..\*</sub>
+     * Description: A relation to be used to link an event to one or more other events that share the same location but not the same schedule and that are open to all attendees.
+     * Range: [String](types/String.md)
+ * [Event➞joint_venture_with](Event_joint_venture_with.md)  <sub>0..\*</sub>
+     * Description: A relation to be used to link a series or event to one or more other events that share the same location, have a joint schedule and that are open to all attendees.
+     * Range: [String](types/String.md)
  * [Event➞alternative_name](Event_alternative_name.md)  <sub>0..\*</sub>
      * Description: A property to provide alternative names of an academic event.
      * Range: [String](types/String.md)
- * [Event➞former_name](Event_former_name.md)  <sub>0..1</sub>
+ * [Event➞former_name](Event_former_name.md)  <sub>0..\*</sub>
      * Description: The former official name of an academic event. Usually this will only be needed in case an academic event has undergone a name change.
      * Range: [String](types/String.md)
  * [Event➞translated_name](Event_translated_name.md)  <sub>0..\*</sub>

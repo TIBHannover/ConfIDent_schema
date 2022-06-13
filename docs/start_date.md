@@ -12,6 +12,14 @@ _The start date of an academic event or event series. Wheres the latter will in 
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['aeon:start_date'] |
+| native | ['confident:start_date'] |
+
+
 
 
 

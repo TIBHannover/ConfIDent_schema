@@ -4,7 +4,7 @@
 
 **metamodel version:** 1.7.0
 
-**version:** 0.4.3
+**version:** 0.4.6
 
 
 This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
@@ -42,7 +42,6 @@ This is a schema for the ConfIDent project that describes the necessary metadata
      * [WikidataId](WikidataId.md) - The identifier of a thing (item) in Wikidata.
  * [Location](Location.md) - A container for the information about the location in which an academic event takes place.
  * [Metric](Metric.md) - A container for statistical information about an event or event series.
- * [ProcessRelation](ProcessRelation.md) - A container for relations between academic events.
  * [Publication](Publication.md) - A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.
  * [Region](Region.md) - The region in which an academic event takes place. For non USA events this might often be negligible.
  * [Venue](Venue.md) - The venue at which an academic event takes place.
@@ -58,6 +57,9 @@ This is a schema for the ConfIDent project that describes the necessary metadata
      * [EventSeries➞academic_field](EventSeries_academic_field.md) - A property to describe the scientific subject(s) associated with an academic event series, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [Schema Value](schema_value.md) and [Schema Name](schema_name.md) are mandatory.
      * [Event➞academic_field](Event_academic_field.md) - A property to describe the scientific subject(s) associated with an academic event, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [schema_value](schema_value.md) and [schema_name](schema_name.md) are mandatory.
  * [at_location](at_location.md) - The location of the academic event.
+ * [colocated_with](colocated_with.md) - A relation to be used to link a series or event to one or more other series or events that share the same location but not the same schedule and that are open to all attendees.
+     * [EventSeries➞colocated_with](EventSeries_colocated_with.md) - A relation to be used to link a series to one or more other series that share the same location but not the same schedule and that are open to all attendees.
+     * [Event➞colocated_with](Event_colocated_with.md) - A relation to be used to link an event to one or more other events that share the same location but not the same schedule and that are open to all attendees.
  * [ConfIDentRecords➞events](confIDentRecords__events.md) - A property to provide a list of academic events within this container.
  * [ConfIDentRecords➞series](confIDentRecords__series.md) - A property to provide a list of academic event series within this container.
  * [➞email](contactPerson__email.md) - The email address of the contact person.
@@ -106,11 +108,17 @@ This is a schema for the ConfIDent project that describes the necessary metadata
  * [has_topic](has_topic.md) - A property to provide the theme and topics of an event or event series as free keywords, phrases or text.
      * [EventSeries➞has_topic](EventSeries_has_topic.md) - A property to provide the theme and topics of an event series as free keywords, phrases or text.
      * [Event➞has_topic](Event_has_topic.md) - A property to provide the theme and topics of an event as free keywords, phrases or text.
+ * [has_umbrella](has_umbrella.md) - A relation to be used to link an event or series to its hosting superordinate event or series.
+     * [EventSeries➞has_umbrella](EventSeries_has_umbrella.md) - A relation to be used to link a series to its hosting superordinate series.
+     * [Event➞has_umbrella](Event_has_umbrella.md) - A relation to be used to link an event to its hosting superordinate event.
  * [id](id.md) - A property to provide an internal id of a schema entity in the ConfIDent plattform.
      * [Contributor➞id](Contributor_id.md) - The internal ConfIDent identifier for a contibutor
      * [EventSeries➞id](EventSeries_id.md) - A property to provide the internal identifier of an academic event series.
      * [Event➞id](Event_id.md) - A property to provide the internal identifier of an academic event.
  * [in_series](in_series.md) - The relation used to provide the series of which an Event is a part.
+ * [joint_venture_with](joint_venture_with.md) - A relation to be used to link a series or event to one or more other series or events that share the same location, have a joint schedule and that are open to all attendees.
+     * [EventSeries➞joint_venture_with](EventSeries_joint_venture_with.md) - A relation to be used to link a series to one or more other series that share the same location, have a joint schedule and that are open to all attendees.
+     * [Event➞joint_venture_with](Event_joint_venture_with.md) - A relation to be used to link a series or event to one or more other events that share the same location, have a joint schedule and that are open to all attendees.
  * [landing_page](landing_page.md) - A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an event or event series.
      * [EventSeries➞landing_page](EventSeries_landing_page.md) - A property to provide the website to which the DOI an academic event series is resolving to.
      * [Event➞landing_page](Event_landing_page.md) - A property to provide the website to which the DOI an academic event is resolving to.
@@ -148,7 +156,6 @@ This is a schema for the ConfIDent project that describes the necessary metadata
      * [EventSeries➞organized_by](EventSeries_organized_by.md) - A property to provide the organizer of an academic event series.
      * [Event➞organized_by](Event_organized_by.md) - A property to provide the organizer of an academic event.
  * [➞contact](organizer__contact.md) - The contact person of an academic event or event series.
- * [related_to](related_to.md) - A property to be used to link events to each other.
  * [schema_base_uri](schema_base_uri.md) - The base URI of the schema that provides the context for the schema based value.
      * [DblpId➞schema_base_uri](DblpId_schema_base_uri.md)
      * [DigitalObjectId➞schema_base_uri](DigitalObjectId_schema_base_uri.md)
@@ -173,12 +180,16 @@ This is a schema for the ConfIDent project that describes the necessary metadata
      * [EventSeries➞sponsored_by](EventSeries_sponsored_by.md) - A property to provide the sponsors of an academic event series.
      * [Event➞sponsored_by](Event_sponsored_by.md) - A property to provide the sponsors of an academic event.
  * [start_date](start_date.md) - The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.
+ * [subevent_of](subevent_of.md) - A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place).
+ * [superevent_of](superevent_of.md) - A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).
  * [type](type.md) - An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.
      * [Contributor➞type](Contributor_type.md) - A property to provide the information whether the contributor is an organization or person.
      * [Deadline➞type](Deadline_type.md) - A propery to provide the type of the deadline.
      * [Event➞type](Event_type.md) - A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.
      * [Metric➞type](Metric_type.md) - A property to provide the type of metric according to the permissible values defined in the [Metric Type Enum](MetricType.md). If the metric type "review process" is used, one of the permissible values defined in the [Review Process Type](ReviewProcessType.md) must be provided using the [Metric String Value](str_value.md) property.
-     * [ProcessRelation➞type](ProcessRelation_type.md) - A property to provide the type of process relation.
+ * [umbrella_of](umbrella_of.md) - A relation to be used to link an event or series that hosts several events or series to its subordinate parts.
+     * [EventSeries➞umbrella_of](EventSeries_umbrella_of.md) - A relation to be used to link a series that hosts several series to its subordinate parts.
+     * [Event➞umbrella_of](Event_umbrella_of.md) - A relation to be used to link an event that hosts several events to its subordinate parts.
  * [➞street](venue__street.md) - The street of the venue including the house number seperated by comma.
  * [➞zip_code](venue__zip_code.md) - The zip code of the venue.
  * [website](website.md) - A property to provide the URL the official website of a event or event series.
@@ -193,7 +204,6 @@ This is a schema for the ConfIDent project that describes the necessary metadata
  * [EventStatus](EventStatus.md) - The status of the academic event which indicates if it takes place as planned.
  * [EventType](EventType.md) - The most common minimal event types. For event types that are not in this list, you can use "other" and provide the label of this other event format using the [Event Format](event_format.md) property.
  * [MetricType](MetricType.md) - The possible metric of an academic event.
- * [RelationType](RelationType.md) - The kinds of relations that are allowed between academic events.
  * [ReviewProcessType](ReviewProcessType.md) - The possible values for the metric that describes the review process undertaken by the organizers of an academic event.
 
 ### Subsets

@@ -12,6 +12,14 @@ _The date of a deadline._
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:deadline_date'] |
+| native | ['confident:deadline_date'] |
+
+
 
 
 

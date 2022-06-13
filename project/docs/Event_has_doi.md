@@ -26,6 +26,6 @@ URI: [confident:Event_has_doi](https://raw.githubusercontent.com/TIBHannover/Con
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | iao:0000235 |
+| **Mappings:** | | IAO:0000235 |
 | **Exact Mappings:** | | datacite:doi |
 

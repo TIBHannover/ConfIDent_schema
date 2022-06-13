@@ -12,6 +12,14 @@ _A property to provide an internal id of a schema entity in the ConfIDent plattf
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:id'] |
+| native | ['confident:id'] |
+
+
 
 
 

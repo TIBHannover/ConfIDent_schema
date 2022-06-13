@@ -107,19 +107,24 @@ type Event
     endDate: Datetime!
     eventStatus: EventStatus!
     hasAcronym: String
+    type: EventType
+    atLocation: Location
+    inSeries: EventSeries
+    subeventOf: Event
+    supereventOf: Event
+    hasDeadline: [Deadline]
     academicField: [AcademicField]
     landingPage: Uri
     hasPublication: [Publication]
     sponsoredBy: [Sponsor]
     website: Uri
     hasDoi: [DigitalObjectId]
-    type: EventType
-    atLocation: Location
-    inSeries: EventSeries
-    hasDeadline: [Deadline]
-    relatedTo: [ProcessRelation]
+    umbrellaOf: String
+    hasUmbrella: String
+    colocatedWith: [String]
+    jointVentureWith: [String]
     alternativeName: [String]
-    formerName: String
+    formerName: [String]
     translatedName: [String]
     contextInfo: Context
     hasMetric: [Metric]
@@ -151,9 +156,13 @@ type EventSeries
     sponsoredBy: [Sponsor]
     website: Uri
     hasDoi: [DigitalObjectId]
+    umbrellaOf: String
+    hasUmbrella: String
+    colocatedWith: [String]
+    jointVentureWith: [String]
     seriesOf: Event
     alternativeName: [String]
-    formerName: String
+    formerName: [String]
     translatedName: [String]
     contextInfo: Context
     hasMetric: [Metric]
@@ -239,11 +248,6 @@ type Presenter
     id: Uriorcurie!
     name: String
     externalId: [ExternalIdentifier]
-  }
-
-type ProcessRelation
-  {
-    type: RelationType
   }
 
 type Publication implements NamedThing

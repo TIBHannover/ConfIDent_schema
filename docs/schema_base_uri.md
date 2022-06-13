@@ -12,6 +12,14 @@ _The base URI of the schema that provides the context for the schema based value
 
 
 
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ['confident:schema_base_uri'] |
+| native | ['confident:schema_base_uri'] |
+
+
 
 
 
