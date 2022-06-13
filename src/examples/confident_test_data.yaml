@@ -6,7 +6,7 @@ events:
   - id: confident:qsdh-en13
     has_doi: 
       schema_value: 10.25798/qsdh-en13
-    landing_page: https://vivoconference.org/vivo2021
+    landing_page: https://vivoconference.org/vivo2020
     official_name: 12th Annual / International VIVO Conference 2021
     has_acronym: VIVO 2021
     alternative_name: 
@@ -21,7 +21,7 @@ events:
     event_mode: hybrid
     ordinal: 12
     external_id:
-      - schema_value: vivo2020
+      - schema_value: vivo2021
         schema_base_uri: https://www.dblp.org/events/
         schema_name: dblp
     wikidata_id: 
@@ -29,7 +29,7 @@ events:
     gnd_id:
       schema_value: gnd-1234
     dpbl_id:
-      schema_value: vivo/vivo2020
+      schema_value: vivo/vivo2021
     wikicfp_event_id:
       schema_value: "12345"
     organized_by:
@@ -43,7 +43,6 @@ events:
           - schema_value: 04aj4c181
             schema_base_uri: https://ror.org/
             schema_name: ROR
-
     in_series: doi:10.25798/ea2h-xq32
     academic_field:
       - schema_value: ontology
@@ -55,10 +54,11 @@ events:
     has_topic: 
       - reseach information systems
       - open research
-    website: https://vivoconference.org/vivo2020/
+    website: https://vivoconference.org/vivo2021/
     context_info: 
       text: some summary
     has_metric:
       - type: review process
         str_value: double-blind peer review
+    superevent_of: https://vivoconference.org/vivo2021/schedule/#session-20
 
