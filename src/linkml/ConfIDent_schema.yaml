@@ -893,7 +893,7 @@ slots:
     required: false
     recommended: true
   superevent_of:
-    title: superevent_of
+    title: Superevent Of
     description: A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).
     range: Event
     required: false
