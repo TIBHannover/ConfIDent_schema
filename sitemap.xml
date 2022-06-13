@@ -246,6 +246,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://tibhannover.github.io/ConfIDent_schema/colocated_with/</loc>
+         <lastmod>2022-06-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://tibhannover.github.io/ConfIDent_schema/confident_schema/</loc>
          <lastmod>2022-06-13</lastmod>
          <changefreq>daily</changefreq>
@@ -371,6 +376,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://tibhannover.github.io/ConfIDent_schema/has_umbrella/</loc>
+         <lastmod>2022-06-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://tibhannover.github.io/ConfIDent_schema/has_venue/</loc>
          <lastmod>2022-06-13</lastmod>
          <changefreq>daily</changefreq>
@@ -387,6 +397,11 @@
     </url>
     <url>
          <loc>https://tibhannover.github.io/ConfIDent_schema/int_value/</loc>
+         <lastmod>2022-06-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tibhannover.github.io/ConfIDent_schema/joint_venture_with/</loc>
          <lastmod>2022-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -506,6 +521,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://tibhannover.github.io/ConfIDent_schema/subevent_of/</loc>
+         <lastmod>2022-06-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tibhannover.github.io/ConfIDent_schema/superevent_of/</loc>
+         <lastmod>2022-06-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://tibhannover.github.io/ConfIDent_schema/telephone/</loc>
          <lastmod>2022-06-13</lastmod>
          <changefreq>daily</changefreq>
@@ -537,6 +562,11 @@
     </url>
     <url>
          <loc>https://tibhannover.github.io/ConfIDent_schema/types/</loc>
+         <lastmod>2022-06-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tibhannover.github.io/ConfIDent_schema/umbrella_of/</loc>
          <lastmod>2022-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>

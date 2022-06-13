@@ -379,7 +379,7 @@
 <h1 id="confident-metadata-schema">ConfIDent Metadata Schema</h1>
 <p>This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.</p>
 <p>URI: <a href="https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml">https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml</a></p>
-<p>Version: 0.4.3</p>
+<p>Version: 0.4.6</p>
 <h2 id="classes">Classes</h2>
 <table>
 <thead>
@@ -490,10 +490,6 @@
 <td>A person that presents its work at an academic event.</td>
 </tr>
 <tr>
-<td><a href="ProcessRelation/">Subobject Process Relation</a></td>
-<td>A container for relations between academic events.</td>
-</tr>
-<tr>
 <td><a href="Publication/">Subobject Publication</a></td>
 <td>A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.</td>
 </tr>
@@ -555,6 +551,10 @@
 <tr>
 <td><a href="at_location/">Location</a></td>
 <td>The location of the academic event.</td>
+</tr>
+<tr>
+<td><a href="colocated_with/">Colocated With</a></td>
+<td>A relation to be used to link a series or event to one or more other series or events that share the same location but not the same schedule and that are open to all attendees.</td>
 </tr>
 <tr>
 <td><a href="contact/">Contact</a></td>
@@ -653,6 +653,10 @@
 <td>A property to provide the theme and topics of an event or event series as free keywords, phrases or text.</td>
 </tr>
 <tr>
+<td><a href="has_umbrella/">Has Umbrella</a></td>
+<td>A relation to be used to link an event or series to its hosting superordinate event or series.</td>
+</tr>
+<tr>
 <td><a href="has_venue/">Venue</a></td>
 <td>The property to specify the <a href="Venue/">Venue</a> of an academic event location.</td>
 </tr>
@@ -667,6 +671,10 @@
 <tr>
 <td><a href="int_value/">Metric Integer Value</a></td>
 <td>A property to provide an integer value for a metric.</td>
+</tr>
+<tr>
+<td><a href="joint_venture_with/">Joint Venture With</a></td>
+<td>A relation to be used to link a series or event to one or more other series or events that share the same location, have a joint schedule and that are open to all attendees.</td>
 </tr>
 <tr>
 <td><a href="landing_page/">Landing Page</a></td>
@@ -721,10 +729,6 @@
 <td>A property to provide a rate value as float for a metric.</td>
 </tr>
 <tr>
-<td><a href="related_to/">Related To</a></td>
-<td>A property to be used to link events to each other.</td>
-</tr>
-<tr>
 <td><a href="schema_base_uri/">External formatter URI</a></td>
 <td>The base URI of the schema that provides the context for the schema based value.</td>
 </tr>
@@ -761,6 +765,14 @@
 <td>The street of the venue including the house number seperated by comma.</td>
 </tr>
 <tr>
+<td><a href="subevent_of/">Subevent Of</a></td>
+<td>A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place).</td>
+</tr>
+<tr>
+<td><a href="superevent_of/">superevent_of</a></td>
+<td>A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).</td>
+</tr>
+<tr>
 <td><a href="telephone/">Telephone</a></td>
 <td>The telephone number of the contact person.</td>
 </tr>
@@ -783,6 +795,10 @@
 <tr>
 <td><a href="type/">Type</a></td>
 <td>An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.</td>
+</tr>
+<tr>
+<td><a href="umbrella_of/">Umbrella Of</a></td>
+<td>A relation to be used to link an event or series that hosts several events or series to its subordinate parts.</td>
 </tr>
 <tr>
 <td><a href="website/">Official Website</a></td>
@@ -838,10 +854,6 @@
 <tr>
 <td><a href="MetricType/">Metric Type</a></td>
 <td>The possible metric of an academic event.</td>
-</tr>
-<tr>
-<td><a href="RelationType/">Event Relation Type</a></td>
-<td>The kinds of relations that are allowed between academic events.</td>
 </tr>
 <tr>
 <td><a href="ReviewProcessType/">Review Process Type</a></td>
