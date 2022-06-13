@@ -4,7 +4,7 @@ title: ConfIDent Metadata Schema
 description: |-
   This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
 license: https://creativecommons.org/licenses/by/4.0/
-version: 0.4.4
+version: 0.4.5
 default_curi_maps:
   - semweb_context
 prefixes:
@@ -60,6 +60,10 @@ classes:
       - sponsored_by
       - website
       - has_doi
+      - umbrella_of
+      - has_umbrella
+      - colocated_with
+      - joint_venture_with
       # only series specific
       - series_of
     # optional
@@ -100,6 +104,18 @@ classes:
         description: A property to provide the publication associated with
         comments:
           - It will be most common that the publications of an academic event series are the set of publications associated with the individual events of the series.
+      umbrella_of:
+        title: Umbrella Of
+        description: A relation to be used to link a series that hosts several series to its subordinate parts. 
+      has_umbrella:
+        title: Has Umbrella
+        description: A relation to be used to link a series to its hosting superordinate series. 
+      colocated_with:
+        title: Colocated With
+        description: A relation to be used to link a series to one or more other series that share the same location but not the same schedule and that are open to all attendees.
+      joint_venture_with:
+        title: Joint Venture With
+        description: A relation to be used to link a series to one or more other series that share the same location, have a joint schedule and that are open to all attendees.
     # optional
       alternative_name:
         description: A property to provide alternative names of an academic event series.
@@ -144,6 +160,8 @@ classes:
       - event_status
     # recommended
       - has_acronym
+      - subevent_of
+      - superevent_of
       - academic_field
       - landing_page
       - has_publication
@@ -155,7 +173,10 @@ classes:
       - at_location
       - in_series
       - has_deadline
-      - related_to
+      - umbrella_of
+      - has_umbrella
+      - colocated_with
+      - joint_venture_with
     # optional
       - alternative_name
       - former_name
@@ -204,6 +225,18 @@ classes:
         range: EventType
         designates_type: true
         recommended: true
+      umbrella_of:
+        title: Umbrella Of
+        description: A relation to be used to link an event that hosts several events to its subordinate parts. 
+      has_umbrella:
+        title: Has Umbrella
+        description: A relation to be used to link an event to its hosting superordinate event. 
+      colocated_with:
+        title: Colocated With
+        description: A relation to be used to link an event to one or more other events that share the same location but not the same schedule and that are open to all attendees.
+      joint_venture_with:
+        title: Joint Venture With
+        description: A relation to be used to link a series or event to one or more other events that share the same location, have a joint schedule and that are open to all attendees.
     # optional
       alternative_name:
         description: A property to provide alternative names of an academic event.
@@ -390,18 +423,6 @@ classes:
             str_value:
               range: ReviewMetricType
               required: true
-
-
-
-  ProcessRelation:
-    title: Subobject Process Relation
-    description: A container for relations between academic events.
-    slots:
-      - type
-    slot_usage:
-      type:
-        description: A property to provide the type of process relation.
-        range: RelationType
 # location
   Location:
     title: Subobject Location
@@ -753,6 +774,30 @@ slots:
     description: A property to provide the URL the official website of a event or event series.
     range: uri
     recommended: true
+    description: A relation to be used to link an event or series that hosts several events or series to its subordinate parts. 
+    inverse: has_umbrella
+    required: false
+    recommended: true
+  has_umbrella:
+    title: Has Umbrella
+    description: A relation to be used to link an event or series to its hosting superordinate event or series. 
+    inverse: umbrella_of
+    required: false
+    recommended: true
+  colocated_with:
+    title: Colocated With
+    description: A relation to be used to link a series or event to one or more other series or events that share the same location but not the same schedule and that are open to all attendees.
+    required: false
+    recommended: true
+    multivalued: true
+    inlined_as_list: true
+  joint_venture_with:
+    title: Joint Venture With
+    description: A relation to be used to link a series or event to one or more other series or events that share the same location, have a joint schedule and that are open to all attendees.
+    required: false
+    recommended: true
+    multivalued: true
+    inlined_as_list: true
 # optional Event & Series slots
   alternative_name:
     title: Alternative Name
@@ -836,6 +881,21 @@ slots:
     range: EventSeries
     required: false
     recommended: true
+  subevent_of:
+    slot_uri: RO:0002012
+    title: Subevent Of
+    inverse: superevent_of
+    description: A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place).
+    range: Event
+    required: false
+    recommended: true
+  superevent_of:
+    title: superevent_of
+    inverse: subevent_of
+    description: A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event part (e.g. the session).
+    range: Event
+    required: false
+    recommended: true
   event_format:
     title: Event Format
     description: A property to provide an event format specification, if none of the [Event Types](EventType.md) are applicable to specify the format of an academic event.
@@ -856,13 +916,6 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
-    required: false
-    recommended: true
-  related_to:
-    title: Related To
-    description: A property to be used to link events to each other.
-    multivalued: true
-    range: ProcessRelation
     required: false
     recommended: true
 # optional Event slots
@@ -1035,17 +1088,6 @@ enums:
         meaning: aeon:0000069
       other:
         description: This value is to be used, if the other allowed values are not applicable.
-# event relation type
-  RelationType:
-    title: Event Relation Type
-    description: The kinds of relations that are allowed between academic events.
-    permissible_values:
-      isUmbrellaEventOf:
-      hasUmbrellaEvent:
-      isJointEventOf:
-      isColocatedEventOf:
-      isSubEventOf:
-      hasSubEvent:
 # metric type
   MetricType:
     title: Metric Type
