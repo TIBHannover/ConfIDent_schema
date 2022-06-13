@@ -4,7 +4,7 @@ title: ConfIDent Metadata Schema
 description: |-
   This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
 license: https://creativecommons.org/licenses/by/4.0/
-version: 0.4.3
+version: 0.4.4
 default_curi_maps:
   - semweb_context
 prefixes:
@@ -13,9 +13,11 @@ prefixes:
   sdo: https://schema.org/
   confident: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#
   aeon: https://github.com/tibonto/aeon#AEON_
-  obi: http://purl.obolibrary.org/obo/OBI_
-  iao: http://purl.obolibrary.org/obo/IAO_
-  bfo: http://purl.obolibrary.org/obo/BFO_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  BFO: http://purl.obolibrary.org/obo/BFO_
+  RO: http://purl.obolibrary.org/obo/RO_
+  TXPO: http://purl.obolibrary.org/obo/TXPO_
   NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
   provo: https://www.w3.org/TR/2013/REC-prov-o-20130430/#
   dc: http://purl.org/dc/terms/
@@ -238,12 +240,12 @@ classes:
       - SchemaBasedThing
     slot_usage:
       schema_value:
-        slot_uri: obi:0002815
+        slot_uri: OBI:0002815
   DigitalObjectId:
     description: A centrally registered identifier symbol used to uniquely identify digital objects given by International DOI Foundation.
     title: Digital Object Identifier
     is_a: ExternalIdentifier
-    class_uri: obi:0002110
+    class_uri: OBI:0002110
     slot_usage:
       schema_name:
         ifabsent: string(DOI)
@@ -315,7 +317,7 @@ classes:
       other_format:
         title: Other Event Format
         description: A mandatory property to provide the format of an academic event as string, in order to further specify its type in case it could not be specified according to the possible values of [Event Type](EventType.md).
-        slot_uri: obi:0002815
+        slot_uri: OBI:0002815
         examples:
           - value: ad-hoc meeting of university presidents
             description: An example to provide a format specification for special type of academic event that is not in the schema's [EventType](EventType) enum.
@@ -636,7 +638,7 @@ slots:
     title: DOI
     description: A property to provide a digital object identifier (DOI) according to https://doi.org/.
     is_a: external_id
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     range: DigitalObjectId
     recommended: true
     exact_mappings:
@@ -645,7 +647,7 @@ slots:
     title: GND ID
     is_a: external_id
     description: A property to link an entity to the authority file of the German National Library.
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     range: GndId
     required: false
     recommended: false
@@ -653,7 +655,7 @@ slots:
     title: Wikidata ID
     is_a: external_id
     description: A property to link an entity with its Wikidata identifier.
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     range: WikidataId
     required: false
     recommended: false
@@ -673,7 +675,7 @@ slots:
   external_id:
     title: External ID
     description: A property to provide an external id of a schema entity.
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     multivalued: true
     inlined_as_list: true
     range: ExternalIdentifier
@@ -801,7 +803,7 @@ slots:
     title: DBLP ID
     is_a: external_id
     description: A property to link the an event or event series with its DBLP identifier.
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     range: DblpId
     required: false
     recommended: false
@@ -881,7 +883,7 @@ slots:
     title: TIBKAT ID
     is_a: external_id
     description: A property to link to a publication indexed in the TIB catalouge that references an event or event series.
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     range: TibkatId
     required: false
     recommended: false
@@ -889,7 +891,7 @@ slots:
     title: WikiCFP Event ID
     is_a: external_id
     description: A property to link an event or event series with its WikiCFP identifier.
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     range: WikiCfpEventId
     required: false
     recommended: false
@@ -906,7 +908,7 @@ slots:
     title: WikiCFP Series ID
     is_a: external_id
     description: A property to link an event or event series with its WikiCFP identifier.
-    slot_uri: iao:0000235
+    slot_uri: IAO:0000235
     range: WikiCfpSeriesId
     required: false
     recommended: false
@@ -1102,7 +1104,7 @@ enums:
     permissible_values:
       organization:
         description: An institution, or an association that has one or more people as members and which actsas some kind of participant in an event or event series.
-        meaning: obi:0000245
+        meaning: OBI:0000245
       person:
         description: A human being that acts as some kind of participant in an event or event series.
         meaning: NCBITaxon:9606
