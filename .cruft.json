@@ -1,0 +1,27 @@
+{
+  "template": "https://github.com/linkml/linkml-project-cookiecutter",
+  "commit": "6f53e5cd62bb88c21fbfdaa4a8b74fb0713f11a6",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "confident_schema",
+      "__project_slug": "confident_schema",
+      "github_org": "TIBHannover",
+      "__source_path": "src/confident_schema/schema/confident_schema.yaml",
+      "project_description": "This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.",
+      "full_name": "Philip Strömert",
+      "email": "philip.stroemert@tib.eu",
+      "__author": "Philip Strömert <philip.stroemert@tib.eu>",
+      "license": "GNU GPL v3.0",
+      "main_schema_class": "ConfIDentRecords",
+      "create_python_classes": "Yes",
+      "use_schemasheets": "No",
+      "google_sheet_id": "1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ",
+      "google_sheet_tabs": "personinfo enums",
+      "__google_sheet_module": "personinfo_enums",
+      "github_token_for_pypi_deployment": "ghp_9IncezgG9TZi5vSwiv5K10PtbhVU3c0yRmfM",
+      "_template": "https://github.com/linkml/linkml-project-cookiecutter"
+    }
+  },
+  "directory": null
+}

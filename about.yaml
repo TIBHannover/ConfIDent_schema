@@ -1,0 +1,6 @@
+name: ConfIDent_schema
+author: Philip Strömert <philip.stroemert@tib.eu>
+description: This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
+source_schema_path: src/ConfIDent_schema/schema/ConfIDent_schema.yaml
+#google_sheet_id: 1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ
+#google_sheet_tabs: personinfo enums

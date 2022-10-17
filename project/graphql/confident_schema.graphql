@@ -1,0 +1,327 @@
+type AcademicField implements SchemaBasedThing
+  {
+    schemaValue: String!
+    schemaName: String
+    schemaBaseUri: Uriorcurie
+  }
+
+type Attendee
+  {
+    type: ContributorType
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+  }
+
+type City implements NamedThing
+  {
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+  }
+
+type CommitteeChair
+  {
+    type: ContributorType
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+    contact: ContactPerson
+  }
+
+type CommitteeMember
+  {
+    type: ContributorType
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+    contact: ContactPerson
+  }
+
+type ConfIDentRecords
+  {
+    events: [Event]
+    series: [EventSeries]
+  }
+
+type ContactPerson
+  {
+    type: ContributorType
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+    contact: ContactPerson
+    email: String
+    telephone: String
+  }
+
+type Context
+  {
+    text: String
+    licenseStr: String
+    licenseUrl: Uriorcurie
+  }
+
+type Contributor implements NamedThing
+  {
+    type: ContributorType
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+  }
+
+type Country implements NamedThing
+  {
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+  }
+
+type DblpId
+  {
+    schemaValue: String
+    schemaName: String
+    schemaBaseUri: Uriorcurie
+  }
+
+type Deadline
+  {
+    type: DeadlineType!
+    deadlineDate: Datetime!
+    deadlineOther: String
+  }
+
+type DigitalObjectId
+  {
+    schemaValue: String
+    schemaName: String
+    schemaBaseUri: Uriorcurie
+  }
+
+type Event
+  {
+    id: Uriorcurie!
+    officialName: String!
+    organizedBy: [Organizer]!
+    startDate: Datetime!
+    endDate: Datetime!
+    eventStatus: EventStatus!
+    hasAcronym: String
+    type: EventType
+    atLocation: Location
+    inSeries: EventSeries
+    subeventOf: Event
+    supereventOf: [Event]
+    hasDeadline: [Deadline]
+    academicField: [AcademicField]
+    landingPage: Uri
+    hasPublication: [Publication]
+    sponsoredBy: [Sponsor]
+    website: Uri
+    hasDoi: [DigitalObjectId]
+    umbrellaOf: [String]
+    hasUmbrella: String
+    colocatedWith: [String]
+    jointVentureWith: [String]
+    alternativeName: [String]
+    formerName: [String]
+    translatedName: [String]
+    contextInfo: Context
+    hasMetric: [Metric]
+    hasTopic: [String]
+    externalId: [ExternalIdentifier]
+    wikidataId: [WikidataId]
+    dpblId: [DblpId]
+    gndId: [GndId]
+    ordinal: Integer
+    eventMode: EventMode
+    tibkatId: [TibkatId]
+    wikicfpEventId: [WikiCfpEventId]
+  }
+
+type EventFormatSpecification
+  {
+    otherFormat: String!
+  }
+
+type EventSeries
+  {
+    id: Uriorcurie!
+    officialName: String!
+    organizedBy: [Organizer]!
+    hasAcronym: String
+    academicField: [AcademicField]
+    landingPage: Uri
+    hasPublication: [Publication]
+    sponsoredBy: [Sponsor]
+    website: Uri
+    hasDoi: [DigitalObjectId]
+    umbrellaOf: [String]
+    hasUmbrella: String
+    colocatedWith: [String]
+    jointVentureWith: [String]
+    seriesOf: Event
+    alternativeName: [String]
+    formerName: [String]
+    translatedName: [String]
+    contextInfo: Context
+    hasMetric: [Metric]
+    hasTopic: [String]
+    externalId: [ExternalIdentifier]
+    wikidataId: [WikidataId]
+    dpblId: [DblpId]
+    gndId: [GndId]
+    wikicfpSeriesId: [WikiCfpSeriesId]
+  }
+
+type ExternalIdentifier implements SchemaBasedThing
+  {
+    schemaValue: String
+    schemaName: String
+    schemaBaseUri: Uriorcurie
+  }
+
+type GndId
+  {
+    schemaValue: String
+    schemaName: String
+    schemaBaseUri: Uriorcurie
+  }
+
+type KeynoteSpeaker
+  {
+    type: ContributorType
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+  }
+
+type Location
+  {
+    hasCity: City
+    hasCountry: Country
+    hasRegion: Region
+    hasVenue: Venue
+    lattitude: Float
+    longitude: Float
+    meetingUrl: Uriorcurie
+  }
+
+type Metric
+  {
+    type: MetricType
+    intValue: Integer
+    strValue: String
+    rateValue: Float
+    truthValue: Boolean
+    metricYear: String
+    description: String
+  }
+
+type Moderator
+  {
+    type: ContributorType
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+  }
+
+interface NamedThing
+  {
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+  }
+
+type Organizer
+  {
+    type: ContributorType
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+    contact: ContactPerson
+  }
+
+type Presenter
+  {
+    type: ContributorType
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+  }
+
+type Publication implements NamedThing
+  {
+    hasDoi: [DigitalObjectId]
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+  }
+
+type Region implements NamedThing
+  {
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+  }
+
+type Reviewer
+  {
+    type: ContributorType
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+  }
+
+interface SchemaBasedThing
+  {
+    schemaValue: String
+    schemaName: String
+    schemaBaseUri: Uriorcurie
+  }
+
+type Sponsor
+  {
+    type: ContributorType
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+  }
+
+type TibkatId
+  {
+    schemaValue: String
+    schemaName: String
+    schemaBaseUri: Uriorcurie
+  }
+
+type Venue implements NamedThing
+  {
+    street: String
+    zipCode: String
+    id: Uriorcurie!
+    name: String
+    externalId: [ExternalIdentifier]
+  }
+
+type WikiCfpEventId
+  {
+    schemaValue: String
+    schemaName: String
+    schemaBaseUri: Uriorcurie
+  }
+
+type WikiCfpSeriesId
+  {
+    schemaValue: String
+    schemaName: String
+    schemaBaseUri: Uriorcurie
+  }
+
+type WikidataId
+  {
+    schemaValue: String
+    schemaName: String
+    schemaBaseUri: Uriorcurie
+  }
+

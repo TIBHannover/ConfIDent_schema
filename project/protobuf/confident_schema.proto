@@ -1,0 +1,313 @@
+// An academic field is the scientific subject of an event or event series according to some controlled vocabulary or thesaurus and as such requires the scheme URI.
+message AcademicField
+ {
+  string schemaValue = 0
+  string schemaName = 0
+  uriorcurie schemaBaseUri = 0
+ }
+// A person whose only role it is to attend an academic event.
+message Attendee
+ {
+  contributorType type = 0
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+ }
+// The city in which an academic event takes place.
+message City
+ {
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+ }
+// The head of an academic event committee.
+message CommitteeChair
+ {
+  contributorType type = 0
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+  contactPerson contact = 0
+ }
+// A members of an academic event committee.
+message CommitteeMember
+ {
+  contributorType type = 0
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+  contactPerson contact = 0
+ }
+// A container to be able to bundle academic event data and series in one data file (e.g. YAML or JSON).
+message ConfIDentRecords
+ {
+ repeated  event events = 0
+ repeated  eventSeries series = 0
+ }
+// The contact person of an academic event or event series.
+message ContactPerson
+ {
+  contributorType type = 0
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+  contactPerson contact = 0
+  string email = 0
+  string telephone = 0
+ }
+// A container to provide extra information, such as call of papers event description.
+message Context
+ {
+  string text = 0
+  string licenseStr = 0
+  uriorcurie licenseUrl = 0
+ }
+// A contributor is a person or organization that holds a contributor role which is being realized in an event or event series.
+message Contributor
+ {
+  contributorType type = 0
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+ }
+// The country in which an academic event takes place.
+message Country
+ {
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+ }
+// The identifier of an academic event or series in dblp.
+message DblpId
+ {
+  string schemaValue = 0
+  string schemaName = 0
+  uriorcurie schemaBaseUri = 0
+ }
+// A container for event deadlines.
+message Deadline
+ {
+  deadlineType type = 0
+  datetime deadlineDate = 0
+  string deadlineOther = 0
+ }
+// A centrally registered identifier symbol used to uniquely identify digital objects given by International DOI Foundation.
+message DigitalObjectId
+ {
+  string schemaValue = 0
+  string schemaName = 0
+  uriorcurie schemaBaseUri = 0
+ }
+// An academic event is part of the established instruments of science communication as a format for conveying the latest scientific publications. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these publications. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function.
+message Event
+ {
+  uriorcurie id = 0
+  string officialName = 0
+ repeated  organizer organizedBy = 0
+  datetime startDate = 0
+  datetime endDate = 0
+  eventStatus eventStatus = 0
+  string hasAcronym = 0
+  eventType type = 0
+  location atLocation = 0
+  eventSeries inSeries = 0
+  event subeventOf = 0
+ repeated  event supereventOf = 0
+ repeated  deadline hasDeadline = 0
+ repeated  academicField academicField = 0
+  uri landingPage = 0
+ repeated  publication hasPublication = 0
+ repeated  sponsor sponsoredBy = 0
+  uri website = 0
+ repeated  digitalObjectId hasDoi = 0
+ repeated  string umbrellaOf = 0
+  string hasUmbrella = 0
+ repeated  string colocatedWith = 0
+ repeated  string jointVentureWith = 0
+ repeated  string alternativeName = 0
+ repeated  string formerName = 0
+ repeated  string translatedName = 0
+  context contextInfo = 0
+ repeated  metric hasMetric = 0
+ repeated  string hasTopic = 0
+ repeated  externalIdentifier externalId = 0
+ repeated  wikidataId wikidataId = 0
+ repeated  dblpId dpblId = 0
+ repeated  gndId gndId = 0
+  integer ordinal = 0
+  eventMode eventMode = 0
+ repeated  tibkatId tibkatId = 0
+ repeated  wikiCfpEventId wikicfpEventId = 0
+ }
+// An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathering is to be carried out by its participants in terms of achieving certain objectives, fulfilling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event. While the explicit details are often provided as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. "conference" or "workshop"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.
+message EventFormatSpecification
+ {
+  string otherFormat = 0
+ }
+// An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.
+message EventSeries
+ {
+  uriorcurie id = 0
+  string officialName = 0
+ repeated  organizer organizedBy = 0
+  string hasAcronym = 0
+ repeated  academicField academicField = 0
+  uri landingPage = 0
+ repeated  publication hasPublication = 0
+ repeated  sponsor sponsoredBy = 0
+  uri website = 0
+ repeated  digitalObjectId hasDoi = 0
+ repeated  string umbrellaOf = 0
+  string hasUmbrella = 0
+ repeated  string colocatedWith = 0
+ repeated  string jointVentureWith = 0
+  event seriesOf = 0
+ repeated  string alternativeName = 0
+ repeated  string formerName = 0
+ repeated  string translatedName = 0
+  context contextInfo = 0
+ repeated  metric hasMetric = 0
+ repeated  string hasTopic = 0
+ repeated  externalIdentifier externalId = 0
+ repeated  wikidataId wikidataId = 0
+ repeated  dblpId dpblId = 0
+ repeated  gndId gndId = 0
+ repeated  wikiCfpSeriesId wikicfpSeriesId = 0
+ }
+// An identifer of an entity declared in another schema.
+message ExternalIdentifier
+ {
+  string schemaValue = 0
+  string schemaName = 0
+  uriorcurie schemaBaseUri = 0
+ }
+// The identifier of a thing (item) in the German National authority file.
+message GndId
+ {
+  string schemaValue = 0
+  string schemaName = 0
+  uriorcurie schemaBaseUri = 0
+ }
+// A 'keynote speaker' is a presenter that is an invited person - often a multiplier in his or her (research) field - responsible for delivering a keynote speech.
+message KeynoteSpeaker
+ {
+  contributorType type = 0
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+ }
+// A container for the information about the location in which an academic event takes place.
+message Location
+ {
+  city hasCity = 0
+  country hasCountry = 0
+  region hasRegion = 0
+  venue hasVenue = 0
+  float lattitude = 0
+  float longitude = 0
+  uriorcurie meetingUrl = 0
+ }
+// A container for statistical information about an event or event series.
+message Metric
+ {
+  metricType type = 0
+  integer intValue = 0
+  string strValue = 0
+  float rateValue = 0
+  boolean truthValue = 0
+  string metricYear = 0
+  string description = 0
+ }
+// A person that has the role to moderate an academic event.
+message Moderator
+ {
+  contributorType type = 0
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+ }
+// An organizer of an academic event or event series.
+message Organizer
+ {
+  contributorType type = 0
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+  contactPerson contact = 0
+ }
+// A person that presents its work at an academic event.
+message Presenter
+ {
+  contributorType type = 0
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+ }
+// A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.
+message Publication
+ {
+ repeated  digitalObjectId hasDoi = 0
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+ }
+// The region in which an academic event takes place. For non USA events this might often be negligible.
+message Region
+ {
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+ }
+// A person that has the role to review the submissions of an academic event.
+message Reviewer
+ {
+  contributorType type = 0
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+ }
+// A person or an organization whose role it is to sponsor an academic event or event series.
+message Sponsor
+ {
+  contributorType type = 0
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+ }
+// The identifier of a publication in the TIB catalog that references an event or event series.
+message TibkatId
+ {
+  string schemaValue = 0
+  string schemaName = 0
+  uriorcurie schemaBaseUri = 0
+ }
+// The venue at which an academic event takes place.
+message Venue
+ {
+  string street = 0
+  string zipCode = 0
+  uriorcurie id = 0
+  string name = 0
+ repeated  externalIdentifier externalId = 0
+ }
+// The identifier of an academic event or series in WikiCFP.
+message WikiCfpEventId
+ {
+  string schemaValue = 0
+  string schemaName = 0
+  uriorcurie schemaBaseUri = 0
+ }
+// The identifier of an academic event or series in WikiCFP.
+message WikiCfpSeriesId
+ {
+  string schemaValue = 0
+  string schemaName = 0
+  uriorcurie schemaBaseUri = 0
+ }
+// The identifier of a thing (item) in Wikidata.
+message WikidataId
+ {
+  string schemaValue = 0
+  string schemaName = 0
+  uriorcurie schemaBaseUri = 0
+ }
