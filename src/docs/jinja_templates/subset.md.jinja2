@@ -19,7 +19,7 @@ URI: {{ gen.uri_link(element) }}
 | --- | --- |
 {% for c in gen.all_class_objects()|sort(attribute=sort_by) -%}
 {%- if element.name in c.in_subset -%}
-| {{gen.link(c)}} | {{c.description|enshorten}} |
+| {{gen.link_title(c)}} | {{c.description|enshorten}} |
 {% endif -%}
 {% endfor %}
 
@@ -33,7 +33,7 @@ URI: {{ gen.uri_link(element) }}
 | ---  | ---  | --- |
 {% for s in gen.class_induced_slots(c.name)|sort(attribute=sort_by) -%}
 {% if element.name in s.in_subset or element.name in schemaview.get_slot(s.name).in_subset -%}
-| {{gen.link(s)}} | {{ gen.cardinality(s) }} <br/> {{gen.link(s.range)}}  | {{s.description|enshorten}} {% if s.identifier %}**identifier**{% endif %}  |
+| {{gen.link_title(s)}} | {{ gen.cardinality(s) }} <br/> {{gen.link_title(s.range)}}  | {{s.description|enshorten}} {% if s.identifier %}**identifier**{% endif %}  |
 {% endif -%}
 {% endfor %}
 
@@ -46,7 +46,7 @@ URI: {{ gen.uri_link(element) }}
 | --- | --- |
 {% for s in gen.all_slot_objects()|sort(attribute=sort_by) -%}
 {%- if element.name in s.in_subset -%}
-| {{gen.link(s)}} | {{s.description|enshorten}} |
+| {{gen.link_title(s)}} | {{s.description|enshorten}} |
 {% endif -%}
 {% endfor %}
 
@@ -56,7 +56,7 @@ URI: {{ gen.uri_link(element) }}
 | --- | --- |
 {% for e in schemaview.all_enums().values()|sort(attribute='name') -%}
 {%- if element.name in e.in_subset -%}
-| {{gen.link(e)}} | {{e.description|enshorten}} |
+| {{gen.link_title(e)}} | {{e.description|enshorten}} |
 {% endif -%}
 {% endfor %}
 
