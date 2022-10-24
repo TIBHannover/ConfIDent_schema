@@ -31,10 +31,10 @@
     dc:license "https://creativecommons.org/licenses/by/4.0/" ;
     dc:title "ConfIDent Metadata Schema" ;
     pav:version "0.5.0" ;
-    linkml:generation_date "2022-10-17T12:55:37" ;
+    linkml:generation_date "2022-10-17T22:59:09" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "ConfIDent_schema.yaml" ;
-    linkml:source_file_date "2022-10-17T12:39:59" ;
+    linkml:source_file_date "2022-10-17T15:07:58" ;
     linkml:source_file_size 50594 .
 
 confident:Attendee a owl:Class,
@@ -124,12 +124,12 @@ confident:WikiCfpEventId a owl:Class,
     dc:title "WikiCFP Event ID" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:schema_base_uri ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty confident:schema_name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:schema_base_uri ],
         confident:ExternalIdentifier ;
     skos:definition "The identifier of an academic event or series in WikiCFP." .
 
@@ -500,16 +500,16 @@ confident:City a owl:Class,
     rdfs:label "City" ;
     dc:title "City" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty sdo:name ],
-        [ a owl:Restriction ;
             owl:allValuesFrom confident:ExternalIdentifier ;
             owl:onProperty IAO:0000235 ],
         [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:id ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sdo:name ],
         confident:NamedThing ;
     skos:definition "The city in which an academic event takes place." .
 
@@ -520,11 +520,11 @@ confident:ContactPerson a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty sdo:telephone ],
+            owl:onProperty sdo:email ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty sdo:email ],
+            owl:onProperty sdo:telephone ],
         confident:Organizer ;
     skos:definition "The contact person of an academic event or event series." .
 
@@ -533,13 +533,13 @@ confident:Country a owl:Class,
     rdfs:label "Country" ;
     dc:title "Country" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty sdo:name ],
-        [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:id ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sdo:name ],
         [ a owl:Restriction ;
             owl:allValuesFrom confident:ExternalIdentifier ;
             owl:onProperty IAO:0000235 ],
@@ -610,12 +610,12 @@ confident:GndId a owl:Class,
     dc:title "GND ID" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:schema_base_uri ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty confident:schema_name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:schema_base_uri ],
         confident:ExternalIdentifier ;
     skos:definition "The identifier of a thing (item) in the German National authority file." .
 
@@ -679,13 +679,13 @@ confident:Region a owl:Class,
             owl:allValuesFrom confident:ExternalIdentifier ;
             owl:onProperty IAO:0000235 ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty sdo:name ],
-        [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:id ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sdo:name ],
         confident:NamedThing ;
     skos:definition "The region in which an academic event takes place. For non USA events this might often be negligible." ;
     linkml:examples "Example(value='Texas', description='the US state Texas as an example of a region')" .
@@ -723,9 +723,17 @@ confident:Venue a owl:Class,
     rdfs:label "Venue" ;
     dc:title "Venue" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty confident:zip_code ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty confident:street ],
         [ a owl:Restriction ;
             owl:allValuesFrom confident:ExternalIdentifier ;
             owl:onProperty IAO:0000235 ],
@@ -733,14 +741,6 @@ confident:Venue a owl:Class,
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty sdo:name ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:street ],
         confident:NamedThing ;
     skos:definition "The venue at which an academic event takes place." .
 
@@ -933,13 +933,13 @@ confident:AcademicField a owl:Class,
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:schema_base_uri ],
         [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:schema_value ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty confident:schema_name ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty confident:schema_value ;
+            owl:qualifiedCardinality 1 ],
         confident:SchemaBasedThing ;
     skos:definition "An academic field is the scientific subject of an event or event series according to some controlled vocabulary or thesaurus and as such requires the scheme URI." .
 
@@ -968,13 +968,13 @@ confident:Deadline a owl:Class,
     rdfs:label "Deadline" ;
     dc:title "Subobject Deadline" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:deadline_other ],
-        [ a owl:Restriction ;
             owl:onClass linkml:Datetime ;
             owl:onProperty confident:deadline_date ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty confident:deadline_other ],
         [ a owl:Restriction ;
             owl:onClass confident:DeadlineType ;
             owl:onProperty rdf:type ;
@@ -1007,28 +1007,28 @@ confident:Location a owl:Class,
             owl:onProperty confident:meeting_url ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Float ;
-            owl:onProperty confident:lattitude ],
+            owl:onClass confident:Venue ;
+            owl:onProperty confident:has_venue ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass confident:Region ;
             owl:onProperty confident:has_region ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:Venue ;
-            owl:onProperty confident:has_venue ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass confident:Country ;
             owl:onProperty confident:has_country ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:City ;
-            owl:onProperty confident:has_city ],
+            owl:onClass linkml:Float ;
+            owl:onProperty confident:longitude ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Float ;
-            owl:onProperty confident:longitude ] ;
+            owl:onProperty confident:lattitude ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass confident:City ;
+            owl:onProperty confident:has_city ] ;
     skos:definition "A container for the information about the location in which an academic event takes place." .
 
 confident:Publication a owl:Class,
@@ -1036,18 +1036,18 @@ confident:Publication a owl:Class,
     rdfs:label "Publication" ;
     dc:title "Subobject Publication" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty sdo:name ],
         [ a owl:Restriction ;
-            owl:allValuesFrom confident:DigitalObjectId ;
+            owl:allValuesFrom confident:ExternalIdentifier ;
             owl:onProperty IAO:0000235 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom confident:ExternalIdentifier ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:DigitalObjectId ;
             owl:onProperty IAO:0000235 ],
         confident:NamedThing ;
     skos:definition "A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series." .
@@ -1058,16 +1058,16 @@ confident:SchemaBasedThing a owl:Class,
     dc:title "Subobject Schema Based Thing" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:schema_base_uri ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty confident:schema_value ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty confident:schema_name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:schema_base_uri ],
         linkml:mixin ;
     skos:definition "A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing." .
 
@@ -1084,16 +1084,16 @@ confident:Context a owl:Class,
     dc:title "Subobject Context" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty confident:license_str ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:license_url ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty confident:text ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:license_str ] ;
+            owl:onProperty confident:text ] ;
     skos:definition "A container to provide extra information, such as call of papers event description." .
 
 confident:Metric a owl:Class,
@@ -1102,32 +1102,32 @@ confident:Metric a owl:Class,
     dc:title "Subobject Metric" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass confident:MetricType ;
+            owl:onProperty rdf:type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty confident:int_value ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:description ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:str_value ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty confident:truth_value ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty confident:metric_year ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Float ;
-            owl:onProperty confident:rate_value ],
+            owl:onClass linkml:String ;
+            owl:onProperty confident:str_value ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:MetricType ;
-            owl:onProperty rdf:type ] ;
+            owl:onClass linkml:String ;
+            owl:onProperty confident:description ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty confident:truth_value ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Float ;
+            owl:onProperty confident:rate_value ] ;
     skos:definition "A container for statistical information about an event or event series." .
 
 confident:organized_by a owl:ObjectProperty,
@@ -1159,81 +1159,34 @@ confident:EventSeries a owl:Class,
     rdfs:label "EventSeries" ;
     dc:title "Event Series" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty confident:has_topic ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uri ;
-            owl:onProperty confident:website ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty confident:former_name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:AcademicField ;
-            owl:onProperty aeon:0000040 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty confident:colocated_with ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:ExternalIdentifier ;
-            owl:onProperty IAO:0000235 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty confident:translated_name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty skos:altLabel ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:Sponsor ;
-            owl:onProperty confident:sponsored_by ],
-        [ a owl:Restriction ;
             owl:allValuesFrom confident:Publication ;
             owl:onProperty confident:has_publication ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:has_acronym ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:GndId ;
-            owl:onProperty IAO:0000235 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:Metric ;
-            owl:onProperty confident:has_metric ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty skos:perfLabel ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:allValuesFrom confident:DblpId ;
             owl:onProperty IAO:0000235 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty confident:joint_venture_with ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:has_umbrella ],
         [ a owl:Restriction ;
             owl:allValuesFrom confident:WikiCfpSeriesId ;
             owl:onProperty IAO:0000235 ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty confident:umbrella_of ],
+            owl:onProperty confident:former_name ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass confident:Event ;
             owl:onProperty confident:series_of ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uri ;
-            owl:onProperty confident:landing_page ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty confident:colocated_with ],
         [ a owl:Restriction ;
-            owl:allValuesFrom confident:WikidataId ;
-            owl:onProperty IAO:0000235 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty confident:has_acronym ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty confident:umbrella_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty confident:joint_venture_with ],
         [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
                         owl:allValuesFrom confident:Organizer ;
@@ -1241,12 +1194,59 @@ confident:EventSeries a owl:Class,
                         owl:onProperty confident:organized_by ;
                         owl:someValuesFrom confident:Organizer ] ) ],
         [ a owl:Restriction ;
+            owl:allValuesFrom confident:ExternalIdentifier ;
+            owl:onProperty IAO:0000235 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:WikidataId ;
+            owl:onProperty IAO:0000235 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:AcademicField ;
+            owl:onProperty aeon:0000040 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty confident:has_topic ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uri ;
+            owl:onProperty confident:landing_page ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Sponsor ;
+            owl:onProperty confident:sponsored_by ],
+        [ a owl:Restriction ;
             owl:allValuesFrom confident:DigitalObjectId ;
             owl:onProperty IAO:0000235 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uri ;
+            owl:onProperty confident:website ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass confident:Context ;
-            owl:onProperty confident:context_info ] ;
+            owl:onProperty confident:context_info ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty confident:translated_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:GndId ;
+            owl:onProperty IAO:0000235 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty skos:altLabel ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Metric ;
+            owl:onProperty confident:has_metric ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty skos:perfLabel ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty confident:has_umbrella ] ;
     skos:closeMatch sdo:EventSeries ;
     skos:definition "An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time." ;
     skos:exactMatch aeon:0000002 .
@@ -1256,20 +1256,20 @@ confident:Contributor a owl:Class,
     rdfs:label "Contributor" ;
     dc:title "Subobject Contributor" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:ContributorType ;
-            owl:onProperty rdf:type ],
+            owl:allValuesFrom confident:ExternalIdentifier ;
+            owl:onProperty IAO:0000235 ],
         [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass confident:ContributorType ;
+            owl:onProperty rdf:type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty sdo:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:ExternalIdentifier ;
-            owl:onProperty IAO:0000235 ],
         confident:NamedThing ;
     skos:definition "A contributor is a person or organization that holds a contributor role which is being realized in an event or event series." .
 
@@ -1288,13 +1288,13 @@ confident:NamedThing a owl:Class,
     rdfs:label "NamedThing" ;
     dc:title "Subobject Named Thing" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty sdo:name ],
-        [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:id ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty sdo:name ],
         [ a owl:Restriction ;
             owl:allValuesFrom confident:ExternalIdentifier ;
             owl:onProperty IAO:0000235 ],
@@ -1330,67 +1330,12 @@ confident:Event a owl:Class,
     rdfs:label "Event" ;
     dc:title "Event" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom confident:Sponsor ;
-            owl:onProperty confident:sponsored_by ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:EventSeries ;
-            owl:onProperty confident:in_series ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty confident:has_topic ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty skos:perfLabel ;
+            owl:onClass linkml:Datetime ;
+            owl:onProperty aeon:end_date ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty confident:joint_venture_with ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:DblpId ;
-            owl:onProperty IAO:0000235 ],
-        [ a owl:Restriction ;
-            owl:onClass confident:EventStatus ;
-            owl:onProperty aeon:event_status ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:WikiCfpEventId ;
-            owl:onProperty IAO:0000235 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:TibkatId ;
-            owl:onProperty IAO:0000235 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:has_acronym ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty confident:id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:Deadline ;
-            owl:onProperty confident:has_deadline ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty confident:has_umbrella ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:Event ;
-            owl:onProperty confident:superevent_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:Metric ;
-            owl:onProperty confident:has_metric ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:EventType ;
-            owl:onProperty rdf:type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:Publication ;
-            owl:onProperty confident:has_publication ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Uri ;
-            owl:onProperty confident:website ],
+            owl:onProperty confident:former_name ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty confident:umbrella_of ],
@@ -1399,25 +1344,12 @@ confident:Event a owl:Class,
             owl:onClass confident:Event ;
             owl:onProperty RO:0002012 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom confident:AcademicField ;
-            owl:onProperty aeon:0000040 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:Datetime ;
-            owl:onProperty aeon:end_date ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:GndId ;
-            owl:onProperty IAO:0000235 ],
-        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty confident:translated_name ],
+            owl:onProperty skos:altLabel ],
         [ a owl:Restriction ;
-            owl:onClass linkml:Datetime ;
-            owl:onProperty aeon:start_date ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty confident:colocated_with ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass confident:Location ;
+            owl:onProperty confident:at_location ],
         [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
                         owl:allValuesFrom confident:Organizer ;
@@ -1425,40 +1357,108 @@ confident:Event a owl:Class,
                         owl:onProperty confident:organized_by ;
                         owl:someValuesFrom confident:Organizer ] ) ],
         [ a owl:Restriction ;
-            owl:allValuesFrom confident:DigitalObjectId ;
-            owl:onProperty IAO:0000235 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty confident:has_acronym ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty confident:former_name ],
+            owl:onProperty confident:translated_name ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty aeon:event_number ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:ExternalIdentifier ;
-            owl:onProperty IAO:0000235 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom confident:WikidataId ;
-            owl:onProperty IAO:0000235 ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty confident:has_topic ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass confident:Context ;
             owl:onProperty confident:context_info ],
         [ a owl:Restriction ;
+            owl:allValuesFrom confident:WikiCfpEventId ;
+            owl:onProperty IAO:0000235 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty confident:colocated_with ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:TibkatId ;
+            owl:onProperty IAO:0000235 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty confident:joint_venture_with ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:WikidataId ;
+            owl:onProperty IAO:0000235 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Deadline ;
+            owl:onProperty confident:has_deadline ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:DblpId ;
+            owl:onProperty IAO:0000235 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:DigitalObjectId ;
+            owl:onProperty IAO:0000235 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Publication ;
+            owl:onProperty confident:has_publication ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass confident:Location ;
-            owl:onProperty confident:at_location ],
+            owl:onClass confident:EventSeries ;
+            owl:onProperty confident:in_series ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Uri ;
             owl:onProperty confident:landing_page ],
         [ a owl:Restriction ;
+            owl:allValuesFrom confident:ExternalIdentifier ;
+            owl:onProperty IAO:0000235 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty aeon:event_number ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty confident:has_umbrella ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Event ;
+            owl:onProperty confident:superevent_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:AcademicField ;
+            owl:onProperty aeon:0000040 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty confident:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass confident:EventMode ;
             owl:onProperty confident:event_mode ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty skos:altLabel ] ;
+            owl:onClass linkml:String ;
+            owl:onProperty skos:perfLabel ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Datetime ;
+            owl:onProperty aeon:start_date ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Metric ;
+            owl:onProperty confident:has_metric ],
+        [ a owl:Restriction ;
+            owl:onClass confident:EventStatus ;
+            owl:onProperty aeon:event_status ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:Sponsor ;
+            owl:onProperty confident:sponsored_by ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uri ;
+            owl:onProperty confident:website ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass confident:EventType ;
+            owl:onProperty rdf:type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom confident:GndId ;
+            owl:onProperty IAO:0000235 ] ;
     skos:closeMatch sdo:Event ;
     skos:definition "An academic event is part of the established instruments of science communication as a format for conveying the latest scientific publications. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these publications. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function." ;
     skos:exactMatch aeon:0000001 .
@@ -1554,16 +1554,16 @@ confident:ExternalIdentifier a owl:Class,
     dc:title "External ID" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty OBI:0002815 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty confident:schema_base_uri ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty confident:schema_name ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty OBI:0002815 ],
         confident:SchemaBasedThing ;
     skos:definition "An identifer of an entity declared in another schema." .
 
