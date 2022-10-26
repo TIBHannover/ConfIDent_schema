@@ -1,6 +1,6 @@
 # Auto generated from ConfIDent_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-10-26T11:37:51
-# Schema: confident_schema
+# Generation date: 2022-10-26T14:16:23
+# Schema: ConfIDent_schema
 #
 # id: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
 # description: This is a schema for the ConfIDent project that describes the necessary metadata requirements of
