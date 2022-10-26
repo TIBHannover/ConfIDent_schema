@@ -4343,9 +4343,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ConfIDent_schema.yaml",
-  "source_file_date": "2022-10-17T15:07:58",
+  "source_file_date": "2022-10-24T13:36:56",
   "source_file_size": 50594,
-  "generation_date": "2022-10-17T22:58:18",
+  "generation_date": "2022-10-26T09:33:51",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ConfIDent_schema.context.jsonld",

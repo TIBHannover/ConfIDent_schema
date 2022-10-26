@@ -1,5 +1,63 @@
-# Example data object
-id: example:ConfIDentRecords001
-name: foo bar
-primary_email: foo.bar@example.com
-age_in_years: 33
+# ConfIDentRecord
+events:
+  ##############################
+  ### Academic Event Example ###
+  ##############################
+  - id: confident:qsdh-en13
+    has_doi: 
+      schema_value: 10.25798/qsdh-en13
+    landing_page: https://vivoconference.org/vivo2020
+    official_name: 12th Annual / International VIVO Conference 2021
+    has_acronym: VIVO 2021
+    alternative_name: 
+      - VIVO Conference 2021
+      - 12th VIVO Conference 2021
+    type: Conference
+    #event_format:
+    #  specified_as: ad-hoc meeting of university presidents
+    start_date: "2021-06-23"
+    end_date: "2021-06-25"
+    event_status: to be confirmed
+    event_mode: hybrid
+    ordinal: 12
+    external_id:
+      - schema_value: vivo2021
+        schema_base_uri: https://www.dblp.org/events/
+        schema_name: dblp
+    wikidata_id: 
+      schema_value: Q108430463
+    gnd_id:
+      schema_value: gnd-1234
+    dpbl_id:
+      schema_value: vivo/vivo2021
+    wikicfp_event_id:
+      schema_value: "12345"
+    organized_by:
+      - name: The VIVO Project
+        id: confident:organizer1
+        type: organization
+      - name: TIB
+        id: confident:organizer2
+        type: person
+        external_id:
+          - schema_value: 04aj4c181
+            schema_base_uri: https://ror.org/
+            schema_name: ROR
+    in_series: doi:10.25798/ea2h-xq32
+    academic_field:
+      - schema_value: ontology
+        schema_name: ConfIDent's core classification scheme
+        schema_base_uri: confident:classification
+      - schema_value: social science
+        schema_name: ConfIDent's core classification scheme
+        schema_base_uri: confident:classification
+    has_topic: 
+      - reseach information systems
+      - open research
+    website: https://vivoconference.org/vivo2021/
+    context_info: 
+      text: some summary
+    has_metric:
+      - type: review process
+        str_value: double-blind peer review
+
