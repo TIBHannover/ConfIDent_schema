@@ -1,3 +1,6 @@
+[![License: CC-BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-green.svg)](https://creativecommons.org/licenses/by/4.0/) 
+![Build Status](https://github.com/TIBHannover/ConfIDent_schema/workflows/CI/badge.svg)
+
 # ConfIDent schema
 
 This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
