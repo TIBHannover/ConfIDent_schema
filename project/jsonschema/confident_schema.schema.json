@@ -1375,7 +1375,7 @@
       }
    },
    "required": [],
-   "title": "confident_schema",
+   "title": "ConfIDent_schema",
    "type": "object",
    "version": "0.5.0"
 }

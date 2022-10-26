@@ -1,5 +1,5 @@
 {
-  "name": "confident_schema",
+  "name": "ConfIDent_schema",
   "description": "This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.",
   "title": "ConfIDent Metadata Schema",
   "id": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
@@ -4343,9 +4343,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ConfIDent_schema.yaml",
-  "source_file_date": "2022-10-24T13:36:56",
+  "source_file_date": "2022-10-26T14:14:51",
   "source_file_size": 50594,
-  "generation_date": "2022-10-26T09:33:51",
+  "generation_date": "2022-10-26T14:15:24",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ConfIDent_schema.context.jsonld",

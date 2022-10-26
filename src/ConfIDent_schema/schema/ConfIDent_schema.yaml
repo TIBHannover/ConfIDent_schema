@@ -1,5 +1,5 @@
 id: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
-name: confident_schema
+name: ConfIDent_schema
 title: ConfIDent Metadata Schema
 description: |-
   This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.
