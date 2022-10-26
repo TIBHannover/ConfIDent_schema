@@ -4,7 +4,7 @@ This is a schema for the ConfIDent project that describes the necessary metadata
 
 ## Website
 
-* [https://TIBHannover.github.io/confident_schema](https://TIBHannover.github.io/confident_schema)
+* [https://TIBHannover.github.io/confident_schema](https://TIBHannover.github.io/ConfIDent_schema)
 
 ## Repository Structure
 
