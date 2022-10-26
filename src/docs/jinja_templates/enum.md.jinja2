@@ -1,10 +1,11 @@
-# Enum: {{ gen.name(element) }}
+# Enum: {{ element.title }}
 
 {% if element.description %}
 _{{ element.description }}_
 {% endif %}
 
-URI: {{ gen.uri_link(element) }}
+<!-- URI is suppressed as the documentation is for the SMW instance that has a different URI. -->
+<!-- URI: {{ gen.uri_link(element) }} -->
 
 {% if element.permissible_values -%}
 ## Permissible Values
@@ -18,7 +19,8 @@ URI: {{ gen.uri_link(element) }}
 _This is a dynamic enum_
 {% endif %}
 
-{% include "common_metadata.md.jinja2" %}
+<!-- next line is commented out as it is not needed for the SMW doc -->
+<!-- {% include "common_metadata.md.jinja2" %} -->
 
 ## LinkML Source
 

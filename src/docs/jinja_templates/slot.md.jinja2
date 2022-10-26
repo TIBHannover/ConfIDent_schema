@@ -1,4 +1,4 @@
-# Slot: {{ gen.name(element) }}
+# Slot: {{ element.title }}
 
 {%- if header -%}
 {{header}}
@@ -8,7 +8,8 @@
 _{{ element.description }}_
 {% endif %}
 
-URI: {{ gen.uri_link(element) }}
+<!-- URI is suppressed as the documentation is for the SMW instance that has a different URI. -->
+<!-- URI: {{ gen.uri_link(element) }} -->
 
 
 {% if schemaview.slot_parents(element.name) or schemaview.slot_children(element.name, mixins=False) %}
@@ -18,28 +19,6 @@ URI: {{ gen.uri_link(element) }}
 {{ gen.inheritance_tree(element, mixins=True) }}
 {% else %}
 <!-- no inheritance hierarchy -->
-{% endif %}
-
-{% if schemaview.get_classes_by_slot(element, include_induced=True) %}
-
-## Applicable Classes
-
-| Name | Description |
-| --- | --- |
-{% for c in schemaview.get_classes_by_slot(element, include_induced=True) -%}
-{{ gen.link_title(c) }} | {{ schemaview.get_class(c).description }}
-{% endfor %}
-
-{% endif %}
-
-{% if schemaview.is_mixin(element.name) %}
-## Mixin Usage
-
-| mixed into | description | range | domain |
-| --- | --- | --- | --- |
-{% for s in schemaview.slot_children(element.name) -%}
-| {{ gen.link_title(s) }} | {{ schemaview.get_slot(s).description }} | {{ schemaview.get_slot(s).range }} | {{ schemaview.get_classes_by_slot(schemaview.get_slot(s))|join(', ') }} |
-{% endfor %}
 {% endif %}
 
 ## Properties
@@ -70,7 +49,43 @@ URI: {{ gen.uri_link(element) }}
 {% endfor %}
 {% endif %}
 
-{% include "common_metadata.md.jinja2" %}
+<!-- next line is commented out as it is not needed for the SMW doc -->
+<!-- {% include "common_metadata.md.jinja2" %} -->
+
+{% if schemaview.get_mappings(element.name).items() -%}
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+{% for m, mt in schemaview.get_mappings(element.name).items() -%}
+{% if mt|length > 0 -%}
+| {{ m }} | {{ mt }} |
+{% endif -%}
+{% endfor %}
+
+{% endif -%}
+
+{% if schemaview.get_classes_by_slot(element, include_induced=True) %}
+
+## Applicable Classes
+
+| Name | Description |
+| --- | --- |
+{% for c in schemaview.get_classes_by_slot(element, include_induced=True) -%}
+{{ gen.link_title(c) }} | {{ schemaview.get_class(c).description }}
+{% endfor %}
+
+{% endif %}
+
+{% if schemaview.is_mixin(element.name) %}
+## Mixin Usage
+
+| mixed into | description | range | domain |
+| --- | --- | --- | --- |
+{% for s in schemaview.slot_children(element.name) -%}
+| {{ gen.link_title(s) }} | {{ schemaview.get_slot(s).description }} | {{ schemaview.get_slot(s).range }} | {{ schemaview.get_classes_by_slot(schemaview.get_slot(s))|join(', ') }} |
+{% endfor %}
+{% endif %}
 
 ## LinkML Source
 
