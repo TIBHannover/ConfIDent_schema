@@ -14,9 +14,9 @@ This is a schema for the ConfIDent project that describes the necessary metadata
 * [examples/](examples/) - example data
 * [project/](project/) - project files (do not edit these)
 * [src/](src/) - source files (edit these)
-    * [confident_schema](src/confident_schema)
-        * [schema](src/confident_schema/schema) -- LinkML schema (edit this)
-* [datamodel](src/confident_schema/datamodel) -- Generated python datamodel
+    * [confident_schema](src/ConfIDent_schema)
+        * [schema](src/ConfIDent_schema/schema) -- LinkML schema (edit this)
+* [datamodel](src/ConfIDent_schema/datamodel) -- Generated python datamodel
 * [tests](tests/) - python tests
 
 ## Developer Documentation
