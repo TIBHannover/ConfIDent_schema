@@ -1,8 +1,6 @@
 site_name: "ConfIDent metadata schema"
 theme:
   name: material
-  analytics:
-    gtag: G-2SYBSJVZ23
 #  palette:
 #    scheme: slate
 #    primary: cyan
@@ -10,24 +8,19 @@ theme:
     - content.tabs.link
 plugins:
   - search
-markdown_extensions:
-  - pymdownx.highlight:
-      #anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      #alternate_style: true
-  - pymdownx.critic
-  - pymdownx.caret
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.tilde
+  - mermaid2
 nav:
 #  - Home: home.md
   - Index: index.md
   - Academic Event: Event.md
   - Academic Event Series: EventSeries.md
   - About: about.md
-site_url: https://tibhannover.github.io/ConfIDent_schema/
+site_url: https://TIBHannover.github.io/ConfIDent_schema
 repo_url: https://github.com/TIBHannover/ConfIDent_schema
+
+# Uncomment this block to enable use of Google Analytics. 
+# Replace the property value with your own ID.
+# extra:
+#   analytics:
+#     provider: google
+#     property: G-XXXXXXXXXX

@@ -1,0 +1,4357 @@
+{
+  "name": "confident_schema",
+  "description": "This is a schema for the ConfIDent project that describes the necessary metadata requirements of academic events and event series.",
+  "title": "ConfIDent Metadata Schema",
+  "id": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+  "version": "0.5.0",
+  "imports": [
+    "linkml:types"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "prefixes": [
+    {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    {
+      "prefix_prefix": "skos",
+      "prefix_reference": "http://www.w3.org/2004/02/skos/core#"
+    },
+    {
+      "prefix_prefix": "sdo",
+      "prefix_reference": "https://schema.org/"
+    },
+    {
+      "prefix_prefix": "confident",
+      "prefix_reference": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#"
+    },
+    {
+      "prefix_prefix": "aeon",
+      "prefix_reference": "https://github.com/tibonto/aeon#AEON_"
+    },
+    {
+      "prefix_prefix": "OBI",
+      "prefix_reference": "http://purl.obolibrary.org/obo/OBI_"
+    },
+    {
+      "prefix_prefix": "IAO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"
+    },
+    {
+      "prefix_prefix": "BFO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/BFO_"
+    },
+    {
+      "prefix_prefix": "RO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/RO_"
+    },
+    {
+      "prefix_prefix": "TXPO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/TXPO_"
+    },
+    {
+      "prefix_prefix": "NCBITaxon",
+      "prefix_reference": "http://purl.obolibrary.org/obo/NCBITaxon_"
+    },
+    {
+      "prefix_prefix": "provo",
+      "prefix_reference": "https://www.w3.org/TR/2013/REC-prov-o-20130430/#"
+    },
+    {
+      "prefix_prefix": "dc",
+      "prefix_reference": "http://purl.org/dc/terms/"
+    },
+    {
+      "prefix_prefix": "orcid",
+      "prefix_reference": "https://orcid.org/"
+    },
+    {
+      "prefix_prefix": "ror",
+      "prefix_reference": "https://ror.org/"
+    },
+    {
+      "prefix_prefix": "wikidata",
+      "prefix_reference": "https://www.wikidata.org/wiki/"
+    },
+    {
+      "prefix_prefix": "dblp_series",
+      "prefix_reference": "https://dblp.org/db/conf/"
+    },
+    {
+      "prefix_prefix": "doi",
+      "prefix_reference": "https://doi.org/"
+    },
+    {
+      "prefix_prefix": "ex",
+      "prefix_reference": "https://example.com/"
+    },
+    {
+      "prefix_prefix": "datacite",
+      "prefix_reference": "http://schema.datacite.org/meta/kernel-4.4/metadata.xsd"
+    }
+  ],
+  "emit_prefixes": [
+    "aeon",
+    "confident",
+    "sdo"
+  ],
+  "default_curi_maps": [
+    "semweb_context"
+  ],
+  "default_prefix": "confident",
+  "default_range": "string",
+  "types": [
+    {
+      "name": "string",
+      "definition_uri": "https://w3id.org/linkml/String",
+      "description": "A character string",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "integer",
+      "definition_uri": "https://w3id.org/linkml/Integer",
+      "description": "An integer",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "int",
+      "uri": "http://www.w3.org/2001/XMLSchema#integer",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "boolean",
+      "definition_uri": "https://w3id.org/linkml/Boolean",
+      "description": "A binary (true or false) value",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Bool",
+      "uri": "http://www.w3.org/2001/XMLSchema#boolean",
+      "repr": "bool",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "float",
+      "definition_uri": "https://w3id.org/linkml/Float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#float",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "double",
+      "definition_uri": "https://w3id.org/linkml/Double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#double",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "decimal",
+      "definition_uri": "https://w3id.org/linkml/Decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Decimal",
+      "uri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "time",
+      "definition_uri": "https://w3id.org/linkml/Time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners do not work with straight date or time"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date",
+      "definition_uri": "https://w3id.org/linkml/Date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDDate",
+      "uri": "http://www.w3.org/2001/XMLSchema#date",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "datetime",
+      "definition_uri": "https://w3id.org/linkml/Datetime",
+      "description": "The combination of a date and time",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDDateTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date_or_datetime",
+      "definition_uri": "https://w3id.org/linkml/DateOrDatetime",
+      "description": "Either a date or a datetime",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "https://w3id.org/linkml/DateOrDatetime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uriorcurie",
+      "definition_uri": "https://w3id.org/linkml/Uriorcurie",
+      "description": "a URI or a CURIE",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URIorCURIE",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uri",
+      "definition_uri": "https://w3id.org/linkml/Uri",
+      "description": "a complete URI",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URI",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "ncname",
+      "definition_uri": "https://w3id.org/linkml/Ncname",
+      "description": "Prefix part of CURIE",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NCName",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "objectidentifier",
+      "definition_uri": "https://w3id.org/linkml/Objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "comments": [
+        "Used for inheritence and type checking"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "ElementIdentifier",
+      "uri": "http://www.w3.org/ns/shex#iri",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "nodeidentifier",
+      "definition_uri": "https://w3id.org/linkml/Nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NodeIdentifier",
+      "uri": "http://www.w3.org/ns/shex#nonLiteral",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    }
+  ],
+  "enums": [
+    {
+      "name": "EventType",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#EventType",
+      "description": "The most common minimal event types. For event types that are not in this list, you can use \"other\" and provide the label of this other event format using the [Event Format](event_format.md) property.",
+      "title": "Event Type",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "permissible_values": [
+        {
+          "text": "Colloquium",
+          "description": "A colloquium is an academic meeting that usually lasts only a few hours and serves to discuss a specific topic. Colloquia are usually part of the academic exchange in everyday university life with only one speaker, but can also take place on special occasions (anniversaries, start or end of the lecture phase, etc.) and can have more than one speaker.",
+          "meaning": "aeon:0000101",
+          "title": "Colloquium"
+        },
+        {
+          "text": "Conference",
+          "description": "A conference is an academic event that lasts up to several days and serves as a forum for presentations on a specific topic or subject area. In addition to subject-specific conferences, there are also interdisciplinary conferences which allow both a broader focus and more specific questions on a particular (academic) problem. Conferences often have a highly formalized structure of parallel, clearly defined sessions with several short presentations and plenary sessions with invited (keynote) speakers who are considered multipliers in their (research) field. Ideally, the selection of the speakers and their contributions is subject to a review process.",
+          "meaning": "aeon:0000103"
+        },
+        {
+          "text": "Congress",
+          "description": "A congress is a certain type of conference which is characterised by a larger number of participants (often several hundred) and is oftentimes organised jointly by large, established (e.g. specialised societies) and/or several institutions. Congresses have a broader thematic focus than simple conferences, take place in certain cycles, but can still target an exclusive group of participants (e.g. representatives of a single discipline).",
+          "meaning": "aeon:0000123"
+        },
+        {
+          "text": "Session",
+          "description": "A session is a clearly defined part of a academic event in which a small number of speakers (usually 2-5) focus on a specific topic. A session is usually formally accompanied by a session chair, who assumes the function of a moderator.",
+          "meaning": "aeon:0000111"
+        },
+        {
+          "text": "Poster Session",
+          "description": "A poster session is a session at which poster papers are presented.",
+          "meaning": "aeon:0000127"
+        },
+        {
+          "text": "Talk",
+          "description": "A talk is a central part of a larger academic event, at which a specific topic is being presented in a rather short way.",
+          "meaning": "aeon:0000125"
+        },
+        {
+          "text": "Keynote Speech",
+          "description": "A keynote speech is a special talk that has the function to set the underlying tone and summarize the core message or most important revelation of the academic event at which it is given.",
+          "meaning": "aeon:00001115"
+        },
+        {
+          "text": "Event Track",
+          "description": "An academic event that, as a part of a larger academic event, has the function to group even smaller parts of the academic event, like sessions and talks, according to a shared theme or topic. It usually has dedicated chairs and program committees.",
+          "meaning": "aeon:00001117"
+        },
+        {
+          "text": "Forum",
+          "description": "An academic event whose sociocultural format is determined in an academic event type specification that classifies the academic event as a forum.",
+          "meaning": "aeon:0000105"
+        },
+        {
+          "text": "Hackathon",
+          "description": "A hackathon is a gathering of software developers with the goal to develop software collaboratively in a short timeframe.",
+          "meaning": "aeon:0000107"
+        },
+        {
+          "text": "Seminar",
+          "description": "A seminar can serve as a term for older conference series, but in current usage the term mainly describes a specific teaching format that serves to develop content and provides space for discussion. Participation from the audience is usually encouraged.",
+          "meaning": "aeon:0000109"
+        },
+        {
+          "text": "Symposium",
+          "description": "A symposium is a specific type of conference with a narrower thematic focus, with fewer participants and of shorter duration. The degree of structuring lies between a classic conference and a workshop, allows more discussion than the larger conference, but is usually more formalized than the workshop.",
+          "meaning": "aeon:0000113"
+        },
+        {
+          "text": "Tutorial",
+          "description": "An academic event that has the function to educate the audience on a certain topic. A tutorial is often realized as an academic event talk or academic event session.",
+          "meaning": "aeon:0000119"
+        },
+        {
+          "text": "Workshop",
+          "description": "Workshops are smaller academic events that serve to exchange information on a specific topic or problem. They usually last one or two days and offer space for discussion and the development of content and solutions. Group work is often part of the event concept.",
+          "meaning": "aeon:0000121"
+        },
+        {
+          "text": "other",
+          "description": "This value is to be used if the event format cannot be represented using one of the other permissible values defined in the [Event Type](EventType.md) enum. If this value is chosen the use of [Other Event Format](other_format.md) is mandatory.",
+          "meaning": "aeon:0000001"
+        }
+      ]
+    },
+    {
+      "name": "EventStatus",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#EventStatus",
+      "description": "The status of the academic event which indicates if it takes place as planned.",
+      "title": "Event Status",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "permissible_values": [
+        {
+          "text": "as scheduled",
+          "description": "Default: used to indicate that the event takes place as planned."
+        },
+        {
+          "text": "postponed",
+          "description": "Used to indicate that the event has been postponed to a later date."
+        },
+        {
+          "text": "canceled",
+          "description": "Used to indicate that the event has been canceled."
+        },
+        {
+          "text": "to be confirmed",
+          "description": "Used to indicate that the provided Event Start and Event End values are not yet officially confirmed."
+        }
+      ]
+    },
+    {
+      "name": "EventMode",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#EventMode",
+      "description": "An enum to specify if an academic event is in person, virtual or a hybrid of both.",
+      "title": "Event Mode",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "permissible_values": [
+        {
+          "text": "on site",
+          "description": "The event takes place in a physical location."
+        },
+        {
+          "text": "online",
+          "description": "The event takes place in a virtual location."
+        },
+        {
+          "text": "hybrid",
+          "description": "The event takes place physically and virtually."
+        }
+      ]
+    },
+    {
+      "name": "DeadlineType",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#DeadlineType",
+      "description": "An enum that specifies the possible kinds of deadlines of an academic event.",
+      "title": "Deadline Type",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "permissible_values": [
+        {
+          "text": "submission deadline",
+          "meaning": "aeon:0000067"
+        },
+        {
+          "text": "notification deadline",
+          "meaning": "aeon:0000064"
+        },
+        {
+          "text": "abstract deadline",
+          "meaning": "aeon:0000061"
+        },
+        {
+          "text": "camera-ready deadline",
+          "meaning": "aeon:0000062"
+        },
+        {
+          "text": "demo deadline",
+          "meaning": "aeon:0000063"
+        },
+        {
+          "text": "paper deadline",
+          "meaning": "aeon:0000065"
+        },
+        {
+          "text": "poster deadline",
+          "meaning": "aeon:0000066"
+        },
+        {
+          "text": "tutorial deadline",
+          "meaning": "aeon:0000068"
+        },
+        {
+          "text": "workshop deadline",
+          "meaning": "aeon:0000069"
+        },
+        {
+          "text": "other",
+          "description": "This value is to be used, if the other allowed values are not applicable."
+        }
+      ]
+    },
+    {
+      "name": "MetricType",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#MetricType",
+      "description": "The possible metric of an academic event.",
+      "title": "Metric Type",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "permissible_values": [
+        {
+          "text": "submitted papers",
+          "description": "This metric provides the number of papers that have been submitted to the organizers of an academic event."
+        },
+        {
+          "text": "accepted papers",
+          "description": "This metric provides the number of papers that have been accepted by the organizers of an academic event and from which an acceptance rate can be calculated."
+        },
+        {
+          "text": "submitted short papers",
+          "description": "This metric provides the number of short papers that have been submitted to the organizers of an academic event."
+        },
+        {
+          "text": "accepted short papers",
+          "description": "This metric provides the number of short papers that have been accepted by the organizers of an academic event and from which an acceptance rate can be calculated."
+        },
+        {
+          "text": "submitted abstracts",
+          "description": "This metric provides the number of abstracts that have been submitted to the organizers of an academic event."
+        },
+        {
+          "text": "accepted abstracts",
+          "description": "This metric provides the number of abstracts that have been accepted by the organizers of an academic event and from which an acceptance rate can be calculated."
+        },
+        {
+          "text": "number of attendees",
+          "description": "This metric provides the number of attendees of an academic event."
+        },
+        {
+          "text": "number of tracks",
+          "description": "This metric provides the number of tracks of an academic event."
+        },
+        {
+          "text": "has childcare options",
+          "description": "This boolean metric states whether the academic event has a childcare option for its attendees."
+        },
+        {
+          "text": "frequency",
+          "description": "This rate metric states the time frame in which the events of a series reoccur."
+        },
+        {
+          "text": "is accessible",
+          "description": "This boolean metric states whether the event is accessible for people with impairments."
+        },
+        {
+          "text": "CORE rank",
+          "description": "This score metric grades academic events according to the ranking of [CORE Inc.](https://www.core.edu.au/)."
+        },
+        {
+          "text": "review process",
+          "description": "This metric provides the possible typy of review a submission to an academic event has undergone."
+        }
+      ]
+    },
+    {
+      "name": "ReviewProcessType",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#ReviewProcessType",
+      "description": "The possible values for the metric that describes the review process undertaken by the organizers of an academic event.",
+      "title": "Review Process Type",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "permissible_values": [
+        {
+          "text": "double-blind peer review",
+          "description": "The reviewers do not know who the authors of the manuscript are. And the authors do not know who the reviewers are either."
+        },
+        {
+          "text": "single-blind peer review",
+          "description": "The reviewers know who is the authors of the manuscript are. But the authors do not know who the reviewers are."
+        },
+        {
+          "text": "open peer review",
+          "description": "The reviewers know who is the authors of the manuscript are. Abd the authors know who the reviewers are."
+        },
+        {
+          "text": "post-publication peer review",
+          "description": "There is a plattform on which the manuscript is being reviewed after its publication."
+        },
+        {
+          "text": "transparent peer review",
+          "description": "The authors' identity is known to the reviewers but the reviewers' identity is only made public if the reviewers give their consent to reveal their identity."
+        },
+        {
+          "text": "collaborative peer review",
+          "description": "The authors and reviewers discuss together how the manuscript can be improved, whereas the reviewers identity is concealed and can be unvealed upon publication."
+        },
+        {
+          "text": "cascading peer review",
+          "description": "If the manuscript has been reviewd but the editors reject it and refer to submit it elsewhere alongn with the review.",
+          "aliases": [
+            "waterfall peer review"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ContributorType",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#ContributorType",
+      "description": "An enumaration used to distinguish the contributors of an event or event series with regard to them being either an organization or a person.",
+      "title": "Contributor Type",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "permissible_values": [
+        {
+          "text": "organization",
+          "description": "An institution, or an association that has one or more people as members and which actsas some kind of participant in an event or event series.",
+          "meaning": "OBI:0000245"
+        },
+        {
+          "text": "person",
+          "description": "A human being that acts as some kind of participant in an event or event series.",
+          "meaning": "NCBITaxon:9606"
+        }
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "name": "type",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
+      "description": "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range.",
+      "title": "Type",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
+      "abstract": true,
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "owner": "Contributor",
+      "domain_of": [
+        "Event",
+        "Deadline",
+        "Metric",
+        "Contributor"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_doi",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_doi",
+      "description": "A property to provide a digital object identifier (DOI) according to https://doi.org/.",
+      "title": "DOI",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "exact_mappings": [
+        "http://schema.datacite.org/meta/kernel-4.4/metadata.xsddoi"
+      ],
+      "is_a": "external_id",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "owner": "Publication",
+      "domain_of": [
+        "EventSeries",
+        "Event",
+        "Publication"
+      ],
+      "range": "DigitalObjectId",
+      "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gnd_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#gnd_id",
+      "description": "A property to link an entity to the authority file of the German National Library.",
+      "title": "GND ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "external_id",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "GndId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "wikidata_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#wikidata_id",
+      "description": "A property to link an entity with its Wikidata identifier.",
+      "title": "Wikidata ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "external_id",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "WikidataId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#name",
+      "description": "A property to provide a name of a schema entity.",
+      "title": "Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "https://schema.org/name"
+      ],
+      "slot_uri": "https://schema.org/name",
+      "owner": "NamedThing",
+      "domain_of": [
+        "NamedThing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#id",
+      "description": "A property to provide an internal id of a schema entity in the ConfIDent plattform.",
+      "title": "ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#id",
+      "identifier": true,
+      "owner": "NamedThing",
+      "domain_of": [
+        "EventSeries",
+        "Event",
+        "NamedThing"
+      ],
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "external_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#external_id",
+      "description": "A property to provide an external id of a schema entity.",
+      "title": "External ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "owner": "NamedThing",
+      "domain_of": [
+        "EventSeries",
+        "Event",
+        "NamedThing"
+      ],
+      "range": "ExternalIdentifier",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "schema_value",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_value",
+      "description": "A property to provide the literal value of a schema based entity.",
+      "title": "Schema Value",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_value",
+      "owner": "SchemaBasedThing",
+      "domain_of": [
+        "SchemaBasedThing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "schema_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "description": "A property to provide the name of a schema.",
+      "title": "Schema Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "owner": "SchemaBasedThing",
+      "domain_of": [
+        "SchemaBasedThing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "schema_base_uri",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "description": "The base URI of the schema that provides the context for the schema based value.",
+      "title": "External formatter URI",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "owner": "SchemaBasedThing",
+      "domain_of": [
+        "SchemaBasedThing"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "official_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#official_name",
+      "description": "The official name of an event or event series.",
+      "title": "Official Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/2004/02/skos/core#perfLabel"
+      ],
+      "is_a": "name",
+      "slot_uri": "http://www.w3.org/2004/02/skos/core#perfLabel",
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "organized_by",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#organized_by",
+      "description": "A property to provide the organizers of an event or event series.",
+      "title": "Organizer",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#organized_by",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "Organizer",
+      "required": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_acronym",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_acronym",
+      "description": "The official acronym of an event or event series.",
+      "title": "Acronym",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "name",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_acronym",
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "academic_field",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#academic_field",
+      "description": "A property to describe the scientific subject(s) of an event or event series, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [Schema Value](schema_value.md) and [Schema Name](schema_name.md) are mandatory.",
+      "title": "Academic Field",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "https://github.com/tibonto/aeon#AEON_0000040"
+      ],
+      "slot_uri": "https://github.com/tibonto/aeon#AEON_0000040",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "AcademicField",
+      "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "landing_page",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#landing_page",
+      "description": "A property to provide the website to which a persistent identifier is resolving and which contains all the metadata about an event or event series.",
+      "title": "Landing Page",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "exact_mappings": [
+        "http://schema.datacite.org/meta/kernel-4.4/metadata.xsdurl"
+      ],
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#landing_page",
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "uri",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_publication",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_publication",
+      "description": "The published works that are related to the event or event series, such as proceedings and video recordings of talks.",
+      "title": "Publication",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_publication",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "Publication",
+      "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sponsored_by",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#sponsored_by",
+      "description": "A property to provide the sponsor of an event or event series.",
+      "title": "Sponsor",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#sponsored_by",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "Sponsor",
+      "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "website",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#website",
+      "description": "A property to provide the URL the official website of a event or event series.",
+      "title": "Official Website",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#website",
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "uri",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "umbrella_of",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "description": "A relation to be used to link an event or series that hosts several events or series to its subordinate parts.",
+      "title": "Umbrella Of",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_umbrella",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_umbrella",
+      "description": "A relation to be used to link an event or series to its hosting superordinate event or series.",
+      "title": "Has Umbrella",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_umbrella",
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "colocated_with",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#colocated_with",
+      "description": "A relation to be used to link a series or event to one or more other series or events that share the same location but not the same schedule and that are open to all attendees.",
+      "title": "Colocated With",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#colocated_with",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "joint_venture_with",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#joint_venture_with",
+      "description": "A relation to be used to link a series or event to one or more other series or events that share the same location, have a joint schedule and that are open to all attendees.",
+      "title": "Joint Venture With",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#joint_venture_with",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "alternative_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#alternative_name",
+      "description": "A property to provide alternative names of an event or event series.",
+      "title": "Alternative Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/2004/02/skos/core#altLabel"
+      ],
+      "is_a": "name",
+      "slot_uri": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "string",
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "former_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#former_name",
+      "description": "The former official name of an academic event or series. Usually this will only be needed in case an academic event series has undergone a name change.",
+      "title": "Former Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "name",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#former_name",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "string",
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "translated_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#translated_name",
+      "description": "A translation of the official name of an event or event series to be used in different language contexts.",
+      "title": "Translated Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "name",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#translated_name",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "string",
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "context_info",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#context_info",
+      "description": "A property to provide extra information, such as call of papers summary,  event or event series description.",
+      "title": "Context Information",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#context_info",
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "Context",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_metric",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_metric",
+      "description": "A property to provide one or more metrics of an event or event series.",
+      "title": "Metric",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_metric",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "Metric",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_topic",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_topic",
+      "description": "A property to provide the theme and topics of an event or event series as free keywords, phrases or text.",
+      "title": "Topic",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_topic",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "string",
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dpbl_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#dpbl_id",
+      "description": "A property to link the an event or event series with its DBLP identifier.",
+      "title": "DBLP ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "external_id",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "EventSeries",
+        "Event"
+      ],
+      "range": "DblpId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "start_date",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#start_date",
+      "description": "The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series.",
+      "title": "Start Date",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "https://github.com/tibonto/aeon#AEON_start_date"
+      ],
+      "slot_uri": "https://github.com/tibonto/aeon#AEON_start_date",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "range": "datetime",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "end_date",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#end_date",
+      "description": "Similar to start_date but only for the end of an academic event or event series.",
+      "title": "End Date",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "https://github.com/tibonto/aeon#AEON_end_date"
+      ],
+      "slot_uri": "https://github.com/tibonto/aeon#AEON_end_date",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "range": "datetime",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "event_status",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#event_status",
+      "description": "A property to provide the status of an event from a controlled list (e.g. as scheduled (default), postpooned, canceld etc).",
+      "title": "Event Status",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "https://github.com/tibonto/aeon#AEON_event_status"
+      ],
+      "slot_uri": "https://github.com/tibonto/aeon#AEON_event_status",
+      "ifabsent": "string(as scheduled)",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "range": "EventStatus",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "in_series",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#in_series",
+      "description": "The relation used to provide the series of which an Event is a part.",
+      "title": "In Series",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#in_series",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "range": "EventSeries",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "subevent_of",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#subevent_of",
+      "description": "A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place).",
+      "title": "Subevent Of",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0002012"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0002012",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "range": "Event",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "superevent_of",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#superevent_of",
+      "description": "A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event parts (e.g. the session).",
+      "title": "Superevent Of",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#superevent_of",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "range": "Event",
+      "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "event_format",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#event_format",
+      "description": "A property to provide an event format specification, if none of the [Event Types](EventType.md) are applicable to specify the format of an academic event.",
+      "title": "Event Format",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "https://github.com/tibonto/aeon#AEON_0000032"
+      ],
+      "slot_uri": "https://github.com/tibonto/aeon#AEON_0000032",
+      "range": "EventFormatSpecification",
+      "recommended": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "at_location",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#at_location",
+      "description": "The location of the academic event.",
+      "title": "Location",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#at_location",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "range": "Location",
+      "recommended": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_deadline",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_deadline",
+      "description": "A property to provide a deadline of an academic event.",
+      "title": "Deadline",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_deadline",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "range": "Deadline",
+      "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ordinal",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#ordinal",
+      "description": "The ordnial number of an academic event within its series.",
+      "title": "Ordinal",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "https://github.com/tibonto/aeon#AEON_event_number"
+      ],
+      "slot_uri": "https://github.com/tibonto/aeon#AEON_event_number",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "event_mode",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#event_mode",
+      "description": "The event mode describes whether the event is a physical, virtual or hybrid event.",
+      "title": "Event Mode",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#event_mode",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "range": "EventMode",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "tibkat_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#tibkat_id",
+      "description": "A property to link to a publication indexed in the TIB catalouge that references an event or event series.",
+      "title": "TIBKAT ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "external_id",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "range": "TibkatId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "wikicfp_event_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#wikicfp_event_id",
+      "description": "A property to link an event or event series with its WikiCFP identifier.",
+      "title": "WikiCFP Event ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "external_id",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "range": "WikiCfpEventId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "series_of",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#series_of",
+      "description": "A property to link to the events that are part of an academic event series.",
+      "title": "Series Of",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#series_of",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "range": "Event",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "wikicfp_series_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#wikicfp_series_id",
+      "description": "A property to link an event or event series with its WikiCFP identifier.",
+      "title": "WikiCFP Series ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "external_id",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "range": "WikiCfpSeriesId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "eventFormatSpecification__other_format",
+      "description": "A mandatory property to provide the format of an academic event as string, in order to further specify its type in case it could not be specified according to the possible values of [Event Type](EventType.md).",
+      "title": "Other Event Format",
+      "examples": [
+        {
+          "value": "ad-hoc meeting of university presidents",
+          "description": "An example to provide a format specification for special type of academic event that is not in the schema's [EventType](EventType) enum.",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/OBI_0002815"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/OBI_0002815",
+      "alias": "other_format",
+      "owner": "EventFormatSpecification",
+      "domain_of": [
+        "EventFormatSpecification"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "deadline__deadline_date",
+      "description": "The date of a deadline.",
+      "title": "Deadline Date",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#deadline_date",
+      "alias": "deadline_date",
+      "owner": "Deadline",
+      "domain_of": [
+        "Deadline"
+      ],
+      "range": "datetime",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "deadline__deadline_other",
+      "description": "A property to specify another type of deadline, if this type of deadline is not within the allowed values of [DeadlineType](DeadlineType.md).",
+      "title": "Other Deadline Type",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#deadline_other",
+      "alias": "deadline_other",
+      "owner": "Deadline",
+      "domain_of": [
+        "Deadline"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "metric__int_value",
+      "description": "A property to provide an integer value for a metric.",
+      "title": "Metric Integer Value",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#int_value",
+      "alias": "int_value",
+      "owner": "Metric",
+      "domain_of": [
+        "Metric"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "metric__str_value",
+      "description": "A property to provide a string value for a metric.",
+      "title": "Metric String Value",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#str_value",
+      "alias": "str_value",
+      "owner": "Metric",
+      "domain_of": [
+        "Metric"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "metric__rate_value",
+      "description": "A property to provide a rate value as float for a metric.",
+      "title": "Metric Rate Value",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#rate_value",
+      "alias": "rate_value",
+      "owner": "Metric",
+      "domain_of": [
+        "Metric"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "metric__truth_value",
+      "description": "A property to provide a truth value for a metric.",
+      "title": "Metric Truth Value",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#truth_value",
+      "alias": "truth_value",
+      "owner": "Metric",
+      "domain_of": [
+        "Metric"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "metric__metric_year",
+      "description": "A property to provide the year for which the metric value is valid.",
+      "title": "Metric Year",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#metric_year",
+      "alias": "metric_year",
+      "owner": "Metric",
+      "domain_of": [
+        "Metric"
+      ],
+      "range": "string",
+      "pattern": "^\\d{4}$",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "metric__description",
+      "description": "A property to provide a description of a metric.",
+      "title": "Metric Description",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#description",
+      "alias": "description",
+      "owner": "Metric",
+      "domain_of": [
+        "Metric"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "location__has_city",
+      "description": "The property to specify the [City](City.md) of an academic event location.",
+      "title": "City",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_city",
+      "alias": "has_city",
+      "owner": "Location",
+      "domain_of": [
+        "Location"
+      ],
+      "range": "City",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "location__has_country",
+      "description": "The property to specify the [Country](Country.md) of an academic event location.",
+      "title": "Country",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_country",
+      "alias": "has_country",
+      "owner": "Location",
+      "domain_of": [
+        "Location"
+      ],
+      "range": "Country",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "location__has_region",
+      "description": "The property to specify the [Region](Region.md) of an academic event location.",
+      "title": "Region",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_region",
+      "alias": "has_region",
+      "owner": "Location",
+      "domain_of": [
+        "Location"
+      ],
+      "range": "Region",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "location__has_venue",
+      "description": "The property to specify the [Venue](Venue.md) of an academic event location.",
+      "title": "Venue",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_venue",
+      "alias": "has_venue",
+      "owner": "Location",
+      "domain_of": [
+        "Location"
+      ],
+      "range": "Venue",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "location__lattitude",
+      "description": "The property to specify the lattitude of an academic event location.",
+      "title": "Lattitude",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#lattitude",
+      "alias": "lattitude",
+      "owner": "Location",
+      "domain_of": [
+        "Location"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "location__longitude",
+      "description": "The property to specify the longitude of an academic event location.",
+      "title": "Longitude",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#longitude",
+      "alias": "longitude",
+      "owner": "Location",
+      "domain_of": [
+        "Location"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "location__meeting_url",
+      "description": "The property to specify the URL under which a one can participate virtually in an academic event.",
+      "title": "Meeting URL",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#meeting_url",
+      "alias": "meeting_url",
+      "owner": "Location",
+      "domain_of": [
+        "Location"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "venue__street",
+      "description": "The street of the venue including the house number seperated by comma.",
+      "title": "Street",
+      "examples": [
+        {
+          "value": "Am Welfengarten, 1",
+          "description": "street, hous number",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#street",
+      "alias": "street",
+      "owner": "Venue",
+      "domain_of": [
+        "Venue"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "venue__zip_code",
+      "description": "The zip code of the venue.",
+      "title": "ZIP Code",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#zip_code",
+      "alias": "zip_code",
+      "owner": "Venue",
+      "domain_of": [
+        "Venue"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "context__text",
+      "description": "The free text used to provide more context information on an event or event series.",
+      "title": "Context Description",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#text",
+      "alias": "text",
+      "owner": "Context",
+      "domain_of": [
+        "Context"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "context__license_str",
+      "description": "The license of the context information as text, which must be used when copying text from other sources.",
+      "title": "Context License",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#license_str",
+      "alias": "license_str",
+      "owner": "Context",
+      "domain_of": [
+        "Context"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "context__license_url",
+      "description": "The license of the context information as URL, which should be used when copying text from other sources and such a URL exists.",
+      "title": "Context License URL",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#license_url",
+      "alias": "license_url",
+      "owner": "Context",
+      "domain_of": [
+        "Context"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "organizer__contact",
+      "description": "The contact person of an academic event or event series.",
+      "title": "Contact",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#contact",
+      "alias": "contact",
+      "owner": "Organizer",
+      "domain_of": [
+        "Organizer"
+      ],
+      "range": "ContactPerson",
+      "recommended": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "contactPerson__email",
+      "description": "The email address of the contact person.",
+      "title": "Email",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "https://schema.org/email"
+      ],
+      "slot_uri": "https://schema.org/email",
+      "alias": "email",
+      "owner": "ContactPerson",
+      "domain_of": [
+        "ContactPerson"
+      ],
+      "range": "string",
+      "pattern": "\\b[-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "contactPerson__telephone",
+      "description": "The telephone number of the contact person.",
+      "title": "Telephone",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "https://schema.org/telephone"
+      ],
+      "slot_uri": "https://schema.org/telephone",
+      "alias": "telephone",
+      "owner": "ContactPerson",
+      "domain_of": [
+        "ContactPerson"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "confIDentRecords__events",
+      "description": "A property to provide a list of academic events within this container.",
+      "title": "Events",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "domain": "ConfIDentRecords",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#events",
+      "multivalued": true,
+      "alias": "events",
+      "owner": "ConfIDentRecords",
+      "domain_of": [
+        "ConfIDentRecords"
+      ],
+      "range": "Event",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "confIDentRecords__series",
+      "description": "A property to provide a list of academic event series within this container.",
+      "title": "Series",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "domain": "ConfIDentRecords",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#series",
+      "multivalued": true,
+      "alias": "series",
+      "owner": "ConfIDentRecords",
+      "domain_of": [
+        "ConfIDentRecords"
+      ],
+      "range": "EventSeries",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#id",
+      "description": "A property to provide the internal identifier of an academic event series.",
+      "title": "ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "id",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#id",
+      "ifabsent": "string(confident:SeriesID)",
+      "identifier": true,
+      "alias": "id",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "id",
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_official_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#official_name",
+      "description": "A property to provide the the official name of an academic event series.",
+      "title": "Official Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/2004/02/skos/core#perfLabel"
+      ],
+      "is_a": "official_name",
+      "domain": "EventSeries",
+      "slot_uri": "http://www.w3.org/2004/02/skos/core#perfLabel",
+      "alias": "official_name",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "official_name",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_organized_by",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#organized_by",
+      "description": "A property to provide the organizer of an academic event series.",
+      "title": "Organizer",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "organized_by",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#organized_by",
+      "multivalued": true,
+      "alias": "organized_by",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "organized_by",
+      "range": "Organizer",
+      "required": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_has_acronym",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_acronym",
+      "description": "The official acronym of an academic event series.",
+      "title": "Acronym",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "has_acronym",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_acronym",
+      "alias": "has_acronym",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_acronym",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_landing_page",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#landing_page",
+      "description": "A property to provide the website to which the DOI an academic event series is resolving to.",
+      "title": "Landing Page",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "exact_mappings": [
+        "http://schema.datacite.org/meta/kernel-4.4/metadata.xsdurl"
+      ],
+      "is_a": "landing_page",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#landing_page",
+      "alias": "landing_page",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "landing_page",
+      "range": "uri",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_has_doi",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_doi",
+      "description": "A property to provide a digital object identifier (DOI) for an event series. This is set automatically.",
+      "title": "DOI",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "exact_mappings": [
+        "http://schema.datacite.org/meta/kernel-4.4/metadata.xsddoi"
+      ],
+      "is_a": "has_doi",
+      "domain": "EventSeries",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "alias": "has_doi",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_doi",
+      "range": "DigitalObjectId",
+      "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_academic_field",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#academic_field",
+      "description": "A property to describe the scientific subject(s) associated with an academic event series, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [Schema Value](schema_value.md) and [Schema Name](schema_name.md) are mandatory.",
+      "title": "Academic Field",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "https://github.com/tibonto/aeon#AEON_0000040"
+      ],
+      "is_a": "academic_field",
+      "domain": "EventSeries",
+      "slot_uri": "https://github.com/tibonto/aeon#AEON_0000040",
+      "multivalued": true,
+      "alias": "academic_field",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "academic_field",
+      "range": "AcademicField",
+      "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_website",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#website",
+      "description": "A property to provide the URL the official website of an academic event series.",
+      "title": "Official Website",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "website",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#website",
+      "alias": "website",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "website",
+      "range": "uri",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_sponsored_by",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#sponsored_by",
+      "description": "A property to provide the sponsors of an academic event series.",
+      "title": "Sponsor",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "sponsored_by",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#sponsored_by",
+      "multivalued": true,
+      "alias": "sponsored_by",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sponsored_by",
+      "range": "Sponsor",
+      "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_has_publication",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_publication",
+      "description": "A property to provide the publication associated with",
+      "title": "Publication",
+      "comments": [
+        "It will be most common that the publications of an academic event series are the set of publications associated with the individual events of the series."
+      ],
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "has_publication",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_publication",
+      "multivalued": true,
+      "alias": "has_publication",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_publication",
+      "range": "Publication",
+      "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_umbrella_of",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "description": "A relation to be used to link a series that hosts several series to its subordinate parts.",
+      "title": "Umbrella Of",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "umbrella_of",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "multivalued": true,
+      "alias": "umbrella_of",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "umbrella_of",
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_has_umbrella",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_umbrella",
+      "description": "A relation to be used to link a series to its hosting superordinate series.",
+      "title": "Has Umbrella",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "has_umbrella",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_umbrella",
+      "alias": "has_umbrella",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_umbrella",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_colocated_with",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#colocated_with",
+      "description": "A relation to be used to link a series to one or more other series that share the same location but not the same schedule and that are open to all attendees.",
+      "title": "Colocated With",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "colocated_with",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#colocated_with",
+      "multivalued": true,
+      "alias": "colocated_with",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "colocated_with",
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_joint_venture_with",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#joint_venture_with",
+      "description": "A relation to be used to link a series to one or more other series that share the same location, have a joint schedule and that are open to all attendees.",
+      "title": "Joint Venture With",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "joint_venture_with",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#joint_venture_with",
+      "multivalued": true,
+      "alias": "joint_venture_with",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "joint_venture_with",
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_alternative_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#alternative_name",
+      "description": "A property to provide alternative names of an academic event series.",
+      "title": "Alternative Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/2004/02/skos/core#altLabel"
+      ],
+      "is_a": "alternative_name",
+      "domain": "EventSeries",
+      "slot_uri": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "multivalued": true,
+      "alias": "alternative_name",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "alternative_name",
+      "range": "string",
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_former_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#former_name",
+      "description": "The former official name of an academic event series. Usually this will only be needed in case an academic event series has undergone a name change.",
+      "title": "Former Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "former_name",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#former_name",
+      "multivalued": true,
+      "alias": "former_name",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "former_name",
+      "range": "string",
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_translated_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#translated_name",
+      "description": "A translation of the official name of an event series to be used in different language contexts.",
+      "title": "Translated Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "translated_name",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#translated_name",
+      "multivalued": true,
+      "alias": "translated_name",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "translated_name",
+      "range": "string",
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_has_topic",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_topic",
+      "description": "A property to provide the theme and topics of an event series as free keywords, phrases or text.",
+      "title": "Topic",
+      "comments": [
+        "Most likely the values of this property will be the set of topics and free keywords aggregated from the academic events of the series."
+      ],
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "has_topic",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_topic",
+      "multivalued": true,
+      "alias": "has_topic",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_topic",
+      "range": "string",
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_has_metric",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_metric",
+      "description": "A property to provide one ore more metrics of an academic event series.",
+      "title": "Metric",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "has_metric",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_metric",
+      "multivalued": true,
+      "alias": "has_metric",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_metric",
+      "range": "Metric",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_context_info",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#context_info",
+      "description": "A property to provide extra information for an academic event series.",
+      "title": "Context Information",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "context_info",
+      "domain": "EventSeries",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#context_info",
+      "alias": "context_info",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "context_info",
+      "range": "Context",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_external_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#external_id",
+      "description": "The property to provide external identifiers for an academic event series, including their identifier scheme.",
+      "title": "External ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "external_id",
+      "domain": "EventSeries",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "alias": "external_id",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "external_id",
+      "range": "ExternalIdentifier",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_wikidata_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#wikidata_id",
+      "description": "A property to link an academic event series with its Wikidata identifier.",
+      "title": "Wikidata ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "wikidata_id",
+      "domain": "EventSeries",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "alias": "wikidata_id",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "wikidata_id",
+      "range": "WikidataId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_gnd_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#gnd_id",
+      "description": "A property to link an academic event series with its GND identifier.",
+      "title": "GND ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "gnd_id",
+      "domain": "EventSeries",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "alias": "gnd_id",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "gnd_id",
+      "range": "GndId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_dpbl_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#dpbl_id",
+      "description": "A property to link an academic event series with its DBLP identifier.",
+      "title": "DBLP ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "dpbl_id",
+      "domain": "EventSeries",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "alias": "dpbl_id",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "dpbl_id",
+      "range": "DblpId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "EventSeries_wikicfp_series_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#wikicfp_series_id",
+      "description": "A property to link an academic event series with its WikiCFP identifier.",
+      "title": "WikiCFP Series ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "wikicfp_series_id",
+      "domain": "EventSeries",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "alias": "wikicfp_series_id",
+      "owner": "EventSeries",
+      "domain_of": [
+        "EventSeries"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "wikicfp_series_id",
+      "range": "WikiCfpSeriesId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#id",
+      "description": "A property to provide the internal identifier of an academic event.",
+      "title": "ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "id",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#id",
+      "ifabsent": "string(confident:EventID)",
+      "identifier": true,
+      "alias": "id",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "id",
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_official_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#official_name",
+      "description": "A property to provide the the official name of an academic event.",
+      "title": "Official Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/2004/02/skos/core#perfLabel"
+      ],
+      "is_a": "official_name",
+      "domain": "Event",
+      "slot_uri": "http://www.w3.org/2004/02/skos/core#perfLabel",
+      "alias": "official_name",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "official_name",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_organized_by",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#organized_by",
+      "description": "A property to provide the organizer of an academic event.",
+      "title": "Organizer",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "organized_by",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#organized_by",
+      "multivalued": true,
+      "alias": "organized_by",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "organized_by",
+      "range": "Organizer",
+      "required": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_type",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
+      "description": "A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum.",
+      "title": "Event Type",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
+      "is_a": "type",
+      "abstract": true,
+      "domain": "Event",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "designates_type": true,
+      "alias": "type",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "type",
+      "range": "EventType",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_has_acronym",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_acronym",
+      "description": "The official acronym of an academic event.",
+      "title": "Acronym",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "has_acronym",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_acronym",
+      "alias": "has_acronym",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_acronym",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_landing_page",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#landing_page",
+      "description": "A property to provide the website to which the DOI an academic event is resolving to.",
+      "title": "Landing Page",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "exact_mappings": [
+        "http://schema.datacite.org/meta/kernel-4.4/metadata.xsdurl"
+      ],
+      "is_a": "landing_page",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#landing_page",
+      "alias": "landing_page",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "landing_page",
+      "range": "uri",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_has_doi",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_doi",
+      "description": "A property to provide a digital object identifier (DOI) for an event. This is set automatically.",
+      "title": "DOI",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "exact_mappings": [
+        "http://schema.datacite.org/meta/kernel-4.4/metadata.xsddoi"
+      ],
+      "is_a": "has_doi",
+      "domain": "Event",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "alias": "has_doi",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_doi",
+      "range": "DigitalObjectId",
+      "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_academic_field",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#academic_field",
+      "description": "A property to describe the scientific subject(s) associated with an academic event, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [schema_value](schema_value.md) and [schema_name](schema_name.md) are mandatory.",
+      "title": "Academic Field",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "https://github.com/tibonto/aeon#AEON_0000040"
+      ],
+      "is_a": "academic_field",
+      "domain": "Event",
+      "slot_uri": "https://github.com/tibonto/aeon#AEON_0000040",
+      "multivalued": true,
+      "alias": "academic_field",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "academic_field",
+      "range": "AcademicField",
+      "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_website",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#website",
+      "description": "A property to provide the URL the official website of an academic event.",
+      "title": "Official Website",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "website",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#website",
+      "alias": "website",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "website",
+      "range": "uri",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_sponsored_by",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#sponsored_by",
+      "description": "A property to provide the sponsors of an academic event.",
+      "title": "Sponsor",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "sponsored_by",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#sponsored_by",
+      "multivalued": true,
+      "alias": "sponsored_by",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sponsored_by",
+      "range": "Sponsor",
+      "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_has_publication",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_publication",
+      "description": "A property to provide the publication associated with",
+      "title": "Publication",
+      "comments": [
+        "It will be most common that the publications of an academic event series are the set of publications associated with the individual events of the series."
+      ],
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "has_publication",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_publication",
+      "multivalued": true,
+      "alias": "has_publication",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_publication",
+      "range": "Publication",
+      "recommended": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_umbrella_of",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "description": "A relation to be used to link an event that hosts several events to its subordinate parts.",
+      "title": "Umbrella Of",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "umbrella_of",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#umbrella_of",
+      "multivalued": true,
+      "alias": "umbrella_of",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "umbrella_of",
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_has_umbrella",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_umbrella",
+      "description": "A relation to be used to link an event to its hosting superordinate event.",
+      "title": "Has Umbrella",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "has_umbrella",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_umbrella",
+      "alias": "has_umbrella",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_umbrella",
+      "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_colocated_with",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#colocated_with",
+      "description": "A relation to be used to link an event to one or more other events that share the same location but not the same schedule and that are open to all attendees.",
+      "title": "Colocated With",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "colocated_with",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#colocated_with",
+      "multivalued": true,
+      "alias": "colocated_with",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "colocated_with",
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_joint_venture_with",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#joint_venture_with",
+      "description": "A relation to be used to link a series or event to one or more other events that share the same location, have a joint schedule and that are open to all attendees.",
+      "title": "Joint Venture With",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "joint_venture_with",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#joint_venture_with",
+      "multivalued": true,
+      "alias": "joint_venture_with",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "joint_venture_with",
+      "range": "string",
+      "recommended": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_alternative_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#alternative_name",
+      "description": "A property to provide alternative names of an academic event.",
+      "title": "Alternative Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/2004/02/skos/core#altLabel"
+      ],
+      "is_a": "alternative_name",
+      "domain": "Event",
+      "slot_uri": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "multivalued": true,
+      "alias": "alternative_name",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "alternative_name",
+      "range": "string",
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_former_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#former_name",
+      "description": "The former official name of an academic event. Usually this will only be needed in case an academic event has undergone a name change.",
+      "title": "Former Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "former_name",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#former_name",
+      "multivalued": true,
+      "alias": "former_name",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "former_name",
+      "range": "string",
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_translated_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#translated_name",
+      "description": "A translation of the official name of an event to be used in different language contexts.",
+      "title": "Translated Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "translated_name",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#translated_name",
+      "multivalued": true,
+      "alias": "translated_name",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "translated_name",
+      "range": "string",
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_has_topic",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_topic",
+      "description": "A property to provide the theme and topics of an event as free keywords, phrases or text.",
+      "title": "Topic",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "has_topic",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_topic",
+      "multivalued": true,
+      "alias": "has_topic",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_topic",
+      "range": "string",
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_has_metric",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_metric",
+      "description": "A property to provide one ore more metrics of an academic event.",
+      "title": "Metric",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "has_metric",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#has_metric",
+      "multivalued": true,
+      "alias": "has_metric",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_metric",
+      "range": "Metric",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_context_info",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#context_info",
+      "description": "A property to provide extra information for an academic event.",
+      "title": "Context Information",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "context_info",
+      "domain": "Event",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#context_info",
+      "alias": "context_info",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "context_info",
+      "range": "Context",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_external_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#external_id",
+      "description": "The property to provide external identifiers for an academic event, including their identifier scheme.",
+      "title": "External ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "external_id",
+      "domain": "Event",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "alias": "external_id",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "external_id",
+      "range": "ExternalIdentifier",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_wikidata_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#wikidata_id",
+      "description": "A property to link an academic event with its Wikidata identifier.",
+      "title": "Wikidata ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "wikidata_id",
+      "domain": "Event",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "alias": "wikidata_id",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "wikidata_id",
+      "range": "WikidataId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_gnd_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#gnd_id",
+      "description": "A property to link an academic event with its GND identifier.",
+      "title": "GND ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "gnd_id",
+      "domain": "Event",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "alias": "gnd_id",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "gnd_id",
+      "range": "GndId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_dpbl_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#dpbl_id",
+      "description": "A property to link an academic event with its DBLP identifier.",
+      "title": "DBLP ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "dpbl_id",
+      "domain": "Event",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "alias": "dpbl_id",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "dpbl_id",
+      "range": "DblpId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_wikicfp_event_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#wikicfp_event_id",
+      "description": "A property to link an academic event with its WikiCFP identifier.",
+      "title": "WikiCFP Event ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "wikicfp_event_id",
+      "domain": "Event",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "alias": "wikicfp_event_id",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "wikicfp_event_id",
+      "range": "WikiCfpEventId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Event_tibkat_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#tibkat_id",
+      "description": "A property to link an academic event with its TIBKAT identifier.",
+      "title": "TIBKAT ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000235"
+      ],
+      "is_a": "tibkat_id",
+      "domain": "Event",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000235",
+      "multivalued": true,
+      "alias": "tibkat_id",
+      "owner": "Event",
+      "domain_of": [
+        "Event"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "tibkat_id",
+      "range": "TibkatId",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ExternalIdentifier_schema_value",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_value",
+      "description": "A property to provide the literal value of a schema based entity.",
+      "title": "Schema Value",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/OBI_0002815"
+      ],
+      "is_a": "schema_value",
+      "domain": "ExternalIdentifier",
+      "slot_uri": "http://purl.obolibrary.org/obo/OBI_0002815",
+      "alias": "schema_value",
+      "owner": "ExternalIdentifier",
+      "domain_of": [
+        "ExternalIdentifier"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_value",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DigitalObjectId_schema_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "description": "A property to provide the name of a schema.",
+      "title": "Schema Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_name",
+      "domain": "DigitalObjectId",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "ifabsent": "string(DOI)",
+      "alias": "schema_name",
+      "owner": "DigitalObjectId",
+      "domain_of": [
+        "DigitalObjectId"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_name",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DigitalObjectId_schema_base_uri",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "description": "The base URI of the schema that provides the context for the schema based value.",
+      "title": "External formatter URI",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_base_uri",
+      "domain": "DigitalObjectId",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "ifabsent": "uri(https://doi.org/)",
+      "alias": "schema_base_uri",
+      "owner": "DigitalObjectId",
+      "domain_of": [
+        "DigitalObjectId"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_base_uri",
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "WikidataId_schema_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "description": "A property to provide the name of a schema.",
+      "title": "Schema Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_name",
+      "domain": "WikidataId",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "ifabsent": "string(Wikidata)",
+      "alias": "schema_name",
+      "owner": "WikidataId",
+      "domain_of": [
+        "WikidataId"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_name",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "WikidataId_schema_base_uri",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "description": "The base URI of the schema that provides the context for the schema based value.",
+      "title": "External formatter URI",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_base_uri",
+      "domain": "WikidataId",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "ifabsent": "uri(https://www.wikidata.org/entity/)",
+      "alias": "schema_base_uri",
+      "owner": "WikidataId",
+      "domain_of": [
+        "WikidataId"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_base_uri",
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "GndId_schema_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "description": "A property to provide the name of a schema.",
+      "title": "Schema Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_name",
+      "domain": "GndId",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "ifabsent": "string(GND)",
+      "alias": "schema_name",
+      "owner": "GndId",
+      "domain_of": [
+        "GndId"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_name",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "GndId_schema_base_uri",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "description": "The base URI of the schema that provides the context for the schema based value.",
+      "title": "External formatter URI",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_base_uri",
+      "domain": "GndId",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "ifabsent": "uri(http://d-nb.info/gnd/)",
+      "alias": "schema_base_uri",
+      "owner": "GndId",
+      "domain_of": [
+        "GndId"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_base_uri",
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "TibkatId_schema_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "description": "A property to provide the name of a schema.",
+      "title": "Schema Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_name",
+      "domain": "TibkatId",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "ifabsent": "string(TIBKAT)",
+      "alias": "schema_name",
+      "owner": "TibkatId",
+      "domain_of": [
+        "TibkatId"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_name",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "TibkatId_schema_base_uri",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "description": "The base URI of the schema that provides the context for the schema based value.",
+      "title": "External formatter URI",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_base_uri",
+      "domain": "TibkatId",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "ifabsent": "uri(https://www.tib.eu/en/search/id/TIBKAT:)",
+      "alias": "schema_base_uri",
+      "owner": "TibkatId",
+      "domain_of": [
+        "TibkatId"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_base_uri",
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DblpId_schema_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "description": "A property to provide the name of a schema.",
+      "title": "Schema Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_name",
+      "domain": "DblpId",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "ifabsent": "string(dblp)",
+      "alias": "schema_name",
+      "owner": "DblpId",
+      "domain_of": [
+        "DblpId"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_name",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DblpId_schema_base_uri",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "description": "The base URI of the schema that provides the context for the schema based value.",
+      "title": "External formatter URI",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_base_uri",
+      "domain": "DblpId",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "ifabsent": "uri(https://dblp.org/db/conf/)",
+      "alias": "schema_base_uri",
+      "owner": "DblpId",
+      "domain_of": [
+        "DblpId"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_base_uri",
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "WikiCfpEventId_schema_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "description": "A property to provide the name of a schema.",
+      "title": "Schema Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_name",
+      "domain": "WikiCfpEventId",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "ifabsent": "string(WikiCFP)",
+      "alias": "schema_name",
+      "owner": "WikiCfpEventId",
+      "domain_of": [
+        "WikiCfpEventId"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_name",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "WikiCfpEventId_schema_base_uri",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "description": "The base URI of the schema that provides the context for the schema based value.",
+      "title": "External formatter URI",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_base_uri",
+      "domain": "WikiCfpEventId",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "ifabsent": "uri(http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=)",
+      "alias": "schema_base_uri",
+      "owner": "WikiCfpEventId",
+      "domain_of": [
+        "WikiCfpEventId"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_base_uri",
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "WikiCfpSeriesId_schema_name",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "description": "A property to provide the name of a schema.",
+      "title": "Schema Name",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_name",
+      "domain": "WikiCfpSeriesId",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_name",
+      "ifabsent": "string(WikiCFP)",
+      "alias": "schema_name",
+      "owner": "WikiCfpSeriesId",
+      "domain_of": [
+        "WikiCfpSeriesId"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_name",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "WikiCfpSeriesId_schema_base_uri",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "description": "The base URI of the schema that provides the context for the schema based value.",
+      "title": "External formatter URI",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_base_uri",
+      "domain": "WikiCfpSeriesId",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_base_uri",
+      "ifabsent": "uri(http://www.wikicfp.com/cfp/program?id=$1)",
+      "alias": "schema_base_uri",
+      "owner": "WikiCfpSeriesId",
+      "domain_of": [
+        "WikiCfpSeriesId"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_base_uri",
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Deadline_type",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
+      "description": "A propery to provide the type of the deadline.",
+      "title": "Deadline Type",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
+      "is_a": "type",
+      "abstract": true,
+      "domain": "Deadline",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "alias": "type",
+      "owner": "Deadline",
+      "domain_of": [
+        "Deadline"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "type",
+      "range": "DeadlineType",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Metric_type",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
+      "description": "A property to provide the type of metric according to the permissible values defined in the [Metric Type Enum](MetricType.md). If the metric type \"review process\" is used, one of the permissible values defined in the [Review Process Type](ReviewProcessType.md) must be provided using the [Metric String Value](str_value.md) property.",
+      "title": "Type",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
+      "is_a": "type",
+      "abstract": true,
+      "domain": "Metric",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "alias": "type",
+      "owner": "Metric",
+      "domain_of": [
+        "Metric"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "type",
+      "range": "MetricType",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "AcademicField_schema_value",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_value",
+      "description": "The classification label of a certain classification schema.",
+      "title": "Schema Value",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "schema_value",
+      "domain": "AcademicField",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#schema_value",
+      "alias": "schema_value",
+      "owner": "AcademicField",
+      "domain_of": [
+        "AcademicField"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "schema_value",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Contributor_type",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#type",
+      "description": "A property to provide the information whether the contributor is an organization or person.",
+      "title": "Type",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
+      "is_a": "type",
+      "abstract": true,
+      "domain": "Contributor",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "designates_type": true,
+      "alias": "type",
+      "owner": "Contributor",
+      "domain_of": [
+        "Contributor"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "type",
+      "range": "ContributorType",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Contributor_id",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#id",
+      "description": "The internal ConfIDent identifier for a contibutor",
+      "title": "ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "id",
+      "domain": "Contributor",
+      "slot_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#id",
+      "identifier": true,
+      "alias": "id",
+      "owner": "Contributor",
+      "domain_of": [
+        "Contributor"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "id",
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    }
+  ],
+  "classes": [
+    {
+      "name": "EventSeries",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#EventSeries",
+      "description": "An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time.",
+      "title": "Event Series",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "aeon:0000002"
+      ],
+      "close_mappings": [
+        "sdo:EventSeries"
+      ],
+      "slots": [
+        "EventSeries_id",
+        "EventSeries_official_name",
+        "EventSeries_organized_by",
+        "EventSeries_has_acronym",
+        "EventSeries_academic_field",
+        "EventSeries_landing_page",
+        "EventSeries_has_publication",
+        "EventSeries_sponsored_by",
+        "EventSeries_website",
+        "EventSeries_has_doi",
+        "EventSeries_umbrella_of",
+        "EventSeries_has_umbrella",
+        "EventSeries_colocated_with",
+        "EventSeries_joint_venture_with",
+        "series_of",
+        "EventSeries_alternative_name",
+        "EventSeries_former_name",
+        "EventSeries_translated_name",
+        "EventSeries_context_info",
+        "EventSeries_has_metric",
+        "EventSeries_has_topic",
+        "EventSeries_external_id",
+        "EventSeries_wikidata_id",
+        "EventSeries_dpbl_id",
+        "EventSeries_gnd_id",
+        "EventSeries_wikicfp_series_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/tibonto/aeon#AEON_0000002",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Event",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Event",
+      "description": "An academic event is part of the established instruments of science communication as a format for conveying the latest scientific publications. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these publications. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function.",
+      "title": "Event",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "aeon:0000001"
+      ],
+      "close_mappings": [
+        "sdo:Event"
+      ],
+      "slots": [
+        "Event_id",
+        "Event_official_name",
+        "Event_organized_by",
+        "start_date",
+        "end_date",
+        "event_status",
+        "Event_has_acronym",
+        "Event_type",
+        "at_location",
+        "in_series",
+        "subevent_of",
+        "superevent_of",
+        "has_deadline",
+        "Event_academic_field",
+        "Event_landing_page",
+        "Event_has_publication",
+        "Event_sponsored_by",
+        "Event_website",
+        "Event_has_doi",
+        "Event_umbrella_of",
+        "Event_has_umbrella",
+        "Event_colocated_with",
+        "Event_joint_venture_with",
+        "Event_alternative_name",
+        "Event_former_name",
+        "Event_translated_name",
+        "Event_context_info",
+        "Event_has_metric",
+        "Event_has_topic",
+        "Event_external_id",
+        "Event_wikidata_id",
+        "Event_dpbl_id",
+        "Event_gnd_id",
+        "ordinal",
+        "event_mode",
+        "Event_tibkat_id",
+        "Event_wikicfp_event_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/tibonto/aeon#AEON_0000001",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ExternalIdentifier",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#ExternalIdentifier",
+      "description": "An identifer of an entity declared in another schema.",
+      "title": "External ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mixins": [
+        "SchemaBasedThing"
+      ],
+      "slots": [
+        "ExternalIdentifier_schema_value",
+        "schema_name",
+        "schema_base_uri"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#ExternalIdentifier",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DigitalObjectId",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#DigitalObjectId",
+      "description": "A centrally registered identifier symbol used to uniquely identify digital objects given by International DOI Foundation.",
+      "title": "Digital Object Identifier",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "OBI:0002110"
+      ],
+      "is_a": "ExternalIdentifier",
+      "slots": [
+        "ExternalIdentifier_schema_value",
+        "DigitalObjectId_schema_name",
+        "DigitalObjectId_schema_base_uri"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0002110",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "WikidataId",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#WikidataId",
+      "description": "The identifier of a thing (item) in Wikidata.",
+      "title": "Wikidata ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "wikidata:Q43649390"
+      ],
+      "is_a": "ExternalIdentifier",
+      "slots": [
+        "ExternalIdentifier_schema_value",
+        "WikidataId_schema_name",
+        "WikidataId_schema_base_uri"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://www.wikidata.org/wiki/Q43649390",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GndId",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#GndId",
+      "description": "The identifier of a thing (item) in the German National authority file.",
+      "title": "GND ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "ExternalIdentifier",
+      "slots": [
+        "ExternalIdentifier_schema_value",
+        "GndId_schema_name",
+        "GndId_schema_base_uri"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#GndId",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TibkatId",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#TibkatId",
+      "description": "The identifier of a publication in the TIB catalog that references an event or event series.",
+      "title": "TIBKAT ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "ExternalIdentifier",
+      "slots": [
+        "ExternalIdentifier_schema_value",
+        "TibkatId_schema_name",
+        "TibkatId_schema_base_uri"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#TibkatId",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DblpId",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#DblpId",
+      "description": "The identifier of an academic event or series in dblp.",
+      "title": "DBLP ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "ExternalIdentifier",
+      "slots": [
+        "ExternalIdentifier_schema_value",
+        "DblpId_schema_name",
+        "DblpId_schema_base_uri"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#DblpId",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "WikiCfpEventId",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#WikiCfpEventId",
+      "description": "The identifier of an academic event or series in WikiCFP.",
+      "title": "WikiCFP Event ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "ExternalIdentifier",
+      "slots": [
+        "ExternalIdentifier_schema_value",
+        "WikiCfpEventId_schema_name",
+        "WikiCfpEventId_schema_base_uri"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#WikiCfpEventId",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "WikiCfpSeriesId",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#WikiCfpSeriesId",
+      "description": "The identifier of an academic event or series in WikiCFP.",
+      "title": "WikiCFP Series ID",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "ExternalIdentifier",
+      "slots": [
+        "ExternalIdentifier_schema_value",
+        "WikiCfpSeriesId_schema_name",
+        "WikiCfpSeriesId_schema_base_uri"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#WikiCfpSeriesId",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "EventFormatSpecification",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#EventFormatSpecification",
+      "description": "An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathering is to be carried out by its participants in terms of achieving certain objectives, fulfilling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event. While the explicit details are often provided as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. \"conference\" or \"workshop\"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.",
+      "title": "Subobject Event Format",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mappings": [
+        "aeon:0000004"
+      ],
+      "slots": [
+        "eventFormatSpecification__other_format"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "other_format",
+          "description": "A mandatory property to provide the format of an academic event as string, in order to further specify its type in case it could not be specified according to the possible values of [Event Type](EventType.md).",
+          "title": "Other Event Format",
+          "examples": [
+            {
+              "value": "ad-hoc meeting of university presidents",
+              "description": "An example to provide a format specification for special type of academic event that is not in the schema's [EventType](EventType) enum.",
+              "@type": "Example"
+            }
+          ],
+          "slot_uri": "OBI:0002815",
+          "range": "string",
+          "required": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://github.com/tibonto/aeon#AEON_0000004",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Deadline",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Deadline",
+      "description": "A container for event deadlines.",
+      "title": "Subobject Deadline",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slots": [
+        "Deadline_type",
+        "deadline__deadline_date",
+        "deadline__deadline_other"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "deadline_date",
+          "description": "The date of a deadline.",
+          "title": "Deadline Date",
+          "range": "datetime",
+          "required": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "deadline_other",
+          "description": "A property to specify another type of deadline, if this type of deadline is not within the allowed values of [DeadlineType](DeadlineType.md).",
+          "title": "Other Deadline Type",
+          "range": "string",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Deadline",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Metric",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Metric",
+      "description": "A container for statistical information about an event or event series.",
+      "title": "Subobject Metric",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slots": [
+        "Metric_type",
+        "metric__int_value",
+        "metric__str_value",
+        "metric__rate_value",
+        "metric__truth_value",
+        "metric__metric_year",
+        "metric__description"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "int_value",
+          "description": "A property to provide an integer value for a metric.",
+          "title": "Metric Integer Value",
+          "range": "integer",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "str_value",
+          "description": "A property to provide a string value for a metric.",
+          "title": "Metric String Value",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "rate_value",
+          "description": "A property to provide a rate value as float for a metric.",
+          "title": "Metric Rate Value",
+          "range": "float",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "truth_value",
+          "description": "A property to provide a truth value for a metric.",
+          "title": "Metric Truth Value",
+          "range": "boolean",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "metric_year",
+          "description": "A property to provide the year for which the metric value is valid.",
+          "title": "Metric Year",
+          "range": "string",
+          "pattern": "^\\d{4}$",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "description",
+          "description": "A property to provide a description of a metric.",
+          "title": "Metric Description",
+          "range": "string",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Metric",
+      "rules": [
+        {
+          "preconditions": {
+            "slot_conditions": [
+              {
+                "name": "type",
+                "equals_string": "review process",
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "postconditions": {
+            "slot_conditions": [
+              {
+                "name": "str_value",
+                "range": "ReviewMetricType",
+                "required": true,
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "@type": "ClassRule"
+        }
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Location",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Location",
+      "description": "A container for the information about the location in which an academic event takes place.",
+      "title": "Subobject Location",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slots": [
+        "location__has_city",
+        "location__has_country",
+        "location__has_region",
+        "location__has_venue",
+        "location__lattitude",
+        "location__longitude",
+        "location__meeting_url"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "has_city",
+          "description": "The property to specify the [City](City.md) of an academic event location.",
+          "title": "City",
+          "range": "City",
+          "recommended": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "has_country",
+          "description": "The property to specify the [Country](Country.md) of an academic event location.",
+          "title": "Country",
+          "range": "Country",
+          "recommended": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "has_region",
+          "description": "The property to specify the [Region](Region.md) of an academic event location.",
+          "title": "Region",
+          "range": "Region",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "has_venue",
+          "description": "The property to specify the [Venue](Venue.md) of an academic event location.",
+          "title": "Venue",
+          "range": "Venue",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "lattitude",
+          "description": "The property to specify the lattitude of an academic event location.",
+          "title": "Lattitude",
+          "range": "float",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "longitude",
+          "description": "The property to specify the longitude of an academic event location.",
+          "title": "Longitude",
+          "range": "float",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "meeting_url",
+          "description": "The property to specify the URL under which a one can participate virtually in an academic event.",
+          "title": "Meeting URL",
+          "range": "uriorcurie",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Location",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "City",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#City",
+      "description": "The city in which an academic event takes place.",
+      "title": "City",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mixins": [
+        "NamedThing"
+      ],
+      "slots": [
+        "id",
+        "name",
+        "external_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#City",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Country",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Country",
+      "description": "The country in which an academic event takes place.",
+      "title": "Country",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mixins": [
+        "NamedThing"
+      ],
+      "slots": [
+        "id",
+        "name",
+        "external_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Country",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Region",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Region",
+      "description": "The region in which an academic event takes place. For non USA events this might often be negligible.",
+      "title": "Region",
+      "examples": [
+        {
+          "value": "Texas",
+          "description": "the US state Texas as an example of a region",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mixins": [
+        "NamedThing"
+      ],
+      "slots": [
+        "id",
+        "name",
+        "external_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Region",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Venue",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Venue",
+      "description": "The venue at which an academic event takes place.",
+      "title": "Venue",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mixins": [
+        "NamedThing"
+      ],
+      "slots": [
+        "venue__street",
+        "venue__zip_code",
+        "id",
+        "name",
+        "external_id"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "street",
+          "description": "The street of the venue including the house number seperated by comma.",
+          "title": "Street",
+          "examples": [
+            {
+              "value": "Am Welfengarten, 1",
+              "description": "street, hous number",
+              "@type": "Example"
+            }
+          ],
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "zip_code",
+          "description": "The zip code of the venue.",
+          "title": "ZIP Code",
+          "range": "string",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Venue",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AcademicField",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#AcademicField",
+      "description": "An academic field is the scientific subject of an event or event series according to some controlled vocabulary or thesaurus and as such requires the scheme URI.",
+      "title": "Subobject Academic Field",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mixins": [
+        "SchemaBasedThing"
+      ],
+      "slots": [
+        "AcademicField_schema_value",
+        "schema_name",
+        "schema_base_uri"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#AcademicField",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Context",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Context",
+      "description": "A container to provide extra information, such as call of papers event description.",
+      "title": "Subobject Context",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slots": [
+        "context__text",
+        "context__license_str",
+        "context__license_url"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "text",
+          "description": "The free text used to provide more context information on an event or event series.",
+          "title": "Context Description",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "license_str",
+          "description": "The license of the context information as text, which must be used when copying text from other sources.",
+          "title": "Context License",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "license_url",
+          "description": "The license of the context information as URL, which should be used when copying text from other sources and such a URL exists.",
+          "title": "Context License URL",
+          "range": "uriorcurie",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Context",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Contributor",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Contributor",
+      "description": "A contributor is a person or organization that holds a contributor role which is being realized in an event or event series.",
+      "title": "Subobject Contributor",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mixins": [
+        "NamedThing"
+      ],
+      "slots": [
+        "Contributor_type",
+        "Contributor_id",
+        "name",
+        "external_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Contributor",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Sponsor",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Sponsor",
+      "description": "A person or an organization whose role it is to sponsor an academic event or event series.",
+      "title": "Subobject Sponsor",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "Contributor",
+      "slots": [
+        "Contributor_type",
+        "Contributor_id",
+        "name",
+        "external_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Sponsor",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Attendee",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Attendee",
+      "description": "A person whose only role it is to attend an academic event.",
+      "title": "Subobject Attendee",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "Contributor",
+      "slots": [
+        "Contributor_type",
+        "Contributor_id",
+        "name",
+        "external_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Attendee",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Moderator",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Moderator",
+      "description": "A person that has the role to moderate an academic event.",
+      "title": "Subobject Moderator",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "Contributor",
+      "slots": [
+        "Contributor_type",
+        "Contributor_id",
+        "name",
+        "external_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Moderator",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Reviewer",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Reviewer",
+      "description": "A person that has the role to review the submissions of an academic event.",
+      "title": "Subobject Reviewer",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "Contributor",
+      "slots": [
+        "Contributor_type",
+        "Contributor_id",
+        "name",
+        "external_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Reviewer",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Organizer",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Organizer",
+      "description": "An organizer of an academic event or event series.",
+      "title": "Subobject Organizer",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "Contributor",
+      "slots": [
+        "Contributor_type",
+        "Contributor_id",
+        "name",
+        "external_id",
+        "organizer__contact"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "contact",
+          "description": "The contact person of an academic event or event series.",
+          "title": "Contact",
+          "range": "ContactPerson",
+          "recommended": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Organizer",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ContactPerson",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#ContactPerson",
+      "description": "The contact person of an academic event or event series.",
+      "title": "Subobject Contact Person",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "Organizer",
+      "slots": [
+        "Contributor_type",
+        "Contributor_id",
+        "name",
+        "external_id",
+        "organizer__contact",
+        "contactPerson__email",
+        "contactPerson__telephone"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "email",
+          "description": "The email address of the contact person.",
+          "title": "Email",
+          "slot_uri": "sdo:email",
+          "range": "string",
+          "pattern": "\\b[-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "telephone",
+          "description": "The telephone number of the contact person.",
+          "title": "Telephone",
+          "slot_uri": "sdo:telephone",
+          "range": "string",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#ContactPerson",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CommitteeMember",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#CommitteeMember",
+      "description": "A members of an academic event committee.",
+      "title": "Subobject Committee Member",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "Organizer",
+      "slots": [
+        "Contributor_type",
+        "Contributor_id",
+        "name",
+        "external_id",
+        "organizer__contact"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#CommitteeMember",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CommitteeChair",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#CommitteeChair",
+      "description": "The head of an academic event committee.",
+      "title": "Subobject Committee Chair",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "CommitteeMember",
+      "slots": [
+        "Contributor_type",
+        "Contributor_id",
+        "name",
+        "external_id",
+        "organizer__contact"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#CommitteeChair",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Presenter",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Presenter",
+      "description": "A person that presents its work at an academic event.",
+      "title": "Subobject Presenter",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "Contributor",
+      "slots": [
+        "Contributor_type",
+        "Contributor_id",
+        "name",
+        "external_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Presenter",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "KeynoteSpeaker",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#KeynoteSpeaker",
+      "description": "A 'keynote speaker' is a presenter that is an invited person - often a multiplier in his or her (research) field - responsible for delivering a keynote speech.",
+      "title": "Subobject Keynote Speaker",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "is_a": "Presenter",
+      "slots": [
+        "Contributor_type",
+        "Contributor_id",
+        "name",
+        "external_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#KeynoteSpeaker",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Publication",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Publication",
+      "description": "A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.",
+      "title": "Subobject Publication",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mixins": [
+        "NamedThing"
+      ],
+      "slots": [
+        "has_doi",
+        "id",
+        "name",
+        "external_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Publication",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ConfIDentRecords",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#ConfIDentRecords",
+      "description": "A container to be able to bundle academic event data and series in one data file (e.g. YAML or JSON).",
+      "title": "ConfIDent Records",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "slots": [
+        "confIDentRecords__events",
+        "confIDentRecords__series"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "events",
+          "description": "A property to provide a list of academic events within this container.",
+          "title": "Events",
+          "domain": "ConfIDentRecords",
+          "multivalued": true,
+          "range": "Event",
+          "inlined": true,
+          "inlined_as_list": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "series",
+          "description": "A property to provide a list of academic event series within this container.",
+          "title": "Series",
+          "domain": "ConfIDentRecords",
+          "multivalued": true,
+          "range": "EventSeries",
+          "inlined": true,
+          "inlined_as_list": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#ConfIDentRecords",
+      "tree_root": true,
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SchemaBasedThing",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#SchemaBasedThing",
+      "description": "A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing.",
+      "title": "Subobject Schema Based Thing",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mixin": true,
+      "slots": [
+        "schema_value",
+        "schema_name",
+        "schema_base_uri"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#SchemaBasedThing",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NamedThing",
+      "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#NamedThing",
+      "description": "A mixin used to provide the attributes needed for the identification of a thing.",
+      "title": "Subobject Named Thing",
+      "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
+      "mixin": true,
+      "slots": [
+        "id",
+        "name",
+        "external_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#NamedThing",
+      "@type": "ClassDefinition"
+    }
+  ],
+  "metamodel_version": "1.7.0",
+  "source_file": "ConfIDent_schema.yaml",
+  "source_file_date": "2022-10-24T13:36:56",
+  "source_file_size": 50594,
+  "generation_date": "2022-10-26T09:33:51",
+  "@type": "SchemaDefinition",
+  "@context": [
+    "project/jsonld/ConfIDent_schema.context.jsonld",
+    "https://w3id.org/linkml/types.context.jsonld",
+    {
+      "@base": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#"
+    }
+  ]
+}
