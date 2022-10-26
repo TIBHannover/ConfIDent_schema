@@ -1,598 +1,583 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/AcademicField/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/AcademicField/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Attendee/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Attendee/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/City/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/City/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/CommitteeChair/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/CommitteeChair/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/CommitteeMember/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/CommitteeMember/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/ConfIDentRecords/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/ConfIDentRecords/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/ContactPerson/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/ContactPerson/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Context/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Context/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Contributor/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Contributor/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/ContributorType/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/ContributorType/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Country/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Country/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/DblpId/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/DblpId/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Deadline/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Deadline/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/DeadlineType/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/DeadlineType/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/DigitalObjectId/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/DigitalObjectId/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Event/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Event/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/EventFormatSpecification/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/EventFormatSpecification/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/EventMode/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/EventMode/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/EventSeries/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/EventSeries/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/EventStatus/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/EventStatus/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/EventType/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/EventType/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/ExternalIdentifier/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/ExternalIdentifier/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/GndId/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/GndId/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/KeynoteSpeaker/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/KeynoteSpeaker/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Location/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Location/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Metric/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Metric/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/MetricType/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/MetricType/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Moderator/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Moderator/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/NamedThing/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/NamedThing/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Organizer/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Organizer/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Presenter/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Presenter/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/ProcessRelation/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Publication/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Publication/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Region/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Region/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/ReviewProcessType/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/RelationType/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Reviewer/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/ReviewProcessType/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/SchemaBasedThing/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Reviewer/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Sponsor/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/SchemaBasedThing/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/TibkatId/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Sponsor/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/Venue/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/TibkatId/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/WikiCfpEventId/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/Venue/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/WikiCfpSeriesId/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/WikiCfpEventId/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/WikidataId/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/WikiCfpSeriesId/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/about/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/WikidataId/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/academic_field/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/about/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/alternative_name/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/academic_field/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/at_location/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/alternative_name/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/colocated_with/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/at_location/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/confident_schema/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/colocated_with/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/contact/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/confident_schema/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/context_info/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/contact/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/deadline_date/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/context_info/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/deadline_other/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/deadline_date/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/description/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/deadline_other/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/dpbl_id/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/description/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/email/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/dpbl_id/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/end_date/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/email/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/event_format/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/end_date/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/event_mode/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/event_format/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/event_status/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/event_mode/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/events/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/event_status/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/external_id/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/events/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/former_name/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/external_id/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/gnd_id/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/former_name/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/has_acronym/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/gnd_id/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/has_city/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/has_acronym/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/has_country/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/has_city/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/has_deadline/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/has_country/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/has_doi/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/has_deadline/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/has_metric/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/has_doi/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/has_publication/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/has_metric/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/has_region/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/has_publication/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/has_topic/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/has_region/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/has_umbrella/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/has_topic/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/has_venue/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/has_umbrella/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/id/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/has_venue/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/in_series/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/id/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/int_value/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/in_series/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/joint_venture_with/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/int_value/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/landing_page/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/joint_venture_with/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/lattitude/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/landing_page/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/license_str/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/lattitude/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/license_url/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/license_str/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/longitude/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/license_url/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/meeting_url/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/longitude/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/metric_year/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/meeting_url/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/name/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/metric_year/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/official_name/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/name/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/ordinal/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/official_name/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/organized_by/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/ordinal/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/other_format/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/organized_by/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/rate_value/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/other_format/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/schema_base_uri/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/rate_value/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/schema_name/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/related_to/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/schema_value/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/schema_base_uri/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/series/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/schema_name/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/series_of/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/schema_value/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/sponsored_by/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/series/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/start_date/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/series_of/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/str_value/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/sponsored_by/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/street/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/start_date/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/subevent_of/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/str_value/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/superevent_of/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/street/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/telephone/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/subevent_of/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/text/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/superevent_of/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/tibkat_id/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/telephone/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/translated_name/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/text/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/truth_value/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/tibkat_id/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/type/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/translated_name/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/types/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/truth_value/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/umbrella_of/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/type/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/website/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/types/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/wikicfp_event_id/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/umbrella_of/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/wikicfp_series_id/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/website/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/wikidata_id/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/wikicfp_event_id/</loc>
-         <lastmod>2022-06-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/wikicfp_series_id/</loc>
-         <lastmod>2022-06-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/wikidata_id/</loc>
-         <lastmod>2022-06-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://tibhannover.github.io/ConfIDent_schema/zip_code/</loc>
-         <lastmod>2022-06-13</lastmod>
+         <loc>https://TIBHannover.github.io/ConfIDent_schema/zip_code/</loc>
+         <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
