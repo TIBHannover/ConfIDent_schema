@@ -4,7 +4,7 @@ import glob
 import unittest
 
 from linkml_runtime.loaders import yaml_loader
-from src.ConfIDent_schema.datamodel import ConfIDentRecords
+from ConfIDent_schema.datamodel import ConfIDentRecords
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
 DATA_DIR = os.path.join(ROOT, "src", "data", "examples")
