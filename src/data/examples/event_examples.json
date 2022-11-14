@@ -1,0 +1,708 @@
+{
+    "printrequests": [
+        {
+            "label": "Acronym",
+            "key": "Acronym",
+            "redi": "",
+            "typeid": "_txt",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Title",
+            "key": "Title",
+            "redi": "",
+            "typeid": "_txt",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Ordinal",
+            "key": "Ordinal",
+            "redi": "",
+            "typeid": "_num",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Event Series",
+            "key": "In_Event_Series",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Single Day Event",
+            "key": "Single_Day_Event",
+            "redi": "",
+            "typeid": "_txt",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Start Date",
+            "key": "Start_Date",
+            "redi": "",
+            "typeid": "_dat",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "End Date",
+            "key": "End_Date",
+            "redi": "",
+            "typeid": "_dat",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Status",
+            "key": "Event_Status",
+            "redi": "",
+            "typeid": "_txt",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Mode",
+            "key": "Event_Mode",
+            "redi": "",
+            "typeid": "_txt",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "City",
+            "key": "City",
+            "redi": "",
+            "typeid": "_txt",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Region",
+            "key": "Region",
+            "redi": "",
+            "typeid": "_txt",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Country",
+            "key": "Country",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Meeting URL",
+            "key": "Meeting_URL",
+            "redi": "",
+            "typeid": "_uri",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Academic Field",
+            "key": "Academic_Field",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Official Website",
+            "key": "Official_Website",
+            "redi": "",
+            "typeid": "_uri",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Submission Link",
+            "key": "Submission_Link",
+            "redi": "",
+            "typeid": "_uri",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Registration Link",
+            "key": "Registration_Link",
+            "redi": "",
+            "typeid": "_uri",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "DOI",
+            "key": "DOI",
+            "redi": "",
+            "typeid": "_eid",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Hashtag",
+            "key": "Hashtag",
+            "redi": "",
+            "typeid": "_txt",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Submitted papers",
+            "key": "Submitted_papers",
+            "redi": "",
+            "typeid": "_num",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Accepted papers",
+            "key": "Accepted_papers",
+            "redi": "",
+            "typeid": "_num",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Accepted short papers",
+            "key": "Accepted_short_papers",
+            "redi": "",
+            "typeid": "_num",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Attendees",
+            "key": "Attendees",
+            "redi": "",
+            "typeid": "_num",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "Tracks",
+            "key": "Tracks",
+            "redi": "",
+            "typeid": "_num",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        },
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": ""
+        }
+    ],
+    "results": {
+        "Event:ISPA 2012": {
+            "printouts": {
+                "Acronym": [],
+                "Title": [
+                    "10th IEEE International Symposium on Parallel and Distributed Processing with Applications"
+                ],
+                "Ordinal": [],
+                "Event Series": [
+                    {
+                        "fulltext": "Event Series:ISPA",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Event_Series:ISPA",
+                        "namespace": 7100,
+                        "exists": "1",
+                        "displaytitle": "ISPA - IEEE International Symposium on Parallel and Distributed Processing with Applications"
+                    }
+                ],
+                "Single Day Event": [
+                    "no"
+                ],
+                "Start Date": [
+                    {
+                        "timestamp": "1341878400",
+                        "raw": "1/2012/7/10"
+                    }
+                ],
+                "End Date": [
+                    {
+                        "timestamp": "1342137600",
+                        "raw": "1/2012/7/13"
+                    }
+                ],
+                "Status": [
+                    "as scheduled"
+                ],
+                "Mode": [
+                    "on site"
+                ],
+                "City": [
+                    "Madrid"
+                ],
+                "Region": [],
+                "Country": [
+                    {
+                        "fulltext": "Country:ES",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Country:ES",
+                        "namespace": 7400,
+                        "exists": "1",
+                        "displaytitle": "Spain (ES)"
+                    }
+                ],
+                "Meeting URL": [],
+                "Academic Field": [
+                    {
+                        "fulltext": "Academic Field:Big Data",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Academic_Field:Big_Data",
+                        "namespace": 7300,
+                        "exists": "1",
+                        "displaytitle": "Big Data"
+                    }
+                ],
+                "Official Website": [],
+                "Submission Link": [],
+                "Registration Link": [],
+                "DOI": [],
+                "Hashtag": [],
+                "Submitted papers": [],
+                "Accepted papers": [],
+                "Accepted short papers": [],
+                "Attendees": [],
+                "Tracks": []
+            },
+            "fulltext": "Event:ISPA 2012",
+            "fullurl": "https://www.confident-conference.org:443/index.php/Event:ISPA_2012",
+            "namespace": 7200,
+            "exists": "1",
+            "displaytitle": "10th IEEE International Symposium on Parallel and Distributed Processing with Applications"
+        },
+        "Event:QoSA 2014": {
+            "printouts": {
+                "Acronym": [],
+                "Title": [
+                    "10th International ACM Sigsoft Conference on the Quality of Software Architectures"
+                ],
+                "Ordinal": [],
+                "Event Series": [
+                    {
+                        "fulltext": "Event Series:QoSA",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Event_Series:QoSA",
+                        "namespace": 7100,
+                        "exists": "",
+                        "displaytitle": ""
+                    }
+                ],
+                "Single Day Event": [
+                    "no"
+                ],
+                "Start Date": [
+                    {
+                        "timestamp": "1404086400",
+                        "raw": "1/2014/6/30"
+                    }
+                ],
+                "End Date": [
+                    {
+                        "timestamp": "1404432000",
+                        "raw": "1/2014/7/4"
+                    }
+                ],
+                "Status": [
+                    "as scheduled"
+                ],
+                "Mode": [
+                    "on site"
+                ],
+                "City": [
+                    "Lille"
+                ],
+                "Region": [],
+                "Country": [
+                    {
+                        "fulltext": "Country:FR",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Country:FR",
+                        "namespace": 7400,
+                        "exists": "1",
+                        "displaytitle": "France (FR)"
+                    }
+                ],
+                "Meeting URL": [],
+                "Academic Field": [
+                    {
+                        "fulltext": "Academic Field:Software Architecture",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Academic_Field:Software_Architecture",
+                        "namespace": 7300,
+                        "exists": "1",
+                        "displaytitle": "Software Architecture"
+                    }
+                ],
+                "Official Website": [],
+                "Submission Link": [],
+                "Registration Link": [],
+                "DOI": [],
+                "Hashtag": [],
+                "Submitted papers": [],
+                "Accepted papers": [],
+                "Accepted short papers": [],
+                "Attendees": [],
+                "Tracks": []
+            },
+            "fulltext": "Event:QoSA 2014",
+            "fullurl": "https://www.confident-conference.org:443/index.php/Event:QoSA_2014",
+            "namespace": 7200,
+            "exists": "1",
+            "displaytitle": "10th International ACM Sigsoft Conference on the Quality of Software Architectures"
+        },
+        "Event:WICSA 2012": {
+            "printouts": {
+                "Acronym": [],
+                "Title": [
+                    "10th Working IEEE/IFIP Conference on Software Architecture & 6th European Conference on Software Architecture"
+                ],
+                "Ordinal": [],
+                "Event Series": [
+                    {
+                        "fulltext": "Event Series:WICSA",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Event_Series:WICSA",
+                        "namespace": 7100,
+                        "exists": "",
+                        "displaytitle": ""
+                    }
+                ],
+                "Single Day Event": [
+                    "no"
+                ],
+                "Start Date": [
+                    {
+                        "timestamp": "1345420800",
+                        "raw": "1/2012/8/20"
+                    }
+                ],
+                "End Date": [
+                    {
+                        "timestamp": "1345766400",
+                        "raw": "1/2012/8/24"
+                    }
+                ],
+                "Status": [
+                    "as scheduled"
+                ],
+                "Mode": [
+                    "on site"
+                ],
+                "City": [
+                    "Helsinki"
+                ],
+                "Region": [],
+                "Country": [
+                    {
+                        "fulltext": "Country:FI",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Country:FI",
+                        "namespace": 7400,
+                        "exists": "1",
+                        "displaytitle": "Finland (FI)"
+                    }
+                ],
+                "Meeting URL": [],
+                "Academic Field": [
+                    {
+                        "fulltext": "Academic Field:Software Architecture",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Academic_Field:Software_Architecture",
+                        "namespace": 7300,
+                        "exists": "1",
+                        "displaytitle": "Software Architecture"
+                    }
+                ],
+                "Official Website": [],
+                "Submission Link": [],
+                "Registration Link": [],
+                "DOI": [],
+                "Hashtag": [],
+                "Submitted papers": [],
+                "Accepted papers": [],
+                "Accepted short papers": [],
+                "Attendees": [],
+                "Tracks": []
+            },
+            "fulltext": "Event:WICSA 2012",
+            "fullurl": "https://www.confident-conference.org:443/index.php/Event:WICSA_2012",
+            "namespace": 7200,
+            "exists": "1",
+            "displaytitle": "10th Working IEEE/IFIP Conference on Software Architecture & 6th European Conference on Software Architecture"
+        },
+        "Event:QoSA 2015": {
+            "printouts": {
+                "Acronym": [],
+                "Title": [
+                    "11th International ACM Sigsoft Conference on the Quality of Software Architectures QoSA 2015"
+                ],
+                "Ordinal": [],
+                "Event Series": [
+                    {
+                        "fulltext": "Event Series:QoSA",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Event_Series:QoSA",
+                        "namespace": 7100,
+                        "exists": "",
+                        "displaytitle": ""
+                    }
+                ],
+                "Single Day Event": [
+                    "no"
+                ],
+                "Start Date": [
+                    {
+                        "timestamp": "1430697600",
+                        "raw": "1/2015/5/4"
+                    }
+                ],
+                "End Date": [
+                    {
+                        "timestamp": "1431043200",
+                        "raw": "1/2015/5/8"
+                    }
+                ],
+                "Status": [
+                    "as scheduled"
+                ],
+                "Mode": [
+                    "on site"
+                ],
+                "City": [
+                    "Montreal"
+                ],
+                "Region": [],
+                "Country": [
+                    {
+                        "fulltext": "Country:CA",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Country:CA",
+                        "namespace": 7400,
+                        "exists": "1",
+                        "displaytitle": "Canada (CA)"
+                    }
+                ],
+                "Meeting URL": [],
+                "Academic Field": [
+                    {
+                        "fulltext": "Academic Field:Software Architecture",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Academic_Field:Software_Architecture",
+                        "namespace": 7300,
+                        "exists": "1",
+                        "displaytitle": "Software Architecture"
+                    }
+                ],
+                "Official Website": [],
+                "Submission Link": [],
+                "Registration Link": [],
+                "DOI": [],
+                "Hashtag": [],
+                "Submitted papers": [],
+                "Accepted papers": [],
+                "Accepted short papers": [],
+                "Attendees": [],
+                "Tracks": []
+            },
+            "fulltext": "Event:QoSA 2015",
+            "fullurl": "https://www.confident-conference.org:443/index.php/Event:QoSA_2015",
+            "namespace": 7200,
+            "exists": "1",
+            "displaytitle": "11th International ACM Sigsoft Conference on the Quality of Software Architectures QoSA 2015"
+        },
+        "Event:FM 2008": {
+            "printouts": {
+                "Acronym": [],
+                "Title": [
+                    "15th International Symposium on Formal Methods 2008"
+                ],
+                "Ordinal": [],
+                "Event Series": [
+                    {
+                        "fulltext": "Event Series:International Symposium on Formal Methods",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Event_Series:International_Symposium_on_Formal_Methods",
+                        "namespace": 7100,
+                        "exists": "",
+                        "displaytitle": ""
+                    }
+                ],
+                "Single Day Event": [
+                    "no"
+                ],
+                "Start Date": [
+                    {
+                        "timestamp": "1211760000",
+                        "raw": "1/2008/5/26"
+                    }
+                ],
+                "End Date": [
+                    {
+                        "timestamp": "1212105600",
+                        "raw": "1/2008/5/30"
+                    }
+                ],
+                "Status": [
+                    "as scheduled"
+                ],
+                "Mode": [
+                    "on site"
+                ],
+                "City": [
+                    "Turku"
+                ],
+                "Region": [],
+                "Country": [
+                    {
+                        "fulltext": "Country:FI",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Country:FI",
+                        "namespace": 7400,
+                        "exists": "1",
+                        "displaytitle": "Finland (FI)"
+                    }
+                ],
+                "Meeting URL": [],
+                "Academic Field": [
+                    {
+                        "fulltext": "Academic Field:Software Engineering",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Academic_Field:Software_Engineering",
+                        "namespace": 7300,
+                        "exists": "1",
+                        "displaytitle": "Software Engineering"
+                    }
+                ],
+                "Official Website": [
+                    "http://www.fm2008.abo.fi"
+                ],
+                "Submission Link": [],
+                "Registration Link": [],
+                "DOI": [],
+                "Hashtag": [],
+                "Submitted papers": [],
+                "Accepted papers": [],
+                "Accepted short papers": [],
+                "Attendees": [],
+                "Tracks": []
+            },
+            "fulltext": "Event:FM 2008",
+            "fullurl": "https://www.confident-conference.org:443/index.php/Event:FM_2008",
+            "namespace": 7200,
+            "exists": "1",
+            "displaytitle": "15th International Symposium on Formal Methods 2008"
+        }
+    },
+    "serializer": "SMW\\Serializers\\QueryResultSerializer",
+    "version": 2,
+    "rows": 500
+}
