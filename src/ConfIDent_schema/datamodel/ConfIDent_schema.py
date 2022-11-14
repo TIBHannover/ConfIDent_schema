@@ -1,5 +1,5 @@
 # Auto generated from ConfIDent_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-10-26T14:16:23
+# Generation date: 2022-11-07T23:08:32
 # Schema: ConfIDent_schema
 #
 # id: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
@@ -41,7 +41,7 @@ RO = CurieNamespace('RO', 'http://purl.obolibrary.org/obo/RO_')
 TXPO = CurieNamespace('TXPO', 'http://purl.obolibrary.org/obo/TXPO_')
 AEON = CurieNamespace('aeon', 'https://github.com/tibonto/aeon#AEON_')
 CONFIDENT = CurieNamespace('confident', 'https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#')
-DATACITE = CurieNamespace('datacite', 'http://schema.datacite.org/meta/kernel-4.4/metadata.xsd')
+DATACITE = CurieNamespace('datacite', 'http://schema.org/meta/kernel-4.4/metadata.xsd')
 DBLP_SERIES = CurieNamespace('dblp_series', 'https://dblp.org/db/conf/')
 DC = CurieNamespace('dc', 'http://purl.org/dc/terms/')
 DOI = CurieNamespace('doi', 'https://doi.org/')
