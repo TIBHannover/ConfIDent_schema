@@ -1,0 +1,199 @@
+{
+    "printrequests": [
+        {
+            "label": "",
+            "key": "",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 2,
+            "format": false
+        },
+        {
+            "label": "subject",
+            "key": "Academic_Field",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "acronym",
+            "key": "Acronym",
+            "redi": "",
+            "typeid": "_txt",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "title",
+            "key": "Title",
+            "redi": "",
+            "typeid": "_txt",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "creator",
+            "key": "Organization",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 4,
+            "format": "",
+            "chain": "Has subobject.Organization"
+        },
+        {
+            "label": "in_series",
+            "key": "In_Event_Series",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "start_date",
+            "key": "Start_Date",
+            "redi": "",
+            "typeid": "_dat",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "end_date",
+            "key": "End_Date",
+            "redi": "",
+            "typeid": "_dat",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "event_mode",
+            "key": "Event_Mode",
+            "redi": "",
+            "typeid": "_txt",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "venue",
+            "key": "Venue",
+            "redi": "",
+            "typeid": "_txt",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "city",
+            "key": "City",
+            "redi": "",
+            "typeid": "_txt",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "region",
+            "key": "Region",
+            "redi": "",
+            "typeid": "_txt",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "country",
+            "key": "Country",
+            "redi": "",
+            "typeid": "_wpg",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "website",
+            "key": "Official_Website",
+            "redi": "",
+            "typeid": "_uri",
+            "mode": 1,
+            "format": ""
+        },
+        {
+            "label": "doi",
+            "key": "DOI",
+            "redi": "",
+            "typeid": "_eid",
+            "mode": 1,
+            "format": ""
+        }
+    ],
+    "results": {
+        "Event:AAAI 1984": {
+            "printouts": {
+                "subject": [],
+                "acronym": [
+                    "AAAI 1984"
+                ],
+                "title": [
+                    "National Conference on Artificial Intelligence"
+                ],
+                "creator": [
+                    {
+                        "fulltext": "Organization:Association for the Advancement of Artificial Intelligence (AAAI)",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Organization:Association_for_the_Advancement_of_Artificial_Intelligence_(AAAI)",
+                        "namespace": 7500,
+                        "exists": "1",
+                        "displaytitle": "Association for the Advancement of Artificial Intelligence (AAAI)"
+                    }
+                ],
+                "in_series": [
+                    {
+                        "fulltext": "Event Series:AAAI",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Event_Series:AAAI",
+                        "namespace": 7100,
+                        "exists": "1",
+                        "displaytitle": "AAAI - Conference on Artificial Intelligence"
+                    }
+                ],
+                "start_date": [
+                    {
+                        "timestamp": "460598400",
+                        "raw": "1/1984/8/6"
+                    }
+                ],
+                "end_date": [
+                    {
+                        "timestamp": "460944000",
+                        "raw": "1/1984/8/10"
+                    }
+                ],
+                "event_mode": [
+                    "on site"
+                ],
+                "venue": [],
+                "city": [
+                    "US/TX/Austin"
+                ],
+                "region": [
+                    "US/TX"
+                ],
+                "country": [
+                    {
+                        "fulltext": "Country:US",
+                        "fullurl": "https://www.confident-conference.org:443/index.php/Country:US",
+                        "namespace": 7400,
+                        "exists": "1",
+                        "displaytitle": "United States of America (US)"
+                    }
+                ],
+                "website": [
+                    "https://aaai.org/Conferences/AAAI/aaai84.php"
+                ],
+                "doi": ["10.80159/vtn9-mn07"]
+            },
+            "fulltext": "Event:AAAI 1984",
+            "fullurl": "https://www.confident-conference.org:443/index.php/Event:AAAI_1984",
+            "namespace": 7200,
+            "exists": "1",
+            "displaytitle": "AAAI 1984"
+        }
+    },
+    "serializer": "SMW\\Serializers\\QueryResultSerializer",
+    "version": 2,
+    "rows": 5
+}

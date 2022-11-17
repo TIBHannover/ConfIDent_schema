@@ -1,0 +1,134 @@
+{
+  "attributes": {
+    "doi": "10.80159/BZZ5-PD65",
+    "identifiers": [{"identifier": "10.1234/kgb2-cn46","identifierType": "DOI"}],
+    "url": "https://www.confident-conference.org/index.php/Event:1234",
+    "types": {
+      "resourceType": "Academic Online Conference",
+      "resourceTypeGeneral": "Event"
+    },
+    "creators": [
+      {
+        "name": "German National Library of Science and Technology",
+        "nameType": "Organizational",
+        "givenName": null,
+        "familyName": null,
+        "affiliation": [
+          {
+            "name": "German National Library of Science and Technology",
+            "schemeUri": "https://ror.org",
+            "affiliationIdentifier": "https://ror.org/04aj4c181",
+            "affiliationIdentifierScheme": "ROR"
+          }
+        ],
+        "nameIdentifiers": [
+          {
+            "schemeUri": "https://ror.org",
+            "nameIdentifier": "https://ror.org/04aj4c181",
+            "nameIdentifierScheme": "ROR"
+          }
+        ]
+      }
+    ],
+    "titles": [
+      {
+        "lang": "en",
+        "title": "Conference XYZ",
+        "titleType": null
+      },
+      {
+        "lang": null,
+        "title": "XYZ 2022",
+        "titleType": "AlternativeTitle"
+      }
+    ],
+    "publisher": "ConfIDent",
+    "subjects": [
+      {
+        "subject": "FOS: Computer and information sciences",
+        "valueUri": "http://www.oecd.org/science/inno/38235147.pdf",
+        "schemeUri": "http://www.oecd.org/science/inno",
+        "subjectScheme": "Fields of Science and Technology (FOS)"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "German National Library of Science and Technology",
+        "nameType": "Organizational",
+        "givenName": null,
+        "familyName": null,
+        "affiliation": [
+          {
+            "name": null,
+            "schemeUri": null,
+            "affiliationIdentifier": null,
+            "affiliationIdentifierScheme": null
+          }
+        ],
+        "contributorType": "Sponsor",
+        "nameIdentifiers": [
+          {
+            "schemeUri": "https://ror.org",
+            "nameIdentifier": "https://ror.org/04aj4c181",
+            "nameIdentifierScheme": "ROR"
+          }
+        ]
+      }
+    ],
+    "dates": [
+      {
+        "date": "2022-2-22",
+        "dateType": "Valid",
+        "dateInformation": "start date"
+      },
+      {
+        "date": "2022-2-23",
+        "dateType": "Valid",
+        "dateInformation": "end date"
+      }
+    ],
+    "publicationYear": 2022,
+    "language": "en",
+    "descriptions": [
+      {
+        "lang": "en",
+        "description": "this is a test event record",
+        "descriptionType": "Abstract"
+      }
+    ],
+      "geoLocations": [
+        {
+          "geoLocationPlace": "Berlin",
+          "geoLocationPoint":
+          {
+            "pointLatitude": "52.52",
+            "pointLongitude": "13.405"
+          }
+        },
+        {
+          "geoLocationPlace": "DE-BE"
+        }
+      ],
+    "fundingReferences": [
+      {
+        "awardUri": "https://gepris.dfg.de/gepris/projekt/426477583",
+        "awardTitle": " ConfIDent – Eine verlässliche Plattform für wissenschaftliche Veranstaltungen ",
+        "funderName": "Deutsche Forschungsgemeinschaft",
+        "awardNumber": "426477583",
+        "funderIdentifier": "https://doi.org/10.13039/501100001659",
+        "funderIdentifierType": "Crossref Funder ID"
+      }
+    ],
+    "relatedIdentifiers": [
+      {
+        "schemeUri": null,
+        "schemeType": null,
+        "relationType": "IsDocumentedBy",
+        "relatedIdentifier": "https://example.com/presentation:1234",
+        "resourceTypeGeneral": "Audiovisual",
+        "relatedIdentifierType": "URL",
+        "relatedMetadataScheme": null
+      }
+    ]
+  }
+}
