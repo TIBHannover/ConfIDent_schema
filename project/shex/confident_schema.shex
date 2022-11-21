@@ -164,16 +164,16 @@ linkml:Nodeidentifier NONLITERAL
 <Event> CLOSED {
     (  $<Event_tes> (  skos:perfLabel @linkml:String ;
           <organized_by> @<Organizer> + ;
-          <https://github.com/tibonto/aeon#AEON_start_date> @linkml:Datetime ;
-          <https://github.com/tibonto/aeon#AEON_end_date> @linkml:Datetime ;
-          <https://github.com/tibonto/aeon#AEON_event_status> @<EventStatus> ;
+          <http://purl.obolibrary.org/obo/AEON_start_date> @linkml:Datetime ;
+          <http://purl.obolibrary.org/obo/AEON_end_date> @linkml:Datetime ;
+          <http://purl.obolibrary.org/obo/AEON_event_status> @<EventStatus> ;
           <has_acronym> @linkml:String ? ;
           <at_location> @<Location> ? ;
           <in_series> @<EventSeries> ? ;
           <http://purl.obolibrary.org/obo/RO_0002012> @<Event> ? ;
           <superevent_of> @<Event> * ;
           <has_deadline> @<Deadline> * ;
-          <https://github.com/tibonto/aeon#AEON_0000040> @<AcademicField> * ;
+          <http://purl.obolibrary.org/obo/AEON_0000040> @<AcademicField> * ;
           <landing_page> @linkml:Uri ? ;
           <has_publication> @<Publication> * ;
           <sponsored_by> @<Sponsor> * ;
@@ -193,18 +193,18 @@ linkml:Nodeidentifier NONLITERAL
           <http://purl.obolibrary.org/obo/IAO_0000235> @<WikidataId> * ;
           <http://purl.obolibrary.org/obo/IAO_0000235> @<DblpId> * ;
           <http://purl.obolibrary.org/obo/IAO_0000235> @<GndId> * ;
-          <https://github.com/tibonto/aeon#AEON_event_number> @linkml:Integer ? ;
+          <http://purl.obolibrary.org/obo/AEON_event_number> @linkml:Integer ? ;
           <event_mode> @<EventMode> ? ;
           <http://purl.obolibrary.org/obo/IAO_0000235> @<TibkatId> * ;
           <http://purl.obolibrary.org/obo/IAO_0000235> @<WikiCfpEventId> *
        ) ;
-       rdf:type [ <https://github.com/tibonto/aeon#AEON_0000001> ]
+       rdf:type [ <http://purl.obolibrary.org/obo/AEON_0000001> ]
     )
 }
 
 <EventFormatSpecification> CLOSED {
     (  $<EventFormatSpecification_tes> <http://purl.obolibrary.org/obo/OBI_0002815> @linkml:String ;
-       rdf:type [ <https://github.com/tibonto/aeon#AEON_0000004> ] ?
+       rdf:type [ <http://purl.obolibrary.org/obo/AEON_0000004> ] ?
     )
 }
 
@@ -212,7 +212,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<EventSeries_tes> (  skos:perfLabel @linkml:String ;
           <organized_by> @<Organizer> + ;
           <has_acronym> @linkml:String ? ;
-          <https://github.com/tibonto/aeon#AEON_0000040> @<AcademicField> * ;
+          <http://purl.obolibrary.org/obo/AEON_0000040> @<AcademicField> * ;
           <landing_page> @linkml:Uri ? ;
           <has_publication> @<Publication> * ;
           <sponsored_by> @<Sponsor> * ;
@@ -235,7 +235,7 @@ linkml:Nodeidentifier NONLITERAL
           <http://purl.obolibrary.org/obo/IAO_0000235> @<GndId> * ;
           <http://purl.obolibrary.org/obo/IAO_0000235> @<WikiCfpSeriesId> *
        ) ;
-       rdf:type [ <https://github.com/tibonto/aeon#AEON_0000002> ]
+       rdf:type [ <http://purl.obolibrary.org/obo/AEON_0000002> ]
     )
 }
 

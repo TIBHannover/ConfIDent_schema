@@ -1,11 +1,11 @@
 {
+   "AEON": "http://purl.obolibrary.org/obo/AEON_",
    "BFO": "http://purl.obolibrary.org/obo/BFO_",
    "IAO": "http://purl.obolibrary.org/obo/IAO_",
    "NCBITaxon": "http://purl.obolibrary.org/obo/NCBITaxon_",
    "OBI": "http://purl.obolibrary.org/obo/OBI_",
    "RO": "http://purl.obolibrary.org/obo/RO_",
    "TXPO": "http://purl.obolibrary.org/obo/TXPO_",
-   "aeon": "https://github.com/tibonto/aeon#AEON_",
    "confident": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#",
    "datacite": "http://schema.datacite.org/meta/kernel-4.4/metadata.xsd",
    "dblp_series": "https://dblp.org/db/conf/",
@@ -24,13 +24,13 @@
       "@id": "OBI:0002110"
    },
    "Event": {
-      "@id": "aeon:0000001"
+      "@id": "AEON:0000001"
    },
    "EventFormatSpecification": {
-      "@id": "aeon:0000004"
+      "@id": "AEON:0000004"
    },
    "EventSeries": {
-      "@id": "aeon:0000002"
+      "@id": "AEON:0000002"
    },
    "WikidataId": {
       "@id": "wikidata:Q43649390"

@@ -26,8 +26,8 @@
       "prefix_reference": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#"
     },
     {
-      "prefix_prefix": "aeon",
-      "prefix_reference": "https://github.com/tibonto/aeon#AEON_"
+      "prefix_prefix": "AEON",
+      "prefix_reference": "http://purl.obolibrary.org/obo/AEON_"
     },
     {
       "prefix_prefix": "OBI",
@@ -91,7 +91,7 @@
     }
   ],
   "emit_prefixes": [
-    "aeon",
+    "AEON",
     "confident",
     "sdo"
   ],
@@ -282,78 +282,78 @@
         {
           "text": "Colloquium",
           "description": "A colloquium is an academic meeting that usually lasts only a few hours and serves to discuss a specific topic. Colloquia are usually part of the academic exchange in everyday university life with only one speaker, but can also take place on special occasions (anniversaries, start or end of the lecture phase, etc.) and can have more than one speaker.",
-          "meaning": "aeon:0000101",
+          "meaning": "AEON:0000101",
           "title": "Colloquium"
         },
         {
           "text": "Conference",
           "description": "A conference is an academic event that lasts up to several days and serves as a forum for presentations on a specific topic or subject area. In addition to subject-specific conferences, there are also interdisciplinary conferences which allow both a broader focus and more specific questions on a particular (academic) problem. Conferences often have a highly formalized structure of parallel, clearly defined sessions with several short presentations and plenary sessions with invited (keynote) speakers who are considered multipliers in their (research) field. Ideally, the selection of the speakers and their contributions is subject to a review process.",
-          "meaning": "aeon:0000103"
+          "meaning": "AEON:0000103"
         },
         {
           "text": "Congress",
           "description": "A congress is a certain type of conference which is characterised by a larger number of participants (often several hundred) and is oftentimes organised jointly by large, established (e.g. specialised societies) and/or several institutions. Congresses have a broader thematic focus than simple conferences, take place in certain cycles, but can still target an exclusive group of participants (e.g. representatives of a single discipline).",
-          "meaning": "aeon:0000123"
+          "meaning": "AEON:0000123"
         },
         {
           "text": "Session",
           "description": "A session is a clearly defined part of a academic event in which a small number of speakers (usually 2-5) focus on a specific topic. A session is usually formally accompanied by a session chair, who assumes the function of a moderator.",
-          "meaning": "aeon:0000111"
+          "meaning": "AEON:0000111"
         },
         {
           "text": "Poster Session",
           "description": "A poster session is a session at which poster papers are presented.",
-          "meaning": "aeon:0000127"
+          "meaning": "AEON:0000127"
         },
         {
           "text": "Talk",
           "description": "A talk is a central part of a larger academic event, at which a specific topic is being presented in a rather short way.",
-          "meaning": "aeon:0000125"
+          "meaning": "AEON:0000125"
         },
         {
           "text": "Keynote Speech",
           "description": "A keynote speech is a special talk that has the function to set the underlying tone and summarize the core message or most important revelation of the academic event at which it is given.",
-          "meaning": "aeon:00001115"
+          "meaning": "AEON:00001115"
         },
         {
           "text": "Event Track",
           "description": "An academic event that, as a part of a larger academic event, has the function to group even smaller parts of the academic event, like sessions and talks, according to a shared theme or topic. It usually has dedicated chairs and program committees.",
-          "meaning": "aeon:00001117"
+          "meaning": "AEON:00001117"
         },
         {
           "text": "Forum",
           "description": "An academic event whose sociocultural format is determined in an academic event type specification that classifies the academic event as a forum.",
-          "meaning": "aeon:0000105"
+          "meaning": "AEON:0000105"
         },
         {
           "text": "Hackathon",
           "description": "A hackathon is a gathering of software developers with the goal to develop software collaboratively in a short timeframe.",
-          "meaning": "aeon:0000107"
+          "meaning": "AEON:0000107"
         },
         {
           "text": "Seminar",
           "description": "A seminar can serve as a term for older conference series, but in current usage the term mainly describes a specific teaching format that serves to develop content and provides space for discussion. Participation from the audience is usually encouraged.",
-          "meaning": "aeon:0000109"
+          "meaning": "AEON:0000109"
         },
         {
           "text": "Symposium",
           "description": "A symposium is a specific type of conference with a narrower thematic focus, with fewer participants and of shorter duration. The degree of structuring lies between a classic conference and a workshop, allows more discussion than the larger conference, but is usually more formalized than the workshop.",
-          "meaning": "aeon:0000113"
+          "meaning": "AEON:0000113"
         },
         {
           "text": "Tutorial",
           "description": "An academic event that has the function to educate the audience on a certain topic. A tutorial is often realized as an academic event talk or academic event session.",
-          "meaning": "aeon:0000119"
+          "meaning": "AEON:0000119"
         },
         {
           "text": "Workshop",
           "description": "Workshops are smaller academic events that serve to exchange information on a specific topic or problem. They usually last one or two days and offer space for discussion and the development of content and solutions. Group work is often part of the event concept.",
-          "meaning": "aeon:0000121"
+          "meaning": "AEON:0000121"
         },
         {
           "text": "other",
           "description": "This value is to be used if the event format cannot be represented using one of the other permissible values defined in the [Event Type](EventType.md) enum. If this value is chosen the use of [Other Event Format](other_format.md) is mandatory.",
-          "meaning": "aeon:0000001"
+          "meaning": "AEON:0000001"
         }
       ]
     },
@@ -412,39 +412,39 @@
       "permissible_values": [
         {
           "text": "submission deadline",
-          "meaning": "aeon:0000067"
+          "meaning": "AEON:0000067"
         },
         {
           "text": "notification deadline",
-          "meaning": "aeon:0000064"
+          "meaning": "AEON:0000064"
         },
         {
           "text": "abstract deadline",
-          "meaning": "aeon:0000061"
+          "meaning": "AEON:0000061"
         },
         {
           "text": "camera-ready deadline",
-          "meaning": "aeon:0000062"
+          "meaning": "AEON:0000062"
         },
         {
           "text": "demo deadline",
-          "meaning": "aeon:0000063"
+          "meaning": "AEON:0000063"
         },
         {
           "text": "paper deadline",
-          "meaning": "aeon:0000065"
+          "meaning": "AEON:0000065"
         },
         {
           "text": "poster deadline",
-          "meaning": "aeon:0000066"
+          "meaning": "AEON:0000066"
         },
         {
           "text": "tutorial deadline",
-          "meaning": "aeon:0000068"
+          "meaning": "AEON:0000068"
         },
         {
           "text": "workshop deadline",
-          "meaning": "aeon:0000069"
+          "meaning": "AEON:0000069"
         },
         {
           "text": "other",
@@ -828,9 +828,9 @@
       "title": "Academic Field",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
-        "https://github.com/tibonto/aeon#AEON_0000040"
+        "http://purl.obolibrary.org/obo/AEON_0000040"
       ],
-      "slot_uri": "https://github.com/tibonto/aeon#AEON_0000040",
+      "slot_uri": "http://purl.obolibrary.org/obo/AEON_0000040",
       "multivalued": true,
       "owner": "Event",
       "domain_of": [
@@ -1123,9 +1123,9 @@
       "title": "Start Date",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
-        "https://github.com/tibonto/aeon#AEON_start_date"
+        "http://purl.obolibrary.org/obo/AEON_start_date"
       ],
-      "slot_uri": "https://github.com/tibonto/aeon#AEON_start_date",
+      "slot_uri": "http://purl.obolibrary.org/obo/AEON_start_date",
       "owner": "Event",
       "domain_of": [
         "Event"
@@ -1141,9 +1141,9 @@
       "title": "End Date",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
-        "https://github.com/tibonto/aeon#AEON_end_date"
+        "http://purl.obolibrary.org/obo/AEON_end_date"
       ],
-      "slot_uri": "https://github.com/tibonto/aeon#AEON_end_date",
+      "slot_uri": "http://purl.obolibrary.org/obo/AEON_end_date",
       "owner": "Event",
       "domain_of": [
         "Event"
@@ -1159,9 +1159,9 @@
       "title": "Event Status",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
-        "https://github.com/tibonto/aeon#AEON_event_status"
+        "http://purl.obolibrary.org/obo/AEON_event_status"
       ],
-      "slot_uri": "https://github.com/tibonto/aeon#AEON_event_status",
+      "slot_uri": "http://purl.obolibrary.org/obo/AEON_event_status",
       "ifabsent": "string(as scheduled)",
       "owner": "Event",
       "domain_of": [
@@ -1229,9 +1229,9 @@
       "title": "Event Format",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
-        "https://github.com/tibonto/aeon#AEON_0000032"
+        "http://purl.obolibrary.org/obo/AEON_0000032"
       ],
-      "slot_uri": "https://github.com/tibonto/aeon#AEON_0000032",
+      "slot_uri": "http://purl.obolibrary.org/obo/AEON_0000032",
       "range": "EventFormatSpecification",
       "recommended": true,
       "inlined": true,
@@ -1278,9 +1278,9 @@
       "title": "Ordinal",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
-        "https://github.com/tibonto/aeon#AEON_event_number"
+        "http://purl.obolibrary.org/obo/AEON_event_number"
       ],
-      "slot_uri": "https://github.com/tibonto/aeon#AEON_event_number",
+      "slot_uri": "http://purl.obolibrary.org/obo/AEON_event_number",
       "owner": "Event",
       "domain_of": [
         "Event"
@@ -1930,11 +1930,11 @@
       "title": "Academic Field",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
-        "https://github.com/tibonto/aeon#AEON_0000040"
+        "http://purl.obolibrary.org/obo/AEON_0000040"
       ],
       "is_a": "academic_field",
       "domain": "EventSeries",
-      "slot_uri": "https://github.com/tibonto/aeon#AEON_0000040",
+      "slot_uri": "http://purl.obolibrary.org/obo/AEON_0000040",
       "multivalued": true,
       "alias": "academic_field",
       "owner": "EventSeries",
@@ -2533,11 +2533,11 @@
       "title": "Academic Field",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
-        "https://github.com/tibonto/aeon#AEON_0000040"
+        "http://purl.obolibrary.org/obo/AEON_0000040"
       ],
       "is_a": "academic_field",
       "domain": "Event",
-      "slot_uri": "https://github.com/tibonto/aeon#AEON_0000040",
+      "slot_uri": "http://purl.obolibrary.org/obo/AEON_0000040",
       "multivalued": true,
       "alias": "academic_field",
       "owner": "Event",
@@ -3409,7 +3409,7 @@
       "title": "Event Series",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
-        "aeon:0000002"
+        "AEON:0000002"
       ],
       "close_mappings": [
         "sdo:EventSeries"
@@ -3443,7 +3443,7 @@
         "EventSeries_wikicfp_series_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://github.com/tibonto/aeon#AEON_0000002",
+      "class_uri": "http://purl.obolibrary.org/obo/AEON_0000002",
       "@type": "ClassDefinition"
     },
     {
@@ -3453,7 +3453,7 @@
       "title": "Event",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
-        "aeon:0000001"
+        "AEON:0000001"
       ],
       "close_mappings": [
         "sdo:Event"
@@ -3498,7 +3498,7 @@
         "Event_wikicfp_event_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://github.com/tibonto/aeon#AEON_0000001",
+      "class_uri": "http://purl.obolibrary.org/obo/AEON_0000001",
       "@type": "ClassDefinition"
     },
     {
@@ -3641,10 +3641,10 @@
       "name": "EventFormatSpecification",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#EventFormatSpecification",
       "description": "An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathering is to be carried out by its participants in terms of achieving certain objectives, fulfilling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event. While the explicit details are often provided as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. \"conference\" or \"workshop\"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.",
-      "title": "Subobject Event Format",
+      "title": "Event Format",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mappings": [
-        "aeon:0000004"
+        "AEON:0000004"
       ],
       "slots": [
         "eventFormatSpecification__other_format"
@@ -3668,14 +3668,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://github.com/tibonto/aeon#AEON_0000004",
+      "class_uri": "http://purl.obolibrary.org/obo/AEON_0000004",
       "@type": "ClassDefinition"
     },
     {
       "name": "Deadline",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Deadline",
       "description": "A container for event deadlines.",
-      "title": "Subobject Deadline",
+      "title": "Deadline",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "slots": [
         "Deadline_type",
@@ -3707,7 +3707,7 @@
       "name": "Metric",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Metric",
       "description": "A container for statistical information about an event or event series.",
-      "title": "Subobject Metric",
+      "title": "Metric",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "slots": [
         "Metric_type",
@@ -3797,7 +3797,7 @@
       "name": "Location",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Location",
       "description": "A container for the information about the location in which an academic event takes place.",
-      "title": "Subobject Location",
+      "title": "Location",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "slots": [
         "location__has_city",
@@ -3973,7 +3973,7 @@
       "name": "AcademicField",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#AcademicField",
       "description": "An academic field is the scientific subject of an event or event series according to some controlled vocabulary or thesaurus and as such requires the scheme URI.",
-      "title": "Subobject Academic Field",
+      "title": "Academic Field",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mixins": [
         "SchemaBasedThing"
@@ -3991,7 +3991,7 @@
       "name": "Context",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Context",
       "description": "A container to provide extra information, such as call of papers event description.",
-      "title": "Subobject Context",
+      "title": "Context",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "slots": [
         "context__text",
@@ -4029,7 +4029,7 @@
       "name": "Contributor",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Contributor",
       "description": "A contributor is a person or organization that holds a contributor role which is being realized in an event or event series.",
-      "title": "Subobject Contributor",
+      "title": "Contributor",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mixins": [
         "NamedThing"
@@ -4048,7 +4048,7 @@
       "name": "Sponsor",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Sponsor",
       "description": "A person or an organization whose role it is to sponsor an academic event or event series.",
-      "title": "Subobject Sponsor",
+      "title": "Sponsor",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "is_a": "Contributor",
       "slots": [
@@ -4065,7 +4065,7 @@
       "name": "Attendee",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Attendee",
       "description": "A person whose only role it is to attend an academic event.",
-      "title": "Subobject Attendee",
+      "title": "Attendee",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "is_a": "Contributor",
       "slots": [
@@ -4082,7 +4082,7 @@
       "name": "Moderator",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Moderator",
       "description": "A person that has the role to moderate an academic event.",
-      "title": "Subobject Moderator",
+      "title": "Moderator",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "is_a": "Contributor",
       "slots": [
@@ -4099,7 +4099,7 @@
       "name": "Reviewer",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Reviewer",
       "description": "A person that has the role to review the submissions of an academic event.",
-      "title": "Subobject Reviewer",
+      "title": "Reviewer",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "is_a": "Contributor",
       "slots": [
@@ -4116,7 +4116,7 @@
       "name": "Organizer",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Organizer",
       "description": "An organizer of an academic event or event series.",
-      "title": "Subobject Organizer",
+      "title": "Organizer",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "is_a": "Contributor",
       "slots": [
@@ -4145,7 +4145,7 @@
       "name": "ContactPerson",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#ContactPerson",
       "description": "The contact person of an academic event or event series.",
-      "title": "Subobject Contact Person",
+      "title": "Contact Person",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "is_a": "Organizer",
       "slots": [
@@ -4184,7 +4184,7 @@
       "name": "CommitteeMember",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#CommitteeMember",
       "description": "A members of an academic event committee.",
-      "title": "Subobject Committee Member",
+      "title": "Committee Member",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "is_a": "Organizer",
       "slots": [
@@ -4202,7 +4202,7 @@
       "name": "CommitteeChair",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#CommitteeChair",
       "description": "The head of an academic event committee.",
-      "title": "Subobject Committee Chair",
+      "title": "Committee Chair",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "is_a": "CommitteeMember",
       "slots": [
@@ -4220,7 +4220,7 @@
       "name": "Presenter",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Presenter",
       "description": "A person that presents its work at an academic event.",
-      "title": "Subobject Presenter",
+      "title": "Presenter",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "is_a": "Contributor",
       "slots": [
@@ -4237,7 +4237,7 @@
       "name": "KeynoteSpeaker",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#KeynoteSpeaker",
       "description": "A 'keynote speaker' is a presenter that is an invited person - often a multiplier in his or her (research) field - responsible for delivering a keynote speech.",
-      "title": "Subobject Keynote Speaker",
+      "title": "Keynote Speaker",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "is_a": "Presenter",
       "slots": [
@@ -4254,7 +4254,7 @@
       "name": "Publication",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#Publication",
       "description": "A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.",
-      "title": "Subobject Publication",
+      "title": "Publication",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mixins": [
         "NamedThing"
@@ -4312,7 +4312,7 @@
       "name": "SchemaBasedThing",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#SchemaBasedThing",
       "description": "A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing.",
-      "title": "Subobject Schema Based Thing",
+      "title": "Schema Based Thing",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mixin": true,
       "slots": [
@@ -4328,7 +4328,7 @@
       "name": "NamedThing",
       "definition_uri": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#NamedThing",
       "description": "A mixin used to provide the attributes needed for the identification of a thing.",
-      "title": "Subobject Named Thing",
+      "title": "Named Thing",
       "from_schema": "https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml",
       "mixin": true,
       "slots": [
@@ -4343,9 +4343,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ConfIDent_schema.yaml",
-  "source_file_date": "2022-10-26T14:14:51",
-  "source_file_size": 50594,
-  "generation_date": "2022-10-26T14:15:24",
+  "source_file_date": "2022-11-21T10:30:07",
+  "source_file_size": 50394,
+  "generation_date": "2022-11-21T10:54:22",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ConfIDent_schema.context.jsonld",
