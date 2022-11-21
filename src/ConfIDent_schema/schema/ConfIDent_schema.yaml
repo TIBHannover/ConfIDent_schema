@@ -343,7 +343,7 @@ classes:
 # plan specs
   EventFormatSpecification:
     class_uri: aeon:0000004
-    title: Subobject Event Format
+    title: Event Format
     description: >-
       An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathering is to be carried out by its participants in terms of achieving certain objectives, fulfilling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event.
       While the explicit details are often provided as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. "conference" or "workshop"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree.
@@ -358,7 +358,7 @@ classes:
         required: true
         range: string
   Deadline:
-    title: Subobject Deadline
+    title: Deadline
     description: A container for event deadlines.
     slots:
       - type
@@ -380,7 +380,7 @@ classes:
         required: true
 # Metrics
   Metric:
-    title: Subobject Metric
+    title: Metric
     description: A container for statistical information about an event or event series.
     attributes:
       int_value:
@@ -426,7 +426,7 @@ classes:
               required: true
 # location
   Location:
-    title: Subobject Location
+    title: Location
     description: A container for the information about the location in which an academic event takes place.
     attributes:
       has_city:
@@ -496,7 +496,7 @@ classes:
         range: string
 # descriptors
   AcademicField:
-    title: Subobject Academic Field
+    title: Academic Field
     mixins:
       - SchemaBasedThing
     description: An academic field is the scientific subject of an event or event series according to some controlled vocabulary or thesaurus and as such requires the scheme URI.
@@ -506,7 +506,7 @@ classes:
         range: string
         required: true
   Context:
-    title: Subobject Context
+    title: Context
     description: A container to provide extra information, such as call of papers event description.
     attributes:
       text:
@@ -523,7 +523,7 @@ classes:
         range: uriorcurie
 # contributors
   Contributor:
-    title: Subobject Contributor
+    title: Contributor
     description: A contributor is a person or organization that holds a contributor role which is being realized in an event or event series.
     mixins:
       - NamedThing
@@ -538,23 +538,23 @@ classes:
         description: The internal ConfIDent identifier for a contibutor
 
   Sponsor:
-    title: Subobject Sponsor
+    title: Sponsor
     is_a: Contributor
     description: A person or an organization whose role it is to sponsor an academic event or event series.
   Attendee:
-    title: Subobject Attendee
+    title: Attendee
     is_a: Contributor
     description: A person whose only role it is to attend an academic event.
   Moderator:
-    title: Subobject Moderator
+    title: Moderator
     is_a: Contributor
     description: A person that has the role to moderate an academic event.
   Reviewer:
-    title: Subobject Reviewer
+    title: Reviewer
     is_a: Contributor
     description: A person that has the role to review the submissions of an academic event.
   Organizer:
-    title: Subobject Organizer
+    title: Organizer
     is_a: Contributor
     description: An organizer of an academic event or event series.
     attributes:
@@ -566,7 +566,7 @@ classes:
         required: false
         recommended: true
   ContactPerson:
-    title: Subobject Contact Person
+    title: Contact Person
     description: The contact person of an academic event or event series.
     is_a: Organizer
     attributes:
@@ -582,24 +582,24 @@ classes:
         description: The telephone number of the contact person.
         range: string
   CommitteeMember:
-    title: Subobject Committee Member
+    title: Committee Member
     is_a: Organizer
     description: A members of an academic event committee.
   CommitteeChair:
-    title: Subobject Committee Chair
+    title: Committee Chair
     is_a: CommitteeMember
     description: The head of an academic event committee.
   Presenter:
-    title: Subobject Presenter
+    title: Presenter
     is_a: Contributor
     description: A person that presents its work at an academic event.
   KeynoteSpeaker:
-    title: Subobject Keynote Speaker
+    title: Keynote Speaker
     is_a: Presenter
     description: A 'keynote speaker' is a presenter that is an invited person - often a multiplier in his or her (research) field - responsible for delivering a keynote speech.
 # output
   Publication:
-    title: Subobject Publication
+    title: Publication
     description: A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series.
     mixins:
       - NamedThing
@@ -629,7 +629,7 @@ classes:
         inlined_as_list: true
 # mixins
   SchemaBasedThing:
-    title: Subobject Schema Based Thing
+    title: Schema Based Thing
     description: A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing.
     mixin: true
     slots:
@@ -637,7 +637,7 @@ classes:
       - schema_name
       - schema_base_uri
   NamedThing:
-    title: Subobject Named Thing
+    title: Named Thing
     description: A mixin used to provide the attributes needed for the identification of a thing.
     mixin: true
     slots:
