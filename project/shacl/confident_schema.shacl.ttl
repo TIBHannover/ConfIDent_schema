@@ -1,8 +1,8 @@
+@prefix AEON: <http://purl.obolibrary.org/obo/AEON_> .
 @prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
 @prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
 @prefix OBI: <http://purl.obolibrary.org/obo/OBI_> .
 @prefix RO: <http://purl.obolibrary.org/obo/RO_> .
-@prefix aeon: <https://github.com/tibonto/aeon#AEON_> .
 @prefix confident: <https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sdo: <https://schema.org/> .
@@ -11,98 +11,55 @@
 @prefix wikidata: <https://www.wikidata.org/wiki/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-aeon:0000004 a sh:NodeShape ;
+AEON:0000004 a sh:NodeShape ;
     sh:closed true ;
     sh:description "An academic event format specification is a plan specification that classifies a planned gathering of people in an academic context according to some sociocultural format, which provides implicit and explicit details on how this gathering is to be carried out by its participants in terms of achieving certain objectives, fulfilling certain conditions and performing certain actions. It thus concretizes the expectations of the contributors of an academic event. While the explicit details are often provided as concrete parts (e.g. deadline or attendance fee specifications), the implicit details depend on the semantics encoded in the words used for the classification of academic events (e.g. \"conference\" or \"workshop\"). Depending on the sociocultural background these classifications can overlap or vary to a certain degree." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Event Format" ;
+    sh:name "Event Format" ;
     sh:property [ sh:description "A mandatory property to provide the format of an academic event as string, in order to further specify its type in case it could not be specified according to the possible values of [Event Type](EventType.md)." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Other Event Format" ;
             sh:order 0 ;
             sh:path OBI:0002815 ] ;
-    sh:targetClass aeon:0000004 .
+    sh:targetClass AEON:0000004 .
 
 confident:Attendee a sh:NodeShape ;
     sh:closed true ;
     sh:description "A person whose only role it is to attend an academic event." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Attendee" ;
-    sh:property [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
+    sh:name "Attendee" ;
+    sh:property [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "ID" ;
+            sh:order 1 ;
+            sh:path confident:id ],
+        [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
             sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
             sh:maxCount 1 ;
             sh:name "Type" ;
             sh:order 0 ;
             sh:path rdf:type ],
-        [ sh:class confident:ExternalIdentifier ;
-            sh:description "A property to provide an external id of a schema entity." ;
-            sh:name "External ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 3 ;
-            sh:path IAO:0000235 ],
         [ sh:description "A property to provide a name of a schema entity." ;
             sh:maxCount 1 ;
             sh:name "Name" ;
             sh:order 2 ;
             sh:path sdo:name ],
-        [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "ID" ;
-            sh:order 1 ;
-            sh:path confident:id ] ;
+        [ sh:class confident:ExternalIdentifier ;
+            sh:description "A property to provide an external id of a schema entity." ;
+            sh:name "External ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 3 ;
+            sh:path IAO:0000235 ] ;
     sh:targetClass confident:Attendee .
 
 confident:CommitteeChair a sh:NodeShape ;
     sh:closed true ;
     sh:description "The head of an academic event committee." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Committee Chair" ;
-    sh:property [ sh:class confident:ContactPerson ;
-            sh:description "The contact person of an academic event or event series." ;
-            sh:maxCount 1 ;
-            sh:name "Contact" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path confident:contact ],
-        [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
-            sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
-            sh:maxCount 1 ;
-            sh:name "Type" ;
-            sh:order 1 ;
-            sh:path rdf:type ],
-        [ sh:description "A property to provide a name of a schema entity." ;
-            sh:maxCount 1 ;
-            sh:name "Name" ;
-            sh:order 3 ;
-            sh:path sdo:name ],
-        [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "ID" ;
-            sh:order 2 ;
-            sh:path confident:id ],
-        [ sh:class confident:ExternalIdentifier ;
-            sh:description "A property to provide an external id of a schema entity." ;
-            sh:name "External ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 4 ;
-            sh:path IAO:0000235 ] ;
-    sh:targetClass confident:CommitteeChair .
-
-confident:CommitteeMember a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A members of an academic event committee." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Committee Member" ;
-    sh:property [ sh:class confident:ExternalIdentifier ;
-            sh:description "A property to provide an external id of a schema entity." ;
-            sh:name "External ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 4 ;
-            sh:path IAO:0000235 ],
-        [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
+    sh:name "Committee Chair" ;
+    sh:property [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
             sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
             sh:maxCount 1 ;
             sh:name "Type" ;
@@ -120,12 +77,55 @@ confident:CommitteeMember a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
             sh:path confident:contact ],
+        [ sh:class confident:ExternalIdentifier ;
+            sh:description "A property to provide an external id of a schema entity." ;
+            sh:name "External ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 4 ;
+            sh:path IAO:0000235 ],
         [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "ID" ;
             sh:order 2 ;
             sh:path confident:id ] ;
+    sh:targetClass confident:CommitteeChair .
+
+confident:CommitteeMember a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A members of an academic event committee." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Committee Member" ;
+    sh:property [ sh:description "A property to provide a name of a schema entity." ;
+            sh:maxCount 1 ;
+            sh:name "Name" ;
+            sh:order 3 ;
+            sh:path sdo:name ],
+        [ sh:class confident:ContactPerson ;
+            sh:description "The contact person of an academic event or event series." ;
+            sh:maxCount 1 ;
+            sh:name "Contact" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path confident:contact ],
+        [ sh:class confident:ExternalIdentifier ;
+            sh:description "A property to provide an external id of a schema entity." ;
+            sh:name "External ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 4 ;
+            sh:path IAO:0000235 ],
+        [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "ID" ;
+            sh:order 2 ;
+            sh:path confident:id ],
+        [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
+            sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
+            sh:maxCount 1 ;
+            sh:name "Type" ;
+            sh:order 1 ;
+            sh:path rdf:type ] ;
     sh:targetClass confident:CommitteeMember .
 
 confident:ConfIDentRecords a sh:NodeShape ;
@@ -133,13 +133,13 @@ confident:ConfIDentRecords a sh:NodeShape ;
     sh:description "A container to be able to bundle academic event data and series in one data file (e.g. YAML or JSON)." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "ConfIDent Records" ;
-    sh:property [ sh:class aeon:0000002 ;
+    sh:property [ sh:class AEON:0000002 ;
             sh:description "A property to provide a list of academic event series within this container." ;
             sh:name "Series" ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
             sh:path confident:series ],
-        [ sh:class aeon:0000001 ;
+        [ sh:class AEON:0000001 ;
             sh:description "A property to provide a list of academic events within this container." ;
             sh:name "Events" ;
             sh:nodeKind sh:IRI ;
@@ -151,19 +151,19 @@ confident:Contributor a sh:NodeShape ;
     sh:closed true ;
     sh:description "A contributor is a person or organization that holds a contributor role which is being realized in an event or event series." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Contributor" ;
-    sh:property [ sh:description "The internal ConfIDent identifier for a contibutor" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "ID" ;
-            sh:order 1 ;
-            sh:path confident:id ],
-        [ sh:description "A property to provide the information whether the contributor is an organization or person." ;
+    sh:name "Contributor" ;
+    sh:property [ sh:description "A property to provide the information whether the contributor is an organization or person." ;
             sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
             sh:maxCount 1 ;
             sh:name "Type" ;
             sh:order 0 ;
             sh:path rdf:type ],
+        [ sh:description "The internal ConfIDent identifier for a contibutor" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "ID" ;
+            sh:order 1 ;
+            sh:path confident:id ],
         [ sh:class confident:ExternalIdentifier ;
             sh:description "A property to provide an external id of a schema entity." ;
             sh:name "External ID" ;
@@ -181,48 +181,18 @@ confident:KeynoteSpeaker a sh:NodeShape ;
     sh:closed true ;
     sh:description "A 'keynote speaker' is a presenter that is an invited person - often a multiplier in his or her (research) field - responsible for delivering a keynote speech." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Keynote Speaker" ;
+    sh:name "Keynote Speaker" ;
     sh:property [ sh:description "A property to provide a name of a schema entity." ;
             sh:maxCount 1 ;
             sh:name "Name" ;
             sh:order 2 ;
             sh:path sdo:name ],
-        [ sh:class confident:ExternalIdentifier ;
-            sh:description "A property to provide an external id of a schema entity." ;
-            sh:name "External ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 3 ;
-            sh:path IAO:0000235 ],
         [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "ID" ;
             sh:order 1 ;
             sh:path confident:id ],
-        [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
-            sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
-            sh:maxCount 1 ;
-            sh:name "Type" ;
-            sh:order 0 ;
-            sh:path rdf:type ] ;
-    sh:targetClass confident:KeynoteSpeaker .
-
-confident:Moderator a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A person that has the role to moderate an academic event." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Moderator" ;
-    sh:property [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "ID" ;
-            sh:order 1 ;
-            sh:path confident:id ],
-        [ sh:description "A property to provide a name of a schema entity." ;
-            sh:maxCount 1 ;
-            sh:name "Name" ;
-            sh:order 2 ;
-            sh:path sdo:name ],
         [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
             sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
             sh:maxCount 1 ;
@@ -235,25 +205,55 @@ confident:Moderator a sh:NodeShape ;
             sh:nodeKind sh:BlankNode ;
             sh:order 3 ;
             sh:path IAO:0000235 ] ;
+    sh:targetClass confident:KeynoteSpeaker .
+
+confident:Moderator a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A person that has the role to moderate an academic event." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Moderator" ;
+    sh:property [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
+            sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
+            sh:maxCount 1 ;
+            sh:name "Type" ;
+            sh:order 0 ;
+            sh:path rdf:type ],
+        [ sh:description "A property to provide a name of a schema entity." ;
+            sh:maxCount 1 ;
+            sh:name "Name" ;
+            sh:order 2 ;
+            sh:path sdo:name ],
+        [ sh:class confident:ExternalIdentifier ;
+            sh:description "A property to provide an external id of a schema entity." ;
+            sh:name "External ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 3 ;
+            sh:path IAO:0000235 ],
+        [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "ID" ;
+            sh:order 1 ;
+            sh:path confident:id ] ;
     sh:targetClass confident:Moderator .
 
 confident:NamedThing a sh:NodeShape ;
     sh:closed true ;
     sh:description "A mixin used to provide the attributes needed for the identification of a thing." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Named Thing" ;
-    sh:property [ sh:class confident:ExternalIdentifier ;
-            sh:description "A property to provide an external id of a schema entity." ;
-            sh:name "External ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 2 ;
-            sh:path IAO:0000235 ],
-        [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
+    sh:name "Named Thing" ;
+    sh:property [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "ID" ;
             sh:order 0 ;
             sh:path confident:id ],
+        [ sh:class confident:ExternalIdentifier ;
+            sh:description "A property to provide an external id of a schema entity." ;
+            sh:name "External ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path IAO:0000235 ],
         [ sh:description "A property to provide a name of a schema entity." ;
             sh:maxCount 1 ;
             sh:name "Name" ;
@@ -265,14 +265,8 @@ confident:Presenter a sh:NodeShape ;
     sh:closed true ;
     sh:description "A person that presents its work at an academic event." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Presenter" ;
-    sh:property [ sh:class confident:ExternalIdentifier ;
-            sh:description "A property to provide an external id of a schema entity." ;
-            sh:name "External ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 3 ;
-            sh:path IAO:0000235 ],
-        [ sh:description "A property to provide a name of a schema entity." ;
+    sh:name "Presenter" ;
+    sh:property [ sh:description "A property to provide a name of a schema entity." ;
             sh:maxCount 1 ;
             sh:name "Name" ;
             sh:order 2 ;
@@ -288,15 +282,27 @@ confident:Presenter a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:name "Type" ;
             sh:order 0 ;
-            sh:path rdf:type ] ;
+            sh:path rdf:type ],
+        [ sh:class confident:ExternalIdentifier ;
+            sh:description "A property to provide an external id of a schema entity." ;
+            sh:name "External ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 3 ;
+            sh:path IAO:0000235 ] ;
     sh:targetClass confident:Presenter .
 
 confident:Reviewer a sh:NodeShape ;
     sh:closed true ;
     sh:description "A person that has the role to review the submissions of an academic event." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Reviewer" ;
-    sh:property [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
+    sh:name "Reviewer" ;
+    sh:property [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
+            sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
+            sh:maxCount 1 ;
+            sh:name "Type" ;
+            sh:order 0 ;
+            sh:path rdf:type ],
+        [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "ID" ;
@@ -312,30 +318,24 @@ confident:Reviewer a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:name "Name" ;
             sh:order 2 ;
-            sh:path sdo:name ],
-        [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
-            sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
-            sh:maxCount 1 ;
-            sh:name "Type" ;
-            sh:order 0 ;
-            sh:path rdf:type ] ;
+            sh:path sdo:name ] ;
     sh:targetClass confident:Reviewer .
 
 confident:SchemaBasedThing a sh:NodeShape ;
     sh:closed true ;
     sh:description "A mixin used in classes that contain schema based values, such as the classifications used to denote the academic field of an event or the external identifiers used to denote a thing." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Schema Based Thing" ;
-    sh:property [ sh:description "The base URI of the schema that provides the context for the schema based value." ;
-            sh:maxCount 1 ;
-            sh:name "External formatter URI" ;
-            sh:order 2 ;
-            sh:path confident:schema_base_uri ],
-        [ sh:description "A property to provide the name of a schema." ;
+    sh:name "Schema Based Thing" ;
+    sh:property [ sh:description "A property to provide the name of a schema." ;
             sh:maxCount 1 ;
             sh:name "Schema Name" ;
             sh:order 1 ;
             sh:path confident:schema_name ],
+        [ sh:description "The base URI of the schema that provides the context for the schema based value." ;
+            sh:maxCount 1 ;
+            sh:name "External formatter URI" ;
+            sh:order 2 ;
+            sh:path confident:schema_base_uri ],
         [ sh:description "A property to provide the literal value of a schema based entity." ;
             sh:maxCount 1 ;
             sh:name "Schema Value" ;
@@ -372,31 +372,38 @@ confident:Country a sh:NodeShape ;
     sh:description "The country in which an academic event takes place." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "Country" ;
-    sh:property [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "ID" ;
-            sh:order 0 ;
-            sh:path confident:id ],
+    sh:property [ sh:class confident:ExternalIdentifier ;
+            sh:description "A property to provide an external id of a schema entity." ;
+            sh:name "External ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path IAO:0000235 ],
         [ sh:description "A property to provide a name of a schema entity." ;
             sh:maxCount 1 ;
             sh:name "Name" ;
             sh:order 1 ;
             sh:path sdo:name ],
-        [ sh:class confident:ExternalIdentifier ;
-            sh:description "A property to provide an external id of a schema entity." ;
-            sh:name "External ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 2 ;
-            sh:path IAO:0000235 ] ;
+        [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "ID" ;
+            sh:order 0 ;
+            sh:path confident:id ] ;
     sh:targetClass confident:Country .
 
 confident:Deadline a sh:NodeShape ;
     sh:closed true ;
     sh:description "A container for event deadlines." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Deadline" ;
-    sh:property [ sh:description "A property to specify another type of deadline, if this type of deadline is not within the allowed values of [DeadlineType](DeadlineType.md)." ;
+    sh:name "Deadline" ;
+    sh:property [ sh:description "A propery to provide the type of the deadline." ;
+            sh:in ( AEON:0000067 AEON:0000064 AEON:0000061 AEON:0000062 AEON:0000063 AEON:0000065 AEON:0000066 AEON:0000068 AEON:0000069 "other" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Deadline Type" ;
+            sh:order 0 ;
+            sh:path rdf:type ],
+        [ sh:description "A property to specify another type of deadline, if this type of deadline is not within the allowed values of [DeadlineType](DeadlineType.md)." ;
             sh:maxCount 1 ;
             sh:name "Other Deadline Type" ;
             sh:order 2 ;
@@ -406,35 +413,21 @@ confident:Deadline a sh:NodeShape ;
             sh:minCount 1 ;
             sh:name "Deadline Date" ;
             sh:order 1 ;
-            sh:path confident:deadline_date ],
-        [ sh:description "A propery to provide the type of the deadline." ;
-            sh:in ( aeon:0000067 aeon:0000064 aeon:0000061 aeon:0000062 aeon:0000063 aeon:0000065 aeon:0000066 aeon:0000068 aeon:0000069 "other" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Deadline Type" ;
-            sh:order 0 ;
-            sh:path rdf:type ] ;
+            sh:path confident:deadline_date ] ;
     sh:targetClass confident:Deadline .
 
 confident:Location a sh:NodeShape ;
     sh:closed true ;
     sh:description "A container for the information about the location in which an academic event takes place." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Location" ;
-    sh:property [ sh:class confident:Venue ;
-            sh:description "The property to specify the [Venue](Venue.md) of an academic event location." ;
+    sh:name "Location" ;
+    sh:property [ sh:class confident:City ;
+            sh:description "The property to specify the [City](City.md) of an academic event location." ;
             sh:maxCount 1 ;
-            sh:name "Venue" ;
+            sh:name "City" ;
             sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path confident:has_venue ],
-        [ sh:class confident:Region ;
-            sh:description "The property to specify the [Region](Region.md) of an academic event location." ;
-            sh:maxCount 1 ;
-            sh:name "Region" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path confident:has_region ],
+            sh:order 0 ;
+            sh:path confident:has_city ],
         [ sh:description "The property to specify the longitude of an academic event location." ;
             sh:maxCount 1 ;
             sh:name "Longitude" ;
@@ -445,25 +438,32 @@ confident:Location a sh:NodeShape ;
             sh:name "Meeting URL" ;
             sh:order 6 ;
             sh:path confident:meeting_url ],
-        [ sh:class confident:City ;
-            sh:description "The property to specify the [City](City.md) of an academic event location." ;
-            sh:maxCount 1 ;
-            sh:name "City" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path confident:has_city ],
-        [ sh:description "The property to specify the lattitude of an academic event location." ;
-            sh:maxCount 1 ;
-            sh:name "Lattitude" ;
-            sh:order 4 ;
-            sh:path confident:lattitude ],
         [ sh:class confident:Country ;
             sh:description "The property to specify the [Country](Country.md) of an academic event location." ;
             sh:maxCount 1 ;
             sh:name "Country" ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
-            sh:path confident:has_country ] ;
+            sh:path confident:has_country ],
+        [ sh:class confident:Region ;
+            sh:description "The property to specify the [Region](Region.md) of an academic event location." ;
+            sh:maxCount 1 ;
+            sh:name "Region" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path confident:has_region ],
+        [ sh:class confident:Venue ;
+            sh:description "The property to specify the [Venue](Venue.md) of an academic event location." ;
+            sh:maxCount 1 ;
+            sh:name "Venue" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path confident:has_venue ],
+        [ sh:description "The property to specify the lattitude of an academic event location." ;
+            sh:maxCount 1 ;
+            sh:name "Lattitude" ;
+            sh:order 4 ;
+            sh:path confident:lattitude ] ;
     sh:targetClass confident:Location .
 
 confident:Region a sh:NodeShape ;
@@ -477,17 +477,17 @@ confident:Region a sh:NodeShape ;
             sh:name "ID" ;
             sh:order 0 ;
             sh:path confident:id ],
-        [ sh:description "A property to provide a name of a schema entity." ;
-            sh:maxCount 1 ;
-            sh:name "Name" ;
-            sh:order 1 ;
-            sh:path sdo:name ],
         [ sh:class confident:ExternalIdentifier ;
             sh:description "A property to provide an external id of a schema entity." ;
             sh:name "External ID" ;
             sh:nodeKind sh:BlankNode ;
             sh:order 2 ;
-            sh:path IAO:0000235 ] ;
+            sh:path IAO:0000235 ],
+        [ sh:description "A property to provide a name of a schema entity." ;
+            sh:maxCount 1 ;
+            sh:name "Name" ;
+            sh:order 1 ;
+            sh:path sdo:name ] ;
     sh:targetClass confident:Region .
 
 confident:TibkatId a sh:NodeShape ;
@@ -500,16 +500,16 @@ confident:TibkatId a sh:NodeShape ;
             sh:name "Schema Value" ;
             sh:order 0 ;
             sh:path confident:schema_value ],
-        [ sh:description "The base URI of the schema that provides the context for the schema based value." ;
-            sh:maxCount 1 ;
-            sh:name "External formatter URI" ;
-            sh:order 2 ;
-            sh:path confident:schema_base_uri ],
         [ sh:description "A property to provide the name of a schema." ;
             sh:maxCount 1 ;
             sh:name "Schema Name" ;
             sh:order 1 ;
-            sh:path confident:schema_name ] ;
+            sh:path confident:schema_name ],
+        [ sh:description "The base URI of the schema that provides the context for the schema based value." ;
+            sh:maxCount 1 ;
+            sh:name "External formatter URI" ;
+            sh:order 2 ;
+            sh:path confident:schema_base_uri ] ;
     sh:targetClass confident:TibkatId .
 
 confident:Venue a sh:NodeShape ;
@@ -517,28 +517,28 @@ confident:Venue a sh:NodeShape ;
     sh:description "The venue at which an academic event takes place." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "Venue" ;
-    sh:property [ sh:description "A property to provide a name of a schema entity." ;
-            sh:maxCount 1 ;
-            sh:name "Name" ;
-            sh:order 3 ;
-            sh:path sdo:name ],
-        [ sh:class confident:ExternalIdentifier ;
+    sh:property [ sh:class confident:ExternalIdentifier ;
             sh:description "A property to provide an external id of a schema entity." ;
             sh:name "External ID" ;
             sh:nodeKind sh:BlankNode ;
             sh:order 4 ;
             sh:path IAO:0000235 ],
-        [ sh:description "The street of the venue including the house number seperated by comma." ;
-            sh:maxCount 1 ;
-            sh:name "Street" ;
-            sh:order 0 ;
-            sh:path confident:street ],
         [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "ID" ;
             sh:order 2 ;
             sh:path confident:id ],
+        [ sh:description "A property to provide a name of a schema entity." ;
+            sh:maxCount 1 ;
+            sh:name "Name" ;
+            sh:order 3 ;
+            sh:path sdo:name ],
+        [ sh:description "The street of the venue including the house number seperated by comma." ;
+            sh:maxCount 1 ;
+            sh:name "Street" ;
+            sh:order 0 ;
+            sh:path confident:street ],
         [ sh:description "The zip code of the venue." ;
             sh:maxCount 1 ;
             sh:name "ZIP Code" ;
@@ -551,28 +551,6 @@ confident:WikiCfpEventId a sh:NodeShape ;
     sh:description "The identifier of an academic event or series in WikiCFP." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "WikiCFP Event ID" ;
-    sh:property [ sh:description "The base URI of the schema that provides the context for the schema based value." ;
-            sh:maxCount 1 ;
-            sh:name "External formatter URI" ;
-            sh:order 2 ;
-            sh:path confident:schema_base_uri ],
-        [ sh:description "A property to provide the literal value of a schema based entity." ;
-            sh:maxCount 1 ;
-            sh:name "Schema Value" ;
-            sh:order 0 ;
-            sh:path confident:schema_value ],
-        [ sh:description "A property to provide the name of a schema." ;
-            sh:maxCount 1 ;
-            sh:name "Schema Name" ;
-            sh:order 1 ;
-            sh:path confident:schema_name ] ;
-    sh:targetClass confident:WikiCfpEventId .
-
-confident:WikiCfpSeriesId a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "The identifier of an academic event or series in WikiCFP." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:name "WikiCFP Series ID" ;
     sh:property [ sh:description "A property to provide the literal value of a schema based entity." ;
             sh:maxCount 1 ;
             sh:name "Schema Value" ;
@@ -588,90 +566,54 @@ confident:WikiCfpSeriesId a sh:NodeShape ;
             sh:name "Schema Name" ;
             sh:order 1 ;
             sh:path confident:schema_name ] ;
+    sh:targetClass confident:WikiCfpEventId .
+
+confident:WikiCfpSeriesId a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "The identifier of an academic event or series in WikiCFP." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "WikiCFP Series ID" ;
+    sh:property [ sh:description "A property to provide the name of a schema." ;
+            sh:maxCount 1 ;
+            sh:name "Schema Name" ;
+            sh:order 1 ;
+            sh:path confident:schema_name ],
+        [ sh:description "The base URI of the schema that provides the context for the schema based value." ;
+            sh:maxCount 1 ;
+            sh:name "External formatter URI" ;
+            sh:order 2 ;
+            sh:path confident:schema_base_uri ],
+        [ sh:description "A property to provide the literal value of a schema based entity." ;
+            sh:maxCount 1 ;
+            sh:name "Schema Value" ;
+            sh:order 0 ;
+            sh:path confident:schema_value ] ;
     sh:targetClass confident:WikiCfpSeriesId .
 
-aeon:0000002 a sh:NodeShape ;
+AEON:0000002 a sh:NodeShape ;
     sh:closed true ;
     sh:description "An academic event series describes the set of academic events which take place on a regular basis and thus have an established common identity. This identity is constituted, for example, through institutional continuity in the hosting of a series (e.g. by a specialised society), thematic focuses and/or a common label under which a series is defined (particularly name and acronym). Nevertheless, it is possible that each of these criteria may change over time." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "Event Series" ;
-    sh:property [ sh:description "A relation to be used to link a series that hosts several series to its subordinate parts." ;
+    sh:property [ sh:description "A property to provide the URL the official website of an academic event series." ;
+            sh:maxCount 1 ;
+            sh:name "Official Website" ;
+            sh:order 8 ;
+            sh:path confident:website ],
+        [ sh:description "A relation to be used to link a series to one or more other series that share the same location, have a joint schedule and that are open to all attendees." ;
+            sh:name "Joint Venture With" ;
+            sh:order 13 ;
+            sh:path confident:joint_venture_with ],
+        [ sh:description "A relation to be used to link a series that hosts several series to its subordinate parts." ;
             sh:name "Umbrella Of" ;
             sh:order 10 ;
             sh:path confident:umbrella_of ],
-        [ sh:description "A property to provide the website to which the DOI an academic event series is resolving to." ;
-            sh:maxCount 1 ;
-            sh:name "Landing Page" ;
-            sh:order 5 ;
-            sh:path confident:landing_page ],
-        [ sh:class confident:AcademicField ;
-            sh:description "A property to describe the scientific subject(s) associated with an academic event series, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [Schema Value](schema_value.md) and [Schema Name](schema_name.md) are mandatory." ;
-            sh:name "Academic Field" ;
+        [ sh:class wikidata:Q43649390 ;
+            sh:description "A property to link an academic event series with its Wikidata identifier." ;
+            sh:name "Wikidata ID" ;
             sh:nodeKind sh:BlankNode ;
-            sh:order 4 ;
-            sh:path aeon:0000040 ],
-        [ sh:class confident:DblpId ;
-            sh:description "A property to link an academic event series with its DBLP identifier." ;
-            sh:name "DBLP ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 23 ;
+            sh:order 22 ;
             sh:path IAO:0000235 ],
-        [ sh:class confident:Metric ;
-            sh:description "A property to provide one ore more metrics of an academic event series." ;
-            sh:name "Metric" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 19 ;
-            sh:path confident:has_metric ],
-        [ sh:description "A property to provide the theme and topics of an event series as free keywords, phrases or text." ;
-            sh:name "Topic" ;
-            sh:order 20 ;
-            sh:path confident:has_topic ],
-        [ sh:class confident:GndId ;
-            sh:description "A property to link an academic event series with its GND identifier." ;
-            sh:name "GND ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 24 ;
-            sh:path IAO:0000235 ],
-        [ sh:description "A translation of the official name of an event series to be used in different language contexts." ;
-            sh:name "Translated Name" ;
-            sh:order 17 ;
-            sh:path confident:translated_name ],
-        [ sh:description "A property to provide the internal identifier of an academic event series." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "ID" ;
-            sh:order 0 ;
-            sh:path confident:id ],
-        [ sh:description "A relation to be used to link a series to its hosting superordinate series." ;
-            sh:maxCount 1 ;
-            sh:name "Has Umbrella" ;
-            sh:order 11 ;
-            sh:path confident:has_umbrella ],
-        [ sh:description "A property to provide alternative names of an academic event series." ;
-            sh:name "Alternative Name" ;
-            sh:order 15 ;
-            sh:path skos:altLabel ],
-        [ sh:class confident:WikiCfpSeriesId ;
-            sh:description "A property to link an academic event series with its WikiCFP identifier." ;
-            sh:name "WikiCFP Series ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 25 ;
-            sh:path IAO:0000235 ],
-        [ sh:class OBI:0002110 ;
-            sh:description "A property to provide a digital object identifier (DOI) for an event series. This is set automatically." ;
-            sh:name "DOI" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 9 ;
-            sh:path IAO:0000235 ],
-        [ sh:description "The official acronym of an academic event series." ;
-            sh:maxCount 1 ;
-            sh:name "Acronym" ;
-            sh:order 3 ;
-            sh:path confident:has_acronym ],
-        [ sh:description "A relation to be used to link a series to one or more other series that share the same location but not the same schedule and that are open to all attendees." ;
-            sh:name "Colocated With" ;
-            sh:order 12 ;
-            sh:path confident:colocated_with ],
         [ sh:class confident:Organizer ;
             sh:description "A property to provide the organizer of an academic event series." ;
             sh:minCount 1 ;
@@ -679,6 +621,83 @@ aeon:0000002 a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
             sh:path confident:organized_by ],
+        [ sh:class confident:AcademicField ;
+            sh:description "A property to describe the scientific subject(s) associated with an academic event series, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [Schema Value](schema_value.md) and [Schema Name](schema_name.md) are mandatory." ;
+            sh:name "Academic Field" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 4 ;
+            sh:path AEON:0000040 ],
+        [ sh:class OBI:0002110 ;
+            sh:description "A property to provide a digital object identifier (DOI) for an event series. This is set automatically." ;
+            sh:name "DOI" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 9 ;
+            sh:path IAO:0000235 ],
+        [ sh:description "A relation to be used to link a series to one or more other series that share the same location but not the same schedule and that are open to all attendees." ;
+            sh:name "Colocated With" ;
+            sh:order 12 ;
+            sh:path confident:colocated_with ],
+        [ sh:description "A translation of the official name of an event series to be used in different language contexts." ;
+            sh:name "Translated Name" ;
+            sh:order 17 ;
+            sh:path confident:translated_name ],
+        [ sh:class confident:GndId ;
+            sh:description "A property to link an academic event series with its GND identifier." ;
+            sh:name "GND ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 24 ;
+            sh:path IAO:0000235 ],
+        [ sh:class confident:Publication ;
+            sh:description "A property to provide the publication associated with" ;
+            sh:name "Publication" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 6 ;
+            sh:path confident:has_publication ],
+        [ sh:class confident:Sponsor ;
+            sh:description "A property to provide the sponsors of an academic event series." ;
+            sh:name "Sponsor" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 7 ;
+            sh:path confident:sponsored_by ],
+        [ sh:description "A relation to be used to link a series to its hosting superordinate series." ;
+            sh:maxCount 1 ;
+            sh:name "Has Umbrella" ;
+            sh:order 11 ;
+            sh:path confident:has_umbrella ],
+        [ sh:class AEON:0000001 ;
+            sh:description "A property to link to the events that are part of an academic event series." ;
+            sh:maxCount 1 ;
+            sh:name "Series Of" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 14 ;
+            sh:path confident:series_of ],
+        [ sh:description "A property to provide the website to which the DOI an academic event series is resolving to." ;
+            sh:maxCount 1 ;
+            sh:name "Landing Page" ;
+            sh:order 5 ;
+            sh:path confident:landing_page ],
+        [ sh:description "A property to provide alternative names of an academic event series." ;
+            sh:name "Alternative Name" ;
+            sh:order 15 ;
+            sh:path skos:altLabel ],
+        [ sh:class confident:ExternalIdentifier ;
+            sh:description "The property to provide external identifiers for an academic event series, including their identifier scheme." ;
+            sh:name "External ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 21 ;
+            sh:path IAO:0000235 ],
+        [ sh:description "A property to provide the internal identifier of an academic event series." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "ID" ;
+            sh:order 0 ;
+            sh:path confident:id ],
+        [ sh:class confident:DblpId ;
+            sh:description "A property to link an academic event series with its DBLP identifier." ;
+            sh:name "DBLP ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 23 ;
+            sh:path IAO:0000235 ],
         [ sh:class confident:Context ;
             sh:description "A property to provide extra information for an academic event series." ;
             sh:maxCount 1 ;
@@ -686,73 +705,54 @@ aeon:0000002 a sh:NodeShape ;
             sh:nodeKind sh:BlankNode ;
             sh:order 18 ;
             sh:path confident:context_info ],
-        [ sh:class aeon:0000001 ;
-            sh:description "A property to link to the events that are part of an academic event series." ;
+        [ sh:description "The official acronym of an academic event series." ;
             sh:maxCount 1 ;
-            sh:name "Series Of" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 14 ;
-            sh:path confident:series_of ],
-        [ sh:class confident:Sponsor ;
-            sh:description "A property to provide the sponsors of an academic event series." ;
-            sh:name "Sponsor" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 7 ;
-            sh:path confident:sponsored_by ],
-        [ sh:description "A relation to be used to link a series to one or more other series that share the same location, have a joint schedule and that are open to all attendees." ;
-            sh:name "Joint Venture With" ;
-            sh:order 13 ;
-            sh:path confident:joint_venture_with ],
-        [ sh:class wikidata:Q43649390 ;
-            sh:description "A property to link an academic event series with its Wikidata identifier." ;
-            sh:name "Wikidata ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 22 ;
-            sh:path IAO:0000235 ],
-        [ sh:class confident:ExternalIdentifier ;
-            sh:description "The property to provide external identifiers for an academic event series, including their identifier scheme." ;
-            sh:name "External ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 21 ;
-            sh:path IAO:0000235 ],
+            sh:name "Acronym" ;
+            sh:order 3 ;
+            sh:path confident:has_acronym ],
+        [ sh:description "A property to provide the theme and topics of an event series as free keywords, phrases or text." ;
+            sh:name "Topic" ;
+            sh:order 20 ;
+            sh:path confident:has_topic ],
         [ sh:description "The former official name of an academic event series. Usually this will only be needed in case an academic event series has undergone a name change." ;
             sh:name "Former Name" ;
             sh:order 16 ;
             sh:path confident:former_name ],
+        [ sh:class confident:WikiCfpSeriesId ;
+            sh:description "A property to link an academic event series with its WikiCFP identifier." ;
+            sh:name "WikiCFP Series ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 25 ;
+            sh:path IAO:0000235 ],
         [ sh:description "A property to provide the the official name of an academic event series." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Official Name" ;
             sh:order 1 ;
             sh:path skos:perfLabel ],
-        [ sh:class confident:Publication ;
-            sh:description "A property to provide the publication associated with" ;
-            sh:name "Publication" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 6 ;
-            sh:path confident:has_publication ],
-        [ sh:description "A property to provide the URL the official website of an academic event series." ;
-            sh:maxCount 1 ;
-            sh:name "Official Website" ;
-            sh:order 8 ;
-            sh:path confident:website ] ;
-    sh:targetClass aeon:0000002 .
+        [ sh:class confident:Metric ;
+            sh:description "A property to provide one ore more metrics of an academic event series." ;
+            sh:name "Metric" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 19 ;
+            sh:path confident:has_metric ] ;
+    sh:targetClass AEON:0000002 .
 
 confident:AcademicField a sh:NodeShape ;
     sh:closed true ;
     sh:description "An academic field is the scientific subject of an event or event series according to some controlled vocabulary or thesaurus and as such requires the scheme URI." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Academic Field" ;
-    sh:property [ sh:description "The base URI of the schema that provides the context for the schema based value." ;
-            sh:maxCount 1 ;
-            sh:name "External formatter URI" ;
-            sh:order 2 ;
-            sh:path confident:schema_base_uri ],
-        [ sh:description "A property to provide the name of a schema." ;
+    sh:name "Academic Field" ;
+    sh:property [ sh:description "A property to provide the name of a schema." ;
             sh:maxCount 1 ;
             sh:name "Schema Name" ;
             sh:order 1 ;
             sh:path confident:schema_name ],
+        [ sh:description "The base URI of the schema that provides the context for the schema based value." ;
+            sh:maxCount 1 ;
+            sh:name "External formatter URI" ;
+            sh:order 2 ;
+            sh:path confident:schema_base_uri ],
         [ sh:description "The classification label of a certain classification schema." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -765,17 +765,17 @@ confident:Context a sh:NodeShape ;
     sh:closed true ;
     sh:description "A container to provide extra information, such as call of papers event description." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Context" ;
-    sh:property [ sh:description "The free text used to provide more context information on an event or event series." ;
-            sh:maxCount 1 ;
-            sh:name "Context Description" ;
-            sh:order 0 ;
-            sh:path confident:text ],
-        [ sh:description "The license of the context information as URL, which should be used when copying text from other sources and such a URL exists." ;
+    sh:name "Context" ;
+    sh:property [ sh:description "The license of the context information as URL, which should be used when copying text from other sources and such a URL exists." ;
             sh:maxCount 1 ;
             sh:name "Context License URL" ;
             sh:order 2 ;
             sh:path confident:license_url ],
+        [ sh:description "The free text used to provide more context information on an event or event series." ;
+            sh:maxCount 1 ;
+            sh:name "Context Description" ;
+            sh:order 0 ;
+            sh:path confident:text ],
         [ sh:description "The license of the context information as text, which must be used when copying text from other sources." ;
             sh:maxCount 1 ;
             sh:name "Context License" ;
@@ -810,39 +810,34 @@ confident:GndId a sh:NodeShape ;
     sh:description "The identifier of a thing (item) in the German National authority file." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "GND ID" ;
-    sh:property [ sh:description "A property to provide the name of a schema." ;
+    sh:property [ sh:description "A property to provide the literal value of a schema based entity." ;
             sh:maxCount 1 ;
-            sh:name "Schema Name" ;
-            sh:order 1 ;
-            sh:path confident:schema_name ],
+            sh:name "Schema Value" ;
+            sh:order 0 ;
+            sh:path confident:schema_value ],
         [ sh:description "The base URI of the schema that provides the context for the schema based value." ;
             sh:maxCount 1 ;
             sh:name "External formatter URI" ;
             sh:order 2 ;
             sh:path confident:schema_base_uri ],
-        [ sh:description "A property to provide the literal value of a schema based entity." ;
+        [ sh:description "A property to provide the name of a schema." ;
             sh:maxCount 1 ;
-            sh:name "Schema Value" ;
-            sh:order 0 ;
-            sh:path confident:schema_value ] ;
+            sh:name "Schema Name" ;
+            sh:order 1 ;
+            sh:path confident:schema_name ] ;
     sh:targetClass confident:GndId .
 
 confident:Metric a sh:NodeShape ;
     sh:closed true ;
     sh:description "A container for statistical information about an event or event series." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Metric" ;
-    sh:property [ sh:description "A property to provide the year for which the metric value is valid." ;
+    sh:name "Metric" ;
+    sh:property [ sh:description "A property to provide the type of metric according to the permissible values defined in the [Metric Type Enum](MetricType.md). If the metric type \"review process\" is used, one of the permissible values defined in the [Review Process Type](ReviewProcessType.md) must be provided using the [Metric String Value](str_value.md) property." ;
+            sh:in ( "submitted papers" "accepted papers" "submitted short papers" "accepted short papers" "submitted abstracts" "accepted abstracts" "number of attendees" "number of tracks" "has childcare options" "frequency" "is accessible" "CORE rank" "review process" ) ;
             sh:maxCount 1 ;
-            sh:name "Metric Year" ;
-            sh:order 5 ;
-            sh:path confident:metric_year ;
-            sh:pattern "^\\d{4}$" ],
-        [ sh:description "A property to provide an integer value for a metric." ;
-            sh:maxCount 1 ;
-            sh:name "Metric Integer Value" ;
-            sh:order 1 ;
-            sh:path confident:int_value ],
+            sh:name "Type" ;
+            sh:order 0 ;
+            sh:path rdf:type ],
         [ sh:description "A property to provide a truth value for a metric." ;
             sh:maxCount 1 ;
             sh:name "Metric Truth Value" ;
@@ -853,12 +848,12 @@ confident:Metric a sh:NodeShape ;
             sh:name "Metric Description" ;
             sh:order 6 ;
             sh:path confident:description ],
-        [ sh:description "A property to provide the type of metric according to the permissible values defined in the [Metric Type Enum](MetricType.md). If the metric type \"review process\" is used, one of the permissible values defined in the [Review Process Type](ReviewProcessType.md) must be provided using the [Metric String Value](str_value.md) property." ;
-            sh:in ( "submitted papers" "accepted papers" "submitted short papers" "accepted short papers" "submitted abstracts" "accepted abstracts" "number of attendees" "number of tracks" "has childcare options" "frequency" "is accessible" "CORE rank" "review process" ) ;
+        [ sh:description "A property to provide the year for which the metric value is valid." ;
             sh:maxCount 1 ;
-            sh:name "Type" ;
-            sh:order 0 ;
-            sh:path rdf:type ],
+            sh:name "Metric Year" ;
+            sh:order 5 ;
+            sh:path confident:metric_year ;
+            sh:pattern "^\\d{4}$" ],
         [ sh:description "A property to provide a rate value as float for a metric." ;
             sh:maxCount 1 ;
             sh:name "Metric Rate Value" ;
@@ -868,37 +863,42 @@ confident:Metric a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:name "Metric String Value" ;
             sh:order 2 ;
-            sh:path confident:str_value ] ;
+            sh:path confident:str_value ],
+        [ sh:description "A property to provide an integer value for a metric." ;
+            sh:maxCount 1 ;
+            sh:name "Metric Integer Value" ;
+            sh:order 1 ;
+            sh:path confident:int_value ] ;
     sh:targetClass confident:Metric .
 
 confident:Organizer a sh:NodeShape ;
     sh:closed true ;
     sh:description "An organizer of an academic event or event series." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Organizer" ;
-    sh:property [ sh:class confident:ExternalIdentifier ;
-            sh:description "A property to provide an external id of a schema entity." ;
-            sh:name "External ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 4 ;
-            sh:path IAO:0000235 ],
-        [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
+    sh:name "Organizer" ;
+    sh:property [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "ID" ;
             sh:order 2 ;
             sh:path confident:id ],
+        [ sh:description "A property to provide a name of a schema entity." ;
+            sh:maxCount 1 ;
+            sh:name "Name" ;
+            sh:order 3 ;
+            sh:path sdo:name ],
         [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
             sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
             sh:maxCount 1 ;
             sh:name "Type" ;
             sh:order 1 ;
             sh:path rdf:type ],
-        [ sh:description "A property to provide a name of a schema entity." ;
-            sh:maxCount 1 ;
-            sh:name "Name" ;
-            sh:order 3 ;
-            sh:path sdo:name ],
+        [ sh:class confident:ExternalIdentifier ;
+            sh:description "A property to provide an external id of a schema entity." ;
+            sh:name "External ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 4 ;
+            sh:path IAO:0000235 ],
         [ sh:class confident:ContactPerson ;
             sh:description "The contact person of an academic event or event series." ;
             sh:maxCount 1 ;
@@ -912,8 +912,44 @@ confident:Publication a sh:NodeShape ;
     sh:closed true ;
     sh:description "A published work, e.g. proceedings or conferenc paper, that is the output of an academic event or series." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Publication" ;
-    sh:property [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
+    sh:name "Publication" ;
+    sh:property [ sh:class confident:ExternalIdentifier ;
+            sh:description "A property to provide an external id of a schema entity." ;
+            sh:name "External ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 3 ;
+            sh:path IAO:0000235 ],
+        [ sh:description "A property to provide a name of a schema entity." ;
+            sh:maxCount 1 ;
+            sh:name "Name" ;
+            sh:order 2 ;
+            sh:path sdo:name ],
+        [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "ID" ;
+            sh:order 1 ;
+            sh:path confident:id ],
+        [ sh:class OBI:0002110 ;
+            sh:description "A property to provide a digital object identifier (DOI) according to https://doi.org/." ;
+            sh:name "DOI" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path IAO:0000235 ] ;
+    sh:targetClass confident:Publication .
+
+confident:Sponsor a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A person or an organization whose role it is to sponsor an academic event or event series." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Sponsor" ;
+    sh:property [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
+            sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
+            sh:maxCount 1 ;
+            sh:name "Type" ;
+            sh:order 0 ;
+            sh:path rdf:type ],
+        [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "ID" ;
@@ -929,43 +965,7 @@ confident:Publication a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:name "Name" ;
             sh:order 2 ;
-            sh:path sdo:name ],
-        [ sh:class OBI:0002110 ;
-            sh:description "A property to provide a digital object identifier (DOI) according to https://doi.org/." ;
-            sh:name "DOI" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 0 ;
-            sh:path IAO:0000235 ] ;
-    sh:targetClass confident:Publication .
-
-confident:Sponsor a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A person or an organization whose role it is to sponsor an academic event or event series." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Sponsor" ;
-    sh:property [ sh:description "A property to provide a name of a schema entity." ;
-            sh:maxCount 1 ;
-            sh:name "Name" ;
-            sh:order 2 ;
-            sh:path sdo:name ],
-        [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "ID" ;
-            sh:order 1 ;
-            sh:path confident:id ],
-        [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
-            sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
-            sh:maxCount 1 ;
-            sh:name "Type" ;
-            sh:order 0 ;
-            sh:path rdf:type ],
-        [ sh:class confident:ExternalIdentifier ;
-            sh:description "A property to provide an external id of a schema entity." ;
-            sh:name "External ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 3 ;
-            sh:path IAO:0000235 ] ;
+            sh:path sdo:name ] ;
     sh:targetClass confident:Sponsor .
 
 wikidata:Q43649390 a sh:NodeShape ;
@@ -973,16 +973,16 @@ wikidata:Q43649390 a sh:NodeShape ;
     sh:description "The identifier of a thing (item) in Wikidata." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "Wikidata ID" ;
-    sh:property [ sh:description "The base URI of the schema that provides the context for the schema based value." ;
-            sh:maxCount 1 ;
-            sh:name "External formatter URI" ;
-            sh:order 2 ;
-            sh:path confident:schema_base_uri ],
-        [ sh:description "A property to provide the name of a schema." ;
+    sh:property [ sh:description "A property to provide the name of a schema." ;
             sh:maxCount 1 ;
             sh:name "Schema Name" ;
             sh:order 1 ;
             sh:path confident:schema_name ],
+        [ sh:description "The base URI of the schema that provides the context for the schema based value." ;
+            sh:maxCount 1 ;
+            sh:name "External formatter URI" ;
+            sh:order 2 ;
+            sh:path confident:schema_base_uri ],
         [ sh:description "A property to provide the literal value of a schema based entity." ;
             sh:maxCount 1 ;
             sh:name "Schema Value" ;
@@ -1016,41 +1016,41 @@ confident:ContactPerson a sh:NodeShape ;
     sh:closed true ;
     sh:description "The contact person of an academic event or event series." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:name "Subobject Contact Person" ;
-    sh:property [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
-            sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
-            sh:maxCount 1 ;
-            sh:name "Type" ;
-            sh:order 3 ;
-            sh:path rdf:type ],
-        [ sh:description "A property to provide a name of a schema entity." ;
-            sh:maxCount 1 ;
-            sh:name "Name" ;
-            sh:order 5 ;
-            sh:path sdo:name ],
-        [ sh:description "The telephone number of the contact person." ;
-            sh:maxCount 1 ;
-            sh:name "Telephone" ;
-            sh:order 1 ;
-            sh:path sdo:telephone ],
-        [ sh:class confident:ExternalIdentifier ;
-            sh:description "A property to provide an external id of a schema entity." ;
-            sh:name "External ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 6 ;
-            sh:path IAO:0000235 ],
-        [ sh:description "The email address of the contact person." ;
+    sh:name "Contact Person" ;
+    sh:property [ sh:description "The email address of the contact person." ;
             sh:maxCount 1 ;
             sh:name "Email" ;
             sh:order 0 ;
             sh:path sdo:email ;
             sh:pattern "\\b[-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b" ],
+        [ sh:description "The telephone number of the contact person." ;
+            sh:maxCount 1 ;
+            sh:name "Telephone" ;
+            sh:order 1 ;
+            sh:path sdo:telephone ],
         [ sh:description "A property to provide an internal id of a schema entity in the ConfIDent plattform." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "ID" ;
             sh:order 4 ;
             sh:path confident:id ],
+        [ sh:description "A property to provide a name of a schema entity." ;
+            sh:maxCount 1 ;
+            sh:name "Name" ;
+            sh:order 5 ;
+            sh:path sdo:name ],
+        [ sh:class confident:ExternalIdentifier ;
+            sh:description "A property to provide an external id of a schema entity." ;
+            sh:name "External ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 6 ;
+            sh:path IAO:0000235 ],
+        [ sh:description "An abstract property that is reused in certain classes to differentiate their instances according to the type enums defined as the range." ;
+            sh:in ( OBI:0000245 NCBITaxon:9606 ) ;
+            sh:maxCount 1 ;
+            sh:name "Type" ;
+            sh:order 3 ;
+            sh:path rdf:type ],
         [ sh:class confident:ContactPerson ;
             sh:description "The contact person of an academic event or event series." ;
             sh:maxCount 1 ;
@@ -1060,62 +1060,15 @@ confident:ContactPerson a sh:NodeShape ;
             sh:path confident:contact ] ;
     sh:targetClass confident:ContactPerson .
 
-aeon:0000001 a sh:NodeShape ;
+AEON:0000001 a sh:NodeShape ;
     sh:closed true ;
     sh:description "An academic event is part of the established instruments of science communication as a format for conveying the latest scientific publications. It is defined by the meeting of researchers at a specific time and place (virtual or physical) and with a specific thematic focus to present, hear and discuss these publications. In contrast to other forms of events, academic events should primarily serve the exchange of results and methods of scientific research and their didactic mediation.  Furthermore, a significant participation of scientific organizations in the realization of an academic event is constitutive for this type of event; for example, to distinguish it from events in which researchers mainly act as external experts or with a purely legitimising function." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "Event" ;
-    sh:property [ sh:class confident:GndId ;
-            sh:description "A property to link an academic event with its GND identifier." ;
-            sh:name "GND ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 32 ;
-            sh:path IAO:0000235 ],
-        [ sh:class wikidata:Q43649390 ;
-            sh:description "A property to link an academic event with its Wikidata identifier." ;
-            sh:name "Wikidata ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 30 ;
-            sh:path IAO:0000235 ],
-        [ sh:description "The event mode describes whether the event is a physical, virtual or hybrid event." ;
-            sh:in ( "on site" "online" "hybrid" ) ;
-            sh:maxCount 1 ;
-            sh:name "Event Mode" ;
-            sh:order 34 ;
-            sh:path confident:event_mode ],
-        [ sh:description "A property to provide the internal identifier of an academic event." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "ID" ;
-            sh:order 0 ;
-            sh:path confident:id ],
-        [ sh:class confident:Sponsor ;
-            sh:description "A property to provide the sponsors of an academic event." ;
-            sh:name "Sponsor" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 16 ;
-            sh:path confident:sponsored_by ],
-        [ sh:class confident:Metric ;
-            sh:description "A property to provide one ore more metrics of an academic event." ;
-            sh:name "Metric" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 27 ;
-            sh:path confident:has_metric ],
-        [ sh:description "A relation to be used to link an event that hosts several events to its subordinate parts." ;
-            sh:name "Umbrella Of" ;
-            sh:order 19 ;
-            sh:path confident:umbrella_of ],
-        [ sh:description "A translation of the official name of an event to be used in different language contexts." ;
-            sh:name "Translated Name" ;
-            sh:order 25 ;
-            sh:path confident:translated_name ],
-        [ sh:class aeon:0000002 ;
-            sh:description "The relation used to provide the series of which an Event is a part." ;
-            sh:maxCount 1 ;
-            sh:name "In Series" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 9 ;
-            sh:path confident:in_series ],
+    sh:property [ sh:description "A property to provide alternative names of an academic event." ;
+            sh:name "Alternative Name" ;
+            sh:order 23 ;
+            sh:path skos:altLabel ],
         [ sh:class confident:Context ;
             sh:description "A property to provide extra information for an academic event." ;
             sh:maxCount 1 ;
@@ -1123,52 +1076,101 @@ aeon:0000001 a sh:NodeShape ;
             sh:nodeKind sh:BlankNode ;
             sh:order 26 ;
             sh:path confident:context_info ],
-        [ sh:class aeon:0000001 ;
-            sh:description "A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event parts (e.g. the session)." ;
-            sh:name "Superevent Of" ;
+        [ sh:class AEON:0000002 ;
+            sh:description "The relation used to provide the series of which an Event is a part." ;
+            sh:maxCount 1 ;
+            sh:name "In Series" ;
             sh:nodeKind sh:IRI ;
-            sh:order 11 ;
-            sh:path confident:superevent_of ],
+            sh:order 9 ;
+            sh:path confident:in_series ],
+        [ sh:class AEON:0000001 ;
+            sh:description "A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place)." ;
+            sh:maxCount 1 ;
+            sh:name "Subevent Of" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 10 ;
+            sh:path RO:0002012 ],
+        [ sh:class confident:WikiCfpEventId ;
+            sh:description "A property to link an academic event with its WikiCFP identifier." ;
+            sh:name "WikiCFP Event ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 36 ;
+            sh:path IAO:0000235 ],
+        [ sh:description "A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum." ;
+            sh:in ( AEON:0000101 AEON:0000103 AEON:0000123 AEON:0000111 AEON:0000127 AEON:0000125 AEON:00001115 AEON:00001117 AEON:0000105 AEON:0000107 AEON:0000109 AEON:0000113 AEON:0000119 AEON:0000121 AEON:0000001 ) ;
+            sh:maxCount 1 ;
+            sh:name "Event Type" ;
+            sh:order 7 ;
+            sh:path rdf:type ],
+        [ sh:description "The former official name of an academic event. Usually this will only be needed in case an academic event has undergone a name change." ;
+            sh:name "Former Name" ;
+            sh:order 24 ;
+            sh:path confident:former_name ],
+        [ sh:description "Similar to start_date but only for the end of an academic event or event series." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "End Date" ;
+            sh:order 4 ;
+            sh:path AEON:end_date ],
+        [ sh:class confident:Sponsor ;
+            sh:description "A property to provide the sponsors of an academic event." ;
+            sh:name "Sponsor" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 16 ;
+            sh:path confident:sponsored_by ],
+        [ sh:class confident:GndId ;
+            sh:description "A property to link an academic event with its GND identifier." ;
+            sh:name "GND ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 32 ;
+            sh:path IAO:0000235 ],
         [ sh:class confident:ExternalIdentifier ;
             sh:description "The property to provide external identifiers for an academic event, including their identifier scheme." ;
             sh:name "External ID" ;
             sh:nodeKind sh:BlankNode ;
             sh:order 29 ;
             sh:path IAO:0000235 ],
-        [ sh:description "A property to provide alternative names of an academic event." ;
-            sh:name "Alternative Name" ;
-            sh:order 23 ;
-            sh:path skos:altLabel ],
-        [ sh:description "A property to provide the URL the official website of an academic event." ;
-            sh:maxCount 1 ;
-            sh:name "Official Website" ;
-            sh:order 17 ;
-            sh:path confident:website ],
-        [ sh:class confident:AcademicField ;
-            sh:description "A property to describe the scientific subject(s) associated with an academic event, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [schema_value](schema_value.md) and [schema_name](schema_name.md) are mandatory." ;
-            sh:name "Academic Field" ;
+        [ sh:class confident:Metric ;
+            sh:description "A property to provide one ore more metrics of an academic event." ;
+            sh:name "Metric" ;
             sh:nodeKind sh:BlankNode ;
-            sh:order 13 ;
-            sh:path aeon:0000040 ],
-        [ sh:description "A property to provide the theme and topics of an event as free keywords, phrases or text." ;
-            sh:name "Topic" ;
-            sh:order 28 ;
-            sh:path confident:has_topic ],
+            sh:order 27 ;
+            sh:path confident:has_metric ],
         [ sh:description "A relation to be used to link an event to its hosting superordinate event." ;
             sh:maxCount 1 ;
             sh:name "Has Umbrella" ;
             sh:order 20 ;
             sh:path confident:has_umbrella ],
-        [ sh:description "The former official name of an academic event. Usually this will only be needed in case an academic event has undergone a name change." ;
-            sh:name "Former Name" ;
-            sh:order 24 ;
-            sh:path confident:former_name ],
-        [ sh:class confident:Publication ;
-            sh:description "A property to provide the publication associated with" ;
-            sh:name "Publication" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 15 ;
-            sh:path confident:has_publication ],
+        [ sh:description "A property to provide the status of an event from a controlled list (e.g. as scheduled (default), postpooned, canceld etc)." ;
+            sh:in ( "as scheduled" "postponed" "canceled" "to be confirmed" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Event Status" ;
+            sh:order 5 ;
+            sh:path AEON:event_status ],
+        [ sh:description "A property to provide the URL the official website of an academic event." ;
+            sh:maxCount 1 ;
+            sh:name "Official Website" ;
+            sh:order 17 ;
+            sh:path confident:website ],
+        [ sh:class confident:Deadline ;
+            sh:description "A property to provide a deadline of an academic event." ;
+            sh:name "Deadline" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 12 ;
+            sh:path confident:has_deadline ],
+        [ sh:description "The event mode describes whether the event is a physical, virtual or hybrid event." ;
+            sh:in ( "on site" "online" "hybrid" ) ;
+            sh:maxCount 1 ;
+            sh:name "Event Mode" ;
+            sh:order 34 ;
+            sh:path confident:event_mode ],
+        [ sh:class OBI:0002110 ;
+            sh:description "A property to provide a digital object identifier (DOI) for an event. This is set automatically." ;
+            sh:name "DOI" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 18 ;
+            sh:path IAO:0000235 ],
         [ sh:class confident:Organizer ;
             sh:description "A property to provide the organizer of an academic event." ;
             sh:minCount 1 ;
@@ -1176,17 +1178,70 @@ aeon:0000001 a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
             sh:path confident:organized_by ],
+        [ sh:class confident:Publication ;
+            sh:description "A property to provide the publication associated with" ;
+            sh:name "Publication" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 15 ;
+            sh:path confident:has_publication ],
+        [ sh:class confident:DblpId ;
+            sh:description "A property to link an academic event with its DBLP identifier." ;
+            sh:name "DBLP ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 31 ;
+            sh:path IAO:0000235 ],
+        [ sh:description "A property to provide the internal identifier of an academic event." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "ID" ;
+            sh:order 0 ;
+            sh:path confident:id ],
+        [ sh:class confident:TibkatId ;
+            sh:description "A property to link an academic event with its TIBKAT identifier." ;
+            sh:name "TIBKAT ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 35 ;
+            sh:path IAO:0000235 ],
         [ sh:description "A property to provide the website to which the DOI an academic event is resolving to." ;
             sh:maxCount 1 ;
             sh:name "Landing Page" ;
             sh:order 14 ;
             sh:path confident:landing_page ],
-        [ sh:description "A property to provide the format of an academic event according to the possible values of the [Event Type](EventType.md) enum." ;
-            sh:in ( aeon:0000101 aeon:0000103 aeon:0000123 aeon:0000111 aeon:0000127 aeon:0000125 aeon:00001115 aeon:00001117 aeon:0000105 aeon:0000107 aeon:0000109 aeon:0000113 aeon:0000119 aeon:0000121 aeon:0000001 ) ;
+        [ sh:description "A translation of the official name of an event to be used in different language contexts." ;
+            sh:name "Translated Name" ;
+            sh:order 25 ;
+            sh:path confident:translated_name ],
+        [ sh:class confident:AcademicField ;
+            sh:description "A property to describe the scientific subject(s) associated with an academic event, according to some controlled vocabulary or thesaurus. If this is used, its subproperties [schema_value](schema_value.md) and [schema_name](schema_name.md) are mandatory." ;
+            sh:name "Academic Field" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 13 ;
+            sh:path AEON:0000040 ],
+        [ sh:description "A relation to be used to link an event to one or more other events that share the same location but not the same schedule and that are open to all attendees." ;
+            sh:name "Colocated With" ;
+            sh:order 21 ;
+            sh:path confident:colocated_with ],
+        [ sh:description "A property to provide the theme and topics of an event as free keywords, phrases or text." ;
+            sh:name "Topic" ;
+            sh:order 28 ;
+            sh:path confident:has_topic ],
+        [ sh:description "A property to provide the the official name of an academic event." ;
             sh:maxCount 1 ;
-            sh:name "Event Type" ;
-            sh:order 7 ;
-            sh:path rdf:type ],
+            sh:minCount 1 ;
+            sh:name "Official Name" ;
+            sh:order 1 ;
+            sh:path skos:perfLabel ],
+        [ sh:class wikidata:Q43649390 ;
+            sh:description "A property to link an academic event with its Wikidata identifier." ;
+            sh:name "Wikidata ID" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 30 ;
+            sh:path IAO:0000235 ],
+        [ sh:description "The ordnial number of an academic event within its series." ;
+            sh:maxCount 1 ;
+            sh:name "Ordinal" ;
+            sh:order 33 ;
+            sh:path AEON:event_number ],
         [ sh:class confident:Location ;
             sh:description "The location of the academic event." ;
             sh:maxCount 1 ;
@@ -1194,87 +1249,32 @@ aeon:0000001 a sh:NodeShape ;
             sh:nodeKind sh:BlankNode ;
             sh:order 8 ;
             sh:path confident:at_location ],
-        [ sh:description "The official acronym of an academic event." ;
-            sh:maxCount 1 ;
-            sh:name "Acronym" ;
-            sh:order 6 ;
-            sh:path confident:has_acronym ],
-        [ sh:class aeon:0000001 ;
-            sh:description "A relation used to link the an event part (e.g. a session) to its superordinate event (e.g. the conference in which the session takes place)." ;
-            sh:maxCount 1 ;
-            sh:name "Subevent Of" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 10 ;
-            sh:path RO:0002012 ],
-        [ sh:description "A property to provide the the official name of an academic event." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Official Name" ;
-            sh:order 1 ;
-            sh:path skos:perfLabel ],
-        [ sh:class confident:DblpId ;
-            sh:description "A property to link an academic event with its DBLP identifier." ;
-            sh:name "DBLP ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 31 ;
-            sh:path IAO:0000235 ],
-        [ sh:description "A property to provide the status of an event from a controlled list (e.g. as scheduled (default), postpooned, canceld etc)." ;
-            sh:in ( "as scheduled" "postponed" "canceled" "to be confirmed" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Event Status" ;
-            sh:order 5 ;
-            sh:path aeon:event_status ],
         [ sh:description "The start date of an academic event or event series. Wheres the latter will in reality most likely be the start date of the first event of this series, unless there is some other source from which it is possible to derive the date of the inception of the series." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Start Date" ;
             sh:order 3 ;
-            sh:path aeon:start_date ],
-        [ sh:class confident:Deadline ;
-            sh:description "A property to provide a deadline of an academic event." ;
-            sh:name "Deadline" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 12 ;
-            sh:path confident:has_deadline ],
-        [ sh:description "Similar to start_date but only for the end of an academic event or event series." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "End Date" ;
-            sh:order 4 ;
-            sh:path aeon:end_date ],
-        [ sh:class OBI:0002110 ;
-            sh:description "A property to provide a digital object identifier (DOI) for an event. This is set automatically." ;
-            sh:name "DOI" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 18 ;
-            sh:path IAO:0000235 ],
-        [ sh:class confident:TibkatId ;
-            sh:description "A property to link an academic event with its TIBKAT identifier." ;
-            sh:name "TIBKAT ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 35 ;
-            sh:path IAO:0000235 ],
-        [ sh:description "A relation to be used to link an event to one or more other events that share the same location but not the same schedule and that are open to all attendees." ;
-            sh:name "Colocated With" ;
-            sh:order 21 ;
-            sh:path confident:colocated_with ],
+            sh:path AEON:start_date ],
+        [ sh:description "A relation to be used to link an event that hosts several events to its subordinate parts." ;
+            sh:name "Umbrella Of" ;
+            sh:order 19 ;
+            sh:path confident:umbrella_of ],
         [ sh:description "A relation to be used to link a series or event to one or more other events that share the same location, have a joint schedule and that are open to all attendees." ;
             sh:name "Joint Venture With" ;
             sh:order 22 ;
             sh:path confident:joint_venture_with ],
-        [ sh:class confident:WikiCfpEventId ;
-            sh:description "A property to link an academic event with its WikiCFP identifier." ;
-            sh:name "WikiCFP Event ID" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 36 ;
-            sh:path IAO:0000235 ],
-        [ sh:description "The ordnial number of an academic event within its series." ;
+        [ sh:class AEON:0000001 ;
+            sh:description "A relation used to link the an superordinate event (e.g. the conference in which a session takes place) to its event parts (e.g. the session)." ;
+            sh:name "Superevent Of" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 11 ;
+            sh:path confident:superevent_of ],
+        [ sh:description "The official acronym of an academic event." ;
             sh:maxCount 1 ;
-            sh:name "Ordinal" ;
-            sh:order 33 ;
-            sh:path aeon:event_number ] ;
-    sh:targetClass aeon:0000001 .
+            sh:name "Acronym" ;
+            sh:order 6 ;
+            sh:path confident:has_acronym ] ;
+    sh:targetClass AEON:0000001 .
 
 confident:ExternalIdentifier a sh:NodeShape ;
     sh:closed true ;
@@ -1286,15 +1286,15 @@ confident:ExternalIdentifier a sh:NodeShape ;
             sh:name "External formatter URI" ;
             sh:order 2 ;
             sh:path confident:schema_base_uri ],
-        [ sh:description "A property to provide the literal value of a schema based entity." ;
-            sh:maxCount 1 ;
-            sh:name "Schema Value" ;
-            sh:order 0 ;
-            sh:path OBI:0002815 ],
         [ sh:description "A property to provide the name of a schema." ;
             sh:maxCount 1 ;
             sh:name "Schema Name" ;
             sh:order 1 ;
-            sh:path confident:schema_name ] ;
+            sh:path confident:schema_name ],
+        [ sh:description "A property to provide the literal value of a schema based entity." ;
+            sh:maxCount 1 ;
+            sh:name "Schema Value" ;
+            sh:order 0 ;
+            sh:path OBI:0002815 ] ;
     sh:targetClass confident:ExternalIdentifier .
 

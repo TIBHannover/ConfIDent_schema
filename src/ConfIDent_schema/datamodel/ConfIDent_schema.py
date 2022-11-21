@@ -1,5 +1,5 @@
 # Auto generated from ConfIDent_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-10-26T14:16:23
+# Generation date: 2022-11-21T10:54:44
 # Schema: ConfIDent_schema
 #
 # id: https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/ConfIDent_schema.yaml
@@ -33,13 +33,13 @@ version = "0.5.0"
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
+AEON = CurieNamespace('AEON', 'http://purl.obolibrary.org/obo/AEON_')
 BFO = CurieNamespace('BFO', 'http://purl.obolibrary.org/obo/BFO_')
 IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
 RO = CurieNamespace('RO', 'http://purl.obolibrary.org/obo/RO_')
 TXPO = CurieNamespace('TXPO', 'http://purl.obolibrary.org/obo/TXPO_')
-AEON = CurieNamespace('aeon', 'https://github.com/tibonto/aeon#AEON_')
 CONFIDENT = CurieNamespace('confident', 'https://raw.githubusercontent.com/TIBHannover/ConfIDent_schema/main/src/linkml/confident_schema.yaml#')
 DATACITE = CurieNamespace('datacite', 'http://schema.datacite.org/meta/kernel-4.4/metadata.xsd')
 DBLP_SERIES = CurieNamespace('dblp_series', 'https://dblp.org/db/conf/')
@@ -148,7 +148,7 @@ class EventSeries(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AEON["0000002"]
-    class_class_curie: ClassVar[str] = "aeon:0000002"
+    class_class_curie: ClassVar[str] = "AEON:0000002"
     class_name: ClassVar[str] = "EventSeries"
     class_model_uri: ClassVar[URIRef] = CONFIDENT.EventSeries
 
@@ -293,7 +293,7 @@ class Event(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AEON["0000001"]
-    class_class_curie: ClassVar[str] = "aeon:0000001"
+    class_class_curie: ClassVar[str] = "AEON:0000001"
     class_name: ClassVar[str] = "Event"
     class_model_uri: ClassVar[URIRef] = CONFIDENT.Event
 
@@ -695,7 +695,7 @@ class EventFormatSpecification(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AEON["0000004"]
-    class_class_curie: ClassVar[str] = "aeon:0000004"
+    class_class_curie: ClassVar[str] = "AEON:0000004"
     class_name: ClassVar[str] = "EventFormatSpecification"
     class_model_uri: ClassVar[URIRef] = CONFIDENT.EventFormatSpecification
 
