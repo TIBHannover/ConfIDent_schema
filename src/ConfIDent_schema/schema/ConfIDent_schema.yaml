@@ -33,7 +33,7 @@ default_range: string
 imports:
  - linkml:types
 emit_prefixes:
-  - aeon
+  - AEON
   - confident
   - sdo
 
